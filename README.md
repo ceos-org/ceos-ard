@@ -35,4 +35,4 @@ The CEOS Working Group on Calibration & Validation (WGCV) has defined formal pro
 
 ### STAC Extensions
 
-The CEOS-ARD Extension to the SpatioTemporal Asset Catalog (STAC) specification specifies how to create STAC Items and Collections that comply to the various CEOS-ARD product family specifications. The repository for this extension can be found [here]([url](https://github.com/stac-extensions/ceos-ard)https://github.com/stac-extensions/ceos-ard).
+The CEOS-ARD Extension to the SpatioTemporal Asset Catalog (STAC) specification specifies how to create STAC Items and Collections that comply to the various CEOS-ARD product family specifications. The repository for this extension can be found [here](https://github.com/stac-extensions/ceos-ard).
