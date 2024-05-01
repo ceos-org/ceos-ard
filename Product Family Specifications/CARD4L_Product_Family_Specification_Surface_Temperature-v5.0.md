@@ -1,6 +1,3 @@
-﻿|![](Aspose.Words.9df1c7b0-11bb-4842-ae0a-0c5bdacc8202.001.png)|<p><a name="_hlk2093829"></a>**Analysis Ready Data**</p><p>***For Land***</p>|<p>**Product Family**</p><p>**Specification**</p><p>**Surface Temperature** </p>|
-| :-: | :-: | :-: |
-
 # **Document Status**
 **Product Family Specification, Surface Temperature**
 
