@@ -1,12 +1,8 @@
-﻿|![](Aspose.Words.1993554e-da6d-4982-b56b-3ec14374646c.001.png)|<p>**Analysis Ready Data**</p><p>***For Land***</p>|<p>**Product Family**</p><p>**Specification**</p><p>**Aquatic Reflectance (CARD4L-AR)**</p>|
-| :-: | :-: | :-: |
+<img align="right" width="150" src="https://github.com/libbyrose/ceos-ard/blob/main/CEOS-ARD%20Logo/CEOS_ARD_Logo_blue_lowres.png">
 
-# **Document Status**
-**Product Family Specification, Aquatic Surface Reflectance**
+# CEOS Analysis Ready Data <br> Product Family Specification: Aquatic Surface Reflectance
 
-This Specification should next be reviewed on: 	no later than 2 weeks before LSI-VC-11 meeting.
 
-Proposed revisions may be provided to:			<a name="_hlk2094865"></a><lsi@lists.ceos.org> 
 # **Document History**
 
 |**Version**|**Date**|**Description of Change**|**Author**|
