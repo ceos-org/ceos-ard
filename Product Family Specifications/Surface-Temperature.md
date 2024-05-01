@@ -1,9 +1,8 @@
-# **Document Status**
-**Product Family Specification, Surface Temperature**
+<img align="right" width="150" src="https://github.com/libbyrose/ceos-ard/blob/main/CEOS-ARD%20Logo/CEOS_ARD_Logo_blue_lowres.png">
 
-This Specification should next be reviewed on: 	March 2021, or no later than 2 weeks before LSI-VC-11 meeting.
+# CEOS Analysis Ready Data <br> Product Family Specification: Surface Temperature
 
-Proposed revisions may be provided to:			<lsi@lists.ceos.org> 
+
 # **Document History**
 
 |**Version**|**Date**|**Description of change**|**Author**|
@@ -41,7 +40,7 @@ Mary Metzger, USGS, USA
 # **Description**
 **Product Family Title:** 		**Surface Temperature (CARD4L-ST)**
 
-**Applies to:*** 	Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths. These typically operate with ground sample distance and resolution in the order of 10-100m; however, the Specification is not inherently limited to this resolution.
+**Applies to:** 	Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths. These typically operate with ground sample distance and resolution in the order of 10-100m; however, the Specification is not inherently limited to this resolution.
 
 At present, surface temperature measurements tend to be provided as either surface brightness temperature (SBT) or as land surface temperatures (LST) requiring the SBT to be modified according to the emissivity of the target. This specification identifies the Surface Temperature (ST) as being the minimum or Threshold requirement for analysis ready land surface data. Nevertheless, both SBT and LST are *land* measurements, requiring atmospheric corrections.
 # **Definitions**
