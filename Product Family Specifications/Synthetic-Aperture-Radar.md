@@ -1,13 +1,7 @@
+<img align="right" width="150" src="https://github.com/libbyrose/ceos-ard/blob/main/CEOS-ARD%20Logo/CEOS_ARD_Logo_blue_lowres.png">
+
+# CEOS Analysis Ready Data <br> Product Family Specification: Surface Reflectance
 ﻿
-|![](Aspose.Words.3976f99d-ad59-4f2d-99f2-ac2937000340.001.png)|**Analysis Ready Data**|<p>**Product Family Specification:**</p><p>**Synthetic Aperture Radar**</p>|
-| :-: | :-: | :-: |
-#
-# **Document Status**
-**Product Family Specification, Synthetic Aperture Radar** 
-
-Proposed revisions may be provided to: <ard-contact@lists.ceos.org>
-# **Document History**
-
 |<a name="_heading=h.30j0zll"></a>**Version**|**Date**|**Description of change**|**Affected CEOS-ARD product**|**Author**|
 | :- | :- | :- | :- | :- |
 |0\.1|14-12-2022|Zero Draft based on the CARD4L NRB PFS v5.5, POL PFS 3.5, ORB PFS v1.0 and draft GSLC v0.1 |-|<p>Charbonneau</p><p>Truckenbrodt</p>|
