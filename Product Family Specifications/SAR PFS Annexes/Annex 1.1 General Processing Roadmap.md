@@ -1,6 +1,5 @@
 
-# **Annex 1**     
-# **A1.1: General Processing Roadmap**
+# **Annex 1.1: General Processing Roadmap**
 The radiometric interoperability of CEOS-ARD SAR products is ensured by a common processing chain during production. The recommended processing roadmap involves the following steps:
 
 - Apply the best possible orbit parameters to give the most accurate product possible. These will have been projected to an ellipsoidal model such as WGS84. To achieve the level of geometric accuracy required for the DEM-based correction, precise orbit determination will be required.
