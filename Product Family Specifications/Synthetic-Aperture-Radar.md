@@ -360,7 +360,6 @@ Geometric corrections are steps that are taken to place the measurement accurate
 |1\.7.13|[GSLC]|Radar Unit Look Vector|||
 |1\.7.14|[GSLC]|Slant Range Sensor to Surface|||
 |1\.7.15|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Reference Orbit|||
-||||**Threshold**|**Goal**|
 |**2**|**CEOS-ARD product**|**Per-Pixel Metadata**|||
 |2\.1|[ALL]|Metadata Machine Readability|||
 |2\.2|[ALL]|Data Mask Image|||
@@ -504,25 +503,29 @@ Table A1.1 lists possible sequential steps and existing software tools (e.g., Ga
 # **A1.2: Topographic phase removal** 
 InSAR analysis capabilities from CEOS-ARD SAR products are enabled with **[GSLC]** products, which is also the case when the Flattened Phase per-pixel data (item 3.7) are included in the **[NRB]** or **[POL]** products. This is made possible since the simulated topographic phase relative to a given reference orbit has been subtracted.
 
-From classical approach with SLC data, interferometric phase ∆φ1-2 between two SAR acquisitions is composed of a topographic phase ∆φTopo\_1-2, a surface displacement phase ∆φDisp\_1-2 and other noise terms ∆φNoise\_1-2 (Eq. A1.1). The topographic phase consists to the difference in geometrical path length from each of the two antenna positions to the point on the SAR image (φDEM\_SLC) and is a function of their orbital baseline distance (Eq. A1.2). The surface displacement phase is related to the displacement of the surface that occurred in between the two acquisitions. The noise term is the function of the radar signal interaction with the atmosphere and the ionosphere during each acquisition and function of the system noise.
+From classical approach with SLC data, interferometric phase $\Delta \varphi_{1-2}$ between two SAR acquisitions is composed of a topographic phase $\Delta \varphi_{\text{Topo}\textunderscore1-2}$, a surface displacement phase $\Delta \varphi_{\text{Disp}\textunderscore1-2}$ and other noise terms $\Delta \varphi_{\text{Noise}\textunderscore1-2}$ (Eq. A1.1). The topographic phase consists to the difference in geometrical path length from each of the two antenna positions to the point on the SAR image ($\varphi_{\text{DEM}\textunderscore\text{SLC}}$) and is a function of their orbital baseline distance (Eq. A1.2). The surface displacement phase is related to the displacement of the surface that occurred in between the two acquisitions. The noise term is the function of the radar signal interaction with the atmosphere and the ionosphere during each acquisition and function of the system noise.
 
-|∆φ1-2=∆φTopo\_1-2+ ∆φDisp\_1-2+ ∆φNoise\_1-2|**Eq. A1.1**|
-| :-: | :- |
+$$\tag{Eq. A1.1}
+\Delta \varphi_{1-2} = \Delta \varphi_{\text{Topo}\textunderscore1-2} + \Delta \varphi_{\text{Disp}\textunderscore1-2} + \Delta \varphi_{\text{Noise}\textunderscore1-2}
+$$
 
 Where    
 
-|∆φTopo\_1-2=φDEM\_SLC\_1-φDEM\_SLC\_2|**Eq. A1.2**|
-| :-: | :- |
+$$\tag{Eq. A1.2}
+\Delta \varphi_{\text{Topo}\textunderscore1-2} = \varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore1} = \varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore2}
+$$
 
-Since CEOS-ARD products are already geocoded, it is important to remove the wrapped simulated topographic phase φSimDEM\_SLC from the data in slant range (Eq. A1.3) during their production, before the geocoding step. The key here is to simulate the topographic phase relatively to a constant reference orbit, as done in a regular InSAR processing. There are two different ways to simulate the topographic phase: 
+Since CEOS-ARD products are already geocoded, it is important to remove the wrapped simulated topographic phase $\varphi_{\text{SimDEM}\textunderscore\text{SLC}}$ from the data in slant range (Eq. A1.3) during their production, before the geocoding step. The key here is to simulate the topographic phase relatively to a constant reference orbit, as done in a regular InSAR processing. There are two different ways to simulate the topographic phase: 
 
 1. The use of a virtual circular orbit above a nonrotating planet (Zebker et al., 2010) 
-1. The use of a specific orbit cycle or a simulated orbit of the SAR mission 
+2. The use of a specific orbit cycle or a simulated orbit of the SAR mission 
 
-In both cases, the InSAR topographic phase ∆φTopo\_OrbRef-2 is simulated against the position of a virtual sensor φDEM\_OrbRef lying on a reference orbit, instead of being simulated relatively to an existing reference SAR acquisition (φDEM\_SLC\_1). The use of a virtual circular orbit is a more robust approach since the reference orbit is defined at a fixed height above scene nadir and assuming the reference orbital height constant for all CEOS-ARD products. While with the second approach, the CEOS-ARD data producer must select a specific archived orbit cycle of the SAR mission or define a simulated one, from which the relative orbit, matching the one of the SAR acquisitions to be processed (to be converted to CEOS-ARD), is defined as the reference orbit. With this second approach, it is important to always use the same orbit cycle (or simulated orbit) for all the CEOS-ARD produced for a mission, in order to preserve the relevant compensated phase in between them. Providing absolute reference orbit number information in the metadata (item 1.7.15) allows users to validate the InSAR feasibility in between CEOS-ARD products.
+In both cases, the InSAR topographic phase $\Delta \varphi_{\text{Topo}\textunderscore\text{OrbRef}-2}$ is simulated against the position of a virtual sensor $\Delta \varphi_{\text{Topo}\textunderscore\text{OrbRef}}$ lying on a reference orbit, instead of being simulated relatively to an existing reference SAR acquisition ($\varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore1}$). The use of a virtual circular orbit is a more robust approach since the reference orbit is defined at a fixed height above scene nadir and assuming the reference orbital height constant for all CEOS-ARD products. While with the second approach, the CEOS-ARD data producer must select a specific archived orbit cycle of the SAR mission or define a simulated one, from which the relative orbit, matching the one of the SAR acquisitions to be processed (to be converted to CEOS-ARD), is defined as the reference orbit. With this second approach, it is important to always use the same orbit cycle (or simulated orbit) for all the CEOS-ARD produced for a mission, in order to preserve the relevant compensated phase in between them. Providing absolute reference orbit number information in the metadata (item 1.7.15) allows users to validate the InSAR feasibility in between CEOS-ARD products.
 
-|φFlattened\_SLC\_2= φSLC\_2- ∆φTopo\_OrbRef-2|**Eq. A1.3**|
-| :-: | :- |
+$$ \tag{Eq. A1.3}
+\varphi_{\text{Flattended}\textunderscore\text{SLC}\textunderscore2} = \varphi_{\text{SLC}\textunderscore2} - \Delta\varphi_{\text{Topo}\textunderscore\text{OrbRef}-2} $$
+
+
 
 This procedure is equivalent to bring the position of the sensor platform of all the SAR acquisitions at the same orbital position (i.e., zeros baseline distance in between), which results in a Flattened phase  φFlattened\_SLC, independent of the local topography.
 
