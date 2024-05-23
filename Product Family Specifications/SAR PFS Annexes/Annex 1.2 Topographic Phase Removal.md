@@ -25,16 +25,15 @@ $$ \tag{Eq. A1.3}
 \varphi_{\text{Flattended}\textunderscore\text{SLC}\textunderscore2} = \varphi_{\text{SLC}\textunderscore2} - \Delta\varphi_{\text{Topo}\textunderscore\text{OrbRef}-2} $$
 
 
-
-This procedure is equivalent to bring the position of the sensor platform of all the SAR acquisitions at the same orbital position (i.e., zeros baseline distance in between), which results in a Flattened phase  φFlattened\_SLC, independent of the local topography.
+This procedure is equivalent to bring the position of the sensor platform of all the SAR acquisitions at the same orbital position (i.e., zeros baseline distance in between), which results in a Flattened phase  $\varphi_{\text{Flattended}\textunderscore\text{SLC}}$, independent of the local topography.
 
 The phase subtraction could be performed by using a motion compensation approach (Zebker et al., 2010) or directly on the SLC data. Then the geometrical correction is performed on the Flattened SLC, which results in a **[GSLC]** product.
 #
 **[GSLC]** can also be saved as a **[NRB]** product by including the Flattened Phase per-pixel data (item 3.7) as follows:
 
-NRB:     γTo=GSLC2
+$$\text{NRB:} \quad \gamma_T^0 = |GSLC|^2 $$
 
-Flattened Phase:   φFlattened=arg⁡(GSLC)
+$$\text{Flattended Phase:} \quad \varphi_{\text{Flattended}} = \arg (GSLC) $$
 
 For **[POL]** product, the Flattened phase needs also to be subtracted from the complex number phase of the off-diagonal elements of the covariance matrix.
 
@@ -42,26 +41,31 @@ Demonstration:
 
 From CEOS-ARD flattened SAR products, InSAR processing can be easily performed without dealing with topographic features and orbital sensor position, as for example with two **[GSLC]** products 
 
-|<p>φFlattened\_GSLC\_1= φSLC\_1- ∆φTopo\_OrbRef-1=φSLC\_1- φDEM\_OrbRef-φDEM\_SLC\_1</p><p>φFlattened\_GSLC\_2= φSLC\_2- ∆φTopo\_OrbRef-2=φSLC\_2- φDEM\_OrbRef-φDEM\_SLC\_2</p><p></p>|<p></p><p>**Eq. A1.4**</p>|
-| :-: | :- |
+$$ \varphi_{\text{Flattened}\textunderscore\text{GSLC}\textunderscore1} = \varphi_{\text{SLC}\textunderscore1} - \Delta\varphi_{\text{Topo}\textunderscore\text{OrbRef}-1} = \varphi_{\text{SLC}\textunderscore1} - \varphi_{\text{DEM}\textunderscore\text{OrbRef}} - \varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore1}$$
+
+$$ \tag{Eq. A1.4} \varphi_{\text{Flattened}\textunderscore\text{GSLC}\textunderscore2} = \varphi_{\text{SLC}\textunderscore2} - \Delta\varphi_{\text{Topo}\textunderscore\text{OrbRef}-2} = \varphi_{\text{SLC}\textunderscore2} - \varphi_{\text{DEM}\textunderscore\text{OrbRef}} - \varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore2}$$
+
 
 The differential phase is
 
-|∆φCARD\_1-CARD\_2=φFlattened\_GSLC\_1-φFlattened\_GSLC\_2|<p>**Eq. A1.5**</p><p></p>|
-| :-: | :- |
-|<p>`           `Which can be expanded using (Eq. A1.3)</p><p></p>||
-|∆φCARD\_1-CARD\_2=(φSLC\_1-φDEM\_OrbRef-φDEM\_SLC\_1)-φSLC\_2- φDEM\_OrbRef-φDEM\_SLC\_2|**Eq. A1.6**|
-|∆φCARD\_1-CARD\_2=φSLC\_1-φSLC\_2-φDEM\_SLC\_1 -φDEM\_SLC\_2|**Eq. A1.7**|
-|∆φCARD\_1-CARD\_2=∆φSLC\_1-SLC\_2-∆φTopo\_1-2 |**Eq. A1.8**|
+$$ \tag{Eq. A1.5} \Delta \varphi_{\text{CARD}\textunderscore1-\text{CARD}\textunderscore2} =  \varphi_{\text{Flattened}\textunderscore\text{GSLC}\textunderscore1} - \varphi_{\text{Flattened}\textunderscore\text{GSLC}\textunderscore2} $$
 
-Where ∆φSLC\_1-SLC\_2 can be express as Eq. A1.1, which gives
+Which can be expanded using (Eq. A1.3)
 
-|∆φCARD\_1-CARD\_2=∆φTopo\_1-2+ ∆φDisp\_1-2+ ∆φNoise\_1-2-∆φTopo\_1-2|**Eq. A1.9**|
-| :-: | :- |
+$$ \tag{Eq. A1.6} \Delta \varphi_{\text{CARD}\textunderscore1-\text{CARD}\textunderscore2} = (\varphi_{\text{SLC}\textunderscore1} - \varphi_{\text{DEM}\textunderscore\text{OrbRef}} - \varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore1}) - (\varphi_{\text{SLC}\textunderscore2} - \varphi_{\text{DEM}\textunderscore\text{OrbRef}} - \varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore2}) $$
 
-Consequently, the differential phase of two CEOS\_ARD products doesn’t contain a topographic phase and is already unwrapped (at least over stable areas). It is only function of the surface displacement and of the noise term. Depending on the reference DEM and the satellite orbital state vector accuracies, some residual topographic phase could be present. Atmospheric (item 2.15) and ionospheric (item 2.16) phase corrections could be performed during the production of CEOS-ARD products, which reduces the differential phase noise in an InSAR analysis.
+$$ \tag{EQ. A1.7} \Delta \varphi_{\text{CARD}\textunderscore1-\text{CARD}\textunderscore2} = (\varphi_{\text{SLC}\textunderscore1} - \varphi_{\text{SLC}\textunderscore2}) - (\varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore1}) - \varphi_{\text{DEM}\textunderscore\text{SLC}\textunderscore2}) $$
 
-|<p>∆φCARD\_1-CARD\_2=∆φDisp\_1-2+ ∆φNoise\_1-2</p><p></p>|**Eq. A1.10**|
-| :-: | :- |
+$$ \tag{EQ. A1.8} \Delta \varphi_{\text{CARD}\textunderscore1-\text{CARD}\textunderscore2} = \Delta\varphi_{\text{SLC}\textunderscore1-\text{SLC}\textunderscore2} - \Delta\varphi_{\text{Topo}\textunderscore1-2} $$
+
+Where $\Delta\varphi_{\text{SLC}\textunderscore1-\text{SLC}\textunderscore2}$ can be express as Eq. A1.1, which gives
+
+$$ \tag{EQ. A1.9} \Delta \varphi_{\text{CARD}\textunderscore1-\text{CARD}\textunderscore2} = (\Delta \varphi_{\text{Topo}\textunderscore1-2} + \Delta \varphi_{\text{Disp}\textunderscore1-2} + \Delta \varphi_{\text{Noise}\textunderscore1-2}) - \Delta\varphi_{\text{Topo}\textunderscore1-2} $$
+
+
+Consequently, the differential phase of two CEOS-ARD products doesn’t contain a topographic phase and is already unwrapped (at least over stable areas). It is only function of the surface displacement and of the noise term. Depending on the reference DEM and the satellite orbital state vector accuracies, some residual topographic phase could be present. Atmospheric (item 2.15) and ionospheric (item 2.16) phase corrections could be performed during the production of CEOS-ARD products, which reduces the differential phase noise in an InSAR analysis.
+
+$$ \tag{EQ. A1.9} \Delta \varphi_{\text{CARD}\textunderscore1-\text{CARD}\textunderscore2} = \Delta \varphi_{\text{Disp}\textunderscore1-2} + \Delta \varphi_{\text{Noise}\textunderscore1-2})$$
+
 
 
