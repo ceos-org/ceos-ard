@@ -130,7 +130,7 @@ From fully polarimetric covariance matrix ARD format **[POL]** (Level-2a), it is
 
 ***Figure A2.1**  Example of polarimetric decomposition generated from ARD covariance format.  **a)** Shaded DEM of the area; **b)** RADARSAT-2 HH intensity; **c)** Yamaguchi decomposition colour composite (Red: even bounce, Green: random, Blue: odd bounce); **d)** Same as c) with terrain flattening option. Generated from Radarsat-2 FQ18W acquired over Murcia, Spain on 18 June 2014 ©MDA 2014*
 
-#
+
 Figure A2.2 is a **[PRD]** compact polarimetric m-chi decomposition (Raney et al., 2012) simulated from two Canadian prairies Radarsat-2 fully polarimetric scenes acquired in May and June 2012. In May, before the growing season (Figure A2.2a), m-chi shows mainly surface scattering from bare soil (blue channel) and vegetation interaction from forested areas (green channel), while in June (Figure A2.2b) growth of vegetation modifies the radar signal with interacting media function of the vegetation density and geometry which increase the amount of even bounce (red channel) and random scattering. 
 
 ![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA2.2-m-chi-decomposition.jpeg)
