@@ -454,13 +454,12 @@ Goal requirements anticipate continuous improvement of methods and evolution of 
 
 *Yamaguchi, Y., A. Sato, W.M. Boerner, R. Sato and H. Yamada (2011) Four-Component Scattering Power Decomposition with Rotation of Coherency Matrix, IEEE Trans. Geosci. Remote Sens., vol. 49, no. 6, pp. 2251-2258.*
 
-## **     
 ## **Ocean Radar Backscatter [ORB]**
 *Quilfen, Y., Chapron, B., Elfouhaily, T., Katsaros, K., and Tournadre, J. (1998) Observation of tropical cyclones by high-resolution scatterometry, J. Geophys. Res., 103(C4), 7767– 7786, doi:10.1029/97JC01911*
 
 *Vachon, P.W. and F.W. Dobson (2000) Wind Retrieval from RADARSAT SAR Images: Selection of a Suitable C-Band HH Polarization Wind Retrieval Model, Canadian Journal of Remote Sensing, 26:4, 306-313, DOI: 10.1080/07038992.2000.10874781*
 
-## `     `**Geocoded Single-Look Complex [GSLC]**
+## **Geocoded Single-Look Complex [GSLC]**
 *Zebker, H. A., S. Hensley, P. Shanker and C. Wortham (2010) Geodetically Accurate InSAR Data Processor, IEEE Transactions on Geoscience and Remote Sensing, vol. 48, no. 12, pp. 4309-4321, Dec. 2010, doi: 10.1109/TGRS.2010.2051333.*
 
 *Zebker, H. A. (2017) User-Friendly InSAR Data Products: Fast and Simple Timeseries Processing. IEEE Geoscience and Remote Sensing Letters 14(11): 2122-2126.*
