@@ -1,24 +1,45 @@
 # **Annex 2: Polarimetric Radar [POL]**
-# **A2.1: Normalised Covariance Matrices (CovMat)**
+## **A2.1: Normalised Covariance Matrices (CovMat)**
 In order to preserve the inter-channel polarimetric phase and thus the full information content of coherent dual-pol and fully polarimetric data, the covariance matrix is proposed as the data storage format. Covariance matrices are generated from the complex cross product of polarimetric channels, as shown in Eq. A2.1 for fully polarimetric data (C3) and in Eq. A2.2 for dual polarization data (C2). Since these matrices are complex symmetrical, only the upper diagonal elements (bold elements) need to be stored in the ARD database.
 
 **Fully polarimetric** 
 
-|![](Aspose.Words.3976f99d-ad59-4f2d-99f2-ac2937000340.003.png)|**Eq. A2.1**|
-| :-: | -: |
+$$ \tag {Eq. A2.1}
+C3 = \begin{bmatrix}
+| \mathbf{H} \mathbf{H} |^2 & \sqrt{2} \cdot \mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* & \mathbf{H}\mathbf{H} \cdot \mathbf{V}\mathbf{V}^* \\
+\sqrt{2} \cdot HV \cdot HH^* & 2 \cdot |\mathbf{H}\mathbf{V}|^2 & \sqrt{2} \cdot \mathbf{H}\mathbf{V} \cdot \mathbf{H}\mathbf{V}^* \\
+VV \cdot HH^* & \sqrt{2} \cdot VV \cdot HV^* & |\mathbf{V}\mathbf{V}|^2
+\end{bmatrix}
+$$
+
+
 
 Where HV = VH, under the reciprocity assumption. | | and \* mean respectively complex modulus and the complex conjugate. 
 
 **Dual polarization**
 
-|<p></p><p>**HH-HV**</p><p>![](Aspose.Words.3976f99d-ad59-4f2d-99f2-ac2937000340.004.png)</p><p></p><p>**VV-VH**</p><p>![](Aspose.Words.3976f99d-ad59-4f2d-99f2-ac2937000340.005.png)</p><p></p><p>**CH-CV**</p><p>![](Aspose.Words.3976f99d-ad59-4f2d-99f2-ac2937000340.006.png)</p>|**Eq. A2.2**|
-| - | -: |
+$$ \text{HH-HV:} \quad C2 = \begin{bmatrix}
+| \mathbf{H} \mathbf{H} |^2 & \mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* \\
+HV \cdot HH^* &  |\mathbf{H}\mathbf{V}|^2
+\end{bmatrix}
+$$
+
+$$ \tag{Eq. A2.2} \text{VV-VH:} \quad C2 = \begin{bmatrix}
+| \mathbf{V} \mathbf{H} |^2 & \mathbf{V}\mathbf{H} \cdot \mathbf{V}\mathbf{H}^* \\
+VH \cdot VH^* &  |\mathbf{V}\mathbf{V}|^2
+\end{bmatrix}
+$$
+
+$$ \text{CH-CV:} \quad C2 = \begin{bmatrix}
+| \mathbf{C} \mathbf{H} |^2 & \mathbf{C}\mathbf{H} \cdot \mathbf{C}\mathbf{V}^* \\
+CV \cdot CH^* &  |\mathbf{C}\mathbf{V}|^2
+\end{bmatrix}
+$$
 
 Where CH and CV refer to dual polarization transmitting a circular polarized signal. [CH, CV] can be replaced by [LH, LV] or [RH, RV] for left (L) or right (R) hand circular transmission respectively, although RCM will offer only right-hand circular transmission. The coherent HH-VV configuration available on TerraSAR-X could also be represented as C2 format. 
 
 Polarimetric decomposition methods like Yamaguchi et al. (2011) for fully polarimetric, or m-chi (Raney et al., 2012) for compact polarimetric data, can be applied directly on averaged (speckle filtered) C3 and C2 matrices respectively. These decompositions enhance scattering information, bring it to a more comprehensible level to end-users, and raise the performance of thematic classification methodologies. For SAR products that were acquired with single polarization the use of the covariance matrix does not result in superfluous storage requirements, since only the matrix elements that are populated are retained and the diagonal matrix elements are the backscatter intensities. Thus, a single channel intensity product would yield only one matrix element and the storage needs would not change.
-#
-#
+
 In order to ease the data structure and the metadata in between C3 and C2, Eq. A2.1 should be redefined as Eq. A2.3. Users will have to take care of this non-standard representation when applying their polarimetric analytic tools. “< >” means that ARD matrix elements are speckle filtered. Eq. A2.3 is valid both for dual-linear and quad polarization.
 
 |![](Aspose.Words.3976f99d-ad59-4f2d-99f2-ac2937000340.007.png)|**Eq. A2.3**|
@@ -28,8 +49,8 @@ Furthermore, for compact polarimetric data, it is recommended to store them, by 
 
 |` `**![](Aspose.Words.3976f99d-ad59-4f2d-99f2-ac2937000340.008.png)**|**Eq. A2.4**|
 | - | :-: |
-# **
-# **A2.2: Polarimetric Radar Decomposition (PRD)**
+
+## **A2.2: Polarimetric Radar Decomposition (PRD)**
 Different methodologies allow decomposition of coherent dual-polarization data or fully polarimetric data to meaningful components summarizing the scattering processing with the interacting media. Decomposition techniques are divided in two categories: Coherent and incoherent.
 
 1. **Coherent decompositions** express the scattering matrix by the summation of elementary objects of known signature (ex.: a sphere, a diplane, a cylinder, a helix, …). They are used mainly to describe point targets which are coherent. As for examples, coherent PRD could be (but not limited to):
@@ -94,7 +115,7 @@ A : Anisotropy [ ]  is weighted difference between the 2<sup>nd</sup> and 3<sup>
 α : Odd-even bounce angle [Degrees]
 
 β : orientation angle [Degrees]
-# **A2.3: Polarimetric Radar Decomposition Product Examples**
+## **A2.3: Polarimetric Radar Decomposition Product Examples**
 From fully polarimetric covariance matrix ARD format **[POL]** (Level-2a), it is possible to apply any version of the popular Yamaguchi methodology, which decomposes the polarimetric information under relative intensities of 4 scattering types: Odd bounce, Even bounce, Random (volume) and helix. Figure A2.1b) shows HH intensity of a RADARSAT fully polarimetric acquired over a Spanish area. Decomposition using Yamaguchi methodology (Yamaguchi et al., 2011) can be expressed in RGB colour composite (Figure A2.1c) where Red channel refers to even bounce scattering like urban area; Green channel is random scattering like vegetation; and Blue channel is odd bounce scattering like bare soil. Figure A2.1d) is equivalent to c) where radiometric normalisation (terrain flattening) has been applied with the help of the DEM of the scene (Figure A2.1a).
 
 ![](Aspose.Words.3976f99d-ad59-4f2d-99f2-ac2937000340.009.jpeg)
