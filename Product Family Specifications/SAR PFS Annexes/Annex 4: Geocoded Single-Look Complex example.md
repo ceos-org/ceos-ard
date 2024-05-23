@@ -1,4 +1,4 @@
-**Annex 4: Geocoded Single-Look Complex [GSLC] example**
+# **Annex 4: Geocoded Single-Look Complex [GSLC] example**
 
 In contrast to basic **[NRB]** and **[POL] products**, CEOS-ARD Geocoded SLC **[GSLC]** products are kept close to the native resolution in complex data format for which local topographic InSAR phases, relative to a reference orbit (Zebker et al., 2010; Zebker 2017), have been removed. Having a volume of **[GSLC]** products acquired over repeat cycles, already radiometric and phase terrain corrected and geocoded (Figure A4.1a) and Figure A4.1b), allows user-friendly production of a first iteration of the InSAR coherence (Eq. A4.1 and Figure A4.1c) and differential phases (Eq. A4.2 and Figure A4.1d) in between **[GSLC]** pairs, simply by applying local averaging window over the product of a **[GSLC]** product (GSLC1) with the complex conjugate of a second **[GSLC]** (GSLC2) divided by their local averaged intensities. These intermediate files could be used for coherent change detection analysis and surface displacement monitoring.
 
