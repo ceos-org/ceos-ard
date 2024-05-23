@@ -31,8 +31,8 @@ Some advanced [GSLC] product can be provided with “2.12 Radar Unit Look Vector
 
 ![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.2a-S1-GSLC-x-component.png)**a)**
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.2a-S1-GSLC-y-component.png)**b)**
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.2a-S1-GSLC-z-component.png)**c)**
+![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.2b-S1-GSLC-y-component.png)**b)**
+![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.2c-S1-GSLC-z-component.png)**c)**
 
 ***Figure A4.2**  3-D components radar unit look vector of the [GSLC] product in Figure A4.1.  **a)** x unit component; **b)** y unit component; **c)** z unit component*.
 
