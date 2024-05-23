@@ -2,15 +2,15 @@
 
 In contrast to **[NRB]** and **[POL]**, CEOS-ARD Ocean Radar Backscatter **[ORB]** products are geoid corrected and are provided in the Sigma-Nought (σE0) backscatter convention (Figure A3.1a), which is recommended for most ocean applications. In addition, availability of the “Local (or Ellipsoidal) Incidence Angle Image” (Figure A3.1d) and “Look Direction Image” per-pixel metadata are highly recommended (otherwise the general metadata “1.7.12 Look Direction Polynomials”) since they required for operational applications like ocean wind field estimates. 
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA3.1a-S1-ORB-VV.png) ***a)** VV intensity
+![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA3.1a-S1-ORB-VV.png) **a)** VV intensity
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA3.1b-S1-ORB-VH.png) ***b)** VH intensity
+![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA3.1b-S1-ORB-VH.png) **b)** VH intensity
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA3.1c-S1-ORB-data-mask.png) ***c)** Data mask image
+![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA3.1c-S1-ORB-data-mask.png) **c)** Data mask image
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA3.1d-S1-ORB-local-indicident-angle.png) ***d)** Local incident angle
+![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA3.1d-S1-ORB-local-indicident-angle.png) **d)** Local incident angle
 
-***Figure A3.1**  Sentinel-1 [ORB] product. Tropical Cyclone Harold passing Vanuatu on April 6, 2020. 
+**Figure A3.1**  Sentinel-1 [ORB] product. Tropical Cyclone Harold passing Vanuatu on April 6, 2020. 
 *Processing: A. Rosenqvist (soloEO).*
 
 
