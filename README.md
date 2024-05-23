@@ -15,7 +15,7 @@ The CEOS-ARD Governance Framework covers:
 
 The definition of CEOS-ARD is not exclusive or prescriptive. The definition of CEOS-ARD reflects the attributes of fundamental measurement products for the majority of global remote sensing users with land imaging applications, and are the minimum level required to support time series analysis and data interoperability.
 
-### Product Family Specs
+### Product Family Specifications
 
 Detail specific 'Threshold' and 'Goal' requirements for:
 
