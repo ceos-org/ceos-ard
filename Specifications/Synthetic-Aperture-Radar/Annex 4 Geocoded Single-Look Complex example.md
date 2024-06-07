@@ -15,13 +15,13 @@ $$ \tag{Eq. A4.3} \text{Complex coherence:} \quad \rho_{NRB} = \frac{\sum [ (\sq
 
 
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.1a-S1-GSLC1.jpeg) **a)**
+![](./figures/figA4.1a-S1-GSLC1.jpeg) **a)**
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.1b-S1-GSLC2.jpeg)**b)**
+![](./figures/figA4.1b-S1-GSLC2.jpeg)**b)**
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.1c-S1-InSAR-coherence.png)**c)**
+![](./figures/figA4.1c-S1-InSAR-coherence.png)**c)**
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.1d-S1-InSAR-differential-phase.png)**d)**
+![](./figures/figA4.1d-S1-InSAR-differential-phase.png)**d)**
 
 ***Figure A4.1**  Sentinel-1 [GSLC] products example over Death Valley National Park, California, US.
 **a)** GSLC1: Intensity data of the first [GSLC] product (2017-05-27); **b)** GSLC2: Intensity data of the second [GSLC] product (2017-06-08); **c)** InSAR coherence map generated directly from A4.1a) and b); **d)** InSAR differential phase map generated directly from A4.1a) and b).*
@@ -29,10 +29,10 @@ $$ \tag{Eq. A4.3} \text{Complex coherence:} \quad \rho_{NRB} = \frac{\sum [ (\sq
 
 Some advanced [GSLC] product can be provided with “2.12 Radar Unit Look Vector Grid Image” per-pixel metadata (Figure A4.2) which gives the accurate 3-D components radar unit look vector used as for example in decomposing the vertical and horizontal component of an InSAR surface displacement estimate.
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.2a-S1-GSLC-x-component.png)**a)**
+![](./figures/figA4.2a-S1-GSLC-x-component.png)**a)**
 
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.2b-S1-GSLC-y-component.png)**b)**
-![](https://github.com/libbyrose/ceos-ard/blob/main/Product%20Family%20Specifications/SAR%20Example%20Products/figA4.2c-S1-GSLC-z-component.png)**c)**
+![](./figures/figA4.2b-S1-GSLC-y-component.png)**b)**
+![](./figures/figA4.2c-S1-GSLC-z-component.png)**c)**
 
 ***Figure A4.2**  3-D components radar unit look vector of the [GSLC] product in Figure A4.1.  **a)** x unit component; **b)** y unit component; **c)** z unit component*.
 
