@@ -11,7 +11,7 @@ Many satellite data users lack the expertise, infrastructure and internet bandwi
 
 Countries and international organizations have expressed a desire for support from CEOS to facilitate access to and processing of satellite data into CEOS Analysis Ready Data (CEOS-ARD) products. Systematic and regular provision of CEOS-ARD will greatly reduce the burden on global satellite data users.
 
-Read also into the [CEOS-ARD Strategy 2021](./CEOS-ARD Strategy 2021.pdf).
+Read also into the [CEOS-ARD Strategy 2021](./CEOS-ARD%20Strategy%202021.pdf).
 
 ## Product Family Specifications
 
@@ -25,7 +25,7 @@ The following Product Family Specifications are currently defined:
 
 ## Governance Framework
 
-The [CEOS-ARD Governance Framework](./CEOS-ARD Governance Framework 2021.pdf) covers:
+The [CEOS-ARD Governance Framework](./CEOS-ARD%20Governance%20Framework%202021.pdf) covers:
 
 ### Definition
 
@@ -48,7 +48,7 @@ Product Assessments checks how well the specific product complies with each of t
 
 The CEOS Working Group on Calibration & Validation (WGCV) has defined formal processes for how these assessments will be carried out, including the peer reviews that will be undertaken by the WGCV.
 
-A [self-assessment guide](./CEOS-ARD Self-Assessment Guide 2023.pdf) has been made available.
+A [self-assessment guide](./CEOS-ARD%20Self-Assessment%20Guide%202023.pdf) has been made available.
 
 ## STAC Extensions
 
