@@ -1,26 +1,24 @@
----
-name: SAR - Geocoded Single-Look Complex [GSLC]
-about: Report an issue or propose a change for the SAR PFS, which applies for the
-  Geocoded Single-Look Complex [GSLC] products.
+name: SAR - Polarimetric Radar [POL]
+description: Report an issue or propose a change for the SAR PFS, which applies for the Polarimetric Radar \[POL] products.
 labels:
-- SAR
-- 'SAR: GLSC'
-- needs discussion
+  - SAR
+  - 'SAR: GLSC'
+  - needs discussion
 body:
   - type: input
     id: version
     attributes:
       label: PFS Version
       description: What version of the PFS are you referring to?
-      placeholder: 0.0
+      placeholder: "e.g. 1.0"
+    validations:
+      required: true
   - type: input
     id: req-no
     attributes:
       label: Requirement number(s)
       description: Which requirement number(s) are you referring to?
-      placeholder: 0.0
-    validations:
-      required: false
+      placeholder: "e.g. 1.6"
   - type: textarea
     id: description
     attributes:
@@ -29,7 +27,4 @@ body:
       placeholder: Add your description here...
     validations:
       required: true
-
----
-
 
