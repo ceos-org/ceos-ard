@@ -3,7 +3,7 @@
 > **CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.**
 
 Visit [ceos.org/ard](https://ceos.org/ard) for more information on CEOS-ARD, self-assessments and CEOS-ARD certified datasets.
-[ceos.org/ard](https://ceos.org/ard) is the official reference for all CEOS-ARD documentation, while this repository remains a development version. 
+[ceos.org/ard](https://ceos.org/ard) is the official reference for all CEOS-ARD documentation, while this repository remains a development version.
 
 ## Framework
 
@@ -56,4 +56,4 @@ The CEOS-ARD Extension to the SpatioTemporal Asset Catalog (STAC) specification 
 
 ## Contact
 
-The CEOS-ARD team can be contacted at [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
+The CEOS-ARD team can be contacted at <ard-contact@lists.ceos.org>
