@@ -1,0 +1,20 @@
+name: Deploy latest specs
+on:
+  push:
+    branches:
+      - main
+    # paths:
+    #   - Specifications/**
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: mkdir docs
+      - uses: docker://pandoc/latex:3.2
+        with:
+          args: --standalone -o docs/CEOS-ARD_PFS_Aquatic-Reflectance_latest.pdf Specifications/Aquatic-Reflectance/README.md
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs
