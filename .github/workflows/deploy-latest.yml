@@ -3,18 +3,27 @@ on:
   push:
     branches:
       - main
-    # paths:
-    #   - Specifications/**
+    paths:
+      - Specifications/**
 jobs:
   deploy:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
       - run: mkdir docs
-      - uses: docker://pandoc/latex:3.2
+      - uses: docker://pandoc/core:3.2
         with:
-          args: --standalone -o docs/CEOS-ARD_PFS_Aquatic-Reflectance_latest.pdf Specifications/Aquatic-Reflectance/README.md
+          args: >-
+            --standalone
+            --shift-heading-level-by=-1
+            --from=gfm
+            --reference-doc=.github/pandoc-template.docx
+            --lua-filter=.github/pagebreak.lua
+            --output=docs/CEOS-ARD_PFS_Aquatic-Reflectance_latest.docx
+            --resource-path=Specifications/Aquatic-Reflectance
+            Specifications/Aquatic-Reflectance/README.md
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs
+          keep_files: true
