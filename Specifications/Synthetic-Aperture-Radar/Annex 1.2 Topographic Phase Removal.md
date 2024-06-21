@@ -1,3 +1,4 @@
+<!--lint disable-->
 <a name="_heading=h.toui5ropweft"></a>
 # **A1.2: Topographic phase removal** 
 InSAR analysis capabilities from CEOS-ARD SAR products are enabled with **[GSLC]** products, which is also the case when the Flattened Phase per-pixel data (item 3.7) are included in the **[NRB]** or **[POL]** products. This is made possible since the simulated topographic phase relative to a given reference orbit has been subtracted.

@@ -1,3 +1,4 @@
+<!--lint disable-->
 # **Annex 2: Polarimetric Radar [POL]**
 ## **A2.1: Normalised Covariance Matrices (CovMat)**
 In order to preserve the inter-channel polarimetric phase and thus the full information content of coherent dual-pol and fully polarimetric data, the covariance matrix is proposed as the data storage format. Covariance matrices are generated from the complex cross product of polarimetric channels, as shown in Eq. A2.1 for fully polarimetric data (C3) and in Eq. A2.2 for dual polarization data (C2). Since these matrices are complex symmetrical, only the upper diagonal elements (bold elements) need to be stored in the ARD database.

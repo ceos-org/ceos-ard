@@ -1,5 +1,9 @@
-![CEOS Analysis Ready Data](../../Logo/CEOS_ARD_Logo_blue_lowres.png)
-# CEOS-ARD Product Family Specification: Aquatic Surface Reflectance
+---
+title: CEOS-ARD Product Family Specification
+subtitle: Aquatic Surface Reflectance
+---
+
+![CEOS Analysis Ready Data](../../Logo/CEOS_ARD_Logo_for_PFS.png)
 
 ## Document History
 
@@ -38,6 +42,7 @@
 **Applies to:** Data collected with multispectral and hyperspectral sensors operating in the VIS/NIR/SWIR wavelengths over water bodies. These typically operate with ground sample distance and resolution in the order of 10-1000 m; however, the specification is not inherently limited to this resolution.
 
 &#12;
+
 ## Definitions
 
 |            Term            | Description                                                  |
@@ -53,6 +58,7 @@
 | Spatial Sampling Distance  | Spatial sampling distance is the barycentre-to-barycentre distance between adjacent spatial samples on the Earth's surface. |
 
 &#12;
+
 ## Requirements
 
 ### General Metadata
@@ -74,7 +80,7 @@
 | **1.11** |       **Sensor Calibration**       | Not required.  The general metadata does not include sensor calibration details. | Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata. Ideally this would support machine-to-machine access.&#10;*Note 1: Information on sensor calibration should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
 | **1.12** |      **Radiometric Accuracy**      | The metadata provides the number of bits required (e.g., 8, 10, 12, 14, 16, etc.). | The metadata includes metrics describing the assessed absolute radiometric uncertainty of the version of the data or product, expressed as absolute radiometric uncertainty relative to appropriate, known reference sites and standards (for example, pseudo-invariant calibration sites, rigorously collected field spectra, PICS, Rayleigh, DCC, etc.)&#10;*Note 1: Information on radiometric accuracy should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
 | **1.13** |           **Algorithms**           | All algorithms, and the sequence in which they were applied in the generation process, are identified in the metadata. For example, these may be available through Algorithm Theoretical Basis documents.&#10;*Note 1: Information on algorithms should be available in the metadata as a single DOI landing page.* | As threshold, but only algorithms that have been published in a peer-reviewed journal.&#10;*Note 1: It is possible that high-quality corrections are applied through non-disclosed processes. CARD4L does not per-se require full and open data and methods.*&#10;*Note 2: Information on algorithms should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
-| **1.14** |         **Auxiliary Data**         | The metadata identifies the sources of auxiliary data used in the generation process, ideally expressed as a single DOI landing page.&#10;*Note 1: Auxiliary data includes DEMs, aerosols, land mask, bathymetry, NO₂, etc. data sources.* | As threshold, but information on auxiliary data should be available in the metadata as a single DOI landing page and is also available for free online download, contemporaneously with the product or through a link to the source. |                           |                        |                                            |                                      |
+| **1.14** |         **Auxiliary Data**         | The metadata identifies the sources of auxiliary data used in the generation process, ideally expressed as a single DOI landing page.&#10;*Note 1: Auxiliary data includes DEMs, aerosols, land mask, bathymetry, $`NO_2`$, etc. data sources.* | As threshold, but information on auxiliary data should be available in the metadata as a single DOI landing page and is also available for free online download, contemporaneously with the product or through a link to the source. |                           |                        |                                            |                                      |
 | **1.15** |  **Processing Chain Provenance**   | Not required.                                                | Information on processing chain provenance should be available in the metadata as a single DOI landing page containing detailed description of the processing steps used to generate the product, including the versions of software used, giving full transparency to the users. |                           |                        |                                            |                                      |
 | **1.16** |          **Data Access**           | Information on data access should be available in the metadata as a single DOI landing page.&#10;*Note 1: Manual and offline interaction action (e.g., login) may be required.* | As threshold.                                                |                           |                        |                                            |                                      |
 | **1.17** |      **Overall Data Quality**      | Machine-readable metrics describing the overall quality of the data are included in the metadata, at minimum the cloud cover extent, i.e.: &#10;- Proportion of observations over land and over water affected by non-target phenomena, e.g., cloud and cloud shadows. | As threshold.                                                |                           |                        |                                            |                                      |
