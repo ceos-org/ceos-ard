@@ -27,7 +27,6 @@ plugins:
 # Headings
   - remark-lint-heading-increment
   - remark-lint-no-multiple-toplevel-headings
-  - remark-lint-no-heading-punctuation
   - - remark-lint-maximum-heading-length
     - 70
   - - remark-lint-heading-style
@@ -42,7 +41,7 @@ plugins:
   - - remark-lint-unordered-list-marker-style
     - '-'
   - - remark-lint-list-item-indent
-    - space
+    - one
 # Tables
   - remark-lint-table-pipes
   - remark-lint-no-literal-urls
