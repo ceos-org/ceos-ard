@@ -17,11 +17,11 @@ Read also into the [CEOS-ARD Strategy 2021](./CEOS-ARD%20Strategy%202021.pdf).
 
 The following Product Family Specifications are currently defined:
 
-- [Aquatic Reflectance (Optical)](./Aquatic-Reflectance/README.md)
-- [Nighttime Lights Surface Radiance (Optical)](./ANighttime-Lights-Surface-Radiance/README.md)
-- [Surface Reflectance (Optical)](./Surface-Reflectance/README.md)
-- [Surface Temperature (Optical)](./Surface-Temperature/README.md)
-- [Synthetic Aperture Radar](./Synthetic-Aperture-Radar/README.md)
+- [Aquatic Reflectance (Optical)](./Specifications/Aquatic-Reflectance/README.md)
+- [Nighttime Lights Surface Radiance (Optical)](./Specifications/Nighttime-Lights-Surface-Radiance/README.md)
+- [Surface Reflectance (Optical)](./Specifications/Surface-Reflectance/README.md)
+- [Surface Temperature (Optical)](./Specifications/Surface-Temperature/README.md)
+- [Synthetic Aperture Radar](./Specifications/Synthetic-Aperture-Radar/README.md)
 
 ## Governance Framework
 
