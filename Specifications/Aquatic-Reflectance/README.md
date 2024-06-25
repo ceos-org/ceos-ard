@@ -216,6 +216,7 @@ subtitle: Aquatic Surface Reflectance
 | 4.1 Geometric Correction                                     |              |        |
 
 &#12;
+
 ## Guidance
 
 This section aims to provide background and specific information on the processing steps that can be used to achieve analysis ready data. This Guidance material does not replace or over-ride the specifications.
