@@ -3,7 +3,7 @@
 > **CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.**
 
 Visit [ceos.org/ard](https://ceos.org/ard) for more information on CEOS-ARD, self-assessments and CEOS-ARD certified datasets.
-[ceos.org/ard](https://ceos.org/ard) is the official reference for all CEOS-ARD documentation, while this repository remains a development version. 
+[ceos.org/ard](https://ceos.org/ard) is the official reference for all CEOS-ARD documentation, while this repository remains a development version.
 
 ## Framework
 
@@ -17,11 +17,11 @@ Read also into the [CEOS-ARD Strategy 2021](./CEOS-ARD%20Strategy%202021.pdf).
 
 The following Product Family Specifications are currently defined:
 
-- [Aquatic Reflectance (Optical)](./Aquatic-Reflectance/README.md)
-- [Nighttime Lights Surface Radiance (Optical)](./ANighttime-Lights-Surface-Radiance/README.md)
-- [Surface Reflectance (Optical)](./Surface-Reflectance/README.md)
-- [Surface Temperature (Optical)](./Surface-Temperature/README.md)
-- [Synthetic Aperture Radar](./Synthetic-Aperture-Radar/README.md)
+- [Aquatic Reflectance (Optical)](./Specifications/Aquatic-Reflectance/README.md)
+- [Nighttime Lights Surface Radiance (Optical)](./Specifications/Nighttime-Lights-Surface-Radiance/README.md)
+- [Surface Reflectance (Optical)](./Specifications/Surface-Reflectance/README.md)
+- [Surface Temperature (Optical)](./Specifications/Surface-Temperature/README.md)
+- [Synthetic Aperture Radar](./Specifications/Synthetic-Aperture-Radar/README.md)
 
 ## Governance Framework
 
@@ -56,4 +56,4 @@ The CEOS-ARD Extension to the SpatioTemporal Asset Catalog (STAC) specification 
 
 ## Contact
 
-The CEOS-ARD team can be contacted at [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
+The CEOS-ARD team can be contacted at <ard-contact@lists.ceos.org>
