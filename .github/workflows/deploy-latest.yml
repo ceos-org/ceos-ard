@@ -21,7 +21,7 @@ jobs:
             --lua-filter=.github/pagebreak.lua
             --output=docs/CEOS-ARD_PFS_Aquatic-Reflectance_latest.docx
             --resource-path=Specifications/Aquatic-Reflectance
-            Specifications/Aquatic-Reflectance/README.md
+            Specifications/Aquatic-Reflectance/PFS.md
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
