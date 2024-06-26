@@ -11,7 +11,7 @@ subtitle: Aquatic Surface Reflectance
 | :------ | :--------- | :-------------------- | :----------------------------------------------------------- |
 | 1.0     | 2 Feb 2022 | Initial version.      | Andreia Siqueira (GA), Christopher Barnes (USGS/KBR), Steve Labahn, (USGS) Arnold Dekker (SatDek), Barbara Bulgarelli (JRC-EC), Carsten Brockmann (Brockmann Consulting), Daniela Gurlin (Wisconsin DNR), Joseph D. Ortiz (Kent State), Igor Ogashawara (IGB Berlin), Anthony Vodacek (RIT), Nima Pahlevan (NASA), Liesbeth de Keukelare (VITO), Ils Reusen (VITO), Steef Peters (WaterInsight), Claudia Giardino (CNR), Tiit Kutser (WaterForCE), Steve Greb (UW-Madison), Sindy Sterckx (VITO), Vittorio E. Brando (CNR), Merrie-Beth Neely (GeoAquaWatch), Paul Digiacomo (NOAA) |
 
-## Authors
+## Contributing Authors
 
 - Andreia Siqueira, GA
 - Christopher Barnes, USGS/KBR, USA
@@ -77,10 +77,10 @@ subtitle: Aquatic Surface Reflectance
 | **1.8**  | **Geometric Accuracy of the Data** | Not required.&#10;The user is not provided with results of geometric accuracy assessments pertaining to the dataset. | The metadata includes metrics describing the assessed geodetic accuracy of the data, expressed units of the coordinate system of the data. Accuracy is assessed by independent verification (as well as internal model-fit where applicable). Uncertainties are expressed quantitatively, for example, as root mean square error (RMSE) or Circular Error Probability (CEP90, CEP95), etc.&#10;*Note 1: Information on geometric accuracy of the data should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
 | **1.9**  |           **Instrument**           | The instrument used to collect the data is identified in the metadata. | As threshold, but information should be available in the metadata as a single DOI landing page with references to the relevant CEOS Missions, Instruments, and Measurements Database record. |                           |                        |                                            |                                      |
 | **1.10** |         **Spectral Bands**         | The central wavelength and full width at half maximum for each spectral band for which data is included is identified in the metadata, expressed in SI units. | As threshold, with instrument spectral response details (e.g., full spectral response function) also included or directly accessible using details in the metadata.&#10;*Note 1: Information on spectral bands should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
-| **1.11** |       **Sensor Calibration**       | Not required.  The general metadata does not include sensor calibration details. | Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata. Ideally this would support machine-to-machine access.&#10;*Note 1: Information on sensor calibration should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
+| **1.11** |       **Sensor Calibration**       | Not required.&#10;The general metadata does not include sensor calibration details. | Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata. Ideally this would support machine-to-machine access.&#10;*Note 1: Information on sensor calibration should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
 | **1.12** |      **Radiometric Accuracy**      | The metadata provides the number of bits required (e.g., 8, 10, 12, 14, 16, etc.). | The metadata includes metrics describing the assessed absolute radiometric uncertainty of the version of the data or product, expressed as absolute radiometric uncertainty relative to appropriate, known reference sites and standards (for example, pseudo-invariant calibration sites, rigorously collected field spectra, PICS, Rayleigh, DCC, etc.)&#10;*Note 1: Information on radiometric accuracy should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
 | **1.13** |           **Algorithms**           | All algorithms, and the sequence in which they were applied in the generation process, are identified in the metadata. For example, these may be available through Algorithm Theoretical Basis documents.&#10;*Note 1: Information on algorithms should be available in the metadata as a single DOI landing page.* | As threshold, but only algorithms that have been published in a peer-reviewed journal.&#10;*Note 1: It is possible that high-quality corrections are applied through non-disclosed processes. CARD4L does not per-se require full and open data and methods.*&#10;*Note 2: Information on algorithms should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
-| **1.14** |         **Auxiliary Data**         | The metadata identifies the sources of auxiliary data used in the generation process, ideally expressed as a single DOI landing page.&#10;*Note 1: Auxiliary data includes DEMs, aerosols, land mask, bathymetry, $`NO_2`$, etc. data sources.* | As threshold, but information on auxiliary data should be available in the metadata as a single DOI landing page and is also available for free online download, contemporaneously with the product or through a link to the source. |                           |                        |                                            |                                      |
+| **1.14** |         **Auxiliary Data**         | The metadata identifies the sources of auxiliary data used in the generation process, ideally expressed as a single DOI landing page.&#10;*Note 1: Auxiliary data includes DEMs, aerosols, land mask, bathymetry, $`NO_2``$, etc. data sources.* | As threshold, but information on auxiliary data should be available in the metadata as a single DOI landing page and is also available for free online download, contemporaneously with the product or through a link to the source. |                           |                        |                                            |                                      |
 | **1.15** |  **Processing Chain Provenance**   | Not required.                                                | Information on processing chain provenance should be available in the metadata as a single DOI landing page containing detailed description of the processing steps used to generate the product, including the versions of software used, giving full transparency to the users. |                           |                        |                                            |                                      |
 | **1.16** |          **Data Access**           | Information on data access should be available in the metadata as a single DOI landing page.&#10;*Note 1: Manual and offline interaction action (e.g., login) may be required.* | As threshold.                                                |                           |                        |                                            |                                      |
 | **1.17** |      **Overall Data Quality**      | Machine-readable metrics describing the overall quality of the data are included in the metadata, at minimum the cloud cover extent, i.e.: &#10;- Proportion of observations over land and over water affected by non-target phenomena, e.g., cloud and cloud shadows. | As threshold.                                                |                           |                        |                                            |                                      |
@@ -107,7 +107,7 @@ subtitle: Aquatic Surface Reflectance
 | **2.14** |          **Floating Vegetation/Surface Scum Mask**          | The metadata indicates whether a pixel is assessed as affected by floating vegetation/surface scum. | As threshold.                                                |                           |                        |                                            |                                      |
 | **2.15** |            **Aerosol Optical Depth Parameters**             | The metadata indicates either per-pixel spectral Aerosol Optical Depth (AOD), or per-pixel AOD (550nm) and Angstrom exponent. | As threshold.                                                |                           |                        |                                            |                                      |
 | **2.16** |                   **Deep/ Shallow Water**                   | Not required.                                                | The metadata indicates where available: the bottom depth referenced to the mean sea level for the oceans and referenced to mean levels for lakes. Information on bathymetry should be available in the metadata as a single DOI landing page. |                           |                        |                                            |                                      |
-| **2.17** |     **Optically Deep or Optically Shallow Assessment**      | The metadata indicates, based on likelihood (bathymetry maps and average $`K_d`$ (preferred) or based on turbidity or Secchi disk transparency), whether water pixels may be optically deep or optically shallow. This will most likely be bathymetry map contour based. | Based on an assessment from an inversion algorithm that estimates the optically deep or optically shallow per-pixel status. |                           |                        |                                            |                                      |
+| **2.17** |     **Optically Deep or Optically Shallow Assessment**      | The metadata indicates, based on likelihood (bathymetry maps and average $`K_d``$ (preferred) or based on turbidity or Secchi disk transparency), whether water pixels may be optically deep or optically shallow. This will most likely be bathymetry map contour based. | Based on an assessment from an inversion algorithm that estimates the optically deep or optically shallow per-pixel status. |                           |                        |                                            |                                      |
 | **2.18** |                    **Turbid Water Flag**                    | The metadata indicates whether a pixel is assessed as being turbid or not. Information on turbid water mask should be available in the metadata as a single DOI landing page. | As threshold.                                                |                           |                        |                                            |                                      |
 | **2.19** | **Bidirectional Reflectance Distribution Function Applied** | Not required.                                                | Metadata indicates which pixels are corrected for BRDF effects. |                           |                        |                                            |                                      |
 | **2.20** |                     **Altitude (ASL)**                      | The metadata indicates approximate altitude (ASL) of water body pixels is required for atmospheric correction (range = -430 to \~6500m) | As threshold.                                                |                           |                        |                                            |                                      |
@@ -118,7 +118,7 @@ subtitle: Aquatic Surface Reflectance
 
 |    #     |                             Item                             | Threshold (Minimum) Requirements                             | Target (Desired) Requirements                                | Threshold Self-Assessment | Target Self-Assessment | Self-Assessment Explanation/ Justification | Recommended Requirement Modification |
 | :------: | :----------------------------------------------------------: | :----------------------------------------------------------- | :----------------------------------------------------------- | :-----------------------: | :--------------------: | :----------------------------------------: | :----------------------------------: |
-| **3.1**  |                       **Measurement**                        | Pixel values are expressed as a measurement of the Aquatic Reflectance ($`AR = \pi \cdot R_{rs}`$) or the Remote Sensing Reflectance ($`sr^{-1}`$) of the water bodies. This is a dimensionless value. | Aquatic Reflectance or Remote Sensing Reflectance measurements are SI traceable (see also 1.1). |                           |                        |                                            |                                      |
+| **3.1**  |                       **Measurement**                        | Pixel values are expressed as a measurement of the Aquatic Reflectance ($`AR = \pi \cdot R_{rs}``$) or the Remote Sensing Reflectance ($`sr^{-1}``$) of the water bodies. This is a dimensionless value. | Aquatic Reflectance or Remote Sensing Reflectance measurements are SI traceable (see also 1.1). |                           |                        |                                            |                                      |
 | **3.2**  |                 **Measurement Uncertainty**                  | Not required.&#10;*Note 1: In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.* | An estimate of the uncertainty of the values is provided in measurement units. Following Guide to the Expression of Uncertainty in Measurement (GUM).&#10;*Note 1: This is a requirement for SI traceability. See also 1.1.*&#10;*Note 2: Information on measurement uncertainty should be available in the metadata as a single DOI landing page.* |                           |                        |                                            |                                      |
 | **3.3**  |                **Measurement Normalisation**                 | Not required.                                                | Measurements are normalised for solar and viewing conditions, including BRDF correction (see also 3.14).&#10;*Note 1: Information on measurement normalisation should be available in the metadata as single DOI landing page.* |                           |                        |                                            |                                      |
 | **3.4**  |            **Atmospheric Reflectance Correction**            | Metadata indicates corrections are applied for molecular (Rayleigh) scattering and aerosol scattering and absorption.&#10;Metadata contains a single DOI landing page with references to a citable peer-reviewed algorithm, technical documentation regarding the implementation of that algorithm and the sources of ancillary data used to make corrections.&#10;*Note 1: Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.* | As threshold.                                                |                           |                        |                                            |                                      |
@@ -139,31 +139,31 @@ subtitle: Aquatic Surface Reflectance
 
 |    #    |           Item           | Threshold (Minimum) Requirements                             | Target (Desired) Requirements                                | Threshold Self-Assessment | Target Self-Assessment | Self-Assessment Explanation/ Justification | Recommended Requirement Modification |
 | :-----: | :----------------------: | :----------------------------------------------------------- | :----------------------------------------------------------- | :-----------------------: | :--------------------: | :----------------------------------------: | :----------------------------------: |
-| **4.1** | **Geometric Correction** | Sub-pixel accuracy is achieved in relative geolocation, that is, the pixels from the same instrument and platform are consistently located, and are thus comparable, through time.&#10;&#10;Sub-pixel accuracy is taken to be less than or equal to 0.5-pixel radial root mean square error (rRMSE) or equivalent in Circular Error Probability (CEP) relative to a defined reference image.&#10;&#10;A consistent gridding/sampling frame is used, including common cell size, origin, and nominal sample point location within the cell (centre, ll, ur).&#10;&#10;Relevant metadata must be provided under 1.8 and 1.9.&#10;*Note 1: The threshold level will not necessarily enable interoperability between data from* different *sources as the geometric corrections for each of the sources may differ.* | Sub-pixel accuracy is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).&#10;&#10;A consistent gridding/sampling frame is necessary to meet this requirement.&#10;&#10;Relevant metadata must be provided under 1.8 and 1.9.&#10;*Note 1: This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction and with non-image spatial data such as GIS layers and terrain models.* |                           |                        |                                            |                                      |
+| **4.1** | **Geometric Correction** | Sub-pixel accuracy is achieved in relative geolocation, that is, the pixels from the same instrument and platform are consistently located, and are thus comparable, through time.&#10;Sub-pixel accuracy is taken to be less than or equal to 0.5-pixel radial root mean square error (rRMSE) or equivalent in Circular Error Probability (CEP) relative to a defined reference image.&#10;A consistent gridding/sampling frame is used, including common cell size, origin, and nominal sample point location within the cell (centre, ll, ur).&#10;Relevant metadata must be provided under 1.8 and 1.9.&#10;*Note 1: The threshold level will not necessarily enable interoperability between data from* different *sources as the geometric corrections for each of the sources may differ.* | Sub-pixel accuracy is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).&#10;A consistent gridding/sampling frame is necessary to meet this requirement.&#10;Relevant metadata must be provided under 1.8 and 1.9.&#10;*Note 1: This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction and with non-image spatial data such as GIS layers and terrain models.* |                           |                        |                                            |                                      |
 
 ## Summary Self-Assessment Table
 
 ### 1. General Metadata
 
-|                                                              |  Threshold   | Target |
-| :----------------------------------------------------------- | :----------: | :----: |
-| 1.1 Traceability                                             | Not Required |        |
-| 1.2 Metadata Machine Readability                             |              |        |
-| 1.3 Data Collection Time                                     |              |        |
-| 1.4 Geographical Area                                        |              |        |
-| 1.5 Coordinate Reference System                              |              |        |
-| 1.6 Map Projection                                           |              |        |
-| 1.7 Geometric Correction Methods                             | Not Required |        |
-| 1.8 Geometric Accuracy of the Data                           | Not Required |        |
-| 1.9 Instrument                                               |              |        |
-| 1.10 Spectral Bands                                          |              |        |
-| 1.11 Sensor Calibration                                      | Not Required |        |
-| 1.12 Radiometric Accuracy                                    |              |        |
-| 1.13 Algorithms                                              |              |        |
-| 1.14 Auxiliary Data                                          |              |        |
-| 1.15 Processing Chain Provenance                             | Not Required |        |
-| 1.16 Data Access                                             |              |        |
-| 1.17 Overall Data Quality                                    |              |        |
+|                                    |  Threshold   | Target |
+| :--------------------------------- | :----------: | :----: |
+| 1.1 Traceability                   | Not Required |        |
+| 1.2 Metadata Machine Readability   |              |        |
+| 1.3 Data Collection Time           |              |        |
+| 1.4 Geographical Area              |              |        |
+| 1.5 Coordinate Reference System    |              |        |
+| 1.6 Map Projection                 |              |        |
+| 1.7 Geometric Correction Methods   | Not Required |        |
+| 1.8 Geometric Accuracy of the Data | Not Required |        |
+| 1.9 Instrument                     |              |        |
+| 1.10 Spectral Bands                |              |        |
+| 1.11 Sensor Calibration            | Not Required |        |
+| 1.12 Radiometric Accuracy          |              |        |
+| 1.13 Algorithms                    |              |        |
+| 1.14 Auxiliary Data                |              |        |
+| 1.15 Processing Chain Provenance   | Not Required |        |
+| 1.16 Data Access                   |              |        |
+| 1.17 Overall Data Quality          |              |        |
 
 ### 2. Per-Pixel Metadata
 
@@ -209,17 +209,17 @@ subtitle: Aquatic Surface Reflectance
 | 3.13 Turbid Water Correction                                 |              |        |
 | 3.14 Bidirectional Reflectance Distribution Function Correction | Not Required |        |
 
-### Geometric Corrections
+### 4. Geometric Corrections
 
-|                                                              |  Threshold   | Target |
-| :----------------------------------------------------------- | :----------: | :----: |
-| 4.1 Geometric Correction                                     |              |        |
+|                          | Threshold | Target |
+| :----------------------- | :-------: | :----: |
+| 4.1 Geometric Correction |           |        |
 
 &#12;
 
 ## Guidance
 
-This section aims to provide background and specific information on the processing steps that can be used to achieve analysis ready data. This Guidance material does not replace or over-ride the specifications.
+This section aims to provide background and specific information on the processing steps that can be used to achieve analysis ready data. This Guidance material does not replace or override the specifications.
 
 ## Introduction to CARD4L
 
@@ -250,7 +250,7 @@ Target requirements anticipate continuous improvement of methods and evolution o
 
 ## Procedural Examples
 
-**Processes to produce Threshold Aquatic Reflectance CARD4L:**
+Processes to produce Threshold Aquatic Reflectance CARD4L.
 
 The following correction processes would typically be applied to produce CARD4L-AR Threshold:
 
@@ -262,7 +262,7 @@ The following additional processes could be applied to produce CARD4L-AR Target:
 
 ## Specific Examples
 
-**Processes to produce Threshold Aquatic Reflectance CARD4L.**
+Processes to produce Threshold Aquatic Reflectance CARD4L.
 
 - *No example processes are provided at this time.*
 
@@ -284,7 +284,7 @@ The following papers provide scientific and technical guidance:
 12. Dekker A.G., Phinn S.R., Anstee J.M., Bissett P., Brando, V.E., Casey, B., Fearns, P., Hedley, J., Klonowski, W., Lee, Z.P., Lynch, M., Lyons, M., Mobley, C. & Roelfsema, C., 2011. Intercomparison of shallow water bathymetry, hydro-optics and benthos mapping techniques in Australian and Caribbean coastal environments. Limnol. Oceanogr. Methods 9(9), 396-425, <https://doi.org/10.4319/lom.2011.9.396>. (*Supports requirement 2.17*)
 13. Dierssen, H.M., 2019. Hyperspectral measurements, parameterizations, and atmospheric correction of whitecaps and foam from visible to shortwave infrared for ocean color remote sensing. Front. Earth Sci. 7(14), <https://doi.org/10.3389/feart.2019.00014>. (*Supports requirements* *2.11 & 3.10*)
 14. Dierssen, H.M., 2021. Corrigendum: Hyperspectral measurements, parameterizations, and atmospheric correction of whitecaps and foam from visible to shortwave infrared for ocean color remote sensing. Front. Earth Sci. 9(683136), <https://doi.org/10.3389/feart.2021.683136>. (*Supports requirement 3.10*)
-15. Dworak, R., Liu, Y., Key, J., & Meier, W\.N., 2021. A blended sea ice concentration product from AMSR2 and VIIRS. Remote Sens. 13(15), 2982, <https://doi.org/10.3390/rs13152982>. (*Supports requirement 2.8*)
+15. Dworak, R., Liu, Y., Key, J., & Meier, W.N., 2021. A blended sea ice concentration product from AMSR2 and VIIRS. Remote Sens. 13(15), 2982, <https://doi.org/10.3390/rs13152982>. (*Supports requirement 2.8*)
 16. Fan, Y., Li, W., Voss, K.J., Gatebe, C.K., & Stamnes, K., 2016. Neural network method to correct bidirectional effects in water-leaving radiance. Appl. Opt. 55(1), 10-21. <https://doi.org/10.1364/AO.55.000010>. (*Supports requirements 2.19, 3.3, 3.14*)
 17. Foga, S., Scaramuzza, P.L., Guo, S., Zhu, Z., Dilley, R.D., Beckmann, T., Schmidt, G.L., Dwyer, J.L., Hughes, M.J., & Laue, B., 2017. Cloud detection algorithm comparison and validation for operational Landsat data products. Remote Sens. Environ. 194, 379-390, <https://doi.org/10.1016/j.rse.2017.03.026>. (*Supports requirement* 2.5)
 18. Frouin, R.J., Franz, B.A., Ibrahim, A., Knobelspiesse, K., Ahmad, Z., ..., & Zhai, P.-W., 2019. Atmospheric correction of satellite ocean-color imagery during the PACE era. Front. Earth Sci. 7(145), <https://doi.org/10.3389/feart.2019.00145>. (*Supports requirements 2.11 & 3.10*)
@@ -318,7 +318,7 @@ The following papers provide scientific and technical guidance:
 46. Pahlevan, N., Schott, J.R., Franz, B.A., Zibordi, Z., Markham, B., Bailey, S., Schaaf, C.B., Ondrusek, M., Greb, S., & Strait, C.M., 2017. Landsat 8 remote sensing reflectance (Rrs) products: Evaluations, intercomparisons, and enhancements. Remote Sens. Environ. 190, 289-301, <https://doi.org/10.1016/j.rse.2016.12.030>. (*Supports requirements 2.15, 3.6 & 3.7*)
 47. Park, Y.-J. & Ruddick, K., 2005. Model of remote-sensing reflectance including bidirectional effects for case 1 and case 2 waters. Appl. Opt. 44(7), 1236-1249, <https://doi.org/10.1364/AO.44.001236>. (*Supports requirements 2.19, 3.3 & 3.14*)
 48. Pekel, J.-F., Cottam, A., Gorelick, N., & Belward, A.S., 2016. High-resolution mapping of global surface water and its long-term changes. Nature 540, 418-422, <https://doi.org/10.1038/nature20584>. (*Supports requirement 2.7*)
-49. Robinson, W\.D., Franz, B.A., Patt, F.S., Bailey, S.W., & Werdell, P.J., 2003. Masks and Flags Updates. Chapter 6 In: Patt, F.S., et al., 2003: Algorithm Updates for the Fourth SeaWiFS Data Reprocessing. NASA Tech. Memo. 2003--206892, Vol. 22, Hooker, S.B. & Firestone, E.R, Eds., NASA Goddard Space Flight Center, Greenbelt, Maryland. (*Supports requirements 2.8 & 2.18*)
+49. Robinson, W.D., Franz, B.A., Patt, F.S., Bailey, S.W., & Werdell, P.J., 2003. Masks and Flags Updates. Chapter 6 In: Patt, F.S., et al., 2003: Algorithm Updates for the Fourth SeaWiFS Data Reprocessing. NASA Tech. Memo. 2003--206892, Vol. 22, Hooker, S.B. & Firestone, E.R, Eds., NASA Goddard Space Flight Center, Greenbelt, Maryland. (*Supports requirements 2.8 & 2.18*)
 50. Soppa, M.A., Silva, B., Steinmetz, F., Keith, D., Scheffler, D., Bohn, N., & Bracher, A., 2021. Assessment of Polymer atmospheric correction algorithm for hyperspectral remote sensing imagery over coastal waters. Sensors 21(12), 4125, <https://doi.org/10.3390/s21124125>. (*Supports requirements 2.19, 3.3 & 3.14*)
 51. Sterckx, S., Knaeps, E., Kratzer, S., & Ruddick, K., 2015. SIMilarity Environment Correction (SIMEC) applied to MERIS data over inland and coastal waters. Remote Sens. Environ. 157, 96-110, <https://doi.org/10.1016/j.rse.2014.06.017>. (*Supports requirement 3.11*)
 52. Stumpf, R.P., Arnone, R.A., Gould, Jr., R.W., Martinolich, P.M., & Ransibrahmanakul, V. 2003. A partially coupled ocean-atmosphere model for retrieval of water-leaving radiance from SeaWiFS in coastal waters. Chapter 9 In: Patt, F.S., et al., 2003: Algorithm Updates for the Fourth SeaWiFS Data Reprocessing. NASA Tech. Memo. 2003--206892, Vol. 22, Hooker, S.B. & Firestone, E.R., Eds., NASA Goddard Space Flight Center, Greenbelt, Maryland. (*Supports requirement 3.13*)

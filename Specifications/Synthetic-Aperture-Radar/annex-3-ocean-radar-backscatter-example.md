@@ -1,5 +1,5 @@
 <!--lint disable-->
-# **Annex 3: Ocean Radar Backscatter [ORB] example**
+# Annex 3: Ocean Radar Backscatter [ORB] example
 
 In contrast to **[NRB]** and **[POL]**, CEOS-ARD Ocean Radar Backscatter **[ORB]** products are geoid corrected and are provided in the Sigma-Nought (σE0) backscatter convention (Figure A3.1a), which is recommended for most ocean applications. In addition, availability of the “Local (or Ellipsoidal) Incidence Angle Image” (Figure A3.1d) and “Look Direction Image” per-pixel metadata are highly recommended (otherwise the general metadata “1.7.12 Look Direction Polynomials”) since they required for operational applications like ocean wind field estimates. 
 

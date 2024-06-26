@@ -1,5 +1,5 @@
 <!--lint disable-->
-# **Annex 1.1: General Processing Roadmap**
+# Annex 1.1: General Processing Roadmap
 The radiometric interoperability of CEOS-ARD SAR products is ensured by a common processing chain during production. The recommended processing roadmap involves the following steps:
 
 - Apply the best possible orbit parameters to give the most accurate product possible. These will have been projected to an ellipsoidal model such as WGS84. To achieve the level of geometric accuracy required for the DEM-based correction, precise orbit determination will be required.
@@ -19,12 +19,12 @@ Table A1.1 lists possible sequential steps and existing software tools (e.g., Ga
 
 |**Step**|**Implementation option**|
 | :- | :- |
-|1\. Orbital data refinement|Check xml date and delivered format. RADARSAT-2, pre EDOT (July 2015) replace. Post July 2015, check if ‘DEF’, otherwise replace. (Gamma - RSAT2\_vec)|
-|2\. Apply radiometric scaling Look-Up Table (LUT) to Beta-Nought|<p>Specification of LUT on ingest. </p><p>(Gamma - par\_RSAT2\_SLC/SG)</p>|
-|3\. Generate covariance matrix elements|Gamma – COV\_MATRIX|
-|4\. Radiometric terrain normalisation|Gamma - geo\_radcal2|
-|5\. Speckle filtering (Boxcar or Sigma Lee)|Custom scripting|
-|6\. Geometric terrain correction/Geocoding|Gamma – gc\_map and geocode\_back|
-|7\. Create metadata|Custom scripting|
+|1. Orbital data refinement|Check xml date and delivered format. RADARSAT-2, pre EDOT (July 2015) replace. Post July 2015, check if ‘DEF’, otherwise replace. (Gamma - RSAT2\_vec)|
+|2. Apply radiometric scaling Look-Up Table (LUT) to Beta-Nought|<p>Specification of LUT on ingest. </p><p>(Gamma - par\_RSAT2\_SLC/SG)</p>|
+|3. Generate covariance matrix elements|Gamma – COV\_MATRIX|
+|4. Radiometric terrain normalisation|Gamma - geo\_radcal2|
+|5. Speckle filtering (Boxcar or Sigma Lee)|Custom scripting|
+|6. Geometric terrain correction/Geocoding|Gamma – gc\_map and geocode\_back|
+|7. Create metadata|Custom scripting|
 
 

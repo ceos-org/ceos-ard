@@ -1,84 +1,59 @@
 <!--lint disable-->
-<img align="right" width="150" src="./Logo/CEOS_ARD_Logo_blue_lowres.png">
+---
+title: CEOS-ARD Product Family Specification
+subtitle: Synethetic Aperture Radar
+---
 
-# CEOS Analysis Ready Data <br> Product Family Specification: Synethetic Aperture Radar
-﻿
-|<a name="_heading=h.30j0zll"></a>**Version**|**Date**|**Description of change**|**Affected CEOS-ARD product**|**Author**|
+## Document History
+
+![CEOS Analysis Ready Data](../../Logo/CEOS_ARD_Logo_for_PFS.png)
+
+|Version|Date|Description of change|Affected CEOS-ARD product|Author|
 | :- | :- | :- | :- | :- |
-|0\.1|14-12-2022|Zero Draft based on the CARD4L NRB PFS v5.5, POL PFS 3.5, ORB PFS v1.0 and draft GSLC v0.1 |-|<p>Charbonneau</p><p>Truckenbrodt</p>|
-|0\.2|13-02-2023|<p>Reformat to CEOS-ARD PFS template. Change “CARD4L” to “CEOS-ARD”</p><p>Change “Target” to “Goal”</p>|-|Rosenqvist|
-|0\.3|29-07-2023|<p>Refinement of GSLC specifications and alignment with NRB, POL and ORB parameters. </p><p></p><p>Annex reorganization and ORB and GSLC examples added</p>|[GSLC]|Charbonneau, Zebker, Rosenqvist, Albinet, Small, Truckenbrodt|
-|0\.3.1|26-09-2023|New items 1.7.15 (Reference orbit) and 3.7 (Flattened Phase) added as Goal|[NRB] [POL]|Charbonneau|
-|0\.4|26-09-2023|Item 4.3 (Geometric accuracy). Clarification added to indicate whether absolute location accuracy (ALE) estimates refer to source data, ARD product, or both.|[NRB] [POL] [ORB] [GSLC]|Small, Chapman, Charbonneau, Rosenqvist, Albinet, Truckenbrodt|
-|0\.4.1|11-10-2023|Add product code in summary table|     |Rosenqvist|
-|1\.0|11-10-2023|CEOS-ARD for SAR PFS – including Geocoded Single-Look Complex v1.0 – endorsed at LSI-VC-14     |     |LSI-VC|
+|0.1|14-12-2022|Zero Draft based on the CARD4L NRB PFS v5.5, POL PFS 3.5, ORB PFS v1.0 and draft GSLC v0.1 |-|<p>Charbonneau</p><p>Truckenbrodt</p>|
+|0.2|13-02-2023|<p>Reformat to CEOS-ARD PFS template. Change “CARD4L” to “CEOS-ARD”</p><p>Change “Target” to “Goal”</p>|-|Rosenqvist|
+|0.3|29-07-2023|<p>Refinement of GSLC specifications and alignment with NRB, POL and ORB parameters. </p><p></p><p>Annex reorganization and ORB and GSLC examples added</p>|[GSLC]|Charbonneau, Zebker, Rosenqvist, Albinet, Small, Truckenbrodt|
+|0.3.1|26-09-2023|New items 1.7.15 (Reference orbit) and 3.7 (Flattened Phase) added as Goal|[NRB] [POL]|Charbonneau|
+|0.4|26-09-2023|Item 4.3 (Geometric accuracy). Clarification added to indicate whether absolute location accuracy (ALE) estimates refer to source data, ARD product, or both.|[NRB] [POL] [ORB] [GSLC]|Small, Chapman, Charbonneau, Rosenqvist, Albinet, Truckenbrodt|
+|0.4.1|11-10-2023|Add product code in summary table|     |Rosenqvist|
+|1.0|11-10-2023|CEOS-ARD for SAR PFS – including Geocoded Single-Look Complex v1.0 – endorsed at LSI-VC-14     |     |LSI-VC|
 
-<a name="_heading=h.oq5oi4r2r64e"></a>
-# **Contributing Authors**
-François Charbonneau, Natural Resources Canada, Canada
+## Contributing Authors
 
-Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency, Japan
+- François Charbonneau, Natural Resources Canada, Canada
+- Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency, Japan
+- John Truckenbrodt, German Aerospace Centre (DLR), Germany
+- Clément Albinet, European Space Agency (ESA), Italy
+- David Small, University of Zurich, Switzerland
+- Bruce Chapman, Jet Propulsion Laboratory, USA
+- Howard Zebker, Stanford University, USA
+- Danilo Dadamia, CONAE, Argentina
+- Benjamin Deschamps, Environment and Climate Change, Canada
+- Guillaume Hajduch, Collecte Localisation Satellites, France
+- Josef Kellndorfer, Earth Big Data, USA
+- Marco Lavalle, Jet Propulsion Laboratory, USA
+- Thomas Logan, Alaska Satellite Facility, USA
+- Franz Meyer, Alaska Satellite Facility, USA
+- Nuno Miranda, European Space Agency (ESA), Italy
+- Muriel Pinheiro, European Space Agency (ESA), Italy
+- Marko Repse, Sinergise, Slovenia
+- HariPriya Sakethapuram, ISRO, India
+- Andreia Siqueira, Geoscience Australia, Australia
+- Takeo Tadono, Japan Aerospace Exploration Agency, Japan
+- Medhavy Thankappan, Geoscience Australia, Australia
+- Antonio Valentino, RHEA *for* European Space Agency (ESA), Italy
+- Anna Wendleder, German Aerospace Centre (DLR), Germany
+- Fang Yuan, Digital Earth Africa, Australia
+- Zheng-Shu Zhou, CSIRO, Australia
 
-John Truckenbrodt, German Aerospace Centre (DLR), Germany
+## Description
 
-Clément Albinet, European Space Agency (ESA), Italy
-
-David Small, University of Zurich, Switzerland
-
-Bruce Chapman, Jet Propulsion Laboratory, USA
-
-Howard Zebker, Stanford University, USA
-
-Danilo Dadamia, CONAE, Argentina
-
-Benjamin Deschamps, Environment and Climate Change, Canada
-
-Guillaume Hajduch, Collecte Localisation Satellites, France
-
-Josef Kellndorfer, Earth Big Data, USA
-
-Marco Lavalle, Jet Propulsion Laboratory, USA
-
-Thomas Logan, Alaska Satellite Facility, USA
-
-Franz Meyer, Alaska Satellite Facility, USA
-
-Nuno Miranda, European Space Agency (ESA), Italy
-
-Muriel Pinheiro, European Space Agency (ESA), Italy
-
-Marko Repse, Sinergise, Slovenia
-
-HariPriya Sakethapuram, ISRO, India
-
-Andreia Siqueira, Geoscience Australia, Australia
-
-Takeo Tadono, Japan Aerospace Exploration Agency, Japan
-
-Medhavy Thankappan, Geoscience Australia, Australia
-
-Antonio Valentino, RHEA *for* European Space Agency (ESA), Italy
-
-Anna Wendleder, German Aerospace Centre (DLR), Germany
-
-Fang Yuan, Digital Earth Africa, Australia
-
-Zheng-Shu Zhou, CSIRO, Australia
-
-
-# **CEOS Analysis Ready Data Definition**
-*“CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.”*
-
-# **Description**
 **Product Family Specification Title: 	Synthetic Aperture Radar (CEOS-ARD SAR)**
 
-**Applies to:**  				Data collected by Synthetic Aperture Radar sensors
+**Applies to:** Data collected by Synthetic Aperture Radar sensors
 
+## Background to CEOS-ARD for Synthetic Aperture Radar
 
-
-
-
-# **Background to CEOS-ARD for Synthetic Aperture Radar**
 The CEOS Analysis Ready Data (CEOS-ARD) Product Family Specification (PFS) for Synthetic Aperture Radar (SAR) data is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing. 
 
 This CEOS-ARD for Synthetic Aperture Radar PFS incorporates, into a single generic document, the following four CEOS-ARD SAR specifications endorsed by CEOS Land Surface Imaging-Virtual Constellation (CEOS LSI-VC):
@@ -88,15 +63,13 @@ This CEOS-ARD for Synthetic Aperture Radar PFS incorporates, into a single gener
 - Ocean Radar Backscatter [version 1.0]
 - Geocoded Single-Look Complex [version 1.0]	
 
-The **CEOS-ARD Normalised Radar Backscatter [NRB]** specification describes products that have been subject to Radiometric Terrain Correction (RTC) and are provided in the Gamma-Nought ($\gamma^0_T$) backscatter convention (Small, 2011), which mitigates the variations from diverse observation geometries and is recommended for most land applications. An additional metadata layer can be optionally provided for conversion of $\gamma^0_T$ to Sigma-Nought ($\sigma^0_T$) backscatter layer for compatibility with legacy software or numerical models. As the **[NRB]** product contains backscatter values only, it cannot be directly used for SAR polarimetry or interferometric applications that require relative polarization phase or local phase estimates respectively. However, as an option, a “flattened” phase data layer can be provided with an **[NRB]** product for enabling InSAR analysis. The flattened phase is the interferometric phase, with respect to a reference orbit and to a DEM, for which the topographic phase contribution is removed. 
-
-
+The **CEOS-ARD Normalised Radar Backscatter [NRB]** specification describes products that have been subject to Radiometric Terrain Correction (RTC) and are provided in the Gamma-Nought ($`\gamma^0_T`$) backscatter convention (Small, 2011), which mitigates the variations from diverse observation geometries and is recommended for most land applications. An additional metadata layer can be optionally provided for conversion of $`\gamma^0_T`$ to Sigma-Nought ($`\sigma^0_T`$) backscatter layer for compatibility with legacy software or numerical models. As the **[NRB]** product contains backscatter values only, it cannot be directly used for SAR polarimetry or interferometric applications that require relative polarization phase or local phase estimates respectively. However, as an option, a “flattened” phase data layer can be provided with an **[NRB]** product for enabling InSAR analysis. The flattened phase is the interferometric phase, with respect to a reference orbit and to a DEM, for which the topographic phase contribution is removed. 
 
 The **CEOS-ARD** **Polarimetric Radar [POL]** product format is an extension of the CEOS-ARD Normalised Radar Backscatter format **[NRB]**. This extension is required in order to better support Level-1 SLC polarimetric data, including full-polarimetric modes (e.g., RADARSAT-2, ALOS-2/4, SAOCOM-1 and future missions), and hybrid or linear dual-polarimetric modes (i.e., Compact Polarimetric mode available on RCM, SAOCOM and the upcoming NISAR mission). The **[POL]** product can be defined in two processing levels:
 
-- The normalised covariance matrix **[CovMat]** representation (C2 or C3) which preserves the inter-channel polarimetric phase(s) and maximizes the available information for users. Interoperability within current CEOS-ARD SAR backscatter definition is preserved, since diagonal elements of the covariance matrix are backscatter intensities. Scattering information enhancement can be achieved by applying incoherent polarimetric decomposition techniques (e.g., Freeman-Durden, van Zyl, Cloude-Pottier, Yamaguchi-based) directly on the C2 or C3 matrix. 
+The **normalised covariance matrix [CovMat]** representation (C2 or C3) which preserves the inter-channel polarimetric phase(s) and maximizes the available information for users. Interoperability within current CEOS-ARD SAR backscatter definition is preserved, since diagonal elements of the covariance matrix are backscatter intensities. Scattering information enhancement can be achieved by applying incoherent polarimetric decomposition techniques (e.g., Freeman-Durden, van Zyl, Cloude-Pottier, Yamaguchi-based) directly on the C2 or C3 matrix. 
 
-- Polarimetric Radar Decomposition **[PRD]** refers to ARD products where polarimetric information is broken down into simplified parameters to facilitate user interpretation of the data. They are derived from coherent or incoherent polarimetric decomposition techniques. 
+**Polarimetric Radar Decomposition [PRD]** refers to ARD products where polarimetric information is broken down into simplified parameters to facilitate user interpretation of the data. They are derived from coherent or incoherent polarimetric decomposition techniques. 
 
 **Notice and Limitations [POL]**
 
@@ -104,23 +77,23 @@ For Polarimetric Radar **[POL]** products, optimal incoherent Polarimetric Radar
 
 It is recommended that ARD providers who desire to distribute **[PRD]** products decompose the polarimetric information starting from Level-1 SLC data and then geocode the derived parameters rather than use the **[CovMat]** ARD product. Resampling can be performed using any of the supported methods (nearest-neighbour, bilinear, average, bi-cubic spline or Lanczos are recommended), which need to be indicated in the product metadata. Note that coherent decomposition techniques cannot be performed on **[CovMat]** ARD products.
 
-
-
 Covariance matrix products contain a variable number of layers (or bands) with different data types depending on the polarimetric mode (full or dual) and decomposition technique. The **[CovMat]** products for the C2 matrix have 3 layers (2 real-valued diagonal elements and            1 complex-valued off-diagonal element). **[CovMat]** products for the C3 matrix have 6 layers (3 real-valued diagonal elements and 3 complex-valued off-diagonal elements). Layers that can be obtained via a complex conjugation of other layers are not provided within the product. Polarimetric Decomposition products contain typically 2 to 4 (or more) real-valued layers depending on the particular decomposition algorithm. Within the **[CovMat]** product files, ARD layers are organized in order to reduce access delays and maximize efficiency in extracting the desired information. In **[CovMat]** products, geographically contiguous samples for each layer may be stored next to each other and organized “layer by layer”. Alternatively, samples belonging to the same covariance matrix might be stored next to each other and organized “matrix by matrix”. **[PRD]** products are organized “layer by layer”, i.e., with bands corresponding to the output of the polarimetric decomposition stored next to each other. ). 
 
-The **CEOS-ARD Ocean Radar Backscatter [ORB]** product specification describes products that have been projected on a geoid and are provided in the Sigma-Nought ($\sigma^0$) backscatter convention, which is recommended for most ocean applications. Backscatter may be calibrated to the ellipsoid ($\sigma^0_E$) or radiometrically terrain corrected ($\sigma^0_T$) prior to geometric terrain correction. As the basic **[ORB]** product contains backscatter values only, it *cannot* be directly used for SAR polarimetry or interferometric applications that require local phase estimates. Nonetheless, an advanced **[ORB]** product could include the upper diagonal of the polarimetric $\sigma^0$ covariance matrix for enabling advanced polarimetric analysis (similar to the **[POL]** product). 
+The **CEOS-ARD Ocean Radar Backscatter [ORB]** product specification describes products that have been projected on a geoid and are provided in the Sigma-Nought ($`\sigma^0`$) backscatter convention, which is recommended for most ocean applications. Backscatter may be calibrated to the ellipsoid ($`\sigma^0_E`$) or radiometrically terrain corrected ($`\sigma^0_T`$) prior to geometric terrain correction. As the basic **[ORB]** product contains backscatter values only, it *cannot* be directly used for SAR polarimetry or interferometric applications that require local phase estimates. Nonetheless, an advanced **[ORB]** product could include the upper diagonal of the polarimetric $`\sigma^0`$ covariance matrix for enabling advanced polarimetric analysis (similar to the **[POL]** product). 
 
-The **CEOS-ARD Geocoded Single-Look Complex (GSLC)** product is relevant to interferometric studies. The **[GSLC]** product is derived from the range-Doppler (i.e. slant range) Single-Look Complex (SLC) product using a DEM and the orbital state vectors and output in the map projected system. The phase of a geocoded SLC is “flattened” with respect to a reference orbit and to a DEM, to eliminate topographic phase contributions [Zebker et al., 2017 and Zheng and Zebker, 2017]. The sample spacing of the **[GSLC]** product in the map coordinate directions is comparable to the full resolution original SLC product. The **[GSLC]** product can be directly overlaid on a map or combined with other similar **[GSLC]** products to derive interferograms and create change maps, for example. Since the **[GSLC]** phase is flattened, the phase difference between two **[GSLC]** products** acquired on a same relative orbit produces an interferogram referring only to surface displacement and noise (i.e., no topographic fringes). The **[GSLC]** product may optionally** be radiometrically terrain corrected such that the squared amplitude yields $\gamma^0_T$.
-
+The **CEOS-ARD Geocoded Single-Look Complex (GSLC)** product is relevant to interferometric studies. The **[GSLC]** product is derived from the range-Doppler (i.e. slant range) Single-Look Complex (SLC) product using a DEM and the orbital state vectors and output in the map projected system. The phase of a geocoded SLC is “flattened” with respect to a reference orbit and to a DEM, to eliminate topographic phase contributions [Zebker et al., 2017 and Zheng and Zebker, 2017]. The sample spacing of the **[GSLC]** product in the map coordinate directions is comparable to the full resolution original SLC product. The **[GSLC]** product can be directly overlaid on a map or combined with other similar **[GSLC]** products to derive interferograms and create change maps, for example. Since the **[GSLC]** phase is flattened, the phase difference between two **[GSLC]** products** acquired on a same relative orbit produces an interferogram referring only to surface displacement and noise (i.e., no topographic fringes). The **[GSLC]** product may optionally** be radiometrically terrain corrected such that the squared amplitude yields $`\gamma^0_T`$.
 
 As can be seen from the above PFS descriptions, only a few minor details in terms of generated parameters and/or the addition of supplemental data distinguish these CEOS-ARD products. In part, they are to a large extent all backward-compatible. For example, [POL] products implicitly include [NRB] products, while a coastal [NRB] or [POL] product can simply be made compatible with other [ORB] products by applying gamma-to-sigma conversion. Just as [GSLC] can be converted to [NRB], the inverse conversion can be made true by including the optional topographically flattened phase. In this way a [NRB] or [POL] product can be used like a [GSLC] for InSAR applications. Consequently, it becomes obvious that they all can follow a common approach, in terms of content and structure, in order to optimize their interoperability. 
 
 For this generic **CEOS-ARD for Synthetic Aperture Radar** PFS, as for the individual **[NRB]**, **[POL]**, **[ORB]**, and **[GSLC]** PFSs, metadata requirements are defined under two categories: Threshold and Goal. **Threshold requirements** refer to metadata parameters or data files which are mandatorily required in a product in order to be CEOS-ARD compliant. **Goal requirements** (formerly referred to as Target) are complementary metadata parameters or data files that are desirable or more accurate but more constraining/challenging to achieve depending on the SAR missions and the data provider constraints. Since this document integrates four CEOS-ARD PFSs, it is worth noting that some requirements have been “relaxed” for a few Threshold parameters, depending on the applications/environment of the CEOS-ARD product. Exceptions are identified in the tables by specifying the usage.
 
-# **Definitions and Abbreviations**
+&#12;
 
+# Definitions and Abbreviations
+
+|            Term            | Description                                                  |
+| :------------------------: | :----------------------------------------------------------- |
 |Ancillary Data|Data other than instrument measurements, originating in the instrument itself or from the satellite, required to perform processing of the data. They include orbit data, attitude data, time information, spacecraft engineering data, calibration data, data quality information, and data from other instruments.|
-| :-: | :- |
 |Auxiliary Data|The data required for instrument processing, which does not originate in the instrument itself or from the satellite. Some auxiliary data will be generated in the ground segment, whilst other data will be provided from external sources.|
 |CEOS-ARD|Committee on Earth Observation Satellites - Analysis Ready Data|
 |CovMat|Normalised Radar Covariance Matrix|
@@ -136,10 +109,12 @@ For this generic **CEOS-ARD for Synthetic Aperture Radar** PFS, as for the indiv
 |Spatial Resolution|The smallest size objects that can be distinguished by the sensor at the ground surface.|
 |Spatial Sampling Distance|Spatial sampling distance is the great circle distance on the reference surface distance between adjacent spatial samples on the Earth's surface.|
 
+&#12;
 
-   
-# **Requirements**
-## **General Metadata** 
+## Requirements
+
+### General Metadata
+
 *These are metadata records describing a distributed collection of pixels. The collection of pixels referred to must be contiguous in space and time. General metadata should allow the user to assess the overall suitability of the dataset and must meet the requirements listed below. The column “CEOS-ARD product” indicates to which CEOS-ARD SAR product (NRB, POL, ORB, GSLC) the parameter refers.*
 
 <table><tr><th colspan="1"><b>#</b></th><th colspan="1"><b>Parameter</b></th><th colspan="1"><b>CEOS-ARD product</b></th><th colspan="1"><b>Requirements</b></th><th colspan="1"><b>Self-Assessment</b></th></tr>
@@ -215,8 +190,8 @@ For this generic **CEOS-ARD for Synthetic Aperture Radar** PFS, as for the indiv
 <tr><td colspan="1"><p><b>Goal (Desired) Requirements</b></p><p><b>Usage:</b> For <b>[NRB] & [POL]</b> only when per-pixel metadata 3.7 (Flattened phase) is provided. For <b>[GSLC]</b> when a reference orbit is used instead of a virtual orbit (see Annex A 1.2).</p><p></p><p>Provide the absolute orbit number used as reference for topographic phase flattening. In case a virtual orbit has been used, provide orbit parameters or orbit state vectors as DOI or URL.</p><p></p><p>Provide scene-centred perpendicular baseline for the for the source data relative to the reference orbit used (for approximate use only).</p></td></tr>
 </table>
 
-<a name="_heading=h.2et92p0"></a><a name="_heading=h.tyjcwt"></a>
-## **Per-Pixel Metadata**
+
+### Per-Pixel Metadata
 The following minimum metadata specifications apply to each pixel. Whether the metadata are provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider. Per-pixel metadata should allow users to discriminate between (choose) observations on the basis of their individual suitability for applications. Cloud optimized file formats are recommended.
 
 *The column “CEOS-ARD product” indicates which CEOS-ARD SAR product(s) (NRB, POL, ORB, GSLC) the parameter refers to.*
@@ -274,8 +249,7 @@ The following minimum metadata specifications apply to each pixel. Whether the m
 <tr><td colspan="1"><p><b>Goal (Desired) Requirements</b></p><p>Phase correction value at each pixel, if applied. DOI/URL reference to algorithm or brief description is provided.</p><p></p><p>File format specifications/ contents provided in metadata:</p><p>- Sample Type [Angle]</p><p>- Data Format [Raw/GeoTIFF/NetCDF, …]</p><p>- Data Type [Float, ...]</p><p>- Bits per Sample</p><p>- Byte Order</p></td></tr>
 </table>
 
-## <a name="_heading=h.3dy6vkm"></a>**
-## <a name="_heading=h.1t3h5sf"></a>**Radiometrically Corrected Measurements** 
+### Radiometrically Corrected Measurements
 *The requirements indicate the necessary outcomes and, to some degree, the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to normalised measurement(s) of backscatter intensity and/or decomposed polarimetric parameters. As for the per-pixel metadata, information regarding data format specification needs to be provided for each record. The requirements below must be met for all pixels/samples/observations in a collection. Cloud optimized file formats are recommended.*
 
 *The column “CEOS-ARD product” indicates which CEOS-ARD SAR product (NRB, POL, ORB, GSLC) the parameter refers to.*
@@ -303,8 +277,7 @@ The following minimum metadata specifications apply to each pixel. Whether the m
 <tr><td colspan="1"><p><b>Goal (Desired) Requirements</b></p><p><b>Usage: Alternative to [GSLC] product for [NRB] and [POL] products</b></p><p>The Flattened Phase is the interferometric phase for which the topographic phase contribution is removed. It is derived from the range-Doppler SLC product using a DEM and the orbital state vectors with respect to a reference orbit (see Annex A1.2). The use of the Flattened Phase with the <b>[NRB]</b> or <b>[POL]</b> intensity (3.1 Backscatter measurement) provides the [GSLC] equivalent, as follows: </p><p><b>GSLC</b> = sqrt(<b>NRB</b>) x exp(j FlattenPhase)</p><p>File format specifications/contents provided in metadata:</p><p>- Measurement Type [Flattened Phase]</p><p>- Reference Polarization [HH/HV/VV/VH]</p><p>- Data Format [GeoTIFF/NetCDF, …]</p><p>- Data Type [Int/Float, ...]</p><p>- Bits per Sample</p><p>- Byte Order</p><p></p><p>In case of polarimetric data, indicate the reference polarization.</p></td></tr>
 </table>
 
-## <a name="_heading=h.4d34og8"></a>**
-## <a name="_heading=h.2s8eyo1"></a>**Geometric Corrections**
+### Geometric Corrections
 Geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared. This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready. 
 
 *The column “CEOS-ARD product” indicates to which CEOS-ARD SAR product (NRB, POL, ORB, GSLC) the parameter refers.*
@@ -322,89 +295,94 @@ Geometric corrections are steps that are taken to place the measurement accurate
 <tr><td colspan="1"><p><b>Goal (Desired) Requirements</b></p><p>Provide DOI or URL to gridding convention used.</p><p></p><p>When multiple providers share a common map projection, providers are encouraged to standardise the origins of their products among each other.</p><p></p><p>In the case of UTM/UPS coordinates, the upper left corner coordinates should be set to an integer multiple of sample intervals from a 100 km by 100 km grid tile of the Military Grid Reference System's 100k coordinates (“snap to grid”).   </p><p></p><p>For products presented in geographic coordinates (latitude and longitude), the origin should be set to an integer multiple of samples in relation to the closest integer degree.</p></td></tr>
 </table>
 
-# <a name="_heading=h.17dp8vu"></a>**Summary Self-Assessment Table**
+## Summary Self-Assessment Table
 
-||||**Threshold**|**Goal**|
+|||| Threshold | Goal |
 | :-: | :- | :- | :-: | :-: |
 |**1**|**CEOS-ARD product**|**General Metadata**|||
-|1\.1|[ALL]|Traceability|||
-|1\.2|[ALL]|Metadata Machine Readability|||
-|1\.3|[ALL]|Product Type|||
-|1\.4|[ALL]|Document Identifier|||
-|1\.5|[ALL]|Data Collection Time|||
+|1.1|[ALL]|Traceability|||
+|1.2|[ALL]|Metadata Machine Readability|||
+|1.3|[ALL]|Product Type|||
+|1.4|[ALL]|Document Identifier|||
+|1.5|[ALL]|Data Collection Time|||
 |**1.6**||**Source Data Attributes**|||
-|1\.6.1|[ALL]|Source Data Access|||
-|1\.6.2|[ALL]|Instrument|||
-|1\.6.3|[ALL]|Source Data Acquisition Time|||
-|1\.6.4|[ALL]|Source Data Acquisition Parameters|||
-|1\.6.5|[ALL]|Source Data Orbit Information|||
-|1\.6.6|[ALL]|Source Data Processing Parameters|||
-|1\.6.7|[ALL]|Source Data Image Attributes|||
-|1\.6.8|[ALL]|Sensor Calibration|||
-|1\.6.9|[ALL]|Performance Indicators|||
-|1\.6.10|[ALL]|Source Data Polarimetric Calibration Matrices|||
-|1\.6.11|[ALL]|Mean Faraday Rotation Angle|||
-|1\.6.12|[ALL]|Ionosphere indicator|||
+|1.6.1|[ALL]|Source Data Access|||
+|1.6.2|[ALL]|Instrument|||
+|1.6.3|[ALL]|Source Data Acquisition Time|||
+|1.6.4|[ALL]|Source Data Acquisition Parameters|||
+|1.6.5|[ALL]|Source Data Orbit Information|||
+|1.6.6|[ALL]|Source Data Processing Parameters|||
+|1.6.7|[ALL]|Source Data Image Attributes|||
+|1.6.8|[ALL]|Sensor Calibration|||
+|1.6.9|[ALL]|Performance Indicators|||
+|1.6.10|[ALL]|Source Data Polarimetric Calibration Matrices|||
+|1.6.11|[ALL]|Mean Faraday Rotation Angle|||
+|1.6.12|[ALL]|Ionosphere indicator|||
 |**1.7**||**CEOS-ARD Product Attributes**|||
-|1\.7.1|[ALL]|Product Data Access|||
-|1\.7.2|[ALL]|Auxiliary Data|||
-|1\.7.3|[ALL]|Product Sample Spacing|||
-|1\.7.4|<p>[NRB]</p><p>[POL]</p><p>[ORB]</p>|Product Equivalent Number of Looks|||
-|1\.7.5|[ALL]|Product Resolution|||
-|1\.7.6|<p>[NRB]</p><p>[POL]</p><p>[ORB]</p>|Product Filtering|||
-|1\.7.7|[ALL]|Product Bounding Box|||
-|1\.7.8|[ALL]|Product Geographical Extent|||
-|1\.7.9|[ALL]|Product Image Size|||
-|1\.7.10|[ALL]|Product Pixel Coordinate Convention|||
-|1\.7.11|[ALL]|Product Coordinate Reference System|||
-|1\.7.12|[ORB]|Look Direction Polynomials|||
-|1\.7.13|[GSLC]|Radar Unit Look Vector|||
-|1\.7.14|[GSLC]|Slant Range Sensor to Surface|||
-|1\.7.15|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Reference Orbit|||
+|1.7.1|[ALL]|Product Data Access|||
+|1.7.2|[ALL]|Auxiliary Data|||
+|1.7.3|[ALL]|Product Sample Spacing|||
+|1.7.4|<p>[NRB]</p><p>[POL]</p><p>[ORB]</p>|Product Equivalent Number of Looks|||
+|1.7.5|[ALL]|Product Resolution|||
+|1.7.6|<p>[NRB]</p><p>[POL]</p><p>[ORB]</p>|Product Filtering|||
+|1.7.7|[ALL]|Product Bounding Box|||
+|1.7.8|[ALL]|Product Geographical Extent|||
+|1.7.9|[ALL]|Product Image Size|||
+|1.7.10|[ALL]|Product Pixel Coordinate Convention|||
+|1.7.11|[ALL]|Product Coordinate Reference System|||
+|1.7.12|[ORB]|Look Direction Polynomials|||
+|1.7.13|[GSLC]|Radar Unit Look Vector|||
+|1.7.14|[GSLC]|Slant Range Sensor to Surface|||
+|1.7.15|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Reference Orbit|||
 |**2**|**CEOS-ARD product**|**Per-Pixel Metadata**|||
-|2\.1|[ALL]|Metadata Machine Readability|||
-|2\.2|[ALL]|Data Mask Image|||
-|2\.3|[ALL]|Scattering Area Image|||
-|2\.4|[ALL]|Local Incident Angle Image|||
-|2\.5|[ALL]|Ellipsoidal Incident Angle Image|||
-|2\.6|[ALL]|Noise Power Image|||
-|2\.7|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Gamma-to-Sigma Ratio Image|||
-|2\.8|[ALL]|Acquisition ID Image|||
-|2\.9|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Per-pixel DEM|||
-|2\.10|[ORB]|Per-pixel Geoid|||
-|2\.11|[ORB]|Look Direction Image|||
-|2\.12|[GSLC]|Radar Unit Look Vector Grid Image|||
-|2\.13|[GSLC]|Slant Range Sensor to Surface Image|||
-|2\.14|[GSLC]|InSAR Phase Uncertainty Image|||
-|2\.15|[GSLC]|Atmospheric Phase Correction Image|||
-|2\.16|[GSLC]|Ionospheric Phase Correction Image|||
+|2.1|[ALL]|Metadata Machine Readability|||
+|2.2|[ALL]|Data Mask Image|||
+|2.3|[ALL]|Scattering Area Image|||
+|2.4|[ALL]|Local Incident Angle Image|||
+|2.5|[ALL]|Ellipsoidal Incident Angle Image|||
+|2.6|[ALL]|Noise Power Image|||
+|2.7|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Gamma-to-Sigma Ratio Image|||
+|2.8|[ALL]|Acquisition ID Image|||
+|2.9|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Per-pixel DEM|||
+|2.10|[ORB]|Per-pixel Geoid|||
+|2.11|[ORB]|Look Direction Image|||
+|2.12|[GSLC]|Radar Unit Look Vector Grid Image|||
+|2.13|[GSLC]|Slant Range Sensor to Surface Image|||
+|2.14|[GSLC]|InSAR Phase Uncertainty Image|||
+|2.15|[GSLC]|Atmospheric Phase Correction Image|||
+|2.16|[GSLC]|Ionospheric Phase Correction Image|||
 ||||**Threshold**|**Goal**|
 |**3**|**CEOS-ARD product**|**Radiometrically Corrected Measurements**|||
-|3\.1|[ALL]|Backscatter Measurements|||
-|3\.2|[ALL]|Scaling Conversion |||
-|3\.3|[ALL]|Noise Removal|||
-|3\.4|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Radiometric Terrain Correction Algorithms|||
-|3\.5|[ALL]|Radiometric Accuracy|||
-|3\.6|[ORB]|Mean Wind-Normalised Backscatter Measurements|||
-|3\.7|[NRB]<br>[POL]|Flattened Phase|||
+|3.1|[ALL]|Backscatter Measurements|||
+|3.2|[ALL]|Scaling Conversion |||
+|3.3|[ALL]|Noise Removal|||
+|3.4|<p>[NRB]</p><p>[POL]</p><p>[GSLC]</p>|Radiometric Terrain Correction Algorithms|||
+|3.5|[ALL]|Radiometric Accuracy|||
+|3.6|[ORB]|Mean Wind-Normalised Backscatter Measurements|||
+|3.7|[NRB]<br>[POL]|Flattened Phase|||
 ||||**Threshold**|**Goal**|
 |**4**|**CEOS-ARD product**|**Geometric Corrections**|||
-|4\.1|[ALL]|Geometric Correction Algorithms|||
-|4\.2|[ALL]|Digital Elevation Model|||
-|4\.3|[ALL]|Geometric Accuracy|||
-|4\.4|[ALL]|Geometric Refined Accuracy|||
-|4\.5|[ALL]|Gridding Convention|||
+|4.1|[ALL]|Geometric Correction Algorithms|||
+|4.2|[ALL]|Digital Elevation Model|||
+|4.3|[ALL]|Geometric Accuracy|||
+|4.4|[ALL]|Geometric Refined Accuracy|||
+|4.5|[ALL]|Gridding Convention|||
 
-# **Guidance**
+&#12;
+
+## Guidance
+
 This section aims to provide background and specific information on the processing steps that can be used to achieve analysis ready data for a specific and well-developed Product Family Specification. This Guidance material does not replace or override the specifications. 
-# **Introduction to CEOS-ARD**
-**What is CEOS Analysis Ready Data?**
+
+## Introduction to CEOS-ARD
+
+### What is CEOS Analysis Ready Data?
 
 CEOS-ARD are products that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort. In general, these products would be resampled onto a common geometric grid (for a given product) and would provide baseline data for further interoperability both through time and with other datasets. 
 
 CEOS-ARD products are intended to be flexible and accessible products suitable for a wide range of users for a wide variety of applications, including particularly time series analysis and multi-sensor application development. They are also intended to support rapid ingestion and exploitation via high-performance computing, cloud computing and other future data architectures. They may not be suitable for all purposes and are not intended as a ‘replacement’ for other types of satellite products.
 
-**When can a product be called CEOS-ARD?**
+### When can a product be called CEOS-ARD?
 
 The CEOS-ARD branding is applied to a particular product once:
 
@@ -415,7 +393,7 @@ Agencies or other entities considering undertaking an assessment process should 
 
 A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
 
-**What is the difference between Threshold and Goal?**
+### What is the difference between Threshold and Goal?
 
 **Threshold (Minimum) Requirements** are the MINIMUM that is needed for the data to be analysis ready. This must be practical and accepted by the data producers.
 
@@ -428,43 +406,34 @@ Products that meet goal requirements will reduce the overall product uncertainti
 Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field. Over time, *goal* specifications may (and subject to due process) become accepted as Threshold requirements.
 
 
-# **Reference Papers [CEOS-ARD for SAR]**
-*ISO 19115-2 (2009) Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data, [www.iso.org/standard/39229.html*](http://www.iso.org/standard/39229.html)*
+## Reference Papers [CEOS-ARD for SAR]
 
-## **Normalised Radar Backscatter [NRB]**
-*Shiroma, G.H.X., M. Lavalle and S. M. Buckley, An Area-Based Projection Algorithm for SAR Radiometric Terrain Correction and Geocoding. IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-23, 2022, Art no. 5222723, doi: 10.1109/TGRS.2022.3147472.*
+1. ISO 19115-2 (2009) Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data, [www.iso.org/standard/39229.html](http://www.iso.org/standard/39229.html)
 
-*Small, D. (2011) Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE Trans. Geosci. Remote Sens., vol. 49, no. 8, pp. 3081-3093. doi: 10.1109/TGRS.2011.2120616*
+### Normalised Radar Backscatter [NRB]
 
-## **Polarimetric Radar [POL]**
-*Cameron, W.L., N.N. Youssef, and L.K. Leung (1996) Simulated polarimetric signatures of primitive geometrical shapes, IEEE Trans. Geosci. Remote Sens., vol. 34, no. 3, pp. 793–803.*
+1. Shiroma, G.H.X., M. Lavalle and S. M. Buckley, An Area-Based Projection Algorithm for SAR Radiometric Terrain Correction and Geocoding. IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-23, 2022, Art no. 5222723, doi: 10.1109/TGRS.2022.3147472.
+2. Small, D. (2011) Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE Trans. Geosci. Remote Sens., vol. 49, no. 8, pp. 3081-3093. doi: 10.1109/TGRS.2011.2120616
 
-*Cloude, S.R. and E. Pottier (1996) A review of target decomposition theorems in radar polarimetry, IEEE Trans. Geosci. Remote Sens., vol. 34, no. 2, pp. 498–518.*
+### Polarimetric Radar [POL]
 
-*Freeman, A. and S.L. Durden (1998) A three-component scattering model for polarimetric SAR data, IEEE Trans. Geosci. Remote Sens., vol. 36, no. 3, pp. 964–973.*
+3. Cameron, W.L., N.N. Youssef, and L.K. Leung (1996) Simulated polarimetric signatures of primitive geometrical shapes, IEEE Trans. Geosci. Remote Sens., vol. 34, no. 3, pp. 793–803.
+4. Cloude, S.R. and E. Pottier (1996) A review of target decomposition theorems in radar polarimetry, IEEE Trans. Geosci. Remote Sens., vol. 34, no. 2, pp. 498–518.
+5. Freeman, A. and S.L. Durden (1998) A three-component scattering model for polarimetric SAR data, IEEE Trans. Geosci. Remote Sens., vol. 36, no. 3, pp. 964–973.
+6. Gens, R., D.K. Atwood and E. Pottier (2013) Geocoding of polarimetric processing results: Alternative processing strategies, Remote Sensing Letters, vol. 4, no. 1, pp.  38-44. 
+7. Krogager, E. (1993) Aspects of polarimetric radar imaging, Ph.D. dissertation, Tech. Univ. Denmark, Electromagn. Inst., Lyngby, Denmark
+8. Lee, J.-S., J.-H. Wen, T.L. Ainsworth, K.-S. Chen, and A.J. Chen (2009) Improved Sigma Filter for Speckle Filtering of SAR Imagery IEEE Trans. Geosci. Remote Sens., vol. 47, no. 1, pp. 202-213.
+9. Raney, R.K., J.T.S. Cahill, G.W. Patterson and D.B.J. Bussey (2012) The m-chi decomposition of hybrid dual-polarimetric radar data with application to lunar craters Journal of Geophysical Research: Planets 117(E5)
+10. Toutin, T., H. Wang, P. Chomaz and E. Pottier (2013) Orthorectification of Full-Polarimetric Radarsat-2 Data Using Accurate LIDAR DSM, IEEE Trans. Geosci. Remote Sens., vol. 51, no. 12, pp. 5252-5258. 
+11. Yamaguchi, Y., A. Sato, W.M. Boerner, R. Sato and H. Yamada (2011) Four-Component Scattering Power Decomposition with Rotation of Coherency Matrix, IEEE Trans. Geosci. Remote Sens., vol. 49, no. 6, pp. 2251-2258.
 
-*Gens, R., D.K. Atwood and E. Pottier (2013) Geocoding of polarimetric processing results: Alternative processing strategies, Remote Sensing Letters, vol. 4, no. 1, pp.  38-44.* 
+### Ocean Radar Backscatter [ORB]
 
-*Krogager, E. (1993) Aspects of polarimetric radar imaging, Ph.D. dissertation, Tech. Univ. Denmark, Electromagn. Inst., Lyngby, Denmark*
+1. Quilfen, Y., Chapron, B., Elfouhaily, T., Katsaros, K., and Tournadre, J. (1998) Observation of tropical cyclones by high-resolution scatterometry, J. Geophys. Res., 103(C4), 7767– 7786, doi:10.1029/97JC01911
+2. Vachon, P.W. and F.W. Dobson (2000) Wind Retrieval from RADARSAT SAR Images: Selection of a Suitable C-Band HH Polarization Wind Retrieval Model, Canadian Journal of Remote Sensing, 26:4, 306-313, DOI: 10.1080/07038992.2000.10874781
 
-*Lee, J.-S., J.-H. Wen, T.L. Ainsworth, K.-S. Chen, and A.J. Chen (2009) Improved Sigma Filter for Speckle Filtering of SAR Imagery IEEE Trans. Geosci. Remote Sens., vol. 47, no. 1, pp. 202-213.*
+### Geocoded Single-Look Complex [GSLC]
 
-*Raney, R.K., J.T.S. Cahill, G.W. Patterson and D.B.J. Bussey (2012) The m-chi decomposition of hybrid dual-polarimetric radar data with application to lunar craters Journal of Geophysical Research: Planets 117(E5)*
-
-*Toutin, T., H. Wang, P. Chomaz and E. Pottier (2013) Orthorectification of Full-Polarimetric Radarsat-2 Data Using Accurate LIDAR DSM, IEEE Trans. Geosci. Remote Sens., vol. 51, no. 12, pp. 5252-5258.* 
-
-*Yamaguchi, Y., A. Sato, W.M. Boerner, R. Sato and H. Yamada (2011) Four-Component Scattering Power Decomposition with Rotation of Coherency Matrix, IEEE Trans. Geosci. Remote Sens., vol. 49, no. 6, pp. 2251-2258.*
-
-## **Ocean Radar Backscatter [ORB]**
-*Quilfen, Y., Chapron, B., Elfouhaily, T., Katsaros, K., and Tournadre, J. (1998) Observation of tropical cyclones by high-resolution scatterometry, J. Geophys. Res., 103(C4), 7767– 7786, doi:10.1029/97JC01911*
-
-*Vachon, P.W. and F.W. Dobson (2000) Wind Retrieval from RADARSAT SAR Images: Selection of a Suitable C-Band HH Polarization Wind Retrieval Model, Canadian Journal of Remote Sensing, 26:4, 306-313, DOI: 10.1080/07038992.2000.10874781*
-
-## **Geocoded Single-Look Complex [GSLC]**
-*Zebker, H. A., S. Hensley, P. Shanker and C. Wortham (2010) Geodetically Accurate InSAR Data Processor, IEEE Transactions on Geoscience and Remote Sensing, vol. 48, no. 12, pp. 4309-4321, Dec. 2010, doi: 10.1109/TGRS.2010.2051333.*
-
-*Zebker, H. A. (2017) User-Friendly InSAR Data Products: Fast and Simple Timeseries Processing. IEEE Geoscience and Remote Sensing Letters 14(11): 2122-2126.*
-
-*Zheng, Y. and H. A. Zebker (2017) Phase Correction of Single-Look Complex Radar Images for User-Friendly Efficient Interferogram Formation. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 10(6): 2694-2701.*
-
-
+1. Zebker, H. A., S. Hensley, P. Shanker and C. Wortham (2010) Geodetically Accurate InSAR Data Processor, IEEE Transactions on Geoscience and Remote Sensing, vol. 48, no. 12, pp. 4309-4321, Dec. 2010, doi: 10.1109/TGRS.2010.2051333.
+2. Zebker, H. A. (2017) User-Friendly InSAR Data Products: Fast and Simple Timeseries Processing. IEEE Geoscience and Remote Sensing Letters 14(11): 2122-2126.
+3. Zheng, Y. and H. A. Zebker (2017) Phase Correction of Single-Look Complex Radar Images for User-Friendly Efficient Interferogram Formation. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 10(6): 2694-2701.
