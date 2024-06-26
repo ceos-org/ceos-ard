@@ -60,23 +60,23 @@ jobs:
             --resource-path=Specifications/Surface-Temperature
             Specifications/Surface-Temperature/PFS.md
             Specifications/Surface-Temperature/annex-1-card4l-requirement-examples.md
-      - name: SAR
-        uses: docker://pandoc/core:3.2
-        with:
-          args: >-
-            --standalone
-            --shift-heading-level-by=-1
-            --from=gfm
-            --reference-doc=.github/pandoc-template.docx
-            --lua-filter=.github/pagebreak.lua
-            --output=docs/CEOS-ARD_PFS_Synthetic-Aperture-Radar_latest.docx
-            --resource-path=Specifications/Synthetic-Aperture-Radar
-            Specifications/Synthetic-Aperture-Radar/PFS.md
-            Specifications/Synthetic-Aperture-Radar/annex-1.1-general-processing-roadmap.md
-            Specifications/Synthetic-Aperture-Radar/annex-1.2-topographic-phase-removal.md
-            Specifications/Synthetic-Aperture-Radar/annex-2-polarimetric-radar.md
-            Specifications/Synthetic-Aperture-Radar/annex-3-ocean-radar-backscatter-example.md
-            Specifications/Synthetic-Aperture-Radar/annex-4-geocoded-single-look-complex-example.md
+      # - name: SAR
+      #   uses: docker://pandoc/core:3.2
+      #   with:
+      #     args: >-
+      #       --standalone
+      #       --shift-heading-level-by=-1
+      #       --from=gfm
+      #       --reference-doc=.github/pandoc-template.docx
+      #       --lua-filter=.github/pagebreak.lua
+      #       --output=docs/CEOS-ARD_PFS_Synthetic-Aperture-Radar_latest.docx
+      #       --resource-path=Specifications/Synthetic-Aperture-Radar
+      #       Specifications/Synthetic-Aperture-Radar/PFS.md
+      #       Specifications/Synthetic-Aperture-Radar/annex-1.1-general-processing-roadmap.md
+      #       Specifications/Synthetic-Aperture-Radar/annex-1.2-topographic-phase-removal.md
+      #       Specifications/Synthetic-Aperture-Radar/annex-2-polarimetric-radar.md
+      #       Specifications/Synthetic-Aperture-Radar/annex-3-ocean-radar-backscatter-example.md
+      #       Specifications/Synthetic-Aperture-Radar/annex-4-geocoded-single-look-complex-example.md
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
