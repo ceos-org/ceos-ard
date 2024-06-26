@@ -7,25 +7,26 @@ subtitle: Surface Temperature
 
 ## Document History
 
-| Version                | Date                                        | Description of Change                                        | Author                                   |
-| :--------------------- | :------------------------------------------ | :----------------------------------------------------------- | :--------------------------------------- |
-| 0.0.2                 | 23.03.2017                                 | Zero Draft based on materials provided by Geoscience Australia and the USGS in particular. | Ross                                     |
-|                        | 16.04.2017                                 | Included document history;                                   |                                          |
-| 1.0.0                 | 18.04.2017                                 | Revised to:&#10;- Formatting and structure&#10;- Included guidance section | Lewis                                    |
-| 1.0.1                 | 18.04.2017                                 | Merged ‘geometric source’ and ‘geometric method’ elements.   | Lewis                                    |
-| 2.0                   | 25.08.2017                                 | Incorporated first round of revisions following feedback from the UK and others. | Lewis                                    |
-| 2.1                   | 06.09.2017                                 | Feedback from ESA; removed reference to bands (1.10) as these are not relevant to ST; Feedback on 1.13 included to the effect that ST algorithm may not be supplied at Threshold level. Added qualifying notes to 2.7,2.8. | Lewis                                    |
-| 3.0                   | 05.12.2017                                 | Feedback during the teleconference.                          | Lewis                                    |
-| 3.1                   | 22.12.2017                                 | Feedback during and after (emails) the teleconference (05/12/2017) included. | Siqueira                                 |
-| 3.2                   | 01.08.2018                                 | Outcome from LSI-VC-6 meeting addressed: *Surface Brightness Temperature (SBT) is not needed as a CARD4L product – there is no clear user base. The Surface Temperature (ST) PFS will be retained, with references to SBT removed in the next update cycle."* Therefore, ST became the minimum requirement (threshold) for CARD4L ST PFS. | Siqueira                                 |
-| 3.3                   | 21.01.2019                                 | Feedback from ESA and USGS self-assessment included. Added Annex 1 containing examples (provided by USGS and ESA) on selected requirements. | Siqueira                                 |
-| 3.3.1                 | 06.02.2019                                 | Final draft shared with LSI-VC list and LSI-VC-7 meeting participants seeking support for document endorsement at the LSI-VC-7 meeting. | Siqueira                                 |
-| 3.3.1                 | 20.02.2019                                 | Comments and suggestions from LSI-VC-7 meeting (minutes) and feedback from USGS incorporated. | Siqueira                                 |
-| 3.3.2                 | 28.02.2019                                 | Formatting and verbiage updates for consistency.             | Metzger                                  |
-| 4.0                   | 02.03.2019                                 | Version endorsed at LSI-VC7 meeting (14Feb 2019)             | LSI-VC                                   |
-| 4.1                   | 26.06.2019                                 | Added self-assessment columns                                | Bontje                                   |
-| 4.2                   | 04.09.2019                                 | Requirement 3.2 (Corrections for Atmosphere and Emissivity) rewording - agreed at LSI-VC8 meeting. | Siqueira                                 |
-| 4.3&#10;4.4&#10;5.0 | 08.05.2020&#10;25.05.2020&#10;08.06.2020 | This review cycle considers feedback received from USGS and ESA after the formal self-assessment for Surface Temperature products (Landsat and Sentinel-2). Minor editorial changes were done throughout the document. Requirements 1.2, 1.14, 1.16 and 2.1 have been updated.&#10;Feedback from USGS added (email: 21/05/2020).&#10;Tech edit. | Siqueira&#10;Siqueira&#10;Bontje, Labahn |
+| Version | Date                      | Description of Change                                        | Author         |
+| :------ | :------------------------ | :----------------------------------------------------------- | :------------- |
+| 0.0.2   | 23.03.2017&#10;16.04.2017 | Zero Draft based on materials provided by Geoscience Australia and the USGS in particular.&#10;Included document history; | Ross           |
+| 1.0.0   | 18.04.2017                | Revised to:&#10;- Formatting and structure&#10;- Included guidance section | Lewis          |
+| 1.0.1   | 18.04.2017                | Merged ‘geometric source’ and ‘geometric method’ elements.   | Lewis          |
+| 2.0     | 25.08.2017                | Incorporated first round of revisions following feedback from the UK and others. | Lewis          |
+| 2.1     | 06.09.2017                | Feedback from ESA; removed reference to bands (1.10) as these are not relevant to ST; Feedback on 1.13 included to the effect that ST algorithm may not be supplied at Threshold level. Added qualifying notes to 2.7,2.8. | Lewis          |
+| 3.0     | 05.12.2017                | Feedback during the teleconference.                          | Lewis          |
+| 3.1     | 22.12.2017                | Feedback during and after (emails) the teleconference (05/12/2017) included. | Siqueira       |
+| 3.2     | 01.08.2018                | Outcome from LSI-VC-6 meeting addressed: *Surface Brightness Temperature (SBT) is not needed as a CARD4L product – there is no clear user base. The Surface Temperature (ST) PFS will be retained, with references to SBT removed in the next update cycle."*&#10;Therefore, ST became the minimum requirement (threshold) for CARD4L ST PFS. | Siqueira       |
+| 3.3     | 21.01.2019                | Feedback from ESA and USGS self-assessment included. Added Annex 1 containing examples (provided by USGS and ESA) on selected requirements. | Siqueira       |
+| 3.3.1   | 06.02.2019                | Final draft shared with LSI-VC list and LSI-VC-7 meeting participants seeking support for document endorsement at the LSI-VC-7 meeting. | Siqueira       |
+| 3.3.1   | 20.02.2019                | Comments and suggestions from LSI-VC-7 meeting (minutes) and feedback from USGS incorporated. | Siqueira       |
+| 3.3.2   | 28.02.2019                | Formatting and verbiage updates for consistency.             | Metzger        |
+| 4.0     | 02.03.2019                | Version endorsed at LSI-VC7 meeting (14 Feb 2019)            | LSI-VC         |
+| 4.1     | 26.06.2019                | Added self-assessment columns                                | Bontje         |
+| 4.2     | 04.09.2019                | Requirement 3.2 (Corrections for Atmosphere and Emissivity) rewording - agreed at LSI-VC8 meeting. | Siqueira       |
+| 4.3     | 08.05.2020                | This review cycle considers feedback received from USGS and ESA after the formal self-assessment for Surface Temperature products (Landsat and Sentinel-2). Minor editorial changes were done throughout the document. Requirements 1.2, 1.14, 1.16 and 2.1 have been updated. | Siqueira       |
+| 4.4     | 25.05.2020                | Feedback from USGS added (email: 21/05/2020).                | Siqueira       |
+| 5.0     | 08.06.2020                | Tech edit.                                                   | Bontje, Labahn |
 
 ## Contributing Authors
 
