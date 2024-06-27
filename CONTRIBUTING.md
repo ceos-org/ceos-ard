@@ -108,7 +108,7 @@ You can now run the following commands to create the Word files:
 
 - Surface Temperature:
   ```bash
-  pandoc --standalone --shift-heading-level-by=-1 --from=gfm --reference-doc=.github/pandoc-template.docx --lua-filter=.github/pagebreak.lua --output=CEOS-ARD_PFS_Surface-Temperature_latest.docx --resource-path=Specifications/Surface-Temperature Specifications/Surface-Temperature/PFS.md
+  pandoc --standalone --shift-heading-level-by=-1 --from=gfm --reference-doc=.github/pandoc-template.docx --lua-filter=.github/pagebreak.lua --output=CEOS-ARD_PFS_Surface-Temperature_latest.docx --resource-path=Specifications/Surface-Temperature Specifications/Surface-Temperature/PFS.md Specifications/Surface-Temperature/annex-1-card4l-requirement-examples.md
   ```
 
 For Aquatic Reflectance for example, you could now open the file `CEOS-ARD_PFS_Aquatic-Reflectance_latest.docx`.
