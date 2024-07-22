@@ -1,0 +1,47 @@
+- references:
+  - >-
+    ISO 19115-2 (2009) Geographic information -- Metadata -- Part 2: Extensions for imagery and gridded data, <http://www.iso.org/standard/39229.html>
+- chapter:
+    - title: Normalised Radar Backscatter [NRB]
+    - references:
+      - >-
+        Shiroma, G.H.X., M. Lavalle and S. M. Buckley, An Area-Based Projection Algorithm for SAR Radiometric Terrain Correction and Geocoding. IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-23, 2022, Art no. 5222723, doi: 10.1109/TGRS.2022.3147472.
+      - >-
+        Small, D. (2011) Flattening Gamma: Radiometric Terrain Correction for SAR Imagery, IEEE Trans. Geosci. Remote Sens., vol. 49, no. 8, pp. 3081-3093. doi: 10.1109/TGRS.2011.2120616
+- chapter:
+    - title: Polarimetric Radar [POL]
+    - references:
+      - >-
+        Cameron, W.L., N.N. Youssef, and L.K. Leung (1996) Simulated polarimetric signatures of primitive geometrical shapes, IEEE Trans. Geosci. Remote Sens., vol. 34, no. 3, pp. 793–803.
+      - >-
+        Cloude, S.R. and E. Pottier (1996) A review of target decomposition theorems in radar polarimetry, IEEE Trans. Geosci. Remote Sens., vol. 34, no. 2, pp. 498–518.
+      - >-
+        Freeman, A. and S.L. Durden (1998) A three-component scattering model for polarimetric SAR data, IEEE Trans. Geosci. Remote Sens., vol. 36, no. 3, pp. 964–973.
+      - >-
+        Gens, R., D.K. Atwood and E. Pottier (2013) Geocoding of polarimetric processing results: Alternative processing strategies, Remote Sensing Letters, vol. 4, no. 1, pp.  38-44. 
+      - >-
+        Krogager, E. (1993) Aspects of polarimetric radar imaging, Ph.D. dissertation, Tech. Univ. Denmark, Electromagn. Inst., Lyngby, Denmark
+      - >-
+        Lee, J.-S., J.-H. Wen, T.L. Ainsworth, K.-S. Chen, and A.J. Chen (2009) Improved Sigma Filter for Speckle Filtering of SAR Imagery IEEE Trans. Geosci. Remote Sens., vol. 47, no. 1, pp. 202-213.
+      - >-
+        Raney, R.K., J.T.S. Cahill, G.W. Patterson and D.B.J. Bussey (2012) The m-chi decomposition of hybrid dual-polarimetric radar data with application to lunar craters Journal of Geophysical Research: Planets 117(E5)
+      - >-
+        Toutin, T., H. Wang, P. Chomaz and E. Pottier (2013) Orthorectification of Full-Polarimetric Radarsat-2 Data Using Accurate LIDAR DSM, IEEE Trans. Geosci. Remote Sens., vol. 51, no. 12, pp. 5252-5258. 
+      - >-
+        Yamaguchi, Y., A. Sato, W.M. Boerner, R. Sato and H. Yamada (2011) Four-Component Scattering Power Decomposition with Rotation of Coherency Matrix, IEEE Trans. Geosci. Remote Sens., vol. 49, no. 6, pp. 2251-2258.
+- chapter:
+    - title: Ocean Radar Backscatter [ORB]
+    - references:
+      - >-
+        Quilfen, Y., Chapron, B., Elfouhaily, T., Katsaros, K., and Tournadre, J. (1998) Observation of tropical cyclones by high-resolution scatterometry, J. Geophys. Res., 103(C4), 7767– 7786, doi:10.1029/97JC01911
+      - >-
+        Vachon, P.W. and F.W. Dobson (2000) Wind Retrieval from RADARSAT SAR Images: Selection of a Suitable C-Band HH Polarization Wind Retrieval Model, Canadian Journal of Remote Sensing, 26:4, 306-313, DOI: 10.1080/07038992.2000.10874781
+- chapter:
+    - title: Geocoded Single-Look Complex [GSLC]
+    - references:
+      - >-
+        Zebker, H. A., S. Hensley, P. Shanker and C. Wortham (2010) Geodetically Accurate InSAR Data Processor, IEEE Transactions on Geoscience and Remote Sensing, vol. 48, no. 12, pp. 4309-4321, Dec. 2010, doi: 10.1109/TGRS.2010.2051333.
+      - >-
+        Zebker, H. A. (2017) User-Friendly InSAR Data Products: Fast and Simple Timeseries Processing. IEEE Geoscience and Remote Sensing Letters 14(11): 2122-2126.
+      - >-
+        Zheng, Y. and H. A. Zebker (2017) Phase Correction of Single-Look Complex Radar Images for User-Friendly Efficient Interferogram Formation. IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing 10(6): 2694-2701.

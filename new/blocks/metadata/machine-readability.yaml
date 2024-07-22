@@ -1,0 +1,12 @@
+title: Metadata Machine Readability
+requirements:
+  minimum:
+    - description: >-
+        Metadata is provided in a structure that enables a computer algorithm to be used consistently
+        and to automatically identify and extract each component part for further use.
+  desired:
+    - description: >-
+        Metadata is formatted in accordance with a community endorsed standard that facilitates
+        machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention
+        and the Attribute Convention for Data Discovery (ACDD), etc.
+metadata: []
