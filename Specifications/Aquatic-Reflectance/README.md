@@ -14,7 +14,7 @@ The Markdown file is meant for editing through Pull Requests, all other files ar
 
 ## Released Version
 
-**Latest Released Version: 1.1** (23 February 2200)
+**Latest Released Version: 1.1** (23 February 2024)
 
 - [PDF](https://ceos.org/ard/files/PFS/AR/v1.0/CARD4L_Product_Family_Specification_Aquatic_Reflectance-v1.0.pdf)
 - [Word](https://ceos.org/ard/files/PFS/AR/v1.0/CARD4L_Product_Family_Specification_Aquatic_Reflectance-v1.0.docx)
