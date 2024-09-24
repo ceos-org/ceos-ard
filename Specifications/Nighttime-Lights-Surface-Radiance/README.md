@@ -10,7 +10,7 @@ The following files are the latest versions, and may include unreleased edits.
 The Markdown file is meant for editing through Pull Requests, all other files are for read-only purposes.
 
 - [**Markdown**](PFS.md)
-- Word (tbd)
+- [Word](https://ceos-org.github.io/ceos-ard/CEOS-ARD_PFS_Nighttime-Lights-Surface-Radiance_latest.docx)
 
 ## Released Version
 

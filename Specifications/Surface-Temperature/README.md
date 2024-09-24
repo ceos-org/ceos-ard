@@ -10,7 +10,8 @@ The following files are the latest versions, and may include unreleased edits.
 The Markdown file is meant for editing through Pull Requests, all other files are for read-only purposes.
 
 - [**Markdown**](PFS.md)
-- Word (tbd)
+  - [Annex 1 - CARD4L Requirement Examples (Surface Temperature)](annex-1-card4l-requirement-examples.md)
+- [Word](https://ceos-org.github.io/ceos-ard/CEOS-ARD_PFS_Surface-Temperature_latest.docx)
 
 ## Released Version
 

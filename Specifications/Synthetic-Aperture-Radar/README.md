@@ -13,7 +13,7 @@ The Markdown file is meant for editing through Pull Requests, all other files ar
   - [Annex 2 Polarimetric Radar](annex-2-polarimetric-radar.md)
   - [Annex 3 Ocean Radar Backscatter example](annex-3-ocean-radar-backscatter-example.md)
   - [Annex 4 Geocoded Single-Look Complex example](annex-4-geocoded-single-look-complex-example.md)
-- Word (tbd)
+- [Word](https://ceos-org.github.io/ceos-ard/CEOS-ARD_PFS_Synthetic-Aperture-Radar_latest.docx) (note: currently not properly formatted)
 - Excel (Metadata, tbd)
 
 > \[!NOTE]
