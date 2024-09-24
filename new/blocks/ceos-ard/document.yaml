@@ -1,6 +1,0 @@
-title: Document Identifier
-requirements:
-  minimum: 
-    - description: >-
-        Reference to the corresponding CEOS-ARD PFS document as URL.
-  desired: []

@@ -1,0 +1,12 @@
+id: complete-tests
+title: Per-pixel Assessment
+requirements:
+  minimum:
+    - description: >-
+        The metadata identifies pixels for which the per-pixel tests (below) have not all been successfully completed.
+    - type: note
+      description: >-
+        This may be the result of missing ancillary data for a subset of the pixels.
+  desired:
+    - description: >-
+        The metadata identifies which tests have, and have not, been successfully completed for each pixel.

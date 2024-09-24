@@ -1,0 +1,281 @@
+- title: General Metadata
+  description: >-
+    These are metadata records describing a distributed collection of pixels.
+    The collection of pixels referred to must be contiguous in space and time.
+    General metadata should allow the user to assess the **overall** suitability of the dataset, and must meet the following requirements:
+  requirements:
+    - $ref: ../../requirements/metadata/traceability.yaml
+    - $ref: ../../requirements/metadata/machine-readability.yaml
+    - $ref: ../../requirements/temporal/data-collection-time.yaml
+    - $ref: ../../requirements/spatial/geographical-area.yaml
+    - $ref: ../../requirements/spatial/crs.yaml
+    - $ref: ../../requirements/spatial/map-projection.yaml
+    - $ref: ../../requirements/geometric-corrections/methods.yaml
+    - $ref: ../../requirements/accuracy/geometric-accuracy.yaml
+    - $ref: ../../requirements/instrument/instrument-ar.yaml
+    - $ref: ../../requirements/spectral/bands.yaml
+    - $ref: ../../requirements/instrument/sensor-calibration.yaml
+    - $ref: ../../requirements/accuracy/radiometric-accuracy.yaml
+    - $ref: ../../requirements/processing/algorithms.yaml
+    - $ref: ../../requirements/data/auxiliary-data.yaml
+    - $ref: ../../requirements/processing/processing-chain-provenance.yaml
+    - $ref: ../../requirements/data/access.yaml
+    - $ref: ../../requirements/data/quality.yaml
+- title: Per-Pixel Metadata
+  description: >-
+    The following minimum metadata specifications apply to each pixel.
+    Whether the metadata are provided in a single record relevant to all pixels, or separately for each pixel, is at the discretion of the data provider.
+    Per-pixel metadata should allow users to discriminate between (choose) observations on the basis of their individual suitability for application.
+  requirements:
+    - $ref: ../../requirements/metadata/machine-readability.yaml
+    - $ref: ../../requirements/masks/nodata.yaml
+    - $ref: ../../requirements/masks/complete-tests.yaml
+    - $ref: ../../requirements/spectral/saturation.yaml
+    - $ref: ../../requirements/clouds/cloud-mask.yaml
+    - $ref: ../../requirements/clouds/cloud-shadow-mask.yaml
+    - title: Land/Water Mask
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates whether a pixel is assessed as being land or water. Information on land/water mask should be available in the metadata as a single DOI landing page.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Sea/Lake/ River Ice Mask
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates whether a pixel is assessed as being sea/lake/river ice or not. Information on sea/lake/river ice mask should be available in the metadata as a single DOI landing page.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Sun Glint
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates whether a pixel is assessed as absent or correctable (moderate), or uncorrectable (severe) Sun glint.
+          - type: note
+            description: >-
+              Sun glint is deemed uncorrectable if the upper limit of the dynamic range of a sensor is reached (i.e., saturation occurs).
+        desired:
+          - description: >-
+              The metadata indicates the amount of Sun glint for each pixel and band.
+    - title: Sky Glint
+      requirements:
+        minimum: []
+        desired:
+          - description: >-
+              The metadata indicates the amount of sky glint for each pixel and band.
+    - title: Whitecap/ Foam Mask
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates whether a pixel is assessed as affected by whitecaps or foam as a function of the wind speed or other.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Solar and Viewing Geometry
+      requirements:
+        minimum:
+          - description: >-
+              The metadata provides average solar and sensor viewing azimuth and zenith angles.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Adjacency Effects
+      requirements:
+        minimum: []
+        desired:
+          - description: >-
+              The metadata provides the risk of per-pixel adjacency effects contamination, through flagging to denote per-pixel minimum, medium or high adjacency effects contamination.
+          - type: note
+            description: >-
+              This effect often occurs in increased turbid or optically shallow waters near shorelines that may confuse this assessment.
+    - title: Floating Vegetation/Surface Scum Mask
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates whether a pixel is assessed as affected by floating vegetation/surface scum.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Aerosol Optical Depth Parameters
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates either per-pixel spectral Aerosol Optical Depth (AOD), or per-pixel AOD (550nm) and Angstrom exponent.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Deep/ Shallow Water
+      requirements:
+        minimum: []
+        desired:
+          - description: >-
+              The metadata indicates where available: the bottom depth referenced to the mean sea level for the oceans and referenced to mean levels for lakes. Information on bathymetry should be available in the metadata as a single DOI landing page.
+    - title: Optically Deep or Optically Shallow Assessment
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates, based on likelihood (bathymetry maps and average $`K_d``$ (preferred) or based on turbidity or Secchi disk transparency), whether water pixels may be optically deep or optically shallow. This will most likely be bathymetry map contour based.
+        desired:
+          - description: >-
+              Based on an assessment from an inversion algorithm that estimates the optically deep or optically shallow per-pixel status.
+    - title: Turbid Water Flag
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates whether a pixel is assessed as being turbid or not. Information on turbid water mask should be available in the metadata as a single DOI landing page.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Bidirectional Reflectance Distribution Function Applied
+      requirements:
+        minimum: []
+        desired:
+          - description: >-
+              Metadata indicates which pixels are corrected for BRDF effects.
+    - title: Altitude (ASL)
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates approximate altitude (ASL) of water body pixels is required for atmospheric correction (range = -430 to \~6500m)
+        desired:
+          - description: >-
+              As threshold.
+- title: Radiometric and Atmospheric Corrections
+  description: >-
+    The following requirements must be met for all pixels in a collection.
+    The requirements indicate both the necessary outcomes (3.1-3.3) and the minimum steps necessary to be deemed to have achieved those outcomes (3.4 onwards).
+    Radiometric corrections must lead to a valid measurement of aquatic reflectance.
+  requirements:
+    - title: Measurement
+      requirements:
+        minimum:
+          - description: >-
+              Pixel values are expressed as a measurement of the Aquatic Reflectance ($`AR = \pi \cdot R_{rs}``$) or the Remote Sensing Reflectance ($`sr^{-1}``$) of the water bodies. This is a dimensionless value.
+        desired:
+          - description: >-
+              Aquatic Reflectance or Remote Sensing Reflectance measurements are SI traceable (see also 1.1).
+    - title: Measurement Uncertainty
+      requirements:
+        minimum:
+          - type: note
+            description: >-
+              In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
+        desired:
+          - description: >-
+              An estimate of the uncertainty of the values is provided in measurement units. Following Guide to the Expression of Uncertainty in Measurement (GUM).
+          - type: note
+            description: >-
+              This is a requirement for SI traceability. See also 1.1.
+          - type: note
+            description: >-
+              Information on measurement uncertainty should be available in the metadata as a single DOI landing page.
+    - title: Measurement Normalisation
+      requirements:
+        minimum: []
+        desired:
+          - description: >-
+              Measurements are normalised for solar and viewing conditions, including BRDF correction (see also 3.14).
+          - type: note
+            description: >-
+              Information on measurement normalisation should be available in the metadata as single DOI landing page.
+    - title: Atmospheric Reflectance Correction
+      requirements:
+        minimum:
+          - description: >-
+              Metadata indicates corrections are applied for molecular (Rayleigh) scattering and aerosol scattering and absorption.
+              Metadata contains a single DOI landing page with references to a citable peer-reviewed algorithm, technical documentation regarding the implementation of that algorithm and the sources of ancillary data used to make corrections.
+          - type: note
+            description: >-
+              Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Water Vapour Corrections
+      requirements:
+        minimum:
+          - description: >-
+              Corrections are applied for water vapour if spectral bands are affected. Metadata contains a single DOI landing page with references to a citable peer-reviewed algorithm, technical documentation regarding the implementation of that algorithm.
+          - type: note
+            description: >-
+              Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Ozone Corrections
+      requirements:
+        minimum:
+          - description: >-
+              Data is corrected for ozone if spectral bands are affected.
+              Relevant metadata must be provided under 1.8 and 1.9.
+              Metadata contains a single DOI landing page with references to a citable peer-reviewed algorithm, technical documentation regarding the implementation of the ozone correction algorithm.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Other Trace Gaseous Absorption Corrections
+      requirements:
+        minimum:
+          - description: >-
+              Data is corrected for other trace gaseous absorption if spectral bands are affected.
+              Relevant metadata must be provided under 1.8 and 1.9.
+              Metadata contains a single DOI landing page with references to a citable peer-reviewed algorithm, technical documentation regarding the implementation of the other trace gaseous absorption correction algorithm.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Sun Glint Correction
+      requirements:
+        minimum: []
+        desired:
+          - description: >-
+              The metadata indicates the surface contributions from Sun glint removed from the data if a pixel is assessed as being of correctable (moderate) Sun glint.
+    - title: Sky Glint Correction
+      requirements:
+        minimum:
+          - description: >-
+              Sky glint is implicitly corrected for in the atmospheric correction procedure.
+        desired:
+          - description: >-
+              Sky glint is separately assessed and corrected for in the data processing. The metadata indicates the surface contributions from sky glint are removed from the data.
+    - title: Whitecap/Foam Correction
+      requirements:
+        minimum:
+          - description: >-
+              The water-leaving reflectance or radiance is corrected for the contribution from surface whitecaps and foam if a pixel is assessed as affected by whitecaps or foam.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Adjacency Effects Correction
+      requirements:
+        minimum: []
+        desired:
+          - description: >-
+              Information on adjacency effects correction (for example, citable peer-reviewed algorithm approach, technical documentation of the implementation, sources of ancillary data) should be available in the metadata as a single DOI landing page.
+    - title: Floating Vegetation/Surface Scum Correction
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates whether a pixel has been corrected for floating vegetation/surface scum or not. In that case information on floating vegetation/surface scum water mask should be available in the metadata as a single DOI landing page.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Turbid Water Correction
+      requirements:
+        minimum:
+          - description: >-
+              The metadata indicates whether the atmospheric correction accounted for a pixel being turbid or not. In that case information on turbid water mask should be available in the metadata as a single DOI landing page.
+        desired:
+          - description: >-
+              As threshold.
+    - title: Bidirectional Reflectance Distribution Function Correction
+      requirements:
+        minimum: []
+        desired:
+          - description: >-
+              Data is corrected for BRDF effects (see also 3.3.).
+- title: Geometric Corrections
+  description: >-
+    Geometric corrections must place the measurement accurately on the surface of the Earth (that is, geolocate the measurement) allowing measurements taken through time to be compared.
+  requirements:
+    - $ref: ../../requirements/geometric-corrections/geometric-corrections.yaml

@@ -1,0 +1,7 @@
+id: geometric-correction-methods
+title: Geometric Correction Methods
+requirements:
+  minimum: []
+  desired:
+    - description: >-
+        Information on geometric correction methods should be available in the metadata as a single DOI landing page, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.

@@ -1,0 +1,10 @@
+id: data-access
+title: Data Access
+requirements:
+  minimum:
+    - description: >-
+        Information on data access should be available in the metadata as a single DOI landing page.
+    - type: note
+      description: >-
+        Manual and offline interaction action (e.g., login) may be required.
+  desired: []
