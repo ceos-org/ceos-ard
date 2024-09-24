@@ -23,9 +23,15 @@ The following Product Family Specifications are currently defined:
 - [Surface Temperature (Optical)](./Specifications/Surface-Temperature/README.md)
 - [Synthetic Aperture Radar](./Specifications/Synthetic-Aperture-Radar/README.md)
 
+## Contributing
+
+We welcome contributions, especially via GitHub issues and pull requests!
+The [Contributor Guidelines](CONTRIBUTING.md) describe the procedures.
+All contributors are encouraged to read the guidelines.
+
 ## Governance Framework
 
-The [CEOS-ARD Governance Framework](./CEOS-ARD%20Governance%20Framework%202021.pdf) covers:
+The [CEOS-ARD Governance Framework](./CEOS-ARD%20Governance%20Framework%202021.pdf) is summarized in the following sections.
 
 ### Definition
 
