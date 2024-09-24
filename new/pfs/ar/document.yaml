@@ -1,0 +1,15 @@
+title: Aquatic Surface Reflectance
+short_title: AR
+applies_to: >-
+  Data collected with multispectral and hyperspectral sensors operating in the VIS/NIR/SWIR wavelengths over water bodies.
+  These typically operate with ground sample distance and resolution in the order of 10-1000 m; however, the specification is not inherently limited to this resolution.
+authors:
+  $ref: authors.yaml
+terms:
+  $ref: terms.yaml
+history:
+  $ref: history.yaml
+requirements:
+  $ref: requirements.yaml
+references:
+  $ref: references.yaml

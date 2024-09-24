@@ -1,0 +1,7 @@
+id: crs
+title: Coordinate Reference System
+requirements:
+  minimum:
+    - description: >-
+        The metadata lists the coordinate reference system that has been used.
+  desired: []

@@ -1,0 +1,15 @@
+- title: General Metadata
+  description: >-
+    These are metadata records describing a distributed collection of pixels.
+    The collection of pixels referred to must be contiguous in space and time.
+    General metadata should allow the user to assess the overall suitability of the dataset and
+    must meet the requirements listed below.
+    The column “CEOS-ARD product” indicates to which CEOS-ARD SAR product (NRB, POL, ORB, GSLC)
+    the parameter refers.
+  requirements:
+    - $ref: ../../requirements/metadata/traceability.yaml
+    - $ref: ../../requirements/metadata/machine-readability.yaml
+    - $ref: ../../requirements/instrument/instrument-sar.yaml
+- title: Per-Pixel Metadata
+  requirements:
+    - $ref: ../../requirements/metadata/machine-readability.yaml

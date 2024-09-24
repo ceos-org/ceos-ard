@@ -1,0 +1,12 @@
+id: spectral-bands
+title: Spectral Bands
+requirements:
+  minimum:
+    - description: >-
+        The central wavelength and full width at half maximum for each spectral band for which data is included is identified in the metadata, expressed in SI units.
+  desired:
+    - description: >-
+        As threshold, with instrument spectral response details (e.g., full spectral response function) also included or directly accessible using details in the metadata.
+    - type: note
+      description: >-
+        Information on spectral bands should be available in the metadata as a single DOI landing page.

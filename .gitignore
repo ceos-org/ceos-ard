@@ -1,5 +1,5 @@
-/.github/package-lock.json
-/.github/node_modules/
+package-lock.json
+node_modules/
 
 .DS_Store
 Thumbs.db

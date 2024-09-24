@@ -1,0 +1,7 @@
+id: map-projection
+title: Map Projection
+requirements:
+  minimum:
+    - description: >-
+        The metadata lists the map projection that has been used and any relevant parameters required in relation to use of data in that map projection.
+  desired: []

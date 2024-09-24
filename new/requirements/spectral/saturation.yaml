@@ -1,0 +1,9 @@
+id: spectral-saturation
+title: Saturation
+requirements:
+  minimum:
+    - description: >-
+        Metadata indicates where one or more spectral bands are saturated.
+  desired:
+    - description: >-
+        Metadata indicates which pixels are saturated for each spectral band.

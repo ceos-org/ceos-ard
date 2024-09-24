@@ -1,0 +1,9 @@
+id: cloud-shadow-mask
+title: Cloud Shadow
+requirements:
+  minimum:
+    - description: >-
+        Metadata indicates whether a pixel is assessed as being cloud shadow.
+  desired:
+    - description: >-
+        As threshold, but information on cloud shadow detection should be available in the metadata as a single DOI landing page.

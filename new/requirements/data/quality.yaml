@@ -1,0 +1,8 @@
+id: overall-data-quality
+title: Overall Data Quality
+requirements:
+  minimum:
+    - description: >-
+        Machine-readable metrics describing the overall quality of the data are included in the metadata, at minimum the cloud cover extent, i.e.:
+        - Proportion of observations over land and over water affected by non-target phenomena, e.g., cloud and cloud shadows.
+  desired: []

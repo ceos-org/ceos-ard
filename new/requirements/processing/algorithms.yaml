@@ -1,0 +1,18 @@
+id: algorithms
+title: Algorithms
+requirements:
+  minimum:
+    - description: >-
+        All algorithms, and the sequence in which they were applied in the generation process, are identified in the metadata. For example, these may be available through Algorithm Theoretical Basis documents.
+    - type: note
+      description: >-
+        Information on algorithms should be available in the metadata as a single DOI landing page.
+  desired:
+    - description: >-
+        As threshold, but only algorithms that have been published in a peer-reviewed journal.
+    - type: note
+      description: >-
+        It is possible that high-quality corrections are applied through non-disclosed processes. CARD4L does not per-se require full and open data and methods.
+    - type: note
+      description: >-
+        Information on algorithms should be available in the metadata as a single DOI landing page.
