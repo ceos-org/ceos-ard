@@ -60,6 +60,10 @@ A [self-assessment guide](./CEOS-ARD%20Self-Assessment%20Guide%202023.pdf) has b
 
 The CEOS-ARD Extension to the SpatioTemporal Asset Catalog (STAC) specification specifies how to create STAC Items and Collections that comply to the various CEOS-ARD product family specifications. The repository for this extension can be found [here](https://github.com/stac-extensions/ceos-ard).
 
+## License
+
+Content in this repository is accessible under the [CC-BY 4.0 license](LICENSE).
+
 ## Contact
 
 The CEOS-ARD team can be contacted at <ard-contact@lists.ceos.org>
