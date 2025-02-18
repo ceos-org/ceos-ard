@@ -1,9 +1,0 @@
-- $ref: ../../terms/ar.yaml
-- $ref: ../../terms/ancillary_data.yaml
-- $ref: ../../terms/auxiliary_data.yaml
-- $ref: ../../terms/metadata.yaml
-- $ref: ../../terms/mtf.yaml
-- $ref: ../../terms/spectral_resolution.yaml
-- $ref: ../../terms/spatial_resolution.yaml
-- $ref: ../../terms/spectral_sampling_distance.yaml
-- $ref: ../../terms/spatial_sampling_distance.yaml

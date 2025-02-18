@@ -1,7 +1,0 @@
-id: processing-chain-provenance
-title: Processing Chain Provenance
-requirements:
-  minimum: []
-  desired:
-    - description: >-
-        Information on processing chain provenance should be available in the metadata as a single DOI landing page containing detailed description of the processing steps used to generate the product, including the versions of software used, giving full transparency to the users.

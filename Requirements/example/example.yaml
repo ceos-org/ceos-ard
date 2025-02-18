@@ -1,0 +1,11 @@
+title: Example Requirement
+threshold: null
+goal:
+  description: |-
+    Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata.
+    Ideally this would support machine-to-machine access.
+  notes:
+    - Information on sensor calibration should be available in the metadata as a single DOI landing page.
+glossary:
+  - doi
+references:

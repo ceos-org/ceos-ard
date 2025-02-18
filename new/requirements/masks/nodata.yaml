@@ -1,7 +1,0 @@
-id: nodata-mask
-title: No Data
-requirements:
-  minimum:
-    - description: >-
-        Pixels that do not correspond to an observation (e.g., ‘empty pixels/invalid observation/below noise floor’) are flagged.
-  desired: []

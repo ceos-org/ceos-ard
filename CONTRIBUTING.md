@@ -18,105 +18,14 @@ to ensure that the checks on the pull request succeed.
 
 All pull requests additionally require a review of a CEOS-ARD team members.
 
-## Checking files
+## Development / Authoring
 
-The same tests that runs as a check on PR's can be run locally.
-
-You'll need npm, which is a standard part of any [node.js installation](https://nodejs.org/en/download/).
-Alternatively, you can also use [yarn](https://yarnpkg.com/) instead of npm.
-In this case replace all occurrences of `npm` with `yarn` below.
-
-First, we assume you've cloned the repository to your local machine using e.g.
-
-```bash
-git clone https://github.com/ceos-org/ceos-ard
-```
-
-> \[!NOTE]
-> If you don't have write permissions to the <https://github.com/ceos-org/ceos-ard> repository,
-> you need to [fork the repository](https://github.com/ceos-org/ceos-ard/fork) first.
-> Once you have forked it, use the URL of your newly created repository instead of the repository in
-> the ceos-org GitHub organisation.
-
-Afterwards, change into the `ceos-ard` folder and there into the `.github` folder:
-
-```bash
-cd ceos-ard/.github
-```
-
-You'll need to install everything with npm once:
-
-```bash
-npm install
-```
-
-To check the Markdown run:
-
-```bash
-npm test
-```
-
-It will either say for all documents that no issues were found or list specific issues that need to be adressed.
-You can run this command as often as you like until you solved all issues.
-
-If you don't know what to do, you can try to let the tool fix the issues for you:
-
-```bash
-npm run format
-```
-
-Ideally it would fix all issues. You can check it by running the tests again.
-
-## Creating Word Documents
-
-After PR's have been merged, the CI also creates and published the Editor's Draft of the Markdown files as Word Document.
-You'll find the links in the README file of each Specification.
-
-If you want to check the Word files yourself locally, you can use the same tools that also run the CI.
-
-You'll need [Pandoc](https://pandoc.org/installing.html).
-
-First, we assume you've cloned the repository to your local machine using e.g.
-
-```bash
-git clone https://github.com/ceos-org/ceos-ard
-```
-
-Afterwards, change into the `ceos-ard` folder:
-
-```bash
-cd ceos-ard
-```
-
-You can now run the following commands to create the Word files:
-
-- Aquatic Reflectance:
-  ```bash
-  pandoc --standalone --shift-heading-level-by=-1 --from=gfm --reference-doc=.github/pandoc-template.docx --lua-filter=.github/pagebreak.lua --output=CEOS-ARD_PFS_Aquatic-Reflectance_latest.docx --resource-path=Specifications/Aquatic-Reflectance Specifications/Aquatic-Reflectance/PFS.md
-  ```
-  You can open the file `CEOS-ARD_PFS_Aquatic-Reflectance_latest.docx`.
-
-- Nighttime Lights Surface Radiance:
-  ```bash
-  pandoc --standalone --shift-heading-level-by=-1 --from=gfm --reference-doc=.github/pandoc-template.docx --lua-filter=.github/pagebreak.lua --output=CEOS-ARD_PFS_Nighttime-Lights-Surface-Radiance_latest.docx --resource-path=Specifications/Nighttime-Lights-Surface-Radiance Specifications/Nighttime-Lights-Surface-Radiance/PFS.md
-  ```
-
-- Surface Reflectance:
-  ```bash
-  pandoc --standalone --shift-heading-level-by=-1 --from=gfm --reference-doc=.github/pandoc-template.docx --lua-filter=.github/pagebreak.lua --output=CEOS-ARD_PFS_Surface-Reflectance_latest.docx --resource-path=SpecificationsSurface-Reflectance Specifications/Surface-Reflectance/PFS.md
-  ```
-
-- Surface Temperature:
-  ```bash
-  pandoc --standalone --shift-heading-level-by=-1 --from=gfm --reference-doc=.github/pandoc-template.docx --lua-filter=.github/pagebreak.lua --output=CEOS-ARD_PFS_Surface-Temperature_latest.docx --resource-path=Specifications/Surface-Temperature Specifications/Surface-Temperature/PFS.md Specifications/Surface-Temperature/annex-1-card4l-requirement-examples.md
-  ```
-
-- Synthetic Aperture Radar:
-  ```bash
-  pandoc --standalone --shift-heading-level-by=-1 --from=gfm --reference-doc=.github/pandoc-template.docx --lua-filter=.github/pagebreak.lua --output=docs/CEOS-ARD_PFS_Synthetic-Aperture-Radar_latest.docx --resource-path=Specifications/Synthetic-Aperture-Radar Specifications/Synthetic-Aperture-Radar/PFS.md Specifications/Synthetic-Aperture-Radar/annex-1.1-general-processing-roadmap.md Specifications/Synthetic-Aperture-Radar/annex-1.2-topographic-phase-removal.md Specifications/Synthetic-Aperture-Radar/annex-2-polarimetric-radar.md Specifications/Synthetic-Aperture-Radar/annex-3-ocean-radar-backscatter-example.md Specifications/Synthetic-Aperture-Radar/annex-4-geocoded-single-look-complex-example.md
-  ```
-
-For Aquatic Reflectance for example, you could now open the file `CEOS-ARD_PFS_Aquatic-Reflectance_latest.docx`.
+1. Install Python + Pandoc + Tex
+2. Install CEOS-ARD CLI: `pip install ceos-ard --user`
+3. Validate building blocks: `ceos-ard validate`
+4. Generate document: `ceos-ard build SR -o SR.md`
+5. Generate Word document with Pandoc: `pandoc SR.md -s -f markdown_mmd+definition_lists -o SR.docx -C --bibliography=SR.bib`
+6. Generate HTML / PDF: todo
 
 ## Release Process
 

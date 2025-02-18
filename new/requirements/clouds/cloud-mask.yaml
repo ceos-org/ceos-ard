@@ -1,9 +1,0 @@
-id: cloud-mask
-title: Cloud
-requirements:
-  minimum:
-    - description: >-
-        Metadata indicates whether a pixel is assessed as being cloud.
-  desired:
-    - description: >-
-        As threshold, information on cloud detection should be available in the metadata as a single DOI landing page along with the confidence in this assessment. Clouds and cirrus clouds are differentiated.

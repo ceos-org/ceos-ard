@@ -1,0 +1,13 @@
+- name: NASA
+  country: USA
+  members:
+    - Brian Killough
+    - Bhaskar Ramachandran
+- name: Leidos Inc.
+  country: USA
+  members:
+    - Miguel Román
+- name: University of Maryland
+  country: USA
+  members:
+    - Zhuosen Wang

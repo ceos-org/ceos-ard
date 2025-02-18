@@ -1,3 +1,0 @@
-term: Auxiliary Data
-description: >-
-  The data required for instrument processing, which does not originate in the instrument itself or from the satellite. Some auxiliary data will be generated in the ground segment, whilst other data will be provided from external sources.

@@ -1,9 +1,0 @@
-id: data-collection-time
-title: Data Collection Time
-requirements:
-  minimum:
-    - description: >-
-        The data collection time is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
-  desired:
-    - description: >-
-        Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.

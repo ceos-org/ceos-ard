@@ -17,11 +17,7 @@ Read also into the [CEOS-ARD Strategy 2021](./CEOS-ARD%20Strategy%202021.pdf).
 
 The following Product Family Specifications are currently defined:
 
-- [Aquatic Reflectance (Optical)](./Specifications/Aquatic-Reflectance/README.md)
-- [Nighttime Lights Surface Radiance (Optical)](./Specifications/Nighttime-Lights-Surface-Radiance/README.md)
-- [Surface Reflectance (Optical)](./Specifications/Surface-Reflectance/README.md)
-- [Surface Temperature (Optical)](./Specifications/Surface-Temperature/README.md)
-- [Synthetic Aperture Radar](./Specifications/Synthetic-Aperture-Radar/README.md)
+- ...
 
 ## Contributing
 
@@ -45,8 +41,6 @@ All of them detail specific 'Threshold' and 'Goal' requirements for:
 - Per-pixel Metadata
 - Radiometric and Atmospheric Corrections
 - Geometric Corrections
-
-A [Product Family Specification Template](./Template) has been developed to provide a starting point for future PFS, to ensure commonality in layout, general structure, interpretation and approach. It provides a foundation and common suite of assessment factors for all PFS.
 
 ### Product Assessments
 

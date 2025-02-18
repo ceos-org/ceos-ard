@@ -1,3 +1,0 @@
-term: Ancillary Data
-description: >-
-  Data other than instrument measurements, originating in the instrument itself or from the satellite, required to perform processing of the data. They include orbit data, attitude data, time information, spacecraft engineering data, calibration data, data quality information, and data from other instruments.
