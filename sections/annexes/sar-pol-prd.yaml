@@ -1,0 +1,11 @@
+title: Polarimetric Radar Decomposition (PRD)
+description: include:sar-pol-prd
+glossary:
+  - prd
+references:
+  - krogager1993
+  - cameron1996
+  - freeman1998
+  - yamaguchi2011
+  - raney2012
+  - cloude1996

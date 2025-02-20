@@ -1,5 +1,5 @@
 name: SAR - Ocean Radar Backscatter [ORB]
-description: Report an issue or propose a change for the SAR PFS, which applies for the Ocean Radar Backscatter \[ORB] products.
+description: Report an issue or propose a change for the SAR PFS, which applies for the Ocean Radar Backscatter ORB products.
 labels:
   - SAR
   - 'SAR: ORB'

@@ -1,5 +1,5 @@
 name: SAR - Normalised Radar Backscatter [NRB]
-description: Report an issue or propose a change for the SAR PFS, which applies for the Normalised Radar Backscatter \[NRB] products.
+description: Report an issue or propose a change for the SAR PFS, which applies for the Normalised Radar Backscatter NRB products.
 labels:
   - SAR
   - 'SAR: NRB'

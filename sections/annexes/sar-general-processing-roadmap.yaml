@@ -1,0 +1,17 @@
+title: General Processing Roadmap
+description: include:sar-general-processing-roadmap
+glossary:
+  - dem
+  - wgs84
+  - slc
+  - nrb
+  - orb
+  - pol
+  - gslc
+  - stac
+references:
+  - zebker2010
+  - zebker2017
+  - shiroma2022
+  - small2011
+  - lee2009

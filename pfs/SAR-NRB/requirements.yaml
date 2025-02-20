@@ -1,0 +1,12 @@
+- category: general_metadata
+  requirements:
+    - example/example
+- category: per_pixel_metadata
+  requirements:
+    - cloud-optimized-formats
+- category: radiometric_atmospheric_corrections
+  requirements:
+    - cloud-optimized-formats
+- category: geometric_corrections
+  requirements:
+    - example/example

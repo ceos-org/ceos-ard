@@ -1,0 +1,23 @@
+id: NLSR
+title: Nighttime Light Surface Radiance
+type: Optical
+applies_to: |-
+  Data collected with nighttime light sensors operating in the VIS/NIR wavelengths.
+  These typically operate with ground sample distance and resolution in the order of 10-1000m;
+  however, the Specification is not inherently limited to this resolution.
+
+introduction:
+
+# Only glossary entries that are not specific to certain requirements or sections are listed here.
+glossary:
+  - nlsr
+  - vis
+  - nir
+
+references:
+  - roman2018
+  - wang2021 # todo: move to req. 3.2?
+  - mills2014 # todo: move to req. 1.11?
+  - ryan2019 # todo: move to requirements
+
+annexes:

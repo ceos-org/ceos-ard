@@ -1,0 +1,7 @@
+title: Normalised Covariance Matrices (CovMat)
+description: include:sar-pol-covmat
+glossary:
+  - covmat
+references:
+  - yamaguchi2011
+  - raney2012

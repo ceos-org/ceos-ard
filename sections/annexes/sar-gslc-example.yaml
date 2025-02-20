@@ -1,0 +1,10 @@
+title: Geocoded Single-Look Complex example
+description: include:sar-gslc-example
+glossary:
+  - gslc
+  - nrb
+  - pol
+  - insar
+references:
+  - zebker2010
+  - zebker2017
