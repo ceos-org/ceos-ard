@@ -64,58 +64,43 @@ Goal requirements anticipate continuous improvement of methods and evolution of 
 
 {{ block.category.description }}
 
-{%   for requirement in block.requirements %}
+{%   for requirement in block.requirements -%}
+#### {{ requirement.title }} (`{{ requirement.id }}`)
 
-#### {{ requirement.title }}
+{%      for type in ['goal', 'threshold'] -%}
+{%        if requirement[type] -%}
+##### {{ type|title }}
 
-{%      if requirement.threshold -%}
-**Threshold**
+{{ requirement[type].description }}
 
-{{ requirement.threshold.description }}
-
-{%        if requirement.goal.notes -%}
+{%          if requirement[type].notes -%}
 **_Notes:_**
-{%          for note in requirement.goal.notes -%}
+{%            for note in requirement[type].notes -%}
 {{ loop.index }}. _{{ note }}_
-{%          endfor %}
+{%            endfor %}
+{%          endif -%}
 {%        endif -%}
-
-{%      endif -%}
-
-{%      if requirement.goal -%}
-**Goal**
-
-{{ requirement.goal.description }}
-
-{%        if requirement.goal.notes -%}
-**_Notes:_**
-{%          for note in requirement.goal.notes %}
-{{ loop.index }}. _{{ note }}_
-{%         endfor %}
-{%       endif -%}
-{%     endif -%}
+{%      endfor -%}
 {%   endfor -%}
 {% endfor -%}
 
-{%- if references %}
 &#12;
 
+{%- if references %}
 ## References
 
 {%   for reference in references %}
 - {{ reference }}
 {%   endfor %}
-{%- endif %}
 
 &#12;
+{% endif %}
 
 ## Document History
 
 {{ history }}
 
 {%- if annexes %}
-&#12;
-
 ## Annexes
 
 {%   for annex in annexes -%}
@@ -124,4 +109,5 @@ Goal requirements anticipate continuous improvement of methods and evolution of 
 {{ annex.description }}
 {%-   endfor %}
 
-{%- endif %}
+&#12;
+{% endif %}

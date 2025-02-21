@@ -1,10 +1,17 @@
 - category: general_metadata
   requirements:
+    - metadata/traceability
+    - metadata/machine-readability-sar
+    - metadata/product-type
+    - metadata/license
+    - metadata/time-sar
+- category: source_metadata
+  requirements:
     - example/example
 - category: per_pixel_metadata
   requirements:
     - cloud-optimized-formats
-- category: radiometric_atmospheric_corrections
+- category: radiometrically_corrected_measurements
   requirements:
     - cloud-optimized-formats
 - category: geometric_corrections

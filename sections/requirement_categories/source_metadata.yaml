@@ -1,0 +1,8 @@
+title: Source Metadata
+description: |-
+  These are metadata records describing (detailing) **each** acquisition (source data) used to generate the ARD product.
+  This may be one or mutliple acquisitions, depending on the ARD product.
+
+  *Note: Source data attribute information are described for each acquisition and sequentially identified as acqID= 1, 2, 3, …*
+glossary:
+references:
