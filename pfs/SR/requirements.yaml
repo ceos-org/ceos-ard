@@ -1,4 +1,4 @@
-- category: general_metadata
+- category: general-metadata
   requirements:
     - metadata/traceability
     - metadata/machine-readability
@@ -6,15 +6,15 @@
     # - metadata/product-type
     # - metadata/license
     - metadata/time
-- category: source_metadata
+- category: source-metadata
   requirements:
     - example/example
-- category: per_pixel_metadata
+- category: per-pixel-metadata
   requirements:
     - example/example
-- category: radiometric_atmospheric_corrections
+- category: radiometric-atmospheric-corrections
   requirements:
     - example/example
-- category: geometric_corrections
+- category: geometric-corrections
   requirements:
     - example/example

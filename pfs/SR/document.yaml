@@ -5,6 +5,9 @@ applies_to: |-
   Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.
 
 introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
 
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:

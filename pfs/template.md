@@ -46,25 +46,6 @@ title: CEOS-ARD - {{ type }} - {{ title }}
 
 ## Introduction
 
-### When can a product be called CEOS-ARD?
-
-The CEOS-ARD branding is applied to a particular product once:
-
-- that product has been assessed as meeting CEOS-ARD requirements by the agency responsible for production and distribution of the product, and
-- that assessment has been peer reviewed by the CEOS Working Group on Calibration and Validation.
-
-Agencies or other entities considering undertaking an assessment process should contact <ard-contact@lists.ceos.org>.
-
-A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
-
-### What is the difference between Threshold and Goal?
-
-Products that meet all threshold requirements should be immediately useful for scientific analysis or decision-making.
-
-Products that meet Goal requirements will reduce the overall product uncertainties and enhance broad-scale applications. For example, the products may enhance interoperability or provide increased accuracy through additional corrections that are not reasonable at the _threshold_ level.
-
-Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field. Over time, Goal specifications may (and subject to due process) become accepted as _threshold_ requirements.
-
 {% for section in introduction -%}
 ### {{ section.title }}
 

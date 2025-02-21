@@ -10,6 +10,9 @@ applies_to: |-
   This specification identifies the Surface Temperature (ST) as being the minimum or Threshold requirement for analysis ready land surface data. Nevertheless, both SBT and LST are land measurements, requiring atmospheric corrections.
 
 introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
 
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
@@ -23,4 +26,4 @@ references:
   - li2013
 
 annexes:
-  - st_metadata_examples # todo: these should be part of the requirements as examples
+  - st-metadata-examples # todo: these should be part of the requirements as examples
