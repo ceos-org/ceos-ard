@@ -12,20 +12,14 @@ So if you want to help then the best thing you can do is make new ARD available,
 Any proposed changes to the specification should be done as pull requests,
 ideally after discussing the changes in an issue before.
 
-All pull requests should submit clean Markdown, which is checked by the continuous integration
-system. Please use `npm test` locally, as described in the [next section](#checking-files), 
-to ensure that the checks on the pull request succeed.
-
 All pull requests additionally require a review of a CEOS-ARD team members.
 
 ## Development / Authoring
 
-1. Install Python + Pandoc + Tex
-2. Install CEOS-ARD CLI: `pip install ceos-ard --user`
-3. Validate building blocks: `ceos-ard validate`
-4. Generate document: `ceos-ard build SR -o SR.md`
-5. Generate Word document with Pandoc: `pandoc SR.md -s -f markdown_mmd+definition_lists -o SR.docx -C --bibliography=SR.bib`
-6. Generate HTML / PDF: todo
+1. [Install the CEOS-ARD CLI](https://github.com/ceos-org/ceos-ard-cli?tab=readme-ov-file#installation)
+2. Validate building blocks: `ceos-ard validate`
+3. Generate the documents for a specific PFS (e.g. `SR`): `ceos-ard generate SR`
+4. Generate all documents: `ceos-ard generate-all`
 
 ## Release Process
 

@@ -1,1 +1,0 @@
-- Requirement categories: SAR uses radiometrically-corrected-measurements, Optical uses radiometric_atmospheric_corrections

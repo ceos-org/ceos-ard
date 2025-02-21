@@ -1,14 +1,28 @@
+---
+title: CEOS-ARD - {{ type }} - {{ title }}
+---
+
+![](assets/CEOS_logo_colour_black_text_right.png)
+
 # CEOS-ARD - {{ type }} - {{ title }}
 
-![CEOS Logo](assets/CEOS_logo_colour_black_text_right.png)
+&nbsp;
 
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-**CEOS Analsysis Ready Data - Product Family Specification:**
+&nbsp;
+
+**Product Family Specification:**
 {{type}}, {{ title }} ({{ id }})
 
 **Applies to:**
 {{ applies_to }}
+
+&#12;
+
+## Document History
+
+{{ history }}
 
 ## Contributing Authors
 
@@ -18,14 +32,16 @@
   - {{ member }}
 {%-   endfor %}
 {% endfor %}
+
 &#12;
 
 ## Glossary
 
-{% for term in glossary -%}
+{% for term in glossary %}
 {{ term.term }}
 :   {{ term.description }}
 {% endfor %}
+
 &#12;
 
 ## Introduction
@@ -37,7 +53,7 @@ The CEOS-ARD branding is applied to a particular product once:
 - that product has been assessed as meeting CEOS-ARD requirements by the agency responsible for production and distribution of the product, and
 - that assessment has been peer reviewed by the CEOS Working Group on Calibration and Validation.
 
-Agencies or other entities considering undertaking an assessment process should contact <mailto:ard-contact@lists.ceos.org>.
+Agencies or other entities considering undertaking an assessment process should contact <ard-contact@lists.ceos.org>.
 
 A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
 
@@ -64,35 +80,31 @@ Goal requirements anticipate continuous improvement of methods and evolution of 
 
 {{ block.category.description }}
 
-{%   for requirement in block.requirements %}
+{%   for requirement in block.requirements -%}
+#### {{ requirement.title }} (`{{ requirement.id }}`)
 
-#### {{ requirement.title }}
+{%     for type in ['goal', 'threshold'] -%}
+{%       if requirement[type] -%}
+##### {{ type|title }} requirements
 
-{%      if requirement.threshold -%}
-**Threshold**
+{{ requirement[type].description }}
 
-{{ requirement.threshold.description }}
-
-{%        if requirement.goal.notes -%}
+{%         if requirement[type].notes -%}
 **_Notes:_**
-{%          for note in requirement.goal.notes -%}
+{%           for note in requirement[type].notes -%}
 {{ loop.index }}. _{{ note }}_
-{%          endfor %}
-{%        endif -%}
-
-{%      endif -%}
-
-{%      if requirement.goal -%}
-**Goal**
-
-{{ requirement.goal.description }}
-
-{%        if requirement.goal.notes -%}
-**_Notes:_**
-{%          for note in requirement.goal.notes %}
-{{ loop.index }}. _{{ note }}_
-{%         endfor %}
+{%           endfor %}
+{%         endif -%}
 {%       endif -%}
+{%     endfor -%}
+{%     if editable -%}
+##### Assessment
+
+- Threshold Self-Assessment:
+- Target Self-Assessment:
+- Self-Assessment Explanation/ Justification:
+- Recommended Requirement Modification:
+
 {%     endif -%}
 {%   endfor -%}
 {% endfor -%}
@@ -105,13 +117,8 @@ Goal requirements anticipate continuous improvement of methods and evolution of 
 {%   for reference in references %}
 - {{ reference }}
 {%   endfor %}
-{%- endif %}
 
-&#12;
-
-## Document History
-
-{{ history }}
+{% endif %}
 
 {%- if annexes %}
 &#12;
@@ -124,4 +131,4 @@ Goal requirements anticipate continuous improvement of methods and evolution of 
 {{ annex.description }}
 {%-   endfor %}
 
-{%- endif %}
+{% endif %}

@@ -4,10 +4,10 @@ type: Synthetic Aperture Radar
 applies_to: |-
   This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
-  The CEOS-ARD Ocean Radar Backscatter (ORB) product specification describes products that have been projected on a geoid and are provided in the Sigma-Nought ($`\sigma^0`$) backscatter convention, which is recommended for most ocean applications.
-  Backscatter may be calibrated to the ellipsoid ($`\sigma^0_E`$) or radiometrically terrain corrected ($`\sigma^0_T`$) prior to geometric terrain correction.
+  The CEOS-ARD Ocean Radar Backscatter (ORB) product specification describes products that have been projected on a geoid and are provided in the Sigma-Nought ($\sigma^0$) backscatter convention, which is recommended for most ocean applications.
+  Backscatter may be calibrated to the ellipsoid ($\sigma^0_E$) or radiometrically terrain corrected ($\sigma^0_T$) prior to geometric terrain correction.
   As the basic ORB product contains backscatter values only, it _cannot_ be directly used for SAR polarimetry or interferometric applications that require local phase estimates.
-  Nonetheless, an advanced ORB product could include the upper diagonal of the polarimetric $`\sigma^0`$ covariance matrix for enabling advanced polarimetric analysis (similar to the POL product). 
+  Nonetheless, an advanced ORB product could include the upper diagonal of the polarimetric $\sigma^0$ covariance matrix for enabling advanced polarimetric analysis (similar to the POL product). 
 
 introduction:
 

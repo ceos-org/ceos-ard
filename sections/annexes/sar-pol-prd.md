@@ -5,15 +5,15 @@ Different methodologies allow decomposition of coherent dual-polarization data o
 Coherent decompositions express the scattering matrix by the summation of elementary objects of known signature (ex.: a sphere, a diplane, a cylinder, a helix, …). They are used mainly to describe point targets which are coherent. As for examples, coherent PRD could be (but not limited to):
 
 1. Pauli decomposition (3 layers)
-   - $`|\alpha|^2`$: sphere (odd-bounce interaction) \[Intensity]
-   - $`|\beta|^2`$: 0° diplane (even-bounce interaction) \[Intensity]
-   - $`|\gamma|^2`$: 45° diplane (volumetric interaction) \[Intensity]
+   - $|\alpha|^2$: sphere (odd-bounce interaction) \[Intensity]
+   - $|\beta|^2$: 0° diplane (even-bounce interaction) \[Intensity]
+   - $|\gamma|^2$: 45° diplane (volumetric interaction) \[Intensity]
 2. Krogager decomposition (5 layers) [@krogager1993]
-   - $`|\kappa_\sigma|^2`$ : sphere (odd-bounce interaction) \[Intensity]
-   - $`|\kappa_\delta|^2`$ : diplane (odd-bounce interaction) \[Intensity]
-   - $`|\kappa_\eta|^2`$ : helix \[Intensity]
-   - $`\theta`$: orientation angle \[degrees]
-   - $`\Phi_s`$: sphere to diplane angle \[degrees]
+   - $|\kappa_\sigma|^2$ : sphere (odd-bounce interaction) \[Intensity]
+   - $|\kappa_\delta|^2$ : diplane (odd-bounce interaction) \[Intensity]
+   - $|\kappa_\eta|^2$ : helix \[Intensity]
+   - $\theta$: orientation angle \[degrees]
+   - $\Phi_s$: sphere to diplane angle \[degrees]
 3. Cameron (nine classes) – non-dimensional layers [@cameron1996]
    
    **Table** Class to ID mapping
@@ -46,7 +46,7 @@ Incoherent decompositions describe distributed targets in terms of scattering me
    | Helix                          |                |     X     |       |
    
 2. Based on eigenvector-eigenvalue decomposition expressing the diversity of scattering mechanisms [@cloude1996] and types:
-   - $`H`$ : Entropy \[ \]  is the polarization diversity
-   - $`A`$ : Anisotropy \[ \]  is weighted difference between the 2ⁿᵈ and 3ʳᵈ eigenvalues
-   - $`\alpha`$ : Odd-even bounce angle \[Degrees]
-   - $`\beta`$ : orientation angle \[Degrees]
+   - $H$ : Entropy \[ \]  is the polarization diversity
+   - $A$ : Anisotropy \[ \]  is weighted difference between the 2ⁿᵈ and 3ʳᵈ eigenvalues
+   - $\alpha$ : Odd-even bounce angle \[Degrees]
+   - $\beta$ : orientation angle \[Degrees]

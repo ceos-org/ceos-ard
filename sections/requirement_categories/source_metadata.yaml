@@ -1,0 +1,6 @@
+title: Source Metadata
+description: |-
+  These are metadata records describing (detailing) **each** acquisition (source data) used to generate the ARD product.
+  This may be one or mutliple acquisitions, depending on the ARD product.
+glossary:
+references:

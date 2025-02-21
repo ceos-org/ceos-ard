@@ -10,7 +10,7 @@ applies_to: |-
   The sample spacing of the GSLC product in the map coordinate directions is comparable to the full resolution original SLC product.
   The GSLC product can be directly overlaid on a map or combined with other similar GSLC products to derive interferograms and create change maps, for example.
   Since the GSLC phase is flattened, the phase difference between two GSLC products acquired on a same relative orbit produces an interferogram referring only to surface displacement and noise (i.e., no topographic fringes).
-  The GSLC product may optionally be radiometrically terrain corrected such that the squared amplitude yields $`\gamma^0_T`$.
+  The GSLC product may optionally be radiometrically terrain corrected such that the squared amplitude yields $\gamma^0_T$.
 
 introduction:
 

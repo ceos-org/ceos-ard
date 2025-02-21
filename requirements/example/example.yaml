@@ -1,11 +1,19 @@
 title: Example Requirement
-threshold: null
+description: This is an example requirement.
+threshold:
+  description: |-
+    This is a threshold requirement.
+  notes:
 goal:
   description: |-
-    Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata.
-    Ideally this would support machine-to-machine access.
+    This is a goal requirement.
   notes:
-    - Information on sensor calibration should be available in the metadata as a single DOI landing page.
+    - This is a note.
 glossary:
   - doi
 references:
+  - iso19115_2_2009
+metadata:
+legacy:
+  sar:
+  optical:

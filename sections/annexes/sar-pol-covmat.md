@@ -2,7 +2,8 @@ In order to preserve the inter-channel polarimetric phase and thus the full info
 
 **Fully polarimetric**
 
-$$ \tag {Eq. A2.1}
+$$
+\tag {Eq. A2.1}
 C3 = \begin{bmatrix}
 | \mathbf{H} \mathbf{H} |^2 & \sqrt{2} \cdot \mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* & \mathbf{H}\mathbf{H} \cdot \mathbf{V}\mathbf{V}^* \\
 \sqrt{2} \cdot HV \cdot HH^* & 2 \cdot |\mathbf{H}\mathbf{V}|^2 & \sqrt{2} \cdot \mathbf{H}\mathbf{V} \cdot \mathbf{H}\mathbf{V}^* \\
