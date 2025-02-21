@@ -1,0 +1,19 @@
+title: Example Requirement
+description: This is an example requirement.
+threshold:
+  description: |-
+    This is a threshold requirement.
+  notes:
+goal:
+  description: |-
+    This is a goal requirement.
+  notes:
+    - This is a note.
+glossary:
+  - doi
+references:
+  - iso19115_2_2009
+metadata:
+legacy:
+  sar:
+  optical:

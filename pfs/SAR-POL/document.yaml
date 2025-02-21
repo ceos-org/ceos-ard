@@ -1,0 +1,31 @@
+id: SAR-POL
+title: Polarimetric Radar
+type: Synthetic Aperture Radar
+applies_to: |-
+  This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
+
+  The CEOS-ARD Polarimetric Radar (POL) product format is an extension of the CEOS-ARD Normalised Radar Backscatter (NRB) format.
+  This extension is required in order to better support Level-1 SLC polarimetric data, including full-polarimetric modes (e.g., RADARSAT-2, ALOS-2/4, SAOCOM-1 and future missions), and hybrid or linear dual-polarimetric modes (i.e., Compact Polarimetric mode available on RCM, SAOCOM and the upcoming NISAR mission).
+
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+  - sar-pol-processing-levels
+  - sar-pol-limitations
+
+# Only glossary entries that are not specific to certain requirements or sections are listed here.
+glossary:
+  - pol
+  - nrb
+  - slc
+
+references:
+  - iso19115_2_2009
+
+annexes:
+  - sar-general-processing-roadmap
+  - sar-topographic-phase-removal
+  - sar-pol-covmat
+  - sar-pol-prd
+  - sar-pol-examples

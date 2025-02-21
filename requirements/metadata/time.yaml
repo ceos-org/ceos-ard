@@ -1,0 +1,18 @@
+title: Data Collection Time
+description:
+threshold:
+  description: |-
+    The data collection time is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
+  notes:
+goal:
+  # todo: this mixes general metadata and per-pixel metadata
+  description: |-
+    Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
+  notes:
+glossary:
+  - utc
+references:
+metadata:
+legacy:
+  sar: 1.3
+  optical: null

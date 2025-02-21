@@ -1,0 +1,15 @@
+title: Traceability
+description:
+threshold: null
+goal:
+  description: Data must be traceable to SI reference standard.
+  notes:
+    - Traceability requires an estimate of measurement uncertainty.
+    - Information on traceability should be available in the metadata as a single DOI landing page.
+glossary:
+  - si
+references:
+metadata:
+legacy:
+  sar: 1.1
+  optical: 1.1
