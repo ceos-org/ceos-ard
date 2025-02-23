@@ -1,14 +1,19 @@
-In contrast to NRB and POL, CEOS-ARD Ocean Radar Backscatter ORB products are geoid corrected and are provided in the Sigma-Nought (σE0) backscatter convention (Figure A3.1a), which is recommended for most ocean applications. In addition, availability of the “Local (or Ellipsoidal) Incidence Angle Image” (Figure A3.1d) and “Look Direction Image” per-pixel metadata are highly recommended (otherwise the general metadata “Look Direction Polynomials”) since they required for operational applications like ocean wind field estimates. 
+In contrast to NRB and POL, CEOS-ARD Ocean Radar Backscatter ORB products are geoid corrected and are provided in the Sigma-Nought (σE0) backscatter convention ([@fig:sar-orb-example-fig1a]), which is recommended for most ocean applications. In addition, availability of the “Local (or Ellipsoidal) Incidence Angle Image” ([@fig:sar-orb-example-fig1d]) and “Look Direction Image” per-pixel metadata are highly recommended (otherwise the general metadata “Look Direction Polynomials”) since they required for operational applications like ocean wind field estimates.
 
-![Figure A3.1a](assets/sar-orb-examples/S1-ORB-VV.png) **a)** VV intensity
-![Figure A3.1b](assets/sar-orb-examples/S1-ORB-VH.png) **b)** VH intensity
-![Figure A3.1c](assets/sar-orb-examples/S1-ORB-data-mask.png) **c)** Data mask image
-![Figure A3.1d](assets/sar-orb-examples/S1-ORB-local-indicident-angle.png) **d)** Local incident angle
+The following figures show Sentinel-1 ORB products of the Tropical Cyclone Harold passing Vanuatu on April 6, 2020:
 
-**Figure A3.1**  Sentinel-1 ORB product. Tropical Cyclone Harold passing Vanuatu on April 6, 2020. *Processing: A. Rosenqvist (soloEO).*
+![VV intensity; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-VV.png){#fig:sar-orb-example-fig1a}
 
-Another useful file is the “Mean Wind-Normalised Backscatter Measurements” (Figure A3.2b) which efficiently attenuates intensity variation along range and visually enhances oceanic features. This file is calculated as the ratio between the backscatter intensity and a simulated backscatter intensity image generated using an ocean surface wind model, like CMOD\_IRF2 [@quilfen1998] for VV polarization or CMOD\_IRF2K [@vachon2000] for HH polarization, and the SAR local incidence angle and the look direction information.
+![VH intensity; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-VH.png){#fig:sar-orb-example-fig1b}
 
-![Figure A3.2 Left](assets/sar-orb-examples/S1-ORB-sigma-nought.png) ![Figure A3.1 Right](assets/sar-orb-examples/S1-ORB-intesity-compensated.png)
+![Data mask image; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-data-mask.png){#fig:sar-orb-example-fig1c}
 
-**Figure A3.2**  Sentinel-1 EW ORB product.  **Left:** ORB intensity (Sigma-Nought); **Right:** Intensity compensated with the “Mean Wind-Normalised Backscatter Measurement” (i.e., not Sigma-Nought) and geocoded. *Processing: G. Hajduch (CLS).*
+![Local incident angle; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-local-indicident-angle.png){#fig:sar-orb-example-fig1d}
+
+Another useful file is the “Mean Wind-Normalised Backscatter Measurements” ([@fig:sar-orb-example-fig2b]) which efficiently attenuates intensity variation along range and visually enhances oceanic features. This file is calculated as the ratio between the backscatter intensity and a simulated backscatter intensity image generated using an ocean surface wind model, like CMOD\_IRF2 [@quilfen1998] for VV polarization or CMOD\_IRF2K [@vachon2000] for HH polarization, and the SAR local incidence angle and the look direction information.
+
+The following figures show Sentinel-1 EW ORB products:
+
+![ORB intensity (Sigma-Nought); Processing: G. Hajduch (CLS)](assets/sar-orb-examples/S1-ORB-sigma-nought.png){#fig:sar-orb-example-fig2a}
+
+![Intensity compensated with the “Mean Wind-Normalised Backscatter Measurement” (i.e., not Sigma-Nought) and geocoded; Processing: G. Hajduch (CLS)](assets/sar-orb-examples/S1-ORB-intesity-compensated.png){#fig:sar-orb-example-fig2b}

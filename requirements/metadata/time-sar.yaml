@@ -2,10 +2,11 @@
 title: Data Collection Time
 description:
 threshold:
+  # todo: replace reference to 2.8 with a propert reference with the new ids
   description: |-
     Number of source data acquisitions of the data collection is identified.
-    The start and stop UTC time of data collection is identified in the metadata, expressed in date/time. 
-    In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata (Acquisition ID Image) is provided with the product. 
+    The start and stop UTC time of data collection is identified in the metadata, expressed in date/time.
+    In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata (item 2.8, Acquisition ID Image) is provided with the product.
   notes:
 goal: null
 glossary:

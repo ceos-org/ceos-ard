@@ -7,7 +7,7 @@ description: |-
   Scattering information enhancement can be achieved by applying incoherent polarimetric decomposition techniques (e.g., Freeman-Durden, van Zyl, Cloude-Pottier, Yamaguchi-based) directly on the C2 or C3 matrix.
 
   **Polarimetric Radar Decomposition (PRD)** refers to ARD products where polarimetric information is broken down into simplified parameters to facilitate user interpretation of the data.
-  They are derived from coherent or incoherent polarimetric decomposition techniques. 
+  They are derived from coherent or incoherent polarimetric decomposition techniques.
 glossary:
   - covmat
   - prd

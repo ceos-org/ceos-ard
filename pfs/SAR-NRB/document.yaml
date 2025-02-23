@@ -8,7 +8,7 @@ applies_to: |-
   An additional metadata layer can be optionally provided for conversion of $\gamma^0_T$ to Sigma-Nought ($\sigma^0_T$) backscatter layer for compatibility with legacy software or numerical models.
   As the NRB product contains backscatter values only, it cannot be directly used for SAR polarimetry or interferometric applications that require relative polarization phase or local phase estimates respectively.
   However, as an option, a “flattened” phase data layer can be provided with an NRB product for enabling InSAR analysis.
-  The flattened phase is the interferometric phase, with respect to a reference orbit and to a DEM, for which the topographic phase contribution is removed. 
+  The flattened phase is the interferometric phase, with respect to a reference orbit and to a DEM, for which the topographic phase contribution is removed.
 
 introduction:
   - what-are-ceos-ard-products

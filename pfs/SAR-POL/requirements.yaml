@@ -7,7 +7,7 @@
     - metadata/time-sar
 - category: source-metadata
   requirements:
-    - example/example
+    - example
 - category: per-pixel-metadata
   requirements:
     - cloud-optimized-formats
@@ -16,4 +16,4 @@
     - cloud-optimized-formats
 - category: geometric-corrections
   requirements:
-    - example/example
+    - example

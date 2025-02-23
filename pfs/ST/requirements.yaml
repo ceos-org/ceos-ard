@@ -8,13 +8,13 @@
     - metadata/time
 - category: source-metadata
   requirements:
-    - example/example
+    - example
 - category: per-pixel-metadata
   requirements:
-    - example/example
+    - example
 - category: radiometric-atmospheric-corrections
   requirements:
-    - example/example
+    - example
 - category: geometric-corrections
   requirements:
-    - example/example
+    - example

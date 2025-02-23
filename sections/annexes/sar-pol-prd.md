@@ -16,8 +16,6 @@ Coherent decompositions express the scattering matrix by the summation of elemen
    - $\Phi_s$: sphere to diplane angle \[degrees]
 3. Cameron (nine classes) – non-dimensional layers [@cameron1996]
    
-   **Table** Class to ID mapping
-   
    | Classes         |  ID  |
    | :-------------- | :--: |
    | Trihedral       |  1   |
@@ -30,13 +28,13 @@ Coherent decompositions express the scattering matrix by the summation of elemen
    | Left Helix      |  8   |
    | Asymmetrical    |  9   |
 
+   : Classification of Non-Dimensional Layers {#tbl:sar-pol-prd-tbl1}
+
 #### Incoherent decompositions
 
 Incoherent decompositions describe distributed targets in terms of scattering mechanisms and their diversity. They are generated from averaged Covariance, Coherence or Kennaugh matrices. As for examples, incoherent PRD could be (but not limited to):
 
 1. Based and saved on intensity of scattering mechanisms can be [@freeman1998; @yamaguchi2011; @raney2012]
-   
-   **Table A2.2**  Incoherent Decompositions: Freeman-Durden, Yamaguchi, m-chi
    
    | Level 2b - Layers [Intensity]  | Freeman-Durden | Yamaguchi | m-chi |
    | :----------------------------- | :------------: | :-------: | :---: |
@@ -44,8 +42,11 @@ Incoherent decompositions describe distributed targets in terms of scattering me
    | Even-bounce (dihedral)         |       X        |     X     |   X   |
    | Random (volumetric)            |       X        |     X     |   X   |
    | Helix                          |                |     X     |       |
+
+   : Incoherent Decompositions: Freeman-Durden, Yamaguchi, m-chi {#tbl:sar-pol-prd-tbl2}
    
 2. Based on eigenvector-eigenvalue decomposition expressing the diversity of scattering mechanisms [@cloude1996] and types:
+   
    - $H$ : Entropy \[ \]  is the polarization diversity
    - $A$ : Anisotropy \[ \]  is weighted difference between the 2ⁿᵈ and 3ʳᵈ eigenvalues
    - $\alpha$ : Odd-even bounce angle \[Degrees]
