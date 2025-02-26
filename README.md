@@ -25,6 +25,24 @@ The following Product Family Specifications (PFS) are currently defined:
 - SR
 - ST
 
+## In this repository
+
+The repository is structured as follows:
+
+- `assets`: contains all imagery and other assets for the PFSes
+- `glossary`: contains terms and their definitions
+- `pfs`: contains the details for each PFS, e.g. document information (id, title, descriptions, authors, etc), document structure, (references to) requirements
+- `references`: bibtex files for the citations/references
+- `requirements`: the individual requirements that PFSes can pick from
+- `sections`: the editorial content of the PFSes, e.g. annexes, requirement categories, introductory chapters
+
+ Most people won't need to look at the following two folders as they are primarily for technical purposes:
+
+- `.github`: contains issue templates and workflows for GitHub
+- `templates`: the layout and styles for Markdown, Word, HTML, etc.
+
+Some high-level information (governance framework, strategy, guides, license, etc.) reside on the top-level of the repository.
+
 ## Contributing
 
 We welcome contributions, especially via GitHub issues and pull requests!
