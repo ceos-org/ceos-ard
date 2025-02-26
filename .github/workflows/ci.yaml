@@ -1,0 +1,121 @@
+name: CI
+on:
+  - push
+  - pull_request
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install ceos-ard-cli
+        run: pip install ceos-ard-cli
+      - name: Run validation
+        run: ceos-ard validate
+  generate:
+    # run once, see https://github.com/orgs/community/discussions/57827
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Install ceos-ard-cli
+        run: pip install ceos-ard-cli
+      # Validate to ensure we only build when it has a chance to succeed
+      - name: Install pandoc
+        run: |
+          curl https://github.com/jgm/pandoc/releases/download/3.6.2/pandoc-3.6.2-1-amd64.deb -L -o pandoc.deb
+          sudo dpkg -i pandoc.deb
+          pandoc --version
+      - name: Install pandoc-crossref
+        run: |
+          curl https://github.com/lierdakil/pandoc-crossref/releases/download/v0.3.18.1a/pandoc-crossref-Linux-X64.tar.xz -L -o pandoc-crossref.tar.xz
+          tar -xf pandoc-crossref.tar.xz
+          sudo mv pandoc-crossref /usr/local/bin
+          pandoc-crossref --version
+      - name: Install weasyprint
+        run: |
+          sudo apt update
+          sudo apt install weasyprint -y
+      - name: Generate all PFS
+        run: ceos-ard generate-all -o build --self-contained
+      - name: Archive generated PFS artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: documents
+          path: build
+      - name: PR number
+        run: echo ${{ github.event.number }}
+  deploy-latest:
+    if: >
+      github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    needs: generate
+    steps:
+      - name: Download PFS artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: documents
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: documents/
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: documents
+          destination_dir: latest
+          commit_message: Deploy latest version of PFS documents
+          exclude_assets: '{assets/**,*.{md,bib}}'
+  deploy-pr:
+    if: github.event.number
+    runs-on: ubuntu-latest
+    needs: generate
+    steps:
+      - name: Download PFS artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: documents
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          path: documents/
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.ceos-ard-preview.mohr.ws
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: documents/
+          server-dir: pr-${{ github.event.number }}/
+          exclude: '{assets/**,*.{md,bib}}'
+          dangerous-clean-slate: true
+      - name: Add comment to pull request
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pullRequestNumber = ${{ github.event.number }};
+            const start = '⚠️';
+            const author = 'github-actions[bot]';
+
+            const comments = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pullRequestNumber
+            });
+
+            const commentExists = comments.data.some(
+              comment => comment.user.login === author && comment.body.startsWith(start)
+            );
+
+            if (!commentExists) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pullRequestNumber,
+                body: `${start} A preview for all PFS has been generated and can be accessed here: <https://ceos-ard-preview.mohr.ws/pr-${pullRequestNumber}/>`
+              });
+            } else {
+              console.log(`Preview URL comment already added to PR #${pullRequestNumber}`);
+            }
