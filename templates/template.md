@@ -117,7 +117,6 @@ nocite: |
 ~(       endif )~
 ~(     endfor )~
 ~(     if editable )~
-
 ##### Assessment
 
 - Threshold Self-Assessment:
@@ -129,6 +128,22 @@ nocite: |
 ~(   endfor )~
 ~( endfor )~
 &#12;
+
+~( if editable )~
+## Summary Self-Assessment Table
+
+~( for block in requirements )~
+### ~{ block.category.title }~
+
+| Requirement ID | Requirement Title | Threshold | Goal |
+| -------------- | ----------------- | :-------: | :--: |
+~(   for requirement in block.requirements )~
+| `~{ requirement.uid }~` | ~{ requirement.title }~ | ~( if not requirement.threshold )~_not required_~( endif )~ | ~( if not requirement.goal )~_as threshold_~( endif )~ |
+~(   endfor )~
+
+~( endfor )~
+&#12;
+~( endif )~
 
 ## References
 
