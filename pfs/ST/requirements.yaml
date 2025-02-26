@@ -2,13 +2,16 @@
   requirements:
     - metadata/traceability-st
     - metadata/machine-readability
-    # todo: the following should probably be added to the requirements
-    # - metadata/product-type
-    # - metadata/license
-    - metadata/time
+  # todo: the following should probably be added to the requirements
+  # - metadata/license
 - category: source-metadata
   requirements:
+    - metadata/time
+- category: product-metadata
+  requirements:
     - example
+  # todo: the following should probably be added to the requirements
+  # - metadata/product-type
 - category: per-pixel-metadata
   requirements:
     - example
@@ -17,4 +20,4 @@
     - example
 - category: geometric-corrections
   requirements:
-    - example
+    - geometric-corrections/geometric-corrections

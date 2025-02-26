@@ -9,6 +9,7 @@ threshold:
     In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata (item 2.8, Acquisition ID Image) is provided with the product.
   notes:
 goal: null
+dependencies:
 glossary:
   - utc
 references:

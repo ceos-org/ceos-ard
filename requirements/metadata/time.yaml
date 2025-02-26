@@ -9,6 +9,7 @@ goal:
   description: |-
     Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
   notes:
+dependencies:
 glossary:
   - utc
 references:

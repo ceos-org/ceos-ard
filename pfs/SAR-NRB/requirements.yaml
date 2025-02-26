@@ -2,12 +2,15 @@
   requirements:
     - metadata/traceability
     - metadata/machine-readability-sar
-    - metadata/product-type
     - metadata/license
-    - metadata/time-sar
 - category: source-metadata
   requirements:
-    - example
+    - metadata/time-sar
+- category: product-metadata
+  requirements:
+    - metadata/product-type
+    - metadata/bounding-box
+    - metadata/crs
 - category: per-pixel-metadata
   requirements:
     - cloud-optimized-formats

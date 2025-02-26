@@ -9,6 +9,7 @@ threshold:
   notes:
     - In case of compliance with more than one product type, multiple product type names and URLs must be provided.
 goal: null
+dependencies:
 glossary:
 references:
 metadata:

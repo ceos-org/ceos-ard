@@ -14,6 +14,7 @@ goal:
     # todo: replace reference to 3.2 with a propert reference with the new ids
     - Relationship to item 3.2. Traceability requires an estimate of measurement uncertainty.
     - Information on traceability should be available in the metadata as a single DOI landing page.
+dependencies:
 glossary:
   - si
 references:

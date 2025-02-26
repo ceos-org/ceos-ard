@@ -15,9 +15,15 @@ Read also into the [CEOS-ARD Strategy 2021](./CEOS-ARD%20Strategy%202021.pdf).
 
 ## Product Family Specifications
 
-The following Product Family Specifications are currently defined:
+The following Product Family Specifications (PFS) are currently defined:
 
-- ...
+- NLSR
+- SAR-GSLC
+- SAR-NRB
+- SAR-ORB
+- SAR-POL
+- SR
+- ST
 
 ## Contributing
 
@@ -33,11 +39,11 @@ The [CEOS-ARD Governance Framework](./CEOS-ARD%20Governance%20Framework%202021.p
 
 The definition of CEOS-ARD is not exclusive or prescriptive. The definition of CEOS-ARD reflects the attributes of fundamental measurement products for the majority of global remote sensing users with land imaging applications, and are the minimum level required to support time series analysis and data interoperability.
 
-### Product Family Specifications
+### Product Family Specification
 
-All of them detail specific 'Threshold' and 'Goal' requirements for:
+Each PFS details specific 'Threshold' and 'Goal' requirements for:
 
-- General Metadata
+- General Metadata (including Source and Product Metadata)
 - Per-pixel Metadata
 - Radiometric and Atmospheric Corrections
 - Geometric Corrections

@@ -7,6 +7,7 @@ threshold:
     If required by the data provider, copyright is indicated in the metadata.
   notes:
 goal: null
+dependencies:
 glossary:
 references:
 metadata:

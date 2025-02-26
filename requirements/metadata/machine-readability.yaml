@@ -8,6 +8,7 @@ goal:
   description: |-
     As threshold, but metadata should be provided in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2.
   notes:
+dependencies:
 glossary:
 references:
   - iso19115_2_2009

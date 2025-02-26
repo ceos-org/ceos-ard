@@ -1,0 +1,17 @@
+title: Bounding Box
+description: 
+threshold:
+  description: |-
+    Two opposite corners of the measurement file (bounding box, including any zero-fill values) are identified,
+    expressed in the coordinate reference system defined in [@metadata/crs].
+  notes:
+    - Four corners of the measurement file are recommended for scenes crossing the Antemeridian, or the North or the South Pole. 
+goal: null
+dependencies:
+  - metadata/crs
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical:
