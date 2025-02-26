@@ -136,16 +136,15 @@ Notes:
 ~( if editable )~
 ## Summary Self-Assessment Table
 
+| Requirement | Threshold | Goal |
+| ----------- | :-------: | :--: |
 ~( for block in requirements )~
-### ~{ block.category.title }~
-
-| Requirement ID | Requirement Title | Threshold | Goal |
-| -------------- | ----------------- | :-------: | :--: |
+| **~{ block.category.title }~** | - | - | 
 ~(   for requirement in block.requirements )~
-| `~{ requirement.uid }~` | ~{ requirement.title }~ | ~( if not requirement.threshold )~_not required_~( endif )~ | ~( if not requirement.goal )~_as threshold_~( endif )~ |
+| ~{ requirement.title }~ (`~{ requirement.uid }~`) | ~( if not requirement.threshold )~_not required_~( endif )~ | ~( if not requirement.goal )~_as threshold_~( endif )~ |
 ~(   endfor )~
-
 ~( endfor )~
+
 &#12;
 ~( endif )~
 
