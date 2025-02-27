@@ -94,6 +94,10 @@ nocite: |
 ~{ block.category.description | rstrip }~
 
 ~(   for requirement in block.requirements )~
+~(     if loop.index != 1 )~
+---
+~(     endif )~
+
 #### ~{ requirement.title }~ (`~{ requirement.uid }~`) {#sec:~{ requirement.uid }~ label="~{ requirement.uid }~"}
 ~(     if requirement.description | rstrip )~
 
@@ -102,22 +106,22 @@ nocite: |
 ~(     for type in ['goal', 'threshold'] )~
 ~(       if requirement[type] )~
 
-##### ~{ type|title }~ requirements
+##### ~{ type|title }~ requirements:
 
 ~{ requirement[type].description | rstrip }~
 
 ~(         if requirement[type].notes )~
-**_Notes:_**
+Notes:
 
 ~(           for note in requirement[type].notes )~
-~{ loop.index }~. _~{ note }~_
+~{ loop.index }~. ~{ note }~
 ~(           endfor )~
 
 ~(         endif )~
 ~(       endif )~
 ~(     endfor )~
 ~(     if editable )~
-##### Assessment
+##### Assessment:
 
 - Threshold Self-Assessment:
 - Target Self-Assessment:
