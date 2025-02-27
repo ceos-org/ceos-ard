@@ -89,6 +89,7 @@ nocite: |
 ## Requirements
 
 ~( for block in requirements )~
+~( set i = loop.index )~
 ### ~{ block.category.title }~
 
 ~{ block.category.description | rstrip }~
@@ -98,7 +99,7 @@ nocite: |
 ---
 ~(     endif )~
 
-#### ~{ requirement.title }~ (`~{ requirement.uid }~`) {#sec:~{ requirement.uid }~ label="~{ requirement.uid }~"}
+#### ~{ i }~.~{ loop.index }~ ~{ requirement.title }~ (`~{ requirement.uid }~`) {#sec:~{ requirement.uid }~ label="~{ requirement.uid }~"}
 ~(     if requirement.description | rstrip )~
 
 ~{ requirement.description | rstrip }~
