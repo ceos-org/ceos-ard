@@ -21,6 +21,7 @@
   requirements:
     - cloud-optimized-formats
     - measurements/backscatter-orb # 3.1
+    - measurements/mean-wind-normalised-backscatter # 3.6
 - category: geometric-corrections
   requirements:
     - corrections/dem
