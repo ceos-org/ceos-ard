@@ -12,6 +12,7 @@
     - metadata/product-type
     - metadata/bounding-box
     - metadata/crs
+    - metadata/geometric-correction-algorithm # 4.1
 - category: per-pixel-metadata
   requirements:
     - cloud-optimized-formats
@@ -22,4 +23,4 @@
     - measurements/backscatter-gslc # 3.1
 - category: geometric-corrections
   requirements:
-    - example
+    - corrections/dem

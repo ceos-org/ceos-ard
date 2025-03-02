@@ -1,3 +1,4 @@
+# todo: remove once the example is no longer needed
 title: Example Requirement
 description: This is an example requirement.
 threshold:
@@ -9,10 +10,6 @@ goal:
     This is a goal requirement.
   notes:
     - This is a note.
-# Dependencies are requirements that must be met for this requirement.
-# Dependencies are resolved as follows:
-# 1. Refers to the requirement in the same requirement category.
-# 2. Refers to the requirement in any other category.
 dependencies:
 glossary:
   - doi

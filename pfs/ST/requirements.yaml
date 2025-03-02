@@ -9,9 +9,9 @@
     - metadata/time
 - category: product-metadata
   requirements:
-    - example
   # todo: the following should probably be added to the requirements
   # - metadata/product-type
+    - metadata/geometric-correction-algorithm # 1.7
 - category: per-pixel-metadata
   requirements:
     - example
