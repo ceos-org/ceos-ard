@@ -1,0 +1,45 @@
+title: Flattened Phase
+description: 
+threshold: null
+goal:
+  # todo: the list of file format specifications below comes up more often and should be a separate building block
+  # todo: todo convert the code block below to a math block
+  description: |-
+    **Usage: Alternative to GSLC product for NRB and POL products**
+
+    The Flattened Phase is the interferometric phase for which the topographic phase contribution is removed.
+    It is derived from the range-Doppler SLC product using a DEM and the orbital state vectors with respect to a reference orbit (see [@sec:annex-sar-topographic-phase-removal]).
+    The use of the Flattened Phase with the NRB or POL intensity ([@measurements/backscatter-measurement]) provides the GSLC equivalent, as follows:  
+
+    ```
+    GSLC = sqrt(NRB) x exp(j FlattenPhase)
+    ```
+    
+    File format specifications/contents provided in metadata:
+
+    - Measurement Type (Flattened Phase)
+    - Reference Polarization (HH/HV/VV/VH)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+
+    In case of polarimetric data, indicate the reference polarization. 
+  notes:
+dependencies:
+# todo: The dependency points to requirements that are different per PFS.
+#       We probably need a mapping to requirements per PFS.
+# - measurements/backscatter-measurement
+# todo: implement dependencies on other sections
+# - sec:annex-sar-topographic-phase-removal
+glossary:
+  - dem
+  - slc
+  - gslc
+  - nrb
+  - orb
+references:
+metadata:
+legacy:
+  sar: 3.7
+  optical: null

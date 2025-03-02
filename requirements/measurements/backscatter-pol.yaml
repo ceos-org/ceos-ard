@@ -1,0 +1,37 @@
+title: Backscatter Measurements (POL)
+description: 
+threshold: 
+  # todo: the list of file format specifications below comes up more often and should be a separate building block
+  description: |-
+    Measurements can be one of the following types or both: 
+      
+    - **Normalised Radar Covariance Matrix (CovMat)**
+      Diagonal (equivalent to NRB) and upper diagonal elements of the terrain-flattened Gamma-Nought ($\gamma^0_T$) Covariance Matrix are provided for coherent dual (e.g., HH-HV, VV-VH, or …) and fully polarimetric (e.g., HH-HV-VH-VV) acquisitions.
+    - **Polarimetric Radar Decomposition (PRD)**
+      The individual components of the polarimetric decomposition obtained from the terrain-flattened (Gamma-Nought, $\gamma^0_T$) covariance matrix.
+
+    File format specifications/contents provided in metadata:
+
+    - Measurement Type (CovMat, PRD)
+    - Measurement convention unit (linear amplitude, linear power, angle)
+    - Individual covariance matrix element or/and Individual component of the decomposition (C3m11, C3m12, … or H, A, alpha, or …)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+    # todo: add glossary entries for BIP, BIL, BSQ?
+    - |-
+      It is recommended to keep CovMat or PRD measurement files separated.
+      Otherwise, specify the multi-channel format order (BIP, BIL, BSQ).
+goal: null
+dependencies:
+glossary:
+  - covmat
+  - nrb
+  - prd
+references:
+metadata:
+legacy:
+  sar: 3.1
+  optical: null

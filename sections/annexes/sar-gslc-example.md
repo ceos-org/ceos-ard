@@ -10,7 +10,7 @@ $$
 \text{InSAR differential phase:} \quad \varphi =\arg(\rho)
 $$ {#eq:sar-gslc-example-eq2}
 
-Some advanced NRB or POL products could include per-pixel “Flattened Phase” data (item 3.7). This “Flattened Phase” enables the possibility to perform InSAR analysis as with two GSLC products. As for example, from two different NRB products (NRB1) and (NRB2), acquired over repeat cycles (i.e., on the same relative orbit), containing $\gamma_T^0$ and their corresponding “Flattened Phase” (FPh1) and (FPh2) per-pixel data, the complex InSAR coherence ([@eq:sar-gslc-example-eq3]) can be estimated in the similar manner as [@eq:sar-gslc-example-eq1] for GSLC products.
+Some advanced NRB or POL products could include per-pixel “Flattened Phase” data ([@sec:measurements-measurements-flattened-phase]). This “Flattened Phase” enables the possibility to perform InSAR analysis as with two GSLC products. As for example, from two different NRB products (NRB1) and (NRB2), acquired over repeat cycles (i.e., on the same relative orbit), containing $\gamma_T^0$ and their corresponding “Flattened Phase” (FPh1) and (FPh2) per-pixel data, the complex InSAR coherence ([@eq:sar-gslc-example-eq3]) can be estimated in the similar manner as [@eq:sar-gslc-example-eq1] for GSLC products.
 
 $$
 \text{Complex coherence:} \quad \rho_{NRB} = \frac{\sum [ (\sqrt{NRB_1} \cdot e^{i\cdot FPh1}) \cdot conj (\sqrt{NRB_2} \cdot e^{i\cdot FPh2})]}{ \sqrt{ \sum NRB_1 * \sum NRB_2}}

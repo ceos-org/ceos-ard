@@ -4,10 +4,19 @@ threshold: null
 goal:
   description: Data must be traceable to SI reference standard.
   notes:
-    # todo: replace reference to 3.2/3.5 with a propert reference with the new ids
-    - Relationship to item 3.2 (SR/NLSR) or item 3.5 (SAR). Traceability requires an estimate of measurement uncertainty.
+    # todo: Replace reference to 3.5 with a propert reference with the new ids.
+    #       Also, better would be to not use references here as these are different between optical and sar.
+    #       Potentially define a mapping so that we can use one reference for both, i.e. an alias for dependencies
+    #       that we can set in the dependencies per PFS or so.
+    # todo: Alternatively, as we also have a recursive reference in the dependencies,
+    #       could we just remove "Relationship to [@measurements/uncertainty] or item 3.5 (SAR)."?
+    - |-
+      Relationship to [@measurements/uncertainty] or item 3.5 (SAR).
+      Traceability requires an estimate of measurement uncertainty.
     - Information on traceability should be available in the metadata as a single DOI landing page.
 dependencies:
+# todo: this leads to a recursion and is not available in SAR
+# - measurements/uncertainty
 glossary:
   - si
 references:

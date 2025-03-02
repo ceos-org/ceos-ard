@@ -5,6 +5,7 @@
     - metadata/license
 - category: source-metadata
   requirements:
+    - metadata/sequential-id
     - metadata/time-sar
 - category: product-metadata
   requirements:
@@ -14,9 +15,12 @@
 - category: per-pixel-metadata
   requirements:
     - cloud-optimized-formats
+    - per-pixel-metadata/acquisition-id # 2.8
 - category: radiometrically-corrected-measurements
   requirements:
     - cloud-optimized-formats
+    - measurements/backscatter-pol # 3.1
+    - measurements/flattened-phase # 3.7
 - category: geometric-corrections
   requirements:
     - example

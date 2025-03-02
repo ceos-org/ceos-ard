@@ -1,18 +1,18 @@
 # todo
-title: 
-description: 
+title: Coordinate Reference System
+description: todo
 threshold:
   description: |-
-
+    todo
   notes:
 goal:
   description: |-
-
+    todo
   notes:
 dependencies:
 glossary:
 references:
 metadata:
 legacy:
-  sar:
-  optical:
+  sar: 1.7.11
+  optical: 1.5 / 1.6
