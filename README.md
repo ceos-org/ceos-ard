@@ -29,12 +29,12 @@ The following Product Family Specifications (PFS) are currently defined:
 
 The repository is structured as follows:
 
-- `assets`: contains all imagery and other assets for the PFSes
-- `glossary`: contains terms and their definitions
-- `pfs`: contains the details for each PFS, e.g. document information (id, title, descriptions, authors, etc), document structure, (references to) requirements
-- `references`: bibtex files for the citations/references
-- `requirements`: the individual requirements that PFSes can pick from
-- `sections`: the editorial content of the PFSes, e.g. annexes, requirement categories, introductory chapters
+- `assets`: contains all imagery and other assets for the PFSes.
+- `glossary`: contains terms and their definitions.
+- `pfs`: contains the details for each PFS, e.g. document information (id, title, descriptions, authors, etc), document structure, (references to) requirements.
+- `references`: bibtex files for the citations/references.
+- `requirements`: the individual requirements that PFSes can pick from. [Read more...](requirements/README.md)
+- `sections`: the editorial content of the PFSes, e.g. annexes, requirement categories, introductory chapters.
 
  Most people won't need to look at the following two folders as they are primarily for technical purposes:
 

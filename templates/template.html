@@ -22,20 +22,6 @@
         padding: 0.5em;
       }
     }
-    @media print {
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
     p {
       margin: 1em 0;
     }
@@ -67,6 +53,7 @@
       color: #595959;
       font-weight: normal;
       margin-top: 1em;
+      text-align: center;
     }
     h2 {
       font-size: 22pt;
@@ -233,6 +220,31 @@
       margin-left: 2em;
     }
     $endif$
+    @media print {
+      body {
+        print-color-adjust: exact;
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+      @page {
+        size: A4;
+        margin: 1.9cm 2.5cm;
+      }
+      h2 {
+        margin-top: 0cm;
+      }
+      #contributing-authors {
+        margin-top: 2cm;
+      }
+    }
   </style>
 $for(css)$
   <link rel="stylesheet" href="$css$" />

@@ -37,10 +37,8 @@ jobs:
           tar -xf pandoc-crossref.tar.xz
           sudo mv pandoc-crossref /usr/local/bin
           pandoc-crossref --version
-      - name: Install weasyprint
-        run: |
-          sudo apt update
-          sudo apt install weasyprint -y
+      - name: Install browser for PDF generation
+        run: python -m playwright install chromium --with-deps
       - name: Generate all PFS
         run: ceos-ard generate-all -o build --self-contained
       - name: Archive generated PFS artifacts
