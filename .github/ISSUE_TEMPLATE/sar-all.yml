@@ -1,5 +1,6 @@
 name: SAR - All Products
 description: Report an issue or propose a change for the SAR PFS, which applies to more than one product type.
+labels:
   - SAR
   - needs discussion
 body:
