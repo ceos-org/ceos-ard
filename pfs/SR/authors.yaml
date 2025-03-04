@@ -1,0 +1,15 @@
+- name: Geoscience Australia
+  country: Australia
+  members:
+    - Adam Lewis
+    - Jonathon Ross
+    - Andreia Siqueira
+- name: USGS
+  country: USA
+  members:
+    - Darcie Bontje
+    - Steve Labahn
+    - Mary Metzger
+- name: LSI-VC Secretariat
+  members:
+    - Matt Steventon

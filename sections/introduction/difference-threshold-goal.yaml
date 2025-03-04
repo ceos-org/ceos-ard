@@ -1,0 +1,17 @@
+title: What is the difference between Threshold and Goal?
+description: |-
+  **Threshold** (or: minimum) requirements are the **minimum** that is needed for the data to be analysis ready.
+  This must be practical and accepted by the data producers.
+
+  **Goal** (or: desired) requirements (previously referred to as “Target”) are the ideal; where we would like to be.
+  Some providers may already meet these.
+
+  Products that meet all _threshold_ requirements should be immediately useful for scientific analysis or decision-making.
+
+  Products that meet _goal_ requirements will reduce the overall product uncertainties and enhance broad-scale applications.
+  For example, the products may enhance interoperability or provide increased accuracy through additional corrections that are not reasonable at the _threshold_ level.
+
+  Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field.
+  Over time, _goal_ specifications may (and subject to due process) become accepted as _threshold_ requirements.
+glossary:
+references:

@@ -15,13 +15,33 @@ Read also into the [CEOS-ARD Strategy 2021](./CEOS-ARD%20Strategy%202021.pdf).
 
 ## Product Family Specifications
 
-The following Product Family Specifications are currently defined:
+The following Product Family Specifications (PFS) are currently defined:
 
-- [Aquatic Reflectance (Optical)](./Specifications/Aquatic-Reflectance/README.md)
-- [Nighttime Lights Surface Radiance (Optical)](./Specifications/Nighttime-Lights-Surface-Radiance/README.md)
-- [Surface Reflectance (Optical)](./Specifications/Surface-Reflectance/README.md)
-- [Surface Temperature (Optical)](./Specifications/Surface-Temperature/README.md)
-- [Synthetic Aperture Radar](./Specifications/Synthetic-Aperture-Radar/README.md)
+- NLSR
+- SAR-GSLC
+- SAR-NRB
+- SAR-ORB
+- SAR-POL
+- SR
+- ST
+
+## In this repository
+
+The repository is structured as follows:
+
+- `assets`: contains all imagery and other assets for the PFSes.
+- `glossary`: contains terms and their definitions.
+- `pfs`: contains the details for each PFS, e.g. document information (id, title, descriptions, authors, etc), document structure, (references to) requirements.
+- `references`: bibtex files for the citations/references.
+- `requirements`: the individual requirements that PFSes can pick from. [Read more...](requirements/README.md)
+- `sections`: the editorial content of the PFSes, e.g. annexes, requirement categories, introductory chapters.
+
+ Most people won't need to look at the following two folders as they are primarily for technical purposes:
+
+- `.github`: contains issue templates and workflows for GitHub
+- `templates`: the layout and styles for Markdown, Word, HTML, etc.
+
+Some high-level information (governance framework, strategy, guides, license, etc.) reside on the top-level of the repository.
 
 ## Contributing
 
@@ -37,16 +57,14 @@ The [CEOS-ARD Governance Framework](./CEOS-ARD%20Governance%20Framework%202021.p
 
 The definition of CEOS-ARD is not exclusive or prescriptive. The definition of CEOS-ARD reflects the attributes of fundamental measurement products for the majority of global remote sensing users with land imaging applications, and are the minimum level required to support time series analysis and data interoperability.
 
-### Product Family Specifications
+### Product Family Specification
 
-All of them detail specific 'Threshold' and 'Goal' requirements for:
+Each PFS details specific 'Threshold' and 'Goal' requirements for:
 
-- General Metadata
+- General Metadata (including Source and Product Metadata)
 - Per-pixel Metadata
 - Radiometric and Atmospheric Corrections
 - Geometric Corrections
-
-A [Product Family Specification Template](./Template) has been developed to provide a starting point for future PFS, to ensure commonality in layout, general structure, interpretation and approach. It provides a foundation and common suite of assessment factors for all PFS.
 
 ### Product Assessments
 

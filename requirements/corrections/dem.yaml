@@ -1,0 +1,25 @@
+title: Digital Elevation Model
+description: 
+threshold:
+  description: |-
+    **Usage:** For products including land areas.
+
+    - During ortho-rectification, the data provider shall use the same DEM that was used for the radiometric terrain flattening to ensure consistency of the data stack.
+    - Provide reference to Digital Elevation Model used for geometric terrain correction.
+    - Provide reference to Earth Gravitational Model (EGM) used for geometric correction.
+  notes:
+goal:
+  description: |-
+    - A DEM with comparable or better resolution to the resolution of the output CEOS-ARD product shall be used if available.
+      Else, the upsampled DEM is identified.
+    - Resampling method used for preparation of the DEM.
+    - Method used for resampling the EGM.
+  notes:
+dependencies:
+glossary:
+  - dem
+references:
+metadata:
+legacy:
+  sar: 4.2
+  optical: null

@@ -1,0 +1,35 @@
+id: SAR-GSLC
+title: Geocoded Single-Look Complex
+type: Synthetic Aperture Radar
+applies_to: |-
+  This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
+
+  The CEOS-ARD Geocoded Single-Look Complex (GSLC) product is relevant to interferometric studies.
+  The GSLC product is derived from the range-Doppler (i.e. slant range) Single-Look Complex (SLC) product using a DEM and the orbital state vectors and output in the map projected system.
+  The phase of a geocoded SLC is “flattened” with respect to a reference orbit and to a DEM, to eliminate topographic phase contributions [@zebker2017; @zheng2017].
+  The sample spacing of the GSLC product in the map coordinate directions is comparable to the full resolution original SLC product.
+  The GSLC product can be directly overlaid on a map or combined with other similar GSLC products to derive interferograms and create change maps, for example.
+  Since the GSLC phase is flattened, the phase difference between two GSLC products acquired on a same relative orbit produces an interferogram referring only to surface displacement and noise (i.e., no topographic fringes).
+  The GSLC product may optionally be radiometrically terrain corrected such that the squared amplitude yields $\gamma^0_T$.
+
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+# Only glossary entries that are not specific to certain requirements or sections are listed here.
+glossary:
+  - dem
+  - gslc
+  - sar
+  - slc
+
+references:
+  - iso19115_2_2009
+  - zebker2017
+  - zheng2017
+
+annexes:
+  - sar-general-processing-roadmap
+  - sar-topographic-phase-removal
+  - sar-gslc-example

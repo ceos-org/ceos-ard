@@ -1,0 +1,17 @@
+title: Measurement Uncertainty
+description: |-
+  Note: In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
+threshold: null
+goal:
+  description: |-
+    Uncertainty, in Kelvin, of the surface temperature measurement for each pixel is provided.
+  notes:
+    - |-
+      Some of the intent of the initial wording (below), which refers to atmospheric windows, may have been lost: Uncertainty, in units Kelvin, of the surface temperature for each pixel is also accompanied by distance from cloud (above) and atmospheric transmission (intervals, i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: null
+  optical: 3.3

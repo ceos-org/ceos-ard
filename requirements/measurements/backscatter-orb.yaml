@@ -1,0 +1,27 @@
+title: Backscatter Measurements (ORB)
+description: 
+threshold: 
+  # todo: the list of file format specifications below comes up more often and should be a separate building block
+  description: |-
+    Geoid-corrected Sigma-Nought backscatter coefficient ($\sigma^0$) is provided for each polarization. 
+
+    File format specifications/contents provided in metadata:
+
+    - Measurement Type (Sigma-Nought)
+    - Backscatter Expression Convention (linear amplitude, linear power\*)
+    - Backscatter Conversion Equation
+    - Polarization (HH, HV, VV, VH)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+    - Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
+goal: null
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 3.1
+  optical: null

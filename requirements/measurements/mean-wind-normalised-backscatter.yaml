@@ -1,0 +1,32 @@
+title: Mean Wind-Normalised Backscatter Measurements
+description: |-
+  **Usage:** Only for Maritime scenes.
+threshold: null
+goal:
+  description: |-
+    Mean wind-normalised (over ocean) backscatter coefficient is provided for each available polarization.
+    It is calculated as the ratio between the backscatter intensity and a simulated backscatter intensity image generated using an ocean surface wind model such as, e.g., [@quilfen1998] or [@vachon2000] for VV and HH polarization respectively.
+
+    File format specifications/contents provided in metadata:
+
+    - Measurement Type (Wind-Normalised Backscatter)
+    - Backscatter Expression Convention (intensity ratio)
+    - Polarization (HH, HV, VV, VH)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+    - Reference wind model, wind speed and direction used for reference backscattering coefficient should be provided. 
+dependencies:
+glossary:
+references:
+  - quilfen1998
+  - vachon2000
+metadata:
+legacy:
+  sar: 3.6
+  optical: null
+
+
+
