@@ -88,7 +88,14 @@ nocite: |
 
 ## Requirements
 
+**WARNING:** The requirement numbers below are not stable and may change or may be removed at any time.
+Do **not** use the numbers to refer back to specific requirements!
+Instead, use the textual identifier that is provided in brackets directly after the title.
+
+<!-- todo: remove requirement numbers -->
+
 ~( for block in requirements )~
+~( set i = loop.index )~
 ### ~{ block.category.title }~
 
 ~{ block.category.description | rstrip }~
@@ -98,7 +105,7 @@ nocite: |
 ---
 ~(     endif )~
 
-#### ~{ requirement.title }~ (`~{ requirement.uid }~`) {#sec:~{ requirement.uid }~ label="~{ requirement.uid }~"}
+#### ~{ i }~.~{ loop.index }~ ~{ requirement.title }~ (`~{ requirement.uid }~`) {#sec:~{ requirement.uid }~ label="~{ requirement.uid }~"}
 ~(     if requirement.description | rstrip )~
 
 ~{ requirement.description | rstrip }~
