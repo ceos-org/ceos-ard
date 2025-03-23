@@ -1,12 +1,27 @@
 - category: general-metadata
   requirements:
+    # todo: most of the general metadata is product metadata - this should potentially be merged.
     - metadata/traceability
-    - metadata/machine-readability-sar
+    - metadata/machine-readability
+    - metadata/product-type
     - metadata/license
+    - metadata/pfs-url
+    - metadata/time
 - category: source-metadata
   requirements:
-    - metadata/sequential-id
-    - metadata/time-sar
+    - metadata/sequential-id # todo: this is new from the category description
+    - metadata/data-access-source
+    - metadata/instrument
+    - metadata/time-source
+    - metadata/acquisition-parameters-sar
+    - metadata/orbit
+    - metadata/processing-parameters
+    - metadata/image-attributes-sar
+    - metadata/sensor-calibration
+    - metadata/performance-indicators
+    - metadata/polarimetric-calibration-matrices
+    - metadata/mean-faraday-rotation-angle
+    - metadata/ionosphere-indicator
 - category: product-metadata
   requirements:
     - metadata/product-type

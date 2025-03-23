@@ -1,0 +1,27 @@
+title: Source Data Image Attributes
+description: 
+threshold:
+  description: |-
+    Image attributes related to the source data:
+
+    - Source Data geometry (slant range/ground range)
+    - Azimuth pixel spacing \[m] (alternatively, Azimuth pixel spacing can be provided in second \[s], equivalent to the azimuth time sample interval) 
+    - Range pixel spacing 
+    - Azimuth resolution 
+    - Range resolution 
+    - Near range incident angle 
+    - Far range incident angle 
+  notes:
+goal:
+  description: |-
+    Geometry of the image footprint expressed in WGS84 in a standardised format (e.g., WKT). 
+  notes:
+dependencies:
+glossary:
+  - wgs84
+  - wkt
+references:
+metadata:
+legacy:
+  sar: 1.6.7
+  optical:

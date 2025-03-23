@@ -22,6 +22,8 @@ The YAML files consist of the following components:
 - `metadata`: Placeholder for future use.
 - `legacy`: A temporary way to refer to the old requirement numbers in the combined SAR and/or Optical PFS. Set to `null` if not applicable.
 
+todo: Remove goal/threshold from requirements and make each part a separate requirement where the requirements.yaml in the PFS can then choose whether a requirement is goal or threshold.
+
 ## Markdown
 
 The flavor of Markdown that is implemented here has some additional features.

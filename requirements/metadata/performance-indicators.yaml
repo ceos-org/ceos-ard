@@ -1,0 +1,25 @@
+title: Performance Indicators
+description: 
+threshold:
+  description: |-
+    Provide performance indicators on data intensity noise level ($\text{NE}\sigma^0$ and/or $\text{NE}\beta^0$ and/or $\text{NE}\gamma^0$, i.e., noise equivalent Sigma- and/or Beta- and/or Gamma-Nought).
+    Provided for each polarization channel when available.
+    Parameter may be expressed as the mean and/or minimum and maximum noise equivalent values of the data. 
+    Values do not need to be estimated individually for each product, but may be estimated once for each acquisition mode, and annotated on all products. 
+  notes:
+goal:
+  description: |-
+    Provide additional relevant performance indicators (e.g., ENL, PSLR, ISLR, and performance reference DOI or URL). 
+  notes:
+dependencies:
+glossary:
+  - enl
+  - pslr
+  - islr
+  - doi
+  - url
+references:
+metadata:
+legacy:
+  sar: 1.6.9
+  optical:

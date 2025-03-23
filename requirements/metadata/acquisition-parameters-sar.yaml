@@ -1,0 +1,22 @@
+title: Source Data Acquisition Parameters
+description:
+threshold:
+  description: |-
+    Acquisition parameters related to the SAR antenna:
+
+    - Radar band
+    - Centre frequency
+    - Observation mode (i.e., beam mode name)
+    - Polarization(s) (listed as in original product)
+    - Antenna pointing (right/left)
+    - Beam ID (i.e., beam mode mnemonic)
+  notes:
+goal: null
+dependencies:
+glossary:
+  - sar
+references:
+metadata:
+legacy:
+  sar: 1.6.4
+  optical:

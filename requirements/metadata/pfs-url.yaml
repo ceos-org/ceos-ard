@@ -1,0 +1,13 @@
+title: Document Identifier
+description:
+threshold:
+  description: Reference to CEOS-ARD PFS document as URL.
+goal: null
+dependencies:
+glossary:
+  - url
+references:
+metadata:
+legacy:
+  sar: 1.4 (edited)
+  optical:

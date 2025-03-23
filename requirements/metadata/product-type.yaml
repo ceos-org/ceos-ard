@@ -3,17 +3,14 @@ description:
 threshold:
   # todo: split into product-type and copyright as two requirements were mixed into one requirement before.
   # todo: Merged 1.3 and 1.4 into one as they seem closely related, especially given that we don't create combined PFSes any longer.
-  description: |-
-    - CEOS-ARD product type name
-    - Reference to CEOS-ARD PFS document as URL
+  description: CEOS-ARD product type name
   notes:
-    - In case of compliance with more than one product type, multiple product type names and URLs must be provided.
+    - In case of compliance with more than one product type, multiple product type names must be provided.
 goal: null
 dependencies:
 glossary:
-  - url
 references:
 metadata:
 legacy:
-  sar: 1.3 & 1.4
-  optical: null
+  sar: 1.3 (edited)
+  optical:

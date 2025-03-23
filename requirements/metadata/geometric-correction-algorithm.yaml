@@ -25,4 +25,4 @@ metadata:
 legacy:
   # todo: This is product metadata, but is listed in section 4.1?!
   sar: 4.1
-  optical: similar in 1.7
+  optical:

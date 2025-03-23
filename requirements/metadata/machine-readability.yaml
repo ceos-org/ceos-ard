@@ -6,7 +6,7 @@ threshold:
   notes:
 goal:
   description: |-
-    As threshold, but metadata should be provided in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2.
+    Metadata is formatted in accordance with CEOS-ARD SAR Metadata Specifications, v.1.1, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention, the Attribute Convention for Data Discovery (ACDD), etc.
   notes:
 dependencies:
 glossary:
@@ -14,5 +14,5 @@ references:
   - iso19115_2_2009
 metadata:
 legacy:
-  sar: null
-  optical: 1.2
+  sar: 1.2
+  optical:

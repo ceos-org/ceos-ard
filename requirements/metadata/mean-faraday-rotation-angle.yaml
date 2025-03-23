@@ -1,0 +1,14 @@
+title: Mean Faraday Rotation Angle
+description: 
+threshold: null
+goal:
+  description: |-
+    The mean Faraday rotation angle estimated from the polarimetric data and/or from models with reference to the method or paper used to derive the estimate.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 1.6.11
+  optical:

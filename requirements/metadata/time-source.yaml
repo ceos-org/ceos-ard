@@ -1,0 +1,16 @@
+# todo: this seems to be a duplicate of time?!
+title: Source Data Acquisition Time
+description: 
+threshold:
+  description: |-
+    The start date and time of source data is identified in the metadata, expressed in UTC in date and time, at least to the second. 
+  notes:
+goal: null
+dependencies:
+glossary:
+  - utc
+references:
+metadata:
+legacy:
+  sar: 1.6.3
+  optical:

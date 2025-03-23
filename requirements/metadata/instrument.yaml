@@ -1,0 +1,20 @@
+title: Instrument
+description: This is an example requirement.
+threshold:
+  description: |-
+    The instrument used to collect the data is identified in the metadata:
+    
+    - Satellite name
+    - Instrument name
+  notes:
+goal:
+  description: |-
+    A reference to the relevant [CEOS Missions, Instruments and Measurements Database](https://ceos.org/mim-database/) record.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 1.6.2
+  optical:
