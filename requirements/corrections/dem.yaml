@@ -1,9 +1,8 @@
 title: Digital Elevation Model
-description: 
+description: |-
+    **Usage: For products including land areas.**
 threshold:
   description: |-
-    **Usage:** For products including land areas.
-
     - During ortho-rectification, the data provider shall use the same DEM that was used for the radiometric terrain flattening to ensure consistency of the data stack.
     - Provide reference to Digital Elevation Model used for geometric terrain correction.
     - Provide reference to Earth Gravitational Model (EGM) used for geometric correction.

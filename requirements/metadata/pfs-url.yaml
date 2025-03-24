@@ -1,3 +1,4 @@
+# todo: The title is a bit misleading
 title: Document Identifier
 description:
 threshold:
@@ -9,5 +10,5 @@ glossary:
 references:
 metadata:
 legacy:
-  sar: 1.4 (edited)
+  sar: 1.4
   optical:

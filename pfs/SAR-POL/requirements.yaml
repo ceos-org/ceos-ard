@@ -3,8 +3,7 @@
     # todo: most of the general metadata is product metadata - this should potentially be merged.
     - metadata/traceability
     - metadata/machine-readability
-    - metadata/product-type
-    - metadata/license
+    - metadata/product-type-sar
     - metadata/pfs-url
     - metadata/time
 - category: source-metadata
@@ -37,8 +36,16 @@
     - metadata/crs
 - category: per-pixel-metadata
   requirements:
-    - cloud-optimized-formats
-    - per-pixel-metadata/acquisition-id # 2.8
+    - cloud-optimized-formats # todo: this is new from the category description
+    - metadata/machine-readability
+    - per-pixel-metadata/data-mask
+    - per-pixel-metadata/scattering-area
+    - per-pixel-metadata/local-incident-angle
+    - per-pixel-metadata/ellipsoidal-incident-angle
+    - per-pixel-metadata/noise-power
+    - per-pixel-metadata/gamma-sigma-ratio
+    - per-pixel-metadata/acquisition-id
+    - per-pixel-metadata/dem
 - category: radiometrically-corrected-measurements
   requirements:
     - cloud-optimized-formats

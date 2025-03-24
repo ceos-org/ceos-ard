@@ -1,0 +1,23 @@
+title: Per-pixel Geoid
+description: 
+threshold: null
+goal:
+  description: |-
+    Provide Geoid as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the image product.
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Height)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+    - Ground Sampling Distance
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 2.10
+  optical:

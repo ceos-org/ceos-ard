@@ -1,0 +1,24 @@
+title: Scattering Area Image
+description: |-
+  **Usage: Recommended for scenes that include land areas.**
+threshold: null
+goal:
+  description: |-
+    DEM-based scattering area image used for Gamma-Nought terrain normalisation is provided.
+    This quantifies the local scattering area used to normalise for radiometric distortions induced by terrain to the measured $\beta^0$ backscatter.
+    The terrain-flattened $\gamma^0_T$ is best understood as $\beta^0$ divided by the local scattering area.
+
+    File format specifications/contents provided in metadata:
+    - Sample Type (Scattering Area)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 2.3
+  optical:

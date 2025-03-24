@@ -2,6 +2,7 @@ title: Backscatter Measurements \[GSLC]
 description: 
 threshold: 
   # todo: the list of file format specifications below comes up more often and should be a separate building block
+  # todo: is the * behind linar power pointing to the note? Should be a footnote then?
   description: |-
     Radiometric and Phase Terrain-flattened Gamma-Nought backscatter coefficient ($\gamma^0_T$), in complex number format, is provided for each polarization (e.g., HH, HV, VV, VH).
 

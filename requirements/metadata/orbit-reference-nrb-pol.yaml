@@ -1,0 +1,21 @@
+title: 
+description: |-
+  **Usage: Only when Flattened phase per-pixel metadata (see [@measurements/flattened-phase]) is provided.**
+threshold: null
+goal:
+  description: |-
+    Provide the absolute orbit number used as reference for topographic phase flattening.
+    In case a virtual orbit has been used, provide orbit parameters or orbit state vectors as DOI or URL.
+
+    Provide scene-centred perpendicular baseline for the for the source data relative to the reference orbit used (for approximate use only).
+  notes:
+dependencies:
+  - measurements/flattened-phase
+glossary:
+  - doi
+  - url
+references:
+metadata:
+legacy:
+  sar: 1.7.15
+  optical:

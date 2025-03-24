@@ -1,0 +1,23 @@
+title: Noise Power Image
+description: 
+threshold: null
+goal:
+  description: |-
+    Estimated Noise Equivalent $\sigma^0$ (or $\beta^0$ or $\gamma^0$, as applicable) used for noise removal, if applied, for each channel.
+    $\text{NE}\sigma^0$ and $\text{NE}\gamma^0$ are both based on a simplified ellipsoid Earth model.
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Gamma-Nought, Sigma-Nought, Beta-Nought)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 2.6
+  optical:
