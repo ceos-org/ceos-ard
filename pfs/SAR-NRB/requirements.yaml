@@ -24,10 +24,18 @@
     - metadata/ionosphere-indicator
 - category: product-metadata
   requirements:
-    - metadata/product-type
+    - metadata/data-access-product
+    - metadata/auxiliary-data
+    - metadata/sample-spacing
+    - metadata/enl
+    - metadata/resolution
+    - metadata/speckle-filtering
+    - metadata/pol-filtering
     - metadata/bounding-box
+    - metadata/footprint
+    - metadata/image-size
+    - metadata/pixel-coordinate-convention
     - metadata/crs
-    - metadata/geometric-correction-algorithm # 4.1
 - category: per-pixel-metadata
   requirements:
     - cloud-optimized-formats
@@ -39,4 +47,5 @@
     - measurements/flattened-phase # 3.7
 - category: geometric-corrections
   requirements:
+    - metadata/geometric-correction-algorithm # 4.1
     - corrections/dem

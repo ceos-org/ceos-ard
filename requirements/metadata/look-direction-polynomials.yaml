@@ -1,0 +1,34 @@
+title: Look Direction Polynomials
+description: 
+threshold:
+  # todo: reference item 2.11
+  # todo: "coefficients ai necessary" - ai => is?
+  # todo: [m, deg, arcsec] seem XML encoding specific, should be described in general (e.g., meters, degree, arcsecond).
+  description: |-
+    In case the Look Direction Image (see [@per-pixel-metadata/look-direction]) is not provided, then a list of the polynomial coefficients ai necessary to reconstruct the look direction angle[^look-direction-angle], together with an estimate of the added error from use of polynomial vs. per-pixel more accurate values, shall be provided.
+
+    Example polynomial:
+
+    $$
+    \text{LookDir} = a_{1}\text{Lat}^2 + a_{2}\text{Lon}^2 + a_{3}\text{LatLon} + a_{4}\text{Lat} + a_{5}\text{Lon} + a_6
+    $$
+
+    where:
+    
+    - $a_i$ = polynomial coefficients 
+    - $\text{Lat}$ = latitude  
+    - $\text{Lon}$ = longitude
+
+    Lat and Lon are the related coordinates in the product map units (m, deg, arcsec).
+
+    [^look-direction-angle]: The look direction angle represents the planar angle between north and each range direction. It is not constant in range, especially close to the poles.
+  notes:
+goal: null
+dependencies:
+  - per-pixel-metadata/look-direction
+glossary:
+references:
+metadata:
+legacy:
+  sar: 1.7.12
+  optical:

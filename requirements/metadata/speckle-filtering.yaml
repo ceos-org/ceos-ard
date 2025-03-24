@@ -1,0 +1,26 @@
+title: Speckle Filtering
+description: 
+threshold:
+  # todo: The "(True/False)" is implementation (and metadata language) specific, should not be listed here.
+  # See also ionosphere-indicator.yaml
+  description: |-
+    Flag if speckle filter has been applied (True/False).
+    
+    Metadata should include:
+
+    - Reference to algorithm as DOI or URL
+    - Input filtering parameters
+      - Type
+      - Window size in pixel units
+      - Any other parameters defining the speckle filter used
+  notes:
+goal: null
+dependencies:
+glossary:
+  - doi
+  - url
+references:
+metadata:
+legacy:
+  sar: 1.7.6 (without POL requirement, see pol-filtering.yaml)
+  optical:

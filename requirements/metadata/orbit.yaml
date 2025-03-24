@@ -7,7 +7,7 @@ threshold:
     - Pass direction (asc/desc)[^orbit-pass-direction]
     - Orbit data source (e.g., predicted, definite, precise, downlinked, etc.)
 
-    [^orbit-pass-direction]: For data crossing the North or South Pole, it is recommended to produce two distinct CEOS-ARD products and to use the appropriate “Pass direction” in each.
+    [^orbit-pass-direction]: For data crossing the North or South Pole, it is recommended to produce two distinct products and to use the appropriate “Pass direction” in each.
   notes:
 goal:
   description: |-
@@ -17,7 +17,6 @@ goal:
   notes:
 dependencies:
 glossary:
-  - ceos-ard
 references:
 metadata:
 legacy:

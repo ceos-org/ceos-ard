@@ -1,0 +1,18 @@
+# todo: extent is misleading and usually a synonym for the bbox,
+# the requirement should probably be renamed to "Geographical Footprint" or similar
+title: Geographical Extent
+description: 
+threshold:
+  description: |-
+    The geometry of the image footprint expressed in WGS84, in a standardised format (e.g., WKT Polygon). 
+  notes:
+goal: null
+dependencies:
+glossary:
+  - wgs84
+  - wkt
+references:
+metadata:
+legacy:
+  sar: 1.7.8
+  optical:

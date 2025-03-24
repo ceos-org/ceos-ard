@@ -1,0 +1,15 @@
+title: Polarimetric Filtering
+description: 
+threshold:
+  # todo: This is a requirement, but it is not enforced? "should" is optional language, "shall" is required language.
+  description: |-
+    Advanced polarimetric filter preserving covariance matrix properties should be applied.
+  notes:
+goal: null
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 1.7.6 (partially)
+  optical:

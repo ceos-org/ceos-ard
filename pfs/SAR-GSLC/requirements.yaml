@@ -24,9 +24,15 @@
     - metadata/ionosphere-indicator
 - category: product-metadata
   requirements:
-    - metadata/data-access-product # 1.7.1
-    - metadata/bounding-box # 1.7.7
-    - metadata/crs # 1.7.11
+    - metadata/data-access-product
+    - metadata/auxiliary-data
+    - metadata/sample-spacing
+    - metadata/resolution
+    - metadata/bounding-box
+    - metadata/footprint
+    - metadata/image-size
+    - metadata/pixel-coordinate-convention
+    - metadata/crs
 - category: per-pixel-metadata
   requirements:
     - cloud-optimized-formats
