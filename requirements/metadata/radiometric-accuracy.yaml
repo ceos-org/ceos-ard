@@ -1,0 +1,18 @@
+title: Radiometric Accuracy
+description:
+threshold: null
+goal:
+  description: |-
+    Uncertainty (e.g., bounds on $\gamma^0$ or $\sigma^0$) information is provided as document referenced as URL or DOI.
+    SI traceability is achieved. 
+  notes:
+dependencies:
+glossary:
+  - doi
+  - si
+  - url
+references:
+metadata:
+legacy:
+  sar: 3.5
+  optical:

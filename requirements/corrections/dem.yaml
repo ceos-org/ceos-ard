@@ -17,6 +17,7 @@ goal:
 dependencies:
 glossary:
   - dem
+  - egm
 references:
 metadata:
 legacy:

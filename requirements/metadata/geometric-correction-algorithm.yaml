@@ -2,16 +2,12 @@ title: Geometric Correction Algorithm
 description: 
 threshold: null
 goal:
-  # todo: Optical uses:
-  # "Information on geometric correction methods should be available in the metadata as a single DOI landing page, including reference database and auxiliary data such as elevation model(s) and reference chip-sets."
-  # Added " such as elevation model(s) and reference chip-sets" to thirs bullet point, coming from Optical
-  # What about "reference database"?
   description: |-
     Metadata references, e.g.: 
-    - A metadata citable peer-reviewed algorithm,
+    - A metadata citable peer-reviewed algorithm
     - Technical documentation regarding the implementation of that algorithm expressed as URLs or DOIs
-    - The sources of auxiliary data used to make corrections such as elevation model(s) and reference chip-sets. 
-    - Resampling method used for geometric processing of the source data. 
+    - The sources of auxiliary data used to make corrections
+    - Resampling method used for geometric processing of the source data
   notes:
     - Examples of technical documentation can include e.g., an Algorithm Theoretical Basis Document (ATBD) or a product user guide.
 dependencies:

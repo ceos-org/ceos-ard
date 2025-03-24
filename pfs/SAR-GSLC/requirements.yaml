@@ -56,7 +56,10 @@
   requirements:
     - cloud-optimized-formats
     - measurements/backscatter-gslc # 3.1
+    - metadata/scaling-conversion # 3.2
+    - metadata/noise-removal # 3.3
+    - metadata/radiometric-accuracy # 3.5
 - category: geometric-corrections
   requirements:
-    - metadata/geometric-correction-algorithm # 4.1, todo: should be in product metadata
-    - corrections/dem
+    - metadata/geometric-correction-algorithm # 4.1
+    - corrections/dem # 4.2

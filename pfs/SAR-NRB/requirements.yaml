@@ -52,8 +52,11 @@
   requirements:
     - cloud-optimized-formats
     - measurements/backscatter-nrb # 3.1
+    - metadata/scaling-conversion # 3.2
+    - metadata/noise-removal # 3.3
+    - metadata/radiometric-accuracy # 3.5
     - measurements/flattened-phase # 3.7
 - category: geometric-corrections
   requirements:
     - metadata/geometric-correction-algorithm # 4.1
-    - corrections/dem
+    - corrections/dem # 4.2
