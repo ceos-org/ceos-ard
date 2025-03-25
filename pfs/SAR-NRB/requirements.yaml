@@ -29,7 +29,6 @@
     - metadata/enl
     - metadata/resolution
     - metadata/speckle-filtering
-    - metadata/pol-filtering
     - metadata/bounding-box
     - metadata/footprint
     - metadata/image-size
