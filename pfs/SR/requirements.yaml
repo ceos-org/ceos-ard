@@ -16,7 +16,7 @@
     - example
 - category: radiometric-atmospheric-corrections
   requirements:
-    - example
+    - measurements/uncertainty # 3.2
 - category: geometric-corrections
   requirements:
     - example

@@ -4,15 +4,15 @@ threshold: null
 goal:
   description: Data must be traceable to SI reference standard.
   notes:
-    - Relationship to [@measurements/uncertainty]. Traceability requires an estimate of measurement uncertainty.
+    - Relationship to [@metadata/radiometric-accuracy]. Traceability requires an estimate of measurement uncertainty.
     - Information on traceability should be available in the metadata as a single DOI landing page.
 dependencies:
-  - measurements/uncertainty
+  - metadata/radiometric-accuracy
 glossary:
   - doi
   - si
 references:
 metadata:
 legacy:
-  sar: null
-  optical: 1.1
+  sar: 1.1
+  optical:

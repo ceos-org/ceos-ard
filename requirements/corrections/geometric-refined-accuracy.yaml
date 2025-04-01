@@ -1,0 +1,22 @@
+title: Geometric Refined Accuracy
+description: 
+threshold: null
+goal:
+  description: |-
+    Values provided under [@corrections/geometric-accuracy-radar] are provided by the SAR mission Cal/Val team.
+
+    CEOS-ARD processing steps could include method refining the geometric accuracy, such as cross-correlation of the SAR data in slant range with a SAR scene simulated from a DSM or DEM.
+
+    Methodology used (name and reference), quality flag, geometric standard deviation values should be provided. 
+  notes:
+dependencies:
+  - corrections/geometric-accuracy-radar
+glossary:
+  - ceos-ard
+  - dsm
+  - dem
+references:
+metadata:
+legacy:
+  sar: 4.4
+  optical:

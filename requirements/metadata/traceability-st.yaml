@@ -16,6 +16,7 @@ goal:
 dependencies:
   - measurements/uncertainty-st
 glossary:
+  - doi
   - si
 references:
 metadata:

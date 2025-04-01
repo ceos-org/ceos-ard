@@ -1,7 +1,7 @@
 - category: general-metadata
   requirements:
     # todo: most of the general metadata is product metadata - this should potentially be merged.
-    - metadata/traceability
+    - metadata/traceability-sar
     - metadata/machine-readability
     - metadata/product-type-sar
     - metadata/pfs-url
@@ -50,11 +50,16 @@
 - category: radiometrically-corrected-measurements
   requirements:
     - cloud-optimized-formats
-    - measurements/backscatter-pol # 3.1
-    - metadata/scaling-conversion # 3.2
-    - metadata/noise-removal # 3.3
-    - measurements/flattened-phase # 3.7
+    - measurements/backscatter-pol
+    - metadata/scaling-conversion
+    - metadata/noise-removal
+    - corrections/radiometric-terrain-correction
+    - metadata/radiometric-accuracy
+    - measurements/flattened-phase
 - category: geometric-corrections
   requirements:
-    - metadata/geometric-correction-algorithm # 4.1
-    - corrections/dem # 4.2
+    - metadata/geometric-correction-algorithm
+    - corrections/dem
+    - corrections/geometric-accuracy-radar
+    - corrections/geometric-refined-accuracy
+    - corrections/gridding-convention

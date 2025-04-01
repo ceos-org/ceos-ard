@@ -1,0 +1,29 @@
+title: Radiometric Terrain Correction Algorithm 
+description:
+# todo: check whether this was converted correctly, also radiometric-terrain-correction.yaml.
+#       The "Goal for [GSLC] product type" comments are confusing and ambiguous.
+threshold: null
+goal:
+  description: |-
+    Adjustments were made for terrain by modelling the local contributing scattering area using the preferred choice of a published peer-reviewed algorithm to produce radiometrically terrain corrected (RTC) $\gamma^0_T$ backscatter estimates.  
+
+    Metadata references, e.g.
+
+    - a citable peer-reviewed algorithm
+    - technical documentation regarding the algorithm used to generate the backscatter estimates is expressed as URLs or DOIs 
+    - the sources of auxiliary data used to make corrections
+
+    Require resolution of DEM better than the output product resolution when applying terrain corrections. 
+  notes:
+    - Examples of technical documentation include an Algorithm, Theoretical Basis Document, product user guide, etc.
+dependencies:
+glossary:
+  - rtc
+  - url
+  - doi
+  - dem
+references:
+metadata:
+legacy:
+  sar: 3.4
+  optical:

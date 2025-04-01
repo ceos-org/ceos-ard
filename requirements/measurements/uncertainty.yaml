@@ -1,0 +1,19 @@
+title: Measurement Uncertainty
+description: |-
+  Note: In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
+threshold: null
+goal:
+  description: |-
+    An estimate of the certainty of the values is provided in measurement units.
+  notes:
+    - This is a requirement for SI traceability. See also [@metadata/traceability].
+    - Information on measurement uncertainty should be available in the metadata as a single DOI landing page.
+dependencies:
+  - metadata/traceability
+glossary:
+  - si
+references:
+metadata:
+legacy:
+  sar: null
+  optical: 3.2 (SR, NLSR)

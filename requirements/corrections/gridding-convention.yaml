@@ -1,0 +1,29 @@
+title: Gridding Convention
+description: 
+threshold:
+  description: |-
+    A consistent gridding/sampling frame is used. The origin is chosen to minimise any need for subsequent resampling between multiple products (be they from the same or different providers).
+    This is typically accomplished via a “snap to grid” in relation to the most proximate grid tile in a global system.
+  notes:
+    - If a product hierarchy of resolutions exists (or is planned), the multiple resolutions should nest within each other (e.g., 12.5m, 25m, 50m, 100m, etc.), and not be disjoint.
+goal:
+  description: |-
+    Provide DOI or URL to gridding convention used.
+
+    When multiple providers share a common map projection, providers are encouraged to standardise the origins of their products among each other.
+
+    In the case of UTM/UPS coordinates, the upper left corner coordinates should be set to an integer multiple of sample intervals from a 100 km by 100 km grid tile of the Military Grid Reference System's 100k coordinates (“snap to grid”).
+
+    For products presented in geographic coordinates (latitude and longitude), the origin should be set to an integer multiple of samples in relation to the closest integer degree.
+  notes:
+dependencies:
+glossary:
+  - doi
+  - url
+  - utm
+  - ups
+references:
+metadata:
+legacy:
+  sar: 4.5
+  optical:
