@@ -79,7 +79,7 @@ nocite: |
 ## Introduction
 
 ~( for section in introduction )~
-### ~{ section.title }~ {#sec:intro-~{ section.id | slugify }~ label="~{ section.title }~"}
+### ~{ section.title }~ {#sec:intro-~{ section.id | slugify }~ label="|~{ section.title }~"}
 
 ~{ section.description | rstrip }~
 
@@ -96,7 +96,7 @@ Instead, use the textual identifier that is provided in brackets directly after 
 
 ~( for block in requirements )~
 ~( set i = loop.index )~
-### ~{ block.category.title }~
+### `~{ i }~.` ~{ block.category.title }~ {#sec:~{ block.category.id }~ label="|~{ block.category.title }~"}
 
 ~{ block.category.description | rstrip }~
 
@@ -105,7 +105,10 @@ Instead, use the textual identifier that is provided in brackets directly after 
 ---
 ~(     endif )~
 
-#### ~{ i }~.~{ loop.index }~ ~{ requirement.title }~ (`~{ requirement.uid }~`) {#sec:~{ requirement.uid }~ label="~{ requirement.uid }~"}
+#### `~{ i }~.~{ loop.index }~.` ~{ block.category.title }~: ~{ requirement.title }~ {#sec:~{ requirement.uid }~ label="|~{ block.category.title }~: ~{ requirement.title }~"}
+
+Identifier: `~{ requirement.uid }~`
+
 ~(     if requirement.description | rstrip )~
 
 ~{ requirement.description | rstrip }~
@@ -171,7 +174,7 @@ Notes:
 ## Annexes
 
 ~(   for annex in annexes )~
-### ~{ annex.title }~ {#sec:annex-~{ annex.id | slugify }~ label="~{ annex.title }~"}
+### ~{ annex.title }~ {#sec:annex-~{ annex.id | slugify }~ label="|~{ annex.title }~"}
 
 ~{ annex.description | rstrip }~
 

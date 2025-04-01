@@ -1,4 +1,4 @@
-id: source
+id: src
 title: Source Metadata
 description: |-
   These are metadata records describing (detailing) **each** acquisition (source data) used to generate the ARD product.
