@@ -1,5 +1,5 @@
 title: Instrument
-description: This is an example requirement.
+description:
 threshold:
   description: |-
     The instrument used to collect the data is identified in the metadata:
