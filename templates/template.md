@@ -110,11 +110,11 @@ Instead, use the textual identifier that is provided in brackets directly after 
 
 ~{ requirement.description | rstrip }~
 ~(     endif )~
-~(     for type in ['goal', 'threshold'] )~
-~(       if requirement[type] )~
+~(     for type in ['threshold', 'goal'] )~
 
 ##### ~{ type|title }~ requirements:
 
+~(       if requirement[type] )~
 ~{ requirement[type].description | rstrip }~
 
 ~(         if requirement[type].notes )~
@@ -125,6 +125,10 @@ Notes:
 ~(           endfor )~
 
 ~(         endif )~
+~(       else )~
+
+*None*
+
 ~(       endif )~
 ~(     endfor )~
 ~(     if editable )~
