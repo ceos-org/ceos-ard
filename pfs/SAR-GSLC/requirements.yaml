@@ -39,19 +39,19 @@
   requirements:
     - cloud-optimized-formats # todo: this is new from the category description
     - metadata/machine-readability
-    - per-pixel-metadata/data-mask
-    - per-pixel-metadata/scattering-area
-    - per-pixel-metadata/local-incident-angle
-    - per-pixel-metadata/ellipsoidal-incident-angle
-    - per-pixel-metadata/noise-power
-    - per-pixel-metadata/gamma-sigma-ratio
-    - per-pixel-metadata/acquisition-id
-    - per-pixel-metadata/dem
-    - per-pixel-metadata/radar-unit-look-vector-grid
-    - per-pixel-metadata/slant-range
-    - per-pixel-metadata/insar-phase-uncertainty
-    - per-pixel-metadata/atmospheric-phase-correction
-    - per-pixel-metadata/ionospheric-phase-correction
+    - per-pixel/data-mask
+    - per-pixel/scattering-area
+    - per-pixel/local-incident-angle
+    - per-pixel/ellipsoidal-incident-angle
+    - per-pixel/noise-power
+    - per-pixel/gamma-sigma-ratio
+    - per-pixel/acquisition-id
+    - per-pixel/dem
+    - per-pixel/radar-unit-look-vector-grid
+    - per-pixel/slant-range
+    - per-pixel/insar-phase-uncertainty
+    - per-pixel/atmospheric-phase-correction
+    - per-pixel/ionospheric-phase-correction
 - category: radiometrically-corrected-measurements
   requirements:
     - cloud-optimized-formats

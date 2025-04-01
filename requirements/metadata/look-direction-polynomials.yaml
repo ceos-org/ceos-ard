@@ -4,7 +4,7 @@ threshold:
   # todo: reference item 2.11
   # todo: [m, deg, arcsec] seem XML encoding specific, should be described in general (e.g., meters, degree, arcsecond).
   description: |-
-    In case the Look Direction Image (see [@per-pixel-metadata/look-direction]) is **not** provided, then a list of the polynomial coefficients are necessary to reconstruct the look direction angle[^look-direction-angle], together with an estimate of the added error from use of polynomial vs. per-pixel more accurate values, shall be provided.
+    In case the Look Direction Image (see [@per-pixel/look-direction]) is **not** provided, then a list of the polynomial coefficients are necessary to reconstruct the look direction angle[^look-direction-angle], together with an estimate of the added error from use of polynomial vs. per-pixel more accurate values, shall be provided.
 
     Example polynomial:
 
@@ -24,7 +24,7 @@ threshold:
   notes:
 goal: null
 dependencies:
-  - per-pixel-metadata/look-direction
+  - per-pixel/look-direction
 glossary:
 references:
 metadata:

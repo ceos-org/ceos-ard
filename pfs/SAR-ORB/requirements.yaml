@@ -39,14 +39,14 @@
   requirements:
     - cloud-optimized-formats # todo: this is new from the category description
     - metadata/machine-readability
-    - per-pixel-metadata/data-mask
-    - per-pixel-metadata/scattering-area
-    - per-pixel-metadata/local-incident-angle
-    - per-pixel-metadata/ellipsoidal-incident-angle
-    - per-pixel-metadata/noise-power
-    - per-pixel-metadata/acquisition-id
-    - per-pixel-metadata/geoid
-    - per-pixel-metadata/look-direction
+    - per-pixel/data-mask
+    - per-pixel/scattering-area
+    - per-pixel/local-incident-angle
+    - per-pixel/ellipsoidal-incident-angle
+    - per-pixel/noise-power
+    - per-pixel/acquisition-id
+    - per-pixel/geoid
+    - per-pixel/look-direction
 - category: radiometrically-corrected-measurements
   requirements:
     - cloud-optimized-formats
