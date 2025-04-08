@@ -5,6 +5,11 @@
 Visit [ceos.org/ard](https://ceos.org/ard) for more information on CEOS-ARD, self-assessments and CEOS-ARD certified datasets.
 [ceos.org/ard](https://ceos.org/ard) is the official reference for all CEOS-ARD documentation, while this repository remains a development version.
 
+> [!CAUTION]
+> This is a very early work-in-progress version of CEOS-ARD!
+>
+> For the **latest released CEOS-ARD PFS versions** please visit the [CEOS ARD website](https://ceos.org/ard/index.html#specs).
+
 ## Framework
 
 Many satellite data users lack the expertise, infrastructure and internet bandwidth to efficiently and effectively access, preprocess, and utilize the growing volume of space-based data for local, regional, and national decision-making. Furthermore, even sophisticated users of EO data typically invest a large proportion of their effort into data preparation. This is a major barrier to full and successful utilization of space-based data, and threatens the success of major global and regional initiatives supported by the Committee on Earth Observation Satellites (CEOS). As data volumes grow, this barrier is becoming more significant for all users.
@@ -15,15 +20,36 @@ Read also into the [CEOS-ARD Strategy 2021](./CEOS-ARD%20Strategy%202021.pdf).
 
 ## Product Family Specifications
 
-The following Product Family Specifications (PFS) are currently defined:
+Below you can find all Product Family Specifications (PFS) that are currently defined by CEOS.
 
-- NLSR
-- SAR-GSLC
-- SAR-NRB
-- SAR-ORB
-- SAR-POL
-- SR
-- ST
+> [!WARNING]
+> The PFS versions listed below are the **latest unreleased draft versions**.
+>
+> For the **latest released version** please visit the [CEOS ARD website](https://ceos.org/ard/index.html#specs).
+
+- **Optical**
+  - **Nighttime Lights Surface Radiance (NLSR)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/NLSR.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/NLSR.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/NLSR.docx)*
+  - **Surface Reflectance (SR)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SR.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SR.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SR.docx)*
+  - **Surface Temperature (ST)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/ST.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/ST.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/ST.docx)*
+- **Synthetic Aperture Radar (SAR)**
+  - **Geocoded Single-Look Complex (GSLC)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.docx)*
+  - **Normalised Radar Backscatter (NRB)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.docx)*
+  - **Ocean Radar Backscatter (ORB)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.docx)*
+  - **Polarimetric Radar (POL)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.docx)*
 
 ## In this repository
 
@@ -51,7 +77,7 @@ All contributors are encouraged to read the guidelines.
 
 ## Governance Framework
 
-The [CEOS-ARD Governance Framework](./CEOS-ARD%20Governance%20Framework%202021.pdf) is summarized in the following sections.
+The [CEOS-ARD Governance Framework (2021)](./CEOS-ARD%20Governance%20Framework%202021.pdf) is summarized in the following sections.
 
 ### Definition
 
@@ -80,7 +106,7 @@ The CEOS-ARD Extension to the SpatioTemporal Asset Catalog (STAC) specification 
 
 ## License
 
-Content in this repository is accessible under the [CC-BY 4.0 license](LICENSE).
+Content in this repository is accessible under the [Creative Commons Attribution 4.0 International (CC-BY-4.0) license](LICENSE).
 
 ## Contact
 
