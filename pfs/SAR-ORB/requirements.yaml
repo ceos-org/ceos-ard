@@ -1,0 +1,64 @@
+- category: general-metadata
+  requirements:
+    # todo: most of the general metadata is product metadata - this should potentially be merged.
+    - metadata/traceability-sar
+    - metadata/machine-readability
+    - metadata/product-type-sar
+    - metadata/pfs-url
+    - metadata/time
+- category: source-metadata
+  requirements:
+    - metadata/sequential-id # todo: this is new from the category description
+    - metadata/data-access-source
+    - metadata/instrument
+    - metadata/time-source
+    - metadata/acquisition-parameters-sar
+    - metadata/orbit
+    - metadata/processing-parameters
+    - metadata/image-attributes-sar
+    - metadata/sensor-calibration
+    - metadata/performance-indicators
+    - metadata/polarimetric-calibration-matrices
+    - metadata/mean-faraday-rotation-angle
+    - metadata/ionosphere-indicator
+- category: product-metadata
+  requirements:
+    - metadata/data-access-product
+    - metadata/auxiliary-data
+    - metadata/sample-spacing
+    - metadata/enl
+    - metadata/resolution
+    - metadata/speckle-filtering
+    - metadata/bounding-box
+    - metadata/footprint
+    - metadata/image-size
+    - metadata/pixel-coordinate-convention
+    - metadata/crs
+    - metadata/look-direction-polynomials
+- category: per-pixel-metadata
+  requirements:
+    - cloud-optimized-formats # todo: this is new from the category description
+    - metadata/machine-readability
+    - per-pixel/data-mask
+    - per-pixel/scattering-area
+    - per-pixel/local-incident-angle
+    - per-pixel/ellipsoidal-incident-angle
+    - per-pixel/noise-power
+    - per-pixel/acquisition-id
+    - per-pixel/geoid
+    - per-pixel/look-direction
+- category: radiometrically-corrected-measurements
+  requirements:
+    - cloud-optimized-formats
+    - measurements/backscatter-orb
+    - metadata/scaling-conversion
+    - metadata/noise-removal
+    - metadata/radiometric-accuracy
+    - measurements/mean-wind-normalised-backscatter
+- category: geometric-corrections
+  requirements:
+    - metadata/geometric-correction-algorithm
+    - corrections/dem
+    - corrections/geometric-accuracy-radar
+    - corrections/geometric-refined-accuracy
+    - corrections/gridding-convention

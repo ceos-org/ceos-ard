@@ -1,0 +1,18 @@
+title: Sample Spacing
+description: 
+threshold:
+  description: |-
+    Product processing parameters details:
+
+    - Pixel (column) spacing
+    - Line (row) spacing
+  notes:
+goal: null
+dependencies:
+glossary:
+  - ceos-ard
+references:
+metadata:
+legacy:
+  sar: 1.7.3
+  optical:

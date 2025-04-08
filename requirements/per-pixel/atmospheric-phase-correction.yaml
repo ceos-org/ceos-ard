@@ -1,0 +1,25 @@
+title: Atmospheric Phase Correction Image
+description: 
+threshold: null
+goal:
+  description: |-
+    Phase correction value at each pixel, if applied.
+    DOI/URL reference to algorithm or brief description is provided.
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Angle)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+dependencies:
+glossary:
+  - doi
+  - url
+references:
+metadata:
+legacy:
+  sar: 2.15
+  optical:

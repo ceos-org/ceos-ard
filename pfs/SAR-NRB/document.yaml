@@ -1,0 +1,31 @@
+id: SAR-NRB
+title: Normalised Radar Backscatter
+type: Synthetic Aperture Radar
+applies_to: |-
+  This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
+
+  The CEOS-ARD Normalised Radar Backscatter (NRB) specification describes products that have been subject to Radiometric Terrain Correction (RTC) and are provided in the Gamma-Nought ($\gamma^0_T$) backscatter convention [@small2011], which mitigates the variations from diverse observation geometries and is recommended for most land applications.
+  An additional metadata layer can be optionally provided for conversion of $\gamma^0_T$ to Sigma-Nought ($\sigma^0_T$) backscatter layer for compatibility with legacy software or numerical models.
+  As the NRB product contains backscatter values only, it cannot be directly used for SAR polarimetry or interferometric applications that require relative polarization phase or local phase estimates respectively.
+  However, as an option, a “flattened” phase data layer can be provided with an NRB product for enabling InSAR analysis.
+  The flattened phase is the interferometric phase, with respect to a reference orbit and to a DEM, for which the topographic phase contribution is removed.
+
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+# Only glossary entries that are not specific to certain requirements or sections are listed here.
+glossary:
+  - metadata
+  - nrb
+  - rtc
+  - insar
+  - dem
+
+references:
+  - iso19115_2_2009
+
+annexes:
+  - sar-general-processing-roadmap
+  - sar-topographic-phase-removal

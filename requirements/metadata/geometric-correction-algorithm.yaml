@@ -1,0 +1,24 @@
+title: Geometric Correction Algorithm
+description: 
+threshold: null
+goal:
+  description: |-
+    Metadata references, e.g.: 
+    - A metadata citable peer-reviewed algorithm
+    - Technical documentation regarding the implementation of that algorithm expressed as URLs or DOIs
+    - The sources of auxiliary data used to make corrections
+    - Resampling method used for geometric processing of the source data
+  notes:
+    - Examples of technical documentation can include e.g., an Algorithm Theoretical Basis Document (ATBD) or a product user guide.
+dependencies:
+glossary:
+  - auxiliary-data
+  - atbd
+  - url
+  - doi
+references:
+metadata:
+legacy:
+  # todo: This is product metadata, but is listed in section 4.1?!
+  sar: 4.1
+  optical:

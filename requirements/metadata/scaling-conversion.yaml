@@ -1,0 +1,16 @@
+title: Scaling Conversion
+description: 
+threshold:
+  description: |-
+    If applicable, indicate the equation to convert pixel linear amplitude/power to logarithmic decibel scale, including, if applicable, the associated calibration (dB offset) factor, and/or the equation used to convert compressed data (int8/int16/float16) to float32.
+  notes:
+goal:
+  description: Use of float32.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 3.2
+  optical:

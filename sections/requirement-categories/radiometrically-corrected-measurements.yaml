@@ -1,0 +1,9 @@
+id: rcm
+title: Radiometrically Corrected Measurements
+description: |-
+  The requirements indicate the necessary outcomes and, to some degree, the minimum steps necessary to be deemed to have achieved those outcomes.
+  Radiometric corrections must lead to normalised measurement(s) of backscatter intensity and/or decomposed polarimetric parameters.
+  As for the per-pixel metadata, information regarding data format specification needs to be provided for each record.
+  The requirements below must be met for all pixels/samples/observations in a collection.
+glossary:
+references:

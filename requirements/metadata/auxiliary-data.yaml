@@ -1,0 +1,18 @@
+title: Auxiliary Data
+description: 
+threshold: null
+goal:
+  description: |-
+    The metadata identifies the sources of auxiliary data used in the generation process, ideally expressed as DOIs.
+  notes:
+    - Auxiliary data includes DEMs, etc., and any additional data sources used in the generation of the product. 
+dependencies:
+glossary:
+  - auxiliary-data
+  - dem
+  - doi
+references:
+metadata:
+legacy:
+  sar: 1.7.2
+  optical:

@@ -1,0 +1,18 @@
+title: Metadata Machine Readability
+description:
+threshold:
+  description: |-
+    Metadata is provided in a structure that enables a computer algorithm to be used consistently and to automatically identify and extract each component part for further use.
+  notes:
+goal:
+  description: |-
+    Metadata is formatted in accordance with CEOS-ARD SAR Metadata Specifications, v.1.1, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention, the Attribute Convention for Data Discovery (ACDD), etc.
+  notes:
+dependencies:
+glossary:
+references:
+  - iso19115_2_2009
+metadata:
+legacy:
+  sar: 1.2
+  optical:

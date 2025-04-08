@@ -1,0 +1,28 @@
+title: InSAR Phase Uncertainty Image
+description: 
+threshold: null
+goal:
+  description: |-
+    Estimate of uncertainty in InSAR phase is provided, such as finite signal to noise ratio, quantization noise, or DEM error.
+    Identification of which error sources are included will be provided as DOI/URL reference or brief description.
+    It represents statistical variation from known noise sources only.
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Angle)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+dependencies:
+glossary:
+  - dem
+  - doi
+  - insar
+  - url
+references:
+metadata:
+legacy:
+  sar: 2.14
+  optical:

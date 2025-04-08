@@ -1,0 +1,9 @@
+title: Ocean Radar Backscatter example
+description: include:sar-orb-example
+glossary:
+  - orb
+  - pol
+  - nrb
+references:
+  - quilfen1998
+  - vachon2000

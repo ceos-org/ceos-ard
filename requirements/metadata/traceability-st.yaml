@@ -1,0 +1,25 @@
+# todo: align with traceability
+title: Traceability
+description:
+threshold: null
+goal:
+  description: >-
+    Data must be traceable to SI reference standard.
+
+    - [Policy on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6536)
+    - [Guidance on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6532)
+  # todo: the two links above are additions only in ST - can we align this with tracability.yaml?
+  # todo: both documents lead to an error message only: "You do not have permission to view this document." which makes them useless.
+  notes:
+    - Relationship to [@measurements/uncertainty-st]. Traceability requires an estimate of measurement uncertainty.
+    - Information on traceability should be available in the metadata as a single DOI landing page.
+dependencies:
+  - measurements/uncertainty-st
+glossary:
+  - doi
+  - si
+references:
+metadata:
+legacy:
+  sar: null
+  optical: 1.1

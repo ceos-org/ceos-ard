@@ -1,0 +1,22 @@
+- category: general-metadata
+  requirements:
+    - metadata/traceability-st
+  # todo: the following should probably be added to the requirements
+  # - metadata/license
+- category: source-metadata
+  requirements:
+    - example
+- category: product-metadata
+  requirements:
+  # todo: the following should probably be added to the requirements
+  # - metadata/product-type
+    - example
+- category: per-pixel-metadata
+  requirements:
+    - example
+- category: radiometric-atmospheric-corrections
+  requirements:
+    - measurements/uncertainty-st # 3.3
+- category: geometric-corrections
+  requirements:
+    - example

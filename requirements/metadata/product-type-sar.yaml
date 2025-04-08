@@ -1,0 +1,14 @@
+title: Product Type
+description: 
+threshold:
+  description: |-
+    CEOS-ARD product type name – or names in case of compliance with more than one product type – and, if required by the data provider, copyright.
+  notes:
+goal: null
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 1.3
+  optical:

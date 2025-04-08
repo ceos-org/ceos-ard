@@ -1,0 +1,8 @@
+id: pxl
+title: Per-Pixel Metadata
+description: |-
+  The following minimum metadata specifications apply to each pixel.
+  Whether the metadata are provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
+  Per-pixel metadata should allow users to discriminate between (choose) observations on the basis of their individual suitability for applications.
+glossary:
+references:

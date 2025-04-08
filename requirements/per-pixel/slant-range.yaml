@@ -1,0 +1,24 @@
+title: Slant Range Sensor to Surface Image
+description: 
+threshold: null
+goal:
+  description: |-
+    Slant range distance from the sensor to the surface, specified at each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating – ECR) is provided.
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Distance)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+dependencies:
+glossary:
+  - ecef
+  - ecr
+references:
+metadata:
+legacy:
+  sar: 2.13
+  optical:

@@ -1,0 +1,25 @@
+title: Gamma-to-Sigma Ratio Image
+description: 
+threshold: null
+goal:
+  description: |-
+    Ratio of the integrated area in the Gamma projection over the integrated area 
+    in the Sigma projection (ground). Multiplying RTC $\gamma^0_T$ by this ratio results in an 
+    estimate of RTC $\sigma^0_T$.
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Ratio)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+dependencies:
+glossary:
+  - rtc
+references:
+metadata:
+legacy:
+  sar: 2.7
+  optical:

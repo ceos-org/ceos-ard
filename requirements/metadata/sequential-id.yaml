@@ -1,0 +1,14 @@
+title: Sequential ID
+description: 
+threshold:
+  description: |-
+    Each acquisition is identified through a sequential identifier in the metadata, e.g. 1, 2, 3.
+  notes:
+goal: null
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 1.6
+  optical: null

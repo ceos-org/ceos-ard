@@ -1,5 +1,14 @@
-/.github/package-lock.json
-/.github/node_modules/
+package-lock.json
+node_modules/
 
 .DS_Store
 Thumbs.db
+
+/NLSR.*
+/SAR-GSLC.*
+/SAR-NRB.*
+/SAR-ORB.*
+/SAR-POL.*
+/SR.*
+/ST.*
+/build/

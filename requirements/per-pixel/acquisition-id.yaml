@@ -1,0 +1,37 @@
+title: Acquisition ID Image
+description: 
+threshold:
+  # todo: this mixes per-pixel metadata with general metadata (see last paragraphs)
+  # todo: the list of file format specifications below comes up more often and should be a separate building block
+  description: |-
+    **Required for multi-source product only.**
+
+    Acquisition ID, or acquisition date, for each pixel is identified.
+
+    In case of multi-temporal image stacks, use source acquisition ID (i.e., [@metadata/sequential-id]) to list contributing images.
+
+    In case of date, data represent (integer or fractional) day offset to reference observation date (in UTC). Date used as reference (“Day 0”) is provided in the metadata.
+
+    Pixels not representing a unique date (e.g., pixels averaged in image overlap zones) are flagged with a pre-set pixel value that is provided in the metadata.
+    
+    File format specifications/contents provided in metadata:
+
+    - Sample type (Day, Time, ID)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per sample
+    - Byte Order
+  notes:
+goal:
+  description: |-
+    In case of image composites, the sources for each pixel are uniquely identified.
+  notes:
+dependencies:
+  - metadata/sequential-id
+glossary:
+  - utc
+references:
+metadata:
+legacy:
+  sar: 2.8
+  optical: null

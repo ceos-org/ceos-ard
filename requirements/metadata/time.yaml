@@ -1,0 +1,19 @@
+title: Data Collection Time
+description:
+threshold:
+  # todo: the number of source data acquisitions has nothing to do with the time requirements, should be separate.
+  description: |-
+    Number of source data acquisitions of the data collection is identified.
+    The start and stop UTC time of data collection is identified in the metadata, expressed in date/time.
+    In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata [@per-pixel/acquisition-id] is provided with the product.
+  notes:
+goal: null
+dependencies:
+  - per-pixel/acquisition-id
+glossary:
+  - utc
+references:
+metadata:
+legacy:
+  sar: 1.5
+  optical:

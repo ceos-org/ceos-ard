@@ -1,0 +1,7 @@
+id: gcor
+title: Geometric Corrections
+description: |-
+  The geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared.
+  This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
+glossary:
+references:

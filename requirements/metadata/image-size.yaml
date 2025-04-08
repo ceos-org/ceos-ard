@@ -1,0 +1,23 @@
+title: Image Size
+description: 
+threshold:
+  # todo: this is a mixture of requirements.
+  # file header size seems obsolete, handled by tooling.
+  # number of no-data border pixels has not really a direct relation with the image size?!
+  description: |-
+    Image attributes:
+
+    - Number of lines
+    - Number of pixels per line
+    - File header size (if applicable)
+    - Number of no-data border pixels (if applicable)
+  notes:
+goal: null
+dependencies:
+glossary:
+  - ceos-ard
+references:
+metadata:
+legacy:
+  sar: 1.7.9 (edited)
+  optical:

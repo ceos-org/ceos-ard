@@ -1,0 +1,24 @@
+title: Look Direction Image 
+description: 
+threshold: null
+goal:
+  # todo: the list of file format specifications below comes up more often and should be a separate building block
+  description: |-
+    Look Direction Image is provided.
+    It represents the planar angle between north and each range direction. 
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Angle)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 2.11
+  optical:

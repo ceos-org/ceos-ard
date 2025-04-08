@@ -1,0 +1,16 @@
+title: Ionosphere Indicator
+description: 
+threshold: null
+goal:
+  # todo: The "(0 – false, 1 – true)" is implementation specific, it is also not clear whether 0 or 1 should be used of the boolean values (which may be T, True, WAHR, ... or F, False, UNWAHR, ... in other contexts).
+  description: |-
+    Flag indicating whether the backscatter imagery is “significantly impacted” by the ionosphere (0 – false, 1 – true).
+    Significant impact would imply that the ionospheric impact on the backscatter exceeds the radiometric calibration requirement or goal for the imagery. 
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar: 1.6.12
+  optical:

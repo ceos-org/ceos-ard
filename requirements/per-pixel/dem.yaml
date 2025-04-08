@@ -1,0 +1,29 @@
+title: DEM
+description: 
+threshold: null
+goal:
+  # todo: there's an ORB specific part, which could be removed as the requirment doesn't apply to ORB?!
+  description: |-
+    Provide DEM or DSM as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the image product.
+    
+    Can also be provided with ORB products containing land areas.
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Height)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+dependencies:
+glossary:
+  - sar
+  - dem
+  - dsm
+  - orb
+references:
+metadata:
+legacy:
+  sar: 2.9
+  optical:

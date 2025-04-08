@@ -1,0 +1,22 @@
+title: Reference Orbit 
+description: |-
+    **Usage: When a reference orbit is used instead of a virtual orbit (see [@sec:annex-sar-topographic-phase-removal]).**
+threshold: null
+goal:
+  description: |-
+    Provide the absolute orbit number used as reference for topographic phase flattening.
+    In case a virtual orbit has been used, provide orbit parameters or orbit state vectors as DOI or URL.
+
+    Provide scene-centred perpendicular baseline for the for the source data relative to the reference orbit used (for approximate use only).
+  notes:
+dependencies:
+# todo: implement dependencies on other sections
+# - sec:annex-sar-topographic-phase-removal
+glossary:
+  - doi
+  - url
+references:
+metadata:
+legacy:
+  sar: 1.7.15
+  optical:

@@ -1,0 +1,3 @@
+term: EPSG Code
+description: |-
+  An EPSG code is a unique identifier assigned to e.g. a specific coordinate reference system (CRS) by the European Petroleum Survey Group (EPSG).

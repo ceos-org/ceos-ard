@@ -1,0 +1,14 @@
+title: Equivalent Number of Looks 
+description: 
+threshold: null
+goal:
+  description: Equivalent Number of Looks (ENL)
+  notes:
+dependencies:
+glossary:
+  - enl
+references:
+metadata:
+legacy:
+  sar: 1.7.4
+  optical:

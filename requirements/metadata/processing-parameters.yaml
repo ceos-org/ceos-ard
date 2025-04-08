@@ -1,0 +1,26 @@
+title: Processing Parameters
+description: 
+threshold:
+  description: |-
+    Processing parameters details of the data:
+
+    - Processing facility
+    - Processing date
+    - Software version
+    - Product level
+    - Product ID (file name)
+    - Azimuth number of looks
+    - Range number of looks (separate values for each beam, as necessary)
+  notes:
+goal:
+  description: |-
+    Additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied. 
+  notes:
+dependencies:
+glossary:
+  - lut
+references:
+metadata:
+legacy:
+  sar: 1.6.6
+  optical:

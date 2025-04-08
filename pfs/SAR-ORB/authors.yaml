@@ -1,0 +1,85 @@
+- name: Alaska Satellite Facility
+  country: USA
+  members:
+    - Franz Meyer
+    - Thomas Logan
+- name: Collecte Localisation Satellites
+  country: France
+  members:
+    - Guillaume Hajduch
+- name: CONAE
+  country: Argentina
+  members:
+    - Danilo Dadamia
+- name: CSIRO
+  country: Australia
+  members:
+    - Zheng-Shu Zhou
+- name: Digital Earth Africa
+  country: Australia
+  members:
+    - Fang Yuan
+- name: Earth Big Data
+  country: USA
+  members:
+    - Josef Kellndorfer
+- name: Environment and Climate Change
+  country: Canada
+  members:
+    - Benjamin Deschamps
+- name: European Space Agency (ESA)
+  country: Italy
+  members:
+    - Clément Albinet
+    - Muriel Pinheiro
+    - Nuno Miranda
+- name: Geoscience Australia
+  country: Australia
+  members:
+    - Adam Lewis
+    - Andreia Siqueira
+    - Medhavy Thankappan
+- name: German Aerospace Centre (DLR)
+  country: Germany
+  members:
+    - Anna Wendleder
+    - John Truckenbrodt
+- name: ISRO
+  country: India
+  members:
+    - HariPriya Sakethapuram
+- name: Japan Aerospace Exploration Agency
+  country: Japan
+  members:
+    - Takeo Tadono
+- name: Jet Propulsion Laboratory
+  country: USA
+  members:
+    - Bruce Chapman
+    - Gustavo Shiroma
+    - Marco Lavalle
+    - Virginia Brancato
+- name: Natural Resources Canada
+  country: Canada
+  members:
+    - François Charbonneau
+- name: RHEA
+  country: Italy
+  members:
+    - Antonio Valentino
+- name: Sinergise
+  country: Slovenia
+  members:
+    - Marko Repse
+- name: soloEO
+  country: Japan
+  members:
+    - Ake Rosenqvist
+- name: Stanford University
+  country: USA
+  members:
+    - Howard Zebker
+- name: University of Zurich
+  country: Switzerland
+  members:
+    - David Small

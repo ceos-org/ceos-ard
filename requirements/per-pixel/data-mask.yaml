@@ -1,0 +1,41 @@
+title: Data Mask Image
+description: 
+threshold:
+  description: |-
+    Mask image indicating:
+
+    - Valid data
+    - Invalid data
+    - No data
+
+    File format specifications/contents provided in metadata:
+
+    - Sample Type (Mask)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+    - Bit Value Representation
+  notes:
+goal:
+  # todo: Land recommendation for ORB shows up in non-ORB PFS
+  description: |-
+    Additional bit value representations, e.g.:
+
+    - Layover (masked as invalid data in threshold)
+    - Radar shadow (masked as invalid data in threshold)
+    - Ocean water
+    - Land (recommended for ORB)
+    - RTC applied (e.g., for maritime scenes with land samples for which RTC has been applied)
+    - DEM gap filling (i.e., interpolated DEM over gaps)
+  notes:
+dependencies:
+glossary:
+  - orb
+  - rtc
+  - dem
+references:
+metadata:
+legacy:
+  sar:
+  optical:

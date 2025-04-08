@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="$lang$" xml:lang="$lang$"$if(dir)$ dir="$dir$"$endif$>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <style>
+    body {
+      margin: 0 auto;
+      max-width: 44em;
+      padding: 1em;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+      font-size: 12pt;
+      font-family: Aptos, sans-serif;
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 0.5em;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a, a:visited {
+      color: #156082;
+    }
+    a:hover {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2 {
+      font-family: "Aptos Display", sans-serif;
+      margin: 0;
+    }
+    h2, h3, h4 {
+      color: #0F4761;
+      font-weight: normal;
+      margin: 0;
+      margin-bottom: 1em;
+    }
+    h1 {
+      font-size: 24pt;
+      color: #595959;
+      font-weight: normal;
+      margin-top: 1em;
+      text-align: center;
+    }
+    h2 {
+      font-size: 22pt;
+      border-bottom: 1px solid #0F4761;
+      margin-top: 2em;
+    }
+    h3 {
+      font-size: 18pt;
+      margin-top: 1.5em;
+      border-bottom: 1px dotted #0F4761;
+    }
+    h4 {
+      font-size: 16pt;
+      margin: 1.25em 0 0.5em;
+    }
+    h5 {
+      font-size: 13pt;
+      font-weight: bold;
+      text-decoration: underline;
+      margin: 1em 0 0.5em;
+    }
+    h6 {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      text-align: center;
+      color: #404040;
+      font-style: italic;
+    }
+    dt {
+      font-weight: bold;
+      margin-top: 0.5em;
+    }
+    code {
+      font-family: monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+      background-color: transparent;
+      overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 3px dotted #ccc;
+      height: 1px;
+      margin: 1.5rem auto;
+      width: 100px;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+    $if(table-caption-below)$
+      caption-side: bottom;
+      margin-top: 0.75em;
+    $else$
+      margin-bottom: 0.75em;
+    $endif$
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    figure {
+      text-align: center;
+    }
+    figcaption {
+      font-style: italic;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+      override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    $if(quotes)$
+    q { quotes: "“" "”" "‘" "’"; }
+    $endif$
+    $if(displaymath-css)$
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    $endif$
+    $if(highlighting-css)$
+    /* CSS for syntax highlighting */
+    $highlighting-css$
+    $endif$
+    $if(csl-css)$
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+    $if(csl-entry-spacing)$
+      margin-bottom: $csl-entry-spacing$;
+    $endif$
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+    $endif$
+    @media print {
+      body {
+        print-color-adjust: exact;
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+      @page {
+        size: A4;
+        margin: 1.9cm 2.5cm;
+      }
+      h2 {
+        margin-top: 0cm;
+      }
+      #contributing-authors {
+        margin-top: 2cm;
+      }
+    }
+  </style>
+$for(css)$
+  <link rel="stylesheet" href="$css$" />
+$endfor$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+$if(math)$
+  $math$
+$endif$
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+$if(toc)$
+<nav id="$idprefix$TOC" role="doc-toc">
+$if(toc-title)$
+<h2 id="$idprefix$toc-title">$toc-title$</h2>
+$endif$
+$table-of-contents$
+</nav>
+$endif$
+$body$
+$for(include-after)$
+$include-after$
+$endfor$
+</body>
+</html>

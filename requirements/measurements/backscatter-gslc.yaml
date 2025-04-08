@@ -1,0 +1,28 @@
+title: Backscatter Measurements \[GSLC]
+description: 
+threshold: 
+  # todo: the list of file format specifications below comes up more often and should be a separate building block
+  # todo: is the * behind linar power pointing to the note? Should be a footnote then?
+  description: |-
+    Radiometric and Phase Terrain-flattened Gamma-Nought backscatter coefficient ($\gamma^0_T$), in complex number format, is provided for each polarization (e.g., HH, HV, VV, VH).
+
+    File format specifications/contents provided in metadata:
+
+    - Measurement Type (Gamma-Nought)
+    - Backscatter Expression Convention (linear amplitude, linear power\*)
+    - Polarization (HH, HV, VV, VH)
+    - Data Format (GeoTIFF, HDF5, NetCDF, …)
+    - Data Type (Int, Float, …)
+    - Bits per Sample
+    - Byte Order
+  notes:
+    - Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
+goal: null
+dependencies:
+glossary:
+  - rtc
+references:
+metadata:
+legacy:
+  sar: 3.1
+  optical: null

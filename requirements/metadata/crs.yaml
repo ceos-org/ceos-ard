@@ -1,0 +1,19 @@
+# todo
+title: Coordinate Reference System
+description:
+threshold:
+  description: |-
+    The metadata lists the map projection (or geographical coordinates, if applicable) that was used and any relevant parameters required to geolocate data in that map projection, expressed in a standardised format (e.g., WKT).  
+    Indicate EPSG code, if defined for the CRS. 
+  notes:
+goal: null
+dependencies:
+glossary:
+  - crs
+  - epsg-code
+  - wkt
+references:
+metadata:
+legacy:
+  sar: 1.7.11
+  optical:
