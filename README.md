@@ -27,29 +27,29 @@ Below you can find all Product Family Specifications (PFS) that are currently de
 >
 > For the **latest released version** please visit the [CEOS ARD website](https://ceos.org/ard/index.html#specs).
 
-- **Optical**
-  - **Nighttime Lights Surface Radiance (NLSR)**
+- **Synthetic Aperture Radar (SAR)**
+  - **Normalised Radar Backscatter (NRB)**
   
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/NLSR.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/NLSR.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/NLSR.docx)*
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.docx)*
+  - **Polarimetric Radar (POL)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.docx)*
+  - **Ocean Radar Backscatter (ORB)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.docx)*
+  - **Geocoded Single-Look Complex (GSLC)**
+  
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.docx)*
+- **Optical**
   - **Surface Reflectance (SR)**
   
     *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SR.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SR.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SR.docx)*
   - **Surface Temperature (ST)**
   
     *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/ST.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/ST.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/ST.docx)*
-- **Synthetic Aperture Radar (SAR)**
-  - **Geocoded Single-Look Complex (GSLC)**
+  - **Nighttime Lights Surface Radiance (NLSR)**
   
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.docx)*
-  - **Normalised Radar Backscatter (NRB)**
-  
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.docx)*
-  - **Ocean Radar Backscatter (ORB)**
-  
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.docx)*
-  - **Polarimetric Radar (POL)**
-  
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.docx)*
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/NLSR.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/NLSR.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/NLSR.docx)*
 
 ## In this repository
 
