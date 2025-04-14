@@ -1,5 +1,6 @@
 id: SR
 title: Surface Reflectance
+version: 5.1-draft
 type: Optical
 applies_to: |-
   Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.

@@ -1,5 +1,5 @@
 ---
-title: CEOS-ARD - ~{ type }~ - ~{ title }~
+title: CEOS-ARD - ~{ type }~ - ~{ title }~ - Version ~{ version }~
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -45,6 +45,9 @@ nocite: |
 
 **Product Family Specification:**
 ~{type}~, ~{ title }~ (~{ id }~)
+
+**Version:**
+~{ version }~
 
 **Applies to:**
 ~{ applies_to }~
