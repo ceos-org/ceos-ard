@@ -1,5 +1,5 @@
 ---
-title: CEOS-ARD - Optical - Surface Reflectance
+title: CEOS-ARD - Optical - Surface Reflectance - Version 5.1-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -45,6 +45,9 @@ nocite: |
 
 **Product Family Specification:**
 Optical, Surface Reflectance (SR)
+
+**Version:**
+5.1-draft
 
 **Applies to:**
 Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.

@@ -1,5 +1,5 @@
 ---
-title: CEOS-ARD - Optical - Surface Temperature
+title: CEOS-ARD - Optical - Surface Temperature - Version 5.1-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -45,6 +45,9 @@ nocite: |
 
 **Product Family Specification:**
 Optical, Surface Temperature (ST)
+
+**Version:**
+5.1-draft
 
 **Applies to:**
 Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths.

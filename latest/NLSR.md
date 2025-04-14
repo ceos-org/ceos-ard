@@ -1,5 +1,5 @@
 ---
-title: CEOS-ARD - Optical - Nighttime Light Surface Radiance
+title: CEOS-ARD - Optical - Nighttime Light Surface Radiance - Version 1.1-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -45,6 +45,9 @@ nocite: |
 
 **Product Family Specification:**
 Optical, Nighttime Light Surface Radiance (NLSR)
+
+**Version:**
+1.1-draft
 
 **Applies to:**
 Data collected with nighttime light sensors operating in the VIS/NIR wavelengths.

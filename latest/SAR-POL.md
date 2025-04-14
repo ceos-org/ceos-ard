@@ -1,5 +1,5 @@
 ---
-title: CEOS-ARD - Synthetic Aperture Radar - Polarimetric Radar
+title: CEOS-ARD - Synthetic Aperture Radar - Polarimetric Radar - Version 1.2-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -45,6 +45,9 @@ nocite: |
 
 **Product Family Specification:**
 Synthetic Aperture Radar, Polarimetric Radar (SAR-POL)
+
+**Version:**
+1.2-draft
 
 **Applies to:**
 This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
