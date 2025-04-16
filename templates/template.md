@@ -141,7 +141,7 @@ Notes:
 ##### Assessment:
 
 - Threshold Self-Assessment:
-- Target Self-Assessment:
+- Goal Self-Assessment:
 - Self-Assessment Explanation/ Justification:
 - Recommended Requirement Modification:
 
