@@ -43,6 +43,7 @@ nocite: |
 
 &nbsp;
 
+<!-- edit:pfs/NLSR/document.yaml -->
 **Product Family Specification:**
 Optical, Nighttime Light Surface Radiance (NLSR)
 
@@ -61,6 +62,7 @@ however, the Specification is not inherently limited to this resolution.
 Not available yet
 
 ## Contributing Authors
+<!-- edit:pfs/NLSR/authors.yaml -->
 
 - NASA, USA
   - Brian Killough
@@ -97,6 +99,7 @@ VIS
 ## Introduction
 
 ### What are CEOS Analysis Ready Data (CEOS-ARD) products? {#sec:intro-what-are-ceos-ard-products label="|What are CEOS Analysis Ready Data (CEOS-ARD) products?"}
+<!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->
 
 CEOS-ARD products have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort.
 These products would be resampled onto a common geometric grid (for a given product) and would provide baseline data for further interoperability both through time and with other datasets.
@@ -106,6 +109,7 @@ They are also intended to support rapid ingestion and exploitation via high-perf
 They may not be suitable for all purposes and are not intended as a _replacement_ for other types of satellite products.
 
 ### When can a product be called CEOS-ARD? {#sec:intro-when-is-a-product-ceos-ard label="|When can a product be called CEOS-ARD?"}
+<!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->
 
 The CEOS-ARD branding is applied to a particular product once:
 
@@ -117,6 +121,7 @@ Agencies or other entities considering undertaking an assessment process should 
 A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
 
 ### What is the difference between Threshold and Goal? {#sec:intro-difference-threshold-goal label="|What is the difference between Threshold and Goal?"}
+<!-- edit:sections/introduction/difference-threshold-goal.yaml-->
 
 **Threshold** (or: minimum) requirements are the **minimum** that is needed for the data to be analysis ready.
 This must be practical and accepted by the data producers.
@@ -135,6 +140,7 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 &#12;
 
 ## Requirements
+<!-- edit:pfs/NLSR/requirements.yaml -->
 
 **WARNING:** The requirement numbers below are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -143,6 +149,7 @@ Instead, use the textual identifier that is provided in brackets directly after 
 <!-- todo: remove requirement numbers -->
 
 ### `1.` General Metadata {#sec:meta label="|General Metadata"}
+<!-- edit:sections/requirement-categories/general-metadata.yaml-->
 
 These are metadata records describing a distributed collection of pixels.
 The collection of pixels referred to must be contiguous in space and time.
@@ -150,6 +157,7 @@ General metadata should allow the user to assess the _overall_ suitability of th
 
 
 #### `1.1.` General Metadata: Traceability {#sec:meta.metadata-traceability label="|General Metadata: Traceability"}
+<!-- edit:requirements/metadata/traceability.yaml-->
 
 Identifier: `meta.metadata-traceability`
 
@@ -170,12 +178,14 @@ Notes:
 2. Information on traceability should be available in the metadata as a single DOI landing page.
 
 ### `2.` Source Metadata {#sec:src label="|Source Metadata"}
+<!-- edit:sections/requirement-categories/source-metadata.yaml-->
 
 These are metadata records describing (detailing) **each** acquisition (source data) used to generate the ARD product.
 This may be one or mutliple acquisitions.
 
 
 #### `2.1.` Source Metadata: Example Requirement {#sec:src.example label="|Source Metadata: Example Requirement"}
+<!-- edit:requirements/example.yaml-->
 
 Identifier: `src.example`
 
@@ -196,11 +206,13 @@ Notes:
 1. This is a note.
 
 ### `3.` Product Metadata {#sec:prd label="|Product Metadata"}
+<!-- edit:sections/requirement-categories/product-metadata.yaml-->
 
 Information related to the CEOS-ARD product generation procedure and geographic parameters.
 
 
 #### `3.1.` Product Metadata: Example Requirement {#sec:prd.example label="|Product Metadata: Example Requirement"}
+<!-- edit:requirements/example.yaml-->
 
 Identifier: `prd.example`
 
@@ -221,6 +233,7 @@ Notes:
 1. This is a note.
 
 ### `4.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
+<!-- edit:sections/requirement-categories/per-pixel-metadata.yaml-->
 
 The following minimum metadata specifications apply to each pixel.
 Whether the metadata are provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
@@ -228,6 +241,7 @@ Per-pixel metadata should allow users to discriminate between (choose) observati
 
 
 #### `4.1.` Per-Pixel Metadata: Example Requirement {#sec:pxl.example label="|Per-Pixel Metadata: Example Requirement"}
+<!-- edit:requirements/example.yaml-->
 
 Identifier: `pxl.example`
 
@@ -248,12 +262,14 @@ Notes:
 1. This is a note.
 
 ### `5.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
+<!-- edit:sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->
 
 The following requirements must be met for all pixels in a collection.
 The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement of surface reflectance.
 
 
 #### `5.1.` Radiometric and Atmospheric Corrections: Measurement Uncertainty {#sec:rac.measurements-uncertainty label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
+<!-- edit:requirements/measurements/uncertainty.yaml-->
 
 Identifier: `rac.measurements-uncertainty`
 
@@ -276,12 +292,14 @@ Notes:
 2. Information on measurement uncertainty should be available in the metadata as a single DOI landing page.
 
 ### `6.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
+<!-- edit:sections/requirement-categories/geometric-corrections.yaml-->
 
 The geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared.
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
 #### `6.1.` Geometric Corrections: Example Requirement {#sec:gcor.example label="|Geometric Corrections: Example Requirement"}
+<!-- edit:requirements/example.yaml-->
 
 Identifier: `gcor.example`
 

@@ -305,6 +305,7 @@ that allows immediate analysis with a minimum of additional user effort
 and interoperability both through time and with other datasets.</p>
 </blockquote>
 <p> </p>
+<!-- edit:pfs/ST/document.yaml -->
 <p><strong>Product Family Specification:</strong> Optical, Surface
 Temperature (ST)</p>
 <p><strong>Version:</strong> 5.1-draft</p>
@@ -324,6 +325,7 @@ land measurements, requiring atmospheric corrections.</p>
 <h2 id="document-history">Document History</h2>
 <p>Not available yet</p>
 <h2 id="contributing-authors">Contributing Authors</h2>
+<!-- edit:pfs/ST/authors.yaml -->
 <ul>
 <li>Geoscience Australia, Australia
 <ul>
@@ -375,6 +377,7 @@ Thermal Infrared
 <h2 id="introduction">Introduction</h2>
 <h3 data-label="|What are CEOS Analysis Ready Data (CEOS-ARD) products?" id="sec:intro-what-are-ceos-ard-products">What are CEOS Analysis Ready
 Data (CEOS-ARD) products?</h3>
+<!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->
 <p>CEOS-ARD products have been processed to a minimum set of
 requirements and organized into a form that allows immediate analysis
 with a minimum of additional user effort. These products would be
@@ -391,6 +394,7 @@ are not intended as a <em>replacement</em> for other types of satellite
 products.</p>
 <h3 data-label="|When can a product be called CEOS-ARD?" id="sec:intro-when-is-a-product-ceos-ard">When can a product be called
 CEOS-ARD?</h3>
+<!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->
 <p>The CEOS-ARD branding is applied to a particular product once:</p>
 <ul>
 <li>that product has been assessed as meeting CEOS-ARD requirements by
@@ -407,6 +411,7 @@ generation and distribution remain consistent with the peer-reviewed
 assessment.</p>
 <h3 data-label="|What is the difference between Threshold and Goal?" id="sec:intro-difference-threshold-goal">What is the difference between
 Threshold and Goal?</h3>
+<!-- edit:sections/introduction/difference-threshold-goal.yaml-->
 <p><strong>Threshold</strong> (or: minimum) requirements are the
 <strong>minimum</strong> that is needed for the data to be analysis
 ready. This must be practical and accepted by the data producers.</p>
@@ -427,6 +432,7 @@ specifications may (and subject to due process) become accepted as
 <em>threshold</em> requirements.</p>
 <div style="page-break-after: always;"></div>
 <h2 id="requirements">Requirements</h2>
+<!-- edit:pfs/ST/requirements.yaml -->
 <p><strong>WARNING:</strong> The requirement numbers below are not
 stable and may change or may be removed at any time. Do
 <strong>not</strong> use the numbers to refer back to specific
@@ -435,6 +441,7 @@ brackets directly after the title.</p>
 <!-- todo: remove requirement numbers -->
 <h3 data-label="|General Metadata" id="sec:meta"><code>1.</code> General
 Metadata</h3>
+<!-- edit:sections/requirement-categories/general-metadata.yaml-->
 <p>These are metadata records describing a distributed collection of
 pixels. The collection of pixels referred to must be contiguous in space
 and time. General metadata should allow the user to assess the
@@ -442,6 +449,7 @@ and time. General metadata should allow the user to assess the
 requirements listed below.</p>
 <h4 data-label="|General Metadata: Traceability" id="sec:meta.metadata-traceability-st"><code>1.1.</code> General
 Metadata: Traceability</h4>
+<!-- edit:requirements/metadata/traceability-st.yaml-->
 <p>Identifier: <code>meta.metadata-traceability-st</code></p>
 <h5 id="threshold-requirements">Threshold requirements:</h5>
 <p><em>None</em></p>
@@ -459,11 +467,13 @@ single DOI landing page.</li>
 </ol>
 <h3 data-label="|Source Metadata" id="sec:src"><code>2.</code> Source
 Metadata</h3>
+<!-- edit:sections/requirement-categories/source-metadata.yaml-->
 <p>These are metadata records describing (detailing)
 <strong>each</strong> acquisition (source data) used to generate the ARD
 product. This may be one or mutliple acquisitions.</p>
 <h4 data-label="|Source Metadata: Example Requirement" id="sec:src.example"><code>2.1.</code> Source Metadata: Example
 Requirement</h4>
+<!-- edit:requirements/example.yaml-->
 <p>Identifier: <code>src.example</code></p>
 <p>This is an example requirement.</p>
 <h5 id="threshold-requirements-1">Threshold requirements:</h5>
@@ -476,10 +486,12 @@ Requirement</h4>
 </ol>
 <h3 data-label="|Product Metadata" id="sec:prd"><code>3.</code> Product
 Metadata</h3>
+<!-- edit:sections/requirement-categories/product-metadata.yaml-->
 <p>Information related to the CEOS-ARD product generation procedure and
 geographic parameters.</p>
 <h4 data-label="|Product Metadata: Example Requirement" id="sec:prd.example"><code>3.1.</code> Product Metadata: Example
 Requirement</h4>
+<!-- edit:requirements/example.yaml-->
 <p>Identifier: <code>prd.example</code></p>
 <p>This is an example requirement.</p>
 <h5 id="threshold-requirements-2">Threshold requirements:</h5>
@@ -492,6 +504,7 @@ Requirement</h4>
 </ol>
 <h3 data-label="|Per-Pixel Metadata" id="sec:pxl"><code>4.</code>
 Per-Pixel Metadata</h3>
+<!-- edit:sections/requirement-categories/per-pixel-metadata.yaml-->
 <p>The following minimum metadata specifications apply to each pixel.
 Whether the metadata are provided in a single record relevant to all
 pixels or separately for each pixel is at the discretion of the data
@@ -500,6 +513,7 @@ provider. Per-pixel metadata should allow users to discriminate between
 applications.</p>
 <h4 data-label="|Per-Pixel Metadata: Example Requirement" id="sec:pxl.example"><code>4.1.</code> Per-Pixel Metadata: Example
 Requirement</h4>
+<!-- edit:requirements/example.yaml-->
 <p>Identifier: <code>pxl.example</code></p>
 <p>This is an example requirement.</p>
 <h5 id="threshold-requirements-3">Threshold requirements:</h5>
@@ -512,6 +526,7 @@ Requirement</h4>
 </ol>
 <h3 data-label="|Radiometric and Atmospheric Corrections" id="sec:rac"><code>5.</code> Radiometric and Atmospheric
 Corrections</h3>
+<!-- edit:sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->
 <p>The following requirements must be met for all pixels in a
 collection. The requirements indicate both the necessary outcomes and
 the minimum steps necessary to be deemed to have achieved those
@@ -519,6 +534,7 @@ outcomes. Radiometric corrections must lead to a valid measurement of
 surface reflectance.</p>
 <h4 data-label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty" id="sec:rac.measurements-uncertainty-st"><code>5.1.</code> Radiometric
 and Atmospheric Corrections: Measurement Uncertainty</h4>
+<!-- edit:requirements/measurements/uncertainty-st.yaml-->
 <p>Identifier: <code>rac.measurements-uncertainty-st</code></p>
 <p>Note: In current practice, users determine fitness for purpose based
 on knowledge of the lineage of the data, rather than on a specific
@@ -538,6 +554,7 @@ i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).</li>
 </ol>
 <h3 data-label="|Geometric Corrections" id="sec:gcor"><code>6.</code>
 Geometric Corrections</h3>
+<!-- edit:sections/requirement-categories/geometric-corrections.yaml-->
 <p>The geometric corrections are steps that are taken to place the
 measurement accurately on the surface of the Earth (that is, to
 geolocate the measurement) allowing measurements taken through time to
@@ -546,6 +563,7 @@ requirements that must be met in order for the data to be analysis
 ready.</p>
 <h4 data-label="|Geometric Corrections: Example Requirement" id="sec:gcor.example"><code>6.1.</code> Geometric Corrections: Example
 Requirement</h4>
+<!-- edit:requirements/example.yaml-->
 <p>Identifier: <code>gcor.example</code></p>
 <p>This is an example requirement.</p>
 <h5 id="threshold-requirements-5">Threshold requirements:</h5>
@@ -583,6 +601,7 @@ https://doi.org/<a href="https://doi.org/10.1016/j.rse.2012.12.008">https://doi.
 <h2 id="annexes">Annexes</h2>
 <h3 data-label="|CEOS-ARD ST Requirement Examples" id="sec:annex-st-metadata-examples">CEOS-ARD ST Requirement
 Examples</h3>
+<!-- edit:sections/annexes/st-metadata-examples.yaml-->
 <h3 id="general-metadata">General Metadata</h3>
 <h4 id="traceability">Traceability</h4>
 <p>Example of measurement traceability in metadata:</p>
