@@ -43,6 +43,7 @@ nocite: |
 
 &nbsp;
 
+<!-- edit:pfs/~{ id }~/document.yaml -->
 **Product Family Specification:**
 ~{type}~, ~{ title }~ (~{ id }~)
 
@@ -59,6 +60,7 @@ nocite: |
 ~{ history }~
 
 ## Contributing Authors
+<!-- edit:pfs/~{ id }~/authors.yaml -->
 
 ~( for org in authors )~
 - ~{ org.name -}~ ~(- if org.country )~, ~{ org.country }~ ~(- endif )~
@@ -83,6 +85,7 @@ nocite: |
 
 ~( for section in introduction )~
 ### ~{ section.title }~ {#sec:intro-~{ section.id | slugify }~ label="|~{ section.title }~"}
+<!-- edit:~{ section.filepath }~-->
 
 ~{ section.description | rstrip }~
 
@@ -90,6 +93,7 @@ nocite: |
 &#12;
 
 ## Requirements
+<!-- edit:pfs/~{ id }~/requirements.yaml -->
 
 **WARNING:** The requirement numbers below are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -100,6 +104,7 @@ Instead, use the textual identifier that is provided in brackets directly after 
 ~( for block in requirements )~
 ~( set i = loop.index )~
 ### `~{ i }~.` ~{ block.category.title }~ {#sec:~{ block.category.id }~ label="|~{ block.category.title }~"}
+<!-- edit:~{ block.category.filepath }~-->
 
 ~{ block.category.description | rstrip }~
 
@@ -109,6 +114,7 @@ Instead, use the textual identifier that is provided in brackets directly after 
 ~(     endif )~
 
 #### `~{ i }~.~{ loop.index }~.` ~{ block.category.title }~: ~{ requirement.title }~ {#sec:~{ requirement.uid }~ label="|~{ block.category.title }~: ~{ requirement.title }~"}
+<!-- edit:~{ requirement.filepath }~-->
 
 Identifier: `~{ requirement.uid }~`
 
@@ -178,6 +184,7 @@ Notes:
 
 ~(   for annex in annexes )~
 ### ~{ annex.title }~ {#sec:annex-~{ annex.id | slugify }~ label="|~{ annex.title }~"}
+<!-- edit:~{ annex.filepath }~-->
 
 ~{ annex.description | rstrip }~
 
