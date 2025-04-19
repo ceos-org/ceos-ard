@@ -62,7 +62,7 @@ The repository is structured as follows:
 - `requirements`: the individual requirements that PFSes can pick from. [Read more...](requirements/README.md)
 - `sections`: the editorial content of the PFSes, e.g. annexes, requirement categories, introductory chapters.
 
- Most people won't need to look at the following two folders as they are primarily for technical purposes:
+Most people won't need to look at the following two folders as they are primarily for technical purposes:
 
 - `.github`: contains issue templates and workflows for GitHub
 - `templates`: the layout and styles for Markdown, Word, HTML, etc.
