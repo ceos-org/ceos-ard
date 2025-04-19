@@ -59,8 +59,7 @@ nocite: |
 
 ~{ history }~
 
-## Contributing Authors
-<!-- edit:pfs/~{ id }~/authors.yaml -->
+## <!-- edit:pfs/~{ id }~/authors.yaml -->Contributing Authors
 
 ~( for org in authors )~
 - ~{ org.name -}~ ~(- if org.country )~, ~{ org.country }~ ~(- endif )~
@@ -75,6 +74,7 @@ nocite: |
 ## Glossary
 
 ~( for term in glossary )~
+<!-- edit:~{ term.filepath }~ -->
 ~{ term.term }~
 :   ~{ term.description | rstrip }~
 
@@ -84,16 +84,14 @@ nocite: |
 ## Introduction
 
 ~( for section in introduction )~
-### ~{ section.title }~ {#sec:intro-~{ section.id | slugify }~ label="|~{ section.title }~"}
-<!-- edit:~{ section.filepath }~-->
+### <!-- edit:~{ section.filepath }~-->~{ section.title }~ {#sec:intro-~{ section.id | slugify }~ label="|~{ section.title }~"}
 
 ~{ section.description | rstrip }~
 
 ~( endfor )~
 &#12;
 
-## Requirements
-<!-- edit:pfs/~{ id }~/requirements.yaml -->
+## <!-- edit:pfs/~{ id }~/requirements.yaml -->Requirements
 
 **WARNING:** The requirement numbers below are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -103,8 +101,7 @@ Instead, use the textual identifier that is provided in brackets directly after 
 
 ~( for block in requirements )~
 ~( set i = loop.index )~
-### `~{ i }~.` ~{ block.category.title }~ {#sec:~{ block.category.id }~ label="|~{ block.category.title }~"}
-<!-- edit:~{ block.category.filepath }~-->
+### <!-- edit:~{ block.category.filepath }~-->`~{ i }~.` ~{ block.category.title }~ {#sec:~{ block.category.id }~ label="|~{ block.category.title }~"}
 
 ~{ block.category.description | rstrip }~
 
@@ -113,8 +110,7 @@ Instead, use the textual identifier that is provided in brackets directly after 
 ---
 ~(     endif )~
 
-#### `~{ i }~.~{ loop.index }~.` ~{ block.category.title }~: ~{ requirement.title }~ {#sec:~{ requirement.uid }~ label="|~{ block.category.title }~: ~{ requirement.title }~"}
-<!-- edit:~{ requirement.filepath }~-->
+#### <!-- edit:~{ requirement.filepath }~-->`~{ i }~.~{ loop.index }~.` ~{ block.category.title }~: ~{ requirement.title }~ {#sec:~{ requirement.uid }~ label="|~{ block.category.title }~: ~{ requirement.title }~"}
 
 Identifier: `~{ requirement.uid }~`
 
@@ -183,8 +179,8 @@ Notes:
 ## Annexes
 
 ~(   for annex in annexes )~
-### ~{ annex.title }~ {#sec:annex-~{ annex.id | slugify }~ label="|~{ annex.title }~"}
-<!-- edit:~{ annex.filepath }~-->
+
+### <!-- edit:~{ annex.filepath }~-->~{ annex.title }~ {#sec:annex-~{ annex.id | slugify }~ label="|~{ annex.title }~"}
 
 ~{ annex.description | rstrip }~
 
