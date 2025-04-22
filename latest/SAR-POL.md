@@ -118,7 +118,7 @@ Not available yet
 
 <!-- edit:glossary/ale.yaml -->
 ALE
-:   Absolute geolocation error
+:   Absolute Geolocation Error
 
 <!-- edit:glossary/atbd.yaml -->
 ATBD
