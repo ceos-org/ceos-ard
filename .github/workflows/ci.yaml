@@ -1,6 +1,8 @@
 name: CI
 on:
   push:
+    branches:
+      - main
     paths:
       - 'assets/**'
       - 'glossary/**'
@@ -10,6 +12,9 @@ on:
       - 'sections/**'
       - 'templates/**'
   pull_request_target:
+    types:
+      - opened
+      - synchronize
     paths:
       - 'assets/**'
       - 'glossary/**'
@@ -66,7 +71,7 @@ jobs:
         run: echo ${{ github.event.number }}
   deploy-latest:
     if: >
-      github.ref == 'refs/heads/main'
+      github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: generate
     steps:
