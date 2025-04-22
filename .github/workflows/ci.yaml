@@ -72,6 +72,9 @@ jobs:
     if: github.event.number
     runs-on: ubuntu-latest
     needs: generate
+    environment:
+      name: preview
+      url: https://ceos-ard-preview.mohr.ws/pr-${{ github.event.number }}
     steps:
       - name: Download PFS artifacts
         uses: actions/download-artifact@v4
