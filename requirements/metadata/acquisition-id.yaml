@@ -1,8 +1,8 @@
-title: Sequential ID
+title: Acquisition ID
 description: 
 threshold:
   description: |-
-    Each acquisition is identified through a sequential identifier in the metadata, e.g. 1, 2, 3.
+    Each acquisition is identified through a sequential identifier in the metadata, e.g. acqID = 1, 2, 3.
   notes:
 goal: null
 dependencies:

@@ -8,7 +8,7 @@ threshold:
 
     Acquisition ID, or acquisition date, for each pixel is identified.
 
-    In case of multi-temporal image stacks, use source acquisition ID (i.e., [@metadata/sequential-id]) to list contributing images.
+    In case of multi-temporal image stacks, use a source acquisition ID (i.e., [@metadata/acquisition-id]) to list contributing images.
 
     In case of date, data represent (integer or fractional) day offset to reference observation date (in UTC). Date used as reference (“Day 0”) is provided in the metadata.
 
@@ -27,7 +27,7 @@ goal:
     In case of image composites, the sources for each pixel are uniquely identified.
   notes:
 dependencies:
-  - metadata/sequential-id
+  - metadata/acquisition-id
 glossary:
   - utc
 references:

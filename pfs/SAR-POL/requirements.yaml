@@ -8,7 +8,7 @@
     - metadata/time
 - category: source-metadata
   requirements:
-    - metadata/sequential-id # todo: this is new from the category description
+    - metadata/acquisition-id # todo: this is new from the category description
     - metadata/data-access-source
     - metadata/instrument
     - metadata/time-source

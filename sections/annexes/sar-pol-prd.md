@@ -28,7 +28,7 @@ Coherent decompositions express the scattering matrix by the summation of elemen
    | Left Helix      |  8   |
    | Asymmetrical    |  9   |
 
-   : Classification of Non-Dimensional Layers {#tbl:sar-pol-prd-tbl1}
+   : Elementary objects of known scattering signature {#tbl:sar-pol-prd-tbl1}
 
 #### Incoherent decompositions
 
