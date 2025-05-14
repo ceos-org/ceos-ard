@@ -707,12 +707,12 @@ Source Metadata</h3>
 <p>These are metadata records describing (detailing)
 <strong>each</strong> acquisition (source data) used to generate the ARD
 product. This may be one or mutliple acquisitions.</p>
-<h4 data-label="|Source Metadata: Sequential ID" id="sec:src.metadata-sequential-id"><!-- edit:requirements/metadata/sequential-id.yaml--><code>2.1.</code>
-Source Metadata: Sequential ID</h4>
-<p>Identifier: <code>src.metadata-sequential-id</code></p>
+<h4 data-label="|Source Metadata: Acquisition ID" id="sec:src.metadata-acquisition-id"><!-- edit:requirements/metadata/acquisition-id.yaml--><code>2.1.</code>
+Source Metadata: Acquisition ID</h4>
+<p>Identifier: <code>src.metadata-acquisition-id</code></p>
 <h5 id="threshold-requirements-5">Threshold requirements:</h5>
 <p>Each acquisition is identified through a sequential identifier in the
-metadata, e.g. 1, 2, 3.</p>
+metadata, e.g. acqID = 1, 2, 3.</p>
 <h5 id="goal-requirements-5">Goal requirements:</h5>
 <p><em>None</em></p>
 <hr />
@@ -1219,9 +1219,9 @@ Per-Pixel Metadata: Acquisition ID Image</h4>
 <p><strong>Required for multi-source product only.</strong></p>
 <p>Acquisition ID, or acquisition date, for each pixel is
 identified.</p>
-<p>In case of multi-temporal image stacks, use source acquisition ID
-(i.e., Section “<a href="#sec:src.metadata-sequential-id">Source
-Metadata: Sequential ID</a>”) to list contributing images.</p>
+<p>In case of multi-temporal image stacks, use a source acquisition ID
+(i.e., Section “<a href="#sec:src.metadata-acquisition-id">Source
+Metadata: Acquisition ID</a>”) to list contributing images.</p>
 <p>In case of date, data represent (integer or fractional) day offset to
 reference observation date (in UTC). Date used as reference (“Day 0”) is
 provided in the metadata.</p>

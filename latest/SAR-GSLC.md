@@ -402,14 +402,14 @@ These are metadata records describing (detailing) **each** acquisition (source d
 This may be one or mutliple acquisitions.
 
 
-#### <!-- edit:requirements/metadata/sequential-id.yaml-->`2.1.` Source Metadata: Sequential ID {#sec:src.metadata-sequential-id label="|Source Metadata: Sequential ID"}
+#### <!-- edit:requirements/metadata/acquisition-id.yaml-->`2.1.` Source Metadata: Acquisition ID {#sec:src.metadata-acquisition-id label="|Source Metadata: Acquisition ID"}
 
-Identifier: `src.metadata-sequential-id`
+Identifier: `src.metadata-acquisition-id`
 
 
 ##### Threshold requirements:
 
-Each acquisition is identified through a sequential identifier in the metadata, e.g. 1, 2, 3.
+Each acquisition is identified through a sequential identifier in the metadata, e.g. acqID = 1, 2, 3.
 
 
 ##### Goal requirements:
@@ -1121,7 +1121,7 @@ Identifier: `pxl.per-pixel-acquisition-id`
 
 Acquisition ID, or acquisition date, for each pixel is identified.
 
-In case of multi-temporal image stacks, use source acquisition ID (i.e., [@sec:src.metadata-sequential-id]) to list contributing images.
+In case of multi-temporal image stacks, use a source acquisition ID (i.e., [@sec:src.metadata-acquisition-id]) to list contributing images.
 
 In case of date, data represent (integer or fractional) day offset to reference observation date (in UTC). Date used as reference (“Day 0”) is provided in the metadata.
 
