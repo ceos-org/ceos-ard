@@ -1,8 +1,10 @@
-title: Sample Spacing
+# todo: remove product data mentions to be resuable in other products
+# todo: remove mention of CEOS-ARD to be reusable outside of CEOS
+title: Product Sample Spacing
 description: 
 threshold:
   description: |-
-    Product processing parameters details:
+    CEOS-ARD product processing parameters details:
 
     - Pixel (column) spacing
     - Line (row) spacing

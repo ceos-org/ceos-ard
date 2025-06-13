@@ -1,10 +1,12 @@
-title: DEM
+# Remove "Per-Pixel" from the title, it's inconsistent with other requirements.
+title: Per-Pixel DEM
 description: 
 threshold: null
 goal:
   # todo: there's an ORB specific part, which could be removed as the requirment doesn't apply to ORB?!
+  # todo: remove mention of CEOS-ARD and SAR to be reusable outside of CEOS
   description: |-
-    Provide DEM or DSM as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the image product.
+    Provide DEM or DSM as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the CEOS-ARD SAR image product.
     
     Can also be provided with ORB products containing land areas.
 
@@ -18,6 +20,7 @@ goal:
   notes:
 dependencies:
 glossary:
+  - ceos-ard
   - sar
   - dem
   - dsm

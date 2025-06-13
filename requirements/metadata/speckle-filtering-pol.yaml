@@ -14,6 +14,8 @@ threshold:
       - Type
       - Window size in pixel units
       - Any other parameters defining the speckle filter used
+
+    Advanced polarimetric filter preserving covariance matrix properties shall be applied.
   notes:
 goal: null
 dependencies:

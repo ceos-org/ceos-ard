@@ -12,7 +12,7 @@ threshold:
 
     - Sample Type (Mask)
     - Data Format (GeoTIFF, HDF5, NetCDF, …)
-    - Data Type (Int, Float, …)
+    - Data Type (Int, …)
     - Bits per Sample
     - Byte Order
     - Bit Value Representation
@@ -20,7 +20,7 @@ threshold:
 goal:
   # todo: Land recommendation for ORB shows up in non-ORB PFS
   description: |-
-    Additional bit value representations, e.g.:
+    As threshold, including additional bit value representations, e.g.:
 
     - Layover (masked as invalid data in threshold)
     - Radar shadow (masked as invalid data in threshold)

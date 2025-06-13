@@ -1,10 +1,13 @@
 title: Performance Indicators
 description: 
 threshold:
+  # todo: remove source data mentions to be resuable in other products
   description: |-
     Provide performance indicators on data intensity noise level ($\text{NE}\sigma^0$ and/or $\text{NE}\beta^0$ and/or $\text{NE}\gamma^0$, i.e., noise equivalent Sigma- and/or Beta- and/or Gamma-Nought).
     Provided for each polarization channel when available.
-    Parameter may be expressed as the mean and/or minimum and maximum noise equivalent values of the data. 
+
+    Parameter may be expressed as the mean and/or minimum and maximum noise equivalent values of the source data.
+
     Values do not need to be estimated individually for each product, but may be estimated once for each acquisition mode, and annotated on all products. 
   notes:
 goal:
