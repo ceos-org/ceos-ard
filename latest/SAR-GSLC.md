@@ -1035,6 +1035,12 @@ Identifier: `pxl.per-pixel-ellipsoidal-incident-angle`
 
 ##### Threshold requirements:
 
+
+*None*
+
+
+##### Goal requirements:
+
 Ellipsoidal incident angle is provided.
 
 File format specifications/contents provided in metadata:
@@ -1048,13 +1054,7 @@ File format specifications/contents provided in metadata:
 
 Notes:
 
-1. For maritime ORB scenes when no land areas are covered, a geoid model could be used for the calculation of the local incident angle
-
-
-##### Goal requirements:
-
-
-*None*
+1. For maritime ORB scenes when no land areas are covered, the ellipsoidal incident angle is nearly identical to the geoid based local incident angle.
 
 ---
 
