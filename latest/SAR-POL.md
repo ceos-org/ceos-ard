@@ -1019,6 +1019,7 @@ This quantifies the local scattering area used to normalise for radiometric dist
 The terrain-flattened $\gamma^0_T$ is best understood as $\beta^0$ divided by the local scattering area.
 
 File format specifications/contents provided in metadata:
+
 - Sample Type (Scattering Area)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
 - Data Type (Int, Float, …)
