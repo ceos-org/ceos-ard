@@ -1192,7 +1192,7 @@ All files are provided using cloud-optimized file formats.
 
 ---
 
-#### <!-- edit:requirements/measurements/backscatter-nrb.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements \[NRB] {#sec:rcm.measurements-backscatter-nrb label="|Radiometrically Corrected Measurements: Backscatter Measurements \[NRB]"}
+#### <!-- edit:requirements/measurements/backscatter-nrb.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements (NRB) {#sec:rcm.measurements-backscatter-nrb label="|Radiometrically Corrected Measurements: Backscatter Measurements (NRB)"}
 
 Identifier: `rcm.measurements-backscatter-nrb`
 
@@ -1359,7 +1359,8 @@ Identifier: `gcor.metadata-geometric-correction-algorithm`
 
 ##### Goal requirements:
 
-Metadata references, e.g.: 
+Metadata references, e.g.:
+
 - A metadata citable peer-reviewed algorithm
 - Technical documentation regarding the implementation of that algorithm expressed as URLs or DOIs
 - The sources of auxiliary data used to make corrections

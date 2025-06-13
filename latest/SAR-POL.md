@@ -1222,7 +1222,7 @@ All files are provided using cloud-optimized file formats.
 
 ---
 
-#### <!-- edit:requirements/measurements/backscatter-pol.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements \[POL] {#sec:rcm.measurements-backscatter-pol label="|Radiometrically Corrected Measurements: Backscatter Measurements \[POL]"}
+#### <!-- edit:requirements/measurements/backscatter-pol.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements (POL) {#sec:rcm.measurements-backscatter-pol label="|Radiometrically Corrected Measurements: Backscatter Measurements (POL)"}
 
 Identifier: `rcm.measurements-backscatter-pol`
 
@@ -1395,7 +1395,8 @@ Identifier: `gcor.metadata-geometric-correction-algorithm`
 
 ##### Goal requirements:
 
-Metadata references, e.g.: 
+Metadata references, e.g.:
+
 - A metadata citable peer-reviewed algorithm
 - Technical documentation regarding the implementation of that algorithm expressed as URLs or DOIs
 - The sources of auxiliary data used to make corrections

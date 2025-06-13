@@ -1192,7 +1192,7 @@ All files are provided using cloud-optimized file formats.
 
 ---
 
-#### <!-- edit:requirements/measurements/backscatter-orb.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements \[ORB] {#sec:rcm.measurements-backscatter-orb label="|Radiometrically Corrected Measurements: Backscatter Measurements \[ORB]"}
+#### <!-- edit:requirements/measurements/backscatter-orb.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements (ORB) {#sec:rcm.measurements-backscatter-orb label="|Radiometrically Corrected Measurements: Backscatter Measurements (ORB)"}
 
 Identifier: `rcm.measurements-backscatter-orb`
 
@@ -1331,7 +1331,8 @@ Identifier: `gcor.metadata-geometric-correction-algorithm`
 
 ##### Goal requirements:
 
-Metadata references, e.g.: 
+Metadata references, e.g.:
+
 - A metadata citable peer-reviewed algorithm
 - Technical documentation regarding the implementation of that algorithm expressed as URLs or DOIs
 - The sources of auxiliary data used to make corrections

@@ -1323,7 +1323,7 @@ All files are provided using cloud-optimized file formats.
 
 ---
 
-#### <!-- edit:requirements/measurements/backscatter-gslc.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements \[GSLC] {#sec:rcm.measurements-backscatter-gslc label="|Radiometrically Corrected Measurements: Backscatter Measurements \[GSLC]"}
+#### <!-- edit:requirements/measurements/backscatter-gslc.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements (GSLC) {#sec:rcm.measurements-backscatter-gslc label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)"}
 
 Identifier: `rcm.measurements-backscatter-gslc`
 
@@ -1456,7 +1456,8 @@ Identifier: `gcor.metadata-geometric-correction-algorithm`
 
 ##### Goal requirements:
 
-Metadata references, e.g.: 
+Metadata references, e.g.:
+
 - A metadata citable peer-reviewed algorithm
 - Technical documentation regarding the implementation of that algorithm expressed as URLs or DOIs
 - The sources of auxiliary data used to make corrections
