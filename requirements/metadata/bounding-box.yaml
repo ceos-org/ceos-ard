@@ -1,11 +1,12 @@
-title: Bounding Box
+# todo: remove product data mentions (or replace with measurement) to be resuable in other products
+title: Product Bounding Box
 description: 
 threshold:
   description: |-
-    Two opposite corners of the measurement file (bounding box, including any zero-fill values) are identified,
+    Two opposite corners of the product file (bounding box, including any zero-fill values) are identified,
     expressed in the coordinate reference system defined in [@metadata/crs].
   notes:
-    - Four corners of the measurement file are recommended for scenes crossing the Antemeridian, or the North or the South Pole. 
+    - Four corners of the product file are recommended for scenes crossing the Antemeridian, or the North or the South Pole. 
 goal: null
 dependencies:
   - metadata/crs

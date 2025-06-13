@@ -1,4 +1,5 @@
-title: Geoid
+# Remove "Per-Pixel" from the title, it's inconsistent with other requirements.
+title: Per-Pixel Geoid
 description: 
 threshold: null
 goal:

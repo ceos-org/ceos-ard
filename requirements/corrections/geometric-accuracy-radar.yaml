@@ -1,12 +1,13 @@
 title: Geometric Accuracy
 description: 
 threshold:
+  # todo: remove mention of CEOS-ARD to be reusable outside of CEOS
   description: |-
     Accurate geolocation is a prerequisite to radar processing to correct for terrain and to enable interoperability between radar sensors.
 
     The absolute geolocation error (ALE) for a sensor is typically assessed through analysis of Single Look Complex (SLC) imagery and measured along the slant range and azimuth directions (case A: SLC ALE).
 
-    The end-to-end “ARD” ALE of the final product could be measured directly in the final image product in the chosen map projection, i.e., in the map coordinate directions: e.g., Northing and Easting (case B: ARD ALE).
+    The end-to-end “ARD” ALE of the final CEOS-ARD product could be measured directly in the final image product in the chosen map projection, i.e., in the map coordinate directions: e.g., Northing and Easting (case B: ARD ALE).
 
     Providing accuracy estimates based on measurements following at least one scheme (A or B or both) meets the threshold requirement.
     
@@ -16,7 +17,8 @@ threshold:
     - The ALE is not typically assessed for every processed image, but through an ALE assessment by the data processing team characterizing all or (usually a subset) of the generated products. 
 goal:
   description: |-
-    Output product sub-sample accuracy should be less than or equal to 0.1 (slant range) pixel radial root mean square error (rRMSE). 
+    Output product sub-sample accuracy should be less than or equal to 0.1 (slant range) pixel radial root mean square error (rRMSE).
+    
     Provide documentation of estimates of ALE as DOI or URL.   
   notes:
 dependencies:

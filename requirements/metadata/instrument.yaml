@@ -9,7 +9,7 @@ threshold:
   notes:
 goal:
   description: |-
-    A reference to the relevant [CEOS Missions, Instruments and Measurements Database](https://ceos.org/mim-database/) record.
+    As threshold, but including a reference to the relevant [CEOS Missions, Instruments and Measurements Database](https://ceos.org/mim-database/) record.
   notes:
 dependencies:
 glossary:

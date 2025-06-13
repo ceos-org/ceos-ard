@@ -39,9 +39,32 @@ nocite: |
 
 &nbsp;
 
+## Document Status
+
+Product Family Specification, ~{ type }~, ~{ title }~
+
+Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
+
+## Document History
+
+~{ history }~
+
+## <!-- edit:pfs/~{ id }~/authors.yaml -->Contributing Authors
+
+~( for org in authors )~
+~(   for member in org.members )~
+- ~{ member }~, ~{ org.name }~~( if org.country )~, ~{ org.country }~~( endif )~
+
+~(   endfor )~
+~( endfor )~
+
+&#12;
+
+## CEOS Analysis Ready Data Definition
+
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-&nbsp;
+## Description
 
 <!-- edit:pfs/~{ id }~/document.yaml -->
 **Product Family Specification:**
@@ -51,42 +74,20 @@ nocite: |
 ~{ version }~
 
 **Applies to:**
+Data collected by ~{type}~ sensors
+
+## Background
+
 ~{ applies_to }~
 
 &#12;
 
-## Document History
-
-~{ history }~
-
-## <!-- edit:pfs/~{ id }~/authors.yaml -->Contributing Authors
-
-~( for org in authors )~
-- ~{ org.name -}~ ~(- if org.country )~, ~{ org.country }~ ~(- endif )~
-
-~(   for member in org.members )~
-  - ~{ member }~
-~(   endfor )~
-~( endfor )~
-
-&#12;
-
-## Glossary
+## Definitions and Abbreviations
 
 ~( for term in glossary )~
 <!-- edit:~{ term.filepath }~ -->
 ~{ term.term }~
 :   ~{ term.description | rstrip }~
-
-~( endfor )~
-&#12;
-
-## Introduction
-
-~( for section in introduction )~
-### <!-- edit:~{ section.filepath }~-->~{ section.title }~ {#sec:intro-~{ section.id | slugify }~ label="|~{ section.title }~"}
-
-~{ section.description | rstrip }~
 
 ~( endfor )~
 &#12;
@@ -110,7 +111,7 @@ Instead, use the textual identifier that is provided in brackets directly after 
 ---
 ~(     endif )~
 
-#### <!-- edit:~{ requirement.filepath }~-->`~{ i }~.~{ loop.index }~.` ~{ block.category.title }~: ~{ requirement.title }~ {#sec:~{ requirement.uid }~ label="|~{ block.category.title }~: ~{ requirement.title }~"}
+#### <!-- edit:~{ requirement.filepath }~-->`~{ i }~.~{ loop.index }~.` ~{ requirement.title }~ {#sec:~{ requirement.uid }~ label="|~{ block.category.title }~: ~{ requirement.title }~"}
 
 Identifier: `~{ requirement.uid }~`
 
@@ -135,7 +136,8 @@ Notes:
 ~(         endif )~
 ~(       else )~
 
-*None*
+~{ "As threshold." if type == "goal" else "Not required." }~
+<!-- *None* -->
 
 ~(       endif )~
 ~(     endfor )~
@@ -167,6 +169,20 @@ Notes:
 ~( endfor )~
 &#12;
 ~( endif )~
+
+## Introduction
+
+This section aims to provide background and specific information on the processing steps that can be
+used to achieve analysis ready data for a specific and well-developed Product Family Specification.
+This Guidance material does not replace or override the specifications.
+
+~( for section in introduction )~
+### <!-- edit:~{ section.filepath }~-->~{ section.title }~ {#sec:intro-~{ section.id | slugify }~ label="|~{ section.title }~"}
+
+~{ section.description | rstrip }~
+
+~( endfor )~
+&#12;
 
 ## References
 

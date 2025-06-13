@@ -1,4 +1,5 @@
-title: Pixel Coordinate Convention
+# todo: remove product data mentions to be resuable in other products
+title: Product Pixel Coordinate Convention
 description: 
 threshold:
   # todo: The given values are specific to the XML metadata encoding, the last sentence should be removed.

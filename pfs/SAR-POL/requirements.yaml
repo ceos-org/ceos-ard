@@ -28,8 +28,9 @@
     - metadata/sample-spacing
     - metadata/enl
     - metadata/resolution
-    - metadata/speckle-filtering
-    - metadata/pol-filtering
+    # todo: speckle-filtering-pol should be just be speckle-filtering and instead add pol-filtering
+    - metadata/speckle-filtering-pol
+    # - metadata/pol-filtering
     - metadata/bounding-box
     - metadata/footprint
     - metadata/image-size
@@ -37,7 +38,7 @@
     - metadata/crs
 - category: per-pixel-metadata
   requirements:
-    - cloud-optimized-formats # todo: this is new from the category description
+    # - cloud-optimized-formats
     - metadata/machine-readability
     - per-pixel/data-mask
     - per-pixel/scattering-area
@@ -49,7 +50,7 @@
     - per-pixel/dem
 - category: radiometrically-corrected-measurements
   requirements:
-    - cloud-optimized-formats
+    # - cloud-optimized-formats
     - measurements/backscatter-pol
     - metadata/scaling-conversion
     - metadata/noise-removal

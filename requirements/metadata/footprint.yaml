@@ -1,10 +1,12 @@
+# todo: remove product data mentions to be resuable in other products
+# todo: remove SAR mentions to be resuable in other products
 # todo: extent is misleading and usually a synonym for the bbox,
 # the requirement should probably be renamed to "Geographical Footprint" or similar
-title: Geographical Extent
+title: Product Geographical Extent
 description: 
 threshold:
   description: |-
-    The geometry of the image footprint expressed in WGS84, in a standardised format (e.g., WKT Polygon). 
+    The geometry of the SAR image footprint expressed in WGS84, in a standardised format (e.g., WKT Polygon). 
   notes:
 goal: null
 dependencies:

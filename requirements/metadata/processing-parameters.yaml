@@ -1,8 +1,9 @@
-title: Processing Parameters
+# todo: remove source data mentions to be resuable in other products
+title: Source Data Processing Parameters
 description: 
 threshold:
   description: |-
-    Processing parameters details of the data:
+    Processing parameters details of the source data:
 
     - Processing facility
     - Processing date
@@ -14,7 +15,7 @@ threshold:
   notes:
 goal:
   description: |-
-    Additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied. 
+    As threshold, plus additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied. 
   notes:
 dependencies:
 glossary:
