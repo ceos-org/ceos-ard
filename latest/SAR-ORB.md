@@ -39,9 +39,54 @@ nocite: |
 
 &nbsp;
 
+## Document Status
+
+Product Family Specification, Synthetic Aperture Radar, Ocean Radar Backscatter
+
+Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
+
+## Document History
+
+Not available yet
+
+## <!-- edit:pfs/SAR-ORB/authors.yaml -->Contributing Authors
+
+- François Charbonneau, Natural Resources Canada, Canada
+- Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency (JAXA), Japan
+- John Truckenbrodt, German Aerospace Centre (DLR), Germany
+- Clément Albinet, European Space Agency (ESA), Italy
+- David Small, University of Zurich, Switzerland
+- Bruce Chapman, Jet Propulsion Laboratory, USA
+- Howard Zebker, Stanford University, USA
+- Zheng-Shu Zhou, CSIRO, Australia
+- Virginia Brancato, Jet Propulsion Laboratory, USA
+- Danilo Dadamia, CONAE, Argentina
+- Benjamin Deschamps, Environment and Climate Change, Canada
+- Guillaume Hajduch, Collecte Localisation Satellites, France
+- Josef Kellndorfer, Earth Big Data, USA
+- Marco Lavalle, Jet Propulsion Laboratory, USA
+- Adam Lewis, Geoscience Australia, Australia
+- Thomas Logan, Alaska Satellite Facility, USA
+- Franz Meyer, Alaska Satellite Facility, USA
+- Nuno Miranda, European Space Agency (ESA), Italy
+- Muriel Pinheiro, European Space Agency (ESA), Italy
+- Marko Repse, Sinergise, Slovenia
+- HariPriya Sakethapuram, ISRO, India
+- Andreia Siqueira, Geoscience Australia, Australia
+- Gustavo Shiroma, Jet Propulsion Laboratory, USA
+- Takeo Tadono, Japan Aerospace Exploration Agency, Japan
+- Medhavy Thankappan, Geoscience Australia, Australia
+- Antonio Valentino, RHEA for European Space Agency (ESA), Italy
+- Anna Wendleder, German Aerospace Centre (DLR), Germany
+- Fang Yuan, Digital Earth Africa, Australia
+
+&#12;
+
+## CEOS Analysis Ready Data Definition
+
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-&nbsp;
+## Description
 
 <!-- edit:pfs/SAR-ORB/document.yaml -->
 **Product Family Specification:**
@@ -51,6 +96,10 @@ Synthetic Aperture Radar, Ocean Radar Backscatter (SAR-ORB)
 1.2-draft
 
 **Applies to:**
+Data collected by Synthetic Aperture Radar sensors
+
+## Background
+
 This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
 The CEOS-ARD Ocean Radar Backscatter (ORB) product specification describes products that have been projected on a geoid and are provided in the Sigma-Nought ($\sigma^0$) backscatter convention, which is recommended for most ocean applications.
@@ -60,63 +109,7 @@ Nonetheless, an advanced ORB product could include the upper diagonal of the pol
 
 &#12;
 
-## Document History
-
-Not available yet
-
-## <!-- edit:pfs/SAR-ORB/authors.yaml -->Contributing Authors
-
-- Alaska Satellite Facility, USA
-  - Franz Meyer
-  - Thomas Logan
-- Collecte Localisation Satellites, France
-  - Guillaume Hajduch
-- CONAE, Argentina
-  - Danilo Dadamia
-- CSIRO, Australia
-  - Zheng-Shu Zhou
-- Digital Earth Africa, Australia
-  - Fang Yuan
-- Earth Big Data, USA
-  - Josef Kellndorfer
-- Environment and Climate Change, Canada
-  - Benjamin Deschamps
-- European Space Agency (ESA), Italy
-  - Clément Albinet
-  - Muriel Pinheiro
-  - Nuno Miranda
-- Geoscience Australia, Australia
-  - Adam Lewis
-  - Andreia Siqueira
-  - Medhavy Thankappan
-- German Aerospace Centre (DLR), Germany
-  - Anna Wendleder
-  - John Truckenbrodt
-- ISRO, India
-  - HariPriya Sakethapuram
-- Japan Aerospace Exploration Agency, Japan
-  - Takeo Tadono
-- Jet Propulsion Laboratory, USA
-  - Bruce Chapman
-  - Gustavo Shiroma
-  - Marco Lavalle
-  - Virginia Brancato
-- Natural Resources Canada, Canada
-  - François Charbonneau
-- RHEA, Italy
-  - Antonio Valentino
-- Sinergise, Slovenia
-  - Marko Repse
-- soloEO, Japan
-  - Ake Rosenqvist
-- Stanford University, USA
-  - Howard Zebker
-- University of Zurich, Switzerland
-  - David Small
-
-&#12;
-
-## Glossary
+## Definitions and Abbreviations
 
 <!-- edit:glossary/ale.yaml -->
 ALE
@@ -133,6 +126,10 @@ Auxiliary Data
 <!-- edit:glossary/ceos-ard.yaml -->
 CEOS-ARD
 :   Committee on Earth Observation Satellites - Analysis Ready Data
+
+<!-- edit:glossary/covmat.yaml -->
+CovMat
+:   Normalised Radar Covariance Matrix
 
 <!-- edit:glossary/crs.yaml -->
 CRS
@@ -237,46 +234,6 @@ The formats were originally defined by the Open Geospatial Consortium (OGC) and 
 
 &#12;
 
-## Introduction
-
-### <!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->What are CEOS Analysis Ready Data (CEOS-ARD) products? {#sec:intro-what-are-ceos-ard-products label="|What are CEOS Analysis Ready Data (CEOS-ARD) products?"}
-
-CEOS-ARD products have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort.
-These products would be resampled onto a common geometric grid (for a given product) and would provide baseline data for further interoperability both through time and with other datasets.
-
-CEOS-ARD are intended to be flexible and accessible products suitable for a wide range of users for a wide variety of applications, particularly time series analysis and multi-sensor application development.
-They are also intended to support rapid ingestion and exploitation via high-performance computing, cloud computing and other future data architectures.
-They may not be suitable for all purposes and are not intended as a _replacement_ for other types of satellite products.
-
-### <!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->When can a product be called CEOS-ARD? {#sec:intro-when-is-a-product-ceos-ard label="|When can a product be called CEOS-ARD?"}
-
-The CEOS-ARD branding is applied to a particular product once:
-
-- that product has been assessed as meeting CEOS-ARD requirements by the agency or other entities responsible for production and distribution of the product, and
-- that the assessment has been peer reviewed by the relevant CEOS team(s).
-
-Agencies or other entities considering undertaking an assessment process should consult the [CEOS-ARD Governance Framework](https://ceos.org/ard/files/CEOS_ARD_Governance_Framework_18-October-2021.pdf) or contact <ard-contact@lists.ceos.org>.
-
-A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
-
-### <!-- edit:sections/introduction/difference-threshold-goal.yaml-->What is the difference between Threshold and Goal? {#sec:intro-difference-threshold-goal label="|What is the difference between Threshold and Goal?"}
-
-**Threshold** (or: minimum) requirements are the **minimum** that is needed for the data to be analysis ready.
-This must be practical and accepted by the data producers.
-
-**Goal** (or: desired) requirements (previously referred to as “Target”) are the ideal; where we would like to be.
-Some providers may already meet these.
-
-Products that meet all _threshold_ requirements should be immediately useful for scientific analysis or decision-making.
-
-Products that meet _goal_ requirements will reduce the overall product uncertainties and enhance broad-scale applications.
-For example, the products may enhance interoperability or provide increased accuracy through additional corrections that are not reasonable at the _threshold_ level.
-
-Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field.
-Over time, _goal_ specifications may (and subject to due process) become accepted as _threshold_ requirements.
-
-&#12;
-
 ## <!-- edit:pfs/SAR-ORB/requirements.yaml -->Requirements
 
 **WARNING:** The requirement numbers below are not stable and may change or may be removed at any time.
@@ -292,7 +249,7 @@ The collection of pixels referred to must be contiguous in space and time.
 General metadata should allow the user to assess the _overall_ suitability of the dataset, and must meet the requirements listed below.
 
 
-#### <!-- edit:requirements/metadata/traceability-sar.yaml-->`1.1.` General Metadata: Traceability {#sec:meta.metadata-traceability-sar label="|General Metadata: Traceability"}
+#### <!-- edit:requirements/metadata/traceability-sar.yaml-->`1.1.` Traceability {#sec:meta.metadata-traceability-sar label="|General Metadata: Traceability"}
 
 Identifier: `meta.metadata-traceability-sar`
 
@@ -300,7 +257,8 @@ Identifier: `meta.metadata-traceability-sar`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -314,23 +272,23 @@ Notes:
 
 ---
 
-#### <!-- edit:requirements/metadata/machine-readability.yaml-->`1.2.` General Metadata: Metadata Machine Readability {#sec:meta.metadata-machine-readability label="|General Metadata: Metadata Machine Readability"}
+#### <!-- edit:requirements/metadata/machine-readability.yaml-->`1.2.` Metadata Machine Readability {#sec:meta.metadata-machine-readability label="|General Metadata: Metadata Machine Readability"}
 
 Identifier: `meta.metadata-machine-readability`
 
 
 ##### Threshold requirements:
 
-Metadata is provided in a structure that enables a computer algorithm to be used consistently and to automatically identify and extract each component part for further use.
+Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable/layer for further use.
 
 
 ##### Goal requirements:
 
-Metadata is formatted in accordance with CEOS-ARD SAR Metadata Specifications, v.1.1, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention, the Attribute Convention for Data Discovery (ACDD), etc.
+As threshold, but metadata is formatted in accordance with CEOS-ARD SAR Metadata Specifications, v.1.1, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention, the Attribute Convention for Data Discovery (ACDD), etc.
 
 ---
 
-#### <!-- edit:requirements/metadata/product-type-sar.yaml-->`1.3.` General Metadata: Product Type {#sec:meta.metadata-product-type-sar label="|General Metadata: Product Type"}
+#### <!-- edit:requirements/metadata/product-type-sar.yaml-->`1.3.` Product Type {#sec:meta.metadata-product-type-sar label="|General Metadata: Product Type"}
 
 Identifier: `meta.metadata-product-type-sar`
 
@@ -343,11 +301,12 @@ CEOS-ARD product type name – or names in case of compliance with more than one
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/pfs-url.yaml-->`1.4.` General Metadata: Document Identifier {#sec:meta.metadata-pfs-url label="|General Metadata: Document Identifier"}
+#### <!-- edit:requirements/metadata/pfs-url.yaml-->`1.4.` Document Identifier {#sec:meta.metadata-pfs-url label="|General Metadata: Document Identifier"}
 
 Identifier: `meta.metadata-pfs-url`
 
@@ -360,11 +319,12 @@ Reference to CEOS-ARD PFS document as URL.
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/time.yaml-->`1.5.` General Metadata: Data Collection Time {#sec:meta.metadata-time label="|General Metadata: Data Collection Time"}
+#### <!-- edit:requirements/metadata/time.yaml-->`1.5.` Data Collection Time {#sec:meta.metadata-time label="|General Metadata: Data Collection Time"}
 
 Identifier: `meta.metadata-time`
 
@@ -379,7 +339,8 @@ In case of composite products, the dates/times of the first and last data takes 
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ### <!-- edit:sections/requirement-categories/source-metadata.yaml-->`2.` Source Metadata {#sec:src label="|Source Metadata"}
 
@@ -387,7 +348,7 @@ These are metadata records describing (detailing) **each** acquisition (source d
 This may be one or mutliple acquisitions.
 
 
-#### <!-- edit:requirements/metadata/acquisition-id.yaml-->`2.1.` Source Metadata: Acquisition ID {#sec:src.metadata-acquisition-id label="|Source Metadata: Acquisition ID"}
+#### <!-- edit:requirements/metadata/acquisition-id.yaml-->`2.1.` Acquisition ID {#sec:src.metadata-acquisition-id label="|Source Metadata: Acquisition ID"}
 
 Identifier: `src.metadata-acquisition-id`
 
@@ -400,11 +361,12 @@ Each acquisition is identified through a sequential identifier in the metadata, 
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/data-access-source.yaml-->`2.2.` Source Metadata: Source Data Access {#sec:src.metadata-data-access-source label="|Source Metadata: Source Data Access"}
+#### <!-- edit:requirements/metadata/data-access-source.yaml-->`2.2.` Source Data Access {#sec:src.metadata-data-access-source label="|Source Metadata: Source Data Access"}
 
 Identifier: `src.metadata-data-access-source`
 
@@ -420,7 +382,7 @@ The metadata identifies an online location from where the data can be consistent
 
 ---
 
-#### <!-- edit:requirements/metadata/instrument.yaml-->`2.3.` Source Metadata: Instrument {#sec:src.metadata-instrument label="|Source Metadata: Instrument"}
+#### <!-- edit:requirements/metadata/instrument.yaml-->`2.3.` Instrument {#sec:src.metadata-instrument label="|Source Metadata: Instrument"}
 
 Identifier: `src.metadata-instrument`
 
@@ -435,11 +397,11 @@ The instrument used to collect the data is identified in the metadata:
 
 ##### Goal requirements:
 
-A reference to the relevant [CEOS Missions, Instruments and Measurements Database](https://ceos.org/mim-database/) record.
+As threshold, but including a reference to the relevant [CEOS Missions, Instruments and Measurements Database](https://ceos.org/mim-database/) record.
 
 ---
 
-#### <!-- edit:requirements/metadata/time-source.yaml-->`2.4.` Source Metadata: Source Data Acquisition Time {#sec:src.metadata-time-source label="|Source Metadata: Source Data Acquisition Time"}
+#### <!-- edit:requirements/metadata/time-source.yaml-->`2.4.` Source Data Acquisition Time {#sec:src.metadata-time-source label="|Source Metadata: Source Data Acquisition Time"}
 
 Identifier: `src.metadata-time-source`
 
@@ -452,11 +414,12 @@ The start date and time of source data is identified in the metadata, expressed 
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/acquisition-parameters-sar.yaml-->`2.5.` Source Metadata: Source Data Acquisition Parameters {#sec:src.metadata-acquisition-parameters-sar label="|Source Metadata: Source Data Acquisition Parameters"}
+#### <!-- edit:requirements/metadata/acquisition-parameters-sar.yaml-->`2.5.` Source Data Acquisition Parameters {#sec:src.metadata-acquisition-parameters-sar label="|Source Metadata: Source Data Acquisition Parameters"}
 
 Identifier: `src.metadata-acquisition-parameters-sar`
 
@@ -476,11 +439,12 @@ Acquisition parameters related to the SAR antenna:
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/orbit.yaml-->`2.6.` Source Metadata: Orbit Information {#sec:src.metadata-orbit label="|Source Metadata: Orbit Information"}
+#### <!-- edit:requirements/metadata/orbit.yaml-->`2.6.` Source Data Orbit Information {#sec:src.metadata-orbit label="|Source Metadata: Source Data Orbit Information"}
 
 Identifier: `src.metadata-orbit`
 
@@ -497,20 +461,22 @@ Information related to the platform orbit used for data processing:
 
 ##### Goal requirements:
 
+As threshold, including also:
+
 - Platform heading angle expressed in degrees (0-360) from North 
 - Orbit data file containing state vectors (minimum of 5 state vectors, from 10% of scene length before start time to 10% of scene length after stop time) 
 - Platform (mean) altitude
 
 ---
 
-#### <!-- edit:requirements/metadata/processing-parameters.yaml-->`2.7.` Source Metadata: Processing Parameters {#sec:src.metadata-processing-parameters label="|Source Metadata: Processing Parameters"}
+#### <!-- edit:requirements/metadata/processing-parameters.yaml-->`2.7.` Source Data Processing Parameters {#sec:src.metadata-processing-parameters label="|Source Metadata: Source Data Processing Parameters"}
 
 Identifier: `src.metadata-processing-parameters`
 
 
 ##### Threshold requirements:
 
-Processing parameters details of the data:
+Processing parameters details of the source data:
 
 - Processing facility
 - Processing date
@@ -523,11 +489,11 @@ Processing parameters details of the data:
 
 ##### Goal requirements:
 
-Additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied.
+As threshold, plus additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied.
 
 ---
 
-#### <!-- edit:requirements/metadata/image-attributes-sar.yaml-->`2.8.` Source Metadata: Source Data Image Attributes {#sec:src.metadata-image-attributes-sar label="|Source Metadata: Source Data Image Attributes"}
+#### <!-- edit:requirements/metadata/image-attributes-sar.yaml-->`2.8.` Source Data Image Attributes {#sec:src.metadata-image-attributes-sar label="|Source Metadata: Source Data Image Attributes"}
 
 Identifier: `src.metadata-image-attributes-sar`
 
@@ -551,7 +517,7 @@ Geometry of the image footprint expressed in WGS84 in a standardised format (e.g
 
 ---
 
-#### <!-- edit:requirements/metadata/sensor-calibration.yaml-->`2.9.` Source Metadata: Sensor Calibration {#sec:src.metadata-sensor-calibration label="|Source Metadata: Sensor Calibration"}
+#### <!-- edit:requirements/metadata/sensor-calibration.yaml-->`2.9.` Sensor Calibration {#sec:src.metadata-sensor-calibration label="|Source Metadata: Sensor Calibration"}
 
 Identifier: `src.metadata-sensor-calibration`
 
@@ -559,7 +525,8 @@ Identifier: `src.metadata-sensor-calibration`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -569,7 +536,7 @@ Ideally this would support machine-to-machine access.
 
 ---
 
-#### <!-- edit:requirements/metadata/performance-indicators.yaml-->`2.10.` Source Metadata: Performance Indicators {#sec:src.metadata-performance-indicators label="|Source Metadata: Performance Indicators"}
+#### <!-- edit:requirements/metadata/performance-indicators.yaml-->`2.10.` Performance Indicators {#sec:src.metadata-performance-indicators label="|Source Metadata: Performance Indicators"}
 
 Identifier: `src.metadata-performance-indicators`
 
@@ -578,7 +545,9 @@ Identifier: `src.metadata-performance-indicators`
 
 Provide performance indicators on data intensity noise level ($\text{NE}\sigma^0$ and/or $\text{NE}\beta^0$ and/or $\text{NE}\gamma^0$, i.e., noise equivalent Sigma- and/or Beta- and/or Gamma-Nought).
 Provided for each polarization channel when available.
-Parameter may be expressed as the mean and/or minimum and maximum noise equivalent values of the data. 
+
+Parameter may be expressed as the mean and/or minimum and maximum noise equivalent values of the source data.
+
 Values do not need to be estimated individually for each product, but may be estimated once for each acquisition mode, and annotated on all products.
 
 
@@ -588,7 +557,7 @@ Provide additional relevant performance indicators (e.g., ENL, PSLR, ISLR, and p
 
 ---
 
-#### <!-- edit:requirements/metadata/polarimetric-calibration-matrices.yaml-->`2.11.` Source Metadata: Polarimetric Calibration Matrices {#sec:src.metadata-polarimetric-calibration-matrices label="|Source Metadata: Polarimetric Calibration Matrices"}
+#### <!-- edit:requirements/metadata/polarimetric-calibration-matrices.yaml-->`2.11.` Polarimetric Calibration Matrices {#sec:src.metadata-polarimetric-calibration-matrices label="|Source Metadata: Polarimetric Calibration Matrices"}
 
 Identifier: `src.metadata-polarimetric-calibration-matrices`
 
@@ -596,7 +565,8 @@ Identifier: `src.metadata-polarimetric-calibration-matrices`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -605,7 +575,7 @@ The complex-valued polarimetric distortion matrices with the channel imbalance a
 
 ---
 
-#### <!-- edit:requirements/metadata/mean-faraday-rotation-angle.yaml-->`2.12.` Source Metadata: Mean Faraday Rotation Angle {#sec:src.metadata-mean-faraday-rotation-angle label="|Source Metadata: Mean Faraday Rotation Angle"}
+#### <!-- edit:requirements/metadata/mean-faraday-rotation-angle.yaml-->`2.12.` Mean Faraday Rotation Angle {#sec:src.metadata-mean-faraday-rotation-angle label="|Source Metadata: Mean Faraday Rotation Angle"}
 
 Identifier: `src.metadata-mean-faraday-rotation-angle`
 
@@ -613,7 +583,8 @@ Identifier: `src.metadata-mean-faraday-rotation-angle`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -622,7 +593,7 @@ The mean Faraday rotation angle estimated from the polarimetric data and/or from
 
 ---
 
-#### <!-- edit:requirements/metadata/ionosphere-indicator.yaml-->`2.13.` Source Metadata: Ionosphere Indicator {#sec:src.metadata-ionosphere-indicator label="|Source Metadata: Ionosphere Indicator"}
+#### <!-- edit:requirements/metadata/ionosphere-indicator.yaml-->`2.13.` Ionosphere Indicator {#sec:src.metadata-ionosphere-indicator label="|Source Metadata: Ionosphere Indicator"}
 
 Identifier: `src.metadata-ionosphere-indicator`
 
@@ -630,7 +601,8 @@ Identifier: `src.metadata-ionosphere-indicator`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -643,7 +615,7 @@ Significant impact would imply that the ionospheric impact on the backscatter ex
 Information related to the CEOS-ARD product generation procedure and geographic parameters.
 
 
-#### <!-- edit:requirements/metadata/data-access-product.yaml-->`3.1.` Product Metadata: Product Data Access {#sec:prd.metadata-data-access-product label="|Product Metadata: Product Data Access"}
+#### <!-- edit:requirements/metadata/data-access-product.yaml-->`3.1.` Product Data Access {#sec:prd.metadata-data-access-product label="|Product Metadata: Product Data Access"}
 
 Identifier: `prd.metadata-data-access-product`
 
@@ -664,7 +636,7 @@ The metadata identifies an online location from where the data can be consistent
 
 ---
 
-#### <!-- edit:requirements/metadata/auxiliary-data.yaml-->`3.2.` Product Metadata: Auxiliary Data {#sec:prd.metadata-auxiliary-data label="|Product Metadata: Auxiliary Data"}
+#### <!-- edit:requirements/metadata/auxiliary-data.yaml-->`3.2.` Auxiliary Data {#sec:prd.metadata-auxiliary-data label="|Product Metadata: Auxiliary Data"}
 
 Identifier: `prd.metadata-auxiliary-data`
 
@@ -672,7 +644,8 @@ Identifier: `prd.metadata-auxiliary-data`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -685,14 +658,14 @@ Notes:
 
 ---
 
-#### <!-- edit:requirements/metadata/sample-spacing.yaml-->`3.3.` Product Metadata: Sample Spacing {#sec:prd.metadata-sample-spacing label="|Product Metadata: Sample Spacing"}
+#### <!-- edit:requirements/metadata/sample-spacing.yaml-->`3.3.` Product Sample Spacing {#sec:prd.metadata-sample-spacing label="|Product Metadata: Product Sample Spacing"}
 
 Identifier: `prd.metadata-sample-spacing`
 
 
 ##### Threshold requirements:
 
-Product processing parameters details:
+CEOS-ARD product processing parameters details:
 
 - Pixel (column) spacing
 - Line (row) spacing
@@ -701,11 +674,12 @@ Product processing parameters details:
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/enl.yaml-->`3.4.` Product Metadata: Equivalent Number of Looks {#sec:prd.metadata-enl label="|Product Metadata: Equivalent Number of Looks"}
+#### <!-- edit:requirements/metadata/enl.yaml-->`3.4.` Product Equivalent Number of Looks {#sec:prd.metadata-enl label="|Product Metadata: Product Equivalent Number of Looks"}
 
 Identifier: `prd.metadata-enl`
 
@@ -713,7 +687,8 @@ Identifier: `prd.metadata-enl`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -722,7 +697,7 @@ Equivalent Number of Looks (ENL)
 
 ---
 
-#### <!-- edit:requirements/metadata/resolution.yaml-->`3.5.` Product Metadata: Resolution {#sec:prd.metadata-resolution label="|Product Metadata: Resolution"}
+#### <!-- edit:requirements/metadata/resolution.yaml-->`3.5.` Product Resolution {#sec:prd.metadata-resolution label="|Product Metadata: Product Resolution"}
 
 Identifier: `prd.metadata-resolution`
 
@@ -730,19 +705,20 @@ Identifier: `prd.metadata-resolution`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
 
-Average spatial resolution along:
+Average spatial resolution of the CEOS-ARD product along:
 
 - Columns
 - Rows
 
 ---
 
-#### <!-- edit:requirements/metadata/speckle-filtering.yaml-->`3.6.` Product Metadata: Speckle Filtering {#sec:prd.metadata-speckle-filtering label="|Product Metadata: Speckle Filtering"}
+#### <!-- edit:requirements/metadata/speckle-filtering.yaml-->`3.6.` Product Filtering {#sec:prd.metadata-speckle-filtering label="|Product Metadata: Product Filtering"}
 
 Identifier: `prd.metadata-speckle-filtering`
 
@@ -763,57 +739,60 @@ Metadata should include:
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/bounding-box.yaml-->`3.7.` Product Metadata: Bounding Box {#sec:prd.metadata-bounding-box label="|Product Metadata: Bounding Box"}
+#### <!-- edit:requirements/metadata/bounding-box.yaml-->`3.7.` Product Bounding Box {#sec:prd.metadata-bounding-box label="|Product Metadata: Product Bounding Box"}
 
 Identifier: `prd.metadata-bounding-box`
 
 
 ##### Threshold requirements:
 
-Two opposite corners of the measurement file (bounding box, including any zero-fill values) are identified,
+Two opposite corners of the product file (bounding box, including any zero-fill values) are identified,
 expressed in the coordinate reference system defined in [@sec:prd.metadata-crs].
 
 Notes:
 
-1. Four corners of the measurement file are recommended for scenes crossing the Antemeridian, or the North or the South Pole.
+1. Four corners of the product file are recommended for scenes crossing the Antemeridian, or the North or the South Pole.
 
 
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/footprint.yaml-->`3.8.` Product Metadata: Geographical Extent {#sec:prd.metadata-footprint label="|Product Metadata: Geographical Extent"}
+#### <!-- edit:requirements/metadata/footprint.yaml-->`3.8.` Product Geographical Extent {#sec:prd.metadata-footprint label="|Product Metadata: Product Geographical Extent"}
 
 Identifier: `prd.metadata-footprint`
 
 
 ##### Threshold requirements:
 
-The geometry of the image footprint expressed in WGS84, in a standardised format (e.g., WKT Polygon).
+The geometry of the SAR image footprint expressed in WGS84, in a standardised format (e.g., WKT Polygon).
 
 
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/image-size.yaml-->`3.9.` Product Metadata: Image Size {#sec:prd.metadata-image-size label="|Product Metadata: Image Size"}
+#### <!-- edit:requirements/metadata/image-size.yaml-->`3.9.` Product Image Size {#sec:prd.metadata-image-size label="|Product Metadata: Product Image Size"}
 
 Identifier: `prd.metadata-image-size`
 
 
 ##### Threshold requirements:
 
-Image attributes:
+Image attributes of the CEOS-ARD product:
 
 - Number of lines
 - Number of pixels per line
@@ -824,11 +803,12 @@ Image attributes:
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/pixel-coordinate-convention.yaml-->`3.10.` Product Metadata: Pixel Coordinate Convention {#sec:prd.metadata-pixel-coordinate-convention label="|Product Metadata: Pixel Coordinate Convention"}
+#### <!-- edit:requirements/metadata/pixel-coordinate-convention.yaml-->`3.10.` Product Pixel Coordinate Convention {#sec:prd.metadata-pixel-coordinate-convention label="|Product Metadata: Product Pixel Coordinate Convention"}
 
 Identifier: `prd.metadata-pixel-coordinate-convention`
 
@@ -842,11 +822,12 @@ Values are [pixel centre, pixel ULC or pixel LLC].
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/crs.yaml-->`3.11.` Product Metadata: Coordinate Reference System {#sec:prd.metadata-crs label="|Product Metadata: Coordinate Reference System"}
+#### <!-- edit:requirements/metadata/crs.yaml-->`3.11.` Product Coordinate Reference System {#sec:prd.metadata-crs label="|Product Metadata: Product Coordinate Reference System"}
 
 Identifier: `prd.metadata-crs`
 
@@ -860,11 +841,12 @@ Indicate EPSG code, if defined for the CRS.
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/look-direction-polynomials.yaml-->`3.12.` Product Metadata: Look Direction Polynomials {#sec:prd.metadata-look-direction-polynomials label="|Product Metadata: Look Direction Polynomials"}
+#### <!-- edit:requirements/metadata/look-direction-polynomials.yaml-->`3.12.` Look Direction Polynomials {#sec:prd.metadata-look-direction-polynomials label="|Product Metadata: Look Direction Polynomials"}
 
 Identifier: `prd.metadata-look-direction-polynomials`
 
@@ -893,7 +875,8 @@ Lat and Lon are the related coordinates in the product map units (m, deg, arcsec
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ### <!-- edit:sections/requirement-categories/per-pixel-metadata.yaml-->`4.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
@@ -901,41 +884,26 @@ The following minimum metadata specifications apply to each pixel.
 Whether the metadata are provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
 Per-pixel metadata should allow users to discriminate between (choose) observations on the basis of their individual suitability for applications.
 
-
-#### <!-- edit:requirements/cloud-optimized-formats.yaml-->`4.1.` Per-Pixel Metadata: Cloud Optimized Formats {#sec:pxl.cloud-optimized-formats label="|Per-Pixel Metadata: Cloud Optimized Formats"}
-
-Identifier: `pxl.cloud-optimized-formats`
+*Cloud optimized file formats are recommended.*
 
 
-##### Threshold requirements:
-
-
-*None*
-
-
-##### Goal requirements:
-
-All files are provided using cloud-optimized file formats.
-
----
-
-#### <!-- edit:requirements/metadata/machine-readability.yaml-->`4.2.` Per-Pixel Metadata: Metadata Machine Readability {#sec:pxl.metadata-machine-readability label="|Per-Pixel Metadata: Metadata Machine Readability"}
+#### <!-- edit:requirements/metadata/machine-readability.yaml-->`4.1.` Metadata Machine Readability {#sec:pxl.metadata-machine-readability label="|Per-Pixel Metadata: Metadata Machine Readability"}
 
 Identifier: `pxl.metadata-machine-readability`
 
 
 ##### Threshold requirements:
 
-Metadata is provided in a structure that enables a computer algorithm to be used consistently and to automatically identify and extract each component part for further use.
+Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable/layer for further use.
 
 
 ##### Goal requirements:
 
-Metadata is formatted in accordance with CEOS-ARD SAR Metadata Specifications, v.1.1, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention, the Attribute Convention for Data Discovery (ACDD), etc.
+As threshold, but metadata is formatted in accordance with CEOS-ARD SAR Metadata Specifications, v.1.1, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention, the Attribute Convention for Data Discovery (ACDD), etc.
 
 ---
 
-#### <!-- edit:requirements/per-pixel/data-mask.yaml-->`4.3.` Per-Pixel Metadata: Data Mask Image {#sec:pxl.per-pixel-data-mask label="|Per-Pixel Metadata: Data Mask Image"}
+#### <!-- edit:requirements/per-pixel/data-mask.yaml-->`4.2.` Data Mask Image {#sec:pxl.per-pixel-data-mask label="|Per-Pixel Metadata: Data Mask Image"}
 
 Identifier: `pxl.per-pixel-data-mask`
 
@@ -952,7 +920,7 @@ File format specifications/contents provided in metadata:
 
 - Sample Type (Mask)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
+- Data Type (Int, …)
 - Bits per Sample
 - Byte Order
 - Bit Value Representation
@@ -960,7 +928,7 @@ File format specifications/contents provided in metadata:
 
 ##### Goal requirements:
 
-Additional bit value representations, e.g.:
+As threshold, including additional bit value representations, e.g.:
 
 - Layover (masked as invalid data in threshold)
 - Radar shadow (masked as invalid data in threshold)
@@ -971,7 +939,7 @@ Additional bit value representations, e.g.:
 
 ---
 
-#### <!-- edit:requirements/per-pixel/scattering-area.yaml-->`4.4.` Per-Pixel Metadata: Scattering Area Image {#sec:pxl.per-pixel-scattering-area label="|Per-Pixel Metadata: Scattering Area Image"}
+#### <!-- edit:requirements/per-pixel/scattering-area.yaml-->`4.3.` Scattering Area Image {#sec:pxl.per-pixel-scattering-area label="|Per-Pixel Metadata: Scattering Area Image"}
 
 Identifier: `pxl.per-pixel-scattering-area`
 
@@ -981,7 +949,8 @@ Identifier: `pxl.per-pixel-scattering-area`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1000,7 +969,7 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:requirements/per-pixel/local-incident-angle.yaml-->`4.5.` Per-Pixel Metadata: Local Incident Angle Image {#sec:pxl.per-pixel-local-incident-angle label="|Per-Pixel Metadata: Local Incident Angle Image"}
+#### <!-- edit:requirements/per-pixel/local-incident-angle.yaml-->`4.4.` Local Incident Angle Image {#sec:pxl.per-pixel-local-incident-angle label="|Per-Pixel Metadata: Local Incident Angle Image"}
 
 Identifier: `pxl.per-pixel-local-incident-angle`
 
@@ -1019,17 +988,18 @@ File format specifications/contents provided in metadata:
 
 Notes:
 
-1. For maritime ORB scenes when no land areas are covered, a geoid model could be used for the calculation of the local incident angle
+1. For maritime ORB scenes when no land areas are covered, a geoid model could be used for the calculation of the local incident angle.
 
 
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/per-pixel/ellipsoidal-incident-angle.yaml-->`4.6.` Per-Pixel Metadata: Ellipsoidal Incident Angle Image {#sec:pxl.per-pixel-ellipsoidal-incident-angle label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image"}
+#### <!-- edit:requirements/per-pixel/ellipsoidal-incident-angle.yaml-->`4.5.` Ellipsoidal Incident Angle Image {#sec:pxl.per-pixel-ellipsoidal-incident-angle label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image"}
 
 Identifier: `pxl.per-pixel-ellipsoidal-incident-angle`
 
@@ -1037,7 +1007,8 @@ Identifier: `pxl.per-pixel-ellipsoidal-incident-angle`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1059,7 +1030,7 @@ Notes:
 
 ---
 
-#### <!-- edit:requirements/per-pixel/noise-power.yaml-->`4.7.` Per-Pixel Metadata: Noise Power Image {#sec:pxl.per-pixel-noise-power label="|Per-Pixel Metadata: Noise Power Image"}
+#### <!-- edit:requirements/per-pixel/noise-power.yaml-->`4.6.` Noise Power Image {#sec:pxl.per-pixel-noise-power label="|Per-Pixel Metadata: Noise Power Image"}
 
 Identifier: `pxl.per-pixel-noise-power`
 
@@ -1067,7 +1038,8 @@ Identifier: `pxl.per-pixel-noise-power`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1085,7 +1057,7 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:requirements/per-pixel/acquisition-id.yaml-->`4.8.` Per-Pixel Metadata: Acquisition ID Image {#sec:pxl.per-pixel-acquisition-id label="|Per-Pixel Metadata: Acquisition ID Image"}
+#### <!-- edit:requirements/per-pixel/acquisition-id.yaml-->`4.7.` Acquisition ID Image {#sec:pxl.per-pixel-acquisition-id label="|Per-Pixel Metadata: Acquisition ID Image"}
 
 Identifier: `pxl.per-pixel-acquisition-id`
 
@@ -1117,7 +1089,7 @@ In case of image composites, the sources for each pixel are uniquely identified.
 
 ---
 
-#### <!-- edit:requirements/per-pixel/geoid.yaml-->`4.9.` Per-Pixel Metadata: Geoid {#sec:pxl.per-pixel-geoid label="|Per-Pixel Metadata: Geoid"}
+#### <!-- edit:requirements/per-pixel/geoid.yaml-->`4.8.` Per-Pixel Geoid {#sec:pxl.per-pixel-geoid label="|Per-Pixel Metadata: Per-Pixel Geoid"}
 
 Identifier: `pxl.per-pixel-geoid`
 
@@ -1125,7 +1097,8 @@ Identifier: `pxl.per-pixel-geoid`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1143,7 +1116,7 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:requirements/per-pixel/look-direction.yaml-->`4.10.` Per-Pixel Metadata: Look Direction Image {#sec:pxl.per-pixel-look-direction label="|Per-Pixel Metadata: Look Direction Image"}
+#### <!-- edit:requirements/per-pixel/look-direction.yaml-->`4.9.` Look Direction Image {#sec:pxl.per-pixel-look-direction label="|Per-Pixel Metadata: Look Direction Image"}
 
 Identifier: `pxl.per-pixel-look-direction`
 
@@ -1151,7 +1124,8 @@ Identifier: `pxl.per-pixel-look-direction`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1174,25 +1148,10 @@ Radiometric corrections must lead to normalised measurement(s) of backscatter in
 As for the per-pixel metadata, information regarding data format specification needs to be provided for each record.
 The requirements below must be met for all pixels/samples/observations in a collection.
 
-
-#### <!-- edit:requirements/cloud-optimized-formats.yaml-->`5.1.` Radiometrically Corrected Measurements: Cloud Optimized Formats {#sec:rcm.cloud-optimized-formats label="|Radiometrically Corrected Measurements: Cloud Optimized Formats"}
-
-Identifier: `rcm.cloud-optimized-formats`
+*Cloud optimized file formats are recommended.*
 
 
-##### Threshold requirements:
-
-
-*None*
-
-
-##### Goal requirements:
-
-All files are provided using cloud-optimized file formats.
-
----
-
-#### <!-- edit:requirements/measurements/backscatter-orb.yaml-->`5.2.` Radiometrically Corrected Measurements: Backscatter Measurements (ORB) {#sec:rcm.measurements-backscatter-orb label="|Radiometrically Corrected Measurements: Backscatter Measurements (ORB)"}
+#### <!-- edit:requirements/measurements/backscatter-orb.yaml-->`5.1.` Backscatter Measurements (ORB) {#sec:rcm.measurements-backscatter-orb label="|Radiometrically Corrected Measurements: Backscatter Measurements (ORB)"}
 
 Identifier: `rcm.measurements-backscatter-orb`
 
@@ -1220,11 +1179,12 @@ Notes:
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/scaling-conversion.yaml-->`5.3.` Radiometrically Corrected Measurements: Scaling Conversion {#sec:rcm.metadata-scaling-conversion label="|Radiometrically Corrected Measurements: Scaling Conversion"}
+#### <!-- edit:requirements/metadata/scaling-conversion.yaml-->`5.2.` Scaling Conversion {#sec:rcm.metadata-scaling-conversion label="|Radiometrically Corrected Measurements: Scaling Conversion"}
 
 Identifier: `rcm.metadata-scaling-conversion`
 
@@ -1236,11 +1196,11 @@ If applicable, indicate the equation to convert pixel linear amplitude/power to 
 
 ##### Goal requirements:
 
-Use of float32.
+As threshold, but use of float32.
 
 ---
 
-#### <!-- edit:requirements/metadata/noise-removal.yaml-->`5.4.` Radiometrically Corrected Measurements: Noise Removal {#sec:rcm.metadata-noise-removal label="|Radiometrically Corrected Measurements: Noise Removal"}
+#### <!-- edit:requirements/metadata/noise-removal.yaml-->`5.3.` Noise Removal {#sec:rcm.metadata-noise-removal label="|Radiometrically Corrected Measurements: Noise Removal"}
 
 Identifier: `rcm.metadata-noise-removal`
 
@@ -1258,11 +1218,12 @@ Notes:
 ##### Goal requirements:
 
 
-*None*
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:requirements/metadata/radiometric-accuracy.yaml-->`5.5.` Radiometrically Corrected Measurements: Radiometric Accuracy {#sec:rcm.metadata-radiometric-accuracy label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
+#### <!-- edit:requirements/metadata/radiometric-accuracy.yaml-->`5.4.` Radiometric Accuracy {#sec:rcm.metadata-radiometric-accuracy label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
 
 Identifier: `rcm.metadata-radiometric-accuracy`
 
@@ -1270,7 +1231,8 @@ Identifier: `rcm.metadata-radiometric-accuracy`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1280,7 +1242,7 @@ SI traceability is achieved.
 
 ---
 
-#### <!-- edit:requirements/measurements/mean-wind-normalised-backscatter.yaml-->`5.6.` Radiometrically Corrected Measurements: Mean Wind-Normalised Backscatter Measurements {#sec:rcm.measurements-mean-wind-normalised-backscatter label="|Radiometrically Corrected Measurements: Mean Wind-Normalised Backscatter Measurements"}
+#### <!-- edit:requirements/measurements/mean-wind-normalised-backscatter.yaml-->`5.5.` Mean Wind-Normalised Backscatter Measurements {#sec:rcm.measurements-mean-wind-normalised-backscatter label="|Radiometrically Corrected Measurements: Mean Wind-Normalised Backscatter Measurements"}
 
 Identifier: `rcm.measurements-mean-wind-normalised-backscatter`
 
@@ -1290,7 +1252,8 @@ Identifier: `rcm.measurements-mean-wind-normalised-backscatter`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1318,7 +1281,7 @@ The geometric corrections are steps that are taken to place the measurement accu
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
-#### <!-- edit:requirements/metadata/geometric-correction-algorithm.yaml-->`6.1.` Geometric Corrections: Geometric Correction Algorithm {#sec:gcor.metadata-geometric-correction-algorithm label="|Geometric Corrections: Geometric Correction Algorithm"}
+#### <!-- edit:requirements/metadata/geometric-correction-algorithm.yaml-->`6.1.` Geometric Correction Algorithm {#sec:gcor.metadata-geometric-correction-algorithm label="|Geometric Corrections: Geometric Correction Algorithm"}
 
 Identifier: `gcor.metadata-geometric-correction-algorithm`
 
@@ -1326,7 +1289,8 @@ Identifier: `gcor.metadata-geometric-correction-algorithm`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1344,7 +1308,7 @@ Notes:
 
 ---
 
-#### <!-- edit:requirements/corrections/dem.yaml-->`6.2.` Geometric Corrections: Digital Elevation Model {#sec:gcor.corrections-dem label="|Geometric Corrections: Digital Elevation Model"}
+#### <!-- edit:requirements/corrections/dem.yaml-->`6.2.` Digital Elevation Model {#sec:gcor.corrections-dem label="|Geometric Corrections: Digital Elevation Model"}
 
 Identifier: `gcor.corrections-dem`
 
@@ -1367,7 +1331,7 @@ Identifier: `gcor.corrections-dem`
 
 ---
 
-#### <!-- edit:requirements/corrections/geometric-accuracy-radar.yaml-->`6.3.` Geometric Corrections: Geometric Accuracy {#sec:gcor.corrections-geometric-accuracy-radar label="|Geometric Corrections: Geometric Accuracy"}
+#### <!-- edit:requirements/corrections/geometric-accuracy-radar.yaml-->`6.3.` Geometric Accuracy {#sec:gcor.corrections-geometric-accuracy-radar label="|Geometric Corrections: Geometric Accuracy"}
 
 Identifier: `gcor.corrections-geometric-accuracy-radar`
 
@@ -1378,7 +1342,7 @@ Accurate geolocation is a prerequisite to radar processing to correct for terrai
 
 The absolute geolocation error (ALE) for a sensor is typically assessed through analysis of Single Look Complex (SLC) imagery and measured along the slant range and azimuth directions (case A: SLC ALE).
 
-The end-to-end “ARD” ALE of the final product could be measured directly in the final image product in the chosen map projection, i.e., in the map coordinate directions: e.g., Northing and Easting (case B: ARD ALE).
+The end-to-end “ARD” ALE of the final CEOS-ARD product could be measured directly in the final image product in the chosen map projection, i.e., in the map coordinate directions: e.g., Northing and Easting (case B: ARD ALE).
 
 Providing accuracy estimates based on measurements following at least one scheme (A or B or both) meets the threshold requirement.
 
@@ -1392,12 +1356,13 @@ Notes:
 
 ##### Goal requirements:
 
-Output product sub-sample accuracy should be less than or equal to 0.1 (slant range) pixel radial root mean square error (rRMSE). 
+Output product sub-sample accuracy should be less than or equal to 0.1 (slant range) pixel radial root mean square error (rRMSE).
+
 Provide documentation of estimates of ALE as DOI or URL.
 
 ---
 
-#### <!-- edit:requirements/corrections/geometric-refined-accuracy.yaml-->`6.4.` Geometric Corrections: Geometric Refined Accuracy {#sec:gcor.corrections-geometric-refined-accuracy label="|Geometric Corrections: Geometric Refined Accuracy"}
+#### <!-- edit:requirements/corrections/geometric-refined-accuracy.yaml-->`6.4.` Geometric Refined Accuracy {#sec:gcor.corrections-geometric-refined-accuracy label="|Geometric Corrections: Geometric Refined Accuracy"}
 
 Identifier: `gcor.corrections-geometric-refined-accuracy`
 
@@ -1405,7 +1370,8 @@ Identifier: `gcor.corrections-geometric-refined-accuracy`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -1418,7 +1384,7 @@ Methodology used (name and reference), quality flag, geometric standard deviatio
 
 ---
 
-#### <!-- edit:requirements/corrections/gridding-convention.yaml-->`6.5.` Geometric Corrections: Gridding Convention {#sec:gcor.corrections-gridding-convention label="|Geometric Corrections: Gridding Convention"}
+#### <!-- edit:requirements/corrections/gridding-convention.yaml-->`6.5.` Gridding Convention {#sec:gcor.corrections-gridding-convention label="|Geometric Corrections: Gridding Convention"}
 
 Identifier: `gcor.corrections-gridding-convention`
 
@@ -1446,6 +1412,50 @@ For products presented in geographic coordinates (latitude and longitude), the o
 &#12;
 
 
+## Introduction
+
+This section aims to provide background and specific information on the processing steps that can be
+used to achieve analysis ready data for a specific and well-developed Product Family Specification.
+This Guidance material does not replace or override the specifications.
+
+### <!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->What is CEOS Analysis Ready Data? {#sec:intro-what-are-ceos-ard-products label="|What is CEOS Analysis Ready Data?"}
+
+CEOS-ARD are products that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort.
+In general, these products would be resampled onto a common geometric grid (for a given product) and would provide baseline data for further interoperability both through time and with other datasets.
+
+CEOS-ARD products are intended to be flexible and accessible products suitable for a wide range of users for a wide variety of applications, including particularly time series analysis and multi-sensor application development.
+They are also intended to support rapid ingestion and exploitation via high-performance computing, cloud computing and other future data architectures.
+They may not be suitable for all purposes and are not intended as a _replacement_ for other types of satellite products.
+
+### <!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->When can a product be called CEOS-ARD? {#sec:intro-when-is-a-product-ceos-ard label="|When can a product be called CEOS-ARD?"}
+
+The CEOS-ARD branding is applied to a particular product once:
+
+- that product has been assessed as meeting CEOS-ARD requirements by the agency responsible for production and distribution of the product, and
+- that the assessment has been peer reviewed by the relevant CEOS team(s).
+
+Agencies or other entities considering undertaking an assessment process should consult the [CEOS-ARD Governance Framework](https://ceos.org/ard/files/CEOS_ARD_Governance_Framework_18-October-2021.pdf).
+
+A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
+
+### <!-- edit:sections/introduction/difference-threshold-goal.yaml-->What is the difference between Threshold and Goal? {#sec:intro-difference-threshold-goal label="|What is the difference between Threshold and Goal?"}
+
+**Threshold** (Minimum) requirements are the **minimum** that is needed for the data to be analysis ready.
+This must be practical and accepted by the data producers.
+
+**Goal** (Desired) requirements (previously referred to as “Target”) are the ideal; where we would like to be.
+Some providers may already meet these.
+
+Products that meet all _threshold_ requirements should be immediately useful for scientific analysis or decision-making.
+
+Products that meet _goal_ requirements will reduce the overall product uncertainties and enhance broad-scale applications.
+For example, the products may enhance interoperability or provide increased accuracy through additional corrections that are not reasonable at the _threshold_ level.
+
+Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field.
+Over time, _goal_ specifications may (and subject to due process) become accepted as _threshold_ requirements.
+
+&#12;
+
 ## References
 
 ::: {#refs}
@@ -1456,7 +1466,7 @@ For products presented in geographic coordinates (latitude and longitude), the o
 ## Annexes
 
 
-### <!-- edit:sections/annexes/sar-general-processing-roadmap.yaml-->General Processing Roadmap {#sec:annex-sar-general-processing-roadmap label="|General Processing Roadmap"}
+### <!-- edit:sections/annexes/sar-general-processing-roadmap.yaml-->General Processing Map {#sec:annex-sar-general-processing-roadmap label="|General Processing Map"}
 
 The radiometric interoperability of CEOS-ARD SAR products is ensured by a common processing chain during production. The recommended processing roadmap involves the following steps:
 
@@ -1567,6 +1577,69 @@ Consequently, the differential phase of two CEOS-ARD products doesn’t contain 
 $$
 \Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2})
 $$ {#eq:sar-topographic-phase-removal-eq11}
+
+
+### <!-- edit:sections/annexes/sar-pol-covmat.yaml-->Normalised Covariance Matrices (CovMat) {#sec:annex-sar-pol-covmat label="|Normalised Covariance Matrices (CovMat)"}
+
+In order to preserve the inter-channel polarimetric phase and thus the full information content of coherent dual-pol and fully polarimetric data, the covariance matrix is proposed as the data storage format. Covariance matrices are generated from the complex cross product of polarimetric channels, as shown in [@eq:sar-pol-covmat-eq1] for fully polarimetric data (C3) and in [@eq:sar-pol-covmat-eq3] for dual polarization data (C2). Since these matrices are complex symmetrical, only the upper diagonal elements (bold elements) need to be stored in the ARD database.
+
+**Fully polarimetric**
+
+$$
+C3 = \begin{bmatrix}
+| \mathbf{H} \mathbf{H} |^2 & \sqrt{2} \cdot \mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* & \mathbf{H}\mathbf{H} \cdot \mathbf{V}\mathbf{V}^* \\
+\sqrt{2} \cdot HV \cdot HH^* & 2 \cdot |\mathbf{H}\mathbf{V}|^2 & \sqrt{2} \cdot \mathbf{H}\mathbf{V} \cdot \mathbf{H}\mathbf{V}^* \\
+VV \cdot HH^* & \sqrt{2} \cdot VV \cdot HV^* & |\mathbf{V}\mathbf{V}|^2
+\end{bmatrix}
+$$ {#eq:sar-pol-covmat-eq1}
+
+Where HV = VH, under the reciprocity assumption. \| \| and \* mean respectively complex modulus and the complex conjugate.
+
+**Dual polarization**
+
+$$
+\text{HH-HV:} \quad C2 = \begin{bmatrix}
+| \mathbf{H} \mathbf{H} |^2 & \mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* \\
+HV \cdot HH^* &  |\mathbf{H}\mathbf{V}|^2
+\end{bmatrix}
+$$ {#eq:sar-pol-covmat-eq2}
+
+$$
+\text{VV-VH:} \quad C2 = \begin{bmatrix}
+| \mathbf{V} \mathbf{H} |^2 & \mathbf{V}\mathbf{H} \cdot \mathbf{V}\mathbf{H}^* \\
+VH \cdot VH^* &  |\mathbf{V}\mathbf{V}|^2
+\end{bmatrix}
+$$ {#eq:sar-pol-covmat-eq3}
+
+$$
+\text{CH-CV:} \quad C2 = \begin{bmatrix}
+| \mathbf{C} \mathbf{H} |^2 & \mathbf{C}\mathbf{H} \cdot \mathbf{C}\mathbf{V}^* \\
+CV \cdot CH^* &  |\mathbf{C}\mathbf{V}|^2
+\end{bmatrix}
+$$ {#eq:eq:sar-pol-covmat-eq4}
+
+Where CH and CV refer to dual polarization transmitting a circular polarized signal. \[CH, CV] can be replaced by \[LH, LV] or \[RH, RV] for left (L) or right (R) hand circular transmission respectively, although RCM will offer only right-hand circular transmission. The coherent HH-VV configuration available on TerraSAR-X could also be represented as C2 format.
+
+Polarimetric decomposition methods like [@yamaguchi2011] for fully polarimetric, or m-chi [@raney2012] for compact polarimetric data, can be applied directly on averaged (speckle filtered) C3 and C2 matrices respectively. These decompositions enhance scattering information, bring it to a more comprehensible level to end-users, and raise the performance of thematic classification methodologies. For SAR products that were acquired with single polarization the use of the covariance matrix does not result in superfluous storage requirements, since only the matrix elements that are populated are retained and the diagonal matrix elements are the backscatter intensities. Thus, a single channel intensity product would yield only one matrix element and the storage needs would not change.
+
+In order to ease the data structure and the metadata in between C3 and C2, [@eq:sar-pol-covmat-eq1] should be redefined as [@eq:sar-pol-covmat-eq5]. Users will have to take care of this non-standard representation when applying their polarimetric analytic tools. “\< \>” means that ARD matrix elements are speckle filtered. [@eq:sar-pol-covmat-eq5] is valid both for dual-linear and quad polarization.
+
+$$
+\text{C3 modified:} \quad C3_m = \begin{bmatrix}
+| \langle \mathbf{H} \mathbf{H} |^2 \rangle & \langle\mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* \rangle & \langle\mathbf{H}\mathbf{H} \cdot \mathbf{V}\mathbf{V}^* \rangle\\
+\langle HV \cdot HH^* \rangle & \langle|\mathbf{H}\mathbf{V}|^2 \rangle & \langle\mathbf{H}\mathbf{V} \cdot \mathbf{V}\mathbf{V}^* \rangle \\
+\langle VV \cdot HH^* \rangle& \langle VV \cdot HV^* \rangle & \langle|\mathbf{V}\mathbf{V}|^2 \rangle
+\end{bmatrix}
+$$ {#eq:sar-pol-covmat-eq5}
+
+Furthermore, for compact polarimetric data, it is recommended to store them, by simple transformation, under the circular-circular basis, since RR and RL polarizations ([@eq:sar-pol-covmat-eq6]) permit faster and more intuitive RGB visualizations (R=RR, G=RR/(RR+RL), B= RL).
+
+$$
+\text{CH-CV (C2 circular):} \quad C2_c = \begin{bmatrix}
+\langle | \mathbf{R} \mathbf{R} |^2 \rangle & \langle\mathbf{R}\mathbf{R} \cdot \mathbf{R}\mathbf{¬}^* \rangle \\
+\langle RL \cdot RR^* \rangle &  \langle|\mathbf{R}\mathbf{L}|^2\rangle
+\end{bmatrix}
+$$ {#eq:sar-pol-covmat-eq6}
 
 
 ### <!-- edit:sections/annexes/sar-orb-example.yaml-->Ocean Radar Backscatter example {#sec:annex-sar-orb-example label="|Ocean Radar Backscatter example"}

@@ -298,22 +298,41 @@ margin-top: 2cm;
 <h1 id="ceos-ard---optical---surface-temperature">CEOS-ARD - Optical -
 Surface Temperature</h1>
 <p> </p>
+<h2 id="document-status">Document Status</h2>
+<p>Product Family Specification, Optical, Surface Temperature</p>
+<p>Proposed revisions may be provided to: <a href="mailto:ard-contact@lists.ceos.org">ard-contact@lists.ceos.org</a></p>
+<h2 id="document-history">Document History</h2>
+<p>Not available yet</p>
+<h2 id="contributing-authors"><!-- edit:pfs/ST/authors.yaml -->Contributing
+Authors</h2>
+<ul>
+<li>Adam Lewis, Geoscience Australia, Australia</li>
+<li>Jonathon Ross, Geoscience Australia, Australia</li>
+<li>Andreia Siqueira, Geoscience Australia, Australia</li>
+<li>Darcie Bontje, USGS, USA</li>
+<li>Steve Labahn, USGS, USA</li>
+<li>Mary Metzger, USGS, USA</li>
+</ul>
+<div style="page-break-after: always;"></div>
+<h2 id="ceos-analysis-ready-data-definition">CEOS Analysis Ready Data
+Definition</h2>
 <blockquote>
 <p>CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been
 processed to a minimum set of requirements and organized into a form
 that allows immediate analysis with a minimum of additional user effort
 and interoperability both through time and with other datasets.</p>
 </blockquote>
-<p> </p>
+<h2 id="description">Description</h2>
 <!-- edit:pfs/ST/document.yaml -->
 <p><strong>Product Family Specification:</strong> Optical, Surface
 Temperature (ST)</p>
 <p><strong>Version:</strong> 5.1-draft</p>
-<p><strong>Applies to:</strong> Data collected with multispectral
-sensors operating in the thermal infrared (TIR) wavelengths. These
-typically operate with ground sample distance and resolution in the
-order of 10-100m; however, the Specification is not inherently limited
-to this resolution.</p>
+<p><strong>Applies to:</strong> Data collected by Optical sensors</p>
+<h2 id="background">Background</h2>
+<p>Data collected with multispectral sensors operating in the thermal
+infrared (TIR) wavelengths. These typically operate with ground sample
+distance and resolution in the order of 10-100m; however, the
+Specification is not inherently limited to this resolution.</p>
 <p>At present, surface temperature measurements tend to be provided as
 either surface brightness temperature (SBT) or as land surface
 temperatures (LST) requiring the SBT to be modified according to the
@@ -322,26 +341,8 @@ Temperature (ST) as being the minimum or Threshold requirement for
 analysis ready land surface data. Nevertheless, both SBT and LST are
 land measurements, requiring atmospheric corrections.</p>
 <div style="page-break-after: always;"></div>
-<h2 id="document-history">Document History</h2>
-<p>Not available yet</p>
-<h2 id="contributing-authors"><!-- edit:pfs/ST/authors.yaml -->Contributing
-Authors</h2>
-<ul>
-<li>Geoscience Australia, Australia
-<ul>
-<li>Adam Lewis</li>
-<li>Jonathon Ross</li>
-<li>Andreia Siqueira</li>
-</ul></li>
-<li>USGS, USA
-<ul>
-<li>Darcie Bontje</li>
-<li>Steve Labahn</li>
-<li>Mary Metzger</li>
-</ul></li>
-</ul>
-<div style="page-break-after: always;"></div>
-<h2 id="glossary">Glossary</h2>
+<h2 id="definitions-and-abbreviations">Definitions and
+Abbreviations</h2>
 <!-- edit:glossary/ceos-ard.yaml -->
 <dl>
 <dt>CEOS-ARD</dt>
@@ -393,60 +394,6 @@ Thermal Infrared
 </dd>
 </dl>
 <div style="page-break-after: always;"></div>
-<h2 id="introduction">Introduction</h2>
-<h3 data-label="|What are CEOS Analysis Ready Data (CEOS-ARD) products?" id="sec:intro-what-are-ceos-ard-products"><!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->What
-are CEOS Analysis Ready Data (CEOS-ARD) products?</h3>
-<p>CEOS-ARD products have been processed to a minimum set of
-requirements and organized into a form that allows immediate analysis
-with a minimum of additional user effort. These products would be
-resampled onto a common geometric grid (for a given product) and would
-provide baseline data for further interoperability both through time and
-with other datasets.</p>
-<p>CEOS-ARD are intended to be flexible and accessible products suitable
-for a wide range of users for a wide variety of applications,
-particularly time series analysis and multi-sensor application
-development. They are also intended to support rapid ingestion and
-exploitation via high-performance computing, cloud computing and other
-future data architectures. They may not be suitable for all purposes and
-are not intended as a <em>replacement</em> for other types of satellite
-products.</p>
-<h3 data-label="|When can a product be called CEOS-ARD?" id="sec:intro-when-is-a-product-ceos-ard"><!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->When
-can a product be called CEOS-ARD?</h3>
-<p>The CEOS-ARD branding is applied to a particular product once:</p>
-<ul>
-<li>that product has been assessed as meeting CEOS-ARD requirements by
-the agency or other entities responsible for production and distribution
-of the product, and</li>
-<li>that the assessment has been peer reviewed by the relevant CEOS
-team(s).</li>
-</ul>
-<p>Agencies or other entities considering undertaking an assessment
-process should consult the <a href="https://ceos.org/ard/files/CEOS_ARD_Governance_Framework_18-October-2021.pdf">CEOS-ARD
-Governance Framework</a> or contact <a href="mailto:ard-contact@lists.ceos.org" class="email">ard-contact@lists.ceos.org</a>.</p>
-<p>A product can continue to use CEOS-ARD branding as long as its
-generation and distribution remain consistent with the peer-reviewed
-assessment.</p>
-<h3 data-label="|What is the difference between Threshold and Goal?" id="sec:intro-difference-threshold-goal"><!-- edit:sections/introduction/difference-threshold-goal.yaml-->What
-is the difference between Threshold and Goal?</h3>
-<p><strong>Threshold</strong> (or: minimum) requirements are the
-<strong>minimum</strong> that is needed for the data to be analysis
-ready. This must be practical and accepted by the data producers.</p>
-<p><strong>Goal</strong> (or: desired) requirements (previously referred
-to as “Target”) are the ideal; where we would like to be. Some providers
-may already meet these.</p>
-<p>Products that meet all <em>threshold</em> requirements should be
-immediately useful for scientific analysis or decision-making.</p>
-<p>Products that meet <em>goal</em> requirements will reduce the overall
-product uncertainties and enhance broad-scale applications. For example,
-the products may enhance interoperability or provide increased accuracy
-through additional corrections that are not reasonable at the
-<em>threshold</em> level.</p>
-<p>Goal requirements anticipate continuous improvement of methods and
-evolution of community expectations, which are both normal and
-inevitable in a developing field. Over time, <em>goal</em>
-specifications may (and subject to due process) become accepted as
-<em>threshold</em> requirements.</p>
-<div style="page-break-after: always;"></div>
 <h2 id="requirements"><!-- edit:pfs/ST/requirements.yaml -->Requirements</h2>
 <p><strong>WARNING:</strong> The requirement numbers below are not
 stable and may change or may be removed at any time. Do
@@ -462,10 +409,10 @@ and time. General metadata should allow the user to assess the
 <em>overall</em> suitability of the dataset, and must meet the
 requirements listed below.</p>
 <h4 data-label="|General Metadata: Traceability" id="sec:meta.metadata-traceability-st"><!-- edit:requirements/metadata/traceability-st.yaml--><code>1.1.</code>
-General Metadata: Traceability</h4>
+Traceability</h4>
 <p>Identifier: <code>meta.metadata-traceability-st</code></p>
 <h5 id="threshold-requirements">Threshold requirements:</h5>
-<p><em>None</em></p>
+<p>Not required. <!-- *None* --></p>
 <h5 id="goal-requirements">Goal requirements:</h5>
 <p>Data must be traceable to SI reference standard. - <a href="https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6536">Policy
 on measurement traceability</a> - <a href="https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6532">Guidance
@@ -484,7 +431,7 @@ Source Metadata</h3>
 <strong>each</strong> acquisition (source data) used to generate the ARD
 product. This may be one or mutliple acquisitions.</p>
 <h4 data-label="|Source Metadata: Example Requirement" id="sec:src.example"><!-- edit:requirements/example.yaml--><code>2.1.</code>
-Source Metadata: Example Requirement</h4>
+Example Requirement</h4>
 <p>Identifier: <code>src.example</code></p>
 <p>This is an example requirement.</p>
 <h5 id="threshold-requirements-1">Threshold requirements:</h5>
@@ -500,7 +447,7 @@ Product Metadata</h3>
 <p>Information related to the CEOS-ARD product generation procedure and
 geographic parameters.</p>
 <h4 data-label="|Product Metadata: Example Requirement" id="sec:prd.example"><!-- edit:requirements/example.yaml--><code>3.1.</code>
-Product Metadata: Example Requirement</h4>
+Example Requirement</h4>
 <p>Identifier: <code>prd.example</code></p>
 <p>This is an example requirement.</p>
 <h5 id="threshold-requirements-2">Threshold requirements:</h5>
@@ -519,8 +466,9 @@ pixels or separately for each pixel is at the discretion of the data
 provider. Per-pixel metadata should allow users to discriminate between
 (choose) observations on the basis of their individual suitability for
 applications.</p>
+<p><em>Cloud optimized file formats are recommended.</em></p>
 <h4 data-label="|Per-Pixel Metadata: Example Requirement" id="sec:pxl.example"><!-- edit:requirements/example.yaml--><code>4.1.</code>
-Per-Pixel Metadata: Example Requirement</h4>
+Example Requirement</h4>
 <p>Identifier: <code>pxl.example</code></p>
 <p>This is an example requirement.</p>
 <h5 id="threshold-requirements-3">Threshold requirements:</h5>
@@ -539,13 +487,13 @@ the minimum steps necessary to be deemed to have achieved those
 outcomes. Radiometric corrections must lead to a valid measurement of
 surface reflectance.</p>
 <h4 data-label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty" id="sec:rac.measurements-uncertainty-st"><!-- edit:requirements/measurements/uncertainty-st.yaml--><code>5.1.</code>
-Radiometric and Atmospheric Corrections: Measurement Uncertainty</h4>
+Measurement Uncertainty</h4>
 <p>Identifier: <code>rac.measurements-uncertainty-st</code></p>
 <p>Note: In current practice, users determine fitness for purpose based
 on knowledge of the lineage of the data, rather than on a specific
 estimate of measurement uncertainty.</p>
 <h5 id="threshold-requirements-4">Threshold requirements:</h5>
-<p><em>None</em></p>
+<p>Not required. <!-- *None* --></p>
 <h5 id="goal-requirements-4">Goal requirements:</h5>
 <p>Uncertainty, in Kelvin, of the surface temperature measurement for
 each pixel is provided.</p>
@@ -566,7 +514,7 @@ be compared. This section specifies any geometric correction
 requirements that must be met in order for the data to be analysis
 ready.</p>
 <h4 data-label="|Geometric Corrections: Example Requirement" id="sec:gcor.example"><!-- edit:requirements/example.yaml--><code>6.1.</code>
-Geometric Corrections: Example Requirement</h4>
+Example Requirement</h4>
 <p>Identifier: <code>gcor.example</code></p>
 <p>This is an example requirement.</p>
 <h5 id="threshold-requirements-5">Threshold requirements:</h5>
@@ -577,6 +525,64 @@ Geometric Corrections: Example Requirement</h4>
 <ol type="1">
 <li>This is a note.</li>
 </ol>
+<div style="page-break-after: always;"></div>
+<h2 id="introduction">Introduction</h2>
+<p>This section aims to provide background and specific information on
+the processing steps that can be used to achieve analysis ready data for
+a specific and well-developed Product Family Specification. This
+Guidance material does not replace or override the specifications.</p>
+<h3 data-label="|What is CEOS Analysis Ready Data?" id="sec:intro-what-are-ceos-ard-products"><!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->What
+is CEOS Analysis Ready Data?</h3>
+<p>CEOS-ARD are products that have been processed to a minimum set of
+requirements and organized into a form that allows immediate analysis
+with a minimum of additional user effort. In general, these products
+would be resampled onto a common geometric grid (for a given product)
+and would provide baseline data for further interoperability both
+through time and with other datasets.</p>
+<p>CEOS-ARD products are intended to be flexible and accessible products
+suitable for a wide range of users for a wide variety of applications,
+including particularly time series analysis and multi-sensor application
+development. They are also intended to support rapid ingestion and
+exploitation via high-performance computing, cloud computing and other
+future data architectures. They may not be suitable for all purposes and
+are not intended as a <em>replacement</em> for other types of satellite
+products.</p>
+<h3 data-label="|When can a product be called CEOS-ARD?" id="sec:intro-when-is-a-product-ceos-ard"><!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->When
+can a product be called CEOS-ARD?</h3>
+<p>The CEOS-ARD branding is applied to a particular product once:</p>
+<ul>
+<li>that product has been assessed as meeting CEOS-ARD requirements by
+the agency responsible for production and distribution of the product,
+and</li>
+<li>that the assessment has been peer reviewed by the relevant CEOS
+team(s).</li>
+</ul>
+<p>Agencies or other entities considering undertaking an assessment
+process should consult the <a href="https://ceos.org/ard/files/CEOS_ARD_Governance_Framework_18-October-2021.pdf">CEOS-ARD
+Governance Framework</a>.</p>
+<p>A product can continue to use CEOS-ARD branding as long as its
+generation and distribution remain consistent with the peer-reviewed
+assessment.</p>
+<h3 data-label="|What is the difference between Threshold and Goal?" id="sec:intro-difference-threshold-goal"><!-- edit:sections/introduction/difference-threshold-goal.yaml-->What
+is the difference between Threshold and Goal?</h3>
+<p><strong>Threshold</strong> (Minimum) requirements are the
+<strong>minimum</strong> that is needed for the data to be analysis
+ready. This must be practical and accepted by the data producers.</p>
+<p><strong>Goal</strong> (Desired) requirements (previously referred to
+as “Target”) are the ideal; where we would like to be. Some providers
+may already meet these.</p>
+<p>Products that meet all <em>threshold</em> requirements should be
+immediately useful for scientific analysis or decision-making.</p>
+<p>Products that meet <em>goal</em> requirements will reduce the overall
+product uncertainties and enhance broad-scale applications. For example,
+the products may enhance interoperability or provide increased accuracy
+through additional corrections that are not reasonable at the
+<em>threshold</em> level.</p>
+<p>Goal requirements anticipate continuous improvement of methods and
+evolution of community expectations, which are both normal and
+inevitable in a developing field. Over time, <em>goal</em>
+specifications may (and subject to due process) become accepted as
+<em>threshold</em> requirements.</p>
 <div style="page-break-after: always;"></div>
 <h2 id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

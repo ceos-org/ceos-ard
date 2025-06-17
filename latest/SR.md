@@ -39,9 +39,33 @@ nocite: |
 
 &nbsp;
 
+## Document Status
+
+Product Family Specification, Optical, Surface Reflectance
+
+Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
+
+## Document History
+
+Not available yet
+
+## <!-- edit:pfs/SR/authors.yaml -->Contributing Authors
+
+- Adam Lewis, Geoscience Australia, Australia
+- Jonathon Ross, Geoscience Australia, Australia
+- Andreia Siqueira, Geoscience Australia, Australia
+- Darcie Bontje, USGS, USA
+- Steve Labahn, USGS, USA
+- Mary Metzger, USGS, USA
+- Matt Steventon, LSI-VC Secretariat
+
+&#12;
+
+## CEOS Analysis Ready Data Definition
+
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-&nbsp;
+## Description
 
 <!-- edit:pfs/SR/document.yaml -->
 **Product Family Specification:**
@@ -51,30 +75,15 @@ Optical, Surface Reflectance (SR)
 5.1-draft
 
 **Applies to:**
+Data collected by Optical sensors
+
+## Background
+
 Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.
 
 &#12;
 
-## Document History
-
-Not available yet
-
-## <!-- edit:pfs/SR/authors.yaml -->Contributing Authors
-
-- Geoscience Australia, Australia
-  - Adam Lewis
-  - Jonathon Ross
-  - Andreia Siqueira
-- USGS, USA
-  - Darcie Bontje
-  - Steve Labahn
-  - Mary Metzger
-- LSI-VC Secretariat
-  - Matt Steventon
-
-&#12;
-
-## Glossary
+## Definitions and Abbreviations
 
 <!-- edit:glossary/ceos-ard.yaml -->
 CEOS-ARD
@@ -106,46 +115,6 @@ VIS
 
 &#12;
 
-## Introduction
-
-### <!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->What are CEOS Analysis Ready Data (CEOS-ARD) products? {#sec:intro-what-are-ceos-ard-products label="|What are CEOS Analysis Ready Data (CEOS-ARD) products?"}
-
-CEOS-ARD products have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort.
-These products would be resampled onto a common geometric grid (for a given product) and would provide baseline data for further interoperability both through time and with other datasets.
-
-CEOS-ARD are intended to be flexible and accessible products suitable for a wide range of users for a wide variety of applications, particularly time series analysis and multi-sensor application development.
-They are also intended to support rapid ingestion and exploitation via high-performance computing, cloud computing and other future data architectures.
-They may not be suitable for all purposes and are not intended as a _replacement_ for other types of satellite products.
-
-### <!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->When can a product be called CEOS-ARD? {#sec:intro-when-is-a-product-ceos-ard label="|When can a product be called CEOS-ARD?"}
-
-The CEOS-ARD branding is applied to a particular product once:
-
-- that product has been assessed as meeting CEOS-ARD requirements by the agency or other entities responsible for production and distribution of the product, and
-- that the assessment has been peer reviewed by the relevant CEOS team(s).
-
-Agencies or other entities considering undertaking an assessment process should consult the [CEOS-ARD Governance Framework](https://ceos.org/ard/files/CEOS_ARD_Governance_Framework_18-October-2021.pdf) or contact <ard-contact@lists.ceos.org>.
-
-A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
-
-### <!-- edit:sections/introduction/difference-threshold-goal.yaml-->What is the difference between Threshold and Goal? {#sec:intro-difference-threshold-goal label="|What is the difference between Threshold and Goal?"}
-
-**Threshold** (or: minimum) requirements are the **minimum** that is needed for the data to be analysis ready.
-This must be practical and accepted by the data producers.
-
-**Goal** (or: desired) requirements (previously referred to as “Target”) are the ideal; where we would like to be.
-Some providers may already meet these.
-
-Products that meet all _threshold_ requirements should be immediately useful for scientific analysis or decision-making.
-
-Products that meet _goal_ requirements will reduce the overall product uncertainties and enhance broad-scale applications.
-For example, the products may enhance interoperability or provide increased accuracy through additional corrections that are not reasonable at the _threshold_ level.
-
-Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field.
-Over time, _goal_ specifications may (and subject to due process) become accepted as _threshold_ requirements.
-
-&#12;
-
 ## <!-- edit:pfs/SR/requirements.yaml -->Requirements
 
 **WARNING:** The requirement numbers below are not stable and may change or may be removed at any time.
@@ -161,7 +130,7 @@ The collection of pixels referred to must be contiguous in space and time.
 General metadata should allow the user to assess the _overall_ suitability of the dataset, and must meet the requirements listed below.
 
 
-#### <!-- edit:requirements/metadata/traceability.yaml-->`1.1.` General Metadata: Traceability {#sec:meta.metadata-traceability label="|General Metadata: Traceability"}
+#### <!-- edit:requirements/metadata/traceability.yaml-->`1.1.` Traceability {#sec:meta.metadata-traceability label="|General Metadata: Traceability"}
 
 Identifier: `meta.metadata-traceability`
 
@@ -169,7 +138,8 @@ Identifier: `meta.metadata-traceability`
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -187,7 +157,7 @@ These are metadata records describing (detailing) **each** acquisition (source d
 This may be one or mutliple acquisitions.
 
 
-#### <!-- edit:requirements/example.yaml-->`2.1.` Source Metadata: Example Requirement {#sec:src.example label="|Source Metadata: Example Requirement"}
+#### <!-- edit:requirements/example.yaml-->`2.1.` Example Requirement {#sec:src.example label="|Source Metadata: Example Requirement"}
 
 Identifier: `src.example`
 
@@ -212,7 +182,7 @@ Notes:
 Information related to the CEOS-ARD product generation procedure and geographic parameters.
 
 
-#### <!-- edit:requirements/example.yaml-->`3.1.` Product Metadata: Example Requirement {#sec:prd.example label="|Product Metadata: Example Requirement"}
+#### <!-- edit:requirements/example.yaml-->`3.1.` Example Requirement {#sec:prd.example label="|Product Metadata: Example Requirement"}
 
 Identifier: `prd.example`
 
@@ -238,8 +208,10 @@ The following minimum metadata specifications apply to each pixel.
 Whether the metadata are provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
 Per-pixel metadata should allow users to discriminate between (choose) observations on the basis of their individual suitability for applications.
 
+*Cloud optimized file formats are recommended.*
 
-#### <!-- edit:requirements/example.yaml-->`4.1.` Per-Pixel Metadata: Example Requirement {#sec:pxl.example label="|Per-Pixel Metadata: Example Requirement"}
+
+#### <!-- edit:requirements/example.yaml-->`4.1.` Example Requirement {#sec:pxl.example label="|Per-Pixel Metadata: Example Requirement"}
 
 Identifier: `pxl.example`
 
@@ -265,7 +237,7 @@ The following requirements must be met for all pixels in a collection.
 The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement of surface reflectance.
 
 
-#### <!-- edit:requirements/measurements/uncertainty.yaml-->`5.1.` Radiometric and Atmospheric Corrections: Measurement Uncertainty {#sec:rac.measurements-uncertainty label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
+#### <!-- edit:requirements/measurements/uncertainty.yaml-->`5.1.` Measurement Uncertainty {#sec:rac.measurements-uncertainty label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
 
 Identifier: `rac.measurements-uncertainty`
 
@@ -275,7 +247,8 @@ Note: In current practice, users determine fitness for purpose based on knowledg
 ##### Threshold requirements:
 
 
-*None*
+Not required.
+<!-- *None* -->
 
 
 ##### Goal requirements:
@@ -293,7 +266,7 @@ The geometric corrections are steps that are taken to place the measurement accu
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
-#### <!-- edit:requirements/example.yaml-->`6.1.` Geometric Corrections: Example Requirement {#sec:gcor.example label="|Geometric Corrections: Example Requirement"}
+#### <!-- edit:requirements/example.yaml-->`6.1.` Example Requirement {#sec:gcor.example label="|Geometric Corrections: Example Requirement"}
 
 Identifier: `gcor.example`
 
@@ -315,6 +288,50 @@ Notes:
 
 &#12;
 
+
+## Introduction
+
+This section aims to provide background and specific information on the processing steps that can be
+used to achieve analysis ready data for a specific and well-developed Product Family Specification.
+This Guidance material does not replace or override the specifications.
+
+### <!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->What is CEOS Analysis Ready Data? {#sec:intro-what-are-ceos-ard-products label="|What is CEOS Analysis Ready Data?"}
+
+CEOS-ARD are products that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort.
+In general, these products would be resampled onto a common geometric grid (for a given product) and would provide baseline data for further interoperability both through time and with other datasets.
+
+CEOS-ARD products are intended to be flexible and accessible products suitable for a wide range of users for a wide variety of applications, including particularly time series analysis and multi-sensor application development.
+They are also intended to support rapid ingestion and exploitation via high-performance computing, cloud computing and other future data architectures.
+They may not be suitable for all purposes and are not intended as a _replacement_ for other types of satellite products.
+
+### <!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->When can a product be called CEOS-ARD? {#sec:intro-when-is-a-product-ceos-ard label="|When can a product be called CEOS-ARD?"}
+
+The CEOS-ARD branding is applied to a particular product once:
+
+- that product has been assessed as meeting CEOS-ARD requirements by the agency responsible for production and distribution of the product, and
+- that the assessment has been peer reviewed by the relevant CEOS team(s).
+
+Agencies or other entities considering undertaking an assessment process should consult the [CEOS-ARD Governance Framework](https://ceos.org/ard/files/CEOS_ARD_Governance_Framework_18-October-2021.pdf).
+
+A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
+
+### <!-- edit:sections/introduction/difference-threshold-goal.yaml-->What is the difference between Threshold and Goal? {#sec:intro-difference-threshold-goal label="|What is the difference between Threshold and Goal?"}
+
+**Threshold** (Minimum) requirements are the **minimum** that is needed for the data to be analysis ready.
+This must be practical and accepted by the data producers.
+
+**Goal** (Desired) requirements (previously referred to as “Target”) are the ideal; where we would like to be.
+Some providers may already meet these.
+
+Products that meet all _threshold_ requirements should be immediately useful for scientific analysis or decision-making.
+
+Products that meet _goal_ requirements will reduce the overall product uncertainties and enhance broad-scale applications.
+For example, the products may enhance interoperability or provide increased accuracy through additional corrections that are not reasonable at the _threshold_ level.
+
+Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field.
+Over time, _goal_ specifications may (and subject to due process) become accepted as _threshold_ requirements.
+
+&#12;
 
 ## References
 
