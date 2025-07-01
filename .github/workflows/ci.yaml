@@ -111,7 +111,7 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftp.ceos-ard-preview.mohr.ws
+          server: ftp.ceos-ard-preview.moregeo.it
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: documents/
@@ -141,7 +141,7 @@ jobs:
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: pullRequestNumber,
-                body: `${start} A preview for all PFS has been generated and can be accessed here: <https://ceos-ard-preview.mohr.ws/pr-${pullRequestNumber}/>`
+                body: `${start} A preview for all PFS has been generated and can be accessed here: <https://ceos-ard-preview.moregeo.it/pr-${pullRequestNumber}/>`
               });
             } else {
               console.log(`Preview URL comment already added to PR #${pullRequestNumber}`);
