@@ -1,5 +1,6 @@
 ---
-title: CEOS-ARD - ~{ type }~ - ~{ title }~ - Version ~{ version }~
+title: >-
+  CEOS-ARD - ~{ type }~ - ~{ title }~ - Version ~{ version }~
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -78,7 +79,16 @@ Data collected by ~{type}~ sensors
 
 ## Background
 
-~{ applies_to }~
+~( if combined )~
+~(   for key, value in applies_to.items() )~
+### ~{ key }~
+
+~{     value }~
+
+~(   endfor )~
+~( else )~
+~{   applies_to }~
+~( endif )~
 
 &#12;
 
@@ -114,6 +124,10 @@ Instead, use the textual identifier that is provided in brackets directly after 
 #### <!-- edit:~{ requirement.filepath }~-->`~{ i }~.~{ loop.index }~.` ~{ requirement.title }~ {#sec:~{ requirement.uid }~ label="|~{ block.category.title }~: ~{ requirement.title }~"}
 
 Identifier: `~{ requirement.uid }~`
+
+~(     if combined )~
+Applies to: ~{ ", ".join(requirement.applies_to) }~
+~(     endif )~
 
 ~(     if requirement.description | rstrip )~
 
