@@ -16,7 +16,7 @@ threshold:
     - Bits per Sample
     - Byte Order
   notes:
-    - Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
+    - Transformation to the logarithm decibel scale is not required or desired as this step can be easily completed by the user if necessary.
 goal: null
 dependencies:
 glossary:
