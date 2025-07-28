@@ -1172,7 +1172,7 @@ File format specifications/contents provided in metadata:
 
 Notes:
 
-1. Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
+1. Transformation to the logarithm decibel scale is not required or desired as this step can be easily completed by the user if necessary.
 
 
 ##### Goal requirements:
