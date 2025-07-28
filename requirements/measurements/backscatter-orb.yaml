@@ -18,7 +18,10 @@ threshold:
     - Byte Order
   notes:
     - Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
-goal: null
+goal:
+  description: |-
+    Radiometrically Terrain-corrected Sigma-Nought backscatter coefficient ($\sigma^0_T$) is provided for each polarization.
+  notes:
 dependencies:
 glossary:
 references:
