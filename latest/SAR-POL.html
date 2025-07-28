@@ -298,7 +298,69 @@ extension is required in order to better support Level-1 SLC
 polarimetric data, including full-polarimetric modes (e.g., RADARSAT-2,
 ALOS-2/4, SAOCOM-1 and future missions), and hybrid or linear
 dual-polarimetric modes (i.e., Compact Polarimetric mode available on
-RCM, SAOCOM and the upcoming NISAR mission).</p>
+RCM, SAOCOM and the upcoming NISAR mission).The POL product can be
+defined in two processing levels:</p>
+<p>The <strong>normalised covariance matrix (CovMat)</strong>
+representation (C2 or C3) which preserves the inter-channel polarimetric
+phase(s) and maximizes the available information for users.
+Interoperability within current CEOS-ARD SAR backscatter definition is
+preserved, since diagonal elements of the covariance matrix are
+backscatter intensities. Scattering information enhancement can be
+achieved by applying incoherent polarimetric decomposition techniques
+(e.g., Freeman-Durden, van Zyl, Cloude-Pottier, Yamaguchi-based)
+directly on the C2 or C3 matrix.</p>
+<p><strong>Polarimetric Radar Decomposition (PRD)</strong> refers to ARD
+products where polarimetric information is broken down into simplified
+parameters to facilitate user interpretation of the data. They are
+derived from coherent or incoherent polarimetric decomposition
+techniques.</p>
+<h3 id="notice-and-limitations">Notice and Limitations</h3>
+<p>For Polarimetric Radar (POL) products, optimal incoherent
+Polarimetric Radar Decomposition (PRD) should be performed under the
+slant range projection <span class="citation" data-cites="gens2013 toutin2013">(<a href="#ref-gens2013" role="doc-biblioref">Gens, Atwood, and Pottier 2013</a>; <a href="#ref-toutin2013" role="doc-biblioref">Toutin et al.
+2013</a>)</span>. In order to minimise bias in the CEOS-ARD SAR Level-2A
+covariance matrix product, speckle filtering and averaging of the
+covariance matrix should be applied in the slant range projection, and
+geocoding should be performed using nearest-neighbour resampling.
+Specifically, nearest-neighbour resampling ensures that the averaged
+covariance matrix elements in slant range and in geocoded ground
+projection are exactly the same. Consequently, the polarimetrically
+derived parameters are exactly equal in both approaches (assuming that
+no further averaging is performed on the ARD product for decomposing the
+polarimetric information). Bilinear and average resampling methods are
+also suitable for resampling the covariance matrix, but some differences
+with polarimetric parameters generated in slant range and then resampled
+(bilinear) might be observed on sloped terrains. Even if Sinc
+interpolation may be more robust for spatial resampling, it does not
+preserve covariance matrix integrity, and should consequently not be
+used for this ARD product.</p>
+<p>It is recommended that ARD providers who desire to distribute PRD
+products decompose the polarimetric information starting from Level-1
+SLC data and then geocode the derived parameters rather than use the
+CovMat ARD product. Resampling can be performed using any of the
+supported methods (nearest-neighbour, bilinear, average, bi-cubic spline
+or Lanczos are recommended), which need to be indicated in the product
+metadata. Note that coherent decomposition techniques cannot be
+performed on CovMat ARD products.</p>
+<p>Covariance matrix products contain a variable number of layers (or
+bands) with different data types depending on the polarimetric mode
+(full or dual) and decomposition technique. The CovMat products for the
+C2 matrix have 3 layers (2 real-valued diagonal elements and 1
+complex-valued off-diagonal element). CovMat products for the C3 matrix
+have 6 layers (3 real-valued diagonal elements and 3 complex-valued
+off-diagonal elements). Layers that can be obtained via a complex
+conjugation of other layers are not provided within the product.
+Polarimetric Decomposition products contain typically 2 to 4 (or more)
+real-valued layers depending on the particular decomposition algorithm.
+Within the CovMat product files, ARD layers are organized in order to
+reduce access delays and maximize efficiency in extracting the desired
+information. In CovMat products, geographically contiguous samples for
+each layer may be stored next to each other and organized “layer by
+layer”. Alternatively, samples belonging to the same covariance matrix
+might be stored next to each other and organized “matrix by matrix”. PRD
+products are organized “layer by layer”, i.e., with bands corresponding
+to the output of the polarimetric decomposition stored next to each
+other.</p>
 <div style="page-break-after: always;"></div>
 <h2 id="definitions-and-abbreviations">Definitions and
 Abbreviations</h2>
@@ -885,7 +947,7 @@ Product Filtering</h4>
 </ul></li>
 </ul>
 <p>Advanced polarimetric filter preserving covariance matrix properties
-shall be applied.</p>
+should be applied.</p>
 <h5 id="goal-requirements-23">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
@@ -949,6 +1011,22 @@ format (e.g., WKT).<br />
 Indicate EPSG code, if defined for the CRS.</p>
 <h5 id="goal-requirements-28">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
+<hr />
+<h4 data-label="|Product Metadata: Reference Orbit" id="sec:prd.metadata-orbit-reference-nrb-pol"><!-- edit:requirements/metadata/orbit-reference-nrb-pol.yaml--><code>3.12.</code>
+Reference Orbit</h4>
+<p>Identifier: <code>prd.metadata-orbit-reference-nrb-pol</code></p>
+<p><strong>Usage: Only when Flattened phase per-pixel metadata (see
+Section “<a href="#sec:rcm.measurements-flattened-phase">Radiometrically
+Corrected Measurements: Flattened Phase</a>”) is provided.</strong></p>
+<h5 id="threshold-requirements-29">Threshold requirements:</h5>
+<p>Not required. <!-- *None* --></p>
+<h5 id="goal-requirements-29">Goal requirements:</h5>
+<p>Provide the absolute orbit number used as reference for topographic
+phase flattening. In case a virtual orbit has been used, provide orbit
+parameters or orbit state vectors as DOI or URL.</p>
+<p>Provide scene-centred perpendicular baseline for the for the source
+data relative to the reference orbit used (for approximate use
+only).</p>
 <h3 data-label="|Per-Pixel Metadata" id="sec:pxl"><!-- edit:sections/requirement-categories/per-pixel-metadata.yaml--><code>4.</code>
 Per-Pixel Metadata</h3>
 <p>The following minimum metadata specifications apply to each pixel.
@@ -961,11 +1039,11 @@ applications.</p>
 <h4 data-label="|Per-Pixel Metadata: Metadata Machine Readability" id="sec:pxl.metadata-machine-readability"><!-- edit:requirements/metadata/machine-readability.yaml--><code>4.1.</code>
 Metadata Machine Readability</h4>
 <p>Identifier: <code>pxl.metadata-machine-readability</code></p>
-<h5 id="threshold-requirements-29">Threshold requirements:</h5>
+<h5 id="threshold-requirements-30">Threshold requirements:</h5>
 <p>Metadata is provided in a structure that enables a computer algorithm
 to be used to consistently and automatically identify and extract each
 component/variable/layer for further use.</p>
-<h5 id="goal-requirements-29">Goal requirements:</h5>
+<h5 id="goal-requirements-30">Goal requirements:</h5>
 <p>As threshold, but metadata is formatted in accordance with CEOS-ARD
 SAR Metadata Specifications, v.1.1, or in a community endorsed standard
 that facilitates machine-readability, such as ISO 19115-2, Climate and
@@ -975,7 +1053,7 @@ Forecast (CF) convention, the Attribute Convention for Data Discovery
 <h4 data-label="|Per-Pixel Metadata: Data Mask Image" id="sec:pxl.per-pixel-data-mask"><!-- edit:requirements/per-pixel/data-mask.yaml--><code>4.2.</code>
 Data Mask Image</h4>
 <p>Identifier: <code>pxl.per-pixel-data-mask</code></p>
-<h5 id="threshold-requirements-30">Threshold requirements:</h5>
+<h5 id="threshold-requirements-31">Threshold requirements:</h5>
 <p>Mask image indicating:</p>
 <ul>
 <li>Valid data</li>
@@ -991,7 +1069,7 @@ Data Mask Image</h4>
 <li>Byte Order</li>
 <li>Bit Value Representation</li>
 </ul>
-<h5 id="goal-requirements-30">Goal requirements:</h5>
+<h5 id="goal-requirements-31">Goal requirements:</h5>
 <p>As threshold, including additional bit value representations,
 e.g.:</p>
 <ul>
@@ -1009,9 +1087,9 @@ Scattering Area Image</h4>
 <p>Identifier: <code>pxl.per-pixel-scattering-area</code></p>
 <p><strong>Usage: Recommended for scenes that include land
 areas.</strong></p>
-<h5 id="threshold-requirements-31">Threshold requirements:</h5>
+<h5 id="threshold-requirements-32">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-31">Goal requirements:</h5>
+<h5 id="goal-requirements-32">Goal requirements:</h5>
 <p>DEM-based scattering area image used for Gamma-Nought terrain
 normalisation is provided. This quantifies the local scattering area
 used to normalise for radiometric distortions induced by terrain to the
@@ -1034,7 +1112,7 @@ divided by the local scattering area.</p>
 <h4 data-label="|Per-Pixel Metadata: Local Incident Angle Image" id="sec:pxl.per-pixel-local-incident-angle"><!-- edit:requirements/per-pixel/local-incident-angle.yaml--><code>4.4.</code>
 Local Incident Angle Image</h4>
 <p>Identifier: <code>pxl.per-pixel-local-incident-angle</code></p>
-<h5 id="threshold-requirements-32">Threshold requirements:</h5>
+<h5 id="threshold-requirements-33">Threshold requirements:</h5>
 <p>DEM-based Local Incident angle image is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
@@ -1050,15 +1128,15 @@ Local Incident Angle Image</h4>
 model could be used for the calculation of the local incident
 angle.</li>
 </ol>
-<h5 id="goal-requirements-32">Goal requirements:</h5>
+<h5 id="goal-requirements-33">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
 <h4 data-label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image" id="sec:pxl.per-pixel-ellipsoidal-incident-angle"><!-- edit:requirements/per-pixel/ellipsoidal-incident-angle.yaml--><code>4.5.</code>
 Ellipsoidal Incident Angle Image</h4>
 <p>Identifier: <code>pxl.per-pixel-ellipsoidal-incident-angle</code></p>
-<h5 id="threshold-requirements-33">Threshold requirements:</h5>
+<h5 id="threshold-requirements-34">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-33">Goal requirements:</h5>
+<h5 id="goal-requirements-34">Goal requirements:</h5>
 <p>Ellipsoidal incident angle is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
@@ -1079,9 +1157,9 @@ incident angle.</li>
 <h4 data-label="|Per-Pixel Metadata: Noise Power Image" id="sec:pxl.per-pixel-noise-power"><!-- edit:requirements/per-pixel/noise-power.yaml--><code>4.6.</code>
 Noise Power Image</h4>
 <p>Identifier: <code>pxl.per-pixel-noise-power</code></p>
-<h5 id="threshold-requirements-34">Threshold requirements:</h5>
+<h5 id="threshold-requirements-35">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-34">Goal requirements:</h5>
+<h5 id="goal-requirements-35">Goal requirements:</h5>
 <p>Estimated Noise Equivalent
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>0</mn></msup><annotation encoding="application/x-tex">\sigma^0</annotation></semantics></math>
 (or
@@ -1105,9 +1183,9 @@ are both based on a simplified ellipsoid Earth model.</p>
 <h4 data-label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image" id="sec:pxl.per-pixel-gamma-sigma-ratio"><!-- edit:requirements/per-pixel/gamma-sigma-ratio.yaml--><code>4.7.</code>
 Gamma-to-Sigma Ratio Image</h4>
 <p>Identifier: <code>pxl.per-pixel-gamma-sigma-ratio</code></p>
-<h5 id="threshold-requirements-35">Threshold requirements:</h5>
+<h5 id="threshold-requirements-36">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-35">Goal requirements:</h5>
+<h5 id="goal-requirements-36">Goal requirements:</h5>
 <p>Ratio of the integrated area in the Gamma projection over the
 integrated area in the Sigma projection (ground). Multiplying RTC
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><annotation encoding="application/x-tex">\gamma^0_T</annotation></semantics></math>
@@ -1125,7 +1203,7 @@ by this ratio results in an estimate of RTC
 <h4 data-label="|Per-Pixel Metadata: Acquisition ID Image" id="sec:pxl.per-pixel-acquisition-id"><!-- edit:requirements/per-pixel/acquisition-id.yaml--><code>4.8.</code>
 Acquisition ID Image</h4>
 <p>Identifier: <code>pxl.per-pixel-acquisition-id</code></p>
-<h5 id="threshold-requirements-36">Threshold requirements:</h5>
+<h5 id="threshold-requirements-37">Threshold requirements:</h5>
 <p><strong>Required for multi-source product only.</strong></p>
 <p>Acquisition ID, or acquisition date, for each pixel is
 identified.</p>
@@ -1146,16 +1224,16 @@ in the metadata.</p>
 <li>Bits per sample</li>
 <li>Byte Order</li>
 </ul>
-<h5 id="goal-requirements-36">Goal requirements:</h5>
+<h5 id="goal-requirements-37">Goal requirements:</h5>
 <p>In case of image composites, the sources for each pixel are uniquely
 identified.</p>
 <hr />
 <h4 data-label="|Per-Pixel Metadata: Per-Pixel DEM" id="sec:pxl.per-pixel-dem"><!-- edit:requirements/per-pixel/dem.yaml--><code>4.9.</code>
 Per-Pixel DEM</h4>
 <p>Identifier: <code>pxl.per-pixel-dem</code></p>
-<h5 id="threshold-requirements-37">Threshold requirements:</h5>
+<h5 id="threshold-requirements-38">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-37">Goal requirements:</h5>
+<h5 id="goal-requirements-38">Goal requirements:</h5>
 <p>Provide DEM or DSM as used during the geometric and radiometric
 processing of the SAR data, resampled to an exact geometric match in
 extent and resolution with the CEOS-ARD SAR image product.</p>
@@ -1182,7 +1260,7 @@ collection.</p>
 <h4 data-label="|Radiometrically Corrected Measurements: Backscatter Measurements (POL)" id="sec:rcm.measurements-backscatter-pol"><!-- edit:requirements/measurements/backscatter-pol.yaml--><code>5.1.</code>
 Backscatter Measurements (POL)</h4>
 <p>Identifier: <code>rcm.measurements-backscatter-pol</code></p>
-<h5 id="threshold-requirements-38">Threshold requirements:</h5>
+<h5 id="threshold-requirements-39">Threshold requirements:</h5>
 <p>Measurements can be one of the following types or both:</p>
 <ul>
 <li><strong>Normalised Radar Covariance Matrix (CovMat)</strong>
@@ -1205,7 +1283,7 @@ angle)</li>
 <li>Individual covariance matrix element or/and Individual component of
 the decomposition (C3m11, C3m12, … or H, A, alpha, or …)</li>
 <li>Data Format (GeoTIFF, HDF5, NetCDF, …)</li>
-<li>Data Type (Int, Float, …)</li>
+<li>Data Type (Int, Float, Complex, …)</li>
 <li>Bits per Sample</li>
 <li>Byte Order</li>
 </ul>
@@ -1214,24 +1292,24 @@ the decomposition (C3m11, C3m12, … or H, A, alpha, or …)</li>
 <li>It is recommended to keep CovMat or PRD measurement files separated.
 Otherwise, specify the multi-channel format order (BIP, BIL, BSQ).</li>
 </ol>
-<h5 id="goal-requirements-38">Goal requirements:</h5>
+<h5 id="goal-requirements-39">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
 <h4 data-label="|Radiometrically Corrected Measurements: Scaling Conversion" id="sec:rcm.metadata-scaling-conversion"><!-- edit:requirements/metadata/scaling-conversion.yaml--><code>5.2.</code>
 Scaling Conversion</h4>
 <p>Identifier: <code>rcm.metadata-scaling-conversion</code></p>
-<h5 id="threshold-requirements-39">Threshold requirements:</h5>
+<h5 id="threshold-requirements-40">Threshold requirements:</h5>
 <p>If applicable, indicate the equation to convert pixel linear
 amplitude/power to logarithmic decibel scale, including, if applicable,
 the associated calibration (dB offset) factor, and/or the equation used
 to convert compressed data (int8/int16/float16) to float32.</p>
-<h5 id="goal-requirements-39">Goal requirements:</h5>
+<h5 id="goal-requirements-40">Goal requirements:</h5>
 <p>As threshold, but use of float32.</p>
 <hr />
 <h4 data-label="|Radiometrically Corrected Measurements: Noise Removal" id="sec:rcm.metadata-noise-removal"><!-- edit:requirements/metadata/noise-removal.yaml--><code>5.3.</code>
 Noise Removal</h4>
 <p>Identifier: <code>rcm.metadata-noise-removal</code></p>
-<h5 id="threshold-requirements-40">Threshold requirements:</h5>
+<h5 id="threshold-requirements-41">Threshold requirements:</h5>
 <p>Flag if noise removal has been applied (Y/N). Metadata should include
 the noise removal algorithm and reference to the algorithm as URL or
 DOI.</p>
@@ -1240,14 +1318,14 @@ DOI.</p>
 <li>Thermal noise removal and image border noise removal to remove
 overall scene noise and scene edge artefacts, respectively.</li>
 </ol>
-<h5 id="goal-requirements-40">Goal requirements:</h5>
+<h5 id="goal-requirements-41">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
 <h4 data-label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm" id="sec:rcm.corrections-radiometric-terrain-correction"><!-- edit:requirements/corrections/radiometric-terrain-correction.yaml--><code>5.4.</code>
 Radiometric Terrain Correction Algorithm</h4>
 <p>Identifier:
 <code>rcm.corrections-radiometric-terrain-correction</code></p>
-<h5 id="threshold-requirements-41">Threshold requirements:</h5>
+<h5 id="threshold-requirements-42">Threshold requirements:</h5>
 <p>Adjustments were made for terrain by modelling the local contributing
 scattering area using the preferred choice of a published peer-reviewed
 algorithm to produce radiometrically terrain corrected (RTC)
@@ -1265,15 +1343,15 @@ backscatter estimates is expressed as URLs or DOIs</li>
 <li>Examples of technical documentation include an Algorithm,
 Theoretical Basis Document, product user guide, etc.</li>
 </ol>
-<h5 id="goal-requirements-41">Goal requirements:</h5>
+<h5 id="goal-requirements-42">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
 <h4 data-label="|Radiometrically Corrected Measurements: Radiometric Accuracy" id="sec:rcm.metadata-radiometric-accuracy"><!-- edit:requirements/metadata/radiometric-accuracy.yaml--><code>5.5.</code>
 Radiometric Accuracy</h4>
 <p>Identifier: <code>rcm.metadata-radiometric-accuracy</code></p>
-<h5 id="threshold-requirements-42">Threshold requirements:</h5>
+<h5 id="threshold-requirements-43">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-42">Goal requirements:</h5>
+<h5 id="goal-requirements-43">Goal requirements:</h5>
 <p>Uncertainty (e.g., bounds on
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>γ</mi><mn>0</mn></msup><annotation encoding="application/x-tex">\gamma^0</annotation></semantics></math>
 or
@@ -1286,9 +1364,9 @@ Flattened Phase</h4>
 <p>Identifier: <code>rcm.measurements-flattened-phase</code></p>
 <p><strong>Usage: Alternative to GSLC product for NRB and POL
 products</strong></p>
-<h5 id="threshold-requirements-43">Threshold requirements:</h5>
+<h5 id="threshold-requirements-44">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-43">Goal requirements:</h5>
+<h5 id="goal-requirements-44">Goal requirements:</h5>
 <p>The Flattened Phase is the interferometric phase for which the
 topographic phase contribution is removed. It is derived from the
 range-Doppler SLC product using a DEM and the orbital state vectors with
@@ -1322,9 +1400,9 @@ ready.</p>
 Geometric Correction Algorithm</h4>
 <p>Identifier:
 <code>gcor.metadata-geometric-correction-algorithm</code></p>
-<h5 id="threshold-requirements-44">Threshold requirements:</h5>
+<h5 id="threshold-requirements-45">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-44">Goal requirements:</h5>
+<h5 id="goal-requirements-45">Goal requirements:</h5>
 <p>Metadata references, e.g.:</p>
 <ul>
 <li>A metadata citable peer-reviewed algorithm</li>
@@ -1344,7 +1422,7 @@ Theoretical Basis Document (ATBD) or a product user guide.</li>
 Digital Elevation Model</h4>
 <p>Identifier: <code>gcor.corrections-dem</code></p>
 <p><strong>Usage: For products including land areas.</strong></p>
-<h5 id="threshold-requirements-45">Threshold requirements:</h5>
+<h5 id="threshold-requirements-46">Threshold requirements:</h5>
 <ul>
 <li>During ortho-rectification, the data provider shall use the same DEM
 that was used for the radiometric terrain flattening to ensure
@@ -1354,7 +1432,7 @@ terrain correction.</li>
 <li>Provide reference to Earth Gravitational Model (EGM) used for
 geometric correction.</li>
 </ul>
-<h5 id="goal-requirements-45">Goal requirements:</h5>
+<h5 id="goal-requirements-46">Goal requirements:</h5>
 <ul>
 <li>A DEM with comparable or better resolution to the resolution of the
 output CEOS-ARD product shall be used if available. Else, the upsampled
@@ -1367,7 +1445,7 @@ DEM is identified.</li>
 Geometric Accuracy</h4>
 <p>Identifier:
 <code>gcor.corrections-geometric-accuracy-radar</code></p>
-<h5 id="threshold-requirements-46">Threshold requirements:</h5>
+<h5 id="threshold-requirements-47">Threshold requirements:</h5>
 <p>Accurate geolocation is a prerequisite to radar processing to correct
 for terrain and to enable interoperability between radar sensors.</p>
 <p>The absolute geolocation error (ALE) for a sensor is typically
@@ -1393,7 +1471,7 @@ used.</li>
 through an ALE assessment by the data processing team characterizing all
 or (usually a subset) of the generated products.</li>
 </ol>
-<h5 id="goal-requirements-46">Goal requirements:</h5>
+<h5 id="goal-requirements-47">Goal requirements:</h5>
 <p>Output product sub-sample accuracy should be less than or equal to
 0.1 (slant range) pixel radial root mean square error (rRMSE).</p>
 <p>Provide documentation of estimates of ALE as DOI or URL.</p>
@@ -1402,9 +1480,9 @@ or (usually a subset) of the generated products.</li>
 Geometric Refined Accuracy</h4>
 <p>Identifier:
 <code>gcor.corrections-geometric-refined-accuracy</code></p>
-<h5 id="threshold-requirements-47">Threshold requirements:</h5>
+<h5 id="threshold-requirements-48">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-47">Goal requirements:</h5>
+<h5 id="goal-requirements-48">Goal requirements:</h5>
 <p>Values provided under Section “<a href="#sec:gcor.corrections-geometric-accuracy-radar">Geometric
 Corrections: Geometric Accuracy</a>” are provided by the SAR mission
 Cal/Val team.</p>
@@ -1417,7 +1495,7 @@ standard deviation values should be provided.</p>
 <h4 data-label="|Geometric Corrections: Gridding Convention" id="sec:gcor.corrections-gridding-convention"><!-- edit:requirements/corrections/gridding-convention.yaml--><code>6.5.</code>
 Gridding Convention</h4>
 <p>Identifier: <code>gcor.corrections-gridding-convention</code></p>
-<h5 id="threshold-requirements-48">Threshold requirements:</h5>
+<h5 id="threshold-requirements-49">Threshold requirements:</h5>
 <p>A consistent gridding/sampling frame is used. The origin is chosen to
 minimise any need for subsequent resampling between multiple products
 (be they from the same or different providers). This is typically
@@ -1429,7 +1507,7 @@ tile in a global system.</p>
 multiple resolutions should nest within each other (e.g., 12.5m, 25m,
 50m, 100m, etc.), and not be disjoint.</li>
 </ol>
-<h5 id="goal-requirements-48">Goal requirements:</h5>
+<h5 id="goal-requirements-49">Goal requirements:</h5>
 <p>Provide DOI or URL to gridding convention used.</p>
 <p>When multiple providers share a common map projection, providers are
 encouraged to standardise the origins of their products among each
@@ -1499,72 +1577,6 @@ evolution of community expectations, which are both normal and
 inevitable in a developing field. Over time, <em>goal</em>
 specifications may (and subject to due process) become accepted as
 <em>threshold</em> requirements.</p>
-<h3 data-label="|Which processing levels are defined in the CEOS-ARD Polarimetric Radar PFS?" id="sec:intro-sar-pol-processing-levels"><!-- edit:sections/introduction/sar-pol-processing-levels.yaml-->Which
-processing levels are defined in the CEOS-ARD Polarimetric Radar
-PFS?</h3>
-<p>The POL product can be defined in two processing levels:</p>
-<p>The <strong>normalised covariance matrix (CovMat)</strong>
-representation (C2 or C3) which preserves the inter-channel polarimetric
-phase(s) and maximizes the available information for users.
-Interoperability within current CEOS-ARD SAR backscatter definition is
-preserved, since diagonal elements of the covariance matrix are
-backscatter intensities. Scattering information enhancement can be
-achieved by applying incoherent polarimetric decomposition techniques
-(e.g., Freeman-Durden, van Zyl, Cloude-Pottier, Yamaguchi-based)
-directly on the C2 or C3 matrix.</p>
-<p><strong>Polarimetric Radar Decomposition (PRD)</strong> refers to ARD
-products where polarimetric information is broken down into simplified
-parameters to facilitate user interpretation of the data. They are
-derived from coherent or incoherent polarimetric decomposition
-techniques.</p>
-<h3 data-label="|Which limitations apply to CEOS-ARD Polarimetric Radar?" id="sec:intro-sar-pol-limitations"><!-- edit:sections/introduction/sar-pol-limitations.yaml-->Which
-limitations apply to CEOS-ARD Polarimetric Radar?</h3>
-<p>For Polarimetric Radar (POL) products, optimal incoherent
-Polarimetric Radar Decomposition (PRD) should be performed under the
-slant range projection <span class="citation" data-cites="gens2013 toutin2013">(<a href="#ref-gens2013" role="doc-biblioref">Gens, Atwood, and Pottier 2013</a>; <a href="#ref-toutin2013" role="doc-biblioref">Toutin et al.
-2013</a>)</span>. In order to minimise bias in the CEOS-ARD SAR Level-2A
-covariance matrix product, speckle filtering and averaging of the
-covariance matrix should be applied in the slant range projection, and
-geocoding should be performed using nearest-neighbour resampling.
-Specifically, nearest-neighbour resampling ensures that the averaged
-covariance matrix elements in slant range and in geocoded ground
-projection are exactly the same. Consequently, the polarimetrically
-derived parameters are exactly equal in both approaches (assuming that
-no further averaging is performed on the ARD product for decomposing the
-polarimetric information). Bilinear and average resampling methods are
-also suitable for resampling the covariance matrix, but some differences
-with polarimetric parameters generated in slant range and then resampled
-(bilinear) might be observed on sloped terrains. Even if Sinc
-interpolation may be more robust for spatial resampling, it does not
-preserve covariance matrix integrity, and should consequently not be
-used for this ARD product.</p>
-<p>It is recommended that ARD providers who desire to distribute PRD
-products decompose the polarimetric information starting from Level-1
-SLC data and then geocode the derived parameters rather than use the
-CovMat ARD product. Resampling can be performed using any of the
-supported methods (nearest-neighbour, bilinear, average, bi-cubic spline
-or Lanczos are recommended), which need to be indicated in the product
-metadata. Note that coherent decomposition techniques cannot be
-performed on CovMat ARD products.</p>
-<p>Covariance matrix products contain a variable number of layers (or
-bands) with different data types depending on the polarimetric mode
-(full or dual) and decomposition technique. The CovMat products for the
-C2 matrix have 3 layers (2 real-valued diagonal elements and 1
-complex-valued off-diagonal element). CovMat products for the C3 matrix
-have 6 layers (3 real-valued diagonal elements and 3 complex-valued
-off-diagonal elements). Layers that can be obtained via a complex
-conjugation of other layers are not provided within the product.
-Polarimetric Decomposition products contain typically 2 to 4 (or more)
-real-valued layers depending on the particular decomposition algorithm.
-Within the CovMat product files, ARD layers are organized in order to
-reduce access delays and maximize efficiency in extracting the desired
-information. In CovMat products, geographically contiguous samples for
-each layer may be stored next to each other and organized “layer by
-layer”. Alternatively, samples belonging to the same covariance matrix
-might be stored next to each other and organized “matrix by matrix”. PRD
-products are organized “layer by layer”, i.e., with bands corresponding
-to the output of the polarimetric decomposition stored next to each
-other.</p>
 <div style="page-break-after: always;"></div>
 <h2 id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">

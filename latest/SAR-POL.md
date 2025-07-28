@@ -103,7 +103,37 @@ Data collected by Synthetic Aperture Radar sensors
 This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
 The CEOS-ARD Polarimetric Radar (POL) product format is an extension of the CEOS-ARD Normalised Radar Backscatter (NRB) format.
-This extension is required in order to better support Level-1 SLC polarimetric data, including full-polarimetric modes (e.g., RADARSAT-2, ALOS-2/4, SAOCOM-1 and future missions), and hybrid or linear dual-polarimetric modes (i.e., Compact Polarimetric mode available on RCM, SAOCOM and the upcoming NISAR mission).
+This extension is required in order to better support Level-1 SLC polarimetric data, including full-polarimetric modes (e.g., RADARSAT-2, ALOS-2/4, SAOCOM-1 and future missions), and hybrid or linear dual-polarimetric modes (i.e., Compact Polarimetric mode available on RCM, SAOCOM and the upcoming NISAR mission).The POL product can be defined in two processing levels:
+
+The **normalised covariance matrix (CovMat)** representation (C2 or C3) which preserves the inter-channel polarimetric phase(s) and maximizes the available information for users.
+Interoperability within current CEOS-ARD SAR backscatter definition is preserved, since diagonal elements of the covariance matrix are backscatter intensities.
+Scattering information enhancement can be achieved by applying incoherent polarimetric decomposition techniques (e.g., Freeman-Durden, van Zyl, Cloude-Pottier, Yamaguchi-based) directly on the C2 or C3 matrix.
+
+**Polarimetric Radar Decomposition (PRD)** refers to ARD products where polarimetric information is broken down into simplified parameters to facilitate user interpretation of the data.
+They are derived from coherent or incoherent polarimetric decomposition techniques.
+
+### Notice and Limitations
+
+For Polarimetric Radar (POL) products, optimal incoherent Polarimetric Radar Decomposition (PRD) should be performed under the slant range projection [@gens2013; @toutin2013].
+In order to minimise bias in the CEOS-ARD SAR Level-2A covariance matrix product, speckle filtering and averaging of the covariance matrix should be applied in the slant range projection, and geocoding should be performed using nearest-neighbour resampling.
+Specifically, nearest-neighbour resampling ensures that the averaged covariance matrix elements in slant range and in geocoded ground projection are exactly the same.
+Consequently, the polarimetrically derived parameters are exactly equal in both approaches (assuming that no further averaging is performed on the ARD product for decomposing the polarimetric information).
+Bilinear and average resampling methods are also suitable for resampling the covariance matrix, but some differences with polarimetric parameters generated in slant range and then resampled (bilinear) might be observed on sloped terrains.
+Even if Sinc interpolation may be more robust for spatial resampling, it does not preserve covariance matrix integrity, and should consequently not be used for this ARD product.
+
+It is recommended that ARD providers who desire to distribute PRD products decompose the polarimetric information starting from Level-1 SLC data and then geocode the derived parameters rather than use the CovMat ARD product.
+Resampling can be performed using any of the supported methods (nearest-neighbour, bilinear, average, bi-cubic spline or Lanczos are recommended), which need to be indicated in the product metadata.
+Note that coherent decomposition techniques cannot be performed on CovMat ARD products.
+
+Covariance matrix products contain a variable number of layers (or bands) with different data types depending on the polarimetric mode (full or dual) and decomposition technique.
+The CovMat products for the C2 matrix have 3 layers (2 real-valued diagonal elements and 1 complex-valued off-diagonal element).
+CovMat products for the C3 matrix have 6 layers (3 real-valued diagonal elements and 3 complex-valued off-diagonal elements).
+Layers that can be obtained via a complex conjugation of other layers are not provided within the product.
+Polarimetric Decomposition products contain typically 2 to 4 (or more) real-valued layers depending on the particular decomposition algorithm.
+Within the CovMat product files, ARD layers are organized in order to reduce access delays and maximize efficiency in extracting the desired information.
+In CovMat products, geographically contiguous samples for each layer may be stored next to each other and organized “layer by layer”.
+Alternatively, samples belonging to the same covariance matrix might be stored next to each other and organized “matrix by matrix”.
+PRD products are organized “layer by layer”, i.e., with bands corresponding to the output of the polarimetric decomposition stored next to each other.
 
 &#12;
 
@@ -741,7 +771,7 @@ Metadata should include:
   - Window size in pixel units
   - Any other parameters defining the speckle filter used
 
-Advanced polarimetric filter preserving covariance matrix properties shall be applied.
+Advanced polarimetric filter preserving covariance matrix properties should be applied.
 
 
 ##### Goal requirements:
@@ -851,6 +881,29 @@ Indicate EPSG code, if defined for the CRS.
 
 As threshold.
 <!-- *None* -->
+
+---
+
+#### <!-- edit:requirements/metadata/orbit-reference-nrb-pol.yaml-->`3.12.` Reference Orbit {#sec:prd.metadata-orbit-reference-nrb-pol label="|Product Metadata: Reference Orbit"}
+
+Identifier: `prd.metadata-orbit-reference-nrb-pol`
+
+
+**Usage: Only when Flattened phase per-pixel metadata (see [@sec:rcm.measurements-flattened-phase]) is provided.**
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Provide the absolute orbit number used as reference for topographic phase flattening.
+In case a virtual orbit has been used, provide orbit parameters or orbit state vectors as DOI or URL.
+
+Provide scene-centred perpendicular baseline for the for the source data relative to the reference orbit used (for approximate use only).
 
 ### <!-- edit:sections/requirement-categories/per-pixel-metadata.yaml-->`4.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
@@ -1147,7 +1200,7 @@ File format specifications/contents provided in metadata:
 - Measurement convention unit (linear amplitude, linear power, angle)
 - Individual covariance matrix element or/and Individual component of the decomposition (C3m11, C3m12, … or H, A, alpha, or …)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
+- Data Type (Int, Float, Complex, …)
 - Bits per Sample
 - Byte Order
 
@@ -1464,40 +1517,6 @@ For example, the products may enhance interoperability or provide increased accu
 
 Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field.
 Over time, _goal_ specifications may (and subject to due process) become accepted as _threshold_ requirements.
-
-### <!-- edit:sections/introduction/sar-pol-processing-levels.yaml-->Which processing levels are defined in the CEOS-ARD Polarimetric Radar PFS? {#sec:intro-sar-pol-processing-levels label="|Which processing levels are defined in the CEOS-ARD Polarimetric Radar PFS?"}
-
-The POL product can be defined in two processing levels:
-
-The **normalised covariance matrix (CovMat)** representation (C2 or C3) which preserves the inter-channel polarimetric phase(s) and maximizes the available information for users.
-Interoperability within current CEOS-ARD SAR backscatter definition is preserved, since diagonal elements of the covariance matrix are backscatter intensities.
-Scattering information enhancement can be achieved by applying incoherent polarimetric decomposition techniques (e.g., Freeman-Durden, van Zyl, Cloude-Pottier, Yamaguchi-based) directly on the C2 or C3 matrix.
-
-**Polarimetric Radar Decomposition (PRD)** refers to ARD products where polarimetric information is broken down into simplified parameters to facilitate user interpretation of the data.
-They are derived from coherent or incoherent polarimetric decomposition techniques.
-
-### <!-- edit:sections/introduction/sar-pol-limitations.yaml-->Which limitations apply to CEOS-ARD Polarimetric Radar? {#sec:intro-sar-pol-limitations label="|Which limitations apply to CEOS-ARD Polarimetric Radar?"}
-
-For Polarimetric Radar (POL) products, optimal incoherent Polarimetric Radar Decomposition (PRD) should be performed under the slant range projection [@gens2013; @toutin2013].
-In order to minimise bias in the CEOS-ARD SAR Level-2A covariance matrix product, speckle filtering and averaging of the covariance matrix should be applied in the slant range projection, and geocoding should be performed using nearest-neighbour resampling.
-Specifically, nearest-neighbour resampling ensures that the averaged covariance matrix elements in slant range and in geocoded ground projection are exactly the same.
-Consequently, the polarimetrically derived parameters are exactly equal in both approaches (assuming that no further averaging is performed on the ARD product for decomposing the polarimetric information).
-Bilinear and average resampling methods are also suitable for resampling the covariance matrix, but some differences with polarimetric parameters generated in slant range and then resampled (bilinear) might be observed on sloped terrains.
-Even if Sinc interpolation may be more robust for spatial resampling, it does not preserve covariance matrix integrity, and should consequently not be used for this ARD product.
-
-It is recommended that ARD providers who desire to distribute PRD products decompose the polarimetric information starting from Level-1 SLC data and then geocode the derived parameters rather than use the CovMat ARD product.
-Resampling can be performed using any of the supported methods (nearest-neighbour, bilinear, average, bi-cubic spline or Lanczos are recommended), which need to be indicated in the product metadata.
-Note that coherent decomposition techniques cannot be performed on CovMat ARD products.
-
-Covariance matrix products contain a variable number of layers (or bands) with different data types depending on the polarimetric mode (full or dual) and decomposition technique.
-The CovMat products for the C2 matrix have 3 layers (2 real-valued diagonal elements and 1 complex-valued off-diagonal element).
-CovMat products for the C3 matrix have 6 layers (3 real-valued diagonal elements and 3 complex-valued off-diagonal elements).
-Layers that can be obtained via a complex conjugation of other layers are not provided within the product.
-Polarimetric Decomposition products contain typically 2 to 4 (or more) real-valued layers depending on the particular decomposition algorithm.
-Within the CovMat product files, ARD layers are organized in order to reduce access delays and maximize efficiency in extracting the desired information.
-In CovMat products, geographically contiguous samples for each layer may be stored next to each other and organized “layer by layer”.
-Alternatively, samples belonging to the same covariance matrix might be stored next to each other and organized “matrix by matrix”.
-PRD products are organized “layer by layer”, i.e., with bands corresponding to the output of the polarimetric decomposition stored next to each other.
 
 &#12;
 
