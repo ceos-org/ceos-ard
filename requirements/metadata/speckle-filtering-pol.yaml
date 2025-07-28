@@ -4,6 +4,7 @@ description:
 threshold:
   # todo: The "(True/False)" is implementation (and metadata language) specific, should not be listed here.
   # See also ionosphere-indicator.yaml
+  # todo: The "should" in the last sentence is not a requirement, it is a recommendation, but it's listed as threshold requirement.
   description: |-
     Flag if speckle filter has been applied (True/False).
     
@@ -15,7 +16,7 @@ threshold:
       - Window size in pixel units
       - Any other parameters defining the speckle filter used
 
-    Advanced polarimetric filter preserving covariance matrix properties shall be applied.
+    Advanced polarimetric filter preserving covariance matrix properties should be applied.
   notes:
 goal: null
 dependencies:

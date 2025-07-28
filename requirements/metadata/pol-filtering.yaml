@@ -1,8 +1,9 @@
 title: Polarimetric Filtering
 description: 
 threshold:
+  # todo: The "should" in the last sentence is not a requirement, it is a recommendation, but it's listed as threshold requirement.
   description: |-
-    Advanced polarimetric filter preserving covariance matrix properties shall be applied.
+    Advanced polarimetric filter preserving covariance matrix properties should be applied.
   notes:
 goal: null
 dependencies:

@@ -16,7 +16,7 @@ threshold:
     - Measurement convention unit (linear amplitude, linear power, angle)
     - Individual covariance matrix element or/and Individual component of the decomposition (C3m11, C3m12, … or H, A, alpha, or …)
     - Data Format (GeoTIFF, HDF5, NetCDF, …)
-    - Data Type (Int, Float, …)
+    - Data Type (Int, Float, Complex, …)
     - Bits per Sample
     - Byte Order
   notes:

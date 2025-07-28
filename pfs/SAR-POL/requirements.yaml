@@ -36,6 +36,7 @@
     - metadata/image-size
     - metadata/pixel-coordinate-convention
     - metadata/crs
+    - metadata/orbit-reference-nrb-pol
 - category: per-pixel-metadata
   requirements:
     # - cloud-optimized-formats
