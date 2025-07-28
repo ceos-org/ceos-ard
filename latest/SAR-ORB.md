@@ -1178,9 +1178,7 @@ Notes:
 
 ##### Goal requirements:
 
-
-As threshold.
-<!-- *None* -->
+Radiometrically Terrain-corrected Sigma-Nought backscatter coefficient ($\sigma^0_T$) is provided for each polarization.
 
 ---
 
