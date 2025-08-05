@@ -1,5 +1,6 @@
 ---
-title: CEOS-ARD - Optical - Surface Temperature - Version 5.1-draft
+title: >-
+  CEOS-ARD - Optical - Surface Temperature - Version 5.1-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -139,6 +140,7 @@ General metadata should allow the user to assess the _overall_ suitability of th
 Identifier: `meta.metadata-traceability-st`
 
 
+
 ##### Threshold requirements:
 
 
@@ -167,6 +169,7 @@ This may be one or mutliple acquisitions.
 Identifier: `src.example`
 
 
+
 This is an example requirement.
 
 ##### Threshold requirements:
@@ -190,6 +193,7 @@ Information related to the CEOS-ARD product generation procedure and geographic 
 #### <!-- edit:requirements/example.yaml-->`3.1.` Example Requirement {#sec:prd.example label="|Product Metadata: Example Requirement"}
 
 Identifier: `prd.example`
+
 
 
 This is an example requirement.
@@ -221,6 +225,7 @@ Per-pixel metadata should allow users to discriminate between (choose) observati
 Identifier: `pxl.example`
 
 
+
 This is an example requirement.
 
 ##### Threshold requirements:
@@ -245,6 +250,7 @@ The requirements indicate both the necessary outcomes and the minimum steps nece
 #### <!-- edit:requirements/measurements/uncertainty-st.yaml-->`5.1.` Measurement Uncertainty {#sec:rac.measurements-uncertainty-st label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
 
 Identifier: `rac.measurements-uncertainty-st`
+
 
 
 Note: In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
@@ -273,6 +279,7 @@ This section specifies any geometric correction requirements that must be met in
 #### <!-- edit:requirements/example.yaml-->`6.1.` Example Requirement {#sec:gcor.example label="|Geometric Corrections: Example Requirement"}
 
 Identifier: `gcor.example`
+
 
 
 This is an example requirement.

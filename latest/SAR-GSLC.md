@@ -1,5 +1,6 @@
 ---
-title: CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex - Version 1.2-draft
+title: >-
+  CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex - Version 1.2-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -269,6 +270,7 @@ General metadata should allow the user to assess the _overall_ suitability of th
 Identifier: `meta.metadata-traceability-sar`
 
 
+
 ##### Threshold requirements:
 
 
@@ -292,6 +294,7 @@ Notes:
 Identifier: `meta.metadata-machine-readability`
 
 
+
 ##### Threshold requirements:
 
 Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable/layer for further use.
@@ -306,6 +309,7 @@ As threshold, but metadata is formatted in accordance with CEOS-ARD SAR Metadata
 #### <!-- edit:requirements/metadata/product-type-sar.yaml-->`1.3.` Product Type {#sec:meta.metadata-product-type-sar label="|General Metadata: Product Type"}
 
 Identifier: `meta.metadata-product-type-sar`
+
 
 
 ##### Threshold requirements:
@@ -326,6 +330,7 @@ As threshold.
 Identifier: `meta.metadata-pfs-url`
 
 
+
 ##### Threshold requirements:
 
 Reference to CEOS-ARD PFS document as URL.
@@ -342,6 +347,7 @@ As threshold.
 #### <!-- edit:requirements/metadata/time.yaml-->`1.5.` Data Collection Time {#sec:meta.metadata-time label="|General Metadata: Data Collection Time"}
 
 Identifier: `meta.metadata-time`
+
 
 
 ##### Threshold requirements:
@@ -368,6 +374,7 @@ This may be one or mutliple acquisitions.
 Identifier: `src.metadata-acquisition-id`
 
 
+
 ##### Threshold requirements:
 
 Each acquisition is identified through a sequential identifier in the metadata, e.g. acqID = 1, 2, 3.
@@ -386,6 +393,7 @@ As threshold.
 Identifier: `src.metadata-data-access-source`
 
 
+
 ##### Threshold requirements:
 
 The metadata identifies the location from where the source data can be retrieved, expressed as a URL or DOI.
@@ -400,6 +408,7 @@ The metadata identifies an online location from where the data can be consistent
 #### <!-- edit:requirements/metadata/instrument.yaml-->`2.3.` Instrument {#sec:src.metadata-instrument label="|Source Metadata: Instrument"}
 
 Identifier: `src.metadata-instrument`
+
 
 
 ##### Threshold requirements:
@@ -421,6 +430,7 @@ As threshold, but including a reference to the relevant [CEOS Missions, Instrume
 Identifier: `src.metadata-time-source`
 
 
+
 ##### Threshold requirements:
 
 The start date and time of source data is identified in the metadata, expressed in UTC in date and time, at least to the second.
@@ -437,6 +447,7 @@ As threshold.
 #### <!-- edit:requirements/metadata/acquisition-parameters-sar.yaml-->`2.5.` Source Data Acquisition Parameters {#sec:src.metadata-acquisition-parameters-sar label="|Source Metadata: Source Data Acquisition Parameters"}
 
 Identifier: `src.metadata-acquisition-parameters-sar`
+
 
 
 ##### Threshold requirements:
@@ -464,6 +475,7 @@ As threshold.
 Identifier: `src.metadata-orbit`
 
 
+
 ##### Threshold requirements:
 
 Information related to the platform orbit used for data processing:
@@ -487,6 +499,7 @@ As threshold, including also:
 #### <!-- edit:requirements/metadata/processing-parameters.yaml-->`2.7.` Source Data Processing Parameters {#sec:src.metadata-processing-parameters label="|Source Metadata: Source Data Processing Parameters"}
 
 Identifier: `src.metadata-processing-parameters`
+
 
 
 ##### Threshold requirements:
@@ -513,6 +526,7 @@ As threshold, plus additional relevant processing parameters, e.g., range- and a
 Identifier: `src.metadata-image-attributes-sar`
 
 
+
 ##### Threshold requirements:
 
 Image attributes related to the source data:
@@ -537,6 +551,7 @@ Geometry of the image footprint expressed in WGS84 in a standardised format (e.g
 Identifier: `src.metadata-sensor-calibration`
 
 
+
 ##### Threshold requirements:
 
 
@@ -554,6 +569,7 @@ Ideally this would support machine-to-machine access.
 #### <!-- edit:requirements/metadata/performance-indicators.yaml-->`2.10.` Performance Indicators {#sec:src.metadata-performance-indicators label="|Source Metadata: Performance Indicators"}
 
 Identifier: `src.metadata-performance-indicators`
+
 
 
 ##### Threshold requirements:
@@ -577,6 +593,7 @@ Provide additional relevant performance indicators (e.g., ENL, PSLR, ISLR, and p
 Identifier: `src.metadata-polarimetric-calibration-matrices`
 
 
+
 ##### Threshold requirements:
 
 
@@ -595,6 +612,7 @@ The complex-valued polarimetric distortion matrices with the channel imbalance a
 Identifier: `src.metadata-mean-faraday-rotation-angle`
 
 
+
 ##### Threshold requirements:
 
 
@@ -611,6 +629,7 @@ The mean Faraday rotation angle estimated from the polarimetric data and/or from
 #### <!-- edit:requirements/metadata/ionosphere-indicator.yaml-->`2.13.` Ionosphere Indicator {#sec:src.metadata-ionosphere-indicator label="|Source Metadata: Ionosphere Indicator"}
 
 Identifier: `src.metadata-ionosphere-indicator`
+
 
 
 ##### Threshold requirements:
@@ -635,6 +654,7 @@ Information related to the CEOS-ARD product generation procedure and geographic 
 Identifier: `prd.metadata-data-access-product`
 
 
+
 ##### Threshold requirements:
 
 Processing parameters details of the CEOS-ARD product:
@@ -654,6 +674,7 @@ The metadata identifies an online location from where the data can be consistent
 #### <!-- edit:requirements/metadata/auxiliary-data.yaml-->`3.2.` Auxiliary Data {#sec:prd.metadata-auxiliary-data label="|Product Metadata: Auxiliary Data"}
 
 Identifier: `prd.metadata-auxiliary-data`
+
 
 
 ##### Threshold requirements:
@@ -678,6 +699,7 @@ Notes:
 Identifier: `prd.metadata-sample-spacing`
 
 
+
 ##### Threshold requirements:
 
 CEOS-ARD product processing parameters details:
@@ -699,6 +721,7 @@ As threshold.
 Identifier: `prd.metadata-resolution`
 
 
+
 ##### Threshold requirements:
 
 
@@ -718,6 +741,7 @@ Average spatial resolution of the CEOS-ARD product along:
 #### <!-- edit:requirements/metadata/bounding-box.yaml-->`3.5.` Product Bounding Box {#sec:prd.metadata-bounding-box label="|Product Metadata: Product Bounding Box"}
 
 Identifier: `prd.metadata-bounding-box`
+
 
 
 ##### Threshold requirements:
@@ -743,6 +767,7 @@ As threshold.
 Identifier: `prd.metadata-footprint`
 
 
+
 ##### Threshold requirements:
 
 The geometry of the SAR image footprint expressed in WGS84, in a standardised format (e.g., WKT Polygon).
@@ -759,6 +784,7 @@ As threshold.
 #### <!-- edit:requirements/metadata/image-size.yaml-->`3.7.` Product Image Size {#sec:prd.metadata-image-size label="|Product Metadata: Product Image Size"}
 
 Identifier: `prd.metadata-image-size`
+
 
 
 ##### Threshold requirements:
@@ -784,6 +810,7 @@ As threshold.
 Identifier: `prd.metadata-pixel-coordinate-convention`
 
 
+
 ##### Threshold requirements:
 
 Coordinate referring to the centre, the upper left corner, or the lower left corner of a pixel.
@@ -803,6 +830,7 @@ As threshold.
 Identifier: `prd.metadata-crs`
 
 
+
 ##### Threshold requirements:
 
 The metadata lists the map projection (or geographical coordinates, if applicable) that was used and any relevant parameters required to geolocate data in that map projection, expressed in a standardised format (e.g., WKT).  
@@ -820,6 +848,7 @@ As threshold.
 #### <!-- edit:requirements/metadata/radar-unit-look-vector.yaml-->`3.10.` Radar Unit Look Vector {#sec:prd.metadata-radar-unit-look-vector label="|Product Metadata: Radar Unit Look Vector"}
 
 Identifier: `prd.metadata-radar-unit-look-vector`
+
 
 
 ##### Threshold requirements:
@@ -842,6 +871,7 @@ As threshold.
 Identifier: `prd.metadata-slant-range`
 
 
+
 ##### Threshold requirements:
 
 Slant range distance from the sensor to the surface, specified at centre of scene. 
@@ -859,6 +889,7 @@ As threshold.
 #### <!-- edit:requirements/metadata/orbit-reference-gslc.yaml-->`3.12.` Reference Orbit {#sec:prd.metadata-orbit-reference-gslc label="|Product Metadata: Reference Orbit"}
 
 Identifier: `prd.metadata-orbit-reference-gslc`
+
 
 
 **Usage: When a reference orbit is used instead of a virtual orbit (see [@sec:annex-sar-topographic-phase-removal]).**
@@ -891,6 +922,7 @@ Per-pixel metadata should allow users to discriminate between (choose) observati
 Identifier: `pxl.metadata-machine-readability`
 
 
+
 ##### Threshold requirements:
 
 Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable/layer for further use.
@@ -905,6 +937,7 @@ As threshold, but metadata is formatted in accordance with CEOS-ARD SAR Metadata
 #### <!-- edit:requirements/per-pixel/data-mask.yaml-->`4.2.` Data Mask Image {#sec:pxl.per-pixel-data-mask label="|Per-Pixel Metadata: Data Mask Image"}
 
 Identifier: `pxl.per-pixel-data-mask`
+
 
 
 ##### Threshold requirements:
@@ -943,6 +976,7 @@ As threshold, including additional bit value representations, e.g.:
 Identifier: `pxl.per-pixel-scattering-area`
 
 
+
 **Usage: Recommended for scenes that include land areas.**
 
 ##### Threshold requirements:
@@ -973,6 +1007,7 @@ File format specifications/contents provided in metadata:
 Identifier: `pxl.per-pixel-local-incident-angle`
 
 
+
 ##### Threshold requirements:
 
 DEM-based Local Incident angle image is provided.
@@ -1001,6 +1036,7 @@ As threshold.
 #### <!-- edit:requirements/per-pixel/ellipsoidal-incident-angle.yaml-->`4.5.` Ellipsoidal Incident Angle Image {#sec:pxl.per-pixel-ellipsoidal-incident-angle label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image"}
 
 Identifier: `pxl.per-pixel-ellipsoidal-incident-angle`
+
 
 
 ##### Threshold requirements:
@@ -1034,6 +1070,7 @@ Notes:
 Identifier: `pxl.per-pixel-noise-power`
 
 
+
 ##### Threshold requirements:
 
 
@@ -1059,6 +1096,7 @@ File format specifications/contents provided in metadata:
 #### <!-- edit:requirements/per-pixel/gamma-sigma-ratio.yaml-->`4.7.` Gamma-to-Sigma Ratio Image {#sec:pxl.per-pixel-gamma-sigma-ratio label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image"}
 
 Identifier: `pxl.per-pixel-gamma-sigma-ratio`
+
 
 
 ##### Threshold requirements:
@@ -1087,6 +1125,7 @@ File format specifications/contents provided in metadata:
 #### <!-- edit:requirements/per-pixel/acquisition-id.yaml-->`4.8.` Acquisition ID Image {#sec:pxl.per-pixel-acquisition-id label="|Per-Pixel Metadata: Acquisition ID Image"}
 
 Identifier: `pxl.per-pixel-acquisition-id`
+
 
 
 ##### Threshold requirements:
@@ -1121,6 +1160,7 @@ In case of image composites, the sources for each pixel are uniquely identified.
 Identifier: `pxl.per-pixel-dem`
 
 
+
 ##### Threshold requirements:
 
 
@@ -1147,6 +1187,7 @@ File format specifications/contents provided in metadata:
 #### <!-- edit:requirements/per-pixel/radar-unit-look-vector-grid.yaml-->`4.10.` Radar Unit Look Vector Grid Image {#sec:pxl.per-pixel-radar-unit-look-vector-grid label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image"}
 
 Identifier: `pxl.per-pixel-radar-unit-look-vector-grid`
+
 
 
 ##### Threshold requirements:
@@ -1176,6 +1217,7 @@ File format specifications/contents provided in metadata:
 Identifier: `pxl.per-pixel-slant-range`
 
 
+
 ##### Threshold requirements:
 
 
@@ -1200,6 +1242,7 @@ File format specifications/contents provided in metadata:
 #### <!-- edit:requirements/per-pixel/insar-phase-uncertainty.yaml-->`4.12.` InSAR Phase Uncertainty Image {#sec:pxl.per-pixel-insar-phase-uncertainty label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image"}
 
 Identifier: `pxl.per-pixel-insar-phase-uncertainty`
+
 
 
 ##### Threshold requirements:
@@ -1230,6 +1273,7 @@ File format specifications/contents provided in metadata:
 Identifier: `pxl.per-pixel-atmospheric-phase-correction`
 
 
+
 ##### Threshold requirements:
 
 
@@ -1255,6 +1299,7 @@ File format specifications/contents provided in metadata:
 #### <!-- edit:requirements/per-pixel/ionospheric-phase-correction.yaml-->`4.14.` Ionospheric Phase Correction Image {#sec:pxl.per-pixel-ionospheric-phase-correction label="|Per-Pixel Metadata: Ionospheric Phase Correction Image"}
 
 Identifier: `pxl.per-pixel-ionospheric-phase-correction`
+
 
 
 ##### Threshold requirements:
@@ -1292,6 +1337,7 @@ The requirements below must be met for all pixels/samples/observations in a coll
 Identifier: `rcm.measurements-backscatter-gslc`
 
 
+
 ##### Threshold requirements:
 
 Radiometric and Phase Terrain-flattened Gamma-Nought backscatter coefficient ($\gamma^0_T$), in complex number format, is provided for each polarization (e.g., HH, HV, VV, VH).
@@ -1324,6 +1370,7 @@ As threshold.
 Identifier: `rcm.metadata-scaling-conversion`
 
 
+
 ##### Threshold requirements:
 
 If applicable, indicate the equation to convert pixel linear amplitude/power to logarithmic decibel scale, including, if applicable, the associated calibration (dB offset) factor, and/or the equation used to convert compressed data (int8/int16/float16) to float32.
@@ -1338,6 +1385,7 @@ As threshold, but use of float32.
 #### <!-- edit:requirements/metadata/noise-removal.yaml-->`5.3.` Noise Removal {#sec:rcm.metadata-noise-removal label="|Radiometrically Corrected Measurements: Noise Removal"}
 
 Identifier: `rcm.metadata-noise-removal`
+
 
 
 ##### Threshold requirements:
@@ -1361,6 +1409,7 @@ As threshold.
 #### <!-- edit:requirements/corrections/radiometric-terrain-correction-gslc.yaml-->`5.4.` Radiometric Terrain Correction Algorithm {#sec:rcm.corrections-radiometric-terrain-correction-gslc label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
 
 Identifier: `rcm.corrections-radiometric-terrain-correction-gslc`
+
 
 
 ##### Threshold requirements:
@@ -1393,6 +1442,7 @@ Notes:
 Identifier: `rcm.metadata-radiometric-accuracy`
 
 
+
 ##### Threshold requirements:
 
 
@@ -1414,6 +1464,7 @@ This section specifies any geometric correction requirements that must be met in
 #### <!-- edit:requirements/metadata/geometric-correction-algorithm.yaml-->`6.1.` Geometric Correction Algorithm {#sec:gcor.metadata-geometric-correction-algorithm label="|Geometric Corrections: Geometric Correction Algorithm"}
 
 Identifier: `gcor.metadata-geometric-correction-algorithm`
+
 
 
 ##### Threshold requirements:
@@ -1443,6 +1494,7 @@ Notes:
 Identifier: `gcor.corrections-dem`
 
 
+
 **Usage: For products including land areas.**
 
 ##### Threshold requirements:
@@ -1464,6 +1516,7 @@ Identifier: `gcor.corrections-dem`
 #### <!-- edit:requirements/corrections/geometric-accuracy-radar.yaml-->`6.3.` Geometric Accuracy {#sec:gcor.corrections-geometric-accuracy-radar label="|Geometric Corrections: Geometric Accuracy"}
 
 Identifier: `gcor.corrections-geometric-accuracy-radar`
+
 
 
 ##### Threshold requirements:
@@ -1497,6 +1550,7 @@ Provide documentation of estimates of ALE as DOI or URL.
 Identifier: `gcor.corrections-geometric-refined-accuracy`
 
 
+
 ##### Threshold requirements:
 
 
@@ -1517,6 +1571,7 @@ Methodology used (name and reference), quality flag, geometric standard deviatio
 #### <!-- edit:requirements/corrections/gridding-convention.yaml-->`6.5.` Gridding Convention {#sec:gcor.corrections-gridding-convention label="|Geometric Corrections: Gridding Convention"}
 
 Identifier: `gcor.corrections-gridding-convention`
+
 
 
 ##### Threshold requirements:
