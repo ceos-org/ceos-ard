@@ -3,6 +3,7 @@ description:
 threshold:
   description: |-
     Slant range distance from the sensor to the surface, specified at centre of scene. 
+    
     Only required if a Slant Range Sensor to Surface Image (see [@per-pixel/slant-range]) is **not** provided. 
   notes:
 goal: null
