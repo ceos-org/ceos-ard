@@ -90,31 +90,31 @@ This specification identifies the Surface Temperature (ST) as being the minimum 
 
 ## Definitions and Abbreviations
 
-<!-- edit:glossary/ceos-ard.yaml -->
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ceos-ard.yaml -->
 CEOS-ARD
 :   Committee on Earth Observation Satellites - Analysis Ready Data
 
-<!-- edit:glossary/doi.yaml -->
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/doi.yaml -->
 DOI
 :   Digital Object Identifier
 
-<!-- edit:glossary/lst.yaml -->
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/lst.yaml -->
 LST
 :   Land Surface Temperature
 
-<!-- edit:glossary/sbt.yaml -->
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/sbt.yaml -->
 SBT
 :   Surface Brightness Temperature
 
-<!-- edit:glossary/si.yaml -->
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/si.yaml -->
 SI
 :   International System of Units, internationally known by the abbreviation SI (from French Système international d'unités)
 
-<!-- edit:glossary/st.yaml -->
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/st.yaml -->
 ST
 :   Surface Temperature
 
-<!-- edit:glossary/tir.yaml -->
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/tir.yaml -->
 TIR
 :   Thermal Infrared
 
@@ -128,14 +128,14 @@ Instead, use the textual identifier that is provided in brackets directly after 
 
 <!-- todo: remove requirement numbers -->
 
-### <!-- edit:sections/requirement-categories/general-metadata.yaml-->`1.` General Metadata {#sec:meta label="|General Metadata"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/general-metadata.yaml-->`1.` General Metadata {#sec:meta label="|General Metadata"}
 
 These are metadata records describing a distributed collection of pixels.
 The collection of pixels referred to must be contiguous in space and time.
 General metadata should allow the user to assess the _overall_ suitability of the dataset, and must meet the requirements listed below.
 
 
-#### <!-- edit:requirements/metadata/traceability-st.yaml-->`1.1.` Traceability {#sec:meta.metadata-traceability-st label="|General Metadata: Traceability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/traceability-st.yaml-->`1.1.` Traceability {#sec:meta.metadata-traceability-st label="|General Metadata: Traceability"}
 
 Identifier: `meta.metadata-traceability-st`
 
@@ -158,13 +158,13 @@ Notes:
 1. Relationship to [@sec:rac.measurements-uncertainty-st]. Traceability requires an estimate of measurement uncertainty.
 2. Information on traceability should be available in the metadata as a single DOI landing page.
 
-### <!-- edit:sections/requirement-categories/source-metadata.yaml-->`2.` Source Metadata {#sec:src label="|Source Metadata"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/source-metadata.yaml-->`2.` Source Metadata {#sec:src label="|Source Metadata"}
 
 These are metadata records describing (detailing) **each** acquisition (source data) used to generate the ARD product.
 This may be one or mutliple acquisitions.
 
 
-#### <!-- edit:requirements/example.yaml-->`2.1.` Example Requirement {#sec:src.example label="|Source Metadata: Example Requirement"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/example.yaml-->`2.1.` Example Requirement {#sec:src.example label="|Source Metadata: Example Requirement"}
 
 Identifier: `src.example`
 
@@ -185,12 +185,12 @@ Notes:
 
 1. This is a note.
 
-### <!-- edit:sections/requirement-categories/product-metadata.yaml-->`3.` Product Metadata {#sec:prd label="|Product Metadata"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/product-metadata.yaml-->`3.` Product Metadata {#sec:prd label="|Product Metadata"}
 
 Information related to the CEOS-ARD product generation procedure and geographic parameters.
 
 
-#### <!-- edit:requirements/example.yaml-->`3.1.` Example Requirement {#sec:prd.example label="|Product Metadata: Example Requirement"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/example.yaml-->`3.1.` Example Requirement {#sec:prd.example label="|Product Metadata: Example Requirement"}
 
 Identifier: `prd.example`
 
@@ -211,7 +211,7 @@ Notes:
 
 1. This is a note.
 
-### <!-- edit:sections/requirement-categories/per-pixel-metadata.yaml-->`4.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml-->`4.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
 The following minimum metadata specifications apply to each pixel.
 Whether the metadata are provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
@@ -220,7 +220,7 @@ Per-pixel metadata should allow users to discriminate between (choose) observati
 *Cloud optimized file formats are recommended.*
 
 
-#### <!-- edit:requirements/example.yaml-->`4.1.` Example Requirement {#sec:pxl.example label="|Per-Pixel Metadata: Example Requirement"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/example.yaml-->`4.1.` Example Requirement {#sec:pxl.example label="|Per-Pixel Metadata: Example Requirement"}
 
 Identifier: `pxl.example`
 
@@ -241,13 +241,13 @@ Notes:
 
 1. This is a note.
 
-### <!-- edit:sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->`5.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->`5.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
 
 The following requirements must be met for all pixels in a collection.
 The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement of surface reflectance.
 
 
-#### <!-- edit:requirements/measurements/uncertainty-st.yaml-->`5.1.` Measurement Uncertainty {#sec:rac.measurements-uncertainty-st label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/uncertainty-st.yaml-->`5.1.` Measurement Uncertainty {#sec:rac.measurements-uncertainty-st label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
 
 Identifier: `rac.measurements-uncertainty-st`
 
@@ -270,13 +270,13 @@ Notes:
 
 1. Some of the intent of the initial wording (below), which refers to atmospheric windows, may have been lost: Uncertainty, in units Kelvin, of the surface temperature for each pixel is also accompanied by distance from cloud (above) and atmospheric transmission (intervals, i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).
 
-### <!-- edit:sections/requirement-categories/geometric-corrections.yaml-->`6.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`6.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
 
 The geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared.
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
-#### <!-- edit:requirements/example.yaml-->`6.1.` Example Requirement {#sec:gcor.example label="|Geometric Corrections: Example Requirement"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/example.yaml-->`6.1.` Example Requirement {#sec:gcor.example label="|Geometric Corrections: Example Requirement"}
 
 Identifier: `gcor.example`
 
@@ -306,7 +306,7 @@ This section aims to provide background and specific information on the processi
 used to achieve analysis ready data for a specific and well-developed Product Family Specification.
 This Guidance material does not replace or override the specifications.
 
-### <!-- edit:sections/introduction/what-are-ceos-ard-products.yaml-->What is CEOS Analysis Ready Data? {#sec:intro-what-are-ceos-ard-products label="|What is CEOS Analysis Ready Data?"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/introduction/what-are-ceos-ard-products.yaml-->What is CEOS Analysis Ready Data? {#sec:intro-what-are-ceos-ard-products label="|What is CEOS Analysis Ready Data?"}
 
 CEOS-ARD are products that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort.
 In general, these products would be resampled onto a common geometric grid (for a given product) and would provide baseline data for further interoperability both through time and with other datasets.
@@ -315,7 +315,7 @@ CEOS-ARD products are intended to be flexible and accessible products suitable f
 They are also intended to support rapid ingestion and exploitation via high-performance computing, cloud computing and other future data architectures.
 They may not be suitable for all purposes and are not intended as a _replacement_ for other types of satellite products.
 
-### <!-- edit:sections/introduction/when-is-a-product-ceos-ard.yaml-->When can a product be called CEOS-ARD? {#sec:intro-when-is-a-product-ceos-ard label="|When can a product be called CEOS-ARD?"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/introduction/when-is-a-product-ceos-ard.yaml-->When can a product be called CEOS-ARD? {#sec:intro-when-is-a-product-ceos-ard label="|When can a product be called CEOS-ARD?"}
 
 The CEOS-ARD branding is applied to a particular product once:
 
@@ -326,7 +326,7 @@ Agencies or other entities considering undertaking an assessment process should 
 
 A product can continue to use CEOS-ARD branding as long as its generation and distribution remain consistent with the peer-reviewed assessment.
 
-### <!-- edit:sections/introduction/difference-threshold-goal.yaml-->What is the difference between Threshold and Goal? {#sec:intro-difference-threshold-goal label="|What is the difference between Threshold and Goal?"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/introduction/difference-threshold-goal.yaml-->What is the difference between Threshold and Goal? {#sec:intro-difference-threshold-goal label="|What is the difference between Threshold and Goal?"}
 
 **Threshold** (Minimum) requirements are the **minimum** that is needed for the data to be analysis ready.
 This must be practical and accepted by the data producers.
@@ -354,7 +354,7 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 ## Annexes
 
 
-### <!-- edit:sections/annexes/st-metadata-examples.yaml-->CEOS-ARD ST Requirement Examples {#sec:annex-st-metadata-examples label="|CEOS-ARD ST Requirement Examples"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/st-metadata-examples.yaml-->CEOS-ARD ST Requirement Examples {#sec:annex-st-metadata-examples label="|CEOS-ARD ST Requirement Examples"}
 
 ### General Metadata
 
