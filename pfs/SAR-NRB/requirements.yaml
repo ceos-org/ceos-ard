@@ -29,8 +29,8 @@
     - metadata/enl
     - metadata/resolution
     - metadata/speckle-filtering
-    - metadata/bounding-box
-    - metadata/footprint
+    - metadata/geo-bbox
+    - metadata/geo-area
     - metadata/image-size
     - metadata/pixel-coordinate-convention
     - metadata/crs
@@ -53,7 +53,7 @@
     - measurements/backscatter-nrb
     - metadata/scaling-conversion
     - metadata/noise-removal
-    - corrections/radiometric-terrain-correction
+    - corrections/radiometric-terrain-algo
     - metadata/radiometric-accuracy
     - measurements/flattened-phase
 - category: geometric-corrections

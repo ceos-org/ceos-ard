@@ -1,0 +1,16 @@
+title: Data Access
+description: 
+threshold:
+  description: |-
+    Information on data access should be available in the metadata as a single DOI landing page.
+  notes:
+    - Manual and offline interaction action (e.g., login) may be required.
+goal: null
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.16

@@ -1,0 +1,3 @@
+term: CEP
+description: |-
+  Circular Error Probability, often provided with an additional percentage (e.g. CEP90 for 90% probability)

@@ -1,0 +1,14 @@
+title: Overall Data Quality
+description: 
+threshold: null
+goal:
+  description: |-
+    The metadata includes details of the quality of the product based on quantitative assessment of the product with respect to high quality reference data with full traceability of the uncertainties. Validation and intercomparison statistics can provide the necessary quantification.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.17

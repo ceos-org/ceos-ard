@@ -1,0 +1,13 @@
+title: Coordinate Reference System
+description:
+threshold:
+  description: |-
+    The metadata lists the coordinate reference system that has been used.
+  notes:
+goal: null
+dependencies:
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.5

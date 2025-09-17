@@ -1,6 +1,5 @@
 title: Measurement Uncertainty
-description: |-
-  Note: In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
+description:
 threshold: null
 goal:
   description: |-
@@ -13,5 +12,5 @@ glossary:
 references:
 metadata:
 legacy:
-  sar: null
-  optical: 3.3 (ST)
+  sar:
+  optical: 3.3

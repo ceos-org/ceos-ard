@@ -1,7 +1,7 @@
 # todo: remove product data mentions to be resuable in other products
 # todo: remove SAR mentions to be resuable in other products
 # todo: extent is misleading and usually a synonym for the bbox,
-# the requirement should probably be renamed to "Geographical Footprint" or similar
+# the requirement should probably be renamed to "Geographical Area" or similar
 title: Product Geographical Extent
 description: 
 threshold:

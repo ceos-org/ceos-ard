@@ -1,0 +1,19 @@
+title: Solar and Viewing Geometry
+description: 
+threshold:
+  # This is general metadata - todo: split?
+  description: |-
+    Provide average solar and sensor viewing azimuth and zenith angles.
+  notes:
+goal:
+  # This is per-pixel metadata - todo: split?
+  description: |-
+    Provide per-pixel solar and sensor viewing azimuth and zenith angles.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: 2.8

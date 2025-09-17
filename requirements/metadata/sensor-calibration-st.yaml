@@ -1,0 +1,18 @@
+title: Sensor Calibration
+description:
+threshold: null
+goal:
+  description: |-
+    Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata.
+    Ideally this would support machine-to-machine access.
+  notes:
+    - Information on sensory calibration should be available in the metadata as a single DOI landing page.
+  # This is exactly the same as sensor-calibration.yaml except for the note added above. Can we align?
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.11

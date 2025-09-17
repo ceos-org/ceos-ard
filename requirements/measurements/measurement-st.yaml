@@ -1,0 +1,19 @@
+title: Measurement
+description: 
+threshold:
+  description: |-
+    Pixel values are expressed as a measurement of the Surface Temperature of the land, expressed as Kelvin
+  notes:
+goal:
+  description: |-
+    Surface temperature measurements are SI traceable (see also [@metadata/traceability-st]).
+  notes:
+dependencies:
+  - metadata/traceability-st
+glossary:
+  - si
+references:
+metadata:
+legacy:
+  sar:
+  optical: 3.1

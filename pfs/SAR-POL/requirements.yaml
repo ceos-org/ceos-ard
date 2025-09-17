@@ -31,8 +31,8 @@
     # todo: speckle-filtering-pol should be just be speckle-filtering and instead add pol-filtering
     - metadata/speckle-filtering-pol
     # - metadata/pol-filtering
-    - metadata/bounding-box
-    - metadata/footprint
+    - metadata/geo-bbox
+    - metadata/geo-area
     - metadata/image-size
     - metadata/pixel-coordinate-convention
     - metadata/crs
@@ -55,7 +55,7 @@
     - measurements/backscatter-pol
     - metadata/scaling-conversion
     - metadata/noise-removal
-    - corrections/radiometric-terrain-correction
+    - corrections/radiometric-terrain-algo
     - metadata/radiometric-accuracy
     - measurements/flattened-phase
 - category: geometric-corrections

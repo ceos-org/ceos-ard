@@ -29,8 +29,8 @@
     - metadata/enl
     - metadata/resolution
     - metadata/speckle-filtering
-    - metadata/bounding-box
-    - metadata/footprint
+    - metadata/geo-bbox
+    - metadata/geo-area
     - metadata/image-size
     - metadata/pixel-coordinate-convention
     - metadata/crs

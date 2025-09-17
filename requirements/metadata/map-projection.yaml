@@ -1,0 +1,14 @@
+title: Map Projection
+description: 
+threshold: null
+goal:
+  description: |-
+    The metadata lists the map projection that has been used, if any, and any relevant parameters required in relation to use of data in that map projection.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.6

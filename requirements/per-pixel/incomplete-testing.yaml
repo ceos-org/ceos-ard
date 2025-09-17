@@ -1,0 +1,18 @@
+title: Incomplete Testing
+description: 
+threshold:
+  description: |-
+    The metadata identifies pixels for which the per-pixel tests (below) have not all been successfully completed.
+  notes:
+    - e.g., due to missing ancillary data for some pixels.
+goal:
+  description: |-
+    The metadata identifies which tests have, and have not, been successfully completed for each pixel.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: 2.3

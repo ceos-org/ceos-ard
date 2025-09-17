@@ -2,6 +2,6 @@ id: rac
 title: Radiometric and Atmospheric Corrections
 description: |-
   The following requirements must be met for all pixels in a collection.
-  The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement of surface reflectance.
+  The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement.
 glossary:
 references:

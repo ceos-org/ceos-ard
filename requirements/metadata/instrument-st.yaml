@@ -1,0 +1,18 @@
+title: Instrument
+description:
+threshold:
+  description: |-
+    The instrument used to collect the data is identified in the metadata.
+  notes:
+goal:
+  description: |-
+    As threshold, but information on instrument should be available in the metadata as a single DOI landing page with references to the relevant CEOS Missions, Instruments and Measurements Database record.
+  notes:
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.9
