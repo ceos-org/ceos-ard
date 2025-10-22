@@ -239,7 +239,7 @@ Notes:
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->`5.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
 
 The following requirements must be met for all pixels in a collection.
-The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement of surface reflectance.
+The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement.
 
 
 #### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/uncertainty.yaml-->`5.1.` Measurement Uncertainty {#sec:rac.measurements-uncertainty label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}

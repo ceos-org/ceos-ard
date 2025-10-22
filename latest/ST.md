@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Surface Temperature - Version 5.1-draft
+  CEOS-ARD - Optical - Surface Temperature - Version 5.0-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -72,14 +72,14 @@ Not available yet
 Optical, Surface Temperature (ST)
 
 **Version:**
-5.1-draft
+5.0-draft
 
 **Applies to:**
 Data collected by Optical sensors
 
 ## Background
 
-Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths.
+Applies to data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths.
 These typically operate with ground sample distance and resolution in the order of 10-100m;
 however, the Specification is not inherently limited to this resolution.
 
@@ -90,17 +90,41 @@ This specification identifies the Surface Temperature (ST) as being the minimum 
 
 ## Definitions and Abbreviations
 
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/auxiliary-data.yaml -->
+Auxiliary Data
+:   The data required for instrument processing, which does not originate in the instrument itself or from the satellite. Some auxiliary data will be generated in the ground segment, whilst other data will be provided from external sources, e.g., DEM, aerosols.
+
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ceos-ard.yaml -->
 CEOS-ARD
 :   Committee on Earth Observation Satellites - Analysis Ready Data
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/cep.yaml -->
+CEP
+:   Circular Error Probability, often provided with an additional percentage (e.g. CEP90 for 90% probability)
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/dem.yaml -->
+DEM
+:   Digital Elevation Model
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/doi.yaml -->
 DOI
 :   Digital Object Identifier
 
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/gis.yaml -->
+GIS
+:   Geographic Information System
+
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/lst.yaml -->
 LST
 :   Land Surface Temperature
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/rmse.yaml -->
+RMSE
+:   Root Mean Square Error
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/rrmse.yaml -->
+rRMSE
+:   Radial Root Mean Square Error
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/sbt.yaml -->
 SBT
@@ -117,6 +141,14 @@ ST
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/tir.yaml -->
 TIR
 :   Thermal Infrared
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/utc.yaml -->
+UTC
+:   Coordinated Universal Time
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/wgs84.yaml -->
+WGS84
+:   World Geodetic System 1984
 
 &#12;
 
@@ -151,67 +183,339 @@ Not required.
 ##### Goal requirements:
 
 Data must be traceable to SI reference standard.
-- [Policy on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6536) - [Guidance on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6532)
+Information on traceability should be available in the metadata as a single DOI landing page.
+
+- [Policy on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6536)
+- [Guidance on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6532)
 
 Notes:
 
-1. Relationship to [@sec:rac.measurements-uncertainty-st]. Traceability requires an estimate of measurement uncertainty.
-2. Information on traceability should be available in the metadata as a single DOI landing page.
+1. SI Traceability requires an estimate of measurement uncertainty.
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/source-metadata.yaml-->`2.` Source Metadata {#sec:src label="|Source Metadata"}
+---
 
-These are metadata records describing (detailing) **each** acquisition (source data) used to generate the ARD product.
-This may be one or mutliple acquisitions.
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-st.yaml-->`1.2.` Metadata Machine Readability {#sec:meta.metadata-machine-readability-st label="|General Metadata: Metadata Machine Readability"}
 
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/example.yaml-->`2.1.` Example Requirement {#sec:src.example label="|Source Metadata: Example Requirement"}
-
-Identifier: `src.example`
+Identifier: `meta.metadata-machine-readability-st`
 
 
-
-This is an example requirement.
 
 ##### Threshold requirements:
 
-This is a threshold requirement.
+Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component part for further use.
 
 
 ##### Goal requirements:
 
-This is a goal requirement.
+As threshold, but metadata should be provided in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2.
 
-Notes:
+---
 
-1. This is a note.
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-st.yaml-->`1.3.` Data Collection Time {#sec:meta.metadata-time-st label="|General Metadata: Data Collection Time"}
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/product-metadata.yaml-->`3.` Product Metadata {#sec:prd label="|Product Metadata"}
-
-Information related to the CEOS-ARD product generation procedure and geographic parameters.
+Identifier: `meta.metadata-time-st`
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/example.yaml-->`3.1.` Example Requirement {#sec:prd.example label="|Product Metadata: Example Requirement"}
-
-Identifier: `prd.example`
-
-
-
-This is an example requirement.
 
 ##### Threshold requirements:
 
-This is a threshold requirement.
+The start and stop time of data collection is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
 
 
 ##### Goal requirements:
 
-This is a goal requirement.
+Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area-st.yaml-->`1.4.` Geographical Area {#sec:meta.metadata-geo-area-st label="|General Metadata: Geographical Area"}
+
+Identifier: `meta.metadata-geo-area-st`
+
+
+
+##### Threshold requirements:
+
+The surface location to which the data relate is identified, typically as a series of four corner points, expressed in an accepted coordinate reference system (e.g., WGS84 coordinates).
+
+
+##### Goal requirements:
+
+The geographic area covered by the observations is identified specifically, such as through a set of coordinates of a closely bounding polygon. The location to which each pixel refers is identified (or can be reliably determined) expressed in projection coordinates with reference datum.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs-st.yaml-->`1.5.` Coordinate Reference System {#sec:meta.metadata-crs-st label="|General Metadata: Coordinate Reference System"}
+
+Identifier: `meta.metadata-crs-st`
+
+
+
+##### Threshold requirements:
+
+The metadata lists the coordinate reference system that has been used.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/map-projection.yaml-->`1.6.` Map Projection {#sec:meta.metadata-map-projection label="|General Metadata: Map Projection"}
+
+Identifier: `meta.metadata-map-projection`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+The metadata lists the map projection that has been used, if any, and any relevant parameters required in relation to use of data in that map projection.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-methods.yaml-->`1.7.` Geometric Correction Methods {#sec:meta.metadata-geometric-correction-methods label="|General Metadata: Geometric Correction Methods"}
+
+Identifier: `meta.metadata-geometric-correction-methods`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Information on geometric correction methods should be available in the metadata as a single DOI landing page containing information on geodetic correction methods used, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-accuracy.yaml-->`1.8.` Geometric Accuracy of the Data {#sec:meta.metadata-geometric-accuracy label="|General Metadata: Geometric Accuracy of the Data"}
+
+Identifier: `meta.metadata-geometric-accuracy`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+The metadata includes metrics describing the assessed geodetic accuracy of the data, expressed units of the coordinate system of the data.
+Accuracy is assessed by independent verification (as well as internal model-fit where applicable).
+Uncertainties are expressed as root mean square error (RMSE) or Circular Error 90% Probability (CEP90).
 
 Notes:
 
-1. This is a note.
+1. Information on geometric accuracy of the data should be available in the metadata as a single DOI landing page.
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml-->`4.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-st.yaml-->`1.9.` Instrument {#sec:meta.metadata-instrument-st label="|General Metadata: Instrument"}
+
+Identifier: `meta.metadata-instrument-st`
+
+
+
+##### Threshold requirements:
+
+The instrument used to collect the data is identified in the metadata.
+
+
+##### Goal requirements:
+
+As threshold, but information on instrument should be available in the metadata as a single DOI landing page with references to the relevant CEOS Missions, Instruments and Measurements Database record.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/spectral-bands.yaml-->`1.10.` Spectral Bands {#sec:meta.metadata-spectral-bands label="|General Metadata: Spectral Bands"}
+
+Identifier: `meta.metadata-spectral-bands`
+
+
+
+##### Threshold requirements:
+
+The central wavelength for each band for which data is included is identified in the metadata, expressed in SI units.
+
+
+##### Goal requirements:
+
+As threshold, with instrument spectral response details (e.g., full spectral response function) also included or directly accessible using details in the metadata. 
+Central wavelength and bandwidth at full-width half maximum value of the relative spectral response function are provided at least.
+
+Notes:
+
+1. Information on spectral bands should be available in the metadata as a single DOI landing page.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-st.yaml-->`1.11.` Sensor Calibration {#sec:meta.metadata-sensor-calibration-st label="|General Metadata: Sensor Calibration"}
+
+Identifier: `meta.metadata-sensor-calibration-st`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata.
+Ideally this would support machine-to-machine access.
+
+Notes:
+
+1. Information on sensory calibration should be available in the metadata as a single DOI landing page.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-st.yaml-->`1.12.` Radiometric Accuracy {#sec:meta.metadata-radiometric-accuracy-st label="|General Metadata: Radiometric Accuracy"}
+
+Identifier: `meta.metadata-radiometric-accuracy-st`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Information on radiometric accuracy should be available in the metadata as a single DOI landing page providing information on metrics describing the assessed absolute radiometric accuracy of the data, expressed as absolute radiometric uncertainty relative to a known reference standard.
+
+Notes:
+
+1. For example, this may come from comparison with routine and rigorously collected in situ measurements.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/algorithms.yaml-->`1.13.` Algorithms {#sec:meta.metadata-algorithms label="|General Metadata: Algorithms"}
+
+Identifier: `meta.metadata-algorithms`
+
+
+
+##### Threshold requirements:
+
+All algorithms and versions, and the sequence in which they were applied in the generation process, are identified in the metadata.
+
+
+##### Goal requirements:
+
+As threshold, but only algorithms that have been published in a peer-reviewed journal.
+
+Notes:
+
+1. It is possible that high-quality corrections are applied through non-disclosed processes. CEOS-ARD does not per-se require full and open data and methods.
+2. Information on algorithms should be available in the metadata as a single DOI landing page.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data-st.yaml-->`1.14.` Auxiliary Data {#sec:meta.metadata-auxiliary-data-st label="|General Metadata: Auxiliary Data"}
+
+Identifier: `meta.metadata-auxiliary-data-st`
+
+
+
+##### Threshold requirements:
+
+The metadata identifies the sources of auxiliary data used in the generation process, ideally expressed as a single DOI landing page.
+
+Notes:
+
+1. Auxiliary data includes DEMs, aerosols, etc. data sources.
+
+
+##### Goal requirements:
+
+As threshold, but information on auxiliary data should be available in the metadata as a single DOI landing page and is also available for free online download, contemporaneously with the product or through a link to the source.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-chain-prov.yaml-->`1.15.` Processing Chain Provenance {#sec:meta.metadata-processing-chain-prov label="|General Metadata: Processing Chain Provenance"}
+
+Identifier: `meta.metadata-processing-chain-prov`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Information on processing chain provenance should be available in the metadata as a single DOI landing page containing description of the processing chain used to generate the product, including the versions of the software used and information on the data collection baseline, giving full transparency to the users.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access-st.yaml-->`1.16.` Data Access {#sec:meta.metadata-data-access-st label="|General Metadata: Data Access"}
+
+Identifier: `meta.metadata-data-access-st`
+
+
+
+##### Threshold requirements:
+
+Information on data access should be available in the metadata as a single DOI landing page.
+
+Notes:
+
+1. Manual and offline interaction action (e.g., login) may be required.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-quality.yaml-->`1.17.` Overall Data Quality {#sec:meta.metadata-data-quality label="|General Metadata: Overall Data Quality"}
+
+Identifier: `meta.metadata-data-quality`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+The metadata includes details of the quality of the product based on quantitative assessment of the product with respect to high quality reference data with full traceability of the uncertainties. Validation and intercomparison statistics can provide the necessary quantification.
+
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml-->`2.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
 The following minimum metadata specifications apply to each pixel.
 Whether the metadata are provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
@@ -220,40 +524,201 @@ Per-pixel metadata should allow users to discriminate between (choose) observati
 *Cloud optimized file formats are recommended.*
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/example.yaml-->`4.1.` Example Requirement {#sec:pxl.example label="|Per-Pixel Metadata: Example Requirement"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-st2.yaml-->`2.1.` Metadata Machine Readability {#sec:pxl.metadata-machine-readability-st2 label="|Per-Pixel Metadata: Metadata Machine Readability"}
 
-Identifier: `pxl.example`
+Identifier: `pxl.metadata-machine-readability-st2`
 
 
-
-This is an example requirement.
 
 ##### Threshold requirements:
 
-This is a threshold requirement.
+Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component part for further use.
 
 
 ##### Goal requirements:
 
-This is a goal requirement.
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/nodata.yaml-->`2.2.` No Data {#sec:pxl.per-pixel-nodata label="|Per-Pixel Metadata: No Data"}
+
+Identifier: `pxl.per-pixel-nodata`
+
+
+
+##### Threshold requirements:
+
+Pixels that do not correspond to an observation (‘empty pixels’) are flagged.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/incomplete-testing.yaml-->`2.3.` Incomplete Testing {#sec:pxl.per-pixel-incomplete-testing label="|Per-Pixel Metadata: Incomplete Testing"}
+
+Identifier: `pxl.per-pixel-incomplete-testing`
+
+
+
+##### Threshold requirements:
+
+The metadata identifies pixels for which the per-pixel tests (below) have not all been successfully completed.
 
 Notes:
 
-1. This is a note.
+1. e.g., due to missing ancillary data for some pixels.
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->`5.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
+
+##### Goal requirements:
+
+The metadata identifies which tests have, and have not, been successfully completed for each pixel.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/saturation.yaml-->`2.4.` Saturation {#sec:pxl.per-pixel-saturation label="|Per-Pixel Metadata: Saturation"}
+
+Identifier: `pxl.per-pixel-saturation`
+
+
+
+##### Threshold requirements:
+
+Metadata indicates where one or more pixel in the input spectral bands are saturated.
+
+
+##### Goal requirements:
+
+Metadata indicates which pixels are saturated for each spectral band.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud.yaml-->`2.5.` Cloud {#sec:pxl.per-pixel-cloud label="|Per-Pixel Metadata: Cloud"}
+
+Identifier: `pxl.per-pixel-cloud`
+
+
+
+##### Threshold requirements:
+
+Metadata indicates whether a pixel is assessed as being cloud.
+
+
+##### Goal requirements:
+
+As threshold, but information on cloud detection should be available in the metadata as a single DOI landing page.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud-shadow.yaml-->`2.6.` Cloud Shadow {#sec:pxl.per-pixel-cloud-shadow label="|Per-Pixel Metadata: Cloud Shadow"}
+
+Identifier: `pxl.per-pixel-cloud-shadow`
+
+
+
+##### Threshold requirements:
+
+Metadata indicates whether a pixel is assessed as being cloud shadow.
+
+
+##### Goal requirements:
+
+As threshold, but information on cloud shadow detection should be available in the metadata as a single DOI landing page.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/snow-ice.yaml-->`2.7.` Snow/Ice mask {#sec:pxl.per-pixel-snow-ice label="|Per-Pixel Metadata: Snow/Ice mask"}
+
+Identifier: `pxl.per-pixel-snow-ice`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+The metadata indicates whether a pixel is assessed as being snow/ice or not. Information on snow/ice mask should be available in the metadata as a single DOI landing page.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/solar-view-angles.yaml-->`2.8.` Solar and Viewing Geometry {#sec:pxl.per-pixel-solar-view-angles label="|Per-Pixel Metadata: Solar and Viewing Geometry"}
+
+Identifier: `pxl.per-pixel-solar-view-angles`
+
+
+
+##### Threshold requirements:
+
+Provide average solar and sensor viewing azimuth and zenith angles.
+
+
+##### Goal requirements:
+
+Provide per-pixel solar and sensor viewing azimuth and zenith angles.
+
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->`3.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
 
 The following requirements must be met for all pixels in a collection.
-The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement of surface reflectance.
+The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/uncertainty-st.yaml-->`5.1.` Measurement Uncertainty {#sec:rac.measurements-uncertainty-st label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/measurement-st.yaml-->`3.1.` Measurement {#sec:rac.measurements-measurement-st label="|Radiometric and Atmospheric Corrections: Measurement"}
+
+Identifier: `rac.measurements-measurement-st`
+
+
+
+##### Threshold requirements:
+
+Pixel values are expressed as a measurement of the Surface Temperature of the land, expressed as Kelvin
+
+
+##### Goal requirements:
+
+Surface temperature measurements are SI traceable (see also [@sec:meta.metadata-traceability-st]).
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/atmosphere-emissivity.yaml-->`3.2.` Corrections for Atmosphere and Emissivity {#sec:rac.corrections-atmosphere-emissivity label="|Radiometric and Atmospheric Corrections: Corrections for Atmosphere and Emissivity"}
+
+Identifier: `rac.corrections-atmosphere-emissivity`
+
+
+
+##### Threshold requirements:
+
+Retrieval methods for estimating surface temperature are provided.
+
+Notes:
+
+1. The metadata references (may be through a single DOI landing page) a citable peer-reviewed algorithm.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/uncertainty-st.yaml-->`3.3.` Measurement Uncertainty {#sec:rac.measurements-uncertainty-st label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
 
 Identifier: `rac.measurements-uncertainty-st`
 
 
-
-Note: In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
 
 ##### Threshold requirements:
 
@@ -270,32 +735,44 @@ Notes:
 
 1. Some of the intent of the initial wording (below), which refers to atmospheric windows, may have been lost: Uncertainty, in units Kelvin, of the surface temperature for each pixel is also accompanied by distance from cloud (above) and atmospheric transmission (intervals, i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`6.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`4.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
 
 The geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared.
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/example.yaml-->`6.1.` Example Requirement {#sec:gcor.example label="|Geometric Corrections: Example Requirement"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric.yaml-->`4.1.` Geometric Correction {#sec:gcor.corrections-geometric label="|Geometric Corrections: Geometric Correction"}
 
-Identifier: `gcor.example`
+Identifier: `gcor.corrections-geometric`
 
 
-
-This is an example requirement.
 
 ##### Threshold requirements:
 
-This is a threshold requirement.
+Sub-pixel accuracy is achieved in **relative** geolocation, that is, the pixels from the same instrument and platform are consistently located, and in thus comparable, through time.
+
+Sub-pixel accuracy is taken to be less than or equal to 0.5 pixel radial root mean square error (rRMSE) or equivalent in Circular Error Probability (CEP) relative to a defined reference image.
+
+A consistent gridding/sampling frame is necessary to meet this requirement.
+
+Relevant metadata must be provided under [@sec:meta.metadata-geometric-accuracy] and [@sec:meta.metadata-instrument-st].
+
+Notes:
+
+1. The threshold level will not necessarily enable interoperability between data from different sources as the geometric corrections for each of the sources may differ. 
 
 
 ##### Goal requirements:
 
-This is a goal requirement.
+Sub-pixel accuracy is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).
+
+A consistent gridding/sampling frame is necessary to meet this requirement.
+
+Relevant metadata must be provided under [@sec:meta.metadata-geometric-accuracy] and [@sec:meta.metadata-instrument-st].
 
 Notes:
 
-1. This is a note.
+1. This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction, and with non-image spatial data such as GIS layers and terrain models.
 
 &#12;
 
@@ -354,7 +831,7 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 ## Annexes
 
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/st-metadata-examples.yaml-->CEOS-ARD ST Requirement Examples {#sec:annex-st-metadata-examples label="|CEOS-ARD ST Requirement Examples"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/st-metadata-examples.yaml-->CEOS-ARD Requirement Examples (Surface Temperature) {#sec:annex-st-metadata-examples label="|CEOS-ARD Requirement Examples (Surface Temperature)"}
 
 ### General Metadata
 

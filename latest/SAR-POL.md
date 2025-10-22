@@ -224,6 +224,10 @@ PRD
 PSLR
 :   Polarimetric Signal-to-Noise Level Ratio
 
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/rrmse.yaml -->
+rRMSE
+:   Radial Root Mean Square Error
+
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/rtc.yaml -->
 RTC
 :   Radiometrically Terrain Corrected
@@ -807,9 +811,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/bounding-box.yaml-->`3.7.` Product Bounding Box {#sec:prd.metadata-bounding-box label="|Product Metadata: Product Bounding Box"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-bbox.yaml-->`3.7.` Product Bounding Box {#sec:prd.metadata-geo-bbox label="|Product Metadata: Product Bounding Box"}
 
-Identifier: `prd.metadata-bounding-box`
+Identifier: `prd.metadata-geo-bbox`
 
 
 
@@ -831,9 +835,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/footprint.yaml-->`3.8.` Product Geographical Extent {#sec:prd.metadata-footprint label="|Product Metadata: Product Geographical Extent"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area.yaml-->`3.8.` Product Geographical Extent {#sec:prd.metadata-geo-area label="|Product Metadata: Product Geographical Extent"}
 
-Identifier: `prd.metadata-footprint`
+Identifier: `prd.metadata-geo-area`
 
 
 
@@ -1300,9 +1304,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-correction.yaml-->`5.4.` Radiometric Terrain Correction Algorithm {#sec:rcm.corrections-radiometric-terrain-correction label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo.yaml-->`5.4.` Radiometric Terrain Correction Algorithm {#sec:rcm.corrections-radiometric-terrain-algo label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
 
-Identifier: `rcm.corrections-radiometric-terrain-correction`
+Identifier: `rcm.corrections-radiometric-terrain-algo`
 
 
 
