@@ -1,0 +1,16 @@
+title: Corrections for Atmosphere and Emissivity
+description: 
+threshold:
+  description: |-
+    Retrieval methods for estimating surface temperature are provided.
+  notes:
+    - The metadata references (may be through a single DOI landing page) a citable peer-reviewed algorithm.
+goal: null
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 3.2

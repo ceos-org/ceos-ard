@@ -1,0 +1,14 @@
+title: No Data
+description: 
+threshold:
+  description: |-
+    Pixels that do not correspond to an observation (‘empty pixels’) are flagged.
+  notes:
+goal: null
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: 2.2

@@ -1,0 +1,21 @@
+title: Auxiliary Data
+description: 
+threshold:
+  description: |-
+    The metadata identifies the sources of auxiliary data used in the generation process, ideally expressed as a single DOI landing page. 
+  notes:
+    - Auxiliary data includes DEMs, aerosols, etc. data sources.
+goal:
+  description: |-
+    As threshold, but information on auxiliary data should be available in the metadata as a single DOI landing page and is also available for free online download, contemporaneously with the product or through a link to the source.
+  notes:
+dependencies:
+glossary:
+  - auxiliary-data
+  - dem
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.14

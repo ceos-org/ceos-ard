@@ -1,6 +1,6 @@
 title: Radiometric Terrain Correction Algorithm 
 description:
-# todo: check whether this was converted correctly, also radiometric-terrain-correction.yaml.
+# todo: check whether this was converted correctly, also radiometric-terrain-algo.yaml.
 #       The "Goal for [GSLC] product type" comments are confusing and ambiguous.
 threshold: null
 goal:

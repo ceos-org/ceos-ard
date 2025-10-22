@@ -25,6 +25,7 @@ dependencies:
 glossary:
   - ale
   - doi
+  - rrmse
   - slc
   - url
 references:

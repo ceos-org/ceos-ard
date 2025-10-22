@@ -1,0 +1,21 @@
+title: Algorithms
+description: 
+threshold:
+  description: |-
+    All algorithms and versions, and the sequence in which they were applied in the generation process, are identified in the metadata.
+  notes:
+goal:
+  description: |-
+    As threshold, but only algorithms that have been published in a peer-reviewed journal.
+  notes:
+    - It is possible that high-quality corrections are applied through non-disclosed processes. CEOS-ARD does not per-se require full and open data and methods.
+    - Information on algorithms should be available in the metadata as a single DOI landing page.
+dependencies:
+glossary:
+  - ceos-ard
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.13

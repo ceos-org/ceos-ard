@@ -27,8 +27,8 @@
     - metadata/auxiliary-data
     - metadata/sample-spacing
     - metadata/resolution
-    - metadata/bounding-box
-    - metadata/footprint
+    - metadata/geo-bbox
+    - metadata/geo-area
     - metadata/image-size
     - metadata/pixel-coordinate-convention
     - metadata/crs
@@ -58,7 +58,7 @@
     - measurements/backscatter-gslc
     - metadata/scaling-conversion
     - metadata/noise-removal
-    - corrections/radiometric-terrain-correction-gslc
+    - corrections/radiometric-terrain-algo-gslc
     - metadata/radiometric-accuracy
 - category: geometric-corrections
   requirements:

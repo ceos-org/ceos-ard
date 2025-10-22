@@ -1,0 +1,15 @@
+title: Snow/Ice mask
+description: 
+threshold: null
+goal:
+  description: |-
+    The metadata indicates whether a pixel is assessed as being snow/ice or not. Information on snow/ice mask should be available in the metadata as a single DOI landing page.
+  notes:
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 2.7

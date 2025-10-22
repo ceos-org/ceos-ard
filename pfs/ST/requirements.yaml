@@ -1,22 +1,37 @@
 - category: general-metadata
   requirements:
     - metadata/traceability-st
-  # todo: the following should probably be added to the requirements
-  # - metadata/license
-- category: source-metadata
-  requirements:
-    - example
-- category: product-metadata
-  requirements:
-  # todo: the following should probably be added to the requirements
-  # - metadata/product-type
-    - example
+    - metadata/machine-readability-st
+    - metadata/time-st
+    - metadata/geo-area-st
+    - metadata/crs-st
+    - metadata/map-projection
+    - metadata/geometric-correction-methods
+    - metadata/geometric-accuracy
+    - metadata/instrument-st
+    - metadata/spectral-bands
+    - metadata/sensor-calibration-st
+    - metadata/radiometric-accuracy-st
+    - metadata/algorithms
+    - metadata/auxiliary-data-st
+    - metadata/processing-chain-prov
+    - metadata/data-access-st
+    - metadata/data-quality
 - category: per-pixel-metadata
   requirements:
-    - example
+    - metadata/machine-readability-st2
+    - per-pixel/nodata
+    - per-pixel/incomplete-testing
+    - per-pixel/saturation
+    - per-pixel/cloud
+    - per-pixel/cloud-shadow
+    - per-pixel/snow-ice
+    - per-pixel/solar-view-angles
 - category: radiometric-atmospheric-corrections
   requirements:
-    - measurements/uncertainty-st # 3.3
+    - measurements/measurement-st
+    - corrections/atmosphere-emissivity
+    - measurements/uncertainty-st
 - category: geometric-corrections
   requirements:
-    - example
+    - corrections/geometric

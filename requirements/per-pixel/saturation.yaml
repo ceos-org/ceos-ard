@@ -1,0 +1,17 @@
+title: Saturation
+description: 
+threshold:
+  description: |-
+    Metadata indicates where one or more pixel in the input spectral bands are saturated.
+  notes:
+goal:
+  description: |-
+    Metadata indicates which pixels are saturated for each spectral band.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: 2.4
