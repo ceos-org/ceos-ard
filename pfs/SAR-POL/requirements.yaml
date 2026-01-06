@@ -2,21 +2,21 @@
   requirements:
     # todo: most of the general metadata is product metadata - this should potentially be merged.
     - metadata/traceability-sar
-    - metadata/machine-readability
+    - metadata/machine-readability-sar
     - metadata/product-type-sar
     - metadata/pfs-url
-    - metadata/time
+    - metadata/time-sar
 - category: source-metadata
   requirements:
     - metadata/acquisition-id # todo: this is new from the category description
     - metadata/data-access-source
-    - metadata/instrument
+    - metadata/instrument-sar
     - metadata/time-source
     - metadata/acquisition-parameters-sar
     - metadata/orbit
     - metadata/processing-parameters
     - metadata/image-attributes-sar
-    - metadata/sensor-calibration
+    - metadata/sensor-calibration-sar
     - metadata/performance-indicators
     - metadata/polarimetric-calibration-matrices
     - metadata/mean-faraday-rotation-angle
@@ -40,7 +40,7 @@
 - category: per-pixel-metadata
   requirements:
     # - cloud-optimized-formats
-    - metadata/machine-readability
+    - metadata/machine-readability-sar
     - per-pixel/data-mask
     - per-pixel/scattering-area
     - per-pixel/local-incident-angle
@@ -56,7 +56,7 @@
     - metadata/scaling-conversion
     - metadata/noise-removal
     - corrections/radiometric-terrain-algo
-    - metadata/radiometric-accuracy
+    - metadata/radiometric-accuracy-sar
     - measurements/flattened-phase
 - category: geometric-corrections
   requirements:

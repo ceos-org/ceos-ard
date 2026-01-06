@@ -1,22 +1,44 @@
 - category: general-metadata
   requirements:
-    - metadata/traceability
-  # todo: the following should probably be added to the requirements
-  # - metadata/license
-- category: source-metadata
-  requirements:
-    - example
-- category: product-metadata
-  requirements:
-  # todo: the following should probably be added to the requirements
-  # - metadata/product-type
-    - example
+    - metadata/traceability-sr
+    - metadata/machine-readability-sr
+    - metadata/time-sr
+    - metadata/geo-area-sr
+    - metadata/crs-optical
+    - metadata/map-projection-sr
+    - metadata/geometric-correction-methods
+    - metadata/geometric-accuracy
+    - metadata/instrument-optical
+    - metadata/spectral-bands
+    - metadata/sensor-calibration-optical
+    - metadata/radiometric-accuracy-optical
+    - metadata/algorithms-sr
+    - metadata/auxiliary-data-optical
+    - metadata/processing-chain-prov
+    - metadata/data-access
+    - metadata/data-quality-sr
 - category: per-pixel-metadata
   requirements:
-    - example
+    - metadata/machine-readability-per-pixel-optical
+    - per-pixel/nodata
+    - per-pixel/incomplete-testing
+    - per-pixel/saturation
+    - per-pixel/cloud
+    - per-pixel/cloud-shadow
+    - per-pixel/land-water
+    - per-pixel/snow-ice
+    - per-pixel/terrain-shadow
+    - per-pixel/terrain-occlusion
+    - per-pixel/solar-view-angles
+    - per-pixel/terrain-illumination
 - category: radiometric-atmospheric-corrections
   requirements:
-    - measurements/uncertainty # 3.2
+    - measurements/measurement-sr
+    - measurements/uncertainty-sr
+    - measurements/normalisation-sr
+    - measurements/directional-atmospheric-scattering
+    - corrections/water-vapour
+    - corrections/ozone
 - category: geometric-corrections
   requirements:
-    - example
+    - corrections/geometric-sr

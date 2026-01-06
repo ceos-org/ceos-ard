@@ -1,0 +1,14 @@
+title: Terrain Illumination Correction
+description: 
+threshold: null
+goal:
+  description: |-
+    Coefficients used for terrain illumination correction are provided for each pixel.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: SR 2.9

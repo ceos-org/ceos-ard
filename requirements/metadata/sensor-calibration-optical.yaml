@@ -7,7 +7,7 @@ goal:
     Ideally this would support machine-to-machine access.
   notes:
     - Information on sensory calibration should be available in the metadata as a single DOI landing page.
-  # This is exactly the same as sensor-calibration.yaml except for the note added above. Can we align?
+  # This is exactly the same as sensor-calibration-sar.yaml except for the note added above. Can we align?
 dependencies:
 glossary:
   - doi

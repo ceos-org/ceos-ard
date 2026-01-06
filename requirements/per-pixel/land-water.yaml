@@ -1,0 +1,15 @@
+title: Land/Water Mask
+description: 
+threshold: null
+goal:
+  description: |-
+    The metadata indicates whether a pixel is assessed as being land or water. Information on land/water mask should be available in the metadata as a single DOI landing page.
+  notes:
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: SR 2.7

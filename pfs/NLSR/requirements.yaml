@@ -1,6 +1,6 @@
 - category: general-metadata
   requirements:
-    - metadata/traceability
+    - metadata/traceability-sr
   # todo: the following should probably be added to the requirements
   # - metadata/license
 - category: source-metadata
@@ -16,7 +16,7 @@
     - example
 - category: radiometric-atmospheric-corrections
   requirements:
-    - measurements/uncertainty # 3.2
+    - measurements/uncertainty-sr # 3.2
 - category: geometric-corrections
   requirements:
     - example

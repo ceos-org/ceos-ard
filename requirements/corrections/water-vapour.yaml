@@ -1,0 +1,19 @@
+title: Water Vapour Corrections
+description:
+threshold:
+  description: |-
+    Corrections are applied for water vapour. Metadata contains a single DOI landing page with references to:
+    
+    - a citable peer-reviewed algorithm
+    - technical documentation regarding the implementation of that algorithm
+  notes:
+    - Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.
+goal: null
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 3.5

@@ -1,3 +1,5 @@
+# This requirement is not different to the ST requirement except that it links to traceability-sr instead of traceability-st.
+# This should be solved by aligning the traceability requirements.
 title: Measurement Uncertainty
 description: |-
   Note: In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
@@ -6,14 +8,14 @@ goal:
   description: |-
     An estimate of the certainty of the values is provided in measurement units.
   notes:
-    - This is a requirement for SI traceability. See also [@metadata/traceability].
+    - This is a requirement for SI traceability. See also [@metadata/traceability-sr].
     - Information on measurement uncertainty should be available in the metadata as a single DOI landing page.
 dependencies:
-  - metadata/traceability
+  - metadata/traceability-sr
 glossary:
   - si
 references:
 metadata:
 legacy:
   sar: null
-  optical: 3.2 (SR, NLSR)
+  optical: 3.2

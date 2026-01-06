@@ -4,22 +4,22 @@
     - metadata/machine-readability-st
     - metadata/time-st
     - metadata/geo-area-st
-    - metadata/crs-st
+    - metadata/crs-optical
     - metadata/map-projection
     - metadata/geometric-correction-methods
     - metadata/geometric-accuracy
-    - metadata/instrument-st
+    - metadata/instrument-optical
     - metadata/spectral-bands
-    - metadata/sensor-calibration-st
-    - metadata/radiometric-accuracy-st
+    - metadata/sensor-calibration-optical
+    - metadata/radiometric-accuracy-optical
     - metadata/algorithms
-    - metadata/auxiliary-data-st
+    - metadata/auxiliary-data-optical
     - metadata/processing-chain-prov
-    - metadata/data-access-st
-    - metadata/data-quality
+    - metadata/data-access
+    - metadata/data-quality-st
 - category: per-pixel-metadata
   requirements:
-    - metadata/machine-readability-st2
+    - metadata/machine-readability-per-pixel-optical
     - per-pixel/nodata
     - per-pixel/incomplete-testing
     - per-pixel/saturation
@@ -34,4 +34,4 @@
     - measurements/uncertainty-st
 - category: geometric-corrections
   requirements:
-    - corrections/geometric
+    - corrections/geometric-st
