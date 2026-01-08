@@ -2,7 +2,7 @@ title: Algorithms
 description: 
 threshold:
   description: |-
-    All algorithms and versions, and the sequence in which they were applied in the generation process, are identified in the metadata.
+    All algorithms, and the sequence in which they were applied in the generation process, are identified in the metadata.
     For example, these may be available through Algorithm Theoretical Basis documents.
   notes:
     -  Information on algorithms should be available in the metadata as a single DOI landing page.

@@ -9,7 +9,7 @@ threshold:
 
     A consistent gridding/sampling frame is used, including common cell size, origin, and nominal sample point location within the cell (centre, ll, ur).
 
-    Relevant metadata must be provided under [@metadata/geometric-accuracy] and [@metadata/instrument-optical].
+    Relevant metadata must be provided under [@metadata/geometric-accuracy-sr] and [@metadata/instrument-optical].
   notes:
     - |-
       The threshold level will not necessarily enable interoperability between data from **different** sources as the geometric corrections for each of the sources may differ. 
@@ -20,12 +20,12 @@ goal:
 
     A consistent gridding/sampling frame is necessary to meet this requirement.
 
-    Relevant metadata must be provided under [@metadata/geometric-accuracy] and [@metadata/instrument-optical].
+    Relevant metadata must be provided under [@metadata/geometric-accuracy-sr] and [@metadata/instrument-optical].
   notes:
     - |-
       This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction, and with non-image spatial data such as GIS layers and terrain models.
 dependencies:
-  - metadata/geometric-accuracy
+  - metadata/geometric-accuracy-sr
   - metadata/instrument-optical
 glossary:
   - cep

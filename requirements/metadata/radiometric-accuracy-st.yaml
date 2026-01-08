@@ -1,0 +1,16 @@
+title: Radiometric Accuracy
+description:
+threshold: null
+goal:
+  description: |-
+    Information on radiometric accuracy should be available in the metadata as a single DOI landing page providing information on metrics describing the assessed absolute radiometric accuracy of the data, expressed as absolute radiometric uncertainty relative to a known reference standard.
+  notes:
+    - For example, this may come from comparison with routine and rigorously collected in situ measurements.
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.12

@@ -1,0 +1,16 @@
+title: Geometric Correction Methods
+description: 
+threshold: null
+goal:
+  description: |-
+    Information on geometric correction methods should be available in the metadata as a single DOI landing page, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.  
+  notes:
+dependencies:
+glossary:
+  - auxiliary-data
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.7

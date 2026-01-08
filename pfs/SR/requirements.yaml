@@ -1,20 +1,20 @@
 - category: general-metadata
   requirements:
     - metadata/traceability-sr
-    - metadata/machine-readability-sr
+    - metadata/machine-readability-optical
     - metadata/time-sr
     - metadata/geo-area-sr
     - metadata/crs-optical
     - metadata/map-projection-sr
-    - metadata/geometric-correction-methods
-    - metadata/geometric-accuracy
+    - metadata/geometric-correction-methods-sr
+    - metadata/geometric-accuracy-sr
     - metadata/instrument-optical
     - metadata/spectral-bands
     - metadata/sensor-calibration-optical
-    - metadata/radiometric-accuracy-optical
+    - metadata/radiometric-accuracy-sr
     - metadata/algorithms-sr
     - metadata/auxiliary-data-optical
-    - metadata/processing-chain-prov
+    - metadata/processing-chain-prov-sr
     - metadata/data-access
     - metadata/data-quality-sr
 - category: per-pixel-metadata
