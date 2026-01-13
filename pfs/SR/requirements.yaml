@@ -29,7 +29,7 @@
     - per-pixel/snow-ice
     - per-pixel/terrain-shadow
     - per-pixel/terrain-occlusion
-    - per-pixel/solar-view-angles
+    - per-pixel/view-angles-solar
     - per-pixel/terrain-illumination
 - category: radiometric-atmospheric-corrections
   requirements:

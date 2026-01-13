@@ -1,8 +1,8 @@
-title: Directional Atmospheric Scattering
+title: Atmospheric Corrections
 description:
 threshold:
   description: |-
-    Corrections are applied for aerosols and molecular (Rayleigh) scattering.
+    Corrections are applied for atmospheric scattering.
 
     Metadata contains a single DOI landing page with references to:
     

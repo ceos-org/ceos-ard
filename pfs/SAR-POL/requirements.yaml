@@ -39,7 +39,7 @@
     - metadata/orbit-reference-nrb-pol
 - category: per-pixel-metadata
   requirements:
-    # - cloud-optimized-formats
+    - cloud-optimized-formats
     - metadata/machine-readability-sar
     - per-pixel/data-mask
     - per-pixel/scattering-area
@@ -51,7 +51,7 @@
     - per-pixel/dem
 - category: radiometrically-corrected-measurements
   requirements:
-    # - cloud-optimized-formats
+    - cloud-optimized-formats
     - measurements/backscatter-pol
     - metadata/scaling-conversion
     - metadata/noise-removal

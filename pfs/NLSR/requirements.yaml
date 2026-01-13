@@ -1,22 +1,48 @@
 - category: general-metadata
   requirements:
     - metadata/traceability-sr
-  # todo: the following should probably be added to the requirements
-  # - metadata/license
-- category: source-metadata
-  requirements:
-    - example
-- category: product-metadata
-  requirements:
-  # todo: the following should probably be added to the requirements
-  # - metadata/product-type
-    - example
+    - metadata/machine-readability-optical
+    - metadata/time-sr
+    - metadata/geo-area-sr
+    - metadata/crs-optical
+    - metadata/map-projection-nlsr
+    - metadata/geometric-correction-methods-sr
+    - metadata/geometric-accuracy-sr
+    - metadata/instrument-optical
+    - metadata/spectral-bands
+    - metadata/sensor-calibration-optical
+    - metadata/radiometric-accuracy-nlsr
+    - metadata/algorithms-sr
+    - metadata/auxiliary-data-optical
+    - metadata/processing-chain-prov-nlsr
+    - metadata/data-access
+    - metadata/data-quality-sr
 - category: per-pixel-metadata
   requirements:
-    - example
+    - cloud-optimized-formats
+    - metadata/machine-readability-per-pixel-optical
+    - per-pixel/nodata
+    - per-pixel/incomplete-testing
+    - per-pixel/saturation
+    - per-pixel/cloud
+    - per-pixel/cloud-shadow-nlsr
+    - per-pixel/land-water
+    - per-pixel/snow-ice
+    - per-pixel/terrain-shadow
+    - per-pixel/terrain-occlusion
+    - per-pixel/view-angles-lunar
+    - per-pixel/terrain-illumination
+    - per-pixel/moon-illumination-fraction
+    - per-pixel/brightness-temperature
+    - per-pixel/solar-zenith-angle
 - category: radiometric-atmospheric-corrections
   requirements:
-    - measurements/uncertainty-sr # 3.2
+    - measurements/measurement-nlsr
+    - measurements/uncertainty-sr
+    - measurements/normalisation-nlsr
+    - measurements/atmospheric-corrections
+    - corrections/lunar-radiance
+    - corrections/stray-light
 - category: geometric-corrections
   requirements:
-    - example
+    - corrections/geometric-sr

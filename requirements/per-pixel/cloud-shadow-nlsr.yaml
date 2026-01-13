@@ -1,0 +1,18 @@
+title: Cloud Shadow
+description: 
+threshold:
+  description: |-
+  notes:
+goal:
+  description: |-
+    Metadata indicates whether a pixel is assessed as being cloud shadow.
+    Information on cloud shadow detection should be available in the metadata as a single DOI landing page.
+  notes:
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 2.6

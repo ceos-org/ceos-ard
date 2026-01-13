@@ -1,0 +1,19 @@
+title: Measurement
+description: 
+threshold:
+  description: |-
+    Pixel values that are expressed as a measurement of the nighttime light radiance.
+  notes:
+goal:
+  description: |-
+    Nighttime light radiance measurements are SI traceable (see also [@metadata/traceability-sr]).
+  notes:
+dependencies:
+  - metadata/traceability-sr
+glossary:
+  - si
+references:
+metadata:
+legacy:
+  sar:
+  optical: 3.1

@@ -1,0 +1,19 @@
+title: Lunar and Viewing Geometry
+description:
+# ToDo: The threshold requirement is a metadata requirement,
+# the goal requirement is a per-pixel requirement - should this be split?
+threshold:
+  description: |-
+    Provide average lunar and sensor viewing azimuth and zenith angles.
+  notes:
+goal:
+  description: |-
+    Provide per-pixel lunar and sensor viewing azimuth and zenith angles.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: NLSR 2.11

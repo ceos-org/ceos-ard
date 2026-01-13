@@ -1,0 +1,22 @@
+title: Stray Light Corrections
+description: 
+threshold:
+  description: |-
+    Corrections are applied for stray light.
+
+    Metadata contains a single DOI landing page with references to:
+
+    - a citable peer-reviewed algorithm 
+    - technical documentation regarding the implementation of that algorithm and any models used.
+  notes:
+    - Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.
+goal: null
+dependencies:
+glossary:
+  - atbd
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: NLSR 3.6

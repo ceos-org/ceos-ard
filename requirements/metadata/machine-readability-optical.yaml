@@ -14,5 +14,5 @@ references:
   - iso19115_2_2009
 metadata:
 legacy:
-  sar: null
+  sar:
   optical: 1.1

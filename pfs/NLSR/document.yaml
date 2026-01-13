@@ -1,6 +1,6 @@
 id: NLSR
 title: Nighttime Light Surface Radiance
-version: 1.1-draft
+version: 1.0-draft
 type: Optical
 applies_to: |-
   Data collected with nighttime light sensors operating in the VIS/NIR wavelengths.

@@ -5,7 +5,7 @@
     - metadata/time-st
     - metadata/geo-area-st
     - metadata/crs-optical
-    - metadata/map-projection
+    - metadata/map-projection-st
     - metadata/geometric-correction-methods-st
     - metadata/geometric-accuracy-st
     - metadata/instrument-optical
@@ -26,7 +26,7 @@
     - per-pixel/cloud
     - per-pixel/cloud-shadow
     - per-pixel/snow-ice
-    - per-pixel/solar-view-angles
+    - per-pixel/view-angles-solar
 - category: radiometric-atmospheric-corrections
   requirements:
     - measurements/measurement-st
