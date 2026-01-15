@@ -11,7 +11,7 @@
     - metadata/instrument-optical
     - metadata/spectral-bands
     - metadata/sensor-calibration-optical
-    - metadata/radiometric-accuracy-nlsr
+    - metadata/radiometric-accuracy-sr
     - metadata/algorithms-sr
     - metadata/auxiliary-data-optical
     - metadata/processing-chain-prov-nlsr
@@ -19,15 +19,14 @@
     - metadata/data-quality-sr
 - category: per-pixel-metadata
   requirements:
-    - cloud-optimized-formats
     - metadata/machine-readability-per-pixel-optical
     - per-pixel/nodata
     - per-pixel/incomplete-testing
     - per-pixel/saturation
     - per-pixel/cloud
     - per-pixel/cloud-shadow-nlsr
-    - per-pixel/land-water
-    - per-pixel/snow-ice
+    - per-pixel/land-water-nlsr
+    - per-pixel/snow-ice-nlsr
     - per-pixel/terrain-shadow
     - per-pixel/terrain-occlusion
     - per-pixel/view-angles-lunar

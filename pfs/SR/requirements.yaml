@@ -25,8 +25,8 @@
     - per-pixel/saturation
     - per-pixel/cloud
     - per-pixel/cloud-shadow
-    - per-pixel/land-water
-    - per-pixel/snow-ice
+    - per-pixel/land-water-sr
+    - per-pixel/snow-ice-sr
     - per-pixel/terrain-shadow
     - per-pixel/terrain-occlusion
     - per-pixel/view-angles-solar

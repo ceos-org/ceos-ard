@@ -3,14 +3,15 @@ description:
 threshold: null
 goal:
   description: |-
-    Information on radiometric accuracy should be available in the metadata as a single DOI landing page providing information on metrics describing the assessed absolute radiometric accuracy of the data, expressed as absolute radiometric uncertainty relative to a known reference standard.
+    The metadata includes metrics describing the assessed absolute radiometric uncertainty of the version of the data or product, expressed as absolute radiometric uncertainty relative to appropriate, known reference sites and standards (for example, pseudo-invariant calibration sites, rigorously collected field spectra, Rayleigh, DCC, etc.)
   notes:
-    - For example, this may come from comparison with routine and rigorously collected in situ measurements.
+    - Information on radiometric accuracy should be available in the metadata as a single DOI landing page.
 dependencies:
 glossary:
+  # todo: what does DCC stand for? Add to glossary
   - doi
 references:
 metadata:
 legacy:
   sar:
-  optical: 1.12
+  optical: NLSR 1.12 / SR 1.12

@@ -1,8 +1,6 @@
 title: Cloud Shadow
 description: 
-threshold:
-  description: |-
-  notes:
+threshold: null
 goal:
   description: |-
     Metadata indicates whether a pixel is assessed as being cloud shadow.
