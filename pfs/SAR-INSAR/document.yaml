@@ -1,0 +1,33 @@
+id: SAR-INSAR
+title: Interferometric SAR
+version: 1.2.1-draft
+type: Synthetic Aperture Radar
+applies_to: |-
+  The CEOS-ARD Interferometric SAR InSAR product format specification describes products resulting from InSAR processing steps.
+
+  Two levels of product categories are supported:
+
+  1. The first level includes InSAR coherence and wrapped interferogram images derived from a pair (or several pairs) of SLC or GSLC source data listed in the product metadata file. The product metadata file reports the processing information (parameters and methods) used to produce them. The PFS also supports unwrapped interferograms, but their inclusion is not a threshold requirement for this product level. An InSAR pair identification label allows support of InSAR time series products derived from several repeated pass SAR source combinations. A Boolean flag is used to indicate whether the interferometric phases due to Earth curvature and to the surface topography are removed from interferograms. This InSAR product level can then serve as input in temporal coherence analysis techniques or as input in production of time series displacement products by distributed target approaches like Small BAseline Subset (SBAS) technique [@lanari2004].
+  2. InSAR displacement belongs to the second level of InSAR products. Displacement products can be expressed as InSAR displacement from a pair of SAR acquisitions and/or from a time series of SAR acquisitions, as a displacement and/or as displacement rate products over a time period. Since several different InSAR displacement approaches exist in the literature for which, each have their own criteria and parameters, it is not possible to prescribe specific metadata details. Nonetheless, it is required that main processing steps (with reference to methodologies), with their chosen parameters (criteria like statistical thresholds and estimation window sizes) are well defined in the displacement product metadata, in order to preserve traceability for the end users. For InSAR displacement products generated from first level CEOS-ARD InSAR, listed “source” products in the metadata can refer to those first level CEOS-ARD InSAR described above. In accordance with other CEOS-ARD products, per-pixel metadata and data are terrain geocoded products.
+
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+# Only glossary entries that are not specific to certain requirements or sections are listed here.
+glossary:
+  - gslc
+  - sar
+  - slc
+  - insar
+
+references:
+  - iso19115_2_2009
+  - lanari2004
+
+annexes:
+  - sar-general-processing-roadmap
+  - sar-topographic-phase-removal
+  - sar-pol-covmat # todo: not specific to GSLC, but added to fix broken cross references
+  - sar-gslc-example

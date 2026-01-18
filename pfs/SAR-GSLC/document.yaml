@@ -1,6 +1,6 @@
 id: SAR-GSLC
 title: Geocoded Single-Look Complex
-version: 1.2-draft
+version: 1.2.1-draft
 type: Synthetic Aperture Radar
 applies_to: |-
   This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.

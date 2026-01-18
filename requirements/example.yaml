@@ -1,21 +1,26 @@
 # todo: remove once the example is no longer needed
 title: Example Requirement
 description: This is an example requirement.
-threshold:
-  description: |-
-    This is a threshold requirement.
-  notes:
-goal:
-  description: |-
-    This is a goal requirement.
-  notes:
-    - This is a note.
+requirements:
+  example:
+    description: |-
+      This is a threshold requirement.
+    notes:
+      - This is a note.
+    metadata:
+  example2:
+    optional: true
+    description: |-
+      This is a goal requirement.
+    notes:
+      - This is another note.
+    metadata:
 dependencies:
 glossary:
   - doi
 references:
   - iso19115_2_2009
-metadata:
-legacy:
-  sar:
-  optical:
+changelog:
+  - date: 2025-09-04
+    description: Migrated from Combined SAR PFS, version x.x, req. y.y
+    level: major/minor/patch
