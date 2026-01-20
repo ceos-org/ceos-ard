@@ -1,0 +1,30 @@
+name: SAR - Interferometric SAR [INSAR]
+description: Report an issue or propose a change for the SAR PFS, which applies for the Interferometric Synthetic Aperture Radar \[INSAR] products.
+labels:
+  - SAR
+  - 'SAR: INSAR'
+  - needs discussion
+body:
+  - type: input
+    id: version
+    attributes:
+      label: PFS Version
+      description: What version of the PFS are you referring to?
+      placeholder: "e.g. 1.0"
+    validations:
+      required: true
+  - type: input
+    id: req-no
+    attributes:
+      label: Requirement number(s)
+      description: Which requirement number(s) are you referring to?
+      placeholder: "e.g. 1.6"
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Please describe the issue or proposal.
+      placeholder: Add your description here...
+    validations:
+      required: true
+
