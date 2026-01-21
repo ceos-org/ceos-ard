@@ -1,0 +1,15 @@
+title: Solar Zenith Angle
+description: 
+threshold:
+  description: |-
+    Provide solar zenith angle to support stray-light corrections (see also [@corrections/stray-light]).
+  notes:
+goal: null
+dependencies:
+  - corrections/stray-light
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: NLSR 2.16

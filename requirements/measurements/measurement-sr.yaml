@@ -1,0 +1,19 @@
+title: Measurement
+description: 
+threshold:
+  description: |-
+    Pixel values are expressed as a measurement of the Surface Reflectance of the land. This is a dimensionless value.
+  notes:
+goal:
+  description: |-
+    Surface Reflectance measurements are SI traceable (see also [@metadata/traceability-sr]).
+  notes:
+dependencies:
+  - metadata/traceability-sr
+glossary:
+  - si
+references:
+metadata:
+legacy:
+  sar:
+  optical: 3.1

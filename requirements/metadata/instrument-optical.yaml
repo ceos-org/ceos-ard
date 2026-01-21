@@ -6,7 +6,7 @@ threshold:
   notes:
 goal:
   description: |-
-    As threshold, but information on instrument should be available in the metadata as a single DOI landing page with references to the relevant CEOS Missions, Instruments and Measurements Database record.
+    As threshold, but information should be available in the metadata as a single DOI landing page with references to the relevant CEOS Missions, Instruments, and Measurements Database record.
   notes:
 dependencies:
 glossary:

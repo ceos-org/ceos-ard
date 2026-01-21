@@ -1,0 +1,23 @@
+title: Ozone Corrections
+description:
+threshold: null
+goal:
+  description: |-
+    Data is corrected for ozone.
+
+    Relevant metadata must be provided under [@metadata/geometric-accuracy-sr] and [@metadata/instrument-optical].
+
+    Metadata contains a single DOI landing page with references to:
+    
+    - a citable peer-reviewed algorithm
+    - technical documentation regarding the implementation of that algorithm
+dependencies:
+  - metadata/geometric-accuracy-sr
+  - metadata/instrument-optical
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 3.6

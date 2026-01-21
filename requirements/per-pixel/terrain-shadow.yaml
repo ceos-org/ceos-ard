@@ -1,0 +1,14 @@
+title: Terrain Shadow Mask
+description: 
+threshold: null
+goal:
+  description: |-
+    The metadata indicates pixels that are not directly illuminated due to terrain shadowing.
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: SR 2.9

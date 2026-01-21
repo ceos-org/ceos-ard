@@ -1,0 +1,13 @@
+title: Brightness Temperature
+description: 
+threshold:
+  description: Provide brightness temperature from thermal bands.  
+  notes:
+goal: null
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: NLSR 2.15

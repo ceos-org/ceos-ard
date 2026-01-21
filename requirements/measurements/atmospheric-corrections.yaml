@@ -1,0 +1,23 @@
+title: Atmospheric Corrections
+description:
+threshold:
+  description: |-
+    Corrections are applied for atmospheric scattering.
+
+    Metadata contains a single DOI landing page with references to:
+    
+    - a citable peer-reviewed algorithm
+    - technical documentation regarding the implementation of that algorithm
+    - the sources of ancillary data used to make corrections
+  notes:
+    - Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.
+goal: null
+dependencies:
+glossary:
+  - atbd
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: 3.4

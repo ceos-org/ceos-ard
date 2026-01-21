@@ -1,0 +1,16 @@
+title: Overall Data Quality
+description: 
+threshold: null
+goal:
+  description: |-
+    Machine-readable metrics describing the overall quality of the data are included in the metadata, at minimum the cloud cover extent, i.e.:
+
+    - Proportion of observations over land (c.f. ocean) affected by non-target phenomena, e.g., cloud and cloud shadows
+  notes:
+dependencies:
+glossary:
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.17

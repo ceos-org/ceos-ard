@@ -1,0 +1,20 @@
+title: Geometric Accuracy of the Data
+description: 
+threshold: null
+goal:
+  description: |-
+    The metadata includes metrics describing the assessed geodetic accuracy of the data, expressed units of the coordinate system of the data.
+    Accuracy is assessed by independent verification (as well as internal model-fit where applicable).
+    Uncertainties are expressed quantitatively, for example, as root mean square error (RMSE) or Circular Error Probability (CEP90, CEP95), etc.
+  notes:
+    - Information on geometric accuracy of the data should be available in the metadata as a single DOI landing page.
+dependencies:
+glossary:
+  - cep
+  - doi
+  - rmse
+references:
+metadata:
+legacy:
+  sar:
+  optical: 1.8

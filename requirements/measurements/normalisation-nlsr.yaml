@@ -1,0 +1,17 @@
+title: Measurement Normalisation
+description:
+threshold: null
+goal:
+  description: |-
+    Measurements are normalised for viewing conditions (i.e., nadir view angle).
+    This may include radiative transfer modelling.
+  notes:
+    - Information on measurement normalisation should be available in the metadata as a single DOI landing page.
+dependencies:
+glossary:
+  - doi
+references:
+metadata:
+legacy:
+  sar:
+  optical: NLSR 3.3

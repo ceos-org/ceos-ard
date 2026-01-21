@@ -1,4 +1,4 @@
-title: Snow/Ice mask
+title: Snow/Ice Mask
 description: 
 threshold: null
 goal:
@@ -12,4 +12,4 @@ references:
 metadata:
 legacy:
   sar:
-  optical: 2.7
+  optical: ST 2.7 / SR 2.8

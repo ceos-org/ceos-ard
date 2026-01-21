@@ -1,3 +1,5 @@
+# This requirement is not different to the SR requirement except that it links to traceability-st instead of traceability-sr.
+# This should be solved by aligning the traceability requirements.
 title: Measurement Uncertainty
 description:
 threshold: null

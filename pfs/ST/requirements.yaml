@@ -1,32 +1,32 @@
 - category: general-metadata
   requirements:
     - metadata/traceability-st
-    - metadata/machine-readability-st
+    - metadata/machine-readability-optical
     - metadata/time-st
     - metadata/geo-area-st
-    - metadata/crs-st
-    - metadata/map-projection
-    - metadata/geometric-correction-methods
-    - metadata/geometric-accuracy
-    - metadata/instrument-st
+    - metadata/crs-optical
+    - metadata/map-projection-st
+    - metadata/geometric-correction-methods-st
+    - metadata/geometric-accuracy-st
+    - metadata/instrument-optical
     - metadata/spectral-bands
-    - metadata/sensor-calibration-st
+    - metadata/sensor-calibration-optical
     - metadata/radiometric-accuracy-st
     - metadata/algorithms
-    - metadata/auxiliary-data-st
-    - metadata/processing-chain-prov
-    - metadata/data-access-st
-    - metadata/data-quality
+    - metadata/auxiliary-data-optical
+    - metadata/processing-chain-prov-st
+    - metadata/data-access
+    - metadata/data-quality-st
 - category: per-pixel-metadata
   requirements:
-    - metadata/machine-readability-st2
+    - metadata/machine-readability-per-pixel-optical
     - per-pixel/nodata
     - per-pixel/incomplete-testing
     - per-pixel/saturation
     - per-pixel/cloud
     - per-pixel/cloud-shadow
-    - per-pixel/snow-ice
-    - per-pixel/solar-view-angles
+    - per-pixel/snow-ice-sr
+    - per-pixel/view-angles-solar
 - category: radiometric-atmospheric-corrections
   requirements:
     - measurements/measurement-st
@@ -34,4 +34,4 @@
     - measurements/uncertainty-st
 - category: geometric-corrections
   requirements:
-    - corrections/geometric
+    - corrections/geometric-st

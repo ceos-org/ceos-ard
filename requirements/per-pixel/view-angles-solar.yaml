@@ -1,12 +1,12 @@
 title: Solar and Viewing Geometry
-description: 
+description:
+# ToDo: The threshold requirement is a metadata requirement,
+# the goal requirement is a per-pixel requirement - should this be split?
 threshold:
-  # This is general metadata - todo: split?
   description: |-
     Provide average solar and sensor viewing azimuth and zenith angles.
   notes:
 goal:
-  # This is per-pixel metadata - todo: split?
   description: |-
     Provide per-pixel solar and sensor viewing azimuth and zenith angles.
   notes:
@@ -16,4 +16,4 @@ references:
 metadata:
 legacy:
   sar:
-  optical: 2.8
+  optical: ST 2.8 / SR 2.11
