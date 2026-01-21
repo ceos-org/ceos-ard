@@ -592,16 +592,16 @@ Traceability</h4>
 <p>Data must be traceable to SI reference standard.</p>
 <p>Notes:</p>
 <ol type="1">
-<li>Relationship to Section “<a href="#sec:rcm.metadata-radiometric-accuracy">Radiometrically Corrected
-Measurements: Radiometric Accuracy</a>”. Traceability requires an
-estimate of measurement uncertainty.</li>
+<li>Relationship to Section “<a href="#sec:rcm.metadata-radiometric-accuracy-sar">Radiometrically
+Corrected Measurements: Radiometric Accuracy</a>”. Traceability requires
+an estimate of measurement uncertainty.</li>
 <li>Information on traceability should be available in the metadata as a
 single DOI landing page.</li>
 </ol>
 <hr />
-<h4 data-label="|General Metadata: Metadata Machine Readability" id="sec:meta.metadata-machine-readability"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability.yaml--><code>1.2.</code>
+<h4 data-label="|General Metadata: Metadata Machine Readability" id="sec:meta.metadata-machine-readability-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml--><code>1.2.</code>
 Metadata Machine Readability</h4>
-<p>Identifier: <code>meta.metadata-machine-readability</code></p>
+<p>Identifier: <code>meta.metadata-machine-readability-sar</code></p>
 <h5 id="threshold-requirements-1">Threshold requirements:</h5>
 <p>Metadata is provided in a structure that enables a computer algorithm
 to be used to consistently and automatically identify and extract each
@@ -631,9 +631,9 @@ Document Identifier</h4>
 <h5 id="goal-requirements-3">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|General Metadata: Data Collection Time" id="sec:meta.metadata-time"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time.yaml--><code>1.5.</code>
+<h4 data-label="|General Metadata: Data Collection Time" id="sec:meta.metadata-time-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-sar.yaml--><code>1.5.</code>
 Data Collection Time</h4>
-<p>Identifier: <code>meta.metadata-time</code></p>
+<p>Identifier: <code>meta.metadata-time-sar</code></p>
 <h5 id="threshold-requirements-4">Threshold requirements:</h5>
 <p>Number of source data acquisitions of the data collection is
 identified. The start and stop UTC time of data collection is identified
@@ -668,9 +668,9 @@ be retrieved, expressed as a URL or DOI.</p>
 consistently and reliably retrieved by a computer algorithm without any
 manual intervention being required.</p>
 <hr />
-<h4 data-label="|Source Metadata: Instrument" id="sec:src.metadata-instrument"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument.yaml--><code>2.3.</code>
+<h4 data-label="|Source Metadata: Instrument" id="sec:src.metadata-instrument-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-sar.yaml--><code>2.3.</code>
 Instrument</h4>
-<p>Identifier: <code>src.metadata-instrument</code></p>
+<p>Identifier: <code>src.metadata-instrument-sar</code></p>
 <h5 id="threshold-requirements-7">Threshold requirements:</h5>
 <p>The instrument used to collect the data is identified in the
 metadata:</p>
@@ -767,9 +767,9 @@ interval)</li>
 <p>Geometry of the image footprint expressed in WGS84 in a standardised
 format (e.g., WKT).</p>
 <hr />
-<h4 data-label="|Source Metadata: Sensor Calibration" id="sec:src.metadata-sensor-calibration"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration.yaml--><code>2.9.</code>
+<h4 data-label="|Source Metadata: Sensor Calibration" id="sec:src.metadata-sensor-calibration-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-sar.yaml--><code>2.9.</code>
 Sensor Calibration</h4>
-<p>Identifier: <code>src.metadata-sensor-calibration</code></p>
+<p>Identifier: <code>src.metadata-sensor-calibration-sar</code></p>
 <h5 id="threshold-requirements-13">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
 <h5 id="goal-requirements-13">Goal requirements:</h5>
@@ -1000,24 +1000,32 @@ provider. Per-pixel metadata should allow users to discriminate between
 (choose) observations on the basis of their individual suitability for
 applications.</p>
 <p><em>Cloud optimized file formats are recommended.</em></p>
-<h4 data-label="|Per-Pixel Metadata: Metadata Machine Readability" id="sec:pxl.metadata-machine-readability"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability.yaml--><code>4.1.</code>
-Metadata Machine Readability</h4>
-<p>Identifier: <code>pxl.metadata-machine-readability</code></p>
+<h4 data-label="|Per-Pixel Metadata: Cloud Optimized Formats" id="sec:pxl.cloud-optimized-formats"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml--><code>4.1.</code>
+Cloud Optimized Formats</h4>
+<p>Identifier: <code>pxl.cloud-optimized-formats</code></p>
 <h5 id="threshold-requirements-30">Threshold requirements:</h5>
+<p>Not required. <!-- *None* --></p>
+<h5 id="goal-requirements-30">Goal requirements:</h5>
+<p>All files are provided using cloud-optimized file formats.</p>
+<hr />
+<h4 data-label="|Per-Pixel Metadata: Metadata Machine Readability" id="sec:pxl.metadata-machine-readability-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml--><code>4.2.</code>
+Metadata Machine Readability</h4>
+<p>Identifier: <code>pxl.metadata-machine-readability-sar</code></p>
+<h5 id="threshold-requirements-31">Threshold requirements:</h5>
 <p>Metadata is provided in a structure that enables a computer algorithm
 to be used to consistently and automatically identify and extract each
 component/variable/layer for further use.</p>
-<h5 id="goal-requirements-30">Goal requirements:</h5>
+<h5 id="goal-requirements-31">Goal requirements:</h5>
 <p>As threshold, but metadata is formatted in accordance with CEOS-ARD
 SAR Metadata Specifications, v.1.1, or in a community endorsed standard
 that facilitates machine-readability, such as ISO 19115-2, Climate and
 Forecast (CF) convention, the Attribute Convention for Data Discovery
 (ACDD), etc.</p>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Data Mask Image" id="sec:pxl.per-pixel-data-mask"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/data-mask.yaml--><code>4.2.</code>
+<h4 data-label="|Per-Pixel Metadata: Data Mask Image" id="sec:pxl.per-pixel-data-mask"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/data-mask.yaml--><code>4.3.</code>
 Data Mask Image</h4>
 <p>Identifier: <code>pxl.per-pixel-data-mask</code></p>
-<h5 id="threshold-requirements-31">Threshold requirements:</h5>
+<h5 id="threshold-requirements-32">Threshold requirements:</h5>
 <p>Mask image indicating:</p>
 <ul>
 <li>Valid data</li>
@@ -1033,7 +1041,7 @@ Data Mask Image</h4>
 <li>Byte Order</li>
 <li>Bit Value Representation</li>
 </ul>
-<h5 id="goal-requirements-31">Goal requirements:</h5>
+<h5 id="goal-requirements-32">Goal requirements:</h5>
 <p>As threshold, including additional bit value representations,
 e.g.:</p>
 <ul>
@@ -1046,14 +1054,14 @@ RTC has been applied)</li>
 <li>DEM gap filling (i.e., interpolated DEM over gaps)</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Scattering Area Image" id="sec:pxl.per-pixel-scattering-area"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml--><code>4.3.</code>
+<h4 data-label="|Per-Pixel Metadata: Scattering Area Image" id="sec:pxl.per-pixel-scattering-area"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml--><code>4.4.</code>
 Scattering Area Image</h4>
 <p>Identifier: <code>pxl.per-pixel-scattering-area</code></p>
 <p><strong>Usage: Recommended for scenes that include land
 areas.</strong></p>
-<h5 id="threshold-requirements-32">Threshold requirements:</h5>
+<h5 id="threshold-requirements-33">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-32">Goal requirements:</h5>
+<h5 id="goal-requirements-33">Goal requirements:</h5>
 <p>DEM-based scattering area image used for Gamma-Nought terrain
 normalisation is provided. This quantifies the local scattering area
 used to normalise for radiometric distortions induced by terrain to the
@@ -1073,10 +1081,10 @@ divided by the local scattering area.</p>
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Local Incident Angle Image" id="sec:pxl.per-pixel-local-incident-angle"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml--><code>4.4.</code>
+<h4 data-label="|Per-Pixel Metadata: Local Incident Angle Image" id="sec:pxl.per-pixel-local-incident-angle"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml--><code>4.5.</code>
 Local Incident Angle Image</h4>
 <p>Identifier: <code>pxl.per-pixel-local-incident-angle</code></p>
-<h5 id="threshold-requirements-33">Threshold requirements:</h5>
+<h5 id="threshold-requirements-34">Threshold requirements:</h5>
 <p>DEM-based Local Incident angle image is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
@@ -1092,15 +1100,15 @@ Local Incident Angle Image</h4>
 model could be used for the calculation of the local incident
 angle.</li>
 </ol>
-<h5 id="goal-requirements-33">Goal requirements:</h5>
+<h5 id="goal-requirements-34">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image" id="sec:pxl.per-pixel-ellipsoidal-incident-angle"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml--><code>4.5.</code>
+<h4 data-label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image" id="sec:pxl.per-pixel-ellipsoidal-incident-angle"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml--><code>4.6.</code>
 Ellipsoidal Incident Angle Image</h4>
 <p>Identifier: <code>pxl.per-pixel-ellipsoidal-incident-angle</code></p>
-<h5 id="threshold-requirements-34">Threshold requirements:</h5>
+<h5 id="threshold-requirements-35">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-34">Goal requirements:</h5>
+<h5 id="goal-requirements-35">Goal requirements:</h5>
 <p>Ellipsoidal incident angle is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
@@ -1118,12 +1126,12 @@ ellipsoidal incident angle is nearly identical to the geoid based local
 incident angle.</li>
 </ol>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Noise Power Image" id="sec:pxl.per-pixel-noise-power"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml--><code>4.6.</code>
+<h4 data-label="|Per-Pixel Metadata: Noise Power Image" id="sec:pxl.per-pixel-noise-power"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml--><code>4.7.</code>
 Noise Power Image</h4>
 <p>Identifier: <code>pxl.per-pixel-noise-power</code></p>
-<h5 id="threshold-requirements-35">Threshold requirements:</h5>
+<h5 id="threshold-requirements-36">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-35">Goal requirements:</h5>
+<h5 id="goal-requirements-36">Goal requirements:</h5>
 <p>Estimated Noise Equivalent
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>0</mn></msup><annotation encoding="application/x-tex">\sigma^0</annotation></semantics></math>
 (or
@@ -1144,12 +1152,12 @@ are both based on a simplified ellipsoid Earth model.</p>
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image" id="sec:pxl.per-pixel-gamma-sigma-ratio"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml--><code>4.7.</code>
+<h4 data-label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image" id="sec:pxl.per-pixel-gamma-sigma-ratio"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml--><code>4.8.</code>
 Gamma-to-Sigma Ratio Image</h4>
 <p>Identifier: <code>pxl.per-pixel-gamma-sigma-ratio</code></p>
-<h5 id="threshold-requirements-36">Threshold requirements:</h5>
+<h5 id="threshold-requirements-37">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-36">Goal requirements:</h5>
+<h5 id="goal-requirements-37">Goal requirements:</h5>
 <p>Ratio of the integrated area in the Gamma projection over the
 integrated area in the Sigma projection (ground). Multiplying RTC
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><annotation encoding="application/x-tex">\gamma^0_T</annotation></semantics></math>
@@ -1164,10 +1172,10 @@ by this ratio results in an estimate of RTC
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Acquisition ID Image" id="sec:pxl.per-pixel-acquisition-id"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id.yaml--><code>4.8.</code>
+<h4 data-label="|Per-Pixel Metadata: Acquisition ID Image" id="sec:pxl.per-pixel-acquisition-id"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id.yaml--><code>4.9.</code>
 Acquisition ID Image</h4>
 <p>Identifier: <code>pxl.per-pixel-acquisition-id</code></p>
-<h5 id="threshold-requirements-37">Threshold requirements:</h5>
+<h5 id="threshold-requirements-38">Threshold requirements:</h5>
 <p><strong>Required for multi-source product only.</strong></p>
 <p>Acquisition ID, or acquisition date, for each pixel is
 identified.</p>
@@ -1188,16 +1196,16 @@ in the metadata.</p>
 <li>Bits per sample</li>
 <li>Byte Order</li>
 </ul>
-<h5 id="goal-requirements-37">Goal requirements:</h5>
+<h5 id="goal-requirements-38">Goal requirements:</h5>
 <p>In case of image composites, the sources for each pixel are uniquely
 identified.</p>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Per-Pixel DEM" id="sec:pxl.per-pixel-dem"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml--><code>4.9.</code>
+<h4 data-label="|Per-Pixel Metadata: Per-Pixel DEM" id="sec:pxl.per-pixel-dem"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml--><code>4.10.</code>
 Per-Pixel DEM</h4>
 <p>Identifier: <code>pxl.per-pixel-dem</code></p>
-<h5 id="threshold-requirements-38">Threshold requirements:</h5>
+<h5 id="threshold-requirements-39">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-38">Goal requirements:</h5>
+<h5 id="goal-requirements-39">Goal requirements:</h5>
 <p>Provide DEM or DSM as used during the geometric and radiometric
 processing of the SAR data, resampled to an exact geometric match in
 extent and resolution with the CEOS-ARD SAR image product.</p>
@@ -1211,13 +1219,13 @@ extent and resolution with the CEOS-ARD SAR image product.</p>
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image" id="sec:pxl.per-pixel-radar-unit-look-vector-grid"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/radar-unit-look-vector-grid.yaml--><code>4.10.</code>
+<h4 data-label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image" id="sec:pxl.per-pixel-radar-unit-look-vector-grid"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/radar-unit-look-vector-grid.yaml--><code>4.11.</code>
 Radar Unit Look Vector Grid Image</h4>
 <p>Identifier:
 <code>pxl.per-pixel-radar-unit-look-vector-grid</code></p>
-<h5 id="threshold-requirements-39">Threshold requirements:</h5>
+<h5 id="threshold-requirements-40">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-39">Goal requirements:</h5>
+<h5 id="goal-requirements-40">Goal requirements:</h5>
 <p>3-D components radar unit look vector, specified at each pixel in an
 Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth
 Centred Rotating – ECR) is provided. It consists of unit vectors from
@@ -1231,12 +1239,12 @@ the antenna to the surface pixel (i.e., positive Z component).</p>
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Slant Range Sensor to Surface Image" id="sec:pxl.per-pixel-slant-range"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/slant-range.yaml--><code>4.11.</code>
+<h4 data-label="|Per-Pixel Metadata: Slant Range Sensor to Surface Image" id="sec:pxl.per-pixel-slant-range"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/slant-range.yaml--><code>4.12.</code>
 Slant Range Sensor to Surface Image</h4>
 <p>Identifier: <code>pxl.per-pixel-slant-range</code></p>
-<h5 id="threshold-requirements-40">Threshold requirements:</h5>
+<h5 id="threshold-requirements-41">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-40">Goal requirements:</h5>
+<h5 id="goal-requirements-41">Goal requirements:</h5>
 <p>Slant range distance from the sensor to the surface, specified at
 each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system
 (also called Earth Centred Rotating – ECR) is provided.</p>
@@ -1249,12 +1257,12 @@ each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image" id="sec:pxl.per-pixel-insar-phase-uncertainty"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/insar-phase-uncertainty.yaml--><code>4.12.</code>
+<h4 data-label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image" id="sec:pxl.per-pixel-insar-phase-uncertainty"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/insar-phase-uncertainty.yaml--><code>4.13.</code>
 InSAR Phase Uncertainty Image</h4>
 <p>Identifier: <code>pxl.per-pixel-insar-phase-uncertainty</code></p>
-<h5 id="threshold-requirements-41">Threshold requirements:</h5>
+<h5 id="threshold-requirements-42">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-41">Goal requirements:</h5>
+<h5 id="goal-requirements-42">Goal requirements:</h5>
 <p>Estimate of uncertainty in InSAR phase is provided, such as finite
 signal to noise ratio, quantization noise, or DEM error. Identification
 of which error sources are included will be provided as DOI/URL
@@ -1269,13 +1277,13 @@ known noise sources only.</p>
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Atmospheric Phase Correction Image" id="sec:pxl.per-pixel-atmospheric-phase-correction"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/atmospheric-phase-correction.yaml--><code>4.13.</code>
+<h4 data-label="|Per-Pixel Metadata: Atmospheric Phase Correction Image" id="sec:pxl.per-pixel-atmospheric-phase-correction"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/atmospheric-phase-correction.yaml--><code>4.14.</code>
 Atmospheric Phase Correction Image</h4>
 <p>Identifier:
 <code>pxl.per-pixel-atmospheric-phase-correction</code></p>
-<h5 id="threshold-requirements-42">Threshold requirements:</h5>
+<h5 id="threshold-requirements-43">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-42">Goal requirements:</h5>
+<h5 id="goal-requirements-43">Goal requirements:</h5>
 <p>Phase correction value at each pixel, if applied. DOI/URL reference
 to algorithm or brief description is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
@@ -1287,13 +1295,13 @@ to algorithm or brief description is provided.</p>
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Ionospheric Phase Correction Image" id="sec:pxl.per-pixel-ionospheric-phase-correction"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ionospheric-phase-correction.yaml--><code>4.14.</code>
+<h4 data-label="|Per-Pixel Metadata: Ionospheric Phase Correction Image" id="sec:pxl.per-pixel-ionospheric-phase-correction"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ionospheric-phase-correction.yaml--><code>4.15.</code>
 Ionospheric Phase Correction Image</h4>
 <p>Identifier:
 <code>pxl.per-pixel-ionospheric-phase-correction</code></p>
-<h5 id="threshold-requirements-43">Threshold requirements:</h5>
+<h5 id="threshold-requirements-44">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-43">Goal requirements:</h5>
+<h5 id="goal-requirements-44">Goal requirements:</h5>
 <p>Phase correction value at each pixel, if applied. DOI/URL reference
 to algorithm or brief description is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
@@ -1315,10 +1323,18 @@ specification needs to be provided for each record. The requirements
 below must be met for all pixels/samples/observations in a
 collection.</p>
 <p><em>Cloud optimized file formats are recommended.</em></p>
-<h4 data-label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)" id="sec:rcm.measurements-backscatter-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-gslc.yaml--><code>5.1.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Cloud Optimized Formats" id="sec:rcm.cloud-optimized-formats"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml--><code>5.1.</code>
+Cloud Optimized Formats</h4>
+<p>Identifier: <code>rcm.cloud-optimized-formats</code></p>
+<h5 id="threshold-requirements-45">Threshold requirements:</h5>
+<p>Not required. <!-- *None* --></p>
+<h5 id="goal-requirements-45">Goal requirements:</h5>
+<p>All files are provided using cloud-optimized file formats.</p>
+<hr />
+<h4 data-label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)" id="sec:rcm.measurements-backscatter-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-gslc.yaml--><code>5.2.</code>
 Backscatter Measurements (GSLC)</h4>
 <p>Identifier: <code>rcm.measurements-backscatter-gslc</code></p>
-<h5 id="threshold-requirements-44">Threshold requirements:</h5>
+<h5 id="threshold-requirements-46">Threshold requirements:</h5>
 <p>Radiometric and Phase Terrain-flattened Gamma-Nought backscatter
 coefficient
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><annotation encoding="application/x-tex">\gamma^0_T</annotation></semantics></math>),
@@ -1341,24 +1357,24 @@ power*)</li>
 desired as this step can be easily completed by the user if
 necessary.</li>
 </ol>
-<h5 id="goal-requirements-44">Goal requirements:</h5>
+<h5 id="goal-requirements-46">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Scaling Conversion" id="sec:rcm.metadata-scaling-conversion"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/scaling-conversion.yaml--><code>5.2.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Scaling Conversion" id="sec:rcm.metadata-scaling-conversion"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/scaling-conversion.yaml--><code>5.3.</code>
 Scaling Conversion</h4>
 <p>Identifier: <code>rcm.metadata-scaling-conversion</code></p>
-<h5 id="threshold-requirements-45">Threshold requirements:</h5>
+<h5 id="threshold-requirements-47">Threshold requirements:</h5>
 <p>If applicable, indicate the equation to convert pixel linear
 amplitude/power to logarithmic decibel scale, including, if applicable,
 the associated calibration (dB offset) factor, and/or the equation used
 to convert compressed data (int8/int16/float16) to float32.</p>
-<h5 id="goal-requirements-45">Goal requirements:</h5>
+<h5 id="goal-requirements-47">Goal requirements:</h5>
 <p>As threshold, but use of float32.</p>
 <hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Noise Removal" id="sec:rcm.metadata-noise-removal"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/noise-removal.yaml--><code>5.3.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Noise Removal" id="sec:rcm.metadata-noise-removal"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/noise-removal.yaml--><code>5.4.</code>
 Noise Removal</h4>
 <p>Identifier: <code>rcm.metadata-noise-removal</code></p>
-<h5 id="threshold-requirements-46">Threshold requirements:</h5>
+<h5 id="threshold-requirements-48">Threshold requirements:</h5>
 <p>Flag if noise removal has been applied (Y/N). Metadata should include
 the noise removal algorithm and reference to the algorithm as URL or
 DOI.</p>
@@ -1367,16 +1383,16 @@ DOI.</p>
 <li>Thermal noise removal and image border noise removal to remove
 overall scene noise and scene edge artefacts, respectively.</li>
 </ol>
-<h5 id="goal-requirements-46">Goal requirements:</h5>
+<h5 id="goal-requirements-48">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm" id="sec:rcm.corrections-radiometric-terrain-algo-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo-gslc.yaml--><code>5.4.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm" id="sec:rcm.corrections-radiometric-terrain-algo-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo-gslc.yaml--><code>5.5.</code>
 Radiometric Terrain Correction Algorithm</h4>
 <p>Identifier:
 <code>rcm.corrections-radiometric-terrain-algo-gslc</code></p>
-<h5 id="threshold-requirements-47">Threshold requirements:</h5>
+<h5 id="threshold-requirements-49">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-47">Goal requirements:</h5>
+<h5 id="goal-requirements-49">Goal requirements:</h5>
 <p>Adjustments were made for terrain by modelling the local contributing
 scattering area using the preferred choice of a published peer-reviewed
 algorithm to produce radiometrically terrain corrected (RTC)
@@ -1397,12 +1413,12 @@ when applying terrain corrections.</p>
 Theoretical Basis Document, product user guide, etc.</li>
 </ol>
 <hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Radiometric Accuracy" id="sec:rcm.metadata-radiometric-accuracy"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy.yaml--><code>5.5.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Radiometric Accuracy" id="sec:rcm.metadata-radiometric-accuracy-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml--><code>5.6.</code>
 Radiometric Accuracy</h4>
-<p>Identifier: <code>rcm.metadata-radiometric-accuracy</code></p>
-<h5 id="threshold-requirements-48">Threshold requirements:</h5>
+<p>Identifier: <code>rcm.metadata-radiometric-accuracy-sar</code></p>
+<h5 id="threshold-requirements-50">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-48">Goal requirements:</h5>
+<h5 id="goal-requirements-50">Goal requirements:</h5>
 <p>Uncertainty (e.g., bounds on
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>γ</mi><mn>0</mn></msup><annotation encoding="application/x-tex">\gamma^0</annotation></semantics></math>
 or
@@ -1421,9 +1437,9 @@ ready.</p>
 Geometric Correction Algorithm</h4>
 <p>Identifier:
 <code>gcor.metadata-geometric-correction-algorithm</code></p>
-<h5 id="threshold-requirements-49">Threshold requirements:</h5>
+<h5 id="threshold-requirements-51">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-49">Goal requirements:</h5>
+<h5 id="goal-requirements-51">Goal requirements:</h5>
 <p>Metadata references, e.g.:</p>
 <ul>
 <li>A metadata citable peer-reviewed algorithm</li>
@@ -1443,7 +1459,7 @@ Theoretical Basis Document (ATBD) or a product user guide.</li>
 Digital Elevation Model</h4>
 <p>Identifier: <code>gcor.corrections-dem</code></p>
 <p><strong>Usage: For products including land areas.</strong></p>
-<h5 id="threshold-requirements-50">Threshold requirements:</h5>
+<h5 id="threshold-requirements-52">Threshold requirements:</h5>
 <ul>
 <li>During ortho-rectification, the data provider shall use the same DEM
 that was used for the radiometric terrain flattening to ensure
@@ -1453,7 +1469,7 @@ terrain correction.</li>
 <li>Provide reference to Earth Gravitational Model (EGM) used for
 geometric correction.</li>
 </ul>
-<h5 id="goal-requirements-50">Goal requirements:</h5>
+<h5 id="goal-requirements-52">Goal requirements:</h5>
 <ul>
 <li>A DEM with comparable or better resolution to the resolution of the
 output CEOS-ARD product shall be used if available. Else, the upsampled
@@ -1466,7 +1482,7 @@ DEM is identified.</li>
 Geometric Accuracy</h4>
 <p>Identifier:
 <code>gcor.corrections-geometric-accuracy-radar</code></p>
-<h5 id="threshold-requirements-51">Threshold requirements:</h5>
+<h5 id="threshold-requirements-53">Threshold requirements:</h5>
 <p>Accurate geolocation is a prerequisite to radar processing to correct
 for terrain and to enable interoperability between radar sensors.</p>
 <p>The absolute geolocation error (ALE) for a sensor is typically
@@ -1492,7 +1508,7 @@ used.</li>
 through an ALE assessment by the data processing team characterizing all
 or (usually a subset) of the generated products.</li>
 </ol>
-<h5 id="goal-requirements-51">Goal requirements:</h5>
+<h5 id="goal-requirements-53">Goal requirements:</h5>
 <p>Output product sub-sample accuracy should be less than or equal to
 0.1 (slant range) pixel radial root mean square error (rRMSE).</p>
 <p>Provide documentation of estimates of ALE as DOI or URL.</p>
@@ -1501,9 +1517,9 @@ or (usually a subset) of the generated products.</li>
 Geometric Refined Accuracy</h4>
 <p>Identifier:
 <code>gcor.corrections-geometric-refined-accuracy</code></p>
-<h5 id="threshold-requirements-52">Threshold requirements:</h5>
+<h5 id="threshold-requirements-54">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-52">Goal requirements:</h5>
+<h5 id="goal-requirements-54">Goal requirements:</h5>
 <p>Values provided under Section “<a href="#sec:gcor.corrections-geometric-accuracy-radar">Geometric
 Corrections: Geometric Accuracy</a>” are provided by the SAR mission
 Cal/Val team.</p>
@@ -1516,7 +1532,7 @@ standard deviation values should be provided.</p>
 <h4 data-label="|Geometric Corrections: Gridding Convention" id="sec:gcor.corrections-gridding-convention"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/gridding-convention.yaml--><code>6.5.</code>
 Gridding Convention</h4>
 <p>Identifier: <code>gcor.corrections-gridding-convention</code></p>
-<h5 id="threshold-requirements-53">Threshold requirements:</h5>
+<h5 id="threshold-requirements-55">Threshold requirements:</h5>
 <p>A consistent gridding/sampling frame is used. The origin is chosen to
 minimise any need for subsequent resampling between multiple products
 (be they from the same or different providers). This is typically
@@ -1528,7 +1544,7 @@ tile in a global system.</p>
 multiple resolutions should nest within each other (e.g., 12.5m, 25m,
 50m, 100m, etc.), and not be disjoint.</li>
 </ol>
-<h5 id="goal-requirements-53">Goal requirements:</h5>
+<h5 id="goal-requirements-55">Goal requirements:</h5>
 <p>Provide DOI or URL to gridding convention used.</p>
 <p>When multiple providers share a common map projection, providers are
 encouraged to standardise the origins of their products among each

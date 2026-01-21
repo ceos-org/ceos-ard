@@ -194,9 +194,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-st.yaml-->`1.2.` Metadata Machine Readability {#sec:meta.metadata-machine-readability-st label="|General Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-optical.yaml-->`1.2.` Metadata Machine Readability {#sec:meta.metadata-machine-readability-optical label="|General Metadata: Metadata Machine Readability"}
 
-Identifier: `meta.metadata-machine-readability-st`
+Identifier: `meta.metadata-machine-readability-optical`
 
 
 
@@ -245,9 +245,9 @@ The geographic area covered by the observations is identified specifically, such
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs-st.yaml-->`1.5.` Coordinate Reference System {#sec:meta.metadata-crs-st label="|General Metadata: Coordinate Reference System"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs-optical.yaml-->`1.5.` Coordinate Reference System {#sec:meta.metadata-crs-optical label="|General Metadata: Coordinate Reference System"}
 
-Identifier: `meta.metadata-crs-st`
+Identifier: `meta.metadata-crs-optical`
 
 
 
@@ -264,9 +264,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/map-projection.yaml-->`1.6.` Map Projection {#sec:meta.metadata-map-projection label="|General Metadata: Map Projection"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/map-projection-st.yaml-->`1.6.` Map Projection {#sec:meta.metadata-map-projection-st label="|General Metadata: Map Projection"}
 
-Identifier: `meta.metadata-map-projection`
+Identifier: `meta.metadata-map-projection-st`
 
 
 
@@ -283,9 +283,9 @@ The metadata lists the map projection that has been used, if any, and any releva
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-methods.yaml-->`1.7.` Geometric Correction Methods {#sec:meta.metadata-geometric-correction-methods label="|General Metadata: Geometric Correction Methods"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-methods-st.yaml-->`1.7.` Geometric Correction Methods {#sec:meta.metadata-geometric-correction-methods-st label="|General Metadata: Geometric Correction Methods"}
 
-Identifier: `meta.metadata-geometric-correction-methods`
+Identifier: `meta.metadata-geometric-correction-methods-st`
 
 
 
@@ -302,9 +302,9 @@ Information on geometric correction methods should be available in the metadata 
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-accuracy.yaml-->`1.8.` Geometric Accuracy of the Data {#sec:meta.metadata-geometric-accuracy label="|General Metadata: Geometric Accuracy of the Data"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-accuracy-st.yaml-->`1.8.` Geometric Accuracy of the Data {#sec:meta.metadata-geometric-accuracy-st label="|General Metadata: Geometric Accuracy of the Data"}
 
-Identifier: `meta.metadata-geometric-accuracy`
+Identifier: `meta.metadata-geometric-accuracy-st`
 
 
 
@@ -327,9 +327,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-st.yaml-->`1.9.` Instrument {#sec:meta.metadata-instrument-st label="|General Metadata: Instrument"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-optical.yaml-->`1.9.` Instrument {#sec:meta.metadata-instrument-optical label="|General Metadata: Instrument"}
 
-Identifier: `meta.metadata-instrument-st`
+Identifier: `meta.metadata-instrument-optical`
 
 
 
@@ -340,7 +340,7 @@ The instrument used to collect the data is identified in the metadata.
 
 ##### Goal requirements:
 
-As threshold, but information on instrument should be available in the metadata as a single DOI landing page with references to the relevant CEOS Missions, Instruments and Measurements Database record.
+As threshold, but information should be available in the metadata as a single DOI landing page with references to the relevant CEOS Missions, Instruments, and Measurements Database record.
 
 ---
 
@@ -366,9 +366,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-st.yaml-->`1.11.` Sensor Calibration {#sec:meta.metadata-sensor-calibration-st label="|General Metadata: Sensor Calibration"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-optical.yaml-->`1.11.` Sensor Calibration {#sec:meta.metadata-sensor-calibration-optical label="|General Metadata: Sensor Calibration"}
 
-Identifier: `meta.metadata-sensor-calibration-st`
+Identifier: `meta.metadata-sensor-calibration-optical`
 
 
 
@@ -435,9 +435,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data-st.yaml-->`1.14.` Auxiliary Data {#sec:meta.metadata-auxiliary-data-st label="|General Metadata: Auxiliary Data"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data-optical.yaml-->`1.14.` Auxiliary Data {#sec:meta.metadata-auxiliary-data-optical label="|General Metadata: Auxiliary Data"}
 
-Identifier: `meta.metadata-auxiliary-data-st`
+Identifier: `meta.metadata-auxiliary-data-optical`
 
 
 
@@ -456,9 +456,9 @@ As threshold, but information on auxiliary data should be available in the metad
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-chain-prov.yaml-->`1.15.` Processing Chain Provenance {#sec:meta.metadata-processing-chain-prov label="|General Metadata: Processing Chain Provenance"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-chain-prov-st.yaml-->`1.15.` Processing Chain Provenance {#sec:meta.metadata-processing-chain-prov-st label="|General Metadata: Processing Chain Provenance"}
 
-Identifier: `meta.metadata-processing-chain-prov`
+Identifier: `meta.metadata-processing-chain-prov-st`
 
 
 
@@ -475,9 +475,9 @@ Information on processing chain provenance should be available in the metadata a
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access-st.yaml-->`1.16.` Data Access {#sec:meta.metadata-data-access-st label="|General Metadata: Data Access"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access.yaml-->`1.16.` Data Access {#sec:meta.metadata-data-access label="|General Metadata: Data Access"}
 
-Identifier: `meta.metadata-data-access-st`
+Identifier: `meta.metadata-data-access`
 
 
 
@@ -498,9 +498,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-quality.yaml-->`1.17.` Overall Data Quality {#sec:meta.metadata-data-quality label="|General Metadata: Overall Data Quality"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-quality-st.yaml-->`1.17.` Overall Data Quality {#sec:meta.metadata-data-quality-st label="|General Metadata: Overall Data Quality"}
 
-Identifier: `meta.metadata-data-quality`
+Identifier: `meta.metadata-data-quality-st`
 
 
 
@@ -524,9 +524,9 @@ Per-pixel metadata should allow users to discriminate between (choose) observati
 *Cloud optimized file formats are recommended.*
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-st2.yaml-->`2.1.` Metadata Machine Readability {#sec:pxl.metadata-machine-readability-st2 label="|Per-Pixel Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-per-pixel-optical.yaml-->`2.1.` Metadata Machine Readability {#sec:pxl.metadata-machine-readability-per-pixel-optical label="|Per-Pixel Metadata: Metadata Machine Readability"}
 
-Identifier: `pxl.metadata-machine-readability-st2`
+Identifier: `pxl.metadata-machine-readability-per-pixel-optical`
 
 
 
@@ -574,7 +574,7 @@ The metadata identifies pixels for which the per-pixel tests (below) have not al
 
 Notes:
 
-1. e.g., due to missing ancillary data for some pixels.
+1. This may be the result of missing ancillary data for a subset of the pixels.
 
 
 ##### Goal requirements:
@@ -634,9 +634,9 @@ As threshold, but information on cloud shadow detection should be available in t
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/snow-ice.yaml-->`2.7.` Snow/Ice mask {#sec:pxl.per-pixel-snow-ice label="|Per-Pixel Metadata: Snow/Ice mask"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/snow-ice-sr.yaml-->`2.7.` Snow/Ice Mask {#sec:pxl.per-pixel-snow-ice-sr label="|Per-Pixel Metadata: Snow/Ice Mask"}
 
-Identifier: `pxl.per-pixel-snow-ice`
+Identifier: `pxl.per-pixel-snow-ice-sr`
 
 
 
@@ -653,9 +653,9 @@ The metadata indicates whether a pixel is assessed as being snow/ice or not. Inf
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/solar-view-angles.yaml-->`2.8.` Solar and Viewing Geometry {#sec:pxl.per-pixel-solar-view-angles label="|Per-Pixel Metadata: Solar and Viewing Geometry"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/view-angles-solar.yaml-->`2.8.` Solar and Viewing Geometry {#sec:pxl.per-pixel-view-angles-solar label="|Per-Pixel Metadata: Solar and Viewing Geometry"}
 
-Identifier: `pxl.per-pixel-solar-view-angles`
+Identifier: `pxl.per-pixel-view-angles-solar`
 
 
 
@@ -741,25 +741,25 @@ The geometric corrections are steps that are taken to place the measurement accu
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric.yaml-->`4.1.` Geometric Correction {#sec:gcor.corrections-geometric label="|Geometric Corrections: Geometric Correction"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric-st.yaml-->`4.1.` Geometric Correction {#sec:gcor.corrections-geometric-st label="|Geometric Corrections: Geometric Correction"}
 
-Identifier: `gcor.corrections-geometric`
+Identifier: `gcor.corrections-geometric-st`
 
 
 
 ##### Threshold requirements:
 
-Sub-pixel accuracy is achieved in **relative** geolocation, that is, the pixels from the same instrument and platform are consistently located, and in thus comparable, through time.
+Sub-pixel accuracy is achieved in **relative** geolocation, that is, the pixels from the same instrument and platform are consistently located, and are thus comparable, through time.
 
 Sub-pixel accuracy is taken to be less than or equal to 0.5 pixel radial root mean square error (rRMSE) or equivalent in Circular Error Probability (CEP) relative to a defined reference image.
 
 A consistent gridding/sampling frame is necessary to meet this requirement.
 
-Relevant metadata must be provided under [@sec:meta.metadata-geometric-accuracy] and [@sec:meta.metadata-instrument-st].
+Relevant metadata must be provided under [@sec:meta.metadata-geometric-accuracy-st] and [@sec:meta.metadata-instrument-optical].
 
 Notes:
 
-1. The threshold level will not necessarily enable interoperability between data from different sources as the geometric corrections for each of the sources may differ. 
+1. The threshold level will not necessarily enable interoperability between data from **different** sources as the geometric corrections for each of the sources may differ. 
 
 
 ##### Goal requirements:
@@ -768,7 +768,7 @@ Sub-pixel accuracy is achieved relative to an identified absolute independent te
 
 A consistent gridding/sampling frame is necessary to meet this requirement.
 
-Relevant metadata must be provided under [@sec:meta.metadata-geometric-accuracy] and [@sec:meta.metadata-instrument-st].
+Relevant metadata must be provided under [@sec:meta.metadata-geometric-accuracy-st] and [@sec:meta.metadata-instrument-optical].
 
 Notes:
 
