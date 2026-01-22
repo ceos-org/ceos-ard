@@ -917,8 +917,6 @@ The following minimum metadata specifications apply to each pixel.
 Whether the metadata are provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
 Per-pixel metadata should allow users to discriminate between (choose) observations on the basis of their individual suitability for applications.
 
-*Cloud optimized file formats are recommended.*
-
 
 #### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml-->`4.1.` Cloud Optimized Formats {#sec:pxl.cloud-optimized-formats label="|Per-Pixel Metadata: Cloud Optimized Formats"}
 
@@ -1210,8 +1208,6 @@ The requirements indicate the necessary outcomes and, to some degree, the minimu
 Radiometric corrections must lead to normalised measurement(s) of backscatter intensity and/or decomposed polarimetric parameters.
 As for the per-pixel metadata, information regarding data format specification needs to be provided for each record.
 The requirements below must be met for all pixels/samples/observations in a collection.
-
-*Cloud optimized file formats are recommended.*
 
 
 #### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml-->`5.1.` Cloud Optimized Formats {#sec:rcm.cloud-optimized-formats label="|Radiometrically Corrected Measurements: Cloud Optimized Formats"}
