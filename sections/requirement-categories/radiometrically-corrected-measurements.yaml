@@ -6,7 +6,5 @@ description: |-
   Radiometric corrections must lead to normalised measurement(s) of backscatter intensity and/or decomposed polarimetric parameters.
   As for the per-pixel metadata, information regarding data format specification needs to be provided for each record.
   The requirements below must be met for all pixels/samples/observations in a collection.
-
-  *Cloud optimized file formats are recommended.*
 glossary:
 references:
