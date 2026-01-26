@@ -8,6 +8,6 @@ goal: null
 dependencies:
 references:
 metadata:
-legacy:
-  sar:
-  optical: 1.5
+changes:
+history:
+  - SR/NLSR/ST 1.5

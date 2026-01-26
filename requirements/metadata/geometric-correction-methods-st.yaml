@@ -11,6 +11,6 @@ glossary:
   - doi
 references:
 metadata:
-legacy:
-  sar:
-  optical: 1.7
+changes:
+history:
+  - ST 1.7

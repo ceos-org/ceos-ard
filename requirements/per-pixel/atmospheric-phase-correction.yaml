@@ -20,6 +20,6 @@ glossary:
   - url
 references:
 metadata:
-legacy:
-  sar: 2.15
-  optical:
+changes:
+history:
+  - SAR 2.15

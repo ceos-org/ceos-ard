@@ -25,6 +25,6 @@ glossary:
   - url
 references:
 metadata:
-legacy:
-  sar: 1.7.6
-  optical:
+changes:
+history:
+  - SAR 1.7.6 (POL)

@@ -14,6 +14,6 @@ glossary:
   - wkt
 references:
 metadata:
-legacy:
-  sar: 1.7.11
-  optical:
+changes:
+history:
+  - SAR 1.7.11

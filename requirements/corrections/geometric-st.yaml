@@ -33,6 +33,6 @@ glossary:
   - rrmse
 references:
 metadata:
-legacy:
-  sar:
-  optical: 4.1
+changes:
+history:
+  - ST 4.1

@@ -16,6 +16,6 @@ glossary:
 references:
   - iso19115_2_2009
 metadata:
-legacy:
-  sar:
-  optical:
+changes:
+history:
+  - SAR 1.2

@@ -20,6 +20,6 @@ dependencies:
 glossary:
 references:
 metadata:
-legacy:
-  sar: 2.3
-  optical:
+changes:
+history:
+  - SAR 2.3

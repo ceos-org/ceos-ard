@@ -12,6 +12,6 @@ dependencies:
 glossary:
 references:
 metadata:
-legacy:
-  sar: 1.7.10
-  optical:
+changes:
+history:
+  - SAR  1.7.10

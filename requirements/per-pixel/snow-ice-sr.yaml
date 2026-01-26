@@ -10,6 +10,6 @@ glossary:
   - doi
 references:
 metadata:
-legacy:
-  sar:
-  optical: ST 2.7 / SR 2.8
+changes:
+history:
+  - ST 2.7 / SR 2.8

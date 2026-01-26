@@ -24,9 +24,6 @@ references:
   - quilfen1998
   - vachon2000
 metadata:
-legacy:
-  sar: 3.6
-  optical:
-
-
-
+changes:
+history:
+  - SAR 3.6

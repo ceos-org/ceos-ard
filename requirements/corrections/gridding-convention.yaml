@@ -24,6 +24,6 @@ glossary:
   - ups
 references:
 metadata:
-legacy:
-  sar: 4.5
-  optical:
+changes:
+history:
+  - SAR 4.5

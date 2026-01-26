@@ -17,6 +17,6 @@ glossary:
   - sar
 references:
 metadata:
-legacy:
-  sar: 1.6.4
-  optical:
+changes:
+history:
+  - SAR 1.6.4

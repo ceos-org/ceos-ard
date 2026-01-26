@@ -13,6 +13,6 @@ dependencies:
 glossary:
 references:
 metadata:
-legacy:
-  sar:
-  optical: 3.3
+changes:
+history:
+  - ST 3.3
