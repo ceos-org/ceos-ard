@@ -13,6 +13,6 @@ glossary:
   - doi
 references:
 metadata:
-legacy:
-  sar:
-  optical: NLSR 2.7
+changes:
+history:
+  - NLSR 2.7

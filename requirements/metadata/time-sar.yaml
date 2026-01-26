@@ -14,6 +14,6 @@ glossary:
   - utc
 references:
 metadata:
-legacy:
-  sar: 1.5
-  optical:
+changes:
+history:
+  - SAR 1.5

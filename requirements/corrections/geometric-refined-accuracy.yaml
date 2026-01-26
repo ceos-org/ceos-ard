@@ -17,6 +17,6 @@ glossary:
   - dem
 references:
 metadata:
-legacy:
-  sar: 4.4
-  optical:
+changes:
+history:
+  - SAR 4.4

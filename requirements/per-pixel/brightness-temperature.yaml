@@ -8,6 +8,6 @@ dependencies:
 glossary:
 references:
 metadata:
-legacy:
-  sar:
-  optical: NLSR 2.15
+changes:
+history:
+  - NLSR 2.15

@@ -10,6 +10,6 @@ glossary:
   - doi
 references:
 metadata:
-legacy:
-  sar:
-  optical: SR 1.15
+changes:
+history:
+  - SR 1.15

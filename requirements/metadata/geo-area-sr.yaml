@@ -13,6 +13,6 @@ glossary:
   - wgs84
 references:
 metadata:
-legacy:
-  sar:
-  optical: 1.4
+changes:
+history:
+  - SR/NLSR 1.4

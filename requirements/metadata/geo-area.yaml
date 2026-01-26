@@ -15,6 +15,6 @@ glossary:
   - wkt
 references:
 metadata:
-legacy:
-  sar: 1.7.8
-  optical:
+changes:
+history:
+  - SAR 1.7.8

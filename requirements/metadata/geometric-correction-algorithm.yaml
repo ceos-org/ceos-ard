@@ -1,6 +1,7 @@
 title: Geometric Correction Algorithm
 description: 
 threshold: null
+# todo: This is product metadata, but is listed in section 4.1?!
 goal:
   description: |-
     Metadata references, e.g.:
@@ -19,7 +20,6 @@ glossary:
   - doi
 references:
 metadata:
-legacy:
-  # todo: This is product metadata, but is listed in section 4.1?!
-  sar: 4.1
-  optical:
+changes:
+history:
+  - SAR 4.1

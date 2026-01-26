@@ -12,6 +12,6 @@ glossary:
   - utc
 references:
 metadata:
-legacy:
-  sar:
-  optical: 1.3
+changes:
+history:
+  - ST 1.3

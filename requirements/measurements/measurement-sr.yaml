@@ -14,6 +14,6 @@ glossary:
   - si
 references:
 metadata:
-legacy:
-  sar:
-  optical: 3.1
+changes:
+history:
+  - SR 3.1

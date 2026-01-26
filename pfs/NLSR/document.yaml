@@ -1,4 +1,3 @@
-id: NLSR
 title: Nighttime Light Surface Radiance
 version: 1.0-draft
 type: Optical
@@ -6,11 +5,6 @@ applies_to: |-
   Data collected with nighttime light sensors operating in the VIS/NIR wavelengths.
   These typically operate with ground sample distance and resolution in the order of 10-1000m;
   however, the Specification is not inherently limited to this resolution.
-
-introduction:
-  - what-are-ceos-ard-products
-  - when-is-a-product-ceos-ard
-  - difference-threshold-goal
 
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
@@ -24,4 +18,75 @@ references:
   - mills2014 # todo: move to req. 1.11?
   - ryan2019 # todo: move to requirements
 
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+requirements:
+  - category: general-metadata
+    requirements:
+      - metadata/traceability-sr
+      - metadata/machine-readability-optical
+      - metadata/time-sr
+      - metadata/geo-area-sr
+      - metadata/crs-optical
+      - metadata/map-projection-nlsr
+      - metadata/geometric-correction-methods-sr
+      - metadata/geometric-accuracy-sr
+      - metadata/instrument-optical
+      - metadata/spectral-bands
+      - metadata/sensor-calibration-optical
+      - metadata/radiometric-accuracy-sr
+      - metadata/algorithms-sr
+      - metadata/auxiliary-data-optical
+      - metadata/processing-chain-prov-nlsr
+      - metadata/data-access
+      - metadata/data-quality-sr
+  - category: per-pixel-metadata
+    requirements:
+      - metadata/machine-readability-per-pixel-optical
+      - per-pixel/nodata
+      - per-pixel/incomplete-testing
+      - per-pixel/saturation
+      - per-pixel/cloud
+      - per-pixel/cloud-shadow-nlsr
+      - per-pixel/land-water-nlsr
+      - per-pixel/snow-ice-nlsr
+      - per-pixel/terrain-shadow
+      - per-pixel/terrain-occlusion
+      - per-pixel/view-angles-lunar
+      - per-pixel/terrain-illumination
+      - per-pixel/moon-illumination-fraction
+      - per-pixel/brightness-temperature
+      - per-pixel/solar-zenith-angle
+  - category: radiometric-atmospheric-corrections
+    requirements:
+      - measurements/measurement-nlsr
+      - measurements/uncertainty-sr
+      - measurements/normalisation-nlsr
+      - measurements/atmospheric-corrections
+      - corrections/lunar-radiance
+      - corrections/stray-light
+  - category: geometric-corrections
+    requirements:
+      - corrections/geometric-sr
+
 annexes:
+
+authors:
+  - name: NASA
+    country: USA
+    members:
+      - Brian Killough
+      - Bhaskar Ramachandran
+  - name: Leidos Inc.
+    country: USA
+    members:
+      - Miguel Román
+  - name: University of Maryland
+    country: USA
+    members:
+      - Zhuosen Wang
+
+changes:

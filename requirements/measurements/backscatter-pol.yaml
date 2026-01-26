@@ -32,6 +32,6 @@ glossary:
   - prd
 references:
 metadata:
-legacy:
-  sar: 3.1
-  optical:
+changes:
+history:
+  - SAR 3.1

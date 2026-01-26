@@ -66,7 +66,8 @@ glossary:
 references:
   - iso19115_2_2009
 metadata:
-legacy:
+changes:
+history:
   sar:
   optical:
 ```

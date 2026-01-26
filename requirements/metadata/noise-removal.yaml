@@ -15,6 +15,6 @@ glossary:
   - url
 references:
 metadata:
-legacy:
-  sar: 3.3
-  optical:
+changes:
+history:
+  - SAR 3.3

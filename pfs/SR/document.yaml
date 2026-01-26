@@ -1,14 +1,8 @@
-id: SR
 title: Surface Reflectance
 version: 5.0.1-draft
 type: Optical
 applies_to: |-
   Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.
-
-introduction:
-  - what-are-ceos-ard-products
-  - when-is-a-product-ceos-ard
-  - difference-threshold-goal
 
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
@@ -20,4 +14,74 @@ glossary:
 references:
   - li2012 # todo: move to req. 3.3
 
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+requirements:
+  - category: general-metadata
+    requirements:
+      - metadata/traceability-sr
+      - metadata/machine-readability-optical
+      - metadata/time-sr
+      - metadata/geo-area-sr
+      - metadata/crs-optical
+      - metadata/map-projection-sr
+      - metadata/geometric-correction-methods-sr
+      - metadata/geometric-accuracy-sr
+      - metadata/instrument-optical
+      - metadata/spectral-bands
+      - metadata/sensor-calibration-optical
+      - metadata/radiometric-accuracy-sr
+      - metadata/algorithms-sr
+      - metadata/auxiliary-data-optical
+      - metadata/processing-chain-prov-sr
+      - metadata/data-access
+      - metadata/data-quality-sr
+  - category: per-pixel-metadata
+    requirements:
+      - metadata/machine-readability-per-pixel-optical
+      - per-pixel/nodata
+      - per-pixel/incomplete-testing
+      - per-pixel/saturation
+      - per-pixel/cloud
+      - per-pixel/cloud-shadow
+      - per-pixel/land-water-sr
+      - per-pixel/snow-ice-sr
+      - per-pixel/terrain-shadow
+      - per-pixel/terrain-occlusion
+      - per-pixel/view-angles-solar
+      - per-pixel/terrain-illumination
+  - category: radiometric-atmospheric-corrections
+    requirements:
+      - measurements/measurement-sr
+      - measurements/uncertainty-sr
+      - measurements/normalisation-sr
+      - measurements/directional-atmospheric-scattering
+      - corrections/water-vapour
+      - corrections/ozone
+  - category: geometric-corrections
+    requirements:
+      - corrections/geometric-sr
+
 annexes:
+
+authors:
+  - name: Geoscience Australia
+    country: Australia
+    members:
+      - Adam Lewis
+      - Jonathon Ross
+      - Andreia Siqueira
+  - name: USGS
+    country: USA
+    members:
+      - Darcie Bontje
+      - Steve Labahn
+      - Mary Metzger
+  - name: LSI-VC Secretariat
+    members:
+      - Matt Steventon
+
+changes:

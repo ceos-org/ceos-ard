@@ -1,4 +1,3 @@
-id: ST
 title: Surface Temperature
 version: 5.0-draft
 type: Optical
@@ -9,11 +8,6 @@ applies_to: |-
 
   At present, surface temperature measurements tend to be provided as either surface brightness temperature (SBT) or as land surface temperatures (LST) requiring the SBT to be modified according to the emissivity of the target.
   This specification identifies the Surface Temperature (ST) as being the minimum or Threshold requirement for analysis ready land surface data. Nevertheless, both SBT and LST are land measurements, requiring atmospheric corrections.
-
-introduction:
-  - what-are-ceos-ard-products
-  - when-is-a-product-ceos-ard
-  - difference-threshold-goal
 
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
@@ -26,5 +20,65 @@ references:
   - cook2014
   - li2013
 
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+requirements:
+  - category: general-metadata
+    requirements:
+      - metadata/traceability-st
+      - metadata/machine-readability-optical
+      - metadata/time-st
+      - metadata/geo-area-st
+      - metadata/crs-optical
+      - metadata/map-projection-st
+      - metadata/geometric-correction-methods-st
+      - metadata/geometric-accuracy-st
+      - metadata/instrument-optical
+      - metadata/spectral-bands
+      - metadata/sensor-calibration-optical
+      - metadata/radiometric-accuracy-st
+      - metadata/algorithms
+      - metadata/auxiliary-data-optical
+      - metadata/processing-chain-prov-st
+      - metadata/data-access
+      - metadata/data-quality-st
+  - category: per-pixel-metadata
+    requirements:
+      - metadata/machine-readability-per-pixel-optical
+      - per-pixel/nodata
+      - per-pixel/incomplete-testing
+      - per-pixel/saturation
+      - per-pixel/cloud
+      - per-pixel/cloud-shadow
+      - per-pixel/snow-ice-sr
+      - per-pixel/view-angles-solar
+  - category: radiometric-atmospheric-corrections
+    requirements:
+      - measurements/measurement-st
+      - corrections/atmosphere-emissivity
+      - measurements/uncertainty-st
+  - category: geometric-corrections
+    requirements:
+      - corrections/geometric-st
+
 annexes:
   - st-metadata-examples # todo: these should be part of the requirements as examples
+
+authors:
+  - name: Geoscience Australia
+    country: Australia
+    members:
+      - Adam Lewis
+      - Jonathon Ross
+      - Andreia Siqueira
+  - name: USGS
+    country: USA
+    members:
+      - Darcie Bontje
+      - Steve Labahn
+      - Mary Metzger
+
+changes:

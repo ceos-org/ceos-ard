@@ -23,6 +23,6 @@ glossary:
   - url
 references:
 metadata:
-legacy:
-  sar: 1.6.9
-  optical:
+changes:
+history:
+  - SAR 1.6.9

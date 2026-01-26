@@ -12,6 +12,6 @@ glossary:
   - doi
 references:
 metadata:
-legacy:
-  sar:
-  optical: SR 3.3
+changes:
+history:
+  - SR 3.3

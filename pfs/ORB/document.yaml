@@ -1,4 +1,3 @@
-id: ORB
 title: Ocean Radar Backscatter
 version: 1.2-draft
 type: Synthetic Aperture Radar
@@ -10,11 +9,6 @@ applies_to: |-
   As the basic ORB product contains backscatter values only, it _cannot_ be directly used for SAR polarimetry or interferometric applications that require local phase estimates.
   Nonetheless, an advanced ORB product could include the upper diagonal of the polarimetric $\sigma^0$ covariance matrix for enabling advanced polarimetric analysis (similar to the POL product).
 
-introduction:
-  - what-are-ceos-ard-products
-  - when-is-a-product-ceos-ard
-  - difference-threshold-goal
-
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
   - orb
@@ -23,8 +17,189 @@ glossary:
 references:
   - iso19115_2_2009
 
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+requirements:
+  - category: general-metadata
+    requirements:
+      # todo: most of the general metadata is product metadata - this should potentially be merged.
+      - metadata/traceability-sar
+      - metadata/machine-readability-sar
+      - metadata/product-type-sar
+      - metadata/pfs-url
+      - metadata/time-sar
+  - category: source-metadata
+    requirements:
+      - metadata/acquisition-id # todo: this is new from the category description
+      - metadata/data-access-source
+      - metadata/instrument-sar
+      - metadata/time-source
+      - metadata/acquisition-parameters-sar
+      - metadata/orbit
+      - metadata/processing-parameters
+      - metadata/image-attributes-sar
+      - metadata/sensor-calibration-sar
+      - metadata/performance-indicators
+      - metadata/polarimetric-calibration-matrices
+      - metadata/mean-faraday-rotation-angle
+      - metadata/ionosphere-indicator
+  - category: product-metadata
+    requirements:
+      - metadata/data-access-product
+      - metadata/auxiliary-data
+      - metadata/sample-spacing
+      - metadata/enl
+      - metadata/resolution
+      - metadata/speckle-filtering
+      - metadata/geo-bbox
+      - metadata/geo-area
+      - metadata/image-size
+      - metadata/pixel-coordinate-convention
+      - metadata/crs
+      - metadata/look-direction-polynomials
+  - category: per-pixel-metadata
+    requirements:
+      - cloud-optimized-formats
+      - metadata/machine-readability-sar
+      - per-pixel/data-mask
+      - per-pixel/scattering-area
+      - per-pixel/local-incident-angle
+      - per-pixel/ellipsoidal-incident-angle
+      - per-pixel/noise-power
+      - per-pixel/acquisition-id
+      - per-pixel/geoid
+      - per-pixel/look-direction
+  - category: radiometrically-corrected-measurements
+    requirements:
+      - cloud-optimized-formats
+      - measurements/backscatter-orb
+      - metadata/scaling-conversion
+      - metadata/noise-removal
+      - metadata/radiometric-accuracy-sar
+      - measurements/mean-wind-normalised-backscatter
+  - category: geometric-corrections
+    requirements:
+      - metadata/geometric-correction-algorithm
+      - corrections/dem
+      - corrections/geometric-accuracy-radar
+      - corrections/geometric-refined-accuracy
+      - corrections/gridding-convention
+
 annexes:
   - sar-general-processing-roadmap
   - sar-topographic-phase-removal
   - sar-pol-covmat # todo: not specific to ORB, but added to fix broken cross references
   - sar-orb-example
+
+authors:
+  - name: Natural Resources Canada
+    country: Canada
+    members:
+      - François Charbonneau
+  - name: soloEO / Japan Aerospace Exploration Agency (JAXA)
+    country: Japan
+    members:
+      - Ake Rosenqvist
+  - name: German Aerospace Centre (DLR)
+    country: Germany
+    members:
+      - John Truckenbrodt
+  - name: European Space Agency (ESA)
+    country: Italy
+    members:
+      - Clément Albinet
+  - name: University of Zurich
+    country: Switzerland
+    members:
+      - David Small
+  - name: Jet Propulsion Laboratory
+    country: USA
+    members:
+      - Bruce Chapman
+  - name: Stanford University
+    country: USA
+    members:
+      - Howard Zebker
+  - name: CSIRO
+    country: Australia
+    members:
+      - Zheng-Shu Zhou
+  - name: Jet Propulsion Laboratory
+    country: USA
+    members:
+      - Virginia Brancato
+  - name: CONAE
+    country: Argentina
+    members:
+      - Danilo Dadamia
+  - name: Environment and Climate Change
+    country: Canada
+    members:
+      - Benjamin Deschamps
+  - name: Collecte Localisation Satellites
+    country: France
+    members:
+      - Guillaume Hajduch
+  - name: Earth Big Data
+    country: USA
+    members:
+      - Josef Kellndorfer
+  - name: Jet Propulsion Laboratory
+    country: USA
+    members:
+      - Marco Lavalle
+  - name: Geoscience Australia
+    country: Australia
+    members:
+      - Adam Lewis
+  - name: Alaska Satellite Facility
+    country: USA
+    members:
+      - Thomas Logan
+      - Franz Meyer
+  - name: European Space Agency (ESA)
+    country: Italy
+    members:
+      - Nuno Miranda
+      - Muriel Pinheiro
+  - name: Sinergise
+    country: Slovenia
+    members:
+      - Marko Repse
+  - name: ISRO
+    country: India
+    members:
+      - HariPriya Sakethapuram
+  - name: Geoscience Australia
+    country: Australia
+    members:
+      - Andreia Siqueira
+  - name: Jet Propulsion Laboratory
+    country: USA
+    members:
+      - Gustavo Shiroma
+  - name: Japan Aerospace Exploration Agency
+    country: Japan
+    members:
+      - Takeo Tadono
+  - name: Geoscience Australia
+    country: Australia
+    members:
+      - Medhavy Thankappan
+  - name: RHEA for European Space Agency (ESA)
+    country: Italy
+    members:
+      - Antonio Valentino
+  - name: German Aerospace Centre (DLR)
+    country: Germany
+    members:
+      - Anna Wendleder
+  - name: Digital Earth Africa
+    country: Australia
+    members:
+      - Fang Yuan
+
+changes:

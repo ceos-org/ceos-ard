@@ -12,6 +12,6 @@ dependencies:
 glossary:
 references:
 metadata:
-legacy:
-  sar:
-  optical: NLSR 2.14
+changes:
+history:
+  - NLSR 2.14

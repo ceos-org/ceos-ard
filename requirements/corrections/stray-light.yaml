@@ -17,6 +17,6 @@ glossary:
   - doi
 references:
 metadata:
-legacy:
-  sar:
-  optical: NLSR 3.6
+changes:
+history:
+  - NLSR 3.6

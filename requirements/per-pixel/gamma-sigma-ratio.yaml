@@ -20,6 +20,6 @@ glossary:
   - rtc
 references:
 metadata:
-legacy:
-  sar: 2.7
-  optical:
+changes:
+history:
+  - SAR 2.7

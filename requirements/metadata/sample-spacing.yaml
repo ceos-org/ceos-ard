@@ -15,6 +15,6 @@ glossary:
   - ceos-ard
 references:
 metadata:
-legacy:
-  sar: 1.7.3
-  optical:
+changes:
+history:
+  - SAR 1.7.3

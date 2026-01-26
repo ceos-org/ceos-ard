@@ -12,6 +12,6 @@ glossary:
   - doi
 references:
 metadata:
-legacy:
-  sar:
-  optical: NLSR 1.12 / SR 1.12
+changes:
+history:
+  - NLSR 1.12 / SR 1.12

@@ -37,6 +37,6 @@ glossary:
   - orb
 references:
 metadata:
-legacy:
-  sar: 3.7
-  optical:
+changes:
+history:
+  - SAR 3.7

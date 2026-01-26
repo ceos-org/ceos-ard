@@ -9,6 +9,6 @@ dependencies:
 glossary:
 references:
 metadata:
-legacy:
-  sar:
-  optical: SR 2.10
+changes:
+history:
+  - SR 2.10

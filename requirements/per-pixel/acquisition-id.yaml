@@ -32,6 +32,6 @@ glossary:
   - utc
 references:
 metadata:
-legacy:
-  sar: 2.8
-  optical:
+changes:
+history:
+  - SAR 2.8

@@ -10,6 +10,6 @@ dependencies:
 glossary:
 references:
 metadata:
-legacy:
-  sar: 1.7.6 (partially)
-  optical:
+changes:
+history:
+  - SAR 1.7.6

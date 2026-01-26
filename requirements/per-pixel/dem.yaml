@@ -27,6 +27,6 @@ glossary:
   - orb
 references:
 metadata:
-legacy:
-  sar: 2.9
-  optical:
+changes:
+history:
+  - SAR 2.9
