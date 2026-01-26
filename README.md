@@ -30,16 +30,17 @@ Below you can find all Product Family Specifications (PFS) that are currently de
 - **Synthetic Aperture Radar (SAR)**
   - **Normalised Radar Backscatter (NRB)**
   
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-NRB.docx)*
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/NRB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/NRB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/NRB.docx)*
   - **Polarimetric Radar (POL)**
   
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-POL.docx)*
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/POL.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/POL.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/POL.docx)*
   - **Ocean Radar Backscatter (ORB)**
   
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-ORB.docx)*
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/ORB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/ORB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/ORB.docx)*
   - **Geocoded Single-Look Complex (GSLC)**
   
-    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SAR-GSLC.docx)*
+    *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/GSLC.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/GSLC.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/GSLC.docx)*
+
 - **Optical**
   - **Surface Reflectance (SR)**
   
