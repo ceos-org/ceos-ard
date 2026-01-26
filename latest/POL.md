@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex - Version 1.2-draft
+  CEOS-ARD - Synthetic Aperture Radar - Polarimetric Radar - Version 1.2-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -36,13 +36,13 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex
+# CEOS-ARD - Synthetic Aperture Radar - Polarimetric Radar
 
 &nbsp;
 
 ## Document Status
 
-Product Family Specification, Synthetic Aperture Radar, Geocoded Single-Look Complex
+Product Family Specification, Synthetic Aperture Radar, Polarimetric Radar
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
@@ -50,7 +50,7 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 Not available yet
 
-## <!-- edit:pfs/SAR-GSLC/authors.yaml -->Contributing Authors
+## <!-- edit:pfs/POL/authors.yaml -->Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
 - Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency (JAXA), Japan
@@ -89,9 +89,9 @@ Not available yet
 
 ## Description
 
-<!-- edit:pfs/SAR-GSLC/document.yaml -->
+<!-- edit:pfs/POL/document.yaml -->
 **Product Family Specification:**
-Synthetic Aperture Radar, Geocoded Single-Look Complex (SAR-GSLC)
+Synthetic Aperture Radar, Polarimetric Radar (POL)
 
 **Version:**
 1.2-draft
@@ -103,13 +103,38 @@ Data collected by Synthetic Aperture Radar sensors
 
 This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
-The CEOS-ARD Geocoded Single-Look Complex (GSLC) product is relevant to interferometric studies.
-The GSLC product is derived from the range-Doppler (i.e. slant range) Single-Look Complex (SLC) product using a DEM and the orbital state vectors and output in the map projected system.
-The phase of a geocoded SLC is “flattened” with respect to a reference orbit and to a DEM, to eliminate topographic phase contributions [@zebker2017; @zheng2017].
-The sample spacing of the GSLC product in the map coordinate directions is comparable to the full resolution original SLC product.
-The GSLC product can be directly overlaid on a map or combined with other similar GSLC products to derive interferograms and create change maps, for example.
-Since the GSLC phase is flattened, the phase difference between two GSLC products acquired on a same relative orbit produces an interferogram referring only to surface displacement and noise (i.e., no topographic fringes).
-The GSLC product may optionally be radiometrically terrain corrected such that the squared amplitude yields $\gamma^0_T$.
+The CEOS-ARD Polarimetric Radar (POL) product format is an extension of the CEOS-ARD Normalised Radar Backscatter (NRB) format.
+This extension is required in order to better support Level-1 SLC polarimetric data, including full-polarimetric modes (e.g., RADARSAT-2, ALOS-2/4, SAOCOM-1 and future missions), and hybrid or linear dual-polarimetric modes (i.e., Compact Polarimetric mode available on RCM, SAOCOM and the upcoming NISAR mission).The POL product can be defined in two processing levels:
+
+The **normalised covariance matrix (CovMat)** representation (C2 or C3) which preserves the inter-channel polarimetric phase(s) and maximizes the available information for users.
+Interoperability within current CEOS-ARD SAR backscatter definition is preserved, since diagonal elements of the covariance matrix are backscatter intensities.
+Scattering information enhancement can be achieved by applying incoherent polarimetric decomposition techniques (e.g., Freeman-Durden, van Zyl, Cloude-Pottier, Yamaguchi-based) directly on the C2 or C3 matrix.
+
+**Polarimetric Radar Decomposition (PRD)** refers to ARD products where polarimetric information is broken down into simplified parameters to facilitate user interpretation of the data.
+They are derived from coherent or incoherent polarimetric decomposition techniques.
+
+### Notice and Limitations
+
+For Polarimetric Radar (POL) products, optimal incoherent Polarimetric Radar Decomposition (PRD) should be performed under the slant range projection [@gens2013; @toutin2013].
+In order to minimise bias in the CEOS-ARD SAR Level-2A covariance matrix product, speckle filtering and averaging of the covariance matrix should be applied in the slant range projection, and geocoding should be performed using nearest-neighbour resampling.
+Specifically, nearest-neighbour resampling ensures that the averaged covariance matrix elements in slant range and in geocoded ground projection are exactly the same.
+Consequently, the polarimetrically derived parameters are exactly equal in both approaches (assuming that no further averaging is performed on the ARD product for decomposing the polarimetric information).
+Bilinear and average resampling methods are also suitable for resampling the covariance matrix, but some differences with polarimetric parameters generated in slant range and then resampled (bilinear) might be observed on sloped terrains.
+Even if Sinc interpolation may be more robust for spatial resampling, it does not preserve covariance matrix integrity, and should consequently not be used for this ARD product.
+
+It is recommended that ARD providers who desire to distribute PRD products decompose the polarimetric information starting from Level-1 SLC data and then geocode the derived parameters rather than use the CovMat ARD product.
+Resampling can be performed using any of the supported methods (nearest-neighbour, bilinear, average, bi-cubic spline or Lanczos are recommended), which need to be indicated in the product metadata.
+Note that coherent decomposition techniques cannot be performed on CovMat ARD products.
+
+Covariance matrix products contain a variable number of layers (or bands) with different data types depending on the polarimetric mode (full or dual) and decomposition technique.
+The CovMat products for the C2 matrix have 3 layers (2 real-valued diagonal elements and 1 complex-valued off-diagonal element).
+CovMat products for the C3 matrix have 6 layers (3 real-valued diagonal elements and 3 complex-valued off-diagonal elements).
+Layers that can be obtained via a complex conjugation of other layers are not provided within the product.
+Polarimetric Decomposition products contain typically 2 to 4 (or more) real-valued layers depending on the particular decomposition algorithm.
+Within the CovMat product files, ARD layers are organized in order to reduce access delays and maximize efficiency in extracting the desired information.
+In CovMat products, geographically contiguous samples for each layer may be stored next to each other and organized “layer by layer”.
+Alternatively, samples belonging to the same covariance matrix might be stored next to each other and organized “matrix by matrix”.
+PRD products are organized “layer by layer”, i.e., with bands corresponding to the output of the polarimetric decomposition stored next to each other.
 
 &#12;
 
@@ -151,14 +176,6 @@ DOI
 DSM
 :   Digital Surface Model
 
-<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ecef.yaml -->
-ECEF
-:   Earth-Centred Earth-Fixed
-
-<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ecr.yaml -->
-ECR
-:   Earth-Centred Rotating
-
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/egm.yaml -->
 EGM
 :   Earth Gravitational Model
@@ -175,10 +192,6 @@ EPSG Code
 GSLC
 :   Geocoded Single-Look Complex
 
-<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/insar.yaml -->
-InSAR
-:   Interferometric Radar
-
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/islr.yaml -->
 ISLR
 :   Intensity Signal-to-Noise Level Ratio
@@ -186,6 +199,10 @@ ISLR
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/lut.yaml -->
 LUT
 :   Look-Up Table
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/metadata.yaml -->
+Metadata
+:   Structured information that describes other information or information services. With well-defined metadata, users should be able to get basic information about data, without the need to have knowledge about its entire content.
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/nrb.yaml -->
 NRB
@@ -198,6 +215,10 @@ ORB
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/pol.yaml -->
 POL
 :   Polarimetric Radar
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/prd.yaml -->
+PRD
+:   Polarimetric Radar Decomposition
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/pslr.yaml -->
 PSLR
@@ -254,7 +275,7 @@ The formats were originally defined by the Open Geospatial Consortium (OGC) and 
 
 &#12;
 
-## <!-- edit:pfs/SAR-GSLC/requirements.yaml -->Requirements
+## <!-- edit:pfs/POL/requirements.yaml -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -720,7 +741,26 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/resolution.yaml-->`3.4.` Product Resolution {#sec:prd.metadata-resolution label="|Product Metadata: Product Resolution"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/enl.yaml-->`3.4.` Product Equivalent Number of Looks {#sec:prd.metadata-enl label="|Product Metadata: Product Equivalent Number of Looks"}
+
+Identifier: `prd.metadata-enl`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Equivalent Number of Looks (ENL)
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/resolution.yaml-->`3.5.` Product Resolution {#sec:prd.metadata-resolution label="|Product Metadata: Product Resolution"}
 
 Identifier: `prd.metadata-resolution`
 
@@ -742,7 +782,36 @@ Average spatial resolution of the CEOS-ARD product along:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-bbox.yaml-->`3.5.` Product Bounding Box {#sec:prd.metadata-geo-bbox label="|Product Metadata: Product Bounding Box"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/speckle-filtering-pol.yaml-->`3.6.` Product Filtering {#sec:prd.metadata-speckle-filtering-pol label="|Product Metadata: Product Filtering"}
+
+Identifier: `prd.metadata-speckle-filtering-pol`
+
+
+
+##### Threshold requirements:
+
+Flag if speckle filter has been applied (True/False).
+
+Metadata should include:
+
+- Reference to algorithm as DOI or URL
+- Input filtering parameters
+  - Type
+  - Window size in pixel units
+  - Any other parameters defining the speckle filter used
+
+Advanced polarimetric filter preserving covariance matrix properties should be applied.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-bbox.yaml-->`3.7.` Product Bounding Box {#sec:prd.metadata-geo-bbox label="|Product Metadata: Product Bounding Box"}
 
 Identifier: `prd.metadata-geo-bbox`
 
@@ -766,7 +835,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area.yaml-->`3.6.` Product Geographical Extent {#sec:prd.metadata-geo-area label="|Product Metadata: Product Geographical Extent"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area.yaml-->`3.8.` Product Geographical Extent {#sec:prd.metadata-geo-area label="|Product Metadata: Product Geographical Extent"}
 
 Identifier: `prd.metadata-geo-area`
 
@@ -785,7 +854,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/image-size.yaml-->`3.7.` Product Image Size {#sec:prd.metadata-image-size label="|Product Metadata: Product Image Size"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/image-size.yaml-->`3.9.` Product Image Size {#sec:prd.metadata-image-size label="|Product Metadata: Product Image Size"}
 
 Identifier: `prd.metadata-image-size`
 
@@ -809,7 +878,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/pixel-coordinate-convention.yaml-->`3.8.` Product Pixel Coordinate Convention {#sec:prd.metadata-pixel-coordinate-convention label="|Product Metadata: Product Pixel Coordinate Convention"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/pixel-coordinate-convention.yaml-->`3.10.` Product Pixel Coordinate Convention {#sec:prd.metadata-pixel-coordinate-convention label="|Product Metadata: Product Pixel Coordinate Convention"}
 
 Identifier: `prd.metadata-pixel-coordinate-convention`
 
@@ -829,7 +898,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs.yaml-->`3.9.` Product Coordinate Reference System {#sec:prd.metadata-crs label="|Product Metadata: Product Coordinate Reference System"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs.yaml-->`3.11.` Product Coordinate Reference System {#sec:prd.metadata-crs label="|Product Metadata: Product Coordinate Reference System"}
 
 Identifier: `prd.metadata-crs`
 
@@ -849,56 +918,13 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radar-unit-look-vector.yaml-->`3.10.` Radar Unit Look Vector {#sec:prd.metadata-radar-unit-look-vector label="|Product Metadata: Radar Unit Look Vector"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit-reference-nrb-pol.yaml-->`3.12.` Reference Orbit {#sec:prd.metadata-orbit-reference-nrb-pol label="|Product Metadata: Reference Orbit"}
 
-Identifier: `prd.metadata-radar-unit-look-vector`
-
-
-
-##### Threshold requirements:
-
-3-D components radar unit look vector, specified at centre of scene, in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating - ECR) is provided.
-It consists of unit vectors from antenna to surface pixel (i.e., positive Z component).
-
-Only required if a Radar Unit Look Vector Grid Image (see [@sec:pxl.per-pixel-radar-unit-look-vector-grid]) is **not** provided.
-
-
-##### Goal requirements:
-
-
-As threshold.
-<!-- *None* -->
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/slant-range.yaml-->`3.11.` Slant Range Sensor to Surface {#sec:prd.metadata-slant-range label="|Product Metadata: Slant Range Sensor to Surface"}
-
-Identifier: `prd.metadata-slant-range`
+Identifier: `prd.metadata-orbit-reference-nrb-pol`
 
 
 
-##### Threshold requirements:
-
-Slant range distance from the sensor to the surface, specified at centre of scene. 
-
-Only required if a Slant Range Sensor to Surface Image (see [@sec:pxl.per-pixel-slant-range]) is **not** provided.
-
-
-##### Goal requirements:
-
-
-As threshold.
-<!-- *None* -->
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit-reference-gslc.yaml-->`3.12.` Reference Orbit {#sec:prd.metadata-orbit-reference-gslc label="|Product Metadata: Reference Orbit"}
-
-Identifier: `prd.metadata-orbit-reference-gslc`
-
-
-
-**Usage: When a reference orbit is used instead of a virtual orbit (see [@sec:annex-sar-topographic-phase-removal]).**
+**Usage: Only when Flattened phase per-pixel metadata (see [@sec:rcm.measurements-flattened-phase]) is provided.**
 
 ##### Threshold requirements:
 
@@ -1205,146 +1231,6 @@ File format specifications/contents provided in metadata:
 - Bits per Sample
 - Byte Order
 
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/radar-unit-look-vector-grid.yaml-->`4.11.` Radar Unit Look Vector Grid Image {#sec:pxl.per-pixel-radar-unit-look-vector-grid label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image"}
-
-Identifier: `pxl.per-pixel-radar-unit-look-vector-grid`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-3-D components radar unit look vector, specified at each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating – ECR) is provided.
-It consists of unit vectors from the antenna to the surface pixel (i.e., positive Z component).
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (3D unit vector)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/slant-range.yaml-->`4.12.` Slant Range Sensor to Surface Image {#sec:pxl.per-pixel-slant-range label="|Per-Pixel Metadata: Slant Range Sensor to Surface Image"}
-
-Identifier: `pxl.per-pixel-slant-range`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Slant range distance from the sensor to the surface, specified at each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating – ECR) is provided.
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (Distance)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/insar-phase-uncertainty.yaml-->`4.13.` InSAR Phase Uncertainty Image {#sec:pxl.per-pixel-insar-phase-uncertainty label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image"}
-
-Identifier: `pxl.per-pixel-insar-phase-uncertainty`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Estimate of uncertainty in InSAR phase is provided, such as finite signal to noise ratio, quantization noise, or DEM error.
-Identification of which error sources are included will be provided as DOI/URL reference or brief description.
-It represents statistical variation from known noise sources only.
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (Angle)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/atmospheric-phase-correction.yaml-->`4.14.` Atmospheric Phase Correction Image {#sec:pxl.per-pixel-atmospheric-phase-correction label="|Per-Pixel Metadata: Atmospheric Phase Correction Image"}
-
-Identifier: `pxl.per-pixel-atmospheric-phase-correction`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Phase correction value at each pixel, if applied.
-DOI/URL reference to algorithm or brief description is provided.
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (Angle)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ionospheric-phase-correction.yaml-->`4.15.` Ionospheric Phase Correction Image {#sec:pxl.per-pixel-ionospheric-phase-correction label="|Per-Pixel Metadata: Ionospheric Phase Correction Image"}
-
-Identifier: `pxl.per-pixel-ionospheric-phase-correction`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Phase correction value at each pixel, if applied.
-DOI/URL reference to algorithm or brief description is provided.
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (Angle)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometrically-corrected-measurements.yaml-->`5.` Radiometrically Corrected Measurements {#sec:rcm label="|Radiometrically Corrected Measurements"}
 
 The requirements indicate the necessary outcomes and, to some degree, the minimum steps necessary to be deemed to have achieved those outcomes.
@@ -1372,29 +1258,35 @@ All files are provided using cloud-optimized file formats.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-gslc.yaml-->`5.2.` Backscatter Measurements (GSLC) {#sec:rcm.measurements-backscatter-gslc label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-pol.yaml-->`5.2.` Backscatter Measurements (POL) {#sec:rcm.measurements-backscatter-pol label="|Radiometrically Corrected Measurements: Backscatter Measurements (POL)"}
 
-Identifier: `rcm.measurements-backscatter-gslc`
+Identifier: `rcm.measurements-backscatter-pol`
 
 
 
 ##### Threshold requirements:
 
-Radiometric and Phase Terrain-flattened Gamma-Nought backscatter coefficient ($\gamma^0_T$), in complex number format, is provided for each polarization (e.g., HH, HV, VV, VH).
+Measurements can be one of the following types or both: 
+  
+- **Normalised Radar Covariance Matrix (CovMat)**
+  Diagonal (equivalent to NRB) and upper diagonal elements of the terrain-flattened Gamma-Nought ($\gamma^0_T$) Covariance Matrix are provided for coherent dual (e.g., HH-HV, VV-VH, or …) and fully polarimetric (e.g., HH-HV-VH-VV) acquisitions.
+- **Polarimetric Radar Decomposition (PRD)**
+  The individual components of the polarimetric decomposition obtained from the terrain-flattened (Gamma-Nought, $\gamma^0_T$) covariance matrix.
 
 File format specifications/contents provided in metadata:
 
-- Measurement Type (Gamma-Nought)
-- Backscatter Expression Convention (linear amplitude, linear power\*)
-- Polarization (HH, HV, VV, VH)
+- Measurement Type (CovMat, PRD)
+- Measurement convention unit (linear amplitude, linear power, angle)
+- Individual covariance matrix element or/and Individual component of the decomposition (C3m11, C3m12, … or H, A, alpha, or …)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
+- Data Type (Int, Float, Complex, …)
 - Bits per Sample
 - Byte Order
 
 Notes:
 
-1. Transformation to the logarithm decibel scale is not required or desired as this step can be easily completed by the user if necessary.
+1. It is recommended to keep CovMat or PRD measurement files separated.
+Otherwise, specify the multi-channel format order (BIP, BIL, BSQ).
 
 
 ##### Goal requirements:
@@ -1446,20 +1338,13 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo-gslc.yaml-->`5.5.` Radiometric Terrain Correction Algorithm {#sec:rcm.corrections-radiometric-terrain-algo-gslc label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo.yaml-->`5.5.` Radiometric Terrain Correction Algorithm {#sec:rcm.corrections-radiometric-terrain-algo label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
 
-Identifier: `rcm.corrections-radiometric-terrain-algo-gslc`
+Identifier: `rcm.corrections-radiometric-terrain-algo`
 
 
 
 ##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
 
 Adjustments were made for terrain by modelling the local contributing scattering area using the preferred choice of a published peer-reviewed algorithm to produce radiometrically terrain corrected (RTC) $\gamma^0_T$ backscatter estimates.  
 
@@ -1469,11 +1354,16 @@ Metadata references, e.g.
 - technical documentation regarding the algorithm used to generate the backscatter estimates is expressed as URLs or DOIs 
 - the sources of auxiliary data used to make corrections
 
-Require resolution of DEM better than the output product resolution when applying terrain corrections.
-
 Notes:
 
 1. Examples of technical documentation include an Algorithm, Theoretical Basis Document, product user guide, etc.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
 
 ---
 
@@ -1494,6 +1384,44 @@ Not required.
 
 Uncertainty (e.g., bounds on $\gamma^0$ or $\sigma^0$) information is provided as document referenced as URL or DOI.
 SI traceability is achieved.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/flattened-phase.yaml-->`5.7.` Flattened Phase {#sec:rcm.measurements-flattened-phase label="|Radiometrically Corrected Measurements: Flattened Phase"}
+
+Identifier: `rcm.measurements-flattened-phase`
+
+
+
+**Usage: Alternative to GSLC product for NRB and POL products**
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+The Flattened Phase is the interferometric phase for which the topographic phase contribution is removed.
+It is derived from the range-Doppler SLC product using a DEM and the orbital state vectors with respect to a reference orbit (see [@sec:annex-sar-topographic-phase-removal]).
+The use of the Flattened Phase with the NRB or POL intensity ([@sec:rcm]) provides the GSLC equivalent, as follows:  
+
+$$
+\text{GSLC} = \sqrt{NRB} \times \exp(j \cdot \text{FlattenPhase})
+$$
+
+File format specifications/contents provided in metadata:
+
+- Measurement Type (Flattened Phase)
+- Reference Polarization (HH/HV/VV/VH)
+- Data Format (GeoTIFF, HDF5, NetCDF, …)
+- Data Type (Int, Float, …)
+- Bits per Sample
+- Byte Order
+
+In case of polarimetric data, indicate the reference polarization.
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`6.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
 
@@ -1867,44 +1795,71 @@ $$
 $$ {#eq:sar-pol-covmat-eq6}
 
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-gslc-example.yaml-->Geocoded Single-Look Complex example {#sec:annex-sar-gslc-example label="|Geocoded Single-Look Complex example"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-pol-prd.yaml-->Polarimetric Radar Decomposition (PRD) {#sec:annex-sar-pol-prd label="|Polarimetric Radar Decomposition (PRD)"}
 
-In contrast to basic NRB and **POL products**, CEOS-ARD Geocoded SLC GSLC products are kept close to the native resolution in complex data format for which local topographic InSAR phases, relative to a reference orbit [@zebker2010; @zebker2017], have been removed. Having a volume of GSLC products acquired over repeat cycles, already radiometric and phase terrain corrected and geocoded ([@fig:sar-gslc-example-fig1a; @fig:sar-gslc-example-fig1b]), allows user-friendly production of a first iteration of the InSAR coherence ([@eq:sar-gslc-example-eq1; @fig:sar-gslc-example-fig1c]) and differential phases ([@eq:sar-gslc-example-eq2; @fig:sar-gslc-example-fig1d]) in between GSLC pairs, simply by applying local averaging window over the product of a GSLC product (GSLC1) with the complex conjugate of a second GSLC (GSLC2) divided by their local averaged intensities. These intermediate files could be used for coherent change detection analysis and surface displacement monitoring.
+Different methodologies allow decomposition of coherent dual-polarization data or fully polarimetric data to meaningful components summarizing the scattering processing with the interacting media. Decomposition techniques are divided in two categories: Coherent and incoherent.
 
-$$
-\text{Complex coherence:} \quad \rho = \frac{\sum [ GSLC_1 * conj (GSLC_2)]}{ \sqrt{ \sum |GSLC_1|^2 * \sum |GSLC_2|^2}}
-$$ {#eq:sar-gslc-example-eq1}
+#### Coherent decompositions
 
-The InSAR differential phase ([@eq:sar-gslc-example-eq2]) is the argument of the complex coherence estimated with [@eq:sar-gslc-example-eq1].
+Coherent decompositions express the scattering matrix by the summation of elementary objects of known signature (ex.: a sphere, a diplane, a cylinder, a helix, …). They are used mainly to describe point targets which are coherent. As for examples, coherent PRD could be (but not limited to):
 
-$$
-\text{InSAR differential phase:} \quad \varphi =\arg(\rho)
-$$ {#eq:sar-gslc-example-eq2}
+1. Pauli decomposition (3 layers)
+   - $|\alpha|^2$: sphere (odd-bounce interaction) \[Intensity]
+   - $|\beta|^2$: 0° diplane (even-bounce interaction) \[Intensity]
+   - $|\gamma|^2$: 45° diplane (volumetric interaction) \[Intensity]
+2. Krogager decomposition (5 layers) [@krogager1993]
+   - $|\kappa_\sigma|^2$ : sphere (odd-bounce interaction) \[Intensity]
+   - $|\kappa_\delta|^2$ : diplane (odd-bounce interaction) \[Intensity]
+   - $|\kappa_\eta|^2$ : helix \[Intensity]
+   - $\theta$: orientation angle \[degrees]
+   - $\Phi_s$: sphere to diplane angle \[degrees]
+3. Cameron (nine classes) – non-dimensional layers [@cameron1996]
+   
+   | Classes         |  ID  |
+   | :-------------- | :--: |
+   | Trihedral       |  1   |
+   | Dihedral        |  2   |
+   | Narrow Dihedral |  3   |
+   | Dipole          |  4   |
+   | Cylinder        |  5   |
+   | ¼ wave          |  6   |
+   | Right Helix     |  7   |
+   | Left Helix      |  8   |
+   | Asymmetrical    |  9   |
 
-Some advanced NRB or POL products could include per-pixel “Flattened Phase” data ([@sec:rcm.measurements-flattened-phase]). This “Flattened Phase” enables the possibility to perform InSAR analysis as with two GSLC products. As for example, from two different NRB products (NRB1) and (NRB2), acquired over repeat cycles (i.e., on the same relative orbit), containing $\gamma_T^0$ and their corresponding “Flattened Phase” (FPh1) and (FPh2) per-pixel data, the complex InSAR coherence ([@eq:sar-gslc-example-eq3]) can be estimated in the similar manner as [@eq:sar-gslc-example-eq1] for GSLC products.
+   : Elementary objects of known scattering signature {#tbl:sar-pol-prd-tbl1}
 
-$$
-\text{Complex coherence:} \quad \rho_{NRB} = \frac{\sum [ (\sqrt{NRB_1} \cdot e^{i\cdot FPh1}) \cdot conj (\sqrt{NRB_2} \cdot e^{i\cdot FPh2})]}{ \sqrt{ \sum NRB_1 * \sum NRB_2}}
-$$ {#eq:sar-gslc-example-eq3}
+#### Incoherent decompositions
 
-The following figures show Sentinel-1 GSLC product examples over Death Valley National Park, California, US:
+Incoherent decompositions describe distributed targets in terms of scattering mechanisms and their diversity. They are generated from averaged Covariance, Coherence or Kennaugh matrices. As for examples, incoherent PRD could be (but not limited to):
 
-![GSLC1: Intensity data of the first GSLC product (2017-05-27)](assets/sar-gslc-example/S1-GSLC1.jpeg){#fig:sar-gslc-example-fig1a}
+1. Based and saved on intensity of scattering mechanisms can be [@freeman1998; @yamaguchi2011; @raney2012]
+   
+   | Level 2b - Layers [Intensity]  | Freeman-Durden | Yamaguchi | m-chi |
+   | :----------------------------- | :------------: | :-------: | :---: |
+   | Odd-bounce (surface/trihedral) |       X        |     X     |   X   |
+   | Even-bounce (dihedral)         |       X        |     X     |   X   |
+   | Random (volumetric)            |       X        |     X     |   X   |
+   | Helix                          |                |     X     |       |
 
-![GSLC2: Intensity data of the second GSLC product (2017-06-08)](assets/sar-gslc-example/S1-GSLC2.jpeg){#fig:sar-gslc-example-fig1b}
+   : Incoherent Decompositions: Freeman-Durden, Yamaguchi, m-chi {#tbl:sar-pol-prd-tbl2}
+   
+2. Based on eigenvector-eigenvalue decomposition expressing the diversity of scattering mechanisms [@cloude1996] and types:
+   
+   - $H$ : Entropy \[ \]  is the polarization diversity
+   - $A$ : Anisotropy \[ \]  is weighted difference between the 2ⁿᵈ and 3ʳᵈ eigenvalues
+   - $\alpha$ : Odd-even bounce angle \[Degrees]
+   - $\beta$ : orientation angle \[Degrees]
 
-![InSAR coherence map generated directly from [@fig:sar-gslc-example-fig1a] and [@fig:sar-gslc-example-fig1b]](assets/sar-gslc-example/S1-InSAR-coherence.png){#fig:sar-gslc-example-fig1c}
 
-![InSAR differential phase map generated directly from [@fig:sar-gslc-example-fig1a] and [@fig:sar-gslc-example-fig1b]](assets/sar-gslc-example/S1-InSAR-differential-phase.png){#fig:sar-gslc-example-fig1d}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-pol-examples.yaml-->Polarimetric Radar Decomposition Product Examples {#sec:annex-sar-pol-examples label="|Polarimetric Radar Decomposition Product Examples"}
 
-Some advanced GSLC product can be provided with “Radar Unit Look Vector Grid Image” per-pixel metadata ([@fig:sar-gslc-example-fig2a; @fig:sar-gslc-example-fig2b; @fig:sar-gslc-example-fig2c]) which gives the accurate 3-D components radar unit look vector used as for example in decomposing the vertical and horizontal component of an InSAR surface displacement estimate.
+From fully polarimetric covariance matrix ARD format POL (Level-2a), it is possible to apply any version of the popular Yamaguchi methodology, which decomposes the polarimetric information under relative intensities of 4 scattering types: Odd bounce, Even bounce, Random (volume) and helix. [@fig:sar-pol-examples-fig1]b shows HH intensity of a RADARSAT fully polarimetric acquired over a Spanish area. Decomposition using Yamaguchi methodology [@yamaguchi2011] can be expressed in RGB colour composite ([@fig:sar-pol-examples-fig1]c) where Red channel refers to even bounce scattering like urban area; Green channel is random scattering like vegetation; and Blue channel is odd bounce scattering like bare soil. [@fig:sar-pol-examples-fig1]d is equivalent to c) where radiometric normalisation (terrain flattening) has been applied with the help of the DEM of the scene ([@fig:sar-pol-examples-fig1]a).
 
-The following figures show 3-D components radar unit look vector of the GSLC product:
+![Example of polarimetric decomposition generated from ARD covariance format. a) Shaded DEM of the area; b) RADARSAT-2 HH intensity; c) Yamaguchi decomposition colour composite (Red: even bounce, Green: random, Blue: odd bounce); d) Same as c) with terrain flattening option. Generated from Radarsat-2 FQ18W acquired over Murcia, Spain on 18 June 2014 - ©MDA 2014](assets/sar-pol-examples/pol-decomposition.jpeg){#fig:sar-pol-examples-fig1}
 
-![x unit component](assets/sar-gslc-example/S1-GSLC-x-component.png){#fig:sar-gslc-example-fig2a}
+[@fig:sar-pol-examples-fig2] is a PRD compact polarimetric m-chi decomposition [@raney2012] simulated from two Canadian prairies Radarsat-2 fully polarimetric scenes acquired in May and June 2012. In May, before the growing season [@fig:sar-pol-examples-fig2]a, m-chi shows mainly surface scattering from bare soil (blue channel) and vegetation interaction from forested areas (green channel), while in June [@fig:sar-pol-examples-fig2]b growth of vegetation modifies the radar signal with interacting media function of the vegetation density and geometry which increase the amount of even bounce (red channel) and random scattering.
 
-![y unit component](assets/sar-gslc-example/S1-GSLC-y-component.png){#fig:sar-gslc-example-fig2b}
-
-![z unit component](assets/sar-gslc-example/S1-GSLC-z-component.png){#fig:sar-gslc-example-fig2c}
+![m-chi decomposition colour composite of simulated compact polarimetry from Radarsat-2 over an agriculture area. RGB representation: Red: even bounce, Green: random, Blue: odd bounce. a) 3 May 2012; and b) 18 June 2012. Generated from Radarsat-2 FQ6W acquired over SMAPVEX12 campaign Manitoba, Canada on 3 May and 20 June 2012 - ©MDA 2012](assets/sar-pol-examples/m-chi-decomposition.jpeg){#fig:sar-pol-examples-fig2}
 
 

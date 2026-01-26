@@ -50,7 +50,7 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 Not available yet
 
-## <!-- edit:pfs/SAR-NRB/authors.yaml -->Contributing Authors
+## <!-- edit:pfs/NRB/authors.yaml -->Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
 - Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency (JAXA), Japan
@@ -89,9 +89,9 @@ Not available yet
 
 ## Description
 
-<!-- edit:pfs/SAR-NRB/document.yaml -->
+<!-- edit:pfs/NRB/document.yaml -->
 **Product Family Specification:**
-Synthetic Aperture Radar, Normalised Radar Backscatter (SAR-NRB)
+Synthetic Aperture Radar, Normalised Radar Backscatter (NRB)
 
 **Version:**
 1.2-draft
@@ -248,7 +248,7 @@ The formats were originally defined by the Open Geospatial Consortium (OGC) and 
 
 &#12;
 
-## <!-- edit:pfs/SAR-NRB/requirements.yaml -->Requirements
+## <!-- edit:pfs/NRB/requirements.yaml -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!

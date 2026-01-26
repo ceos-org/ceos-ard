@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Synthetic Aperture Radar - Ocean Radar Backscatter - Version 1.2-draft
+  CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex - Version 1.2-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -36,13 +36,13 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Synthetic Aperture Radar - Ocean Radar Backscatter
+# CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex
 
 &nbsp;
 
 ## Document Status
 
-Product Family Specification, Synthetic Aperture Radar, Ocean Radar Backscatter
+Product Family Specification, Synthetic Aperture Radar, Geocoded Single-Look Complex
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
@@ -50,7 +50,7 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 Not available yet
 
-## <!-- edit:pfs/SAR-ORB/authors.yaml -->Contributing Authors
+## <!-- edit:pfs/GSLC/authors.yaml -->Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
 - Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency (JAXA), Japan
@@ -89,9 +89,9 @@ Not available yet
 
 ## Description
 
-<!-- edit:pfs/SAR-ORB/document.yaml -->
+<!-- edit:pfs/GSLC/document.yaml -->
 **Product Family Specification:**
-Synthetic Aperture Radar, Ocean Radar Backscatter (SAR-ORB)
+Synthetic Aperture Radar, Geocoded Single-Look Complex (GSLC)
 
 **Version:**
 1.2-draft
@@ -103,10 +103,13 @@ Data collected by Synthetic Aperture Radar sensors
 
 This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
-The CEOS-ARD Ocean Radar Backscatter (ORB) product specification describes products that have been projected on a geoid and are provided in the Sigma-Nought ($\sigma^0$) backscatter convention, which is recommended for most ocean applications.
-Backscatter may be calibrated to the ellipsoid ($\sigma^0_E$) or radiometrically terrain corrected ($\sigma^0_T$) prior to geometric terrain correction.
-As the basic ORB product contains backscatter values only, it _cannot_ be directly used for SAR polarimetry or interferometric applications that require local phase estimates.
-Nonetheless, an advanced ORB product could include the upper diagonal of the polarimetric $\sigma^0$ covariance matrix for enabling advanced polarimetric analysis (similar to the POL product).
+The CEOS-ARD Geocoded Single-Look Complex (GSLC) product is relevant to interferometric studies.
+The GSLC product is derived from the range-Doppler (i.e. slant range) Single-Look Complex (SLC) product using a DEM and the orbital state vectors and output in the map projected system.
+The phase of a geocoded SLC is “flattened” with respect to a reference orbit and to a DEM, to eliminate topographic phase contributions [@zebker2017; @zheng2017].
+The sample spacing of the GSLC product in the map coordinate directions is comparable to the full resolution original SLC product.
+The GSLC product can be directly overlaid on a map or combined with other similar GSLC products to derive interferograms and create change maps, for example.
+Since the GSLC phase is flattened, the phase difference between two GSLC products acquired on a same relative orbit produces an interferogram referring only to surface displacement and noise (i.e., no topographic fringes).
+The GSLC product may optionally be radiometrically terrain corrected such that the squared amplitude yields $\gamma^0_T$.
 
 &#12;
 
@@ -148,6 +151,14 @@ DOI
 DSM
 :   Digital Surface Model
 
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ecef.yaml -->
+ECEF
+:   Earth-Centred Earth-Fixed
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ecr.yaml -->
+ECR
+:   Earth-Centred Rotating
+
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/egm.yaml -->
 EGM
 :   Earth Gravitational Model
@@ -163,6 +174,10 @@ EPSG Code
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/gslc.yaml -->
 GSLC
 :   Geocoded Single-Look Complex
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/insar.yaml -->
+InSAR
+:   Interferometric Radar
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/islr.yaml -->
 ISLR
@@ -239,7 +254,7 @@ The formats were originally defined by the Open Geospatial Consortium (OGC) and 
 
 &#12;
 
-## <!-- edit:pfs/SAR-ORB/requirements.yaml -->Requirements
+## <!-- edit:pfs/GSLC/requirements.yaml -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -705,26 +720,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/enl.yaml-->`3.4.` Product Equivalent Number of Looks {#sec:prd.metadata-enl label="|Product Metadata: Product Equivalent Number of Looks"}
-
-Identifier: `prd.metadata-enl`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Equivalent Number of Looks (ENL)
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/resolution.yaml-->`3.5.` Product Resolution {#sec:prd.metadata-resolution label="|Product Metadata: Product Resolution"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/resolution.yaml-->`3.4.` Product Resolution {#sec:prd.metadata-resolution label="|Product Metadata: Product Resolution"}
 
 Identifier: `prd.metadata-resolution`
 
@@ -746,34 +742,7 @@ Average spatial resolution of the CEOS-ARD product along:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/speckle-filtering.yaml-->`3.6.` Product Filtering {#sec:prd.metadata-speckle-filtering label="|Product Metadata: Product Filtering"}
-
-Identifier: `prd.metadata-speckle-filtering`
-
-
-
-##### Threshold requirements:
-
-Flag if speckle filter has been applied (True/False).
-
-Metadata should include:
-
-- Reference to algorithm as DOI or URL
-- Input filtering parameters
-  - Type
-  - Window size in pixel units
-  - Any other parameters defining the speckle filter used
-
-
-##### Goal requirements:
-
-
-As threshold.
-<!-- *None* -->
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-bbox.yaml-->`3.7.` Product Bounding Box {#sec:prd.metadata-geo-bbox label="|Product Metadata: Product Bounding Box"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-bbox.yaml-->`3.5.` Product Bounding Box {#sec:prd.metadata-geo-bbox label="|Product Metadata: Product Bounding Box"}
 
 Identifier: `prd.metadata-geo-bbox`
 
@@ -797,7 +766,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area.yaml-->`3.8.` Product Geographical Extent {#sec:prd.metadata-geo-area label="|Product Metadata: Product Geographical Extent"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area.yaml-->`3.6.` Product Geographical Extent {#sec:prd.metadata-geo-area label="|Product Metadata: Product Geographical Extent"}
 
 Identifier: `prd.metadata-geo-area`
 
@@ -816,7 +785,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/image-size.yaml-->`3.9.` Product Image Size {#sec:prd.metadata-image-size label="|Product Metadata: Product Image Size"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/image-size.yaml-->`3.7.` Product Image Size {#sec:prd.metadata-image-size label="|Product Metadata: Product Image Size"}
 
 Identifier: `prd.metadata-image-size`
 
@@ -840,7 +809,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/pixel-coordinate-convention.yaml-->`3.10.` Product Pixel Coordinate Convention {#sec:prd.metadata-pixel-coordinate-convention label="|Product Metadata: Product Pixel Coordinate Convention"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/pixel-coordinate-convention.yaml-->`3.8.` Product Pixel Coordinate Convention {#sec:prd.metadata-pixel-coordinate-convention label="|Product Metadata: Product Pixel Coordinate Convention"}
 
 Identifier: `prd.metadata-pixel-coordinate-convention`
 
@@ -860,7 +829,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs.yaml-->`3.11.` Product Coordinate Reference System {#sec:prd.metadata-crs label="|Product Metadata: Product Coordinate Reference System"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs.yaml-->`3.9.` Product Coordinate Reference System {#sec:prd.metadata-crs label="|Product Metadata: Product Coordinate Reference System"}
 
 Identifier: `prd.metadata-crs`
 
@@ -880,31 +849,18 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/look-direction-polynomials.yaml-->`3.12.` Look Direction Polynomials {#sec:prd.metadata-look-direction-polynomials label="|Product Metadata: Look Direction Polynomials"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radar-unit-look-vector.yaml-->`3.10.` Radar Unit Look Vector {#sec:prd.metadata-radar-unit-look-vector label="|Product Metadata: Radar Unit Look Vector"}
 
-Identifier: `prd.metadata-look-direction-polynomials`
+Identifier: `prd.metadata-radar-unit-look-vector`
 
 
 
 ##### Threshold requirements:
 
-In case the Look Direction Image (see [@sec:pxl.per-pixel-look-direction]) is **not** provided, then a list of the polynomial coefficients are necessary to reconstruct the look direction angle[^look-direction-angle], together with an estimate of the added error from use of polynomial vs. per-pixel more accurate values, shall be provided.
+3-D components radar unit look vector, specified at centre of scene, in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating - ECR) is provided.
+It consists of unit vectors from antenna to surface pixel (i.e., positive Z component).
 
-Example polynomial:
-
-$$
-\text{LookDir} = a_{1}\text{Lat}^2 + a_{2}\text{Lon}^2 + a_{3}\text{LatLon} + a_{4}\text{Lat} + a_{5}\text{Lon} + a_6
-$$
-
-where:
-
-- $a_i$ = polynomial coefficients 
-- $\text{Lat}$ = latitude  
-- $\text{Lon}$ = longitude
-
-Lat and Lon are the related coordinates in the product map units (m, deg, arcsec).
-
-[^look-direction-angle]: The look direction angle represents the planar angle between north and each range direction. It is not constant in range, especially close to the poles.
+Only required if a Radar Unit Look Vector Grid Image (see [@sec:pxl.per-pixel-radar-unit-look-vector-grid]) is **not** provided.
 
 
 ##### Goal requirements:
@@ -912,6 +868,51 @@ Lat and Lon are the related coordinates in the product map units (m, deg, arcsec
 
 As threshold.
 <!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/slant-range.yaml-->`3.11.` Slant Range Sensor to Surface {#sec:prd.metadata-slant-range label="|Product Metadata: Slant Range Sensor to Surface"}
+
+Identifier: `prd.metadata-slant-range`
+
+
+
+##### Threshold requirements:
+
+Slant range distance from the sensor to the surface, specified at centre of scene. 
+
+Only required if a Slant Range Sensor to Surface Image (see [@sec:pxl.per-pixel-slant-range]) is **not** provided.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit-reference-gslc.yaml-->`3.12.` Reference Orbit {#sec:prd.metadata-orbit-reference-gslc label="|Product Metadata: Reference Orbit"}
+
+Identifier: `prd.metadata-orbit-reference-gslc`
+
+
+
+**Usage: When a reference orbit is used instead of a virtual orbit (see [@sec:annex-sar-topographic-phase-removal]).**
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Provide the absolute orbit number used as reference for topographic phase flattening.
+In case a virtual orbit has been used, provide orbit parameters or orbit state vectors as DOI or URL.
+
+Provide scene-centred perpendicular baseline for the for the source data relative to the reference orbit used (for approximate use only).
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml-->`4.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
@@ -1115,7 +1116,36 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id.yaml-->`4.8.` Acquisition ID Image {#sec:pxl.per-pixel-acquisition-id label="|Per-Pixel Metadata: Acquisition ID Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml-->`4.8.` Gamma-to-Sigma Ratio Image {#sec:pxl.per-pixel-gamma-sigma-ratio label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image"}
+
+Identifier: `pxl.per-pixel-gamma-sigma-ratio`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Ratio of the integrated area in the Gamma projection over the integrated area 
+in the Sigma projection (ground). Multiplying RTC $\gamma^0_T$ by this ratio results in an 
+estimate of RTC $\sigma^0_T$.
+
+File format specifications/contents provided in metadata:
+
+- Sample Type (Ratio)
+- Data Format (GeoTIFF, HDF5, NetCDF, …)
+- Data Type (Int, Float, …)
+- Bits per Sample
+- Byte Order
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id.yaml-->`4.9.` Acquisition ID Image {#sec:pxl.per-pixel-acquisition-id label="|Per-Pixel Metadata: Acquisition ID Image"}
 
 Identifier: `pxl.per-pixel-acquisition-id`
 
@@ -1148,9 +1178,9 @@ In case of image composites, the sources for each pixel are uniquely identified.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/geoid.yaml-->`4.9.` Per-Pixel Geoid {#sec:pxl.per-pixel-geoid label="|Per-Pixel Metadata: Per-Pixel Geoid"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml-->`4.10.` Per-Pixel DEM {#sec:pxl.per-pixel-dem label="|Per-Pixel Metadata: Per-Pixel DEM"}
 
-Identifier: `pxl.per-pixel-geoid`
+Identifier: `pxl.per-pixel-dem`
 
 
 
@@ -1163,7 +1193,9 @@ Not required.
 
 ##### Goal requirements:
 
-Provide Geoid as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the image product.
+Provide DEM or DSM as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the CEOS-ARD SAR image product.
+
+Can also be provided with ORB products containing land areas.
 
 File format specifications/contents provided in metadata:
 
@@ -1172,13 +1204,12 @@ File format specifications/contents provided in metadata:
 - Data Type (Int, Float, …)
 - Bits per Sample
 - Byte Order
-- Ground Sampling Distance
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/look-direction.yaml-->`4.10.` Look Direction Image {#sec:pxl.per-pixel-look-direction label="|Per-Pixel Metadata: Look Direction Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/radar-unit-look-vector-grid.yaml-->`4.11.` Radar Unit Look Vector Grid Image {#sec:pxl.per-pixel-radar-unit-look-vector-grid label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image"}
 
-Identifier: `pxl.per-pixel-look-direction`
+Identifier: `pxl.per-pixel-radar-unit-look-vector-grid`
 
 
 
@@ -1191,8 +1222,120 @@ Not required.
 
 ##### Goal requirements:
 
-Look Direction Image is provided.
-It represents the planar angle between north and each range direction. 
+3-D components radar unit look vector, specified at each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating – ECR) is provided.
+It consists of unit vectors from the antenna to the surface pixel (i.e., positive Z component).
+
+File format specifications/contents provided in metadata:
+
+- Sample Type (3D unit vector)
+- Data Format (GeoTIFF, HDF5, NetCDF, …)
+- Data Type (Int, Float, …)
+- Bits per Sample
+- Byte Order
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/slant-range.yaml-->`4.12.` Slant Range Sensor to Surface Image {#sec:pxl.per-pixel-slant-range label="|Per-Pixel Metadata: Slant Range Sensor to Surface Image"}
+
+Identifier: `pxl.per-pixel-slant-range`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Slant range distance from the sensor to the surface, specified at each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating – ECR) is provided.
+
+File format specifications/contents provided in metadata:
+
+- Sample Type (Distance)
+- Data Format (GeoTIFF, HDF5, NetCDF, …)
+- Data Type (Int, Float, …)
+- Bits per Sample
+- Byte Order
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/insar-phase-uncertainty.yaml-->`4.13.` InSAR Phase Uncertainty Image {#sec:pxl.per-pixel-insar-phase-uncertainty label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image"}
+
+Identifier: `pxl.per-pixel-insar-phase-uncertainty`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Estimate of uncertainty in InSAR phase is provided, such as finite signal to noise ratio, quantization noise, or DEM error.
+Identification of which error sources are included will be provided as DOI/URL reference or brief description.
+It represents statistical variation from known noise sources only.
+
+File format specifications/contents provided in metadata:
+
+- Sample Type (Angle)
+- Data Format (GeoTIFF, HDF5, NetCDF, …)
+- Data Type (Int, Float, …)
+- Bits per Sample
+- Byte Order
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/atmospheric-phase-correction.yaml-->`4.14.` Atmospheric Phase Correction Image {#sec:pxl.per-pixel-atmospheric-phase-correction label="|Per-Pixel Metadata: Atmospheric Phase Correction Image"}
+
+Identifier: `pxl.per-pixel-atmospheric-phase-correction`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Phase correction value at each pixel, if applied.
+DOI/URL reference to algorithm or brief description is provided.
+
+File format specifications/contents provided in metadata:
+
+- Sample Type (Angle)
+- Data Format (GeoTIFF, HDF5, NetCDF, …)
+- Data Type (Int, Float, …)
+- Bits per Sample
+- Byte Order
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ionospheric-phase-correction.yaml-->`4.15.` Ionospheric Phase Correction Image {#sec:pxl.per-pixel-ionospheric-phase-correction label="|Per-Pixel Metadata: Ionospheric Phase Correction Image"}
+
+Identifier: `pxl.per-pixel-ionospheric-phase-correction`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Phase correction value at each pixel, if applied.
+DOI/URL reference to algorithm or brief description is provided.
 
 File format specifications/contents provided in metadata:
 
@@ -1229,21 +1372,20 @@ All files are provided using cloud-optimized file formats.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-orb.yaml-->`5.2.` Backscatter Measurements (ORB) {#sec:rcm.measurements-backscatter-orb label="|Radiometrically Corrected Measurements: Backscatter Measurements (ORB)"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-gslc.yaml-->`5.2.` Backscatter Measurements (GSLC) {#sec:rcm.measurements-backscatter-gslc label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)"}
 
-Identifier: `rcm.measurements-backscatter-orb`
+Identifier: `rcm.measurements-backscatter-gslc`
 
 
 
 ##### Threshold requirements:
 
-Geoid-corrected Sigma-Nought backscatter coefficient ($\sigma^0$) is provided for each polarization. 
+Radiometric and Phase Terrain-flattened Gamma-Nought backscatter coefficient ($\gamma^0_T$), in complex number format, is provided for each polarization (e.g., HH, HV, VV, VH).
 
 File format specifications/contents provided in metadata:
 
-- Measurement Type (Sigma-Nought)
+- Measurement Type (Gamma-Nought)
 - Backscatter Expression Convention (linear amplitude, linear power\*)
-- Backscatter Conversion Equation
 - Polarization (HH, HV, VV, VH)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
 - Data Type (Int, Float, …)
@@ -1257,7 +1399,9 @@ Notes:
 
 ##### Goal requirements:
 
-Radiometrically Terrain-corrected Sigma-Nought backscatter coefficient ($\sigma^0_T$) is provided for each polarization.
+
+As threshold.
+<!-- *None* -->
 
 ---
 
@@ -1302,7 +1446,38 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml-->`5.5.` Radiometric Accuracy {#sec:rcm.metadata-radiometric-accuracy-sar label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo-gslc.yaml-->`5.5.` Radiometric Terrain Correction Algorithm {#sec:rcm.corrections-radiometric-terrain-algo-gslc label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
+
+Identifier: `rcm.corrections-radiometric-terrain-algo-gslc`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+Adjustments were made for terrain by modelling the local contributing scattering area using the preferred choice of a published peer-reviewed algorithm to produce radiometrically terrain corrected (RTC) $\gamma^0_T$ backscatter estimates.  
+
+Metadata references, e.g.
+
+- a citable peer-reviewed algorithm
+- technical documentation regarding the algorithm used to generate the backscatter estimates is expressed as URLs or DOIs 
+- the sources of auxiliary data used to make corrections
+
+Require resolution of DEM better than the output product resolution when applying terrain corrections.
+
+Notes:
+
+1. Examples of technical documentation include an Algorithm, Theoretical Basis Document, product user guide, etc.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml-->`5.6.` Radiometric Accuracy {#sec:rcm.metadata-radiometric-accuracy-sar label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
 
 Identifier: `rcm.metadata-radiometric-accuracy-sar`
 
@@ -1319,42 +1494,6 @@ Not required.
 
 Uncertainty (e.g., bounds on $\gamma^0$ or $\sigma^0$) information is provided as document referenced as URL or DOI.
 SI traceability is achieved.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/mean-wind-normalised-backscatter.yaml-->`5.6.` Mean Wind-Normalised Backscatter Measurements {#sec:rcm.measurements-mean-wind-normalised-backscatter label="|Radiometrically Corrected Measurements: Mean Wind-Normalised Backscatter Measurements"}
-
-Identifier: `rcm.measurements-mean-wind-normalised-backscatter`
-
-
-
-**Usage:** Only for Maritime scenes.
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Mean wind-normalised (over ocean) backscatter coefficient is provided for each available polarization.
-It is calculated as the ratio between the backscatter intensity and a simulated backscatter intensity image generated using an ocean surface wind model such as, e.g., [@quilfen1998] or [@vachon2000] for VV and HH polarization respectively.
-
-File format specifications/contents provided in metadata:
-
-- Measurement Type (Wind-Normalised Backscatter)
-- Backscatter Expression Convention (intensity ratio)
-- Polarization (HH, HV, VV, VH)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
-Notes:
-
-1. Reference wind model, wind speed and direction used for reference backscattering coefficient should be provided.
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`6.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
 
@@ -1728,26 +1867,44 @@ $$
 $$ {#eq:sar-pol-covmat-eq6}
 
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-orb-example.yaml-->Ocean Radar Backscatter example {#sec:annex-sar-orb-example label="|Ocean Radar Backscatter example"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-gslc-example.yaml-->Geocoded Single-Look Complex example {#sec:annex-sar-gslc-example label="|Geocoded Single-Look Complex example"}
 
-In contrast to NRB and POL, CEOS-ARD Ocean Radar Backscatter ORB products are geoid corrected and are provided in the Sigma-Nought (σE0) backscatter convention ([@fig:sar-orb-example-fig1a]), which is recommended for most ocean applications. In addition, availability of the “Local (or Ellipsoidal) Incidence Angle Image” ([@fig:sar-orb-example-fig1d]) and “Look Direction Image” per-pixel metadata are highly recommended (otherwise the general metadata “Look Direction Polynomials”) since they required for operational applications like ocean wind field estimates.
+In contrast to basic NRB and **POL products**, CEOS-ARD Geocoded SLC GSLC products are kept close to the native resolution in complex data format for which local topographic InSAR phases, relative to a reference orbit [@zebker2010; @zebker2017], have been removed. Having a volume of GSLC products acquired over repeat cycles, already radiometric and phase terrain corrected and geocoded ([@fig:sar-gslc-example-fig1a; @fig:sar-gslc-example-fig1b]), allows user-friendly production of a first iteration of the InSAR coherence ([@eq:sar-gslc-example-eq1; @fig:sar-gslc-example-fig1c]) and differential phases ([@eq:sar-gslc-example-eq2; @fig:sar-gslc-example-fig1d]) in between GSLC pairs, simply by applying local averaging window over the product of a GSLC product (GSLC1) with the complex conjugate of a second GSLC (GSLC2) divided by their local averaged intensities. These intermediate files could be used for coherent change detection analysis and surface displacement monitoring.
 
-The following figures show Sentinel-1 ORB products of the Tropical Cyclone Harold passing Vanuatu on April 6, 2020:
+$$
+\text{Complex coherence:} \quad \rho = \frac{\sum [ GSLC_1 * conj (GSLC_2)]}{ \sqrt{ \sum |GSLC_1|^2 * \sum |GSLC_2|^2}}
+$$ {#eq:sar-gslc-example-eq1}
 
-![VV intensity; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-VV.png){#fig:sar-orb-example-fig1a}
+The InSAR differential phase ([@eq:sar-gslc-example-eq2]) is the argument of the complex coherence estimated with [@eq:sar-gslc-example-eq1].
 
-![VH intensity; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-VH.png){#fig:sar-orb-example-fig1b}
+$$
+\text{InSAR differential phase:} \quad \varphi =\arg(\rho)
+$$ {#eq:sar-gslc-example-eq2}
 
-![Data mask image; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-data-mask.png){#fig:sar-orb-example-fig1c}
+Some advanced NRB or POL products could include per-pixel “Flattened Phase” data ([@sec:rcm.measurements-flattened-phase]). This “Flattened Phase” enables the possibility to perform InSAR analysis as with two GSLC products. As for example, from two different NRB products (NRB1) and (NRB2), acquired over repeat cycles (i.e., on the same relative orbit), containing $\gamma_T^0$ and their corresponding “Flattened Phase” (FPh1) and (FPh2) per-pixel data, the complex InSAR coherence ([@eq:sar-gslc-example-eq3]) can be estimated in the similar manner as [@eq:sar-gslc-example-eq1] for GSLC products.
 
-![Local incident angle; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-local-indicident-angle.png){#fig:sar-orb-example-fig1d}
+$$
+\text{Complex coherence:} \quad \rho_{NRB} = \frac{\sum [ (\sqrt{NRB_1} \cdot e^{i\cdot FPh1}) \cdot conj (\sqrt{NRB_2} \cdot e^{i\cdot FPh2})]}{ \sqrt{ \sum NRB_1 * \sum NRB_2}}
+$$ {#eq:sar-gslc-example-eq3}
 
-Another useful file is the “Mean Wind-Normalised Backscatter Measurements” ([@fig:sar-orb-example-fig2b]) which efficiently attenuates intensity variation along range and visually enhances oceanic features. This file is calculated as the ratio between the backscatter intensity and a simulated backscatter intensity image generated using an ocean surface wind model, like CMOD\_IRF2 [@quilfen1998] for VV polarization or CMOD\_IRF2K [@vachon2000] for HH polarization, and the SAR local incidence angle and the look direction information.
+The following figures show Sentinel-1 GSLC product examples over Death Valley National Park, California, US:
 
-The following figures show Sentinel-1 EW ORB products:
+![GSLC1: Intensity data of the first GSLC product (2017-05-27)](assets/sar-gslc-example/S1-GSLC1.jpeg){#fig:sar-gslc-example-fig1a}
 
-![ORB intensity (Sigma-Nought); Processing: G. Hajduch (CLS)](assets/sar-orb-examples/S1-ORB-sigma-nought.png){#fig:sar-orb-example-fig2a}
+![GSLC2: Intensity data of the second GSLC product (2017-06-08)](assets/sar-gslc-example/S1-GSLC2.jpeg){#fig:sar-gslc-example-fig1b}
 
-![Intensity compensated with the “Mean Wind-Normalised Backscatter Measurement” (i.e., not Sigma-Nought) and geocoded; Processing: G. Hajduch (CLS)](assets/sar-orb-examples/S1-ORB-intesity-compensated.png){#fig:sar-orb-example-fig2b}
+![InSAR coherence map generated directly from [@fig:sar-gslc-example-fig1a] and [@fig:sar-gslc-example-fig1b]](assets/sar-gslc-example/S1-InSAR-coherence.png){#fig:sar-gslc-example-fig1c}
+
+![InSAR differential phase map generated directly from [@fig:sar-gslc-example-fig1a] and [@fig:sar-gslc-example-fig1b]](assets/sar-gslc-example/S1-InSAR-differential-phase.png){#fig:sar-gslc-example-fig1d}
+
+Some advanced GSLC product can be provided with “Radar Unit Look Vector Grid Image” per-pixel metadata ([@fig:sar-gslc-example-fig2a; @fig:sar-gslc-example-fig2b; @fig:sar-gslc-example-fig2c]) which gives the accurate 3-D components radar unit look vector used as for example in decomposing the vertical and horizontal component of an InSAR surface displacement estimate.
+
+The following figures show 3-D components radar unit look vector of the GSLC product:
+
+![x unit component](assets/sar-gslc-example/S1-GSLC-x-component.png){#fig:sar-gslc-example-fig2a}
+
+![y unit component](assets/sar-gslc-example/S1-GSLC-y-component.png){#fig:sar-gslc-example-fig2b}
+
+![z unit component](assets/sar-gslc-example/S1-GSLC-z-component.png){#fig:sar-gslc-example-fig2c}
 
 
