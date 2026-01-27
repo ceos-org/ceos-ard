@@ -18,11 +18,12 @@ The YAML files consist of the following components:
   - `notes`: See `notes` in `threshold` above for further details.
 - `dependencies`: A list of requirement IDs. See section [Dependencies](#dependencies).
 - `glossary`: Any terms that are relevant for this requirement (e.g. are used in the text). Use any file name (without extension) from the [glossary](../glossary/) folder.
-- `glossary`: Any relevant references for this requirement and are referred to in the text using the @ notation (see [Markdown](#markdown)). Use any file name (without extension) from the [references](../references/) folder.
+- `references`: Any relevant references for this requirement and are referred to in the text using the @ notation (see [Markdown](#markdown)). Use any file name (without extension) from the [references](../references/) folder.
 - `metadata`: Placeholder for future use.
-- `legacy`: A temporary way to refer to the old requirement numbers in the combined SAR and/or Optical PFS. Set to `null` if not applicable.
+- `changes`: The changelog that describes the changes over time for this building block.
+- `history`: Refers to old identifiers of this requirement in case it has been renamed.
 
-todo: Remove goal/threshold from requirements and make each part a separate requirement where the requirements.yaml in the PFS can then choose whether a requirement is goal or threshold.
+todo: Remove goal/threshold from requirements and make each part a separate requirement where the document.yaml in the PFS can then choose whether a requirement is goal or threshold.
 
 ## Markdown
 
