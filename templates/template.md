@@ -48,16 +48,24 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ## Document History
 
+~( if combined )~
+See the document history in the separate PFS documents.
+~( else )~
 ~{ history }~
+~( endif )~
 
 ## <!-- edit:pfs/~{ id }~/authors.yaml -->Contributing Authors
 
-~( for org in authors )~
-~(   for member in org.members )~
+~( if combined )~
+See the authors list in the separate PFS documents.
+~( else )~
+~(   for org in authors )~
+~(     for member in org.members )~
 - ~{ member }~, ~{ org.name }~~( if org.country )~, ~{ org.country }~~( endif )~
 
+~(     endfor )~
 ~(   endfor )~
-~( endfor )~
+~( endif )~
 
 &#12;
 
@@ -102,7 +110,7 @@ Data collected by ~{type}~ sensors
 ~( endfor )~
 &#12;
 
-## <!-- edit:pfs/~{ id }~/requirements.yaml -->Requirements
+## <!-- edit:pfs/~{ id }~/document.yaml -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
