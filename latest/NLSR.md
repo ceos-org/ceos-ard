@@ -147,7 +147,7 @@ WGS84
 
 &#12;
 
-## <!-- edit:pfs/NLSR/requirements.yaml -->Requirements
+## <!-- edit:pfs/NLSR/document.yaml -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!

@@ -248,7 +248,7 @@ The formats were originally defined by the Open Geospatial Consortium (OGC) and 
 
 &#12;
 
-## <!-- edit:pfs/NRB/requirements.yaml -->Requirements
+## <!-- edit:pfs/NRB/document.yaml -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
