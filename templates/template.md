@@ -54,17 +54,12 @@ See the document history in the separate PFS documents.
 ~{ history }~
 ~( endif )~
 
-## <!-- edit:pfs/~{ id }~/authors.yaml -->Contributing Authors
+## <!-- edit:pfs/~{ id }~/document.yaml -->Contributing Authors
 
 ~( if combined )~
 See the authors list in the separate PFS documents.
 ~( else )~
-~(   for org in authors )~
-~(     for member in org.members )~
-- ~{ member }~, ~{ org.name }~~( if org.country )~, ~{ org.country }~~( endif )~
-
-~(     endfor )~
-~(   endfor )~
+~{ authors }~
 ~( endif )~
 
 &#12;

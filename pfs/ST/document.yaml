@@ -68,18 +68,13 @@ annexes:
   - st-metadata-examples # todo: these should be part of the requirements as examples
 
 authors:
-  - name: Geoscience Australia
-    country: Australia
-    members:
-      - Adam Lewis
-      - Jonathon Ross
-      - Andreia Siqueira
-  - name: USGS
-    country: USA
-    members:
-      - Darcie Bontje
-      - Steve Labahn
-      - Mary Metzger
+  - Adam Lewis, Geoscience Australia, Australia
+  - Jonathon Ross, Geoscience Australia, Australia
+  - Andreia Siqueira, Geoscience Australia, Australia
+  - Darcie Bontje, USGS, USA
+  - Steve Labahn, USGS, USA
+  - Mary Metzger, USGS, USA
+
 
 changes:
   - date: 2026-03-26
