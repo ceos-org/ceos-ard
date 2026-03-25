@@ -1,24 +1,24 @@
 # Remove "Per-Pixel" from the title, it's inconsistent with other requirements.
+id: ppgeod
 title: Per-Pixel Geoid
 description: 
-threshold: null
-goal:
-  description: |-
-    Provide Geoid as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the image product.
-
-    File format specifications/contents provided in metadata:
-
-    - Sample Type (Height)
-    - Data Format (GeoTIFF, HDF5, NetCDF, …)
-    - Data Type (Int, Float, …)
-    - Bits per Sample
-    - Byte Order
-    - Ground Sampling Distance
-  notes:
+requirements:
+  goal:
+    description: |-
+      Provide Geoid as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the image product.
+  
+      File format specifications/contents provided in metadata:
+  
+      - Sample Type (Height)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+      - Ground Sampling Distance
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR 2.10

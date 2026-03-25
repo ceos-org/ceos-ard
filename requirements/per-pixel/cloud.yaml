@@ -1,18 +1,18 @@
+id: ppclod
 title: Cloud
 description: 
-threshold:
-  description: |-
-    Metadata indicates whether a pixel is assessed as being cloud.
-  notes:
-goal:
-  description: |-
-    As threshold, but information on cloud detection should be available in the metadata as a single DOI landing page.
-  notes:
+requirements:
+  threshold:
+    description: |-
+      Metadata indicates whether a pixel is assessed as being cloud.
+  goal:
+    description: |-
+      As threshold, but information on cloud detection should be available in the metadata as a single DOI landing page.
+    optional: true
 dependencies:
 glossary:
   - doi
 references:
-metadata:
 changes:
 history:
   - SR/NLSR/ST 2.5

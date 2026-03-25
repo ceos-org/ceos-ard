@@ -1,15 +1,15 @@
+id: pcpst
 title: Processing Chain Provenance
 description: 
-threshold: null
-goal:
-  description: |-
-    Information on processing chain provenance should be available in the metadata as a single DOI landing page containing description of the processing chain used to generate the product, including the versions of the software used and information on the data collection baseline, giving full transparency to the users.
-  notes:
+requirements:
+  goal:
+    description: |-
+      Information on processing chain provenance should be available in the metadata as a single DOI landing page containing description of the processing chain used to generate the product, including the versions of the software used and information on the data collection baseline, giving full transparency to the users.
+    optional: true
 dependencies:
 glossary:
   - doi
 references:
-metadata:
 changes:
 history:
   - ST 1.15

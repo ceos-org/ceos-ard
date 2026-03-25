@@ -1,25 +1,25 @@
+id: pprulv
 title: Radar Unit Look Vector Grid Image
 description: 
-threshold: null
-goal:
-  description: |-
-    3-D components radar unit look vector, specified at each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating – ECR) is provided.
-    It consists of unit vectors from the antenna to the surface pixel (i.e., positive Z component).
-
-    File format specifications/contents provided in metadata:
-
-    - Sample Type (3D unit vector)
-    - Data Format (GeoTIFF, HDF5, NetCDF, …)
-    - Data Type (Int, Float, …)
-    - Bits per Sample
-    - Byte Order
-  notes:
+requirements:
+  goal:
+    description: |-
+      3-D components radar unit look vector, specified at each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating – ECR) is provided.
+      It consists of unit vectors from the antenna to the surface pixel (i.e., positive Z component).
+  
+      File format specifications/contents provided in metadata:
+  
+      - Sample Type (3D unit vector)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+    optional: true
 dependencies:
 glossary:
   - ecef
   - ecr
 references:
-metadata:
 changes:
 history:
   - SAR 2.12

@@ -1,17 +1,16 @@
 # todo: remove product data mentions to be resuable in other products
+id: pxconv
 title: Product Pixel Coordinate Convention
 description: 
-threshold:
-  # todo: The given values are specific to the XML metadata encoding, the last sentence should be removed.
-  description: |-
-    Coordinate referring to the centre, the upper left corner, or the lower left corner of a pixel.
-    Values are [pixel centre, pixel ULC or pixel LLC].
-  notes:
-goal: null
+requirements:
+  threshold:
+    # todo: The given values are specific to the XML metadata encoding, the last sentence should be removed.
+    description: |-
+      Coordinate referring to the centre, the upper left corner, or the lower left corner of a pixel.
+      Values are [pixel centre, pixel ULC or pixel LLC].
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR  1.7.10

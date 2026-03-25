@@ -1,16 +1,16 @@
+id: dacces
 title: Data Access
 description: 
-threshold:
-  description: |-
-    Information on data access should be available in the metadata as a single DOI landing page.
-  notes:
-    - Manual and offline interaction action (e.g., login) may be required.
-goal: null
+requirements:
+  threshold:
+    description: |-
+      Information on data access should be available in the metadata as a single DOI landing page.
+    notes:
+      - Manual and offline interaction action (e.g., login) may be required.
 dependencies:
 glossary:
   - doi
 references:
-metadata:
 changes:
 history:
   - SR/NLSR/ST 1.16

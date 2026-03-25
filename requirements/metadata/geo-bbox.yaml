@@ -1,18 +1,18 @@
 # todo: remove product data mentions (or replace with measurement) to be resuable in other products
+id: geobx
 title: Product Bounding Box
 description: 
-threshold:
-  description: |-
-    Two opposite corners of the product file (bounding box, including any zero-fill values) are identified,
-    expressed in the coordinate reference system defined in [@metadata/crs].
-  notes:
-    - Four corners of the product file are recommended for scenes crossing the Antemeridian, or the North or the South Pole. 
-goal: null
+requirements:
+  threshold:
+    description: |-
+      Two opposite corners of the product file (bounding box, including any zero-fill values) are identified,
+      expressed in the coordinate reference system defined in [@metadata/crs].
+    notes:
+      - Four corners of the product file are recommended for scenes crossing the Antemeridian, or the North or the South Pole. 
 dependencies:
   - metadata/crs
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR 1.7.7

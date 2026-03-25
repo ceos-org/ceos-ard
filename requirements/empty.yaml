@@ -1,16 +1,14 @@
+id: empty
 title: 
 description: 
-threshold:
-  description: |-
-
-  notes:
-goal:
-  description: |-
-
-  notes:
+requirements:
+  threshold:
+    description:
+  goal:
+    description:
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:

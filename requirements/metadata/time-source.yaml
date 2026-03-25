@@ -1,16 +1,15 @@
 # todo: this seems to be a duplicate of time?!
+id: timsrc
 title: Source Data Acquisition Time
 description: 
-threshold:
-  description: |-
-    The start date and time of source data is identified in the metadata, expressed in UTC in date and time, at least to the second. 
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: |-
+      The start date and time of source data is identified in the metadata, expressed in UTC in date and time, at least to the second. 
 dependencies:
 glossary:
   - utc
 references:
-metadata:
 changes:
 history:
   - SAR 1.6.3

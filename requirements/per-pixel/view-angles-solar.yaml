@@ -1,19 +1,19 @@
+id: ppvaso
 title: Solar and Viewing Geometry
 description:
 # ToDo: The threshold requirement is a metadata requirement,
 # the goal requirement is a per-pixel requirement - should this be split?
-threshold:
-  description: |-
-    Provide average solar and sensor viewing azimuth and zenith angles.
-  notes:
-goal:
-  description: |-
-    Provide per-pixel solar and sensor viewing azimuth and zenith angles.
-  notes:
+requirements:
+  threshold:
+    description: |-
+      Provide average solar and sensor viewing azimuth and zenith angles.
+  goal:
+    description: |-
+      Provide per-pixel solar and sensor viewing azimuth and zenith angles.
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - ST 2.8 / SR 2.11

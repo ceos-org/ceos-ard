@@ -1,15 +1,15 @@
 # todo: remove product data mentions to be resuable in other products
+id: enl
 title: Product Equivalent Number of Looks 
 description: 
-threshold: null
-goal:
-  description: Equivalent Number of Looks (ENL)
-  notes:
+requirements:
+  goal:
+    description: Equivalent Number of Looks (ENL)
+    optional: true
 dependencies:
 glossary:
   - enl
 references:
-metadata:
 changes:
 history:
   - SAR 1.7.4

@@ -1,18 +1,18 @@
+id: rmasar
 title: Radiometric Accuracy
 description:
-threshold: null
-goal:
-  description: |-
-    Uncertainty (e.g., bounds on $\gamma^0$ or $\sigma^0$) information is provided as document referenced as URL or DOI.
-    SI traceability is achieved. 
-  notes:
+requirements:
+  goal:
+    description: |-
+      Uncertainty (e.g., bounds on $\gamma^0$ or $\sigma^0$) information is provided as document referenced as URL or DOI.
+      SI traceability is achieved. 
+    optional: true
 dependencies:
 glossary:
   - doi
   - si
   - url
 references:
-metadata:
 changes:
 history:
   - SAR 3.5

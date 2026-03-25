@@ -1,16 +1,16 @@
+id: atmems
 title: Corrections for Atmosphere and Emissivity
 description: 
-threshold:
-  description: |-
-    Retrieval methods for estimating surface temperature are provided.
-  notes:
-    - The metadata references (may be through a single DOI landing page) a citable peer-reviewed algorithm.
-goal: null
+requirements:
+  threshold:
+    description: |-
+      Retrieval methods for estimating surface temperature are provided.
+    notes:
+      - The metadata references (may be through a single DOI landing page) a citable peer-reviewed algorithm.
 dependencies:
 glossary:
   - doi
 references:
-metadata:
 changes:
 history:
   - ST 3.2

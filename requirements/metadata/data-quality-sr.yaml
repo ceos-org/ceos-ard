@@ -1,16 +1,16 @@
+id: dqlsr
 title: Overall Data Quality
 description: 
-threshold: null
-goal:
-  description: |-
-    Machine-readable metrics describing the overall quality of the data are included in the metadata, at minimum the cloud cover extent, i.e.:
-
-    - Proportion of observations over land (c.f. ocean) affected by non-target phenomena, e.g., cloud and cloud shadows
-  notes:
+requirements:
+  goal:
+    description: |-
+      Machine-readable metrics describing the overall quality of the data are included in the metadata, at minimum the cloud cover extent, i.e.:
+  
+      - Proportion of observations over land (c.f. ocean) affected by non-target phenomena, e.g., cloud and cloud shadows
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SR/NLSR 1.17

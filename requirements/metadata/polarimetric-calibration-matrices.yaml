@@ -1,14 +1,14 @@
+id: polcal
 title: Polarimetric Calibration Matrices
 description: 
-threshold: null
-goal:
-  description: |-
-    The complex-valued polarimetric distortion matrices with the channel imbalance and the cross-talk applied for the polarimetric calibration. 
-  notes:
+requirements:
+  goal:
+    description: |-
+      The complex-valued polarimetric distortion matrices with the channel imbalance and the cross-talk applied for the polarimetric calibration. 
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR 1.6.10

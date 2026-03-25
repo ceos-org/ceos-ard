@@ -1,17 +1,16 @@
+id: sltrng
 title: Slant Range Sensor to Surface
 description: 
-threshold:
-  description: |-
-    Slant range distance from the sensor to the surface, specified at centre of scene. 
-    
-    Only required if a Slant Range Sensor to Surface Image (see [@per-pixel/slant-range]) is **not** provided. 
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: |-
+      Slant range distance from the sensor to the surface, specified at centre of scene. 
+      
+      Only required if a Slant Range Sensor to Surface Image (see [@per-pixel/slant-range]) is **not** provided. 
 dependencies:
   - per-pixel/slant-range
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR 1.7.14

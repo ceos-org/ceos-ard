@@ -1,14 +1,13 @@
+id: mrdppo
 title: Metadata Machine Readability
 description:
-threshold:
-  description: |-
-    Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component part for further use.
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: |-
+      Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component part for further use.
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SR/NLSR/ST 2.1

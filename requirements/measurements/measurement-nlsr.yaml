@@ -1,20 +1,21 @@
+id: msnlsr
 title: Measurement
 description: 
-threshold:
-  description: |-
-    Pixel values that are expressed as a measurement of the nighttime light radiance.
-  notes:
-    - Radiometric corrections must lead to a valid measurement of surface reflectance.
-goal:
-  description: |-
-    Nighttime light radiance measurements are SI traceable (see also [@metadata/traceability-sr]).
-  notes:
+requirements:
+  threshold:
+    description: |-
+      Pixel values that are expressed as a measurement of the nighttime light radiance.
+    notes:
+      - Radiometric corrections must lead to a valid measurement of surface reflectance.
+  goal:
+    description: |-
+      Nighttime light radiance measurements are SI traceable (see also [@metadata/traceability-sr]).
+    optional: true
 dependencies:
   - metadata/traceability-sr
 glossary:
   - si
 references:
-metadata:
 changes:
 history:
   - NLSR 3.1

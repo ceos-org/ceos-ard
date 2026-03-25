@@ -1,14 +1,13 @@
+id: acqid
 title: Acquisition ID
 description: 
-threshold:
-  description: |-
-    Each acquisition is identified through a sequential identifier in the metadata, e.g. acqID = 1, 2, 3.
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: |-
+      Each acquisition is identified through a sequential identifier in the metadata, e.g. acqID = 1, 2, 3.
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR 1.6

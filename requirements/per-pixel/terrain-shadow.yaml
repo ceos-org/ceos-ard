@@ -1,14 +1,14 @@
+id: pptshr
 title: Terrain Shadow Mask
 description: 
-threshold: null
-goal:
-  description: |-
-    The metadata indicates pixels that are not directly illuminated due to terrain shadowing.
-  notes:
+requirements:
+  goal:
+    description: |-
+      The metadata indicates pixels that are not directly illuminated due to terrain shadowing.
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SR 2.9

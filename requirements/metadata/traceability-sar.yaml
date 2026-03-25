@@ -1,18 +1,19 @@
+id: trcsar
 title: Traceability
 description:
-threshold: null
-goal:
-  description: Data must be traceable to SI reference standard.
-  notes:
-    - Relationship to [@metadata/radiometric-accuracy-sar]. Traceability requires an estimate of measurement uncertainty.
-    - Information on traceability should be available in the metadata as a single DOI landing page.
+requirements:
+  goal:
+    description: Data must be traceable to SI reference standard.
+    notes:
+      - Relationship to [@metadata/radiometric-accuracy-sar]. Traceability requires an estimate of measurement uncertainty.
+      - Information on traceability should be available in the metadata as a single DOI landing page.
+    optional: true
 dependencies:
   - metadata/radiometric-accuracy-sar
 glossary:
   - doi
   - si
 references:
-metadata:
 changes:
 history:
   - SAR 1.1

@@ -1,26 +1,26 @@
 # todo: make generic for source and product
+id: dacprd
 title: Product Data Access
 description: 
-threshold:
-  description: |-
-    Processing parameters details of the CEOS-ARD product:
-    
-    - Processing facility
-    - Processing date
-    - Software version
-    - Location from where CEOS-ARD product can be retrieved, expressed as a URL or DOI.
-  notes:
-goal:
-  description: |-
-    The metadata identifies an online location from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required.
-  notes:
+requirements:
+  threshold:
+    description: |-
+      Processing parameters details of the CEOS-ARD product:
+      
+      - Processing facility
+      - Processing date
+      - Software version
+      - Location from where CEOS-ARD product can be retrieved, expressed as a URL or DOI.
+  goal:
+    description: |-
+      The metadata identifies an online location from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required.
+    optional: true
 dependencies:
 glossary:
   - ceos-ard
   - url
   - doi
 references:
-metadata:
 changes:
 history:
   - SAR 1.7.1

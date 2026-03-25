@@ -1,20 +1,19 @@
+id: rulvec
 title: Radar Unit Look Vector
 description: 
-threshold:
-  description: |-
-    3-D components radar unit look vector, specified at centre of scene, in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating - ECR) is provided.
-    It consists of unit vectors from antenna to surface pixel (i.e., positive Z component).
-    
-    Only required if a Radar Unit Look Vector Grid Image (see [@per-pixel/radar-unit-look-vector-grid]) is **not** provided.
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: |-
+      3-D components radar unit look vector, specified at centre of scene, in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating - ECR) is provided.
+      It consists of unit vectors from antenna to surface pixel (i.e., positive Z component).
+      
+      Only required if a Radar Unit Look Vector Grid Image (see [@per-pixel/radar-unit-look-vector-grid]) is **not** provided.
 dependencies:
   - per-pixel/radar-unit-look-vector-grid
 glossary:
   - ecef
   - ecr
 references:
-metadata:
 changes:
 history:
   - SAR 1.7.13

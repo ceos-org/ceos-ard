@@ -1,14 +1,13 @@
+id: mpsr
 title: Map Projection
 description: 
-threshold:
-  description: |-
-    The metadata lists the map projection that has been used (or geographical coordinates, if applicable) and any relevant parameters required in relation to use of data in that map projection.
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: |-
+      The metadata lists the map projection that has been used (or geographical coordinates, if applicable) and any relevant parameters required in relation to use of data in that map projection.
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SR 1.6

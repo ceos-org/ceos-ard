@@ -1,17 +1,18 @@
+id: ppsinl
 title: Snow/Ice Mask
 description: 
-threshold:
-  description: |-
-    Metadata indicates whether a pixel is snow/ice.
-goal:
-  description: |-
-    As threshold, information on snow/ice mask should be available in the metadata as a single DOI landing page.
-  notes:
+requirements:
+  threshold:
+    description: |-
+      Metadata indicates whether a pixel is snow/ice.
+  goal:
+    description: |-
+      As threshold, information on snow/ice mask should be available in the metadata as a single DOI landing page.
+    optional: true
 dependencies:
 glossary:
   - doi
 references:
-metadata:
 changes:
 history:
   - NLSR 2.8

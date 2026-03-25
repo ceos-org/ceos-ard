@@ -1,22 +1,22 @@
+id: lunrad
 title: Lunar Radiance Corrections
 description: 
-threshold:
-  description: |-
-    Corrections are applied for lunar radiance.
-
-    Metadata contains a single DOI landing page with references to:
-    
-    -	a citable peer-reviewed algorithm 
-    -	technical documentation regarding the implementation of that algorithm and the lunar model used.
-  notes:
-    - Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.
-goal: null
+requirements:
+  threshold:
+    description: |-
+      Corrections are applied for lunar radiance.
+  
+      Metadata contains a single DOI landing page with references to:
+      
+      -	a citable peer-reviewed algorithm 
+      -	technical documentation regarding the implementation of that algorithm and the lunar model used.
+    notes:
+      - Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.
 dependencies:
 glossary:
   - atbd
   - doi
 references:
-metadata:
 changes:
 history:
   - NLSR 3.5

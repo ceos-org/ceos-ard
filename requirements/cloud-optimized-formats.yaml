@@ -1,9 +1,11 @@
+id: cldopt
 title: Cloud Optimized Formats
 description:
-threshold: null
-goal:
-  description: |-
-    All files are provided using cloud-optimized file formats.
+requirements:
+  goal:
+    description: |-
+      All files are provided using cloud-optimized file formats.
+    optional: true
 dependencies:
 glossary:
 references:

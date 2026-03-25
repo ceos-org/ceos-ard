@@ -1,15 +1,15 @@
+id: scasar
 title: Sensor Calibration
 description:
-threshold: null
-goal:
-  description: |-
-    Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata.
-    Ideally this would support machine-to-machine access. 
-  notes:
+requirements:
+  goal:
+    description: |-
+      Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata.
+      Ideally this would support machine-to-machine access. 
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR 1.6.8

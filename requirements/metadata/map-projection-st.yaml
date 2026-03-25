@@ -1,14 +1,14 @@
+id: mpst
 title: Map Projection
 description: 
-threshold: null
-goal:
-  description: |-
-    The metadata lists the map projection that has been used, if any, and any relevant parameters required in relation to use of data in that map projection.
-  notes:
+requirements:
+  goal:
+    description: |-
+      The metadata lists the map projection that has been used, if any, and any relevant parameters required in relation to use of data in that map projection.
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - ST 1.6

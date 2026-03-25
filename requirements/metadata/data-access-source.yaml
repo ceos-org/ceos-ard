@@ -1,20 +1,20 @@
 # todo: make generic for source and product
+id: dacsrc
 title: Source Data Access
 description: 
-threshold:
-  description: |-
-    The metadata identifies the location from where the source data can be retrieved, expressed as a URL or DOI. 
-  notes:
-goal:
-  description: |-
-    The metadata identifies an online location from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required. 
-  notes:
+requirements:
+  threshold:
+    description: |-
+      The metadata identifies the location from where the source data can be retrieved, expressed as a URL or DOI. 
+  goal:
+    description: |-
+      The metadata identifies an online location from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required. 
+    optional: true
 dependencies:
 glossary:
   - url
   - doi
 references:
-metadata:
 changes:
 history:
   - SAR 1.6.1

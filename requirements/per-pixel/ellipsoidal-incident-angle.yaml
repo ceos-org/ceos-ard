@@ -1,26 +1,27 @@
+id: ppelia
 title: Ellipsoidal Incident Angle Image
 description: 
-threshold: null
-goal:
-  description: |-
-    Ellipsoidal incident angle is provided.
-
-    File format specifications/contents provided in metadata:
-
-    - Sample Type (Angle)
-    - Data Format (GeoTIFF, HDF5, NetCDF, …)
-    - Data Type (Int, Float, …)
-    - Bits per Sample
-    - Byte Order
-    - Reference Ellipsoid Name
-  # todo: The note seems ORB specific, should only be visible in ORB PFS
-  notes:
-    - For maritime ORB scenes when no land areas are covered, the ellipsoidal incident angle is nearly identical to the geoid based local incident angle.
+requirements:
+  goal:
+    description: |-
+      Ellipsoidal incident angle is provided.
+  
+      File format specifications/contents provided in metadata:
+  
+      - Sample Type (Angle)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+      - Reference Ellipsoid Name
+    # todo: The note seems ORB specific, should only be visible in ORB PFS
+    notes:
+      - For maritime ORB scenes when no land areas are covered, the ellipsoidal incident angle is nearly identical to the geoid based local incident angle.
+    optional: true
 dependencies:
 glossary:
   - orb
 references:
-metadata:
 changes:
 history:
   - SAR 2.5

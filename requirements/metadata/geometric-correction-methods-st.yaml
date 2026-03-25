@@ -1,16 +1,16 @@
+id: gmcmst
 title: Geometric Correction Methods
 description: 
-threshold: null
-goal:
-  description: |-
-    Information on geometric correction methods should be available in the metadata as a single DOI landing page containing information on geodetic correction methods used, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.  
-  notes:
+requirements:
+  goal:
+    description: |-
+      Information on geometric correction methods should be available in the metadata as a single DOI landing page containing information on geodetic correction methods used, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.  
+    optional: true
 dependencies:
 glossary:
   - auxiliary-data
   - doi
 references:
-metadata:
 changes:
 history:
   - ST 1.7

@@ -1,13 +1,12 @@
+id: ppbrtt
 title: Brightness Temperature
 description: 
-threshold:
-  description: Provide brightness temperature from thermal bands.  
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: Provide brightness temperature from thermal bands.  
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - NLSR 2.15

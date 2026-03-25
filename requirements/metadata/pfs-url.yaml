@@ -1,14 +1,14 @@
 # todo: The title is a bit misleading
+id: pfsurl
 title: Document Identifier
 description:
-threshold:
-  description: Reference to CEOS-ARD PFS document as URL.
-goal: null
+requirements:
+  threshold:
+    description: Reference to CEOS-ARD PFS document as URL.
 dependencies:
 glossary:
   - url
 references:
-metadata:
 changes:
 history:
   - SAR 1.4

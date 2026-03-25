@@ -1,20 +1,21 @@
+id: spcbnd
 title: Spectral Bands
 description: 
-threshold:
-  description: |-
-    The central wavelength for each band for which data is included is identified in the metadata, expressed in SI units.
-  notes:
-goal:
-  description: |-
-    As threshold, with instrument spectral response details (e.g., full spectral response function) also included or directly accessible using details in the metadata. 
-    Central wavelength and bandwidth at full-width half maximum value of the relative spectral response function are provided at least.
-  notes:
-    - Information on spectral bands should be available in the metadata as a single DOI landing page.
+requirements:
+  threshold:
+    description: |-
+      The central wavelength for each band for which data is included is identified in the metadata, expressed in SI units.
+  goal:
+    description: |-
+      As threshold, with instrument spectral response details (e.g., full spectral response function) also included or directly accessible using details in the metadata. 
+      Central wavelength and bandwidth at full-width half maximum value of the relative spectral response function are provided at least.
+    notes:
+      - Information on spectral bands should be available in the metadata as a single DOI landing page.
+    optional: true
 dependencies:
 glossary:
   - si
 references:
-metadata:
 changes:
 history:
   - SR/NLSR/ST 1.10

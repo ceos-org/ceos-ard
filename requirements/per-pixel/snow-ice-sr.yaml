@@ -1,15 +1,15 @@
+id: ppsisr
 title: Snow/Ice Mask
 description: 
-threshold: null
-goal:
-  description: |-
-    The metadata indicates whether a pixel is assessed as being snow/ice or not. Information on snow/ice mask should be available in the metadata as a single DOI landing page.
-  notes:
+requirements:
+  goal:
+    description: |-
+      The metadata indicates whether a pixel is assessed as being snow/ice or not. Information on snow/ice mask should be available in the metadata as a single DOI landing page.
+    optional: true
 dependencies:
 glossary:
   - doi
 references:
-metadata:
 changes:
 history:
   - ST 2.7 / SR 2.8

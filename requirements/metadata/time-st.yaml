@@ -1,17 +1,17 @@
+id: timst
 title: Data Collection Time
 description:
-threshold:
-  description: |-
-    The start and stop time of data collection is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
-  notes:
-goal:
-  description: |-
-    Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
-  notes:
+requirements:
+  threshold:
+    description: |-
+      The start and stop time of data collection is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
+  goal:
+    description: |-
+      Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
+    optional: true
 glossary:
   - utc
 references:
-metadata:
 changes:
 history:
   - ST 1.3

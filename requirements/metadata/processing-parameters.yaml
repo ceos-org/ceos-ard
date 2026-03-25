@@ -1,27 +1,27 @@
 # todo: remove source data mentions to be resuable in other products
+id: prcpar
 title: Source Data Processing Parameters
 description: 
-threshold:
-  description: |-
-    Processing parameters details of the source data:
-
-    - Processing facility
-    - Processing date
-    - Software version
-    - Product level
-    - Product ID (file name)
-    - Azimuth number of looks
-    - Range number of looks (separate values for each beam, as necessary)
-  notes:
-goal:
-  description: |-
-    As threshold, plus additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied. 
-  notes:
+requirements:
+  threshold:
+    description: |-
+      Processing parameters details of the source data:
+  
+      - Processing facility
+      - Processing date
+      - Software version
+      - Product level
+      - Product ID (file name)
+      - Azimuth number of looks
+      - Range number of looks (separate values for each beam, as necessary)
+  goal:
+    description: |-
+      As threshold, plus additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied. 
+    optional: true
 dependencies:
 glossary:
   - lut
 references:
-metadata:
 changes:
 history:
   - SAR 1.6.6

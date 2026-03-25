@@ -1,17 +1,18 @@
+id: nrmsr
 title: Measurement Normalisation
 description:
-threshold: null
-goal:
-  description: |-
-    Measurements are normalised for solar and viewing conditions (i.e., nadir view angle and average solar angles). This may include terrain illumination and/or Bi-Directional Reflectance Function (BRDF) correction.
-  notes:
-    - Information on measurement normalisation should be available in the metadata as a single DOI landing page.
+requirements:
+  goal:
+    description: |-
+      Measurements are normalised for solar and viewing conditions (i.e., nadir view angle and average solar angles). This may include terrain illumination and/or Bi-Directional Reflectance Function (BRDF) correction.
+    notes:
+      - Information on measurement normalisation should be available in the metadata as a single DOI landing page.
+    optional: true
 dependencies:
 glossary:
   - brdf
   - doi
 references:
-metadata:
 changes:
 history:
   - SR 3.3

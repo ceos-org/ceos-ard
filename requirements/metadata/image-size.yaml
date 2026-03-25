@@ -1,25 +1,24 @@
 # todo: remove product data mentions to be resuable in other products
 # todo: remove mention of CEOS-ARD to be reusable outside of CEOS
+id: imgsiz
 title: Product Image Size
 description: 
-threshold:
-  # todo: this is a mixture of requirements.
-  # file header size seems obsolete, handled by tooling.
-  # number of no-data border pixels has not really a direct relation with the image size?!
-  description: |-
-    Image attributes of the CEOS-ARD product:
-
-    - Number of lines
-    - Number of pixels per line
-    - File header size (if applicable)
-    - Number of no-data border pixels (if applicable)
-  notes:
-goal: null
+requirements:
+  threshold:
+    # todo: this is a mixture of requirements.
+    # file header size seems obsolete, handled by tooling.
+    # number of no-data border pixels has not really a direct relation with the image size?!
+    description: |-
+      Image attributes of the CEOS-ARD product:
+  
+      - Number of lines
+      - Number of pixels per line
+      - File header size (if applicable)
+      - Number of no-data border pixels (if applicable)
 dependencies:
 glossary:
   - ceos-ard
 references:
-metadata:
 changes:
 history:
   - SAR 1.7.9

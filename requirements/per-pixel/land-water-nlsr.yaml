@@ -1,18 +1,18 @@
+id: pplwnl
 title: Land/Water Mask
 description: 
-threshold:
-  description: |-
-    Metadata indicates whether a pixel is land or water.
-  notes:
-goal:
-  description: |-
-    As threshold, information on land/water mask should be available in the metadata as a single DOI landing page.
-  notes:
+requirements:
+  threshold:
+    description: |-
+      Metadata indicates whether a pixel is land or water.
+  goal:
+    description: |-
+      As threshold, information on land/water mask should be available in the metadata as a single DOI landing page.
+    optional: true
 dependencies:
 glossary:
   - doi
 references:
-metadata:
 changes:
 history:
   - NLSR 2.7

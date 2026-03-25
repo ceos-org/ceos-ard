@@ -1,13 +1,13 @@
+id: crsopt
 title: Coordinate Reference System
 description:
-threshold:
-  description: |-
-    The metadata lists the coordinate reference system that has been used.
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: |-
+      The metadata lists the coordinate reference system that has been used.
 dependencies:
+glossary:
 references:
-metadata:
 changes:
 history:
   - SR/NLSR/ST 1.5

@@ -1,14 +1,14 @@
+id: mfrang
 title: Mean Faraday Rotation Angle
 description: 
-threshold: null
-goal:
-  description: |-
-    The mean Faraday rotation angle estimated from the polarimetric data and/or from models with reference to the method or paper used to derive the estimate.
-  notes:
+requirements:
+  goal:
+    description: |-
+      The mean Faraday rotation angle estimated from the polarimetric data and/or from models with reference to the method or paper used to derive the estimate.
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR 1.6.11

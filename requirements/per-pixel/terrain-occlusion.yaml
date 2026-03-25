@@ -1,14 +1,14 @@
+id: pptocc
 title: Terrain Occlusion
 description: 
-threshold: null
-goal:
-  description: |-
-    The metadata indicates pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing.
-  notes:
+requirements:
+  goal:
+    description: |-
+      The metadata indicates pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing.
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SR 2.10

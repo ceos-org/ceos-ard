@@ -1,20 +1,20 @@
 # todo: remove product data mentions to be resuable in other products
 # todo: remove mention of CEOS-ARD to be reusable outside of CEOS
+id: resol
 title: Product Resolution
 description: 
-threshold: null
-goal:
-  description: |-
-    Average spatial resolution of the CEOS-ARD product along:
-
-    - Columns
-    - Rows
-  notes:
+requirements:
+  goal:
+    description: |-
+      Average spatial resolution of the CEOS-ARD product along:
+  
+      - Columns
+      - Rows
+    optional: true
 dependencies:
 glossary:
   - ceos-ard
 references:
-metadata:
 changes:
 history:
   - SAR 1.7.5

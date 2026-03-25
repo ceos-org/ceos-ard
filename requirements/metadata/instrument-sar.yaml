@@ -1,20 +1,20 @@
+id: inssar
 title: Instrument
 description:
-threshold:
-  description: |-
-    The instrument used to collect the data is identified in the metadata:
-    
-    - Satellite name
-    - Instrument name
-  notes:
-goal:
-  description: |-
-    As threshold, but including a reference to the relevant [CEOS Missions, Instruments and Measurements Database](https://ceos.org/mim-database/) record.
-  notes:
+requirements:
+  threshold:
+    description: |-
+      The instrument used to collect the data is identified in the metadata:
+      
+      - Satellite name
+      - Instrument name
+  goal:
+    description: |-
+      As threshold, but including a reference to the relevant [CEOS Missions, Instruments and Measurements Database](https://ceos.org/mim-database/) record.
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - SAR 1.6.2

@@ -1,20 +1,19 @@
 # todo: remove product data mentions to be resuable in other products
 # todo: remove mention of CEOS-ARD to be reusable outside of CEOS
+id: smpspc
 title: Product Sample Spacing
 description: 
-threshold:
-  description: |-
-    CEOS-ARD product processing parameters details:
-
-    - Pixel (column) spacing
-    - Line (row) spacing
-  notes:
-goal: null
+requirements:
+  threshold:
+    description: |-
+      CEOS-ARD product processing parameters details:
+  
+      - Pixel (column) spacing
+      - Line (row) spacing
 dependencies:
 glossary:
   - ceos-ard
 references:
-metadata:
 changes:
 history:
   - SAR 1.7.3

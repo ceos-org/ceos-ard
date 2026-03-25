@@ -1,18 +1,19 @@
 # This requirement is not different to the SR requirement except that it links to traceability-st instead of traceability-sr.
 # This should be solved by aligning the traceability requirements.
+id: uncst
 title: Measurement Uncertainty
 description:
-threshold: null
-goal:
-  description: |-
-    Uncertainty, in Kelvin, of the surface temperature measurement for each pixel is provided.
-  notes:
-    - |-
-      Some of the intent of the initial wording (below), which refers to atmospheric windows, may have been lost: Uncertainty, in units Kelvin, of the surface temperature for each pixel is also accompanied by distance from cloud (above) and atmospheric transmission (intervals, i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).
+requirements:
+  goal:
+    description: |-
+      Uncertainty, in Kelvin, of the surface temperature measurement for each pixel is provided.
+    notes:
+      - |-
+        Some of the intent of the initial wording (below), which refers to atmospheric windows, may have been lost: Uncertainty, in units Kelvin, of the surface temperature for each pixel is also accompanied by distance from cloud (above) and atmospheric transmission (intervals, i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).
+    optional: true
 dependencies:
 glossary:
 references:
-metadata:
 changes:
 history:
   - ST 3.3

@@ -1,23 +1,24 @@
 # Remove "Per-Pixel" from the title, it's inconsistent with other requirements.
+id: ppdem
 title: Per-Pixel DEM
 description: 
-threshold: null
-goal:
-  # todo: there's an ORB specific part, which could be removed as the requirment doesn't apply to ORB?!
-  # todo: remove mention of CEOS-ARD and SAR to be reusable outside of CEOS
-  description: |-
-    Provide DEM or DSM as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the CEOS-ARD SAR image product.
-    
-    Can also be provided with ORB products containing land areas.
-
-    File format specifications/contents provided in metadata:
-
-    - Sample Type (Height)
-    - Data Format (GeoTIFF, HDF5, NetCDF, …)
-    - Data Type (Int, Float, …)
-    - Bits per Sample
-    - Byte Order
-  notes:
+requirements:
+  goal:
+    # todo: there's an ORB specific part, which could be removed as the requirment doesn't apply to ORB?!
+    # todo: remove mention of CEOS-ARD and SAR to be reusable outside of CEOS
+    description: |-
+      Provide DEM or DSM as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the CEOS-ARD SAR image product.
+      
+      Can also be provided with ORB products containing land areas.
+  
+      File format specifications/contents provided in metadata:
+  
+      - Sample Type (Height)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+    optional: true
 dependencies:
 glossary:
   - ceos-ard
@@ -26,7 +27,6 @@ glossary:
   - dsm
   - orb
 references:
-metadata:
 changes:
 history:
   - SAR 2.9

@@ -1,20 +1,21 @@
+id: gmast
 title: Geometric Accuracy of the Data
 description: 
-threshold: null
-goal:
-  description: |-
-    The metadata includes metrics describing the assessed geodetic accuracy of the data, expressed units of the coordinate system of the data.
-    Accuracy is assessed by independent verification (as well as internal model-fit where applicable).
-    Uncertainties are expressed as root mean square error (RMSE) or Circular Error 90% Probability (CEP90).
-  notes:
-    - Information on geometric accuracy of the data should be available in the metadata as a single DOI landing page.
+requirements:
+  goal:
+    description: |-
+      The metadata includes metrics describing the assessed geodetic accuracy of the data, expressed units of the coordinate system of the data.
+      Accuracy is assessed by independent verification (as well as internal model-fit where applicable).
+      Uncertainties are expressed as root mean square error (RMSE) or Circular Error 90% Probability (CEP90).
+    notes:
+      - Information on geometric accuracy of the data should be available in the metadata as a single DOI landing page.
+    optional: true
 dependencies:
 glossary:
   - cep
   - doi
   - rmse
 references:
-metadata:
 changes:
 history:
   - ST 1.8
