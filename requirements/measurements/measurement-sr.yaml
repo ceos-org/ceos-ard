@@ -4,6 +4,7 @@ threshold:
   description: |-
     Pixel values are expressed as a measurement of the Surface Reflectance of the land. This is a dimensionless value.
   notes:
+    - Radiometric corrections must lead to a valid measurement of surface reflectance.
 goal:
   description: |-
     Surface Reflectance measurements are SI traceable (see also [@metadata/traceability-sr]).
