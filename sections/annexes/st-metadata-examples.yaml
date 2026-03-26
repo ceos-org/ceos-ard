@@ -4,6 +4,8 @@ description: |-
 
   #### Traceability
 
+  Refers to [@sec:meta-trcst]
+
   Example of measurement traceability in metadata:
 
   ```xml
@@ -38,6 +40,8 @@ description: |-
 
   #### Data Collection Time
 
+  Refers to [@sec:meta-timst]
+
   Example of scene center time (UTC):
 
   ```xml
@@ -63,6 +67,8 @@ description: |-
 
   #### Geographical Area
 
+  Refers to [@sec:meta-geoast]
+
   Example of the bounding coordinates in decimal degrees (WGS84):
 
   ```xml
@@ -83,6 +89,8 @@ description: |-
 
   #### Map Projection
 
+  Refers to [@sec:meta-mpst]
+
   ```xml
   <projection_information datum="WGS84" projection="AEA" units="meters">
       <corner_point location="UL" x="-315585.000000" y="2264805.000000"/>
@@ -100,6 +108,8 @@ description: |-
   ```
 
   #### Geometric Correction Source
+
+  Refers to [@sec:meta-gmcmst]
 
   Example of elevation source:
 
@@ -122,6 +132,8 @@ description: |-
 
   #### Geometric Accuracy of the Data
 
+  Refers to [@sec:meta-gmast]
+
   ```xml
   <geometric_rmse_model>9.021</geometric_rmse_model>
   <geometric_rmse_model_x>6.864</geometric_rmse_model_x>
@@ -129,6 +141,8 @@ description: |-
   ```
 
   #### Instrument
+
+  Refers to [@sec:meta-insopt]
 
   ```xml
   <satellite>LANDSAT_8</satellite>
@@ -157,11 +171,15 @@ description: |-
 
   #### Sensor Calibration
 
+  Refers to [@sec:meta-scaopt]
+
   ```xml
   <cpf_name>LC08CPF_20180101_20180331_01.02</cpf_name>
   ```
 
   #### Algorithms
+
+  Refers to [@sec:meta-algos]
 
   Example for Surface Temperature algorithm version:
 
@@ -170,6 +188,8 @@ description: |-
   ```
 
   #### Auxiliary Data
+
+  Refers to [@sec:meta-auxopt]
 
   All Auxiliary Datafiles (ADFs) are listed in the XML wrapper:
 
@@ -181,6 +201,8 @@ description: |-
 
   #### Processing Chain Provenance
 
+  Refers to [@sec:meta-pcpst]
+
   Processing chain provenance information is stored in the XML wrapper under the following tag:
 
   ```xml
@@ -188,6 +210,8 @@ description: |-
   ```
 
   #### Overall Data Quality
+
+  Refers to [@sec:meta-dqlst]
 
   Overall data quality information is stored in the XML wrapper under the following tag:
 
@@ -198,6 +222,8 @@ description: |-
   ### Per-Pixel Metadata
 
   #### No Data
+
+  Refers to [@sec:pxl-ppnodt]
 
   Example of the fill_value specified for each band in metadata:
 
@@ -225,6 +251,8 @@ description: |-
 
   #### Incomplete Testing
 
+  Refers to [@sec:pxl-ppinct]
+
   The "flags_in.nc" datafile contains per-pixel information on "no / bad data through saturation / incomplete testing etc". The following field has an "unfilled" flag:
 
   ```netcdf
@@ -234,6 +262,8 @@ description: |-
   ```
 
   #### Saturation
+
+  Refers to [@sec:pxl-ppsatn]
 
   Example of RADSATQA band showing the saturation information for the thermal bands used for Surface Temperature calculation:
 
@@ -273,6 +303,8 @@ description: |-
   ```
 
   #### Cloud
+
+  Refers to [@sec:pxl-ppclod]
 
   Example of PIXELQA showing the bit value for cloud pixels (as well as cloud and cirrus confidence):
 
@@ -325,9 +357,13 @@ description: |-
 
   #### Cloud Shadow
 
+  Refers to [@sec:pxl-ppclsd]
+
   Please see the cloud shadow part in the example provided in requirement 2.5
 
   #### Snow/Ice Mask
+
+  Refers to [@sec:pxl-ppsisr]
 
   Please see the snow part in the example provided in requirement 2.5
 
