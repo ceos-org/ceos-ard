@@ -48,7 +48,24 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ## Document History
 
-Not available, see previous versions of the document for its history.
+### 2026-03-26 (PATCH)
+
+- The Combined SAR PFS has been split into separate PFS per product type
+- Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
+- Document history has ben reset. Check the previous versions for details
+- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+- The requirement "Cloud optimized file formats are recommended." has been moved from the category description to a separate requirement.
+- Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”.
+- The subcategories for Source and Product metadata have been flattened into top-level categories
+- Requirement "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
+- Requirement "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
+- Annex has been reformatted and updated as required by the split
+
+**Justification:**
+Migration to the new CEOS-ARD building block.
+
+**Editor:** Matthias Mohr
+
 
 ## <!-- edit:pfs/GSLC/document.yaml -->Contributing Authors
 

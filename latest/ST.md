@@ -50,8 +50,6 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ### 2026-03-26 (PATCH)
 
-**This is a breaking change!**
-
 - Renamed CARD4L to CEOS-ARD
 - Restructured the document; removed empty or unused parts
 - Document history has ben reset. Check the previous versions for details

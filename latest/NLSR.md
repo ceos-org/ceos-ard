@@ -50,13 +50,10 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ### 2026-03-26 (PATCH)
 
-**This is a breaking change!**
-
 - Renamed CARD4L to CEOS-ARD
 - Restructured the document; removed empty or unused parts
 - Document history has ben reset. Check the previous versions for details
 - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
-- The requirement "Cloud optimized file formats are recommended." has been moved from the category description to a separate requirement.
 - The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
 - If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
 - Former req. 2.13 has been removed as it had neither a threshold nor a goal requirement.
