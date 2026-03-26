@@ -50,8 +50,24 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ~( if combined )~
 See the document history in the separate PFS documents.
+~( elif not changes )~
+Not available, see previous versions of the document for its history.
 ~( else )~
-~{ history }~
+~(   for entry in changes )~
+### ~{ entry.date }~ (~{ entry.level | upper }~)
+~(     if entry.level == "major" )~
+
+**This is a breaking change!**
+~(     endif )~
+
+~{     entry.change }~
+
+**Justification:**
+~{     entry.reason }~
+
+**Editor:** ~{ entry.author }~
+
+~(   endfor )~
 ~( endif )~
 
 ## <!-- edit:pfs/~{ id }~/document.yaml -->Contributing Authors
