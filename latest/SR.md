@@ -753,7 +753,7 @@ Coefficients used for terrain illumination correction are provided for each pixe
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->`3.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
 
 The following requirements must be met for all pixels in a collection.
-The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes. Radiometric corrections must lead to a valid measurement.
+The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes.
 
 
 #### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/measurement-sr.yaml-->`3.1.` Measurement {#sec:rac.measurements-measurement-sr label="|Radiometric and Atmospheric Corrections: Measurement"}
@@ -765,6 +765,10 @@ Identifier: `rac.measurements-measurement-sr`
 ##### Threshold requirements:
 
 Pixel values are expressed as a measurement of the Surface Reflectance of the land. This is a dimensionless value.
+
+Notes:
+
+1. Radiometric corrections must lead to a valid measurement of surface reflectance.
 
 
 ##### Goal requirements:
