@@ -82,3 +82,17 @@ authors:
       - Mary Metzger
 
 changes:
+  - date: 2026-03-26
+    author: Matthias Mohr
+    level: patch
+    change: |-
+      - Renamed CARD4L to CEOS-ARD
+      - Restructured the document; removed empty or unused parts
+      - Document history has ben reset. Check the previous versions for details
+      - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+      - The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
+      - If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
+      - Former req. 1.9: Removed "on instrument" from "As threshold, but information on instrument should be available".
+      - Former req. 2.3: Replaced the wording "e.g., due to missing ancillary data for some pixels." with "This may be the result of missing ancillary data for a subset of the pixels."
+      - Annex has been reformatted and updated
+    reason: Migration to the new CEOS-ARD building block.
