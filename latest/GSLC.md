@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex - Version 1.2-draft
+  CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex - Version 1.2.0-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -48,38 +48,42 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ## Document History
 
-Not available yet
+Not available, see previous versions of the document for its history.
 
-## <!-- edit:pfs/GSLC/authors.yaml -->Contributing Authors
+## <!-- edit:pfs/GSLC/document.yaml -->Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
-- Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency (JAXA), Japan
+- Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency, Japan
 - John Truckenbrodt, German Aerospace Centre (DLR), Germany
 - Clément Albinet, European Space Agency (ESA), Italy
 - David Small, University of Zurich, Switzerland
 - Bruce Chapman, Jet Propulsion Laboratory, USA
 - Howard Zebker, Stanford University, USA
 - Zheng-Shu Zhou, CSIRO, Australia
+- David Bekaert, Jet Propulsion Laboratory, USA
 - Virginia Brancato, Jet Propulsion Laboratory, USA
 - Danilo Dadamia, CONAE, Argentina
 - Benjamin Deschamps, Environment and Climate Change, Canada
+- Matt Garthwaite, CSIRO, Australia
 - Guillaume Hajduch, Collecte Localisation Satellites, France
+- P.V. Jayasri, ISRO, India
 - Josef Kellndorfer, Earth Big Data, USA
 - Marco Lavalle, Jet Propulsion Laboratory, USA
-- Adam Lewis, Geoscience Australia, Australia
 - Thomas Logan, Alaska Satellite Facility, USA
 - Franz Meyer, Alaska Satellite Facility, USA
 - Nuno Miranda, European Space Agency (ESA), Italy
 - Muriel Pinheiro, European Space Agency (ESA), Italy
 - Marko Repse, Sinergise, Slovenia
 - HariPriya Sakethapuram, ISRO, India
+- Gustavo H. X. Shiroma, Jet Propulsion Laboratory, USA
 - Andreia Siqueira, Geoscience Australia, Australia
-- Gustavo Shiroma, Jet Propulsion Laboratory, USA
+- Scott Staniewicz, Jet Propulsion Laboratory, USA
 - Takeo Tadono, Japan Aerospace Exploration Agency, Japan
 - Medhavy Thankappan, Geoscience Australia, Australia
-- Antonio Valentino, RHEA for European Space Agency (ESA), Italy
+- Antonio Valentino, Starion for European Space Agency (ESA), Italy
 - Anna Wendleder, German Aerospace Centre (DLR), Germany
 - Fang Yuan, Digital Earth Africa, Australia
+- Francesco De Zan, Delta-Phi Remote Sensing GmbH, Germany
 
 &#12;
 
@@ -94,7 +98,7 @@ Not available yet
 Synthetic Aperture Radar, Geocoded Single-Look Complex (GSLC)
 
 **Version:**
-1.2-draft
+1.2.0-draft
 
 **Applies to:**
 Data collected by Synthetic Aperture Radar sensors
@@ -269,9 +273,9 @@ The collection of pixels referred to must be contiguous in space and time.
 General metadata should allow the user to assess the _overall_ suitability of the dataset, and must meet the requirements listed below.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/traceability-sar.yaml-->`1.1.` Traceability {#sec:meta.metadata-traceability-sar label="|General Metadata: Traceability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/traceability-sar.yaml-->`1.1.` Traceability {#sec:meta-trcsar label="|General Metadata: Traceability"}
 
-Identifier: `meta.metadata-traceability-sar`
+Identifier: `meta-trcsar`
 
 
 
@@ -288,14 +292,14 @@ Data must be traceable to SI reference standard.
 
 Notes:
 
-1. Relationship to [@sec:rcm.metadata-radiometric-accuracy-sar]. Traceability requires an estimate of measurement uncertainty.
+1. Relationship to [@sec:rcm-rmasar]. Traceability requires an estimate of measurement uncertainty.
 2. Information on traceability should be available in the metadata as a single DOI landing page.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml-->`1.2.` Metadata Machine Readability {#sec:meta.metadata-machine-readability-sar label="|General Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml-->`1.2.` Metadata Machine Readability {#sec:meta-mrdsar label="|General Metadata: Metadata Machine Readability"}
 
-Identifier: `meta.metadata-machine-readability-sar`
+Identifier: `meta-mrdsar`
 
 
 
@@ -310,9 +314,9 @@ As threshold, but metadata is formatted in accordance with CEOS-ARD SAR Metadata
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/product-type-sar.yaml-->`1.3.` Product Type {#sec:meta.metadata-product-type-sar label="|General Metadata: Product Type"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/product-type-sar.yaml-->`1.3.` Product Type {#sec:meta-prdtyp label="|General Metadata: Product Type"}
 
-Identifier: `meta.metadata-product-type-sar`
+Identifier: `meta-prdtyp`
 
 
 
@@ -329,9 +333,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/pfs-url.yaml-->`1.4.` Document Identifier {#sec:meta.metadata-pfs-url label="|General Metadata: Document Identifier"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/pfs-url.yaml-->`1.4.` Document Identifier {#sec:meta-pfsurl label="|General Metadata: Document Identifier"}
 
-Identifier: `meta.metadata-pfs-url`
+Identifier: `meta-pfsurl`
 
 
 
@@ -348,9 +352,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-sar.yaml-->`1.5.` Data Collection Time {#sec:meta.metadata-time-sar label="|General Metadata: Data Collection Time"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-sar.yaml-->`1.5.` Data Collection Time {#sec:meta-timsar label="|General Metadata: Data Collection Time"}
 
-Identifier: `meta.metadata-time-sar`
+Identifier: `meta-timsar`
 
 
 
@@ -358,7 +362,7 @@ Identifier: `meta.metadata-time-sar`
 
 Number of source data acquisitions of the data collection is identified.
 The start and stop UTC time of data collection is identified in the metadata, expressed in date/time.
-In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata [@sec:pxl.per-pixel-acquisition-id] is provided with the product.
+In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata [@sec:pxl-ppacqd] is provided with the product.
 
 
 ##### Goal requirements:
@@ -373,9 +377,9 @@ These are metadata records describing (detailing) **each** acquisition (source d
 This may be one or mutliple acquisitions.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/acquisition-id.yaml-->`2.1.` Acquisition ID {#sec:src.metadata-acquisition-id label="|Source Metadata: Acquisition ID"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/acquisition-id.yaml-->`2.1.` Acquisition ID {#sec:src-acqid label="|Source Metadata: Acquisition ID"}
 
-Identifier: `src.metadata-acquisition-id`
+Identifier: `src-acqid`
 
 
 
@@ -392,9 +396,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access-source.yaml-->`2.2.` Source Data Access {#sec:src.metadata-data-access-source label="|Source Metadata: Source Data Access"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access-source.yaml-->`2.2.` Source Data Access {#sec:src-dacsrc label="|Source Metadata: Source Data Access"}
 
-Identifier: `src.metadata-data-access-source`
+Identifier: `src-dacsrc`
 
 
 
@@ -409,9 +413,9 @@ The metadata identifies an online location from where the data can be consistent
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-sar.yaml-->`2.3.` Instrument {#sec:src.metadata-instrument-sar label="|Source Metadata: Instrument"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-sar.yaml-->`2.3.` Instrument {#sec:src-inssar label="|Source Metadata: Instrument"}
 
-Identifier: `src.metadata-instrument-sar`
+Identifier: `src-inssar`
 
 
 
@@ -429,9 +433,9 @@ As threshold, but including a reference to the relevant [CEOS Missions, Instrume
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-source.yaml-->`2.4.` Source Data Acquisition Time {#sec:src.metadata-time-source label="|Source Metadata: Source Data Acquisition Time"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-source.yaml-->`2.4.` Source Data Acquisition Time {#sec:src-timsrc label="|Source Metadata: Source Data Acquisition Time"}
 
-Identifier: `src.metadata-time-source`
+Identifier: `src-timsrc`
 
 
 
@@ -448,9 +452,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/acquisition-parameters-sar.yaml-->`2.5.` Source Data Acquisition Parameters {#sec:src.metadata-acquisition-parameters-sar label="|Source Metadata: Source Data Acquisition Parameters"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/acquisition-parameters-sar.yaml-->`2.5.` Source Data Acquisition Parameters {#sec:src-acqpar label="|Source Metadata: Source Data Acquisition Parameters"}
 
-Identifier: `src.metadata-acquisition-parameters-sar`
+Identifier: `src-acqpar`
 
 
 
@@ -474,9 +478,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit.yaml-->`2.6.` Source Data Orbit Information {#sec:src.metadata-orbit label="|Source Metadata: Source Data Orbit Information"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit.yaml-->`2.6.` Source Data Orbit Information {#sec:src-orbit label="|Source Metadata: Source Data Orbit Information"}
 
-Identifier: `src.metadata-orbit`
+Identifier: `src-orbit`
 
 
 
@@ -500,9 +504,9 @@ As threshold, including also:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-parameters.yaml-->`2.7.` Source Data Processing Parameters {#sec:src.metadata-processing-parameters label="|Source Metadata: Source Data Processing Parameters"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-parameters.yaml-->`2.7.` Source Data Processing Parameters {#sec:src-prcpar label="|Source Metadata: Source Data Processing Parameters"}
 
-Identifier: `src.metadata-processing-parameters`
+Identifier: `src-prcpar`
 
 
 
@@ -525,9 +529,9 @@ As threshold, plus additional relevant processing parameters, e.g., range- and a
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/image-attributes-sar.yaml-->`2.8.` Source Data Image Attributes {#sec:src.metadata-image-attributes-sar label="|Source Metadata: Source Data Image Attributes"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/image-attributes-sar.yaml-->`2.8.` Source Data Image Attributes {#sec:src-imgatt label="|Source Metadata: Source Data Image Attributes"}
 
-Identifier: `src.metadata-image-attributes-sar`
+Identifier: `src-imgatt`
 
 
 
@@ -550,9 +554,9 @@ Geometry of the image footprint expressed in WGS84 in a standardised format (e.g
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-sar.yaml-->`2.9.` Sensor Calibration {#sec:src.metadata-sensor-calibration-sar label="|Source Metadata: Sensor Calibration"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-sar.yaml-->`2.9.` Sensor Calibration {#sec:src-scasar label="|Source Metadata: Sensor Calibration"}
 
-Identifier: `src.metadata-sensor-calibration-sar`
+Identifier: `src-scasar`
 
 
 
@@ -570,9 +574,9 @@ Ideally this would support machine-to-machine access.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/performance-indicators.yaml-->`2.10.` Performance Indicators {#sec:src.metadata-performance-indicators label="|Source Metadata: Performance Indicators"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/performance-indicators.yaml-->`2.10.` Performance Indicators {#sec:src-prfind label="|Source Metadata: Performance Indicators"}
 
-Identifier: `src.metadata-performance-indicators`
+Identifier: `src-prfind`
 
 
 
@@ -592,9 +596,9 @@ Provide additional relevant performance indicators (e.g., ENL, PSLR, ISLR, and p
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/polarimetric-calibration-matrices.yaml-->`2.11.` Polarimetric Calibration Matrices {#sec:src.metadata-polarimetric-calibration-matrices label="|Source Metadata: Polarimetric Calibration Matrices"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/polarimetric-calibration-matrices.yaml-->`2.11.` Polarimetric Calibration Matrices {#sec:src-polcal label="|Source Metadata: Polarimetric Calibration Matrices"}
 
-Identifier: `src.metadata-polarimetric-calibration-matrices`
+Identifier: `src-polcal`
 
 
 
@@ -611,9 +615,9 @@ The complex-valued polarimetric distortion matrices with the channel imbalance a
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/mean-faraday-rotation-angle.yaml-->`2.12.` Mean Faraday Rotation Angle {#sec:src.metadata-mean-faraday-rotation-angle label="|Source Metadata: Mean Faraday Rotation Angle"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/mean-faraday-rotation-angle.yaml-->`2.12.` Mean Faraday Rotation Angle {#sec:src-mfrang label="|Source Metadata: Mean Faraday Rotation Angle"}
 
-Identifier: `src.metadata-mean-faraday-rotation-angle`
+Identifier: `src-mfrang`
 
 
 
@@ -630,9 +634,9 @@ The mean Faraday rotation angle estimated from the polarimetric data and/or from
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/ionosphere-indicator.yaml-->`2.13.` Ionosphere Indicator {#sec:src.metadata-ionosphere-indicator label="|Source Metadata: Ionosphere Indicator"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/ionosphere-indicator.yaml-->`2.13.` Ionosphere Indicator {#sec:src-ionind label="|Source Metadata: Ionosphere Indicator"}
 
-Identifier: `src.metadata-ionosphere-indicator`
+Identifier: `src-ionind`
 
 
 
@@ -653,9 +657,9 @@ Significant impact would imply that the ionospheric impact on the backscatter ex
 Information related to the CEOS-ARD product generation procedure and geographic parameters.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access-product.yaml-->`3.1.` Product Data Access {#sec:prd.metadata-data-access-product label="|Product Metadata: Product Data Access"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access-product.yaml-->`3.1.` Product Data Access {#sec:prd-dacprd label="|Product Metadata: Product Data Access"}
 
-Identifier: `prd.metadata-data-access-product`
+Identifier: `prd-dacprd`
 
 
 
@@ -675,9 +679,9 @@ The metadata identifies an online location from where the data can be consistent
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data.yaml-->`3.2.` Auxiliary Data {#sec:prd.metadata-auxiliary-data label="|Product Metadata: Auxiliary Data"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data.yaml-->`3.2.` Auxiliary Data {#sec:prd-auxdat label="|Product Metadata: Auxiliary Data"}
 
-Identifier: `prd.metadata-auxiliary-data`
+Identifier: `prd-auxdat`
 
 
 
@@ -698,9 +702,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sample-spacing.yaml-->`3.3.` Product Sample Spacing {#sec:prd.metadata-sample-spacing label="|Product Metadata: Product Sample Spacing"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sample-spacing.yaml-->`3.3.` Product Sample Spacing {#sec:prd-smpspc label="|Product Metadata: Product Sample Spacing"}
 
-Identifier: `prd.metadata-sample-spacing`
+Identifier: `prd-smpspc`
 
 
 
@@ -720,9 +724,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/resolution.yaml-->`3.4.` Product Resolution {#sec:prd.metadata-resolution label="|Product Metadata: Product Resolution"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/resolution.yaml-->`3.4.` Product Resolution {#sec:prd-resol label="|Product Metadata: Product Resolution"}
 
-Identifier: `prd.metadata-resolution`
+Identifier: `prd-resol`
 
 
 
@@ -742,16 +746,16 @@ Average spatial resolution of the CEOS-ARD product along:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-bbox.yaml-->`3.5.` Product Bounding Box {#sec:prd.metadata-geo-bbox label="|Product Metadata: Product Bounding Box"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-bbox.yaml-->`3.5.` Product Bounding Box {#sec:prd-geobx label="|Product Metadata: Product Bounding Box"}
 
-Identifier: `prd.metadata-geo-bbox`
+Identifier: `prd-geobx`
 
 
 
 ##### Threshold requirements:
 
 Two opposite corners of the product file (bounding box, including any zero-fill values) are identified,
-expressed in the coordinate reference system defined in [@sec:prd.metadata-crs].
+expressed in the coordinate reference system defined in [@sec:prd-crs].
 
 Notes:
 
@@ -766,9 +770,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area.yaml-->`3.6.` Product Geographical Extent {#sec:prd.metadata-geo-area label="|Product Metadata: Product Geographical Extent"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area.yaml-->`3.6.` Product Geographical Extent {#sec:prd-geoare label="|Product Metadata: Product Geographical Extent"}
 
-Identifier: `prd.metadata-geo-area`
+Identifier: `prd-geoare`
 
 
 
@@ -785,9 +789,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/image-size.yaml-->`3.7.` Product Image Size {#sec:prd.metadata-image-size label="|Product Metadata: Product Image Size"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/image-size.yaml-->`3.7.` Product Image Size {#sec:prd-imgsiz label="|Product Metadata: Product Image Size"}
 
-Identifier: `prd.metadata-image-size`
+Identifier: `prd-imgsiz`
 
 
 
@@ -809,9 +813,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/pixel-coordinate-convention.yaml-->`3.8.` Product Pixel Coordinate Convention {#sec:prd.metadata-pixel-coordinate-convention label="|Product Metadata: Product Pixel Coordinate Convention"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/pixel-coordinate-convention.yaml-->`3.8.` Product Pixel Coordinate Convention {#sec:prd-pxconv label="|Product Metadata: Product Pixel Coordinate Convention"}
 
-Identifier: `prd.metadata-pixel-coordinate-convention`
+Identifier: `prd-pxconv`
 
 
 
@@ -829,9 +833,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs.yaml-->`3.9.` Product Coordinate Reference System {#sec:prd.metadata-crs label="|Product Metadata: Product Coordinate Reference System"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs.yaml-->`3.9.` Product Coordinate Reference System {#sec:prd-crs label="|Product Metadata: Product Coordinate Reference System"}
 
-Identifier: `prd.metadata-crs`
+Identifier: `prd-crs`
 
 
 
@@ -849,9 +853,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radar-unit-look-vector.yaml-->`3.10.` Radar Unit Look Vector {#sec:prd.metadata-radar-unit-look-vector label="|Product Metadata: Radar Unit Look Vector"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radar-unit-look-vector.yaml-->`3.10.` Radar Unit Look Vector {#sec:prd-rulvec label="|Product Metadata: Radar Unit Look Vector"}
 
-Identifier: `prd.metadata-radar-unit-look-vector`
+Identifier: `prd-rulvec`
 
 
 
@@ -860,7 +864,7 @@ Identifier: `prd.metadata-radar-unit-look-vector`
 3-D components radar unit look vector, specified at centre of scene, in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating - ECR) is provided.
 It consists of unit vectors from antenna to surface pixel (i.e., positive Z component).
 
-Only required if a Radar Unit Look Vector Grid Image (see [@sec:pxl.per-pixel-radar-unit-look-vector-grid]) is **not** provided.
+Only required if a Radar Unit Look Vector Grid Image (see [@sec:pxl-pprulv]) is **not** provided.
 
 
 ##### Goal requirements:
@@ -871,9 +875,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/slant-range.yaml-->`3.11.` Slant Range Sensor to Surface {#sec:prd.metadata-slant-range label="|Product Metadata: Slant Range Sensor to Surface"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/slant-range.yaml-->`3.11.` Slant Range Sensor to Surface {#sec:prd-sltrng label="|Product Metadata: Slant Range Sensor to Surface"}
 
-Identifier: `prd.metadata-slant-range`
+Identifier: `prd-sltrng`
 
 
 
@@ -881,7 +885,7 @@ Identifier: `prd.metadata-slant-range`
 
 Slant range distance from the sensor to the surface, specified at centre of scene. 
 
-Only required if a Slant Range Sensor to Surface Image (see [@sec:pxl.per-pixel-slant-range]) is **not** provided.
+Only required if a Slant Range Sensor to Surface Image (see [@sec:pxl-ppslrg]) is **not** provided.
 
 
 ##### Goal requirements:
@@ -892,9 +896,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit-reference-gslc.yaml-->`3.12.` Reference Orbit {#sec:prd.metadata-orbit-reference-gslc label="|Product Metadata: Reference Orbit"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit-reference-gslc.yaml-->`3.12.` Reference Orbit {#sec:prd-orbgsl label="|Product Metadata: Reference Orbit"}
 
-Identifier: `prd.metadata-orbit-reference-gslc`
+Identifier: `prd-orbgsl`
 
 
 
@@ -921,9 +925,9 @@ Whether the metadata are provided in a single record relevant to all pixels or s
 Per-pixel metadata should allow users to discriminate between (choose) observations on the basis of their individual suitability for applications.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml-->`4.1.` Cloud Optimized Formats {#sec:pxl.cloud-optimized-formats label="|Per-Pixel Metadata: Cloud Optimized Formats"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml-->`4.1.` Cloud Optimized Formats {#sec:pxl-cldopt label="|Per-Pixel Metadata: Cloud Optimized Formats"}
 
-Identifier: `pxl.cloud-optimized-formats`
+Identifier: `pxl-cldopt`
 
 
 
@@ -940,9 +944,9 @@ All files are provided using cloud-optimized file formats.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml-->`4.2.` Metadata Machine Readability {#sec:pxl.metadata-machine-readability-sar label="|Per-Pixel Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml-->`4.2.` Metadata Machine Readability {#sec:pxl-mrdsar label="|Per-Pixel Metadata: Metadata Machine Readability"}
 
-Identifier: `pxl.metadata-machine-readability-sar`
+Identifier: `pxl-mrdsar`
 
 
 
@@ -957,9 +961,9 @@ As threshold, but metadata is formatted in accordance with CEOS-ARD SAR Metadata
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/data-mask.yaml-->`4.3.` Data Mask Image {#sec:pxl.per-pixel-data-mask label="|Per-Pixel Metadata: Data Mask Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/data-mask.yaml-->`4.3.` Data Mask Image {#sec:pxl-ppmask label="|Per-Pixel Metadata: Data Mask Image"}
 
-Identifier: `pxl.per-pixel-data-mask`
+Identifier: `pxl-ppmask`
 
 
 
@@ -994,9 +998,9 @@ As threshold, including additional bit value representations, e.g.:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml-->`4.4.` Scattering Area Image {#sec:pxl.per-pixel-scattering-area label="|Per-Pixel Metadata: Scattering Area Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml-->`4.4.` Scattering Area Image {#sec:pxl-ppscta label="|Per-Pixel Metadata: Scattering Area Image"}
 
-Identifier: `pxl.per-pixel-scattering-area`
+Identifier: `pxl-ppscta`
 
 
 
@@ -1025,9 +1029,9 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml-->`4.5.` Local Incident Angle Image {#sec:pxl.per-pixel-local-incident-angle label="|Per-Pixel Metadata: Local Incident Angle Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml-->`4.5.` Local Incident Angle Image {#sec:pxl-pplia label="|Per-Pixel Metadata: Local Incident Angle Image"}
 
-Identifier: `pxl.per-pixel-local-incident-angle`
+Identifier: `pxl-pplia`
 
 
 
@@ -1056,9 +1060,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml-->`4.6.` Ellipsoidal Incident Angle Image {#sec:pxl.per-pixel-ellipsoidal-incident-angle label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml-->`4.6.` Ellipsoidal Incident Angle Image {#sec:pxl-ppelia label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image"}
 
-Identifier: `pxl.per-pixel-ellipsoidal-incident-angle`
+Identifier: `pxl-ppelia`
 
 
 
@@ -1088,9 +1092,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml-->`4.7.` Noise Power Image {#sec:pxl.per-pixel-noise-power label="|Per-Pixel Metadata: Noise Power Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml-->`4.7.` Noise Power Image {#sec:pxl-ppnspw label="|Per-Pixel Metadata: Noise Power Image"}
 
-Identifier: `pxl.per-pixel-noise-power`
+Identifier: `pxl-ppnspw`
 
 
 
@@ -1116,9 +1120,9 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml-->`4.8.` Gamma-to-Sigma Ratio Image {#sec:pxl.per-pixel-gamma-sigma-ratio label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml-->`4.8.` Gamma-to-Sigma Ratio Image {#sec:pxl-ppgmsg label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image"}
 
-Identifier: `pxl.per-pixel-gamma-sigma-ratio`
+Identifier: `pxl-ppgmsg`
 
 
 
@@ -1145,9 +1149,9 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id.yaml-->`4.9.` Acquisition ID Image {#sec:pxl.per-pixel-acquisition-id label="|Per-Pixel Metadata: Acquisition ID Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id.yaml-->`4.9.` Acquisition ID Image {#sec:pxl-ppacqd label="|Per-Pixel Metadata: Acquisition ID Image"}
 
-Identifier: `pxl.per-pixel-acquisition-id`
+Identifier: `pxl-ppacqd`
 
 
 
@@ -1157,7 +1161,7 @@ Identifier: `pxl.per-pixel-acquisition-id`
 
 Acquisition ID, or acquisition date, for each pixel is identified.
 
-In case of multi-temporal image stacks, use a source acquisition ID (i.e., [@sec:src.metadata-acquisition-id]) to list contributing images.
+In case of multi-temporal image stacks, use a source acquisition ID (i.e., [@sec:src-acqid]) to list contributing images.
 
 In case of date, data represent (integer or fractional) day offset to reference observation date (in UTC). Date used as reference (“Day 0”) is provided in the metadata.
 
@@ -1178,9 +1182,9 @@ In case of image composites, the sources for each pixel are uniquely identified.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml-->`4.10.` Per-Pixel DEM {#sec:pxl.per-pixel-dem label="|Per-Pixel Metadata: Per-Pixel DEM"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml-->`4.10.` Per-Pixel DEM {#sec:pxl-ppdem label="|Per-Pixel Metadata: Per-Pixel DEM"}
 
-Identifier: `pxl.per-pixel-dem`
+Identifier: `pxl-ppdem`
 
 
 
@@ -1207,9 +1211,9 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/radar-unit-look-vector-grid.yaml-->`4.11.` Radar Unit Look Vector Grid Image {#sec:pxl.per-pixel-radar-unit-look-vector-grid label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/radar-unit-look-vector-grid.yaml-->`4.11.` Radar Unit Look Vector Grid Image {#sec:pxl-pprulv label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image"}
 
-Identifier: `pxl.per-pixel-radar-unit-look-vector-grid`
+Identifier: `pxl-pprulv`
 
 
 
@@ -1235,9 +1239,9 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/slant-range.yaml-->`4.12.` Slant Range Sensor to Surface Image {#sec:pxl.per-pixel-slant-range label="|Per-Pixel Metadata: Slant Range Sensor to Surface Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/slant-range.yaml-->`4.12.` Slant Range Sensor to Surface Image {#sec:pxl-ppslrg label="|Per-Pixel Metadata: Slant Range Sensor to Surface Image"}
 
-Identifier: `pxl.per-pixel-slant-range`
+Identifier: `pxl-ppslrg`
 
 
 
@@ -1262,9 +1266,9 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/insar-phase-uncertainty.yaml-->`4.13.` InSAR Phase Uncertainty Image {#sec:pxl.per-pixel-insar-phase-uncertainty label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/insar-phase-uncertainty.yaml-->`4.13.` InSAR Phase Uncertainty Image {#sec:pxl-ppiphu label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image"}
 
-Identifier: `pxl.per-pixel-insar-phase-uncertainty`
+Identifier: `pxl-ppiphu`
 
 
 
@@ -1291,9 +1295,9 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/atmospheric-phase-correction.yaml-->`4.14.` Atmospheric Phase Correction Image {#sec:pxl.per-pixel-atmospheric-phase-correction label="|Per-Pixel Metadata: Atmospheric Phase Correction Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/atmospheric-phase-correction.yaml-->`4.14.` Atmospheric Phase Correction Image {#sec:pxl-ppatpc label="|Per-Pixel Metadata: Atmospheric Phase Correction Image"}
 
-Identifier: `pxl.per-pixel-atmospheric-phase-correction`
+Identifier: `pxl-ppatpc`
 
 
 
@@ -1319,9 +1323,9 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ionospheric-phase-correction.yaml-->`4.15.` Ionospheric Phase Correction Image {#sec:pxl.per-pixel-ionospheric-phase-correction label="|Per-Pixel Metadata: Ionospheric Phase Correction Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ionospheric-phase-correction.yaml-->`4.15.` Ionospheric Phase Correction Image {#sec:pxl-ppionc label="|Per-Pixel Metadata: Ionospheric Phase Correction Image"}
 
-Identifier: `pxl.per-pixel-ionospheric-phase-correction`
+Identifier: `pxl-ppionc`
 
 
 
@@ -1353,9 +1357,9 @@ As for the per-pixel metadata, information regarding data format specification n
 The requirements below must be met for all pixels/samples/observations in a collection.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml-->`5.1.` Cloud Optimized Formats {#sec:rcm.cloud-optimized-formats label="|Radiometrically Corrected Measurements: Cloud Optimized Formats"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml-->`5.1.` Cloud Optimized Formats {#sec:rcm-cldopt label="|Radiometrically Corrected Measurements: Cloud Optimized Formats"}
 
-Identifier: `rcm.cloud-optimized-formats`
+Identifier: `rcm-cldopt`
 
 
 
@@ -1372,9 +1376,9 @@ All files are provided using cloud-optimized file formats.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-gslc.yaml-->`5.2.` Backscatter Measurements (GSLC) {#sec:rcm.measurements-backscatter-gslc label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-gslc.yaml-->`5.2.` Backscatter Measurements (GSLC) {#sec:rcm-bsgslc label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)"}
 
-Identifier: `rcm.measurements-backscatter-gslc`
+Identifier: `rcm-bsgslc`
 
 
 
@@ -1405,9 +1409,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/scaling-conversion.yaml-->`5.3.` Scaling Conversion {#sec:rcm.metadata-scaling-conversion label="|Radiometrically Corrected Measurements: Scaling Conversion"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/scaling-conversion.yaml-->`5.3.` Scaling Conversion {#sec:rcm-sclcnv label="|Radiometrically Corrected Measurements: Scaling Conversion"}
 
-Identifier: `rcm.metadata-scaling-conversion`
+Identifier: `rcm-sclcnv`
 
 
 
@@ -1422,9 +1426,9 @@ As threshold, but use of float32.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/noise-removal.yaml-->`5.4.` Noise Removal {#sec:rcm.metadata-noise-removal label="|Radiometrically Corrected Measurements: Noise Removal"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/noise-removal.yaml-->`5.4.` Noise Removal {#sec:rcm-nzrmvl label="|Radiometrically Corrected Measurements: Noise Removal"}
 
-Identifier: `rcm.metadata-noise-removal`
+Identifier: `rcm-nzrmvl`
 
 
 
@@ -1446,9 +1450,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo-gslc.yaml-->`5.5.` Radiometric Terrain Correction Algorithm {#sec:rcm.corrections-radiometric-terrain-algo-gslc label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo-gslc.yaml-->`5.5.` Radiometric Terrain Correction Algorithm {#sec:rcm-rtagsl label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
 
-Identifier: `rcm.corrections-radiometric-terrain-algo-gslc`
+Identifier: `rcm-rtagsl`
 
 
 
@@ -1477,9 +1481,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml-->`5.6.` Radiometric Accuracy {#sec:rcm.metadata-radiometric-accuracy-sar label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml-->`5.6.` Radiometric Accuracy {#sec:rcm-rmasar label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
 
-Identifier: `rcm.metadata-radiometric-accuracy-sar`
+Identifier: `rcm-rmasar`
 
 
 
@@ -1501,9 +1505,9 @@ The geometric corrections are steps that are taken to place the measurement accu
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-algorithm.yaml-->`6.1.` Geometric Correction Algorithm {#sec:gcor.metadata-geometric-correction-algorithm label="|Geometric Corrections: Geometric Correction Algorithm"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-algorithm.yaml-->`6.1.` Geometric Correction Algorithm {#sec:gcor-gmcalg label="|Geometric Corrections: Geometric Correction Algorithm"}
 
-Identifier: `gcor.metadata-geometric-correction-algorithm`
+Identifier: `gcor-gmcalg`
 
 
 
@@ -1529,9 +1533,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/dem.yaml-->`6.2.` Digital Elevation Model {#sec:gcor.corrections-dem label="|Geometric Corrections: Digital Elevation Model"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/dem.yaml-->`6.2.` Digital Elevation Model {#sec:gcor-cordem label="|Geometric Corrections: Digital Elevation Model"}
 
-Identifier: `gcor.corrections-dem`
+Identifier: `gcor-cordem`
 
 
 
@@ -1553,9 +1557,9 @@ Identifier: `gcor.corrections-dem`
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric-accuracy-radar.yaml-->`6.3.` Geometric Accuracy {#sec:gcor.corrections-geometric-accuracy-radar label="|Geometric Corrections: Geometric Accuracy"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric-accuracy-radar.yaml-->`6.3.` Geometric Accuracy {#sec:gcor-geoacr label="|Geometric Corrections: Geometric Accuracy"}
 
-Identifier: `gcor.corrections-geometric-accuracy-radar`
+Identifier: `gcor-geoacr`
 
 
 
@@ -1585,9 +1589,9 @@ Provide documentation of estimates of ALE as DOI or URL.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric-refined-accuracy.yaml-->`6.4.` Geometric Refined Accuracy {#sec:gcor.corrections-geometric-refined-accuracy label="|Geometric Corrections: Geometric Refined Accuracy"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric-refined-accuracy.yaml-->`6.4.` Geometric Refined Accuracy {#sec:gcor-georfa label="|Geometric Corrections: Geometric Refined Accuracy"}
 
-Identifier: `gcor.corrections-geometric-refined-accuracy`
+Identifier: `gcor-georfa`
 
 
 
@@ -1600,7 +1604,7 @@ Not required.
 
 ##### Goal requirements:
 
-Values provided under [@sec:gcor.corrections-geometric-accuracy-radar] are provided by the SAR mission Cal/Val team.
+Values provided under [@sec:gcor-geoacr] are provided by the SAR mission Cal/Val team.
 
 CEOS-ARD processing steps could include method refining the geometric accuracy, such as cross-correlation of the SAR data in slant range with a SAR scene simulated from a DSM or DEM.
 
@@ -1608,9 +1612,9 @@ Methodology used (name and reference), quality flag, geometric standard deviatio
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/gridding-convention.yaml-->`6.5.` Gridding Convention {#sec:gcor.corrections-gridding-convention label="|Geometric Corrections: Gridding Convention"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/gridding-convention.yaml-->`6.5.` Gridding Convention {#sec:gcor-gridcv label="|Geometric Corrections: Gridding Convention"}
 
-Identifier: `gcor.corrections-gridding-convention`
+Identifier: `gcor-gridcv`
 
 
 
@@ -1722,7 +1726,7 @@ The radiometric interoperability of CEOS-ARD SAR products is ensured by a common
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-topographic-phase-removal.yaml-->Topographic phase removal {#sec:annex-sar-topographic-phase-removal label="|Topographic phase removal"}
 
-InSAR analysis capabilities from CEOS-ARD SAR products are enabled with GSLC products, which is also the case when the Flattened Phase per-pixel data ([@sec:rcm.measurements-flattened-phase]) are included in the NRB or POL products. This is made possible since the simulated topographic phase relative to a given reference orbit has been subtracted.
+InSAR analysis capabilities from CEOS-ARD SAR products are enabled with GSLC products, which is also the case when the Flattened Phase per-pixel data are included in the NRB or POL products. This is made possible since the simulated topographic phase relative to a given reference orbit has been subtracted.
 
 From classical approach with SLC data, interferometric phase $\Delta \varphi_{1-2}$ between two SAR acquisitions is composed of a topographic phase $\Delta \varphi_{\text{Topo}\_1-2}$, a surface displacement phase $\Delta \varphi_{\text{Disp}\_1-2}$ and other noise terms $\Delta \varphi_{\text{Noise}\_1-2}$ ([@eq:sar-topographic-phase-removal-eq1]). The topographic phase consists to the difference in geometrical path length from each of the two antenna positions to the point on the SAR image ($\varphi_{\text{DEM}\_\text{SLC}}$) and is a function of their orbital baseline distance ([@eq:sar-topographic-phase-removal-eq2]). The surface displacement phase is related to the displacement of the surface that occurred in between the two acquisitions. The noise term is the function of the radar signal interaction with the atmosphere and the ionosphere during each acquisition and function of the system noise.
 
@@ -1751,7 +1755,7 @@ This procedure is equivalent to bring the position of the sensor platform of all
 
 The phase subtraction could be performed by using a motion compensation approach [@zebker2010] or directly on the SLC data. Then the geometrical correction is performed on the Flattened SLC, which results in a GSLC product.
 
-GSLC can also be saved as a NRB product by including the Flattened Phase per-pixel data ([@sec:rcm.measurements-flattened-phase]) as follows:
+GSLC can also be saved as a NRB product by including the Flattened Phase per-pixel data as follows:
 
 $$\text{NRB:} \quad \gamma_T^0 = |GSLC|^2 $$
 
@@ -1881,7 +1885,7 @@ $$
 \text{InSAR differential phase:} \quad \varphi =\arg(\rho)
 $$ {#eq:sar-gslc-example-eq2}
 
-Some advanced NRB or POL products could include per-pixel “Flattened Phase” data ([@sec:rcm.measurements-flattened-phase]). This “Flattened Phase” enables the possibility to perform InSAR analysis as with two GSLC products. As for example, from two different NRB products (NRB1) and (NRB2), acquired over repeat cycles (i.e., on the same relative orbit), containing $\gamma_T^0$ and their corresponding “Flattened Phase” (FPh1) and (FPh2) per-pixel data, the complex InSAR coherence ([@eq:sar-gslc-example-eq3]) can be estimated in the similar manner as [@eq:sar-gslc-example-eq1] for GSLC products.
+Some advanced NRB or POL products could include per-pixel “Flattened Phase” data. This “Flattened Phase” enables the possibility to perform InSAR analysis as with two GSLC products. As for example, from two different NRB products (NRB1) and (NRB2), acquired over repeat cycles (i.e., on the same relative orbit), containing $\gamma_T^0$ and their corresponding “Flattened Phase” (FPh1) and (FPh2) per-pixel data, the complex InSAR coherence ([@eq:sar-gslc-example-eq3]) can be estimated in the similar manner as [@eq:sar-gslc-example-eq1] for GSLC products.
 
 $$
 \text{Complex coherence:} \quad \rho_{NRB} = \frac{\sum [ (\sqrt{NRB_1} \cdot e^{i\cdot FPh1}) \cdot conj (\sqrt{NRB_2} \cdot e^{i\cdot FPh2})]}{ \sqrt{ \sum NRB_1 * \sum NRB_2}}

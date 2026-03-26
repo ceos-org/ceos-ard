@@ -48,14 +48,31 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ## Document History
 
-Not available yet
+### 2026-03-26 (PATCH)
 
-## <!-- edit:pfs/NLSR/authors.yaml -->Contributing Authors
+**This is a breaking change!**
 
-- Brian Killough, NASA, USA
-- Bhaskar Ramachandran, NASA, USA
-- Miguel Román, Leidos Inc., USA
-- Zhuosen Wang, University of Maryland, USA
+- Renamed CARD4L to CEOS-ARD
+- Restructured the document; removed empty or unused parts
+- Document history has ben reset. Check the previous versions for details
+- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+- The requirement "Cloud optimized file formats are recommended." has been moved from the category description to a separate requirement.
+- The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
+- If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
+- Former req. 2.13 has been removed as it had neither a threshold nor a goal requirement.
+
+**Justification:**
+Migration to the new CEOS-ARD building block.
+
+**Editor:** Matthias Mohr
+
+
+## <!-- edit:pfs/NLSR/document.yaml -->Contributing Authors
+
+- Brian Killough, NASA Langley Research Center, CEOS Systems Engineering Office, USA
+- Bhaskar Ramachandran, NASA Goddard Space Flight Center, USA
+- Miguel Román, Leidos Inc., Civil Group, USA
+- Zhuosen Wang, University of Maryland/GSFC, USA
 
 &#12;
 
@@ -162,9 +179,9 @@ The collection of pixels referred to must be contiguous in space and time.
 General metadata should allow the user to assess the _overall_ suitability of the dataset, and must meet the requirements listed below.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/traceability-sr.yaml-->`1.1.` Traceability {#sec:meta.metadata-traceability-sr label="|General Metadata: Traceability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/traceability-sr.yaml-->`1.1.` Traceability {#sec:meta-trcsr label="|General Metadata: Traceability"}
 
-Identifier: `meta.metadata-traceability-sr`
+Identifier: `meta-trcsr`
 
 
 
@@ -181,14 +198,14 @@ Data must be traceable to SI reference standard.
 
 Notes:
 
-1. Relationship to [@sec:rac.measurements-uncertainty-sr]. Traceability requires an estimate of measurement uncertainty.
+1. Relationship to [@sec:rac-uncsr]. Traceability requires an estimate of measurement uncertainty.
 2. Information on traceability should be available in the metadata as a single DOI landing page.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-optical.yaml-->`1.2.` Metadata Machine Readability {#sec:meta.metadata-machine-readability-optical label="|General Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-optical.yaml-->`1.2.` Metadata Machine Readability {#sec:meta-mrdopt label="|General Metadata: Metadata Machine Readability"}
 
-Identifier: `meta.metadata-machine-readability-optical`
+Identifier: `meta-mrdopt`
 
 
 
@@ -203,9 +220,9 @@ As threshold, but metadata should be provided in a community endorsed standard t
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-sr.yaml-->`1.3.` Data Collection Time {#sec:meta.metadata-time-sr label="|General Metadata: Data Collection Time"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-sr.yaml-->`1.3.` Data Collection Time {#sec:meta-timsr label="|General Metadata: Data Collection Time"}
 
-Identifier: `meta.metadata-time-sr`
+Identifier: `meta-timsr`
 
 
 
@@ -220,9 +237,9 @@ Acquisition time for each pixel is identified (or can be reliably determined) in
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area-sr.yaml-->`1.4.` Geographical Area {#sec:meta.metadata-geo-area-sr label="|General Metadata: Geographical Area"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area-sr.yaml-->`1.4.` Geographical Area {#sec:meta-geoasr label="|General Metadata: Geographical Area"}
 
-Identifier: `meta.metadata-geo-area-sr`
+Identifier: `meta-geoasr`
 
 
 
@@ -237,9 +254,9 @@ The geographic area covered by the observations is identified specifically, such
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs-optical.yaml-->`1.5.` Coordinate Reference System {#sec:meta.metadata-crs-optical label="|General Metadata: Coordinate Reference System"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs-optical.yaml-->`1.5.` Coordinate Reference System {#sec:meta-crsopt label="|General Metadata: Coordinate Reference System"}
 
-Identifier: `meta.metadata-crs-optical`
+Identifier: `meta-crsopt`
 
 
 
@@ -256,9 +273,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/map-projection-nlsr.yaml-->`1.6.` Map Projection {#sec:meta.metadata-map-projection-nlsr label="|General Metadata: Map Projection"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/map-projection-nlsr.yaml-->`1.6.` Map Projection {#sec:meta-mpnlsr label="|General Metadata: Map Projection"}
 
-Identifier: `meta.metadata-map-projection-nlsr`
+Identifier: `meta-mpnlsr`
 
 
 
@@ -275,9 +292,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-methods-sr.yaml-->`1.7.` Geometric Correction Methods {#sec:meta.metadata-geometric-correction-methods-sr label="|General Metadata: Geometric Correction Methods"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-methods-sr.yaml-->`1.7.` Geometric Correction Methods {#sec:meta-gmcmsr label="|General Metadata: Geometric Correction Methods"}
 
-Identifier: `meta.metadata-geometric-correction-methods-sr`
+Identifier: `meta-gmcmsr`
 
 
 
@@ -294,9 +311,9 @@ Information on geometric correction methods should be available in the metadata 
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-accuracy-sr.yaml-->`1.8.` Geometric Accuracy of the Data {#sec:meta.metadata-geometric-accuracy-sr label="|General Metadata: Geometric Accuracy of the Data"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-accuracy-sr.yaml-->`1.8.` Geometric Accuracy of the Data {#sec:meta-gmasr label="|General Metadata: Geometric Accuracy of the Data"}
 
-Identifier: `meta.metadata-geometric-accuracy-sr`
+Identifier: `meta-gmasr`
 
 
 
@@ -319,9 +336,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-optical.yaml-->`1.9.` Instrument {#sec:meta.metadata-instrument-optical label="|General Metadata: Instrument"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-optical.yaml-->`1.9.` Instrument {#sec:meta-insopt label="|General Metadata: Instrument"}
 
-Identifier: `meta.metadata-instrument-optical`
+Identifier: `meta-insopt`
 
 
 
@@ -336,9 +353,9 @@ As threshold, but information should be available in the metadata as a single DO
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/spectral-bands.yaml-->`1.10.` Spectral Bands {#sec:meta.metadata-spectral-bands label="|General Metadata: Spectral Bands"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/spectral-bands.yaml-->`1.10.` Spectral Bands {#sec:meta-spcbnd label="|General Metadata: Spectral Bands"}
 
-Identifier: `meta.metadata-spectral-bands`
+Identifier: `meta-spcbnd`
 
 
 
@@ -358,9 +375,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-optical.yaml-->`1.11.` Sensor Calibration {#sec:meta.metadata-sensor-calibration-optical label="|General Metadata: Sensor Calibration"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-optical.yaml-->`1.11.` Sensor Calibration {#sec:meta-scaopt label="|General Metadata: Sensor Calibration"}
 
-Identifier: `meta.metadata-sensor-calibration-optical`
+Identifier: `meta-scaopt`
 
 
 
@@ -382,9 +399,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sr.yaml-->`1.12.` Radiometric Accuracy {#sec:meta.metadata-radiometric-accuracy-sr label="|General Metadata: Radiometric Accuracy"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sr.yaml-->`1.12.` Radiometric Accuracy {#sec:meta-rmasr label="|General Metadata: Radiometric Accuracy"}
 
-Identifier: `meta.metadata-radiometric-accuracy-sr`
+Identifier: `meta-rmasr`
 
 
 
@@ -405,9 +422,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/algorithms-sr.yaml-->`1.13.` Algorithms {#sec:meta.metadata-algorithms-sr label="|General Metadata: Algorithms"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/algorithms-sr.yaml-->`1.13.` Algorithms {#sec:meta-algosr label="|General Metadata: Algorithms"}
 
-Identifier: `meta.metadata-algorithms-sr`
+Identifier: `meta-algosr`
 
 
 
@@ -432,9 +449,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data-optical.yaml-->`1.14.` Auxiliary Data {#sec:meta.metadata-auxiliary-data-optical label="|General Metadata: Auxiliary Data"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data-optical.yaml-->`1.14.` Auxiliary Data {#sec:meta-auxopt label="|General Metadata: Auxiliary Data"}
 
-Identifier: `meta.metadata-auxiliary-data-optical`
+Identifier: `meta-auxopt`
 
 
 
@@ -453,9 +470,9 @@ As threshold, but information on auxiliary data should be available in the metad
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-chain-prov-nlsr.yaml-->`1.15.` Processing Chain Provenance {#sec:meta.metadata-processing-chain-prov-nlsr label="|General Metadata: Processing Chain Provenance"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-chain-prov-nlsr.yaml-->`1.15.` Processing Chain Provenance {#sec:meta-pcpnls label="|General Metadata: Processing Chain Provenance"}
 
-Identifier: `meta.metadata-processing-chain-prov-nlsr`
+Identifier: `meta-pcpnls`
 
 
 
@@ -472,9 +489,9 @@ Information on processing chain provenance should be available in the metadata a
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access.yaml-->`1.16.` Data Access {#sec:meta.metadata-data-access label="|General Metadata: Data Access"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access.yaml-->`1.16.` Data Access {#sec:meta-dacces label="|General Metadata: Data Access"}
 
-Identifier: `meta.metadata-data-access`
+Identifier: `meta-dacces`
 
 
 
@@ -495,9 +512,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-quality-sr.yaml-->`1.17.` Overall Data Quality {#sec:meta.metadata-data-quality-sr label="|General Metadata: Overall Data Quality"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-quality-sr.yaml-->`1.17.` Overall Data Quality {#sec:meta-dqlsr label="|General Metadata: Overall Data Quality"}
 
-Identifier: `meta.metadata-data-quality-sr`
+Identifier: `meta-dqlsr`
 
 
 
@@ -521,9 +538,9 @@ Whether the metadata are provided in a single record relevant to all pixels or s
 Per-pixel metadata should allow users to discriminate between (choose) observations on the basis of their individual suitability for applications.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-per-pixel-optical.yaml-->`2.1.` Metadata Machine Readability {#sec:pxl.metadata-machine-readability-per-pixel-optical label="|Per-Pixel Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-per-pixel-optical.yaml-->`2.1.` Metadata Machine Readability {#sec:pxl-mrdppo label="|Per-Pixel Metadata: Metadata Machine Readability"}
 
-Identifier: `pxl.metadata-machine-readability-per-pixel-optical`
+Identifier: `pxl-mrdppo`
 
 
 
@@ -540,9 +557,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/nodata.yaml-->`2.2.` No Data {#sec:pxl.per-pixel-nodata label="|Per-Pixel Metadata: No Data"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/nodata.yaml-->`2.2.` No Data {#sec:pxl-ppnodt label="|Per-Pixel Metadata: No Data"}
 
-Identifier: `pxl.per-pixel-nodata`
+Identifier: `pxl-ppnodt`
 
 
 
@@ -559,9 +576,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/incomplete-testing.yaml-->`2.3.` Incomplete Testing {#sec:pxl.per-pixel-incomplete-testing label="|Per-Pixel Metadata: Incomplete Testing"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/incomplete-testing.yaml-->`2.3.` Incomplete Testing {#sec:pxl-ppinct label="|Per-Pixel Metadata: Incomplete Testing"}
 
-Identifier: `pxl.per-pixel-incomplete-testing`
+Identifier: `pxl-ppinct`
 
 
 
@@ -580,9 +597,9 @@ The metadata identifies which tests have, and have not, been successfully comple
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/saturation.yaml-->`2.4.` Saturation {#sec:pxl.per-pixel-saturation label="|Per-Pixel Metadata: Saturation"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/saturation.yaml-->`2.4.` Saturation {#sec:pxl-ppsatn label="|Per-Pixel Metadata: Saturation"}
 
-Identifier: `pxl.per-pixel-saturation`
+Identifier: `pxl-ppsatn`
 
 
 
@@ -597,9 +614,9 @@ Metadata indicates which pixels are saturated for each spectral band.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud.yaml-->`2.5.` Cloud {#sec:pxl.per-pixel-cloud label="|Per-Pixel Metadata: Cloud"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud.yaml-->`2.5.` Cloud {#sec:pxl-ppclod label="|Per-Pixel Metadata: Cloud"}
 
-Identifier: `pxl.per-pixel-cloud`
+Identifier: `pxl-ppclod`
 
 
 
@@ -614,9 +631,9 @@ As threshold, but information on cloud detection should be available in the meta
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud-shadow-nlsr.yaml-->`2.6.` Cloud Shadow {#sec:pxl.per-pixel-cloud-shadow-nlsr label="|Per-Pixel Metadata: Cloud Shadow"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud-shadow-nlsr.yaml-->`2.6.` Cloud Shadow {#sec:pxl-ppcsnl label="|Per-Pixel Metadata: Cloud Shadow"}
 
-Identifier: `pxl.per-pixel-cloud-shadow-nlsr`
+Identifier: `pxl-ppcsnl`
 
 
 
@@ -634,9 +651,9 @@ Information on cloud shadow detection should be available in the metadata as a s
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/land-water-nlsr.yaml-->`2.7.` Land/Water Mask {#sec:pxl.per-pixel-land-water-nlsr label="|Per-Pixel Metadata: Land/Water Mask"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/land-water-nlsr.yaml-->`2.7.` Land/Water Mask {#sec:pxl-pplwnl label="|Per-Pixel Metadata: Land/Water Mask"}
 
-Identifier: `pxl.per-pixel-land-water-nlsr`
+Identifier: `pxl-pplwnl`
 
 
 
@@ -651,9 +668,9 @@ As threshold, information on land/water mask should be available in the metadata
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/snow-ice-nlsr.yaml-->`2.8.` Snow/Ice Mask {#sec:pxl.per-pixel-snow-ice-nlsr label="|Per-Pixel Metadata: Snow/Ice Mask"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/snow-ice-nlsr.yaml-->`2.8.` Snow/Ice Mask {#sec:pxl-ppsinl label="|Per-Pixel Metadata: Snow/Ice Mask"}
 
-Identifier: `pxl.per-pixel-snow-ice-nlsr`
+Identifier: `pxl-ppsinl`
 
 
 
@@ -668,9 +685,9 @@ As threshold, information on snow/ice mask should be available in the metadata a
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/terrain-shadow.yaml-->`2.9.` Terrain Shadow Mask {#sec:pxl.per-pixel-terrain-shadow label="|Per-Pixel Metadata: Terrain Shadow Mask"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/terrain-shadow.yaml-->`2.9.` Terrain Shadow Mask {#sec:pxl-pptshr label="|Per-Pixel Metadata: Terrain Shadow Mask"}
 
-Identifier: `pxl.per-pixel-terrain-shadow`
+Identifier: `pxl-pptshr`
 
 
 
@@ -687,9 +704,9 @@ The metadata indicates pixels that are not directly illuminated due to terrain s
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/terrain-occlusion.yaml-->`2.10.` Terrain Occlusion {#sec:pxl.per-pixel-terrain-occlusion label="|Per-Pixel Metadata: Terrain Occlusion"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/terrain-occlusion.yaml-->`2.10.` Terrain Occlusion {#sec:pxl-pptocc label="|Per-Pixel Metadata: Terrain Occlusion"}
 
-Identifier: `pxl.per-pixel-terrain-occlusion`
+Identifier: `pxl-pptocc`
 
 
 
@@ -706,9 +723,9 @@ The metadata indicates pixels that are not visible to the sensor due to terrain 
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/view-angles-lunar.yaml-->`2.11.` Lunar and Viewing Geometry {#sec:pxl.per-pixel-view-angles-lunar label="|Per-Pixel Metadata: Lunar and Viewing Geometry"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/view-angles-lunar.yaml-->`2.11.` Lunar and Viewing Geometry {#sec:pxl-ppvalu label="|Per-Pixel Metadata: Lunar and Viewing Geometry"}
 
-Identifier: `pxl.per-pixel-view-angles-lunar`
+Identifier: `pxl-ppvalu`
 
 
 
@@ -723,9 +740,9 @@ Provide per-pixel lunar and sensor viewing azimuth and zenith angles.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/terrain-illumination.yaml-->`2.12.` Terrain Illumination Correction {#sec:pxl.per-pixel-terrain-illumination label="|Per-Pixel Metadata: Terrain Illumination Correction"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/terrain-illumination.yaml-->`2.12.` Terrain Illumination Correction {#sec:pxl-pptill label="|Per-Pixel Metadata: Terrain Illumination Correction"}
 
-Identifier: `pxl.per-pixel-terrain-illumination`
+Identifier: `pxl-pptill`
 
 
 
@@ -742,9 +759,9 @@ Coefficients used for terrain illumination correction are provided for each pixe
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/moon-illumination-fraction.yaml-->`2.13.` Moon Illumination Fraction {#sec:pxl.per-pixel-moon-illumination-fraction label="|Per-Pixel Metadata: Moon Illumination Fraction"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/moon-illumination-fraction.yaml-->`2.13.` Moon Illumination Fraction {#sec:pxl-ppmoon label="|Per-Pixel Metadata: Moon Illumination Fraction"}
 
-Identifier: `pxl.per-pixel-moon-illumination-fraction`
+Identifier: `pxl-ppmoon`
 
 
 
@@ -759,9 +776,9 @@ Provide per-pixel moon illumination fraction
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/brightness-temperature.yaml-->`2.14.` Brightness Temperature {#sec:pxl.per-pixel-brightness-temperature label="|Per-Pixel Metadata: Brightness Temperature"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/brightness-temperature.yaml-->`2.14.` Brightness Temperature {#sec:pxl-ppbrtt label="|Per-Pixel Metadata: Brightness Temperature"}
 
-Identifier: `pxl.per-pixel-brightness-temperature`
+Identifier: `pxl-ppbrtt`
 
 
 
@@ -778,15 +795,15 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/solar-zenith-angle.yaml-->`2.15.` Solar Zenith Angle {#sec:pxl.per-pixel-solar-zenith-angle label="|Per-Pixel Metadata: Solar Zenith Angle"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/solar-zenith-angle.yaml-->`2.15.` Solar Zenith Angle {#sec:pxl-ppsza label="|Per-Pixel Metadata: Solar Zenith Angle"}
 
-Identifier: `pxl.per-pixel-solar-zenith-angle`
+Identifier: `pxl-ppsza`
 
 
 
 ##### Threshold requirements:
 
-Provide solar zenith angle to support stray-light corrections (see also [@sec:rac.corrections-stray-light]).
+Provide solar zenith angle to support stray-light corrections (see also [@sec:rac-strlit]).
 
 
 ##### Goal requirements:
@@ -801,9 +818,9 @@ The following requirements must be met for all pixels in a collection.
 The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/measurement-nlsr.yaml-->`3.1.` Measurement {#sec:rac.measurements-measurement-nlsr label="|Radiometric and Atmospheric Corrections: Measurement"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/measurement-nlsr.yaml-->`3.1.` Measurement {#sec:rac-msnlsr label="|Radiometric and Atmospheric Corrections: Measurement"}
 
-Identifier: `rac.measurements-measurement-nlsr`
+Identifier: `rac-msnlsr`
 
 
 
@@ -818,13 +835,13 @@ Notes:
 
 ##### Goal requirements:
 
-Nighttime light radiance measurements are SI traceable (see also [@sec:meta.metadata-traceability-sr]).
+Nighttime light radiance measurements are SI traceable (see also [@sec:meta-trcsr]).
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/uncertainty-sr.yaml-->`3.2.` Measurement Uncertainty {#sec:rac.measurements-uncertainty-sr label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/uncertainty-sr.yaml-->`3.2.` Measurement Uncertainty {#sec:rac-uncsr label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
 
-Identifier: `rac.measurements-uncertainty-sr`
+Identifier: `rac-uncsr`
 
 
 
@@ -843,14 +860,14 @@ An estimate of the certainty of the values is provided in measurement units.
 
 Notes:
 
-1. This is a requirement for SI traceability. See also [@sec:meta.metadata-traceability-sr].
+1. This is a requirement for SI traceability. See also [@sec:meta-trcsr].
 2. Information on measurement uncertainty should be available in the metadata as a single DOI landing page.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/normalisation-nlsr.yaml-->`3.3.` Measurement Normalisation {#sec:rac.measurements-normalisation-nlsr label="|Radiometric and Atmospheric Corrections: Measurement Normalisation"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/normalisation-nlsr.yaml-->`3.3.` Measurement Normalisation {#sec:rac-nrmnls label="|Radiometric and Atmospheric Corrections: Measurement Normalisation"}
 
-Identifier: `rac.measurements-normalisation-nlsr`
+Identifier: `rac-nrmnls`
 
 
 
@@ -872,9 +889,9 @@ Notes:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/atmospheric-corrections.yaml-->`3.4.` Atmospheric Corrections {#sec:rac.measurements-atmospheric-corrections label="|Radiometric and Atmospheric Corrections: Atmospheric Corrections"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/atmospheric-corrections.yaml-->`3.4.` Atmospheric Corrections {#sec:rac-atmcor label="|Radiometric and Atmospheric Corrections: Atmospheric Corrections"}
 
-Identifier: `rac.measurements-atmospheric-corrections`
+Identifier: `rac-atmcor`
 
 
 
@@ -901,9 +918,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/lunar-radiance.yaml-->`3.5.` Lunar Radiance Corrections {#sec:rac.corrections-lunar-radiance label="|Radiometric and Atmospheric Corrections: Lunar Radiance Corrections"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/lunar-radiance.yaml-->`3.5.` Lunar Radiance Corrections {#sec:rac-lunrad label="|Radiometric and Atmospheric Corrections: Lunar Radiance Corrections"}
 
-Identifier: `rac.corrections-lunar-radiance`
+Identifier: `rac-lunrad`
 
 
 
@@ -929,9 +946,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/stray-light.yaml-->`3.6.` Stray Light Corrections {#sec:rac.corrections-stray-light label="|Radiometric and Atmospheric Corrections: Stray Light Corrections"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/stray-light.yaml-->`3.6.` Stray Light Corrections {#sec:rac-strlit label="|Radiometric and Atmospheric Corrections: Stray Light Corrections"}
 
-Identifier: `rac.corrections-stray-light`
+Identifier: `rac-strlit`
 
 
 
@@ -961,9 +978,9 @@ The geometric corrections are steps that are taken to place the measurement accu
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric-sr.yaml-->`4.1.` Geometric Correction {#sec:gcor.corrections-geometric-sr label="|Geometric Corrections: Geometric Correction"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric-sr.yaml-->`4.1.` Geometric Correction {#sec:gcor-geocsr label="|Geometric Corrections: Geometric Correction"}
 
-Identifier: `gcor.corrections-geometric-sr`
+Identifier: `gcor-geocsr`
 
 
 
@@ -975,7 +992,7 @@ Sub-pixel accuracy is taken to be less than or equal to 0.5 pixel radial root me
 
 A consistent gridding/sampling frame is used, including common cell size, origin, and nominal sample point location within the cell (centre, ll, ur).
 
-Relevant metadata must be provided under [@sec:meta.metadata-geometric-accuracy-sr] and [@sec:meta.metadata-instrument-optical].
+Relevant metadata must be provided under [@sec:meta-gmasr] and [@sec:meta-insopt].
 
 Notes:
 
@@ -988,7 +1005,7 @@ Sub-pixel accuracy is achieved relative to an identified absolute independent te
 
 A consistent gridding/sampling frame is necessary to meet this requirement.
 
-Relevant metadata must be provided under [@sec:meta.metadata-geometric-accuracy-sr] and [@sec:meta.metadata-instrument-optical].
+Relevant metadata must be provided under [@sec:meta-gmasr] and [@sec:meta-insopt].
 
 Notes:
 
