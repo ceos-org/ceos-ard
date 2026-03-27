@@ -1,5 +1,5 @@
 title: Surface Temperature
-version: 5.0-draft
+version: 5.0.0-draft
 type: Optical
 applies_to: |-
   Applies to data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths.
