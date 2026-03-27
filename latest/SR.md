@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Aquatic Reflectance - Version 2.0-draft
+  CEOS-ARD - Optical - Surface Reflectance - Version 5.0.1-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -36,13 +36,13 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Optical - Aquatic Reflectance
+# CEOS-ARD - Optical - Surface Reflectance
 
 &nbsp;
 
 ## Document Status
 
-Product Family Specification, Optical, Aquatic Reflectance
+Product Family Specification, Optical, Surface Reflectance
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
@@ -84,25 +84,21 @@ Migration to the new CEOS-ARD building block.
 
 <!-- edit:pfs/SR/document.yaml -->
 **Product Family Specification:**
-Optical, Aquatic Reflectance (SR)
+Optical, Surface Reflectance (SR)
 
 **Version:**
-2.0-draft
+5.0.1-draft
 
 **Applies to:**
 Data collected by Optical sensors
 
 ## Background
 
-Data collected with multispectral and hyperspectral imaging sensors operating in the VIS/NIR/SWIR wavelengths over water bodies (including oceans, seas, coastal zones, and inland waters). These typically operate with ground sample distance and resolution in the order of 1-4000 metres however the specification is not inherently limited to these resolutions.
+Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.
 
 &#12;
 
 ## Definitions and Abbreviations
-
-<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ar.yaml -->
-AR
-:   Aquatic Reflectance
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/atbd.yaml -->
 ATBD
@@ -151,6 +147,10 @@ rRMSE
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/si.yaml -->
 SI
 :   International System of Units, internationally known by the abbreviation SI (from French Système international d'unités)
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/sr.yaml -->
+SR
+:   Surface Reflectance
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/swir.yaml -->
 SWIR

@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Surface Temperature - Version 5.0-draft
+  CEOS-ARD - Optical - Surface Temperature - Version 5.0.0-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -88,7 +88,7 @@ Migration to the new CEOS-ARD building block.
 Optical, Surface Temperature (ST)
 
 **Version:**
-5.0-draft
+5.0.0-draft
 
 **Applies to:**
 Data collected by Optical sensors

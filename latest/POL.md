@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Synthetic Aperture Radar - Polarimetric Radar - Version 1.2-draft
+  CEOS-ARD - Synthetic Aperture Radar - Polarimetric Radar - Version 1.1.0-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -115,7 +115,7 @@ Migration to the new CEOS-ARD building block.
 Synthetic Aperture Radar, Polarimetric Radar (POL)
 
 **Version:**
-1.2-draft
+1.1.0-draft
 
 **Applies to:**
 Data collected by Synthetic Aperture Radar sensors
