@@ -7,7 +7,9 @@ requirements:
     description: Reference to CEOS-ARD PFS document as URL.
 dependencies:
 glossary:
+  - ceos-ard
   - url
+  - pfs
 references:
 changes:
 history:

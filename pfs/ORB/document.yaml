@@ -13,6 +13,7 @@ applies_to: |-
 glossary:
   - orb
   - pol
+  - pfs
 
 references:
   - iso19115_2_2009
