@@ -35,8 +35,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Install ceos-ard-cli
-        run: pip install ceos-ard-cli
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: Run validation
         run: ceos-ard validate
   generate:
@@ -52,8 +52,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
-      - name: Install ceos-ard-cli
-        run: pip install ceos-ard-cli
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       # Validate to ensure we only build when it has a chance to succeed
       - name: Install pandoc
         run: |
