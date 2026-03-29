@@ -216,6 +216,10 @@ NRB
 ORB
 :   Ocean Radar Backscatter
 
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/pfs.yaml -->
+PFS
+:   Product Family Specification
+
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/pol.yaml -->
 POL
 :   Polarimetric Radar
