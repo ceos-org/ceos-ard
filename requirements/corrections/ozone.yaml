@@ -6,7 +6,7 @@ requirements:
     description: |-
       Data is corrected for ozone.
   
-      Relevant metadata must be provided under [@metadata/geometric-accuracy-sr] and [@metadata/instrument-optical].
+      Relevant metadata must be provided under [@geometric-accuracy] and [@instrument].
   
       Metadata contains a single DOI landing page with references to:
       
@@ -14,8 +14,8 @@ requirements:
       - technical documentation regarding the implementation of that algorithm
     optional: true
 dependencies:
-  - metadata/geometric-accuracy-sr
-  - metadata/instrument-optical
+  geometric-accuracy: metadata/geometric-accuracy-sr
+  instrument: metadata/instrument-optical
 glossary:
   - doi
 references:

@@ -11,7 +11,7 @@ requirements:
   
       A consistent gridding/sampling frame is necessary to meet this requirement.
   
-      Relevant metadata must be provided under [@metadata/geometric-accuracy-st] and [@metadata/instrument-optical].
+      Relevant metadata must be provided under [@geometric-accuracy] and [@instrument].
     notes:
       - |-
         The threshold level will not necessarily enable interoperability between data from **different** sources as the geometric corrections for each of the sources may differ. 
@@ -22,14 +22,14 @@ requirements:
   
       A consistent gridding/sampling frame is necessary to meet this requirement.
   
-      Relevant metadata must be provided under [@metadata/geometric-accuracy-st] and [@metadata/instrument-optical].
+      Relevant metadata must be provided under [@geometric-accuracy] and [@instrument].
     notes:
       - |-
         This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction, and with non-image spatial data such as GIS layers and terrain models.
     optional: true
 dependencies:
-  - metadata/geometric-accuracy-st
-  - metadata/instrument-optical
+  geometric-accuracy: metadata/geometric-accuracy-st
+  instrument: metadata/instrument-optical
 glossary:
   - cep
   - gis

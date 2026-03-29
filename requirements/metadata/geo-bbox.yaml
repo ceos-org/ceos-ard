@@ -6,11 +6,11 @@ requirements:
   threshold:
     description: |-
       Two opposite corners of the product file (bounding box, including any zero-fill values) are identified,
-      expressed in the coordinate reference system defined in [@metadata/crs].
+      expressed in the coordinate reference system defined in [@crs].
     notes:
       - Four corners of the product file are recommended for scenes crossing the Antemeridian, or the North or the South Pole. 
 dependencies:
-  - metadata/crs
+  crs: metadata/crs
 glossary:
 references:
 changes:

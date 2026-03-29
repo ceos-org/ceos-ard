@@ -9,10 +9,10 @@ requirements:
       - Radiometric corrections must lead to a valid measurement of surface reflectance.
   goal:
     description: |-
-      Nighttime light radiance measurements are SI traceable (see also [@metadata/traceability-sr]).
+      Nighttime light radiance measurements are SI traceable (see also [@traceability]).
     optional: true
 dependencies:
-  - metadata/traceability-sr
+  traceability: metadata/traceability-sr
 glossary:
   - si
 references:

@@ -9,10 +9,10 @@ requirements:
       - Radiometric corrections must lead to a valid measurement of surface temperature.
   goal:
     description: |-
-      Surface temperature measurements are SI traceable (see also [@metadata/traceability-st]).
+      Surface temperature measurements are SI traceable (see also [@traceability]).
     optional: true
 dependencies:
-  - metadata/traceability-st
+  traceability: metadata/traceability-st
 glossary:
   - si
 references:

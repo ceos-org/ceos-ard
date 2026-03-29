@@ -7,9 +7,9 @@ requirements:
     description: |-
       Number of source data acquisitions of the data collection is identified.
       The start and stop UTC time of data collection is identified in the metadata, expressed in date/time.
-      In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata [@per-pixel/acquisition-id] is provided with the product.
+      In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata [@acquisition-id] is provided with the product.
 dependencies:
-  - per-pixel/acquisition-id
+  acquisition-id: per-pixel/acquisition-id
 glossary:
   - utc
 references:

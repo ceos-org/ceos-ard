@@ -5,11 +5,11 @@ requirements:
   goal:
     description: Data must be traceable to SI reference standard.
     notes:
-      - Relationship to [@measurements/uncertainty-sr]. Traceability requires an estimate of measurement uncertainty.
+      - Relationship to [@relationship]. Traceability requires an estimate of measurement uncertainty.
       - Information on traceability should be available in the metadata as a single DOI landing page.
     optional: true
 dependencies:
-  - measurements/uncertainty-sr
+  relationship: measurements/uncertainty-sr
 glossary:
   - doi
   - si

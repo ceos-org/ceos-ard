@@ -6,9 +6,9 @@ requirements:
     description: |-
       Slant range distance from the sensor to the surface, specified at centre of scene. 
       
-      Only required if a Slant Range Sensor to Surface Image (see [@per-pixel/slant-range]) is **not** provided. 
+      Only required if a Slant Range Sensor to Surface Image (see [@slant-range]) is **not** provided. 
 dependencies:
-  - per-pixel/slant-range
+  slant-range: per-pixel/slant-range
 glossary:
 references:
 changes:

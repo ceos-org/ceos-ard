@@ -18,7 +18,7 @@ The YAML files consist of the following components:
   - `notes`: A list of additional notes. A note should be short and not be longer than one paragraph. Limited Markdown formatting is available.
   - `optional`: If set to `true`, a goal requirement. If not set or `false`, a threshold requirement.
   - `metadata`: Placeholder for future use.
-- `dependencies`: A list of requirement IDs. See section [Dependencies](#dependencies).
+- `dependencies`: A mapping of named dependencies. See section [Dependencies](#dependencies).
 - `glossary`: Any terms that are relevant for this requirement (e.g. are used in the text). Use any file name (without extension) from the [glossary](../glossary/) folder.
 - `references`: Any relevant references for this requirement and are referred to in the text using the @ notation (see [Markdown](#markdown)). Use any file name (without extension) from the [references](../references/) folder.
 - `changes`: The changelog that describes the changes over time for this building block.
@@ -29,8 +29,10 @@ todo: Remove goal/threshold from requirements and make each part a separate requ
 ## Markdown
 
 The flavor of Markdown that is implemented here has some additional features.
-You can reference to other sections of the document or other requirements using the @ notation.
-For example, `[@example/other-requirement]`.
+You can reference other requirements using the @ notation with the dependency alias.
+For example, if a dependency is defined as `other-requirement: example/other-requirement`,
+you can reference it in text as `[@other-requirement]`.
+During compilation, this is resolved to the correct section reference.
 
 todo: add more details
 
@@ -38,13 +40,23 @@ todo: add more details
 
 Dependencies are requirements that must be met for this requirement and are usually mentioned in the text using the @ notation.
 
-Dependencies are identified by the requirement ID but without the category ID.
-The requirement ID is the folder name (if applicable) and the file name (without file extension). For example, `metadata/time` for the file [metadata/time.yaml](metadata/time.yaml).
+Dependencies are defined as a mapping of alias to requirement path:
 
-Due to the fact that requirements don't include the category ID and could be ambiguous, the sependencies are resolved as follows:
+```yaml
+dependencies:
+  my-alias: metadata/time
+```
 
-1. The dependency will refer to the requirement with the given ID in the same requirement category if it exists.
-2. Otherwise, the dependency will refer to the requirement with the given ID in any other category.
+The alias is a short name used to reference the dependency in text (e.g. `[@my-alias]`).
+The requirement path is the folder name (if applicable) and the file name (without file extension). For example, `metadata/time` for the file [metadata/time.yaml](metadata/time.yaml).
+
+Using named aliases allows a PFS to override individual dependency targets
+via the `replace` mechanism without changing the requirement text.
+
+Due to the fact that requirements don't include the category ID and could be ambiguous, the dependencies are resolved as follows:
+
+1. The dependency will refer to the requirement with the given path in the same requirement category if it exists.
+2. Otherwise, the dependency will refer to the requirement with the given path in any other category.
 
 This means if a requirement is used both in the same requirement category and in another category, you can't refer to the requirement that is used in the other requirement category.
 
@@ -68,6 +80,7 @@ requirements:
     metadata:
     optional: true
 dependencies:
+  other-requirement: example/other-requirement
 glossary:
   - doi
 references:
