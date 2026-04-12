@@ -1,0 +1,13 @@
+id: mapproj-ar
+title: Map Projection
+description: 
+requirements:
+  threshold:
+    description: |-
+      The map projection that has been used and any relevant parameters required in relation to use of data in that map projection is detailed.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 1.6

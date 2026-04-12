@@ -1,5 +1,5 @@
 # todo: should be named "Speckle Filtering" not "Product Filtering" to allow for other filtering types in the future.
-id: spkpol
+id: spekfil-pol
 title: Product Filtering
 description: 
 requirements:

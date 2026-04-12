@@ -1,0 +1,14 @@
+id: mnormal-ar
+title: 
+description: 
+requirements:
+  threshold:
+    description:
+  goal:
+    description:
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:

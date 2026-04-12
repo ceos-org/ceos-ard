@@ -1,5 +1,5 @@
 # todo: remove product data mentions to be resuable in other products
-id: crs
+id: crs-sar
 title: Product Coordinate Reference System
 description:
 requirements:

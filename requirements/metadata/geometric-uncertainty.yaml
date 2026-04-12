@@ -1,0 +1,14 @@
+id: geounc
+title: Geometric Accuracy of the Data
+description:
+requirements:
+  goal:
+    description: |-
+      Inclusion of metrics describing the assessed geodetic uncertainty of the data, expressed in units of the coordinate system of the data. Uncertainty is assessed by independent verification (as well as internal model-fit where applicable). Uncertainties are expressed quantitatively.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 1.8

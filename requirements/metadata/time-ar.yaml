@@ -1,0 +1,18 @@
+id: time-ar
+title: Data Collection Time
+description:
+requirements:
+  threshold:
+    description: |-
+      The beginning and end of the data collection time is expressed in date/time and identified in the metadata consistent with ISO 8601. The time is expressed with the time offset from UTC unambiguously identified.
+  goal:
+    description: |-
+      As threshold, but information required to determine, within a stated uncertainty, when the individual observations were taken is available.
+    optional: true
+glossary:
+  - utc
+references:
+  - iso8601_1_2019
+changes:
+history:
+  - AR 1.5

@@ -1,5 +1,5 @@
 # Remove "Per-Pixel" from the title, it's inconsistent with other requirements.
-id: ppgeod
+id: pigeoid
 title: Per-Pixel Geoid
 description: 
 requirements:

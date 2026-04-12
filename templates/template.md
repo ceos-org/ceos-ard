@@ -70,7 +70,7 @@ Not available, see previous versions of the document for its history.
 ~(   endfor )~
 ~( endif )~
 
-## <!-- edit:pfs/~{ id }~/document.yaml -->Contributing Authors
+## ~( if combined )~<!-- edit:pfs/~{ id }~/document.yaml -->~( endif )~Contributing Authors
 
 ~( if combined )~
 See the authors list in the separate PFS documents.
@@ -86,27 +86,39 @@ See the authors list in the separate PFS documents.
 
 ## Description
 
-<!-- edit:pfs/~{ id }~/document.yaml -->
+~( if combined )~<!-- edit:pfs/~{ id }~/document.yaml -->~( endif )~
 **Product Family Specification:**
 ~{type}~, ~{ title }~ (~{ id }~)
 
 **Version:**
 ~{ version }~
 
+~( if applies_to )~
 **Applies to:**
-Data collected by ~{type}~ sensors
+~(   if combined and applies_to is mapping )~
+
+~(     for key, value in applies_to.items() )~
+- **~{ key }~**: ~{ value }~
+~(     endfor )~
+~(   else )~
+~{     applies_to }~
+~(   endif )~
+~( endif )~
+
+~( if background )~
 
 ## Background
 
-~( if combined )~
-~(   for key, value in applies_to.items() )~
+~(   if combined )~
+~(     for key, value in background.items() )~
 ### ~{ key }~
 
-~{     value }~
+~{       value }~
 
-~(   endfor )~
-~( else )~
-~{   applies_to }~
+~(     endfor )~
+~(   else )~
+~{     background }~
+~(   endif )~
 ~( endif )~
 
 &#12;
@@ -121,7 +133,7 @@ Data collected by ~{type}~ sensors
 ~( endfor )~
 &#12;
 
-## <!-- edit:pfs/~{ id }~/document.yaml -->Requirements
+## ~( if combined )~<!-- edit:pfs/~{ id }~/document.yaml -->~( endif )~Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!

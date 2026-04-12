@@ -1,4 +1,4 @@
-id: timsr
+id: time-sr
 title: Data Collection Time
 description:
 requirements:
@@ -6,6 +6,7 @@ requirements:
     description: |-
       The data collection time is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
   goal:
+    # todo: this is per-pixel metadata, but in metadata. We should make this consistent. Do we want per-pixel metadata or not?
     description: |-
       Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
     optional: true
@@ -14,4 +15,4 @@ glossary:
 references:
 changes:
 history:
-  - SAR 1.5
+  - SR 1.3

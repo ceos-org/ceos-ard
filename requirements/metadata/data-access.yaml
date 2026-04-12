@@ -1,4 +1,4 @@
-id: dacces
+id: daccess
 title: Data Access
 description: 
 requirements:
@@ -13,4 +13,4 @@ glossary:
 references:
 changes:
 history:
-  - SR/NLSR/ST 1.16
+  - SR/NLSR/ST/AR 1.16

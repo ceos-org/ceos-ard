@@ -1,11 +1,10 @@
 title: Surface Temperature
 version: 5.0.0-draft
 type: Optical
-applies_to: |-
-  Applies to data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths.
+applies_to: Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths.
   These typically operate with ground sample distance and resolution in the order of 10-100m;
   however, the Specification is not inherently limited to this resolution.
-
+background: |-
   At present, surface temperature measurements tend to be provided as either surface brightness temperature (SBT) or as land surface temperatures (LST) requiring the SBT to be modified according to the emissivity of the target.
   This specification identifies the Surface Temperature (ST) as being the minimum or Threshold requirement for analysis ready land surface data. Nevertheless, both SBT and LST are land measurements, requiring atmospheric corrections.
 
@@ -40,14 +39,14 @@ requirements:
       - metadata/spectral-bands
       - metadata/sensor-calibration-optical
       - metadata/radiometric-accuracy-st
-      - metadata/algorithms
+      - metadata/algorithms-st
       - metadata/auxiliary-data-optical
       - metadata/processing-chain-prov-st
       - metadata/data-access
       - metadata/data-quality-st
   - category: per-pixel-metadata
     requirements:
-      - metadata/machine-readability-per-pixel-optical
+      - per-pixel/machine-readability
       - per-pixel/nodata
       - per-pixel/incomplete-testing
       - per-pixel/saturation
@@ -83,7 +82,8 @@ changes:
     change: |-
       - Renamed CARD4L to CEOS-ARD
       - Restructured the document; removed empty or unused parts
-      - Document history has ben reset. Check the previous versions for details
+      - Split "Applies to" section into "Applies to" and "Background" sections
+      - Document history has been reset. Check the previous versions for details
       - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
       - The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
       - If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).

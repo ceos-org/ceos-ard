@@ -1,0 +1,119 @@
+title: Aquatic Reflectance
+version: 2.0.0-draft
+type: Optical
+applies_to: Data collected with multispectral and hyperspectral imaging sensors operating in the VIS/NIR/SWIR wavelengths over water bodies (including oceans, seas, coastal zones, and inland waters). These typically operate with ground sample distance and resolution in the order of 1-4000 metres however the specification is not inherently limited to these resolutions.
+background:
+
+# Only glossary entries that are not specific to certain requirements or sections are listed here.
+glossary:
+  - ar
+  - vis
+  - nir
+  - swir
+
+references:
+
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+requirements:
+  - category:
+      ref: general-metadata
+      append:
+        description: |-
+          Information should be available in the metadata as a single DOI landing page, which may include links to further detailed documents and references to citable peer-reviewed algorithms or technical documentation.
+        glossary:
+          - doi
+    requirements:
+      - metadata/ceos-ard-pfs-version
+      - metadata/traceability-ar
+      - metadata/machine-readability-optical
+      - metadata/time-ar
+      - metadata/geo-area-optical
+      - metadata/crs-ar
+      - metadata/map-projection-ar
+      - metadata/geometric-correction-methods-ar
+      - metadata/geometric-uncertainty
+      - metadata/instrument-ar
+      - metadata/spectral-bands-ar
+      - metadata/sensor-calibration-ar
+      - metadata/radiometric-uncertainty
+      - metadata/algorithms-ar
+      - metadata/auxiliary-data-ar
+      - metadata/processing-chain-prov-ar
+      - metadata/data-access
+      - metadata/valid-pixels
+  - category: per-pixel-metadata # todo
+    requirements:
+      - per-pixel/machine-readability # todo
+      - per-pixel/nodata # todo
+      - per-pixel/incomplete-testing # todo
+      - per-pixel/saturation # todo
+      - per-pixel/cloud # todo
+      - per-pixel/cloud-shadow # todo
+      - per-pixel/snow-ice-sr # todo
+      - per-pixel/view-angles-solar # todo
+  - category: products-algorithms
+    requirements:
+      - measurements/measurement-ar
+      - measurements/uncertainty-ar # todo
+      - measurements/normalisation-ar # todo
+  - category: geometric-corrections # todo
+    requirements:
+      - corrections/geometric-ar
+      # todo for 4.2
+
+annexes:
+
+authors: |-
+  ### Technical Leads
+
+  - Arnold Dekker (CSIRO) 
+  - Daniela Gurlin (Independent Consultant)
+  
+  ### Organisational Leads
+  
+  - Matt Steventon (CEOS-ARD Oversight Group Secretariat)
+  - Harvey Jones (CEOS-ARD Oversight Group Secretariat)
+  
+  ### Contributors
+
+  - Carsten Brockmann (Brockmann Consult)
+  - Vittorio Brando (CNR) 
+  - Claudia Giardino (CNR) 
+  - Nicole Pinnel (DLR) 
+  - Peter Gege (DLR) 
+  - Barbara Bulgarelli (EC) 
+  - Peter Strobl (EC)
+  - Frédéric Mélin (EC) 
+  - Ewa Kwiatkowska (EUMETSAT) 
+  - Hayley Evers-King (EUMETSAT) 
+  - Andreia Siqueira (GA) 
+  - Medhavy Thankappan (GA) 
+  - Peter Harrison (GA) 
+  - Igor Ogashawara (IGB Berlin)
+  - Raisha Lovindeer (IOCCG)
+  - Hiroshi Murakami (JAXA)
+  - Joseph D. Ortiz (Kent State)
+  - Sean Bailey (NASA)
+  - Nima Pahlevan (NASA) 
+  - Anthony Vodacek (RIT)
+  - Heidi Dierssen (University of Connecticut) 
+  - Maycira Costa (University of Victoria) 
+  - Ben Page (USGS) 
+  - Chris Barnes (USGS)
+  - Liesbeth de Keukelare (VITO) 
+
+changes:
+  - date: 2026-03-30
+    author: Matthias Mohr
+    level: patch
+    # todo
+    change: |-
+      - Restructured the document; removed empty or unused parts
+      - Document history has been reset. Check the previous versions for details
+      - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+      - The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
+    reason: Migration to the new CEOS-ARD building block.

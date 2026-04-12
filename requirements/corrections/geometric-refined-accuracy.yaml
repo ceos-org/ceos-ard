@@ -1,4 +1,4 @@
-id: georfa
+id: georacc
 title: Geometric Refined Accuracy
 description: 
 requirements:
@@ -11,7 +11,7 @@ requirements:
       Methodology used (name and reference), quality flag, geometric standard deviation values should be provided. 
     optional: true
 dependencies:
-  geometric-accuracy: corrections/geometric-accuracy-radar
+  geometric-accuracy: corrections/geometric-accuracy-sar
 glossary:
   - ceos-ard
   - dsm

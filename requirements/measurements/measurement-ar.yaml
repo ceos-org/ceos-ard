@@ -1,0 +1,23 @@
+id: measur-ar
+title: Measurement
+description: 
+requirements:
+  threshold:
+    description: |-
+      Pixel values that are expressed as a measurement of the Aquatic Reflectance (dimensionless) or the Remote Sensing Reflectance ($sr^{-1}$) of the water bodies ($AR = \pi \times R_{rs}$).
+    notes:
+      - Radiometric corrections must lead to a valid measurement of aquatic reflectance.
+  goal:
+    description: |-
+      As threshold.
+    notes:
+      - See also [@traceability] and [@normalisation]
+    optional: true
+dependencies:
+  traceability: metadata/traceability-ar
+  normalisation: measurements/normalisation-ar
+glossary:
+references:
+changes:
+history:
+  - AR 3.1

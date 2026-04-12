@@ -1,0 +1,15 @@
+id: geocorm-ar
+title: Geometric Correction Methods
+description: 
+requirements:
+  goal:
+    description: |-
+      Information on geometric correction source and methods are provided, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.
+    optional: true
+dependencies:
+glossary:
+  - auxiliary-data
+references:
+changes:
+history:
+  - AR 1.7

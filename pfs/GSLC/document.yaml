@@ -1,7 +1,8 @@
 title: Geocoded Single-Look Complex
 version: 1.1.0-draft
 type: Synthetic Aperture Radar
-applies_to: |-
+applies_to: Data collected by Synthetic Aperture Radar sensors
+background: |-
   This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
   The CEOS-ARD Geocoded Single-Look Complex (GSLC) product is relevant to interferometric studies.
@@ -36,7 +37,7 @@ requirements:
       # todo: most of the general metadata is product metadata - this should potentially be merged.
       - metadata/traceability-sar
       - metadata/machine-readability-sar
-      - metadata/product-type-sar
+      - metadata/product-type
       - metadata/pfs-url
       - metadata/time-sar
   - category: source-metadata
@@ -57,14 +58,14 @@ requirements:
   - category: product-metadata
     requirements:
       - metadata/data-access-product
-      - metadata/auxiliary-data
+      - metadata/auxiliary-data-sar
       - metadata/sample-spacing
       - metadata/resolution
       - metadata/geo-bbox
-      - metadata/geo-area
+      - metadata/geo-area-sar
       - metadata/image-size
       - metadata/pixel-coordinate-convention
-      - metadata/crs
+      - metadata/crs-sar
       - metadata/radar-unit-look-vector
       - metadata/slant-range
       - metadata/orbit-reference-gslc
@@ -97,7 +98,7 @@ requirements:
     requirements:
       - metadata/geometric-correction-algorithm
       - corrections/dem
-      - corrections/geometric-accuracy-radar
+      - corrections/geometric-accuracy-sar
       - corrections/geometric-refined-accuracy
       - corrections/gridding-convention
 
@@ -148,7 +149,7 @@ changes:
     change: |-
       - The Combined SAR PFS has been split into separate PFS per product type
       - Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
-      - Document history has ben reset. Check the previous versions for details
+      - Document history has been reset. Check the previous versions for details
       - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
       - The requirement "Cloud optimized file formats are recommended." has been moved from the category description to a separate requirement.
       - Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”.

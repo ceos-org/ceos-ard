@@ -1,4 +1,4 @@
-id: orbgsl
+id: reorbit-gslc
 title: Reference Orbit 
 description: |-
     **Usage: When a reference orbit is used instead of a virtual orbit (see [@sec:annex-sar-topographic-phase-removal]).**

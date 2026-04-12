@@ -1,4 +1,4 @@
-id: geoasr
+id: geoarea-optical
 title: Geographical Area
 description: 
 requirements:
@@ -15,4 +15,4 @@ glossary:
 references:
 changes:
 history:
-  - SR/NLSR 1.4
+  - SR/NLSR/AR 1.4

@@ -1,5 +1,5 @@
 # Remove "Per-Pixel" from the title, it's inconsistent with other requirements.
-id: ppdem
+id: pidem
 title: Per-Pixel DEM
 description: 
 requirements:

@@ -1,0 +1,16 @@
+id: valpix
+title: Valid Pixels
+description: 
+requirements:
+  goal:
+    description: |-
+      Percentage of valid pixels in a specified area based on the applied flags from [@sec:pxl].
+    optional: true
+dependencies:
+# todo: implement dependencies on other sections
+# - sec:pxl
+glossary:
+references:
+changes:
+history:
+  - AR 1.17

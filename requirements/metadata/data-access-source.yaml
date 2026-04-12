@@ -1,5 +1,5 @@
 # todo: make generic for source and product
-id: dacsrc
+id: daccess-src
 title: Source Data Access
 description: 
 requirements:

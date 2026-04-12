@@ -1,0 +1,12 @@
+id: specband-ar
+title: Spectral Bands
+description: 
+requirements:
+  threshold:
+    description: Full spectral response function is provided.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 1.10
