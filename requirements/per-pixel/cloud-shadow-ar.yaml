@@ -1,0 +1,13 @@
+id: picloudsh-ar
+title: Cloud Shadow
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether a pixel is cloud shadow or cloud shadow-affected.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.6

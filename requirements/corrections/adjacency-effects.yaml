@@ -1,0 +1,12 @@
+id: cajdeff
+title: Adjacency Effects
+description: 
+requirements:
+  goal:
+    description: The data are corrected for adjacency effects.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 3.11

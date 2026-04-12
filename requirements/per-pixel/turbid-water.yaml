@@ -1,0 +1,12 @@
+id: pituwa
+title: Turbid Water
+description: 
+requirements:
+  threshold:
+    description: Specification of whether a pixel is assessed as being turbid.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.19

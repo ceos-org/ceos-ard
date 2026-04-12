@@ -45,25 +45,52 @@ requirements:
       - metadata/processing-chain-prov-ar
       - metadata/data-access
       - metadata/valid-pixels
-  - category: per-pixel-metadata # todo
+  - category:
+      ref: per-pixel-metadata
+      append:
+        description: |-
+          Information should be available in the metadata as a single DOI landing page, which may include links to further detailed documents and references to citable peer-reviewed algorithms or technical documentation.
+        glossary:
+          - doi
     requirements:
-      - per-pixel/machine-readability # todo
-      - per-pixel/nodata # todo
-      - per-pixel/incomplete-testing # todo
-      - per-pixel/saturation # todo
-      - per-pixel/cloud # todo
-      - per-pixel/cloud-shadow # todo
-      - per-pixel/snow-ice-sr # todo
-      - per-pixel/view-angles-solar # todo
+      - per-pixel/machine-readability
+      - per-pixel/nodata-ar
+      - per-pixel/incomplete-testing-ar
+      - per-pixel/saturation-ar
+      - per-pixel/cloud-ar
+      - per-pixel/cloud-shadow-ar
+      - per-pixel/land-water-ar
+      - per-pixel/ice
+      - per-pixel/sun-glint
+      - per-pixel/sky-glint
+      - per-pixel/view-angles-solar-ar
+      - per-pixel/whitecap-foam
+      - per-pixel/aod-parameters
+      - per-pixel/adjacency-effects
+      - per-pixel/floating-vegetation
+      - per-pixel/bathymetry
+      - per-pixel/optically-deep-shallow-assessment
+      - per-pixel/optical-water-type
+      - per-pixel/turbid-water
+      - per-pixel/elevation-water
   - category: products-algorithms
     requirements:
       - measurements/measurement-ar
-      - measurements/uncertainty-ar # todo
-      - measurements/normalisation-ar # todo
-  - category: geometric-corrections # todo
+      - measurements/uncertainty-ar
+      - measurements/normalisation-ar
+      - corrections/directional-atmospheric-scattering-ar
+      - corrections/water-vapour-ar
+      - corrections/ozone-ar
+      - corrections/gaseous-absorption
+      - corrections/sun-glint
+      - corrections/sky-glint
+      - corrections/whitecap-foam
+      - corrections/adjacency-effects
+      - corrections/turbid-water
+  - category: geometric-corrections-metadata
     requirements:
       - corrections/geometric-ar
-      # todo for 4.2
+      - corrections/coregistration-orthorectification
 
 annexes:
 

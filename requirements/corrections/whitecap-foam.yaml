@@ -1,0 +1,20 @@
+id: cowhifo
+title: Whitecap / Foam Correction
+description:
+requirements:
+  threshold:
+    description: |-
+      Specification of whether the water leaving reflectance or radiance is corrected for the contribution from surface whitecaps and foam.
+  goal:
+    description: |-
+      The data are corrected for the contribution from surface whitecaps and foam and reported on a per-pixel basis.
+    notes:
+      - See [@per-pixel].
+    optional: true
+dependencies:
+  per-pixel: per-pixel/whitecap-foam
+glossary:
+references:
+changes:
+history:
+  - AR 3.10

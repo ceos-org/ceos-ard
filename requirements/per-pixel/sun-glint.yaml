@@ -1,0 +1,23 @@
+id: pisungli
+title: Sun Glint
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether sun glint in a pixel is negligible, correctable (moderate), or uncorrectable (severe).
+    notes:
+      - Sun glint is deemed uncorrectable if the upper limit of the dynamic range of a sensor's spectral band is reached (i.e., radiometric saturation occurs).
+  goal:
+    description: |-
+      Specification of the amount of sun glint for each pixel and spectral band.
+    notes:
+      - An additional product must be provided to specify the amount.
+      - See [@correction].
+    optional: true
+dependencies:
+  correction: corrections/sun-glint
+glossary:
+references:
+changes:
+history:
+  - AR 2.9

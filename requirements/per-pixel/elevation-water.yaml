@@ -1,0 +1,13 @@
+id: piwaele
+title: Elevation
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of approximate elevation (above mean sea level) of the surface of the water body pixels is required for atmospheric correction (range = -430 m to approx. 6500 m)
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.20

@@ -1,0 +1,19 @@
+id: piskygli
+title: Sky Glint
+description: 
+requirements:
+  goal:
+    description: |-
+      Specification of the amount of sky glint for each pixel and spectral band.
+    notes:
+      - An additional product must be provided to specify the amount.
+      - Sky glint is the at-water-surface reflected component of the diffuse downwelling irradiance.
+      - See [@correction].
+    optional: true
+dependencies:
+  correction: corrections/sky-glint
+glossary:
+references:
+changes:
+history:
+  - AR 2.9

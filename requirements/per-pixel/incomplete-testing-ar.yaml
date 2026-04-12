@@ -1,0 +1,19 @@
+id: pixass
+title: Per-pixel Assessment
+description: 
+requirements:
+  threshold:
+    description: |-
+      Identifies pixels for which the per-pixel tests (below) have not all been successfully completed.
+    notes:
+      - This may be the result of missing ancillary data for a subset of the pixels.
+  goal:
+    description: |-
+      Identifies which tests have and have not been successfully completed for each pixel.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.3

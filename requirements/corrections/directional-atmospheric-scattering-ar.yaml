@@ -1,0 +1,13 @@
+id: dirats-ar
+title: Directional Atmospheric Scattering
+description:
+requirements:
+  threshold:
+    description: |-
+      Specification of corrections applied for molecular (Rayleigh) scattering and for aerosol scattering and absorption..
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 3.4

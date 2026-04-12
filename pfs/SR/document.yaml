@@ -58,9 +58,9 @@ requirements:
       - measurements/measurement-sr
       - measurements/uncertainty-sr
       - measurements/normalisation-sr
-      - measurements/directional-atmospheric-scattering
-      - corrections/water-vapour
-      - corrections/ozone
+      - corrections/directional-atmospheric-scattering-sr
+      - corrections/water-vapour-sr
+      - corrections/ozone-sr
   - category: geometric-corrections
     requirements:
       - corrections/geometric-sr

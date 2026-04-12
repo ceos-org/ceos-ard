@@ -1,0 +1,17 @@
+id: ogasab
+title: Other Gaseous Absorption Corrections
+description: 
+requirements:
+  goal:
+    description: Data is corrected for other trace gaseous absorption for affected spectral bands.
+    notes:
+      - Relevant metadata must be provided in [@geometric-uncertainty] and [@instrument].
+    optional: true
+dependencies:
+  geometric-uncertainty: metadata/geometric-uncertainty
+  instrument: metadata/instrument-ar
+glossary:
+references:
+changes:
+history:
+  - AR 3.7

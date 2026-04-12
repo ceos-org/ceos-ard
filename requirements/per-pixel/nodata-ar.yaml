@@ -1,0 +1,13 @@
+id: pinodat-ar
+title: No Data
+description: 
+requirements:
+  threshold:
+    description: |-
+      Pixels that do not correspond to an observation (e.g., empty pixels / invalid observations / below noise floor) are masked.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.2

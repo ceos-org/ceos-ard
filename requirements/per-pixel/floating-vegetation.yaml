@@ -1,0 +1,12 @@
+id: floatveg
+title: Floating Vegetation / Surface Scum
+description: 
+requirements:
+  threshold:
+    description: Specification of whether a pixel is affected by floating vegetation/surface scum.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.15

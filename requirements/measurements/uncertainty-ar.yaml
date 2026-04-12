@@ -1,22 +1,18 @@
-# This requirement is not different to the ST requirement except that it links to traceability-sr instead of traceability-st.
-# This should be solved by aligning the traceability requirements.
 id: muncer-ar
 title: Measurement Uncertainty
-description: |-
-  Note: In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
+description:
 requirements:
-  goal:
+  threshold:
     description: |-
-      An estimate of the certainty of the values is provided in measurement units.
+      An estimate of the uncertainty of the values is provided in measurement units, following the BIPM Guide to the Expression of Uncertainty in Measurement (GUM).
     notes:
-      - This is a requirement for SI traceability. See also [@traceability].
-      - Information on measurement uncertainty should be available in the metadata as a single DOI landing page.
-    optional: true
+      - In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
 dependencies:
-  traceability: metadata/traceability-ar
 glossary:
-  - si
+  - bipm
+  - gum
 references:
+  - gum_2008
 changes:
 history:
-  - SR/NLSR 3.2
+  - AR 3.2

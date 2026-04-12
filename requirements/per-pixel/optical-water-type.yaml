@@ -1,0 +1,12 @@
+id: powaty
+title: Optical Water Type
+description: 
+requirements:
+  threshold:
+    description: Specification of optical water type, when applicable (for optically deep waters).
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.18

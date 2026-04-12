@@ -1,0 +1,18 @@
+id: picloud-ar
+title: Cloud
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether a pixel is cloud or cloud-affected.
+  goal:
+    description: |-
+      As threshold, but clouds and cirrus clouds are differentiated.
+    optional: true
+dependencies:
+glossary:
+references:
+  - foga2017 # goal
+changes:
+history:
+  - AR 2.5

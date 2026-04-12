@@ -1,0 +1,16 @@
+id: podosas
+title: Optically Deep or Optically Shallow Assessment
+description: 
+requirements:
+  threshold:
+    description: |-
+      Information regarding whether pixels are optically deep or shallow is provided if there is an assumption during the processing that a pixel is optically deep or optically shallow.
+  goal:
+    description: |-
+      A flag that indicates optically deep and shallow waters is provided.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.17

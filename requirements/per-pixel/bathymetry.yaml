@@ -1,0 +1,16 @@
+id: pibathy
+title: Bathymetry
+description: 
+requirements:
+  goal:
+    description: |-
+      Water surface to bottom substratum depth (i.e., water column depth) at the specific pixel location is specified.
+    notes:
+      - Specify whether a recalculation to a mean sea level has taken place for oceanic waters.
+      - Specify whether a recalculation to a mean water surface level has taken place for any non-oceanic waters.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.16

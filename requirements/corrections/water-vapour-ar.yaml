@@ -1,0 +1,12 @@
+id: wavap-ar
+title: Water Vapour Corrections
+description:
+requirements:
+  threshold:
+    description: Corrections are applied for water vapour if spectral bands are affected.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 3.5

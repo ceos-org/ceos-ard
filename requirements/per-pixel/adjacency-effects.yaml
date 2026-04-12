@@ -1,0 +1,15 @@
+id: pajdeff
+title: Adjacency Effects
+description: 
+requirements:
+  goal:
+    description: |-
+      Depending on the adjacency effects correction method (embedded in the atmospheric correction or separate from the atmospheric correction) the metadata specifies the amount of per-pixel adjacency effect contamination.
+    notes:
+      - An additional product must be provided to specify the amount.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 2.14

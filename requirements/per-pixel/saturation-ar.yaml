@@ -1,0 +1,17 @@
+id: pisatur-ar
+title: Saturation
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether there is pixel radiometric saturation at Level 1 in one or more spectral bands.
+  goal:
+    description: |-
+      As threshold, with specification of which pixels are radiometrically saturated for each spectral band.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - SAR 2.4
