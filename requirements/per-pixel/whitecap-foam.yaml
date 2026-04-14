@@ -7,12 +7,19 @@ requirements:
       Specification of whether a pixel is affected by whitecaps or foam.
       If affected, detail the method applied.
     notes:
-      - See [@correction].
+      - See [@correction], @dierssen2019, @dierssen2021, @frouin2019, @koepke1984, @moore2000, @wang2017, and @eumetsat2021.
     optional: true
 dependencies:
   correction: corrections/whitecap-foam
 glossary:
 references:
+  - dierssen2019
+  - dierssen2021
+  - frouin2019
+  - koepke1984
+  - moore2000
+  - wang2017
+  - eumetsat2021
 changes:
 history:
   - AR 2.12

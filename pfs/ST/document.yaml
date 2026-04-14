@@ -90,4 +90,4 @@ changes:
       - Former req. 1.9: Removed "on instrument" from "As threshold, but information on instrument should be available".
       - Former req. 2.3: Replaced the wording "e.g., due to missing ancillary data for some pixels." with "This may be the result of missing ancillary data for a subset of the pixels."
       - Annex has been reformatted and updated
-    reason: Migration to the new CEOS-ARD building block.
+    reason: Migration to building blocks.

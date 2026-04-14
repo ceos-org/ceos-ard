@@ -40,6 +40,7 @@ requirements:
       - metadata/spectral-bands-ar
       - metadata/sensor-calibration-ar
       - metadata/radiometric-uncertainty
+      - metadata/radiometric-encoding
       - metadata/algorithms-ar
       - metadata/auxiliary-data-ar
       - metadata/processing-chain-prov-ar
@@ -134,13 +135,16 @@ authors: |-
   - Liesbeth de Keukelare (VITO) 
 
 changes:
-  - date: 2026-03-30
+  - date: 2026-04-13
     author: Matthias Mohr
     level: patch
-    # todo
     change: |-
       - Restructured the document; removed empty or unused parts
       - Document history has been reset. Check the previous versions for details
       - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+      - The definitions are included in the document instead of referring to the CEOS Terms and Defintions Wiki
+      - The references are not grouped by requirements and threshold/goal any longer. Instead, they are listed in the requirements as a note.
       - The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
-    reason: Migration to the new CEOS-ARD building block.
+      - The requirement references (i.e. "3.1-3.3" and "3.4 onwards") were removed from the category description of "Products and Algorithms".
+      - If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
+    reason: Migration to building blocks.

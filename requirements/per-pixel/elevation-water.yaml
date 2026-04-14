@@ -5,9 +5,12 @@ requirements:
   threshold:
     description: |-
       Specification of approximate elevation (above mean sea level) of the surface of the water body pixels is required for atmospheric correction (range = -430 m to approx. 6500 m)
+    notes:
+      - See @guth2021.
 dependencies:
 glossary:
 references:
+  - guth2021
 changes:
 history:
   - AR 2.20

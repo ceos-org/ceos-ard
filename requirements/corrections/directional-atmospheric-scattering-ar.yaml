@@ -5,9 +5,12 @@ requirements:
   threshold:
     description: |-
       Specification of corrections applied for molecular (Rayleigh) scattering and for aerosol scattering and absorption..
+    notes:
+      - See @mobley2016.
 dependencies:
 glossary:
 references:
+  - mobley2016
 changes:
 history:
   - AR 3.4

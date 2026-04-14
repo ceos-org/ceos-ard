@@ -145,4 +145,4 @@ changes:
       - Requirement "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
       - Requirement "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
       - Annex has been reformatted and updated as required by the split
-    reason: Migration to the new CEOS-ARD building block.
+    reason: Migration to building blocks.

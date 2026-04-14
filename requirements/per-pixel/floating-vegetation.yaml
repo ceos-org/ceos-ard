@@ -4,9 +4,17 @@ description:
 requirements:
   threshold:
     description: Specification of whether a pixel is affected by floating vegetation/surface scum.
+    notes:
+      - See @bell2023, @bresciani2014, @gendall2023, @hu2009, @matthews2012, and @matthews2015.
 dependencies:
 glossary:
 references:
+  - bell2023
+  - bresciani2014
+  - gendall2023
+  - hu2009
+  - matthews2012
+  - matthews2015
 changes:
 history:
   - AR 2.15

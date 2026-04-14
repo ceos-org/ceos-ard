@@ -4,9 +4,12 @@ description:
 requirements:
   threshold:
     description: Specification of optical water type, when applicable (for optically deep waters).
+    notes:
+      - See @hieronymi2024.
 dependencies:
 glossary:
 references:
+  - hieronymi2024
 changes:
 history:
   - AR 2.18

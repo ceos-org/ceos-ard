@@ -7,6 +7,7 @@ requirements:
 dependencies:
 glossary:
 references:
+  - mobley2016 #Threshold
 changes:
 history:
   - AR 3.5

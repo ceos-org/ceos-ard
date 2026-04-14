@@ -1,5 +1,5 @@
 id: coskygli
-title: Sky Glint Corrections
+title: Sky Glint Correction
 description:
 requirements:
   threshold:
@@ -7,16 +7,18 @@ requirements:
       Specification of whether or not sky glint is implicitly corrected for in the atmospheric correction procedure
     notes:
       - Sky glint is often modelled in forward models explicitly. It is also often measured with above surface spectroradiometers. However, sky glint is seldom corrected for separately in atmospheric and air-water interface correction methods.
+      - See [@per-pixel], @gege2016, @groetsch2020, and @zhang2017.
   goal:
     description: |-
       Sky glint is separately assessed and corrected for in the data processing. The metadata indicates the surface contributions from sky glint removed from the data.
-    notes:
-      - See [@per-pixel].
     optional: true
 dependencies:
   per-pixel: per-pixel/sky-glint
 glossary:
 references:
+  - gege2016
+  - groetsch2020
+  - zhang2017
 changes:
 history:
   - AR 3.9

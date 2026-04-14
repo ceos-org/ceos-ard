@@ -8,12 +8,14 @@ requirements:
     notes:
       - An additional product must be provided to specify the amount.
       - Sky glint is the at-water-surface reflected component of the diffuse downwelling irradiance.
-      - See [@correction].
+      - See [@correction], @reusen2023, and @fink2014.
     optional: true
 dependencies:
   correction: corrections/sky-glint
 glossary:
 references:
+  - reusen2023
+  - fink2014
 changes:
 history:
-  - AR 2.9
+  - AR 2.10

@@ -4,9 +4,17 @@ description:
 requirements:
   threshold:
     description: Specification of whether a pixel is assessed as being turbid.
+    notes:
+      - See @morel2006, @morel2008, and @hooker2003.
+      - References for the corresponding flag algorithms are @hudson2016 and @shi2007, respectively.
 dependencies:
 glossary:
 references:
+  - hudson2016
+  - morel2006
+  - morel2008
+  - shi2007
+  - hooker2003
 changes:
 history:
   - AR 2.19

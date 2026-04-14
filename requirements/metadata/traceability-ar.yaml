@@ -4,7 +4,7 @@ description:
 requirements:
   threshold:
     description: |-
-      Aquatic Reflectance (dimensionless) or the Remote Sensing Reflectance ($sr^{-1}$) of the water bodies ($AR = \pi \times R_{rs}$) is given.
+      Aquatic Reflectance (dimensionless) or the Remote Sensing Reflectance ($sr^{-1}$) of the water bodies ($AR = \pi \cdot R_{rs}$) is given.
   goal:
     description: Data must be traceable to SI reference standard.
     notes:

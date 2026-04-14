@@ -88,4 +88,4 @@ changes:
       - The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
       - If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
       - Former req. 2.13 has been removed as it had neither a threshold nor a goal requirement.
-    reason: Migration to the new CEOS-ARD building block.
+    reason: Migration to building blocks.

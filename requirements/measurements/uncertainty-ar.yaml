@@ -7,12 +7,14 @@ requirements:
       An estimate of the uncertainty of the values is provided in measurement units, following the BIPM Guide to the Expression of Uncertainty in Measurement (GUM).
     notes:
       - In current practice, users determine fitness for purpose based on knowledge of the lineage of the data, rather than on a specific estimate of measurement uncertainty.
+      - See @gum_6_2020 and @vabson2024.
 dependencies:
 glossary:
   - bipm
   - gum
 references:
-  - gum_2008
+  - gum_6_2020
+  - vabson2024
 changes:
 history:
   - AR 3.2

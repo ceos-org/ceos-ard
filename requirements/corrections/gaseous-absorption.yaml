@@ -6,12 +6,18 @@ requirements:
     description: Data is corrected for other trace gaseous absorption for affected spectral bands.
     notes:
       - Relevant metadata must be provided in [@geometric-uncertainty] and [@instrument].
+      - See @dekeukelaere2018, @harmel2018, @mobley2016, @pahlevan2017, and @pahlevan2021.
     optional: true
 dependencies:
   geometric-uncertainty: metadata/geometric-uncertainty
   instrument: metadata/instrument-ar
 glossary:
 references:
+  - dekeukelaere2018
+  - harmel2018
+  - mobley2016
+  - pahlevan2017
+  - pahlevan2021
 changes:
 history:
   - AR 3.7

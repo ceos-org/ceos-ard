@@ -4,7 +4,7 @@ description:
 requirements:
   threshold:
     description: |-
-      Pixel values that are expressed as a measurement of the Aquatic Reflectance (dimensionless) or the Remote Sensing Reflectance ($sr^{-1}$) of the water bodies ($AR = \pi \times R_{rs}$).
+      Pixel values that are expressed as a measurement of the Aquatic Reflectance (dimensionless) or the Remote Sensing Reflectance ($sr^{-1}$) of the water bodies ($AR = \pi \cdot R_{rs}$).
     notes:
       - Radiometric corrections must lead to a valid measurement of aquatic reflectance.
   goal:

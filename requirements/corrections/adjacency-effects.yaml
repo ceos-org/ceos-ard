@@ -1,12 +1,20 @@
 id: cajdeff
-title: Adjacency Effects
+title: Adjacency Effects Correction
 description: 
 requirements:
   goal:
     description: The data are corrected for adjacency effects.
+    notes:
+      - See @castagna2025, @kiselev2015, @pan2025, @sterckx2015, and @wu2024.
+    optional: true
 dependencies:
 glossary:
 references:
+  - castagna2025
+  - kiselev2015
+  - pan2025
+  - sterckx2015
+  - wu2024
 changes:
 history:
   - AR 3.11

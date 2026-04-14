@@ -1,5 +1,5 @@
 id: cosungli
-title: Sun Glint Corrections
+title: Sun Glint Correction
 description:
 requirements:
   goal:
@@ -7,12 +7,18 @@ requirements:
       Sun glint is removed from the data if a pixel is of correctable (i.e., not radiometrically saturating) sun glint.
     notes:
       - Sun glint removal methods can only partially remove sun glint from a pixel. Over or under correction may occur.
-      - See [@per-pixel].
+      - See [@per-pixel], @botha2016, @groetsch2020, @harmel2018, @kay2009, @kutser2009, and @lavender2010glint.
     optional: true
 dependencies:
   per-pixel: per-pixel/sun-glint
 glossary:
 references:
+  - botha2016
+  - groetsch2020
+  - harmel2018
+  - kay2009
+  - kutser2009
+  - lavender2010glint
 changes:
 history:
   - AR 3.8

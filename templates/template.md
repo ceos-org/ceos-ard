@@ -29,7 +29,7 @@ secPrefix:
   - Section
   - Sections
 secPrefixTemplate: $$p$$&nbsp;"$$i$$"
-# we want to include all citations regardless of usage, see https://pandoc.org/chunkedhtml-demo/9.6-including-uncited-items-in-the-bibliography.html
+# we want to include all citations regardless of usage, see https://pandoc.org/MANUAL.html#including-uncited-items-in-the-bibliography
 nocite: |
   @*
 ---

@@ -4,7 +4,7 @@ description:
 requirements:
   threshold:
     description: |-
-      The metadata lists the coordinate reference system that has been used is detailed.
+      The coordinate reference system that has been used is detailed.
 dependencies:
 glossary:
 references:
