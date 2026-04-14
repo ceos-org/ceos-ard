@@ -27,7 +27,7 @@ Below you can find all Product Family Specifications (PFS) that are currently de
 >
 > For the **latest released version** please visit the [CEOS ARD website](https://ceos.org/ard/index.html#specs).
 
-- **Synthetic Aperture Radar (SAR)**
+- **Synthetic Aperture Radar (SAR)** (SAR is outdated and work in progress)
   - **Normalised Radar Backscatter (NRB)**
   
     *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/NRB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/NRB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/NRB.docx)*
