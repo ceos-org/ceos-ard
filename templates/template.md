@@ -172,7 +172,7 @@ Applies to: ~{ ", ".join(requirement.applies_to) }~
 ~{ requirement[type].description | rstrip }~
 
 ~(         if requirement[type].notes )~
-Notes:
+Note~( if requirement[type].notes | length > 1)~s~( endif )~:
 
 ~(           for note in requirement[type].notes )~
 ~{ loop.index }~. ~{ note }~
