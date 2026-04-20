@@ -1,4 +1,4 @@
-id: mrdopt
+id: memare-optical
 title: Metadata Machine Readability
 description:
 requirements:
@@ -15,4 +15,4 @@ references:
   - iso19115_2_2009
 changes:
 history:
-  - SR/NLSR/ST 1.1
+  - SR/NLSR/ST/AR 1.1

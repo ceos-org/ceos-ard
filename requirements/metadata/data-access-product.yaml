@@ -1,5 +1,5 @@
 # todo: make generic for source and product
-id: dacprd
+id: daccess-prod
 title: Product Data Access
 description: 
 requirements:

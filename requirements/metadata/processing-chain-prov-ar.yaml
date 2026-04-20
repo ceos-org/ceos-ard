@@ -1,0 +1,15 @@
+id: proprov-ar
+title: Processing Chain Provenance
+description: 
+requirements:
+  goal:
+    description: |-
+      Information on processing chain provenance should be available with a detailed description of the processing steps used to generate the product, including the versions of software used, giving full transparency to the users.
+    optional: true
+dependencies:
+glossary:
+  - doi
+references:
+changes:
+history:
+  - AR 1.15

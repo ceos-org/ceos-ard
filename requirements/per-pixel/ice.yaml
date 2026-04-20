@@ -1,0 +1,21 @@
+id: pice
+title: Ice
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether a pixel is ice or ice-affected.
+    notes:
+      - See @dworak2021, @liu2019, @liu2016, @robinson2003, @bourg2014, and @heinila2018.
+dependencies:
+glossary:
+references:
+  - dworak2021
+  - liu2019
+  - liu2016
+  - robinson2003
+  - bourg2014
+  - heinila2018
+changes:
+history:
+  - AR 2.8

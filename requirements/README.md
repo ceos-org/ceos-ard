@@ -13,11 +13,10 @@ The YAML files consist of the following components:
 - `requirements:` (required): The list of sub-requirements.
   - Each requirement has a unique key, often `goal` or `threshold`, but can be anything.
     Each value is a sub-requirement with the following components:
-- `threshold` (required): The threshold requirement(s). Can be set to `null` to indicate that the there is no threshold requirement.
-  - `description` (required): The requirements with Markdown formatting
-  - `notes`: A list of additional notes. A note should be short and not be longer than one paragraph. Limited Markdown formatting is available.
-  - `optional`: If set to `true`, a goal requirement. If not set or `false`, a threshold requirement.
-  - `metadata`: Placeholder for future use.
+    - `description` (required): The requirements with Markdown formatting
+    - `notes`: A list of additional notes. A note should be short and not be longer than one paragraph. Limited Markdown formatting is available.
+    - `optional`: If set to `true`, a goal requirement. If not set or `false`, a threshold requirement.
+    - `metadata`: Placeholder for future use.
 - `dependencies`: A mapping of named dependencies. See section [Dependencies](#dependencies).
 - `glossary`: Any terms that are relevant for this requirement (e.g. are used in the text). Use any file name (without extension) from the [glossary](../glossary/) folder.
 - `references`: Any relevant references for this requirement and are referred to in the text using the @ notation (see [Markdown](#markdown)). Use any file name (without extension) from the [references](../references/) folder.
@@ -29,12 +28,23 @@ todo: Remove goal/threshold from requirements and make each part a separate requ
 ## Markdown
 
 The flavor of Markdown that is implemented here has some additional features.
-You can reference other requirements using the @ notation with the dependency alias.
-For example, if a dependency is defined as `other-requirement: example/other-requirement`,
-you can reference it in text as `[@other-requirement]`.
-During compilation, this is resolved to the correct section reference.
 
-todo: add more details
+See [References / Citation](#references-and-citation) and [Dependencies](#dependencies) for more details.
+
+<!-- todo: add more details -->
+
+## References and Citation
+
+You can use references and citations as in scientific writing.
+
+1. Download the BibTeX file for the reference.
+2. Save it to the [`references`](../references/) folder.
+   The filename (without `.bib` extension) is the reference id and must match the BibTeX entry identifier.
+3. Add the id to the `references` list in the YAML file of the building block.
+4. Optionally, cite the reference inline in any Markdown field (e.g. `description` and `notes`) using `@id` or `[@id]`, where `id` is the reference id:
+   - `@id` renders as `Name (Year)` with the year linking to the reference.
+   - `[@id]` renders as `(Name, Year)` with name and year linking to the reference.
+   - References listed in `references` but not cited inline will still appear in the References section.
 
 ## Dependencies
 

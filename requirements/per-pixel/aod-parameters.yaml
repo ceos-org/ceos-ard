@@ -1,0 +1,23 @@
+id: paodpara
+title: Aerosol Optical Depth Parameters
+description: 
+requirements:
+  goal:
+    description: |-
+      Either per-pixel spectral AOD or per-pixel AOD (550 nm) and Angstrom exponent are provided.
+    notes:
+      - This might be an input or an output parameter.
+    optional: true
+dependencies:
+glossary:
+  - aod
+references:
+  - dekeukelaere2018 #Goal
+  - ilori2019 #Goal
+  - pahlevan2017 #Goal
+  - pahlevan2021 #Goal
+  - vanhellemont2019 #Goal
+  - mobley2016 #Goal
+changes:
+history:
+  - AR 2.13

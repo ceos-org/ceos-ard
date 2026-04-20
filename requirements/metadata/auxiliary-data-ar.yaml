@@ -1,0 +1,17 @@
+id: auxdat-ar
+title: Auxiliary Data
+description: 
+requirements:
+  threshold:
+    description: Lists the sources of auxiliary data used in the generation process.
+  goal:
+    description: |-
+      As threshold, but information on auxiliary data should be available for free online download, contemporaneously with the product or through a link to the source.
+    optional: true
+dependencies:
+glossary:
+  - auxiliary-data
+references:
+changes:
+history:
+  - AR 1.14

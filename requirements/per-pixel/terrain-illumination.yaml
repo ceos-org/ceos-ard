@@ -1,4 +1,4 @@
-id: pptill
+id: piteric
 title: Terrain Illumination Correction
 description: 
 requirements:
@@ -11,4 +11,4 @@ glossary:
 references:
 changes:
 history:
-  - SR 2.9
+  - SR 2.12

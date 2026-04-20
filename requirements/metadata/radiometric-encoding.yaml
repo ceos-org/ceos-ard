@@ -1,0 +1,12 @@
+id: radenc
+title: Radiometric Encoding
+description:
+requirements:
+  threshold:
+    description: Range and bit depth are provided.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 1.12a

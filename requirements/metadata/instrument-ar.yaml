@@ -1,0 +1,17 @@
+id: instru-ar
+title: Instrument
+description:
+requirements:
+  threshold:
+    description: |-
+      The instrument used to collect the data is identified.
+  goal:
+    description: |-
+      As threshold, with references to the relevant “CEOS Missions, Instruments, and Measurements Database” record ([database.eohandbook.com](https://database.eohandbook.com)).
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 1.9

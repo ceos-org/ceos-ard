@@ -1,8 +1,8 @@
 title: Surface Reflectance
 version: 5.0.1-draft
 type: Optical
-applies_to: |-
-  Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.
+applies_to: Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.
+background:
 
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
@@ -25,7 +25,7 @@ requirements:
       - metadata/traceability-sr
       - metadata/machine-readability-optical
       - metadata/time-sr
-      - metadata/geo-area-sr
+      - metadata/geo-area-optical
       - metadata/crs-optical
       - metadata/map-projection-sr
       - metadata/geometric-correction-methods-sr
@@ -41,7 +41,7 @@ requirements:
       - metadata/data-quality-sr
   - category: per-pixel-metadata
     requirements:
-      - metadata/machine-readability-per-pixel-optical
+      - per-pixel/machine-readability
       - per-pixel/nodata
       - per-pixel/incomplete-testing
       - per-pixel/saturation
@@ -58,9 +58,9 @@ requirements:
       - measurements/measurement-sr
       - measurements/uncertainty-sr
       - measurements/normalisation-sr
-      - measurements/directional-atmospheric-scattering
-      - corrections/water-vapour
-      - corrections/ozone
+      - corrections/directional-atmospheric-scattering-sr
+      - corrections/water-vapour-sr
+      - corrections/ozone-sr
   - category: geometric-corrections
     requirements:
       - corrections/geometric-sr
@@ -83,9 +83,9 @@ changes:
     change: |-
       - Renamed CARD4L to CEOS-ARD
       - Restructured the document; removed empty or unused parts
-      - Document history has ben reset. Check the previous versions for details
+      - Document history has been reset. Check the previous versions for details
       - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
       - The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
       - If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
       - Former req. 2.13 has been removed as it had neither a threshold nor a goal requirement.
-    reason: Migration to the new CEOS-ARD building block.
+    reason: Migration to building blocks.

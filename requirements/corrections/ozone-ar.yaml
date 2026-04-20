@@ -1,0 +1,24 @@
+id: cozone
+title: Ozone Corrections
+description:
+requirements:
+  threshold:
+    description: |-
+      Data is corrected for ozone if spectral bands are affected.
+    notes:
+      - Relevant metadata must be provided in [@geometric-uncertainty] and [@instrument].
+      - See @dekeukelaere2018, @harmel2018, @mobley2016, @pahlevan2017, @pahlevan2021, and @vanhellemont2019.
+dependencies:
+  geometric-uncertainty: metadata/geometric-uncertainty
+  instrument: metadata/instrument-ar
+glossary:
+references:
+  - dekeukelaere2018
+  - harmel2018
+  - mobley2016
+  - pahlevan2017
+  - pahlevan2021
+  - vanhellemont2019
+changes:
+history:
+  - AR 3.6

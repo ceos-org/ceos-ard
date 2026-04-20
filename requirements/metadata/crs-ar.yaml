@@ -1,0 +1,13 @@
+id: crs-ar
+title: Coordinate Reference System
+description:
+requirements:
+  threshold:
+    description: |-
+      The coordinate reference system that has been used is detailed.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 1.5

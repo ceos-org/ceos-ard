@@ -1,0 +1,17 @@
+id: cotuwa
+title: Turbid Water Reflectance Correction
+description: 
+requirements:
+  threshold:
+    description: Specification of whether the atmospheric correction accounted for a pixel being turbid or not.
+    notes:
+      - See @gossn2019, @moore1999, and @stumpf2003.
+dependencies:
+glossary:
+references:
+  - gossn2019
+  - moore1999
+  - stumpf2003
+changes:
+history:
+  - AR 3.12

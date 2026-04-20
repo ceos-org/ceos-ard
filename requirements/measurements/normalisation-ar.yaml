@@ -1,0 +1,20 @@
+id: mnormal-ar
+title: Measurement Normalisation
+description: 
+requirements:
+  goal:
+    description: |-
+      Measurements are normalised (to nadir) to remove the effect of bidirectional dependence of the upwelling radiance on observation and solar-illumination geometries.
+    optional: true
+dependencies:
+glossary:
+references:
+  - fan2016 #Goal
+  - lee2011 #Goal
+  - mobley2016 #Goal
+  - morel2002 #Goal
+  - park2005 #Goal
+  - soppa2021 #Goal
+changes:
+history:
+  - AR 3.3

@@ -1,0 +1,28 @@
+id: corore
+title: Co-Registration and Ortho-Rectification
+description:
+requirements:
+  threshold:
+    description: |-
+      Co-registration is performed to ensure consistency of pixel location in each spectral band of one image at 0.5 GSD.
+
+      Ortho rectification specifies the pointing accuracy related to a geographic reference grid. The associated uncertainty is pixel size dependent and therefore cannot be given an a priori measure of uncertainty.
+
+      The specifications of the co-registration and ortho-rectification processing (including parameterisation data) must be provided, including the estimated uncertainty of each processing, in publicly available documentation.
+    notes:
+      - Including but not limited to ocean-to-sea to coastal, estuarine, deltaic, lagoonal waters and inland water bodies such as canals, rivers, lakes and reservoirs.
+  goal:
+    description: |-
+      Co-registration is performed to ensure consistency of pixel location in each spectral band of one image at 0.2 GSD.
+
+      Ortho rectification specifies the pointing accuracy related to a geographic reference grid. The associated uncertainty is pixel size dependent and therefore cannot be given an a priori measure of uncertainty.
+
+      The specifications of the co-registration and ortho-rectification processing (including parameterisation data) must be provided, including the estimated uncertainty of each processing, in publicly available documentation.
+    optional: true
+dependencies:
+glossary:
+  - gsd
+references:
+changes:
+history:
+  - AR 4.2

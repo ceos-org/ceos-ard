@@ -1,0 +1,18 @@
+id: lawama-ar
+title: Land
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether a pixel is less than 100% water covered due to land.
+    notes:
+      - See @jones2019, @mikelsons2021, and @pekel2016.
+dependencies:
+glossary:
+references:
+  - jones2019
+  - mikelsons2021
+  - pekel2016
+changes:
+history:
+  - AR 2.7

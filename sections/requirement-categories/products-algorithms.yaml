@@ -1,0 +1,13 @@
+id: pral
+title: Products and Algorithms
+# ToDo: The general requirements in the second paragraph have to be moved to the requirements itself
+description: |-
+  The following requirements must be met for all pixels in a collection. The requirements specify both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes.
+
+  Metadata must contain a single DOI landing page with relevant information to support each requirement. For corrections, references to a citable peer-reviewed algorithm or technical documentation regarding the implementation of that algorithm and the sources of ancillary data used to make corrections/provision of parameterisation data are required. Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.
+glossary:
+  - ancillary-data
+  - atbd
+  - doi
+references:
+changes:

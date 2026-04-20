@@ -1,0 +1,16 @@
+id: sencal-ar
+title: Sensor Calibration
+description:
+requirements:
+  threshold:
+    description: Binary description of calibrated/not calibrated only.
+  goal:
+    description: |-
+      Specification of sensor calibration parameters including history of onboard calibrations where available.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 1.11

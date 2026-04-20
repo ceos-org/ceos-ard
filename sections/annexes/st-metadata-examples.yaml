@@ -4,7 +4,7 @@ description: |-
 
   #### Traceability
 
-  Refers to [@sec:meta-trcst]
+  Refers to [@sec:meta-trace-st]
 
   Example of measurement traceability in metadata:
 
@@ -40,7 +40,7 @@ description: |-
 
   #### Data Collection Time
 
-  Refers to [@sec:meta-timst]
+  Refers to [@sec:meta-time-st]
 
   Example of scene center time (UTC):
 
@@ -67,7 +67,7 @@ description: |-
 
   #### Geographical Area
 
-  Refers to [@sec:meta-geoast]
+  Refers to [@sec:meta-geoarea-st]
 
   Example of the bounding coordinates in decimal degrees (WGS84):
 
@@ -89,7 +89,7 @@ description: |-
 
   #### Map Projection
 
-  Refers to [@sec:meta-mpst]
+  Refers to [@sec:meta-mapproj-st]
 
   ```xml
   <projection_information datum="WGS84" projection="AEA" units="meters">
@@ -109,7 +109,7 @@ description: |-
 
   #### Geometric Correction Source
 
-  Refers to [@sec:meta-gmcmst]
+  Refers to [@sec:meta-geocorm-st]
 
   Example of elevation source:
 
@@ -132,7 +132,7 @@ description: |-
 
   #### Geometric Accuracy of the Data
 
-  Refers to [@sec:meta-gmast]
+  Refers to [@sec:meta-geoacc-st]
 
   ```xml
   <geometric_rmse_model>9.021</geometric_rmse_model>
@@ -142,7 +142,7 @@ description: |-
 
   #### Instrument
 
-  Refers to [@sec:meta-insopt]
+  Refers to [@sec:meta-instru-optical]
 
   ```xml
   <satellite>LANDSAT_8</satellite>
@@ -171,7 +171,7 @@ description: |-
 
   #### Sensor Calibration
 
-  Refers to [@sec:meta-scaopt]
+  Refers to [@sec:meta-sencal-optical]
 
   ```xml
   <cpf_name>LC08CPF_20180101_20180331_01.02</cpf_name>
@@ -179,7 +179,7 @@ description: |-
 
   #### Algorithms
 
-  Refers to [@sec:meta-algos]
+  Refers to [@sec:meta-malgos-st]
 
   Example for Surface Temperature algorithm version:
 
@@ -189,7 +189,7 @@ description: |-
 
   #### Auxiliary Data
 
-  Refers to [@sec:meta-auxopt]
+  Refers to [@sec:meta-auxdat-optical]
 
   All Auxiliary Datafiles (ADFs) are listed in the XML wrapper:
 
@@ -201,7 +201,7 @@ description: |-
 
   #### Processing Chain Provenance
 
-  Refers to [@sec:meta-pcpst]
+  Refers to [@sec:meta-proprov-st]
 
   Processing chain provenance information is stored in the XML wrapper under the following tag:
 
@@ -211,7 +211,7 @@ description: |-
 
   #### Overall Data Quality
 
-  Refers to [@sec:meta-dqlst]
+  Refers to [@sec:meta-odqual-st]
 
   Overall data quality information is stored in the XML wrapper under the following tag:
 
@@ -223,7 +223,7 @@ description: |-
 
   #### No Data
 
-  Refers to [@sec:pxl-ppnodt]
+  Refers to [@sec:pxl-pinodat]
 
   Example of the fill_value specified for each band in metadata:
 
@@ -251,7 +251,7 @@ description: |-
 
   #### Incomplete Testing
 
-  Refers to [@sec:pxl-ppinct]
+  Refers to [@sec:pxl-pincot]
 
   The "flags_in.nc" datafile contains per-pixel information on "no / bad data through saturation / incomplete testing etc". The following field has an "unfilled" flag:
 
@@ -263,7 +263,7 @@ description: |-
 
   #### Saturation
 
-  Refers to [@sec:pxl-ppsatn]
+  Refers to [@sec:pxl-pisatur]
 
   Example of RADSATQA band showing the saturation information for the thermal bands used for Surface Temperature calculation:
 
@@ -304,7 +304,7 @@ description: |-
 
   #### Cloud
 
-  Refers to [@sec:pxl-ppclod]
+  Refers to [@sec:pxl-picloud]
 
   Example of PIXELQA showing the bit value for cloud pixels (as well as cloud and cirrus confidence):
 
@@ -357,13 +357,13 @@ description: |-
 
   #### Cloud Shadow
 
-  Refers to [@sec:pxl-ppclsd]
+  Refers to [@sec:pxl-picloudsh]
 
   Please see the cloud shadow part in the example provided in requirement 2.5
 
   #### Snow/Ice Mask
 
-  Refers to [@sec:pxl-ppsisr]
+  Refers to [@sec:pxl-snowice-sr]
 
   Please see the snow part in the example provided in requirement 2.5
 

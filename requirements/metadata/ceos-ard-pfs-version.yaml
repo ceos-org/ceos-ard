@@ -1,0 +1,13 @@
+id: ardver
+title: CEOS-ARD PFS Compliance Version
+description: 
+requirements:
+  threshold:
+    description: Version of the CEOS-ARD PFS with which the product is complying is identified.
+dependencies:
+glossary:
+  - ceos-ard
+references:
+changes:
+history:
+  - AR 1.0

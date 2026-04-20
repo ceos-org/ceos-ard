@@ -1,5 +1,5 @@
 # todo: remove product data mentions (or replace with measurement) to be resuable in other products
-id: geobx
+id: geobbox
 title: Product Bounding Box
 description: 
 requirements:
@@ -10,7 +10,7 @@ requirements:
     notes:
       - Four corners of the product file are recommended for scenes crossing the Antemeridian, or the North or the South Pole. 
 dependencies:
-  crs: metadata/crs
+  crs: metadata/crs-sar
 glossary:
 references:
 changes:

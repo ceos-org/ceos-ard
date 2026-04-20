@@ -1,0 +1,18 @@
+id: malgos-ar
+title: Algorithms
+description: 
+requirements:
+  threshold:
+    description: |-
+      All algorithms and the sequence in which they were applied in the generation process are identified.
+
+      Algorithms must be published and validated, and a description of the validation process is included.
+    notes:
+      - It is possible that corrections are applied through non-disclosed processes. CEOS-ARD does not require full and open data and methods.
+dependencies:
+glossary:
+  - ceos-ard
+references:
+changes:
+history:
+  - AR 1.13

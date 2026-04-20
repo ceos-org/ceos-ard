@@ -1,0 +1,17 @@
+id: radunc
+title: Measurand Radiometric Uncertainty
+description:
+requirements:
+  threshold:
+    description: |-
+      Metrics describing the assessed radiometric uncertainty of the version of the data or product are provided. Method of determination of radiometric uncertainty is specified.
+  goal:
+    description: |-
+      As threshold, but the absolute radiometric uncertainty of the data is provided.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - AR 1.12
