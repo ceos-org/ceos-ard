@@ -22,13 +22,14 @@ All pull requests additionally require a review of a CEOS-ARD team members.
 
 ## Release Process
 
-The CI already already creates Editor's Drafts. These can be used to create releases.
+To release a specific PFS document, create a GitHub Release with a tag following the pattern `<PFS>-v<major>.<minor>.<patch>`, e.g. `SR-v5.0.1`.
 
-Use that file, check whether everything looks good and then create PDF from it.
+The release workflow will automatically:
 
-These two files can then be uploaded to the CEOS-ARD website.
+1. Generate the release documents (PDF, HTML, DOCX) using the CEOS-ARD CLI.
+2. Attach the generated files to the GitHub Release.
 
-Also make sure to update the tables in the README files and on the CEOS-ARD website.
-In the README files make sure to add the now outdated version version to the
-"Older Versions" table at the top. Also update the links and version number in
-the "Released Version" section.
+After the release is published, get the newly generated PFS documents from the
+[Releases page on the ceos-ard GitHub repository](https://github.com/ceos-org/ceos-ard/releases).
+
+Upload these documents to the CEOS-ARD website.
