@@ -1,5 +1,5 @@
 title: Surface Temperature
-version: 5.0.0-draft
+version: 5.0.1
 type: Optical
 applies_to: Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths.
   These typically operate with ground sample distance and resolution in the order of 10-100m;

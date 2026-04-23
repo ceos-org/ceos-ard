@@ -1,5 +1,5 @@
 title: Nighttime Lights Surface Radiance
-version: 1.0.0-draft
+version: 1.0.1
 type: Optical
 applies_to: Data collected by Synthetic Aperture Radar sensors
 background: |-

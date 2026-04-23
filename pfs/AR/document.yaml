@@ -1,5 +1,5 @@
 title: Aquatic Reflectance
-version: 2.0.0-draft
+version: 2.0.1
 type: Optical
 applies_to: Data collected with multispectral and hyperspectral imaging sensors operating in the VIS/NIR/SWIR wavelengths over water bodies (including oceans, seas, coastal zones, and inland waters). These typically operate with ground sample distance and resolution in the order of 1-4000 metres however the specification is not inherently limited to these resolutions.
 background:
