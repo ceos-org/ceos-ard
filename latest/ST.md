@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Surface Temperature - Version 5.0.0-draft
+  CEOS-ARD - Optical - Surface Temperature - Version 5.0.1-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -39,6 +39,11 @@ nocite: |
 # CEOS-ARD - Optical - Surface Temperature
 
 &nbsp;
+
+## Draft Version
+
+This is a draft version.
+Please visit the [CEOS-ARD website](https://ceos.org/ard) for the latest endorsed version of this document.
 
 ## Document Status
 
@@ -88,7 +93,7 @@ Migration to building blocks.
 Optical, Surface Temperature (ST)
 
 **Version:**
-5.0.0-draft
+5.0.1-draft
 
 **Applies to:**
 Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths. These typically operate with ground sample distance and resolution in the order of 10-100m; however, the Specification is not inherently limited to this resolution.

@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Surface Reflectance - Version 5.0.1-draft
+  CEOS-ARD - Optical - Surface Reflectance - Version 5.0.2-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -39,6 +39,11 @@ nocite: |
 # CEOS-ARD - Optical - Surface Reflectance
 
 &nbsp;
+
+## Draft Version
+
+This is a draft version.
+Please visit the [CEOS-ARD website](https://ceos.org/ard) for the latest endorsed version of this document.
 
 ## Document Status
 
@@ -86,7 +91,7 @@ Migration to building blocks.
 Optical, Surface Reflectance (SR)
 
 **Version:**
-5.0.1-draft
+5.0.2-draft
 
 **Applies to:**
 Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.

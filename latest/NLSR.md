@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Nighttime Lights Surface Radiance - Version 1.0.0-draft
+  CEOS-ARD - Optical - Nighttime Lights Surface Radiance - Version 1.0.1-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -39,6 +39,11 @@ nocite: |
 # CEOS-ARD - Optical - Nighttime Lights Surface Radiance
 
 &nbsp;
+
+## Draft Version
+
+This is a draft version.
+Please visit the [CEOS-ARD website](https://ceos.org/ard) for the latest endorsed version of this document.
 
 ## Document Status
 
@@ -83,7 +88,7 @@ Migration to building blocks.
 Optical, Nighttime Lights Surface Radiance (NLSR)
 
 **Version:**
-1.0.0-draft
+1.0.1-draft
 
 **Applies to:**
 Data collected by Synthetic Aperture Radar sensors

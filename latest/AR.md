@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Aquatic Reflectance - Version 2.0.0-draft
+  CEOS-ARD - Optical - Aquatic Reflectance - Version 2.0.1-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -39,6 +39,11 @@ nocite: |
 # CEOS-ARD - Optical - Aquatic Reflectance
 
 &nbsp;
+
+## Draft Version
+
+This is a draft version.
+Please visit the [CEOS-ARD website](https://ceos.org/ard) for the latest endorsed version of this document.
 
 ## Document Status
 
@@ -117,7 +122,7 @@ Migration to building blocks.
 Optical, Aquatic Reflectance (AR)
 
 **Version:**
-2.0.0-draft
+2.0.1-draft
 
 **Applies to:**
 Data collected with multispectral and hyperspectral imaging sensors operating in the VIS/NIR/SWIR wavelengths over water bodies (including oceans, seas, coastal zones, and inland waters). These typically operate with ground sample distance and resolution in the order of 1-4000 metres however the specification is not inherently limited to these resolutions.
