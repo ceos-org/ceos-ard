@@ -183,4 +183,6 @@ changes:
       - Requirement "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
       - Requirement "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
       - Annex has been reformatted and updated as required by the split
+
+      **Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3](https://ceos.org/ard/files/PFS/SAR/v1.3/CEOS-ARD_PFS_Synthetic_Aperture_Radar_v1.3.pdf) for product type "POL".
     reason: Migration to building blocks.
