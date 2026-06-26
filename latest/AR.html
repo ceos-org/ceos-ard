@@ -15,6 +15,8 @@ text-rendering: optimizeLegibility;
 font-kerning: normal;
 font-size: 12pt;
 font-family: Aptos, sans-serif;
+background-color: white;
+color: black;
 }
 @media screen {
 body {
@@ -190,7 +192,6 @@ vertical-align: middle;
 div.csl-bib-body { }
 div.csl-entry {
 clear: both;
-margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
 margin-left:2em;
@@ -770,7 +771,7 @@ Cloud</h4>
 <p>As threshold, but clouds and cirrus clouds are differentiated.</p>
 <p>Note:</p>
 <ol type="1">
-<li>See <span class="citation" data-cites="foga2017">Foga et al. (<a href="#ref-foga2017" role="doc-biblioref">2017</a>)</span>, <span class="citation" data-cites="skakun2022">Skakun et al. (<a href="#ref-skakun2022" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="zhu2012">Zhu and Woodcock (<a href="#ref-zhu2012" role="doc-biblioref">2012</a>)</span>, and <span class="citation" data-cites="zhu2015">Zhu, Wang, and Woodcock (<a href="#ref-zhu2015" role="doc-biblioref">2015</a>)</span>.</li>
+<li>See <span class="citation" data-cites="foga2017">Foga et al. (<a href="#ref-foga2017" role="doc-biblioref">2017</a>)</span>, <span class="citation" data-cites="skakun2022">Skakun et al. (<a href="#ref-skakun2022" role="doc-biblioref">2022</a>)</span>, <span class="citation" data-cites="zhu2012">Zhu and Woodcock (<a href="#ref-zhu2012" role="doc-biblioref">2012</a>)</span>, and <span class="citation" data-cites="zhu2015">Zhu et al. (<a href="#ref-zhu2015" role="doc-biblioref">2015</a>)</span>.</li>
 </ol>
 <hr />
 <h4 data-label="|Per-Pixel Metadata: Cloud Shadow" id="sec:pxl-picloudsh-ar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud-shadow-ar.yaml--><code>2.6.</code>
@@ -803,7 +804,7 @@ Ice</h4>
 <p>Specification of whether a pixel is ice or ice-affected.</p>
 <p>Note:</p>
 <ol type="1">
-<li>See <span class="citation" data-cites="dworak2021">Dworak et al. (<a href="#ref-dworak2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="liu2019">Liu and Key (<a href="#ref-liu2019" role="doc-biblioref">2015</a>)</span>, <span class="citation" data-cites="liu2016">Liu, Key, and Mahoney (<a href="#ref-liu2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="robinson2003">Robinson et al. (<a href="#ref-robinson2003" role="doc-biblioref">2003</a>)</span>, <span class="citation" data-cites="bourg2014">Bourg (<a href="#ref-bourg2014" role="doc-biblioref">2014</a>)</span>, and <span class="citation" data-cites="heinila2018">Heinilä, Kirsikka and Metsämäki, Sari and
+<li>See <span class="citation" data-cites="dworak2021">Dworak et al. (<a href="#ref-dworak2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="liu2019">Liu and Key (<a href="#ref-liu2019" role="doc-biblioref">2015</a>)</span>, <span class="citation" data-cites="liu2016">Liu et al. (<a href="#ref-liu2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="robinson2003">Robinson et al. (<a href="#ref-robinson2003" role="doc-biblioref">2003</a>)</span>, <span class="citation" data-cites="bourg2014">Bourg (<a href="#ref-bourg2014" role="doc-biblioref">2014</a>)</span>, and <span class="citation" data-cites="heinila2018">Heinilä, Kirsikka and Metsämäki, Sari and
 Mattila, Olli-Pekka (<a href="#ref-heinila2018" role="doc-biblioref">2018</a>)</span>.</li>
 </ol>
 <h5 id="goal-requirements-26">Goal requirements:</h5>
@@ -820,10 +821,7 @@ correctable (moderate), or uncorrectable (severe).</p>
 <li>Sun glint is deemed uncorrectable if the upper limit of the dynamic
 range of a sensor’s spectral band is reached (i.e., radiometric
 saturation occurs).</li>
-<li>See <span class="citation" data-cites="botha2016">Botha, Brando, and
-Dekker (<a href="#ref-botha2016" role="doc-biblioref">2016</a>)</span>,
-<span class="citation" data-cites="kay2013">Kay, Hedley, and Lavender
-(<a href="#ref-kay2013" role="doc-biblioref">2013</a>)</span>, and <span class="citation" data-cites="bourg2014">Bourg (<a href="#ref-bourg2014" role="doc-biblioref">2014</a>)</span>.</li>
+<li>See <span class="citation" data-cites="botha2016">Botha et al. (<a href="#ref-botha2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="kay2013">Kay et al. (<a href="#ref-kay2013" role="doc-biblioref">2013</a>)</span>, and <span class="citation" data-cites="bourg2014">Bourg (<a href="#ref-bourg2014" role="doc-biblioref">2014</a>)</span>.</li>
 </ol>
 <h5 id="goal-requirements-27">Goal requirements:</h5>
 <p>Specification of the amount of sun glint for each pixel and spectral
@@ -872,7 +870,7 @@ affected, detail the method applied.</p>
 <p>Note:</p>
 <ol type="1">
 <li>See Section “<a href="#sec:pral-cowhifo">Products and Algorithms:
-Whitecap / Foam Correction</a>”, <span class="citation" data-cites="dierssen2019">Dierssen (<a href="#ref-dierssen2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="dierssen2021">Dierssen (<a href="#ref-dierssen2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="frouin2019">Frouin et al. (<a href="#ref-frouin2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="koepke1984">Koepke (<a href="#ref-koepke1984" role="doc-biblioref">1984</a>)</span>, <span class="citation" data-cites="moore2000">K. D. Moore, Voss, and Gordon (<a href="#ref-moore2000" role="doc-biblioref">2000</a>)</span>, <span class="citation" data-cites="wang2017">Wang et al. (<a href="#ref-wang2017" role="doc-biblioref">2017</a>)</span>, and <span class="citation" data-cites="eumetsat2021">EUMETSAT (<a href="#ref-eumetsat2021" role="doc-biblioref">2021</a>)</span>.</li>
+Whitecap / Foam Correction</a>”, <span class="citation" data-cites="dierssen2019">Dierssen (<a href="#ref-dierssen2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="dierssen2021">Dierssen (<a href="#ref-dierssen2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="frouin2019">Frouin et al. (<a href="#ref-frouin2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="koepke1984">Koepke (<a href="#ref-koepke1984" role="doc-biblioref">1984</a>)</span>, <span class="citation" data-cites="moore2000">Moore et al. (<a href="#ref-moore2000" role="doc-biblioref">2000</a>)</span>, <span class="citation" data-cites="wang2017">Wang et al. (<a href="#ref-wang2017" role="doc-biblioref">2017</a>)</span>, and <span class="citation" data-cites="eumetsat2021">EUMETSAT (<a href="#ref-eumetsat2021" role="doc-biblioref">2021</a>)</span>.</li>
 </ol>
 <hr />
 <h4 data-label="|Per-Pixel Metadata: Aerosol Optical Depth Parameters" id="sec:pxl-paodpara"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/aod-parameters.yaml--><code>2.13.</code>
@@ -901,10 +899,7 @@ contamination.</p>
 <p>Notes:</p>
 <ol type="1">
 <li>An additional product must be provided to specify the amount.</li>
-<li>See <span class="citation" data-cites="botha2016">Botha, Brando, and
-Dekker (<a href="#ref-botha2016" role="doc-biblioref">2016</a>)</span>,
-<span class="citation" data-cites="bulgarelli2014">Bulgarelli, Kiselev,
-and Zibordi (<a href="#ref-bulgarelli2014" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="bulgarelli2018">Bulgarelli and Zibordi (<a href="#ref-bulgarelli2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="sei2015">Sei (<a href="#ref-sei2015" role="doc-biblioref">2015</a>)</span>, and <span class="citation" data-cites="wu2023">Wu, Knudby, and Lapen (<a href="#ref-wu2023" role="doc-biblioref">2023</a>)</span>.</li>
+<li>See <span class="citation" data-cites="botha2016">Botha et al. (<a href="#ref-botha2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="bulgarelli2014">Bulgarelli et al. (<a href="#ref-bulgarelli2014" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="bulgarelli2018">Bulgarelli and Zibordi (<a href="#ref-bulgarelli2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="sei2015">Sei (<a href="#ref-sei2015" role="doc-biblioref">2015</a>)</span>, and <span class="citation" data-cites="wu2023">Wu et al. (<a href="#ref-wu2023" role="doc-biblioref">2023</a>)</span>.</li>
 </ol>
 <hr />
 <h4 data-label="|Per-Pixel Metadata: Floating Vegetation / Surface Scum" id="sec:pxl-floatveg"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/floating-vegetation.yaml--><code>2.15.</code>
@@ -915,9 +910,7 @@ Floating Vegetation / Surface Scum</h4>
 vegetation/surface scum.</p>
 <p>Note:</p>
 <ol type="1">
-<li>See <span class="citation" data-cites="bell2023">Bell (<a href="#ref-bell2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="bresciani2014">Bresciani et al. (<a href="#ref-bresciani2014" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="gendall2023">Gendall et al. (<a href="#ref-gendall2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="hu2009">Hu (<a href="#ref-hu2009" role="doc-biblioref">2009</a>)</span>, <span class="citation" data-cites="matthews2012">Matthews, Bernard, and Robertson (<a href="#ref-matthews2012" role="doc-biblioref">2012</a>)</span>, and
-<span class="citation" data-cites="matthews2015">Matthews and Odermatt
-(<a href="#ref-matthews2015" role="doc-biblioref">2015</a>)</span>.</li>
+<li>See <span class="citation" data-cites="bell2023">Bell (<a href="#ref-bell2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="bresciani2014">Bresciani et al. (<a href="#ref-bresciani2014" role="doc-biblioref">2014</a>)</span>, <span class="citation" data-cites="gendall2023">Gendall et al. (<a href="#ref-gendall2023" role="doc-biblioref">2023</a>)</span>, <span class="citation" data-cites="hu2009">Hu (<a href="#ref-hu2009" role="doc-biblioref">2009</a>)</span>, <span class="citation" data-cites="matthews2012">Matthews et al. (<a href="#ref-matthews2012" role="doc-biblioref">2012</a>)</span>, and <span class="citation" data-cites="matthews2015">Matthews and Odermatt (<a href="#ref-matthews2015" role="doc-biblioref">2015</a>)</span>.</li>
 </ol>
 <h5 id="goal-requirements-33">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
@@ -982,11 +975,9 @@ Turbid Water</h4>
 <p>Specification of whether a pixel is assessed as being turbid.</p>
 <p>Notes:</p>
 <ol type="1">
-<li>See <span class="citation" data-cites="morel2006">Andre Morel and
-Bélanger (<a href="#ref-morel2006" role="doc-biblioref">2006</a>)</span>, <span class="citation" data-cites="morel2008">André Morel and Gentili (<a href="#ref-morel2008" role="doc-biblioref">2008</a>)</span>, and <span class="citation" data-cites="hooker2003">Hooker et al. (<a href="#ref-hooker2003" role="doc-biblioref">2003</a>)</span>.</li>
-<li>References for the corresponding flag algorithms are <span class="citation" data-cites="hudson2016">Hudson, Overeem, and Syvitski
-(<a href="#ref-hudson2016" role="doc-biblioref">2016</a>)</span> and
-<span class="citation" data-cites="shi2007">Shi and Wang (<a href="#ref-shi2007" role="doc-biblioref">2007</a>)</span>,
+<li>See <span class="citation" data-cites="morel2006">Morel and Bélanger
+(<a href="#ref-morel2006" role="doc-biblioref">2006</a>)</span>, <span class="citation" data-cites="morel2008">Morel and Gentili (<a href="#ref-morel2008" role="doc-biblioref">2008</a>)</span>, and <span class="citation" data-cites="hooker2003">Hooker et al. (<a href="#ref-hooker2003" role="doc-biblioref">2003</a>)</span>.</li>
+<li>References for the corresponding flag algorithms are <span class="citation" data-cites="hudson2016">Hudson et al. (<a href="#ref-hudson2016" role="doc-biblioref">2016</a>)</span> and <span class="citation" data-cites="shi2007">Shi and Wang (<a href="#ref-shi2007" role="doc-biblioref">2007</a>)</span>,
 respectively.</li>
 </ol>
 <h5 id="goal-requirements-37">Goal requirements:</h5>
@@ -1138,8 +1129,8 @@ Sun Glint Correction</h4>
 <li>Sun glint removal methods can only partially remove sun glint from a
 pixel. Over or under correction may occur.</li>
 <li>See Section “<a href="#sec:pxl-pisungli">Per-Pixel Metadata: Sun
-Glint</a>”, <span class="citation" data-cites="botha2016">Botha, Brando,
-and Dekker (<a href="#ref-botha2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="groetsch2020">Groetsch, Foster, and Gilerson (<a href="#ref-groetsch2020" role="doc-biblioref">2020</a>)</span>, <span class="citation" data-cites="harmel2018">Harmel et al. (<a href="#ref-harmel2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="kay2009">Kay, Hedley, and Lavender (<a href="#ref-kay2009" role="doc-biblioref">2009</a>)</span>, <span class="citation" data-cites="kutser2009">Kutser, Vahtmäe, and Praks (<a href="#ref-kutser2009" role="doc-biblioref">2009</a>)</span>, and <span class="citation" data-cites="lavender2010glint">Lavender and Kay (<a href="#ref-lavender2010glint" role="doc-biblioref">2010</a>)</span>.</li>
+Glint</a>”, <span class="citation" data-cites="botha2016">Botha et al.
+(<a href="#ref-botha2016" role="doc-biblioref">2016</a>)</span>, <span class="citation" data-cites="groetsch2020">Groetsch et al. (<a href="#ref-groetsch2020" role="doc-biblioref">2020</a>)</span>, <span class="citation" data-cites="harmel2018">Harmel et al. (<a href="#ref-harmel2018" role="doc-biblioref">2018</a>)</span>, <span class="citation" data-cites="kay2009">Kay et al. (<a href="#ref-kay2009" role="doc-biblioref">2009</a>)</span>, <span class="citation" data-cites="kutser2009">Kutser et al. (<a href="#ref-kutser2009" role="doc-biblioref">2009</a>)</span>, and <span class="citation" data-cites="lavender2010glint">Lavender and Kay (<a href="#ref-lavender2010glint" role="doc-biblioref">2010</a>)</span>.</li>
 </ol>
 <hr />
 <h4 data-label="|Products and Algorithms: Sky Glint Correction" id="sec:pral-coskygli"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/sky-glint.yaml--><code>3.9.</code>
@@ -1157,8 +1148,8 @@ interface correction methods.</li>
 <li>See Section “<a href="#sec:pxl-piskygli">Per-Pixel Metadata: Sky
 Glint</a>”, <span class="citation" data-cites="gege2016">Gege and
 Groetsch (<a href="#ref-gege2016" role="doc-biblioref">2016</a>)</span>,
-<span class="citation" data-cites="groetsch2020">Groetsch, Foster, and
-Gilerson (<a href="#ref-groetsch2020" role="doc-biblioref">2020</a>)</span>, and <span class="citation" data-cites="zhang2017">Zhang et al. (<a href="#ref-zhang2017" role="doc-biblioref">2017</a>)</span>.</li>
+<span class="citation" data-cites="groetsch2020">Groetsch et al. (<a href="#ref-groetsch2020" role="doc-biblioref">2020</a>)</span>, and
+<span class="citation" data-cites="zhang2017">Zhang et al. (<a href="#ref-zhang2017" role="doc-biblioref">2017</a>)</span>.</li>
 </ol>
 <h5 id="goal-requirements-47">Goal requirements:</h5>
 <p>Sky glint is separately assessed and corrected for in the data
@@ -1173,8 +1164,7 @@ Whitecap / Foam Correction</h4>
 corrected for the contribution from surface whitecaps and foam.</p>
 <p>Note:</p>
 <ol type="1">
-<li>See <span class="citation" data-cites="dierssen2019">Dierssen (<a href="#ref-dierssen2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="dierssen2021">Dierssen (<a href="#ref-dierssen2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="frouin2019">Frouin et al. (<a href="#ref-frouin2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="koepke1984">Koepke (<a href="#ref-koepke1984" role="doc-biblioref">1984</a>)</span>, <span class="citation" data-cites="moore2000">K. D. Moore, Voss, and Gordon
-(<a href="#ref-moore2000" role="doc-biblioref">2000</a>)</span>, <span class="citation" data-cites="wang2017">Wang et al. (<a href="#ref-wang2017" role="doc-biblioref">2017</a>)</span>, <span class="citation" data-cites="eumetsat2021">EUMETSAT (<a href="#ref-eumetsat2021" role="doc-biblioref">2021</a>)</span>, and
+<li>See <span class="citation" data-cites="dierssen2019">Dierssen (<a href="#ref-dierssen2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="dierssen2021">Dierssen (<a href="#ref-dierssen2021" role="doc-biblioref">2021</a>)</span>, <span class="citation" data-cites="frouin2019">Frouin et al. (<a href="#ref-frouin2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="koepke1984">Koepke (<a href="#ref-koepke1984" role="doc-biblioref">1984</a>)</span>, <span class="citation" data-cites="moore2000">Moore et al. (<a href="#ref-moore2000" role="doc-biblioref">2000</a>)</span>, <span class="citation" data-cites="wang2017">Wang et al. (<a href="#ref-wang2017" role="doc-biblioref">2017</a>)</span>, <span class="citation" data-cites="eumetsat2021">EUMETSAT (<a href="#ref-eumetsat2021" role="doc-biblioref">2021</a>)</span>, and
 <span class="citation" data-cites="lavender2010whitecaps">Lavender (<a href="#ref-lavender2010whitecaps" role="doc-biblioref">2010</a>)</span>.</li>
 </ol>
 <h5 id="goal-requirements-48">Goal requirements:</h5>
@@ -1196,7 +1186,7 @@ Adjacency Effects Correction</h4>
 <p>Note:</p>
 <ol type="1">
 <li>See <span class="citation" data-cites="castagna2025">Castagna and
-Vanhellemont (<a href="#ref-castagna2025" role="doc-biblioref">2025</a>)</span>, <span class="citation" data-cites="kiselev2015">Kiselev, Bulgarelli, and Heege (<a href="#ref-kiselev2015" role="doc-biblioref">2015</a>)</span>, <span class="citation" data-cites="pan2025">Pan and Bélanger (<a href="#ref-pan2025" role="doc-biblioref">2025</a>)</span>, <span class="citation" data-cites="sterckx2015">Sterckx et al. (<a href="#ref-sterckx2015" role="doc-biblioref">2015</a>)</span>, and <span class="citation" data-cites="wu2024">Wu et al. (<a href="#ref-wu2024" role="doc-biblioref">2024</a>)</span>.</li>
+Vanhellemont (<a href="#ref-castagna2025" role="doc-biblioref">2025</a>)</span>, <span class="citation" data-cites="kiselev2015">Kiselev et al. (<a href="#ref-kiselev2015" role="doc-biblioref">2015</a>)</span>, <span class="citation" data-cites="pan2025">Pan and Bélanger (<a href="#ref-pan2025" role="doc-biblioref">2025</a>)</span>, <span class="citation" data-cites="sterckx2015">Sterckx et al. (<a href="#ref-sterckx2015" role="doc-biblioref">2015</a>)</span>, and <span class="citation" data-cites="wu2024">Wu et al. (<a href="#ref-wu2024" role="doc-biblioref">2024</a>)</span>.</li>
 </ol>
 <hr />
 <h4 data-label="|Products and Algorithms: Turbid Water Reflectance Correction" id="sec:pral-cotuwa"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/turbid-water.yaml--><code>3.12.</code>
@@ -1207,8 +1197,7 @@ Turbid Water Reflectance Correction</h4>
 pixel being turbid or not.</p>
 <p>Note:</p>
 <ol type="1">
-<li>See <span class="citation" data-cites="gossn2019">Gossn, Ruddick,
-and Dogliotti (<a href="#ref-gossn2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="moore1999">G. F. Moore, Aiken, and Lavender (<a href="#ref-moore1999" role="doc-biblioref">1999</a>)</span>, and <span class="citation" data-cites="stumpf2003">Stumpf et al. (<a href="#ref-stumpf2003" role="doc-biblioref">2003</a>)</span>.</li>
+<li>See <span class="citation" data-cites="gossn2019">Gossn et al. (<a href="#ref-gossn2019" role="doc-biblioref">2019</a>)</span>, <span class="citation" data-cites="moore1999">Moore et al. (<a href="#ref-moore1999" role="doc-biblioref">1999</a>)</span>, and <span class="citation" data-cites="stumpf2003">Stumpf et al. (<a href="#ref-stumpf2003" role="doc-biblioref">2003</a>)</span>.</li>
 </ol>
 <h5 id="goal-requirements-50">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
@@ -1357,7 +1346,7 @@ specifications may (and subject to due process) become accepted as
 <em>threshold</em> requirements.</p>
 <div style="page-break-after: always;"></div>
 <h2 id="references">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-bell2023" class="csl-entry" role="listitem">
 Bell, Kyle C. AND Saccomanno, Tom W. AND Cavanaugh. 2023.
 <span>“Kelpwatch: A New Visualization and Analysis Tool to Explore Kelp
@@ -1376,9 +1365,9 @@ Retrievals from High-Resolution Satellite Images.”</span> <em>Remote
 Sensing</em> 8 (6). <a href="https://doi.org/10.3390/rs8060459">https://doi.org/10.3390/rs8060459</a>.
 </div>
 <div id="ref-bourg2014" class="csl-entry" role="listitem">
-Bourg, L. 2014. <span>“Sentinel-3 OLCI Level 0 and Level 1B, Algorithm
-Theoretical Basis Document (ATBD), Issue 5.0.”</span> Algorithm
-Theoretical Basis Document S3-ACR-TN-007. <a href="https://sentiwiki.copernicus.eu/__attachments/1672112/S3-ACR-TN-007%20-%20Sentinel%203%20OLCI%20Level%200%20and%201B%20ATBD%202014%20-%205.0.pdf">https://sentiwiki.copernicus.eu/__attachments/1672112/S3-ACR-TN-007%20-%20Sentinel%203%20OLCI%20Level%200%20and%201B%20ATBD%202014%20-%205.0.pdf</a>.
+Bourg, L. 2014. <em>Sentinel-3 OLCI Level 0 and Level 1B, Algorithm
+Theoretical Basis Document (ATBD), Issue 5.0</em>. Algorithm Theoretical
+Basis Document S3-ACR-TN-007. <a href="https://sentiwiki.copernicus.eu/__attachments/1672112/S3-ACR-TN-007%20-%20Sentinel%203%20OLCI%20Level%200%20and%201B%20ATBD%202014%20-%205.0.pdf">https://sentiwiki.copernicus.eu/__attachments/1672112/S3-ACR-TN-007%20-%20Sentinel%203%20OLCI%20Level%200%20and%201B%20ATBD%202014%20-%205.0.pdf</a>.
 </div>
 <div id="ref-brando2009" class="csl-entry" role="listitem">
 Brando, Vittorio E., Janet M. Anstee, Magnus Wettle, Arnold G. Dekker,
@@ -1388,8 +1377,7 @@ Hyperspectral Data.”</span> <em>Remote Sensing of Environment</em> 113
 (4): 755–70. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2008.12.003">https://doi.org/10.1016/j.rse.2008.12.003</a>.
 </div>
 <div id="ref-bresciani2014" class="csl-entry" role="listitem">
-Bresciani, Mariano, Maria Adamo, Giacomo De Carolis, Erica Matta, Guido
-Pasquariello, Diana Vaičiūtė, and Claudia Giardino. 2014.
+Bresciani, Mariano, Maria Adamo, Giacomo De Carolis, et al. 2014.
 <span>“Monitoring Blooms and Surface Accumulation of Cyanobacteria in
 the Curonian Lagoon by Combining MERIS and ASAR Data.”</span> <em>Remote
 Sensing of Environment</em> 146: 124–35. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2013.07.040">https://doi.org/10.1016/j.rse.2013.07.040</a>.
@@ -1412,8 +1400,7 @@ Generalized Physics-Based Correction for Adjacency Effects.”</span>
 <em>Appl. Opt.</em> 64 (10): 2719–43. <a href="https://doi.org/10.1364/AO.546766">https://doi.org/10.1364/AO.546766</a>.
 </div>
 <div id="ref-dekker2011" class="csl-entry" role="listitem">
-Dekker, Arnold G., Stuart R. Phinn, Janet Anstee, Paul Bissett, Vittorio
-E. Brando, Brandon Casey, Peter Fearns, et al. 2011.
+Dekker, Arnold G., Stuart R. Phinn, Janet Anstee, et al. 2011.
 <span>“Intercomparison of Shallow Water Bathymetry, Hydro-Optics, and
 Benthos Mapping Techniques in Australian and Caribbean Coastal
 Environments.”</span> <em>Limnology and Oceanography: Methods</em> 9
@@ -1426,7 +1413,7 @@ Visible to Shortwave Infrared for Ocean Color Remote Sensing.”</span>
 <em>Frontiers in Earth Science</em> Volume 7 - 2019. <a href="https://doi.org/10.3389/feart.2019.00014">https://doi.org/10.3389/feart.2019.00014</a>.
 </div>
 <div id="ref-dierssen2021" class="csl-entry" role="listitem">
-———. 2021. <span>“Corrigendum: Hyperspectral Measurements,
+Dierssen, Heidi M. 2021. <span>“Corrigendum: Hyperspectral Measurements,
 Parameterizations, and Atmospheric Correction of Whitecaps and Foam from
 Visible to Shortwave Infrared for Ocean Color Remote Sensing.”</span>
 <em>Frontiers in Earth Science</em> Volume 9 - 2021. <a href="https://doi.org/10.3389/feart.2021.683136">https://doi.org/10.3389/feart.2021.683136</a>.
@@ -1437,9 +1424,8 @@ Dworak, Richard, Yinghui Liu, Jeffrey Key, and Walter N. Meier. 2021.
 VIIRS.”</span> <em>Remote Sensing</em> 13 (15). <a href="https://doi.org/10.3390/rs13152982">https://doi.org/10.3390/rs13152982</a>.
 </div>
 <div id="ref-eumetsat2021" class="csl-entry" role="listitem">
-EUMETSAT. 2021. <span>“<span class="nocase">Sentinel-3 OLCI L2 Report
-for Baseline Collection OL_L2M_003</span>.”</span>
-EUM/RSP/REP/21/1211386. Eumetsat-Allee 1, D-64295 Darmstadt, Germany:
+EUMETSAT. 2021. <em><span class="nocase">Sentinel-3 OLCI L2 Report for
+Baseline Collection OL_L2M_003</span></em>. EUM/RSP/REP/21/1211386.
 EUMETSAT. <a href="https://user.eumetsat.int/s3/eup-strapi-media/Sentinel_3_OLCI_L2_report_for_baseline_collection_OL_L2_M_003_2_B_c8bbc6d986.pdf">https://user.eumetsat.int/s3/eup-strapi-media/Sentinel_3_OLCI_L2_report_for_baseline_collection_OL_L2_M_003_2_B_c8bbc6d986.pdf</a>.
 </div>
 <div id="ref-fan2016" class="csl-entry" role="listitem">
@@ -1450,31 +1436,29 @@ Effects in Water-Leaving Radiance.”</span> <em>Appl. Opt.</em> 55 (1):
 </div>
 <div id="ref-fink2014" class="csl-entry" role="listitem">
 Fink, Colin M. 2014. <span>“Glint Avoidance and Removal in the Maritime
-Environment.”</span> Master&#39;s Thesis, Rochester, NY: Rochester Institute
-of Technology. <a href="https://repository.rit.edu/theses/8301">https://repository.rit.edu/theses/8301</a>.
+Environment.”</span> Master&#39;s Thesis, Rochester Institute of Technology.
+<a href="https://repository.rit.edu/theses/8301">https://repository.rit.edu/theses/8301</a>.
 </div>
 <div id="ref-foga2017" class="csl-entry" role="listitem">
-Foga, Steve, Pat L. Scaramuzza, Song Guo, Zhe Zhu, Ronald D. Dilley, Tim
-Beckmann, Gail L. Schmidt, John L. Dwyer, M. Joseph Hughes, and Brady
-Laue. 2017. <span>“Cloud Detection Algorithm Comparison and Validation
-for Operational Landsat Data Products.”</span> <em>Remote Sensing of
-Environment</em> 194: 379–90. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2017.03.026">https://doi.org/10.1016/j.rse.2017.03.026</a>.
+Foga, Steve, Pat L. Scaramuzza, Song Guo, et al. 2017. <span>“Cloud
+Detection Algorithm Comparison and Validation for Operational Landsat
+Data Products.”</span> <em>Remote Sensing of Environment</em> 194:
+379–90. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2017.03.026">https://doi.org/10.1016/j.rse.2017.03.026</a>.
 </div>
 <div id="ref-frouin2019" class="csl-entry" role="listitem">
-Frouin, Robert J., Bryan A. Franz, Amir Ibrahim, Kirk Knobelspiesse,
-Ziauddin Ahmad, Brian Cairns, Jacek Chowdhary, et al. 2019.
+Frouin, Robert J., Bryan A. Franz, Amir Ibrahim, et al. 2019.
 <span>“Atmospheric Correction of Satellite Ocean-Color Imagery During
 the PACE Era.”</span> <em>Frontiers in Earth Science</em> Volume 7 -
 2019. <a href="https://doi.org/10.3389/feart.2019.00145">https://doi.org/10.3389/feart.2019.00145</a>.
 </div>
 <div id="ref-gebco2024" class="csl-entry" role="listitem">
-GEBCO Bathymetric Compilation Group 2024. 2024. <span>“The GEBCO_2024
-Grid - a Continuous Terrain Model of the Global Oceans and Land.”</span>
-GEBCO Compilation Group. <a href="https://doi.org/10.5285/1c44ce99-0a0d-5f4f-e063-7086abc0ea0f">https://doi.org/10.5285/1c44ce99-0a0d-5f4f-e063-7086abc0ea0f</a>.
+GEBCO Bathymetric Compilation Group 2024. 2024. <em>The GEBCO_2024 Grid
+- a Continuous Terrain Model of the Global Oceans and Land</em>. GEBCO
+Compilation Group. <a href="https://doi.org/10.5285/1c44ce99-0a0d-5f4f-e063-7086abc0ea0f">https://doi.org/10.5285/1c44ce99-0a0d-5f4f-e063-7086abc0ea0f</a>.
 </div>
 <div id="ref-gege2016" class="csl-entry" role="listitem">
 Gege, Peter, and Philipp Groetsch. 2016. <span>“A Spectral Model for
-Correcting Sunglint and Skyglint.”</span> In.
+Correcting Sunglint and Skyglint.”</span> October.
 </div>
 <div id="ref-gendall2023" class="csl-entry" role="listitem">
 Gendall, Lianna, Sarah B. Schroeder, Peter Wills, Margot Hessing-Lewis,
@@ -1494,8 +1478,7 @@ Hyperspectral Above-Surface Reflectance Observations.”</span> <em>Appl.
 Opt.</em> 59 (9): 2942–54. <a href="https://doi.org/10.1364/AO.385853">https://doi.org/10.1364/AO.385853</a>.
 </div>
 <div id="ref-guth2021" class="csl-entry" role="listitem">
-Guth, Peter L., Adriaan Van Niekerk, Carlos H. Grohmann, Jan-Peter
-Muller, Laurence Hawker, Igor V. Florinsky, Dean Gesch, et al. 2021.
+Guth, Peter L., Adriaan Van Niekerk, Carlos H. Grohmann, et al. 2021.
 <span>“Digital Elevation Models: Terminology and Definitions.”</span>
 <em>Remote Sensing</em> 13 (18). <a href="https://doi.org/10.3390/rs13183581">https://doi.org/10.3390/rs13183581</a>.
 </div>
@@ -1515,13 +1498,12 @@ ONLINE.”</span> <em>The International Hydrographic Review</em> 28:
 </div>
 <div id="ref-heinila2018" class="csl-entry" role="listitem">
 Heinilä, Kirsikka and Metsämäki, Sari and Mattila, Olli-Pekka. 2018.
-<span>“Lake Ice Extent (LIE), Collection 250m Baltic Sea Region, Version
-1.0.1.”</span> Copernicus Global Land Service. <a href="https://land.copernicus.eu/en/technical-library/quality-assessment-report-for-lake-ice-extent-baltic-sea-region-250-m-raster/@@download/file">https://land.copernicus.eu/en/technical-library/quality-assessment-report-for-lake-ice-extent-baltic-sea-region-250-m-raster/@@download/file</a>.
+<em>Lake Ice Extent (LIE), Collection 250m Baltic Sea Region, Version
+1.0.1</em>. Copernicus Global Land Service. <a href="https://land.copernicus.eu/en/technical-library/quality-assessment-report-for-lake-ice-extent-baltic-sea-region-250-m-raster/@@download/file">https://land.copernicus.eu/en/technical-library/quality-assessment-report-for-lake-ice-extent-baltic-sea-region-250-m-raster/@@download/file</a>.
 </div>
 <div id="ref-hooker2003" class="csl-entry" role="listitem">
-Hooker, Stanford, Elaine Firestone, Frederick Patt, Robert Barnes,
-Robert Eplee, Robert E, et al. 2003. <span>“Algorithm Updates for the
-Fourth SeaWiFS Data Reprocessing,”</span> June.
+Hooker, Stanford, Elaine Firestone, et al. 2003. <em>Algorithm Updates
+for the Fourth SeaWiFS Data Reprocessing</em>. June.
 </div>
 <div id="ref-hu2009" class="csl-entry" role="listitem">
 Hu, Chuanmin. 2009. <span>“A Novel Ocean Color Index to Detect Floating
@@ -1535,9 +1517,9 @@ Greenland Fjords.”</span> <em>International Journal of Remote
 Sensing</em> 37 (7): 1730–46. <a href="https://doi.org/10.1080/01431161.2016.1157641">https://doi.org/10.1080/01431161.2016.1157641</a>.
 </div>
 <div id="ref-iho2024" class="csl-entry" role="listitem">
-IHO. 2024. <span>“<span class="nocase">Guidance to Satellite-Derived
-Bathymetry</span>.”</span> B-13 Edition 1.0.0. International
-Hydrographic Organization (IHO). <a href="https://iho.int/uploads/user/pubs/bathy/B_13_Ed100_032024.pdf">https://iho.int/uploads/user/pubs/bathy/B_13_Ed100_032024.pdf</a>.
+IHO. 2024. <em><span class="nocase">Guidance to Satellite-Derived
+Bathymetry</span></em>. B-13 Edition 1.0.0. International Hydrographic
+Organization (IHO). <a href="https://iho.int/uploads/user/pubs/bathy/B_13_Ed100_032024.pdf">https://iho.int/uploads/user/pubs/bathy/B_13_Ed100_032024.pdf</a>.
 </div>
 <div id="ref-ilori2019" class="csl-entry" role="listitem">
 Ilori, Christopher O., Nima Pahlevan, and Anders Knudby. 2019.
@@ -1546,21 +1528,20 @@ Techniques for Landsat 8: Application for Coastal Remote
 Sensing.”</span> <em>Remote Sensing</em> 11 (4). <a href="https://doi.org/10.3390/rs11040469">https://doi.org/10.3390/rs11040469</a>.
 </div>
 <div id="ref-iso19115_2_2009" class="csl-entry" role="listitem">
-International Organization for Standardization. 2009. <span>“<span class="nocase">Geographic information — Metadata — Part 2: Extensions
-for imagery and gridded data</span>.”</span> Standard. Geneva, CH:
-International Organization for Standardization.
+International Organization for Standardization. 2009. <em><span class="nocase">Geographic information — Metadata — Part 2: Extensions
+for imagery and gridded data</span></em>. Standard. International
+Organization for Standardization.
 </div>
 <div id="ref-iso8601_1_2019" class="csl-entry" role="listitem">
-———. 2019. <span>“<span class="nocase">Date and time — Representations
-for information interchange — Part 1: Basic rules</span>.”</span>
-Standard. Geneva, CH: International Organization for Standardization.
+International Organization for Standardization. 2019. <em><span class="nocase">Date and time — Representations for information
+interchange — Part 1: Basic rules</span></em>. Standard. International
+Organization for Standardization.
 </div>
 <div id="ref-gum_6_2020" class="csl-entry" role="listitem">
-JCGM Working Group 1. 2020. <span>“<span>G</span>uide to the Expression
-of Uncertainty in Measurement — Part 6: Developing and Using Measurement
-Models.”</span> Norm. <span>Joint Committee for Guides in
-Metrology</span>; Joint Committee for Guides in Metrology, JCGM
-GUM-6:2020. <a href="https://www.bipm.org/documents/20126/2071204/JCGM_GUM_6_2020.pdf">https://www.bipm.org/documents/20126/2071204/JCGM_GUM_6_2020.pdf</a>.
+JCGM Working Group 1. 2020. <em><span>G</span>uide to the Expression of
+Uncertainty in Measurement — Part 6: Developing and Using Measurement
+Models</em>. Norm. <span>Joint Committee for Guides in Metrology</span>;
+Joint Committee for Guides in Metrology, JCGM GUM-6:2020. <a href="https://www.bipm.org/documents/20126/2071204/JCGM_GUM_6_2020.pdf">https://www.bipm.org/documents/20126/2071204/JCGM_GUM_6_2020.pdf</a>.
 </div>
 <div id="ref-jones2019" class="csl-entry" role="listitem">
 Jones, John W. 2019. <span>“Improved Automated Detection of
@@ -1580,11 +1561,10 @@ Calculation and Radiative Transfer Modeling.”</span> <em>Appl. Opt.</em>
 52 (23): 5631–39. <a href="https://doi.org/10.1364/AO.52.005631">https://doi.org/10.1364/AO.52.005631</a>.
 </div>
 <div id="ref-dekeukelaere2018" class="csl-entry" role="listitem">
-Keukelaere, L. De, S. Sterckx, S. Adriaensen, E. Knaeps, I. Reusen, C.
-Giardino, M. Bresciani, et al. 2018. <span>“Atmospheric Correction of
-Landsat-8/OLI and Sentinel-2/MSI Data Using iCOR Algorithm: Validation
-for Coastal and Inland Waters.”</span> <em>European Journal of Remote
-Sensing</em> 51 (1): 525–42. <a href="https://doi.org/10.1080/22797254.2018.1457937">https://doi.org/10.1080/22797254.2018.1457937</a>.
+Keukelaere, L. De, S. Sterckx, S. Adriaensen, et al. 2018.
+<span>“Atmospheric Correction of Landsat-8/OLI and Sentinel-2/MSI Data
+Using iCOR Algorithm: Validation for Coastal and Inland Waters.”</span>
+<em>European Journal of Remote Sensing</em> 51 (1): 525–42. <a href="https://doi.org/10.1080/22797254.2018.1457937">https://doi.org/10.1080/22797254.2018.1457937</a>.
 </div>
 <div id="ref-khazaei2022" class="csl-entry" role="listitem">
 Khazaei, Bahram, Laura Read, Matthew Casali, Kevin Sampson, and David
@@ -1619,28 +1599,26 @@ Non-Negligible Water Leaving NIR Signal.”</span> <em>Remote Sensing of
 Environment</em> 113 (10): 2267–74. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2009.06.016">https://doi.org/10.1016/j.rse.2009.06.016</a>.
 </div>
 <div id="ref-lavender2010whitecaps" class="csl-entry" role="listitem">
-Lavender, S. 2010. <span>“<span class="nocase">SENTINEL-3 Optical
-Products and Algorithm Definition – OLCI Level 2 ATBD: White Caps
-Correction</span>.”</span> Algorithm Theoretical Basis Document
+Lavender, S. 2010. <em><span class="nocase">SENTINEL-3 Optical Products
+and Algorithm Definition – OLCI Level 2 ATBD: White Caps
+Correction</span></em>. Algorithm Theoretical Basis Document
 S3-L2-SD-03-C06-ARG-ATBD. ARGANS. <a href="https://user.eumetsat.int/s3/eup-strapi-media/pdf_s3_l2_atbd_white_caps_corr_ac4301c8fe.pdf">https://user.eumetsat.int/s3/eup-strapi-media/pdf_s3_l2_atbd_white_caps_corr_ac4301c8fe.pdf</a>.
 </div>
 <div id="ref-lavender2010glint" class="csl-entry" role="listitem">
-Lavender, S., and S. Kay. 2010. <span>“<span>SENTINEL-3 OPTICAL PRODUCTS
+Lavender, S., and S. Kay. 2010. <em><span>SENTINEL-3 OPTICAL PRODUCTS
 AND ALGORITHM DEFINITION – OLCI Level 2 ATBD – Glint
-Correction</span>.”</span> Algorithm Theoretical Basis Document
+Correction</span></em>. Algorithm Theoretical Basis Document
 S3-L2-SD-03-C09-ARG-ATBD. ARGANS. <a href="https://user.eumetsat.int/s3/eup-strapi-media/pdf_s3_l2_atbd_glint_corr_6d7b828eec.pdf">https://user.eumetsat.int/s3/eup-strapi-media/pdf_s3_l2_atbd_glint_corr_6d7b828eec.pdf</a>.
 </div>
 <div id="ref-lee2011" class="csl-entry" role="listitem">
-Lee, Zhong Ping, Keping Du, Kenneth J. Voss, Giuseppe Zibordi, Bertrand
-Lubac, Robert Arnone, and Alan Weidemann. 2011. <span>“An
+Lee, Zhong Ping, Keping Du, Kenneth J. Voss, et al. 2011. <span>“An
 Inherent-Optical-Property-Centered Approach to Correct the Angular
 Effects in Water-Leaving Radiance.”</span> <em>Appl. Opt.</em> 50 (19):
 3155–67. <a href="https://doi.org/10.1364/AO.50.003155">https://doi.org/10.1364/AO.50.003155</a>.
 </div>
 <div id="ref-liu2019" class="csl-entry" role="listitem">
-Liu, Yinghui, and Jeffrey Key. 2015. <span>“Ice Surface Temperature, Ice
-Concentration, and Ice Cover Algorithm Theoretical Basic
-Document.”</span>
+Liu, Yinghui, and Jeffrey Key. 2015. <em>Ice Surface Temperature, Ice
+Concentration, and Ice Cover Algorithm Theoretical Basic Document</em>.
 </div>
 <div id="ref-liu2016" class="csl-entry" role="listitem">
 Liu, Yinghui, Jeffrey Key, and Robert Mahoney. 2016. <span>“Sea and
@@ -1668,8 +1646,8 @@ https://doi.org/<a href="https://doi.org/10.1016/j.rse.2021.112356">https://doi.
 </div>
 <div id="ref-mobley2016" class="csl-entry" role="listitem">
 Mobley, Curtis, Jeremy Werdell, Bryan Franz, Ziauddin Ahmad, and Sean
-Bailey. 2016. <span>“Atmospheric Correction for Satellite Ocean Color
-Radiometry.”</span> <a href="https://doi.org/10.13140/RG.2.2.23016.78081">https://doi.org/10.13140/RG.2.2.23016.78081</a>.
+Bailey. 2016. <em>Atmospheric Correction for Satellite Ocean Color
+Radiometry</em>. <a href="https://doi.org/10.13140/RG.2.2.23016.78081">https://doi.org/10.13140/RG.2.2.23016.78081</a>.
 </div>
 <div id="ref-moore1999" class="csl-entry" role="listitem">
 Moore, G. F., J. Aiken, and S. J. Lavender. 1999. <span>“The Atmospheric
@@ -1687,7 +1665,7 @@ Oceans</em> 105 (C3): 6493–99. https://doi.org/<a href="https://doi.org/10.102
 Morel, André, David Antoine, and Bernard Gentili. 2002.
 <span>“Bidirectional Reflectance of Oceanic Waters: Accounting for Raman
 Emission and Varying Particle Scattering Phase Function.”</span>
-<em>Appl. Opt.</em> 41 (30): 6289–6306. <a href="https://doi.org/10.1364/AO.41.006289">https://doi.org/10.1364/AO.41.006289</a>.
+<em>Appl. Opt.</em> 41 (30): 6289–306. <a href="https://doi.org/10.1364/AO.41.006289">https://doi.org/10.1364/AO.41.006289</a>.
 </div>
 <div id="ref-morel2006" class="csl-entry" role="listitem">
 Morel, Andre, and Simon Bélanger. 2006. <span>“Improved Detection of
@@ -1702,20 +1680,17 @@ Interference with Sun-Glint Contaminated Pixels in Open Ocean.”</span>
 https://doi.org/<a href="https://doi.org/10.1016/j.rse.2007.07.009">https://doi.org/10.1016/j.rse.2007.07.009</a>.
 </div>
 <div id="ref-pahlevan2021" class="csl-entry" role="listitem">
-Pahlevan, Nima, Antoine Mangin, Sundarabalan V. Balasubramanian, Brandon
-Smith, Krista Alikas, Kohei Arai, Claudio Barbosa, et al. 2021.
-<span>“ACIX-Aqua: A Global Assessment of Atmospheric Correction Methods
-for Landsat-8 and Sentinel-2 over Lakes, Rivers, and Coastal
+Pahlevan, Nima, Antoine Mangin, Sundarabalan V. Balasubramanian, et al.
+2021. <span>“ACIX-Aqua: A Global Assessment of Atmospheric Correction
+Methods for Landsat-8 and Sentinel-2 over Lakes, Rivers, and Coastal
 Waters.”</span> <em>Remote Sensing of Environment</em> 258: 112366.
 https://doi.org/<a href="https://doi.org/10.1016/j.rse.2021.112366">https://doi.org/10.1016/j.rse.2021.112366</a>.
 </div>
 <div id="ref-pahlevan2017" class="csl-entry" role="listitem">
-Pahlevan, Nima, John R. Schott, Bryan A. Franz, Giuseppe Zibordi, Brian
-Markham, Sean Bailey, Crystal B. Schaaf, Michael Ondrusek, Steven Greb,
-and Christopher M. Strait. 2017. <span>“Landsat 8 Remote Sensing
-Reflectance (Rrs) Products: Evaluations, Intercomparisons, and
-Enhancements.”</span> <em>Remote Sensing of Environment</em> 190:
-289–301. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2016.12.030">https://doi.org/10.1016/j.rse.2016.12.030</a>.
+Pahlevan, Nima, John R. Schott, Bryan A. Franz, et al. 2017.
+<span>“Landsat 8 Remote Sensing Reflectance (Rrs) Products: Evaluations,
+Intercomparisons, and Enhancements.”</span> <em>Remote Sensing of
+Environment</em> 190: 289–301. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2016.12.030">https://doi.org/10.1016/j.rse.2016.12.030</a>.
 </div>
 <div id="ref-pan2025" class="csl-entry" role="listitem">
 Pan, Yanqun, and Simon Bélanger. 2025. <span>“Genetic Algorithm for
@@ -1734,9 +1709,8 @@ Pekel, J.-F, Andrew Cottam, Noel Gorelick, and Alan Belward. 2016.
 Changes.”</span> <em>Nature</em> 540 (December). <a href="https://doi.org/10.1038/nature20584">https://doi.org/10.1038/nature20584</a>.
 </div>
 <div id="ref-reusen2023" class="csl-entry" role="listitem">
-Reusen, Ils, Liesbeth De Keukelaere, Sindy Sterckx, Stefan Simis,
-Claudia Giardino, Carmen Cillero Castro, and Tiit Kutser. 2023.
-<span>“Atmospheric Corrections.”</span> Zenodo. <a href="https://doi.org/10.5281/zenodo.10357236">https://doi.org/10.5281/zenodo.10357236</a>.
+Reusen, Ils, Liesbeth De Keukelaere, Sindy Sterckx, et al. 2023.
+<em>Atmospheric Corrections</em>. Zenodo. <a href="https://doi.org/10.5281/zenodo.10357236">https://doi.org/10.5281/zenodo.10357236</a>.
 </div>
 <div id="ref-richardson2024" class="csl-entry" role="listitem">
 Richardson, Galen, Neve Foreman, Anders Knudby, Yulun Wu, and Yiwen Lin.
@@ -1763,15 +1737,13 @@ Absorbing Aerosols for the MODIS Ocean Color Data Processing.”</span>
 https://doi.org/<a href="https://doi.org/10.1016/j.rse.2007.02.013">https://doi.org/10.1016/j.rse.2007.02.013</a>.
 </div>
 <div id="ref-skakun2022" class="csl-entry" role="listitem">
-Skakun, Sergii, Jan Wevers, Carsten Brockmann, Georgia Doxani, Matej
-Aleksandrov, Matej Batič, David Frantz, et al. 2022. <span>“Cloud Mask
-Intercomparison eXercise (CMIX): An Evaluation of Cloud Masking
+Skakun, Sergii, Jan Wevers, Carsten Brockmann, et al. 2022. <span>“Cloud
+Mask Intercomparison eXercise (CMIX): An Evaluation of Cloud Masking
 Algorithms for Landsat 8 and Sentinel-2.”</span> <em>Remote Sensing of
 Environment</em> 274: 112990. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2022.112990">https://doi.org/10.1016/j.rse.2022.112990</a>.
 </div>
 <div id="ref-soppa2021" class="csl-entry" role="listitem">
-Soppa, Mariana A., Brenner Silva, François Steinmetz, Darryl Keith,
-Daniel Scheffler, Niklas Bohn, and Astrid Bracher. 2021.
+Soppa, Mariana A., Brenner Silva, François Steinmetz, et al. 2021.
 <span>“Assessment of Polymer Atmospheric Correction Algorithm for
 Hyperspectral Remote Sensing Imagery over Coastal Waters.”</span>
 <em>Sensors</em> 21 (12). <a href="https://doi.org/10.3390/s21124125">https://doi.org/10.3390/s21124125</a>.
@@ -1789,11 +1761,9 @@ Model for Retrieval of Water-Leaving Radiance from SeaWiFS in Coastal
 Waters.”</span> <em>NASA Tech. Memo</em> 206892 (May): 51–59.
 </div>
 <div id="ref-vabson2024" class="csl-entry" role="listitem">
-Vabson, Viktor, Ilmar Ansko, Kim Duong, Riho Vendt, Joel Kuusk, Kevin
-Ruddick, Agnieszka Bialek, Gavin H. Tilstone, Juan Ignacio Gossn, and
-Ewa Kwiatkowska. 2024. <span>“Complete Characterization of Ocean Color
-Radiometers.”</span> <em>Frontiers in Remote Sensing</em> Volume 5 -
-2024. <a href="https://doi.org/10.3389/frsen.2024.1320454">https://doi.org/10.3389/frsen.2024.1320454</a>.
+Vabson, Viktor, Ilmar Ansko, Kim Duong, et al. 2024. <span>“Complete
+Characterization of Ocean Color Radiometers.”</span> <em>Frontiers in
+Remote Sensing</em> Volume 5 - 2024. <a href="https://doi.org/10.3389/frsen.2024.1320454">https://doi.org/10.3389/frsen.2024.1320454</a>.
 </div>
 <div id="ref-vanhellemont2019" class="csl-entry" role="listitem">
 Vanhellemont, Quinten. 2019. <span>“Adaptation of the Dark Spectrum
@@ -1803,16 +1773,14 @@ and Sentinel-2 Archives.”</span> <em>Remote Sensing of Environment</em>
 </div>
 <div id="ref-wang2017" class="csl-entry" role="listitem">
 Wang, Menghua, Xiaoming Liu, Lide Jiang, and SeungHyun Son. 2017.
-<span>“VIIRS Ocean Color Products: Algorithm Theoretical Basis Document
-(ATBD), Version 1.0.”</span> Algorithm Theoretical Basis Document. NOAA
+<em>VIIRS Ocean Color Products: Algorithm Theoretical Basis Document
+(ATBD), Version 1.0</em>. Algorithm Theoretical Basis Document. NOAA
 NESDIS Center for Satellite Applications; Research (STAR). <a href="https://www.star.nesdis.noaa.gov/jpss/documents/ATBD/ATBD_OceanColor_v1.0.pdf">https://www.star.nesdis.noaa.gov/jpss/documents/ATBD/ATBD_OceanColor_v1.0.pdf</a>.
 </div>
 <div id="ref-weatherall2015" class="csl-entry" role="listitem">
-Weatherall, Pauline, K. M. Marks, Martin Jakobsson, Thierry Schmitt,
-Shin Tani, Jan Erik Arndt, Marzia Rovere, Dale Chayes, Vicki Ferrini,
-and Rochelle Wigley. 2015. <span>“A New Digital Bathymetric Model of the
-World’s Oceans.”</span> <em>Earth and Space Science</em> 2 (8): 331–45.
-https://doi.org/<a href="https://doi.org/10.1002/2015EA000107">https://doi.org/10.1002/2015EA000107</a>.
+Weatherall, Pauline, K. M. Marks, Martin Jakobsson, et al. 2015.
+<span>“A New Digital Bathymetric Model of the World’s Oceans.”</span>
+<em>Earth and Space Science</em> 2 (8): 331–45. https://doi.org/<a href="https://doi.org/10.1002/2015EA000107">https://doi.org/10.1002/2015EA000107</a>.
 </div>
 <div id="ref-wu2023" class="csl-entry" role="listitem">
 Wu, Yulun, Anders Knudby, and David Lapen. 2023.
