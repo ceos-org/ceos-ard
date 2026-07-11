@@ -21,18 +21,18 @@ This document defines what counts as a **major** (i.e. breaking), **minor**, or 
 
 SemVer is defined in terms of a "public API". For CEOS-ARD, the public API of a PFS is its **normative content**: everything a data provider assesses their product against in a self-assessment, and everything a data user relies on when they see a product labelled as CEOS-ARD compliant.
 
-The anchor question for classifying a change is:
+Self-assessments are made against a specific version of a PFS and remain valid for that version indefinitely; a new release never retroactively invalidates them. The version number instead signals what it takes for an already assessed product to claim compliance with the *new* version. The anchor question for classifying a change is:
 
-> **Does this change invalidate an existing self-assessment?**
+> **Can a product that is compliant with the previous version claim compliance with the new version without a re-assessment?**
 
-- **Major (breaking):** A product that was compliant under the previous version may no longer be compliant. Data providers may have to change their product and/or redo (parts of) their self-assessment to keep claiming compliance.
-- **Minor:** The normative content changes, but every product that was compliant before remains compliant. Existing self-assessments stay valid. This includes *relaxations* of requirements: removing a threshold requirement, loosening a limit, or downgrading a threshold requirement to a goal requirement never forces a re-assessment, so these are minor - even though data users should be aware that the guarantees provided by compliance have changed.
+- **Major (breaking):** No. A product that was compliant with the previous version may not meet the new threshold requirements. Data providers have to redo (parts of) their self-assessment - and possibly change their product - to claim compliance with the new version.
+- **Minor:** Yes. The normative content changes, but every product that was compliant before is also compliant with the new version. This includes *relaxations* of requirements: removing a threshold requirement, loosening a limit, or downgrading a threshold requirement to a goal requirement never forces a re-assessment, so these are minor - even though data users should be aware that the guarantees provided by compliance have changed. It also includes changes to goal requirements: these may lead to a better or worse goal classification under the new version, so providers may *optionally* re-assess to update their score, but they are not required to.
 - **Patch:** The normative meaning does not change at all. Editorial fixes, wording clarifications, formatting, identifier housekeeping, and corrections to non-normative content.
 
 Three consequences of this principle are worth spelling out:
 
 1. **Classify by effect, not by intent or by size.** A one-character typo fix that accidentally changes a limit from `10 m` to `100 m` is a normative change, not a patch. A large restructuring of the whole document that leaves every requirement semantically intact is a patch.
-2. **When in doubt, pick the higher level.** It is always safe to release a major version for a non-breaking change; the reverse silently invalidates self-assessments.
+2. **When in doubt, pick the higher level.** It is always safe to release a major version for a non-breaking change; the reverse silently lets products claim compliance with a version whose requirements they may not meet.
 3. **Product assessments are irrelevant.** Classification depends on the normative effect of the change, not on whether any product assessment currently exists. A change can still be major even if no assessment has been published yet.
 
 ## How Versions Are Determined
@@ -45,7 +45,7 @@ Building blocks are shared across PFS and are **not versioned individually**. In
 Because building blocks are shared, note:
 
 - A change to a shared building block propagates to **every PFS that uses it**. For example, a single breaking change to `requirements/per-pixel/nodata.yaml` will eventually trigger a new major release of several PFS.
-- The `level` recorded on the change describes the change itself. Whether it actually affects a given PFS depends on whether that PFS includes the building block. A new building block that is not (yet) referenced by any `document.yaml` has no version impact at all. Changes in a building block impact a PFS only after it has been part of a release for the first time.
+- The `level` recorded on the change describes the change itself. Whether it actually affects a given PFS depends on whether that PFS includes the building block. A new building block that is not (yet) referenced by any `document.yaml` has no version impact at all. Changes to a building block impact the version of a PFS only after the building block has been part of a release of that PFS for the first time.
 
 ## Classification by Building Block Type
 
@@ -68,7 +68,7 @@ Threshold requirements are mandatory; goal requirements are optional. Self-asses
 - Adding a note that effectively introduces a new constraint. Notes are meant to be informative. If a note changes what a provider has to do, it is a normative change and should usually be moved into the requirement description instead.
 - Changing a dependency (i.e. the list in `dependencies`) so that it points to a stricter requirement, when the dependency is normatively invoked by the requirement text.
 
-**Minor** - normative content changes, but existing self-assessments remain valid:
+**Minor** - normative content changes, but compliant products remain compliant:
 
 - Relaxing a threshold requirement, e.g.:
   - a numeric limit becomes more lenient (geometric accuracy of 10 m instead of 5 m; time to the second instead of the millisecond);
@@ -88,9 +88,9 @@ Threshold requirements are mandatory; goal requirements are optional. Self-asses
 - Adding, removing, or reordering entries in `glossary` or `references` lists (the linked content itself is classified separately, see below).
 - Adding or improving the introductory `description` of a requirement, as long as it only provides context.
 - Adding a note that clarifies or documents existing flexibility without changing what is required.
-- Filling in `changes`, or `history` fields.
+- Filling in `changes` or `history` fields.
 
-Changes to entries into the `metadata` section generally follow the same pattern.
+Changes to entries in the `metadata` section generally follow the same pattern.
 
 > [!IMPORTANT]
 > Requirement category descriptions must not contain normative requirements. If a requirement-like statement is discovered in a category, move it into a proper requirement file under `requirements` and classify that move by the normative effect of the requirement change. See also the chapter ["Editorial Content"](#editorial-content) for more details.
@@ -100,7 +100,7 @@ Changes to entries into the `metadata` section generally follow the same pattern
 Glossary entries (in the folder [`glossary`](./glossary/)) define terms used in requirements. A definition change can silently change the meaning of every requirement that uses the term, so classify by the **effect on the requirements that use it**:
 
 - **Major:** Changing a definition so that a threshold requirement effectively becomes stricter. Example: a threshold requirement demands that clouds are flagged per pixel; redefining *cloud* to include thin cirrus tightens that requirement for every provider whose cloud mask excluded cirrus.
-- **Minor:** Changing a definition so that requirements using the term effectively become more lenient. Example: narrowing the definition of *cloud* so fewer pixels must be flagged.
+- **Minor:** Changing a definition so that requirements using the term effectively become more lenient, or so that only goal requirements are affected. Example: narrowing the definition of *cloud* so fewer pixels must be flagged.
 - **Patch:**
   - Fixing typos or improving the wording of a definition without changing its meaning.
   - Expanding or correcting the long form of an abbreviation (e.g. DEM → Digital Elevation Model).
@@ -113,7 +113,7 @@ Glossary entries (in the folder [`glossary`](./glossary/)) define terms used in 
 The BibTeX-based references (in folder [`references`](./references/)) are only relevant for compliance where a requirement normatively cites them ("metadata must be provided according to @iso19115"). Everything else is bibliographic housekeeping:
 
 - **Major:** Replacing a normatively cited document with a different edition or successor whose provisions are stricter or incompatible (e.g. pointing a **threshold** metadata requirement from ISO 19115:2003 to a newer edition that mandates additional fields). The requirement text may be unchanged, but its meaning is not.
-- **Minor:** Replacing a normatively cited document with an edition whose relevant provisions are more lenient for the affected **threshold** requirement, or adding an alternative normative reference a provider may follow instead.
+- **Minor:** Replacing a normatively cited document with an edition whose relevant provisions are more lenient for the affected **threshold** requirement, replacing a document that is normatively cited only by goal requirements, or adding an alternative normative reference a provider may follow instead.
 - **Patch:**
   - Correcting BibTeX metadata: authors, title, year, DOI, URL, page numbers.
   - Fixing a broken link or pointing to a better-accessible copy of the *same* document.
@@ -145,7 +145,7 @@ The `document.yaml` in each PFS folder ([`pfs/<PFS>`](./pfs/)) selects which bui
 
 - Adding a requirement (with a threshold part) to the `requirements` list.
 - Replacing a requirement with a stricter variant (e.g. swapping `metadata/time` for a variant that additionally demands per-pixel times at threshold level), including via dependency `replace` overrides.
-- Narrowing `applies_to`. Products that fall outside the new scope can no longer be assessed against this PFS at all, which invalidates their self-assessments.
+- Narrowing `applies_to`. Products that fall outside the new scope can no longer be assessed against the new version of this PFS at all.
 
 **Minor:**
 
