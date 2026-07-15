@@ -53,7 +53,7 @@ Because building blocks are shared, note:
 
 Requirement files (in folder [`requirements`](./requirements/)) contain the threshold and goal sub-requirements, notes, dependencies, and links to glossary terms and references.
 
-Threshold requirements are mandatory; goal requirements are optional. Self-assessments also record which goal requirements a product meets, and providers may advertise goal-level compliance.
+Threshold requirements are mandatory; goal requirements are optional, but provide aspirational guidance. Self-assessments also record which goal requirements a product meets, and providers may advertise goal-level compliance.
 
 **Major** - a compliant product may become non-compliant:
 
