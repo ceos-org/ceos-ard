@@ -56,8 +56,9 @@ requirements:
       - per-pixel/view-angles-solar
   - category: radiometric-atmospheric-corrections
     requirements:
-      - measurements/measurement-st
-      - corrections/atmosphere-emissivity
+      - measurements/measurand-st
+      - corrections/atmosphere
+      - corrections/emissivity
       - measurements/uncertainty-st
   - category: geometric-corrections
     requirements:

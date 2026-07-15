@@ -1,0 +1,24 @@
+id: catmos
+title: Corrections for Atmosphere
+description: 
+requirements:
+  threshold:
+    description: |-
+      Retrieval methods for estimating surface temperature are provided.
+  goal:
+    description: |-
+      As threshold.
+    optional: true
+dependencies:
+glossary:
+references:
+changes: 
+  - date: 2026-07-15
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Moved emissivity requirements to a separate requirement.
+    reason: responds to https://github.com/ceos-org/ceos-ard/issues/88 and allows surface brightness temperature products to self-assess
+history:
+  - ST 3.1
+
