@@ -139,7 +139,7 @@ Requirements must remain self-contained in the `requirements` folder (optionally
 
 ### PFS Documents
 
-The `document.yaml` in each PFS folder ([`pfs/<PFS>`](./pfs/)) selects which building blocks make up a PFS, so list changes here are often the ones that actually change what a provider is assessed against:
+The `document.yaml` in each PFS folder ([`pfs/<PFS>`](./pfs/)) selects which building blocks make up a PFS:
 
 **Major:**
 
