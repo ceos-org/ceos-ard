@@ -55,7 +55,7 @@ Requirement files (in folder [`requirements`](./requirements/)) contain the thre
 
 Threshold requirements are mandatory; goal requirements are optional, but provide aspirational guidance. Self-assessments also record which goal requirements a product meets, and providers may advertise goal-level compliance.
 
-**Major** - a compliant product may become non-compliant:
+**Major** - a previously compliant product may become non-compliant with a new version of a PFS:
 
 - Tightening a threshold requirement, e.g.:
   - a numeric limit becomes stricter (geometric accuracy of 5 m instead of 10 m; time to the millisecond instead of the second);
