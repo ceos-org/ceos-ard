@@ -33,7 +33,7 @@ Three consequences of this principle are worth spelling out:
 
 1. **Classify by effect, not by intent or by size.** A one-character typo fix that accidentally changes a limit from `10 m` to `100 m` is a normative change, not a patch. A large restructuring of the whole document that leaves every requirement semantically intact is a patch.
 2. **When in doubt, pick the higher level.** It is always safe to release a major version for a non-breaking change; the reverse silently lets products claim compliance with a version whose requirements they may not meet.
-3. **Product assessments are irrelevant.** Classification depends on the normative effect of the change, not on whether any product assessment currently exists. A change can still be major even if no assessment has been published yet.
+3. **Product assessments do not affect the classification.** Classification depends only on the normative effect of the change. The existence or non-existence of prior assessments has no bearing on the classification.
 
 ## How Versions Are Determined
 
