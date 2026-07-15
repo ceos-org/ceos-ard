@@ -62,7 +62,7 @@ Threshold requirements are mandatory; goal requirements are optional, but provid
   - a normative verb is strengthened (*should* → *must*, *recommended* → *required*);
   - an additional condition is added ("… and the offset from UTC must be unambiguously identified");
   - a choice is removed ("either X or Y" becomes "X only").
-- Adding a new threshold sub-requirement to an existing requirement file.
+- Adding a new threshold sub-requirement to an existing requirement file, e.g., where 'Not required' was previously the threshold.
 - Upgrading a goal requirement to a threshold requirement.
 - Broadening what a threshold requirement applies to, so that it now constrains product aspects it did not constrain before (e.g. a masking requirement that applied to clouds now also applies to cloud shadows).
 - Adding a note that effectively introduces a new constraint. Notes are meant to be informative. If a note changes what a provider has to do, it is a normative change and should usually be moved into the requirement description instead.
