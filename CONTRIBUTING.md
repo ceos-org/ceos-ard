@@ -23,6 +23,7 @@ All pull requests additionally require a review of a CEOS-ARD team members.
 ## Release Process
 
 To release a specific PFS document, create a GitHub Release with a tag following the pattern `<PFS>-v<major>.<minor>.<patch>`, e.g. `SR-v5.0.1`.
+See [VERSIONING.md](VERSIONING.md) for how to determine whether a release is a major, minor, or patch version.
 
 The release workflow will automatically:
 
