@@ -11,7 +11,11 @@ background: |-
   It may contain multiple channels (wavelengths, polarisations).
   It is generally assumed that a single composite backscatter image layer will be generated from a set of inputs sharing a common polarisation and wavelength.
   The set of input products can be either from a single satellite or mission, or even from multiple missions, given a high standard of geometric and radiometric calibration in all contributing missions.
-  Further quality per-pixel metadata may also be provided, such as (a) the [@sec:pxl-conobi] or (b) [@sec:pxl-coquama].
+  Further quality per-pixel metadata may also be provided, such as (a) the [@conobi] or (b) [@coquama].
+
+dependencies:
+  conobi: per-pixel/contributing-observations
+  coquama: per-pixel/composite-quality-map
 
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:

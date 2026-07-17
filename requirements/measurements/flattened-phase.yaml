@@ -6,8 +6,8 @@ requirements:
   goal:
     description: |-
       The Flattened Phase is the interferometric phase for which the topographic phase contribution is removed.
-      It is derived from the range-Doppler SLC product using a DEM and the orbital state vectors with respect to a reference orbit (see [@sec:annex-sar-topographic-phase-removal]).
-      The use of the Flattened Phase with the NRB or POL intensity ([@sec:rcm]) provides the GSLC equivalent, as follows:  
+      It is derived from the range-Doppler SLC product using a DEM and the orbital state vectors with respect to a reference orbit (see [@topographic-phase-removal]).
+      The use of the Flattened Phase with the NRB or POL intensity ([@rcm]) provides the GSLC equivalent, as follows:  
   
       $$
       \text{GSLC} = \sqrt{NRB} \times \exp(j \cdot \text{FlattenPhase})
@@ -25,6 +25,9 @@ requirements:
       In case of polarimetric data, indicate the reference polarization. 
     optional: true
 dependencies:
+sections:
+  topographic-phase-removal: annexes/sar-topographic-phase-removal
+  rcm: requirement-categories/radiometrically-corrected-measurements
 glossary:
   - dem
   - slc
@@ -37,5 +40,4 @@ history:
   - SAR 3.7
 remarks: |-
   - todo: What does the usage instruction in the description mean?
-  - todo: Implement dependencies on other sections: sec:annex-sar-topographic-phase-removal, sec:rcm.
   - todo: Should the last paragraph only be included in POL?

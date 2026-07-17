@@ -4,12 +4,12 @@ description:
 requirements:
   threshold:
     description: |-
-      Percentage of valid pixels in a specified area based on the applied flags from [@sec:pxl].
+      Percentage of valid pixels in a specified area based on the applied flags from [@per-pixel].
 dependencies:
+sections:
+  per-pixel: requirement-categories/per-pixel-metadata
 glossary:
 references:
 changes:
 history:
   - AR 1.17
-remarks: |-
-  todo ceos-ard-cli: Implement dependencies on other sections: sec:pxl.

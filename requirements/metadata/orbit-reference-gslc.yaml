@@ -1,7 +1,7 @@
 id: reorbit-gslc
 title: Reference Orbit 
 description: |-
-    **Usage: When a reference orbit is used instead of a virtual orbit (see [@sec:annex-sar-topographic-phase-removal]).**
+    **Usage: When a reference orbit is used instead of a virtual orbit (see [@topographic-phase-removal]).**
 requirements:
   goal:
     description: |-
@@ -9,6 +9,8 @@ requirements:
       In case a virtual orbit has been used, provide orbit parameters or orbit state vectors as DOI or URL.
     optional: true
 dependencies:
+sections:
+  topographic-phase-removal: annexes/sar-topographic-phase-removal
 glossary:
   - doi
   - url
@@ -16,5 +18,3 @@ references:
 changes:
 history:
   - SAR 1.7.15 (GSLC)
-remarks: |-
-  todo: Implement dependencies on other sections: sec:annex-sar-topographic-phase-removal.

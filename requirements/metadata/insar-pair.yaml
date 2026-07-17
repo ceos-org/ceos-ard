@@ -23,14 +23,16 @@ requirements:
       Azimuth common band filtering and range spectral shift filtering flags.
   goal:
     description: |-
-      Source type format with value "GSLC" should be provided when InSAR analysis is performed from GSLC products generated from SLC source acquisitions listed in @sec:src.
+      Source type format with value "GSLC" should be provided when InSAR analysis is performed from GSLC products generated from SLC source acquisitions listed in @src.
       If GSLC data aren't provided with the InSAR product, provide the GSLC URL link(s) if it is available.
-      If source acquisitions listed in @sec:src are GSLC, discard this note.
+      If source acquisitions listed in @src are GSLC, discard this note.
     optional: true
 dependencies:
   acqid: metadata/acquisition-id
   perpendicular: per-pixel/insar-perpendicular-baseline
   parallel: per-pixel/insar-parallel-baseline
+sections:
+  src: requirement-categories/source-metadata
 glossary:
   - insar
   - gslc
@@ -44,4 +46,3 @@ history:
   - SAR 1.7.16
 remarks: |-
   - todo: References (item 3.8, 3.9, 3.10).
-  - todo: Implement dependencies to other sections, e.g. sec:src.

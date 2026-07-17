@@ -18,7 +18,8 @@ The YAML files consist of the following components:
     - `notes`: A list of additional notes. A note should be short and not be longer than one paragraph. Limited Markdown formatting is available.
     - `optional`: If set to `true`, a goal requirement. If not set or `false`, a threshold requirement.
     - `metadata`: Placeholder for future use.
-- `dependencies`: A mapping of named dependencies. See section [Dependencies](#dependencies).
+- `dependencies`: A mapping of named links to requirements. See section [Dependencies](#dependencies).
+- `sections`: A mapping of named links to sections (introduction, annexes, requirement categories). See section [Dependencies](#dependencies).
 - `glossary`: Any terms that are relevant for this requirement (e.g. are used in the text). Use any file name (without extension) from the [glossary](../glossary/) folder.
 - `references`: Any relevant references for this requirement and are referred to in the text using the @ notation (see [Markdown](#markdown)). Use any file name (without extension) from the [references](../references/) folder.
 - `changes`: The changelog that describes the changes over time for this building block. See section [Changelog](#changelog).
@@ -65,25 +66,41 @@ You can use references and citations as in scientific writing.
 
 ## Dependencies
 
-Dependencies are requirements that must be met for this requirement and are usually mentioned in the text using the @ notation.
+Dependencies are links to other building blocks that are usually mentioned in the text using the @ notation.
+They are available in requirements, sections (introduction, annexes, requirement categories), and the PFS document itself:
 
-Dependencies are defined as a mapping of alias to requirement path:
+- `dependencies` links to requirements.
+- `sections` links to sections. The paths are relative to the [sections](../sections/) folder,
+  so the first path segment (`introduction`, `annexes`, or `requirement-categories`) determines the type of the target.
+
+Both are defined as a mapping of alias to path(s):
 
 ```yaml
 dependencies:
   my-alias: metadata/time
+  # a list defines candidates, of which the first one
+  # included in the compiled document is selected:
+  orbit:
+    - metadata/orbit-gslc
+    - metadata/orbit
+sections:
+  topo: annexes/sar-topographic-phase-removal
+  pxl: requirement-categories/per-pixel-metadata
+  what-is: introduction/what-are-ceos-ard-products
 ```
 
-The alias is a short name used to reference the dependency in text (e.g. `[@my-alias]`).
-The requirement path is the folder name (if applicable) and the file name (without file extension). For example, `metadata/time` for the file [metadata/time.yaml](metadata/time.yaml).
+The alias is a short name used to reference the link in text (e.g. `[@my-alias]` or `@my-alias`).
+The path is the folder name (if applicable) and the file name (without file extension). For example, `metadata/time` for the file [metadata/time.yaml](metadata/time.yaml).
+During generation, the aliases are replaced with the actual section anchors of the targets in the compiled document.
+A link to a building block that is not included in the compiled document fails the generation and is reported by the validation.
 
-Using named aliases allows a PFS to override individual dependency targets
+Using named aliases allows a PFS to override individual link targets
 via the `replace` mechanism without changing the requirement text.
 
-Due to the fact that requirements don't include the category ID and could be ambiguous, the dependencies are resolved as follows:
+Due to the fact that requirements don't include the category ID and could be ambiguous, the requirement links are resolved as follows:
 
-1. The dependency will refer to the requirement with the given path in the same requirement category if it exists.
-2. Otherwise, the dependency will refer to the requirement with the given path in any other category.
+1. The link will refer to the requirement with the given path in the same requirement category if it exists.
+2. Otherwise, the link will refer to the requirement with the given path in any other category.
 
 This means if a requirement is used both in the same requirement category and in another category, you can't refer to the requirement that is used in the other requirement category.
 
