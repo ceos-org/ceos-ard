@@ -57,7 +57,8 @@ requirements:
   - category: radiometric-atmospheric-corrections
     requirements:
       - measurements/measurement-st
-      - corrections/atmosphere-emissivity
+      - corrections/atmosphere
+      - corrections/emissivity
       - measurements/uncertainty-st
   - category: geometric-corrections
     requirements:
