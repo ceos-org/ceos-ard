@@ -1,13 +1,10 @@
-# todo: should be named "Speckle Filtering" not "Product Filtering" to allow for other filtering types in the future.
 id: spekfil
 title: Product Filtering
 description: 
 requirements:
   threshold:
-    # todo: The "(True/False)" is implementation (and metadata language) specific, should not be listed here.
-    # See also ionosphere-indicator.yaml
     description: |-
-      Flag if speckle filter has been applied (True/False).
+      Flag if speckle filter has been applied (true/false).
       
       Metadata should include:
   
@@ -24,3 +21,6 @@ references:
 changes:
 history:
   - SAR 1.7.6
+remarks: |-
+  - Should be named "Speckle Filtering" not "Product Filtering" to allow for other filtering types in the future.
+  - The "(True/False)" in the threshold description is implementation (and metadata language) specific, should not be listed here. See also ionosphere-indicator.yaml.

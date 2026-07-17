@@ -1,0 +1,32 @@
+id: conobi
+title: Contributing Observations Image
+description:
+requirements:
+  goal:
+    description: |-
+      The number of input products providing non-zero weights to the Local-Resolution-Weighting from a set of "Terrain-flattened" Radiometrically Terrain Corrected (RTC) Gamma-Nought backscatter coefficient ($\gamma^0_T$) image inputs (NRB, POL, or compliant (i.e. terrain-flattened) GSLC) is provided for each polarization.
+
+      A separate "Contributing Observations image" is generated for each polarisation, as, in the general case, each may have a different number of inputs. 
+
+      File format specifications/contents provided in metadata:
+
+      -	Quality Descriptor Type
+      -	dB-scaling Expression Convention (linear amplitude or linear power \[see notes])
+      -	Polarization (HH, HV, VV, VH, RR, …)
+      -	Data Format (GeoTIFF, HDF5, NetCDF, …)
+      -	Data Type (Int, Float, ...)
+      -	Bits per Sample
+      -	Byte Order
+    notes:
+      - Transformation to the logarithm decibel scale is not required or desired as this step can be easily completed by the user if necessary.
+    optional: true
+dependencies:
+glossary:
+  - rtc
+  - nrb
+  - pol
+  - gslc
+references:
+changes:
+history:
+  - SAR 2.21

@@ -1,4 +1,3 @@
-# todo: remove cloud-optimized requirement and enable the cloud-optimized-formats requirement instead.
 id: rcm
 title: Radiometrically Corrected Measurements
 description: |-

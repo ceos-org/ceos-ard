@@ -28,3 +28,5 @@ references:
 changes:
 history:
   - SAR 3.6
+remarks: |-
+  - todo: The note uses "should". "Should" indicates a goal requireement, but it's in threshold.

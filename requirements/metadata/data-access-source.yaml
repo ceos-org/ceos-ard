@@ -1,14 +1,15 @@
-# todo: make generic for source and product
 id: daccess-src
 title: Source Data Access
 description: 
 requirements:
   threshold:
     description: |-
-      The metadata identifies the location from where the source data can be retrieved, expressed as a URL or DOI. 
+      The metadata identifies the location from where the source data can be retrieved, expressed as a URL or DOI.
+    notes:
+      - Source data attribute information can refer to other products for higher level ARD derived from those, under the condition of their availability.
   goal:
     description: |-
-      The metadata identifies an online location from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required. 
+      The metadata identifies an online location from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required.
     optional: true
 dependencies:
 glossary:
@@ -18,3 +19,5 @@ references:
 changes:
 history:
   - SAR 1.6.1
+remarks: |-
+  Make generic for source and product.

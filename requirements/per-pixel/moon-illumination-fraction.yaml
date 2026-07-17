@@ -1,8 +1,6 @@
 id: moonilf
 title: Moon Illumination Fraction
 description:
-# ToDo: The threshold requirement is a metadata requirement,
-# the goal requirement is a per-pixel requirement - should this be split?
 requirements:
   threshold:
     description: Provide average moon illumination fraction.
@@ -15,3 +13,5 @@ references:
 changes:
 history:
   - NLSR 2.14
+remarks: |-
+  The threshold requirement is a metadata requirement, the goal requirement is a per-pixel requirement - should this be split?

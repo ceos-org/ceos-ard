@@ -1,0 +1,47 @@
+id: inpqual
+title: Local InSAR Phase Quality
+description: 
+requirements:
+  threshold:
+    description: |-
+      Local InSAR phase quality estimation information
+
+      - Methodology name (e.g., Coherence, DespecKS, Persistent Scatterers \[Temporal variability of intensity and/or Spectral diversity correlation], …)
+      - Reference to methodology (text or DOI)
+      - Estimation parameters and selection criteria used, as for examples:
+
+          1. For coherence
+
+              - Window size
+              - Weighting shape
+              - Coherence threshold for selection
+          
+          2.	For DespecKS [@ferretti2011] or similar statistical approach
+
+              - Window size
+              - Statistical test function (Kolmogorov-Smirnov, Anderson-Darling, …)
+              - Number of statistically homogeneous pixels (SHP) threshold for selection
+              - Phase triangulation coherence ($\gamma_{PTA}$) threshold
+          
+          3.	For Persistent Scatterers
+
+              - Temporal variability of intensity
+
+                  -	Intensity mean/std ratio threshold
+                  -	Relative intensity threshold
+                  -	Spectral diversity correlation
+                  -	Line and column spectral looks
+                  -	Intensity minimal threshold
+                  -	Spectral correlation threshold
+                  -	Intensity mean/std ratio threshold
+
+      All phase quality estimation techniques used shall be listed.
+dependencies:
+  processing: metadata/processing-parameters
+glossary:
+  - insar
+references:
+  - ferretti2011
+changes:
+history:
+  - SAR 1.7.18

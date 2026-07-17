@@ -1,0 +1,16 @@
+title: Example section title
+description: |-
+  This is the text for this section in a PFS. It can be multiple lines, and can include Markdown formatting.
+glossary:
+  - pfs
+references:
+  - iso19115_2_2009
+changes:
+  - date: 1988-08-08
+    author: John Doe
+    level: patch
+    change: |-
+      Changes this to that.
+    reason: Typo
+remarks: |-
+  Add internal editorial notes, todos, or other information here.

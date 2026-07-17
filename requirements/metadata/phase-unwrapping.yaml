@@ -1,0 +1,25 @@
+id: phasun
+title: Phase Unwrapping
+description: 
+requirements:
+  threshold:
+    description: |-
+      If 3.10-Unwrapped Interferogram Image is provided, technique used for InSAR phase unwrapping
+
+      - Methodology name
+      - Reference to methodology (text or DOI)
+      - Unwrapping parameters
+
+          1. Coherence threshold
+          2. Number of iterations
+          3. Stable reference point coordinates or multi-point approach information
+dependencies:
+glossary:
+  - doi
+  - insar
+references:
+changes:
+history:
+  - SAR 1.7.20
+remarks: |-
+  todo: Resolve references.

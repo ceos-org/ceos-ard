@@ -2,7 +2,6 @@ id: geocalg
 title: Geometric Correction Algorithm
 description: 
 requirements:
-  # todo: This is product metadata, but is listed in section 4.1?!
   goal:
     description: |-
       Metadata references, e.g.:
@@ -24,3 +23,5 @@ references:
 changes:
 history:
   - SAR 4.1
+remarks: |-
+  This is product metadata, but is listed in section 4.1?!

@@ -1,6 +1,5 @@
 id: pral
 title: Products and Algorithms
-# ToDo: The general requirements in the second paragraph have to be moved to the requirements itself
 description: |-
   The following requirements must be met for all pixels in a collection. The requirements specify both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes.
 
@@ -11,3 +10,5 @@ glossary:
   - doi
 references:
 changes:
+remarks: |-
+  The general requirements in the second paragraph have to be moved to the requirements itself.

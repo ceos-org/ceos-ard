@@ -1,4 +1,3 @@
-# todo: remove product data mentions to be resuable in other products
 id: enl
 title: Product Equivalent Number of Looks 
 description: 
@@ -13,3 +12,5 @@ references:
 changes:
 history:
   - SAR 1.7.4
+remarks: |-
+  Remove "product" mentions to be reusable for source and product.

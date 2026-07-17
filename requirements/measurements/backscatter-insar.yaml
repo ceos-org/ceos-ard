@@ -1,0 +1,30 @@
+id: backsca-insar
+title: Backscatter Measurements (InSAR)
+description: 
+requirements:
+  goal:
+    description: |-
+      Terrain-flattened Radiometrically Terrain Corrected (RTC) Gamma-Nought backscatter coefficient ($\gamma^0_T$) is provided for each polarization.
+  
+      File format specifications/contents provided in metadata:
+  
+      - Measurement Type (Gamma-Nought)
+      - Source ID (e.g. see [@acqid])
+      - Backscatter Expression Convention (linear amplitude, or linear power \[see notes])
+      - Polarization (HH, HV, VV, VH, …)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+    notes:
+      - Transformation to the logarithm decibel scale is not required or desired as this step can be easily completed by the user if necessary.
+    optional: true
+dependencies:
+  acqid: metadata/acquisition-id
+glossary:
+  - insar
+  - rtc
+references:
+changes:
+history:
+  - SAR 3.1

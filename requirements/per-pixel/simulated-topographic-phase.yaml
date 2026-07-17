@@ -1,0 +1,24 @@
+id: sitophi
+title: Simulated Topographic Phase Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Simulated topographic phase image(s) used to remove topographic contribution to interferogram(s).
+  
+      File format specifications/contents provided in metadata:
+  
+      - Sample Type (Angle)
+      - insarID number (see [@insarID])
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Float, …)
+      - Bits per Sample
+      - Byte Order
+    optional: true
+dependencies:
+  insarID: metadata/insar-pair
+glossary:
+references:
+changes:
+history:
+  - SAR 2.17

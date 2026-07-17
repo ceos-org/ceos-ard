@@ -66,7 +66,7 @@ requirements:
       - measurements/measurement-nlsr
       - measurements/uncertainty-sr
       - measurements/normalisation-nlsr
-      - corrections/atmospheric-corrections
+      - corrections/atmospheric
       - corrections/lunar-radiance
       - corrections/stray-light
   - category: geometric-corrections

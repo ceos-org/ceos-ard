@@ -1,0 +1,2 @@
+term: Composite Product
+description: Product where samples (or pixels) are generated from more than one input data source, e.g. by local resolution weighting or by backscatter averaging.

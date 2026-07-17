@@ -7,6 +7,7 @@ The requirements are structured into folders and are described through YAML file
 
 The YAML files consist of the following components:
 
+- `id` (required): A unique identifier for the requirement. Must be unique across all requirements.
 - `title` (required): A short title for the requirement
 - `description`: An introduction for the requirement that sets the context.
   Due to historical reasons, most requirements don't provide such an introduction yet.
@@ -20,10 +21,26 @@ The YAML files consist of the following components:
 - `dependencies`: A mapping of named dependencies. See section [Dependencies](#dependencies).
 - `glossary`: Any terms that are relevant for this requirement (e.g. are used in the text). Use any file name (without extension) from the [glossary](../glossary/) folder.
 - `references`: Any relevant references for this requirement and are referred to in the text using the @ notation (see [Markdown](#markdown)). Use any file name (without extension) from the [references](../references/) folder.
-- `changes`: The changelog that describes the changes over time for this building block.
+- `changes`: The changelog that describes the changes over time for this building block. See section [Changelog](#changelog).
 - `history`: Refers to old identifiers of this requirement in case it has been renamed.
+- `remarks`: Internal editorial notes, todos, or other remarks. Only for internal use, they are not included in the generated documents.
+- `deprecated`: Flags a requirement as deprecated. It should not be used anymore and transitioned out of usage as soon as possible. The `changes` should explain the deprecation and direct towards alternatives / successors.
 
-todo: Remove goal/threshold from requirements and make each part a separate requirement where the document.yaml in the PFS can then choose whether a requirement is goal or threshold.
+The other building blocks share most of these components:
+
+- Sections (introduction, annexes, requirement categories) consist of `title`, `description`, `glossary`, `references`, `changes`, `remarks`, and `deprecated`.
+- Glossary terms consist of `term`, `description`, `references`, `changes`, and `remarks`, and `deprecated`.
+
+## Changelog
+
+The `changes` component describes the changes over time for a building block.
+Each entry in the list consists of the following components (all required):
+
+- `date`: The date of the change in ISO format (`YYYY-MM-DD`).
+- `author`: The name of the editor who made the change.
+- `change`: A description of the change. Markdown is supported for formatting.
+- `reason`: A short justification for the change.
+- `level`: The severity of the change, one of `major` (breaking change), `minor`, or `patch`.
 
 ## Markdown
 
@@ -70,32 +87,55 @@ Due to the fact that requirements don't include the category ID and could be amb
 
 This means if a requirement is used both in the same requirement category and in another category, you can't refer to the requirement that is used in the other requirement category.
 
-An example:
+## Append / Replace
+
+A PFS document (`pfs/*/document.yaml`) lists the requirement categories and requirements it consists of by their path.
+By default, a building block is included as-is:
 
 ```yaml
-# todo: remove once the example is no longer needed
-id: example
-title: Example Requirement
-description: This is an example requirement.
 requirements:
-  threshold:
-    description: |-
-      This is a threshold requirement.
-    metadata:
-  goal:
-    description: |-
-      This is a goal requirement.
-    notes:
-      - This is a note.
-    metadata:
-    optional: true
-dependencies:
-  other-requirement: example/other-requirement
-glossary:
-  - doi
-references:
-  - iso19115_2_2009
-changes:
-history:
-  - SAR 1.2
+  - category: general-metadata
+    requirements:
+      - metadata/data-access
 ```
+
+To adapt a building block for a specific PFS without changing the shared file,
+provide a mapping with a `ref` and the changes in `replace` and/or `append` instead of the plain path.
+This works for both requirements and requirement categories.
+
+```yaml
+requirements:
+  - category:
+      ref: general-metadata
+      append:
+        description: |-
+          This paragraph is added to the category description.
+        glossary:
+          - doi
+    requirements:
+      - metadata/data-access
+      - ref: per-pixel/ellipsoidal-incident-angle
+        replace:
+          requirements:
+            image:
+              optional: true
+        append:
+          requirements:
+            image:
+              description: |-
+                This paragraph is added to the description of the `image` sub-requirement.
+```
+
+The structure inside `replace` and `append` follows the normal YAML structure of the building block,
+but all components are optional. They are merged into the referenced building block as follows:
+
+- `replace`: The given values replace the existing values entirely.
+  Mappings are merged recursively, so you only need to specify the components you want to change.
+  All other values (strings, lists, booleans) are replaced as a whole.
+- `append`: The given values are added to the existing values.
+  Strings are appended as a new paragraph, lists are extended, and mappings are merged recursively.
+  Values that can't be appended (e.g. booleans) are replaced.
+
+If both are given, `replace` is applied first, then `append`.
+
+An examplary requirement file can be found in [_template.yaml](_template.yaml).

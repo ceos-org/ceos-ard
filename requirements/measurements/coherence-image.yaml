@@ -1,0 +1,30 @@
+id: coheri
+title: Coherence Image
+description: 
+requirements:
+  goal:
+    description: |-
+      InSAR coherence image for each InSAR pair defined in [@insarPair].
+
+      File format specifications/contents provided in metadata:
+
+      - Measurement Type (Coherence)
+      - insarID number
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, Complex Float, …)
+      - Bits per Sample
+      - Byte Order
+
+      Coherence image statistics:
+
+      - Average
+      - Standard deviation
+    optional: true
+dependencies:
+  insarPair: metadata/insar-pair
+glossary:
+  - insar
+references:
+changes:
+history:
+  - SAR 3.8

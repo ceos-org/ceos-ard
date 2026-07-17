@@ -3,16 +3,19 @@ title: Data Collection Time
 description:
 requirements:
   threshold:
-    # todo: the number of source data acquisitions has nothing to do with the time requirements, should be separate.
     description: |-
       Number of source data acquisitions of the data collection is identified.
       The start and stop UTC time of data collection is identified in the metadata, expressed in date/time.
-      In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata [@acquisition-id] is provided with the product.
-dependencies:
-  acquisition-id: per-pixel/acquisition-id
+      In the case of composite or mosaic products, the dates/times of the first and last data takes is provided with the product.
+  goal:
+    description: As threshold, but using ISO 8601 time format.
+    optional: true
 glossary:
   - utc
 references:
+  - iso8601_1_2019
 changes:
 history:
   - SAR 1.5
+remarks: |-
+  todo: The number of source data acquisitions has nothing to do with the time requirements, should be separate.

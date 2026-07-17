@@ -1,0 +1,21 @@
+id: dismod
+title: Displacement Modelling
+description: 
+requirements:
+  goal:
+    description: |-
+      Reference to displacement modelling technique used
+
+      - Methodology name
+      - Reference to methodology (text or DOI)
+      - Specific input parameters used
+
+      If a temperature refinement model is used, indicate model and temperature data source.
+    optional: true
+dependencies:
+glossary:
+  - doi
+references:
+changes:
+history:
+  - SAR 1.7.23

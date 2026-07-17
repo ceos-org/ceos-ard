@@ -1,7 +1,7 @@
-# todo: remove once the example is no longer needed
 id: example
 title: Example Requirement
-description: This is an example requirement.
+description: |-
+  **Usage:** Only for demonstration purposes. Do not use in production.
 requirements:
   threshold:
     description: |-
@@ -20,5 +20,13 @@ glossary:
 references:
   - iso19115_2_2009
 changes:
+  - date: 1988-08-08
+    author: John Doe
+    level: patch
+    change: |-
+      Changes this to that.
+    reason: Typo
 history:
   - SAR 1.2
+remarks: |-
+  Add internal editorial notes, todos, or other information here.

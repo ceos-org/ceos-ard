@@ -4,7 +4,7 @@ description:
 requirements:
   threshold:
     description: |-
-      Each acquisition is identified through a sequential identifier in the metadata, e.g. acqID = 1, 2, 3.
+      Source data attribute information are described for each acquisition and sequentially identified e.g. as acqID = 1, 2, 3, …
 dependencies:
 glossary:
 references:

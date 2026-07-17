@@ -18,8 +18,10 @@ requirements:
       - Bits per Sample
       - Byte Order
       - Bit Value Representation
+    notes:
+      - All bit value representations included in the Data Mask Image should be indicated in the metadata.
+      - For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
   goal:
-    # todo: Land recommendation for ORB shows up in non-ORB PFS
     description: |-
       As threshold, including additional bit value representations, e.g.:
   
@@ -32,10 +34,14 @@ requirements:
     optional: true
 dependencies:
 glossary:
+  - ceos-ard
   - orb
   - rtc
   - dem
+  - url
 references:
 changes:
 history:
   - SAR 2.2
+remarks: |-
+  todo: Land recommendation for ORB shows up in non-ORB PFS.

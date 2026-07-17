@@ -1,14 +1,10 @@
-# todo: remove product data mentions to be resuable in other products
-# todo: remove SAR mentions to be resuable in other products
-# todo: extent is misleading and usually a synonym for the bbox,
-# the requirement should probably be renamed to "Geographical Area" or similar
 id: geoarea-sar
 title: Product Geographical Extent
 description: 
 requirements:
   threshold:
     description: |-
-      The geometry of the SAR image footprint expressed in WGS84, in a standardised format (e.g., WKT Polygon). 
+      The geometry of the SAR image footprint expressed in longitude/latitude based on WGS84 (EPSG 4326), in a standardised format (e.g., WKT Polygon).
 dependencies:
 glossary:
   - wgs84
@@ -17,3 +13,7 @@ references:
 changes:
 history:
   - SAR 1.7.8
+remarks: |-
+  - Remove "product" mentions to be reusable for source and product.
+  - todo: Remove SAR mentions to be reusable in other products.
+  - todo: "Extent" is misleading and usually a synonym for the bbox, the requirement should probably be renamed to "Geographical Area" or similar.

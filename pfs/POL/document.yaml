@@ -1,5 +1,5 @@
-title: Polarimetric Radar
-version: 1.1.0
+title: Composite Backscatter
+version: 3.6.0
 type: Synthetic Aperture Radar
 applies_to: Data collected by Synthetic Aperture Radar sensors
 background: |-
@@ -51,17 +51,16 @@ glossary:
 references:
   - gens2013
   - toutin2013
-  - iso19115_2_2009
 
 introduction:
   - what-are-ceos-ard-products
   - when-is-a-product-ceos-ard
   - difference-threshold-goal
+  - sar-differences
 
 requirements:
   - category: general-metadata
     requirements:
-      # todo: most of the general metadata is product metadata - this should potentially be merged.
       - metadata/traceability-sar
       - metadata/machine-readability-sar
       - metadata/product-type
@@ -69,7 +68,7 @@ requirements:
       - metadata/time-sar
   - category: source-metadata
     requirements:
-      - metadata/acquisition-id # todo: this is new from the category description
+      - metadata/acquisition-id
       - metadata/data-access-source
       - metadata/instrument-sar
       - metadata/time-source
@@ -89,9 +88,9 @@ requirements:
       - metadata/sample-spacing
       - metadata/enl
       - metadata/resolution
-      # todo: speckle-filtering-pol should be just be speckle-filtering and instead add pol-filtering
-      - metadata/speckle-filtering-pol
-      # - metadata/pol-filtering
+      # todo: filtering-speckle-pol should be just be filtering-speckle and instead add filtering-pol
+      - metadata/filtering-speckle-pol
+      # - metadata/filtering-pol
       - metadata/geo-bbox
       - metadata/geo-area-sar
       - metadata/image-size
@@ -100,23 +99,25 @@ requirements:
       - metadata/orbit-reference-nrb-pol
   - category: per-pixel-metadata
     requirements:
-      - cloud-optimized-formats
       - metadata/machine-readability-sar
       - per-pixel/data-mask
       - per-pixel/scattering-area
       - per-pixel/local-incident-angle
-      - per-pixel/ellipsoidal-incident-angle
+      - ref: per-pixel/ellipsoidal-incident-angle
+        append:
+          requirements:
+            image:
+              optional: true
       - per-pixel/noise-power
       - per-pixel/gamma-sigma-ratio
-      - per-pixel/acquisition-id
+      - per-pixel/acquisition-id-mosaic
       - per-pixel/dem
   - category: radiometrically-corrected-measurements
     requirements:
-      - cloud-optimized-formats
       - measurements/backscatter-pol
-      - metadata/scaling-conversion
+      - measurements/scaling-conversion
       - metadata/noise-removal
-      - corrections/radiometric-terrain-algo
+      - corrections/radiometric-terrain-algorithm-applied
       - metadata/radiometric-accuracy-sar
       - measurements/flattened-phase
   - category: geometric-corrections
@@ -143,22 +144,26 @@ authors:
   - Bruce Chapman, Jet Propulsion Laboratory, USA
   - Howard Zebker, Stanford University, USA
   - Zheng-Shu Zhou, CSIRO, Australia
+  - Kimberlee Baldry, Geoscience Australia, Australia
   - David Bekaert, Jet Propulsion Laboratory, USA
   - Virginia Brancato, Jet Propulsion Laboratory, USA
   - Danilo Dadamia, CONAE, Argentina
   - Benjamin Deschamps, Environment and Climate Change, Canada
   - Matt Garthwaite, CSIRO, Australia
   - Guillaume Hajduch, Collecte Localisation Satellites, France
-  - P.V. Jayasri, ISRO, India
+  - Jayasri Poludasu, ISRO, India
   - Josef Kellndorfer, Earth Big Data, USA
+  - Joseph Kennedy, Alaska Satellite Facility, USA
   - Marco Lavalle, Jet Propulsion Laboratory, USA
   - Thomas Logan, Alaska Satellite Facility, USA
   - Franz Meyer, Alaska Satellite Facility, USA
   - Nuno Miranda, European Space Agency (ESA), Italy
+  - Matthias Mohr, moreGeo GmbH, Germany
   - Muriel Pinheiro, European Space Agency (ESA), Italy
   - Marko Repse, Sinergise, Slovenia
   - HariPriya Sakethapuram, ISRO, India
   - Gustavo H. X. Shiroma, Jet Propulsion Laboratory, USA
+  - Usha Sundari, ISRO, India
   - Andreia Siqueira, Geoscience Australia, Australia
   - Scott Staniewicz, Jet Propulsion Laboratory, USA
   - Takeo Tadono, Japan Aerospace Exploration Agency, Japan

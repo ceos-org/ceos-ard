@@ -8,7 +8,9 @@ requirements:
   
       CEOS-ARD processing steps could include method refining the geometric accuracy, such as cross-correlation of the SAR data in slant range with a SAR scene simulated from a DSM or DEM.
   
-      Methodology used (name and reference), quality flag, geometric standard deviation values should be provided. 
+      Methodology used (name and reference), quality flag, geometric standard deviation values should be provided.
+
+      For composite products, provide averaged ALE or averaged ARD ALE estimated from all sources.
     optional: true
 dependencies:
   geometric-accuracy: corrections/geometric-accuracy-sar
@@ -16,6 +18,7 @@ glossary:
   - ceos-ard
   - dsm
   - dem
+  - composite-product
 references:
 changes:
 history:

@@ -1,0 +1,28 @@
+id: interfi
+title: Interferogram Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Interferogram image for each InSAR pair defined in [@insarPair].
+      Indicate if the InSAR simulated ellipsoid and topographic phases have been subtracted.
+
+      File format specifications/contents provided in metadata:
+
+      - Measurement Type (Interferogram)
+      - insarID number
+      - Subtracted Earth curvature phase flag (True, False)
+      - Subtracted topographic phase flag (True, False)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+    optional: true
+dependencies:
+  insarPair: metadata/insar-pair
+glossary:
+  - insar
+references:
+changes:
+history:
+  - SAR 3.9

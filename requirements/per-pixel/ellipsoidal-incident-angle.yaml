@@ -2,7 +2,7 @@ id: pelinca
 title: Ellipsoidal Incident Angle Image
 description: 
 requirements:
-  goal:
+  image:
     description: |-
       Ellipsoidal incident angle is provided.
   
@@ -14,13 +14,11 @@ requirements:
       - Bits per Sample
       - Byte Order
       - Reference Ellipsoid Name
-    # todo: The note seems ORB specific, should only be visible in ORB PFS
     notes:
-      - For maritime ORB scenes when no land areas are covered, the ellipsoidal incident angle is nearly identical to the geoid based local incident angle.
-    optional: true
+      - For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
 dependencies:
 glossary:
-  - orb
+  - url
 references:
 changes:
 history:

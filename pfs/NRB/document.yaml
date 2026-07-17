@@ -1,5 +1,5 @@
 title: Normalised Radar Backscatter
-version: 1.1.0
+version: 1.3.0
 type: Synthetic Aperture Radar
 applies_to: Data collected by Synthetic Aperture Radar sensors
 background: |-
@@ -7,10 +7,13 @@ background: |-
 
   The CEOS-ARD Normalised Radar Backscatter (NRB) specification describes products that have been subject to Radiometric Terrain Correction (RTC) and are provided in the Gamma-Nought ($\gamma^0_T$) backscatter convention [@small2011], which mitigates the variations from diverse observation geometries and is recommended for most land applications.
   An additional metadata layer can be optionally provided for conversion of $\gamma^0_T$ to Sigma-Nought ($\sigma^0_T$) backscatter layer for compatibility with legacy software or numerical models.
+
   As the NRB product contains backscatter values only, it cannot be directly used for SAR polarimetry or interferometric applications that require relative polarization phase or local phase estimates respectively.
   However, as an option, a “flattened” phase data layer can be provided with an NRB product for enabling InSAR analysis.
-  The flattened phase is the interferometric phase, with respect to a reference orbit and to a DEM, for which the topographic phase contribution is removed.
+  The flattened phase is the interferometric phase, with respect to a reference orbit and to a digital elevation model (DEM), for which the topographic phase contribution is removed.
 
+  The NRB specification accommodates basic mosaic products generated from more than one input data source, where each pixel value in the NRB product uniquely corresponds to the pixel value of one of its input data sources, indicated in the Acquisition ID per-pixel metadata.
+  For products where the pixel value is dependent on multiple input sources, see the Composite Backscatter (CB) PFS.
 # Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
   - metadata
@@ -19,19 +22,21 @@ glossary:
   - insar
   - dem
   - pfs
+  - mosaic-product
+  - composite-product
 
 references:
-  - iso19115_2_2009
+  - small2011
 
 introduction:
   - what-are-ceos-ard-products
   - when-is-a-product-ceos-ard
   - difference-threshold-goal
+  - sar-differences
 
 requirements:
   - category: general-metadata
     requirements:
-      # todo: most of the general metadata is product metadata - this should potentially be merged.
       - metadata/traceability-sar
       - metadata/machine-readability-sar
       - metadata/product-type
@@ -39,7 +44,7 @@ requirements:
       - metadata/time-sar
   - category: source-metadata
     requirements:
-      - metadata/acquisition-id # todo: this is new from the category description
+      - metadata/acquisition-id
       - metadata/data-access-source
       - metadata/instrument-sar
       - metadata/time-source
@@ -59,7 +64,7 @@ requirements:
       - metadata/sample-spacing
       - metadata/enl
       - metadata/resolution
-      - metadata/speckle-filtering
+      - metadata/filtering-speckle
       - metadata/geo-bbox
       - metadata/geo-area-sar
       - metadata/image-size
@@ -68,23 +73,25 @@ requirements:
       - metadata/orbit-reference-nrb-pol
   - category: per-pixel-metadata
     requirements:
-      - cloud-optimized-formats
       - metadata/machine-readability-sar
       - per-pixel/data-mask
       - per-pixel/scattering-area
       - per-pixel/local-incident-angle
-      - per-pixel/ellipsoidal-incident-angle
+      - ref: per-pixel/ellipsoidal-incident-angle
+        append:
+          requirements:
+            image:
+              optional: true
       - per-pixel/noise-power
       - per-pixel/gamma-sigma-ratio
-      - per-pixel/acquisition-id
+      - per-pixel/acquisition-id-mosaic
       - per-pixel/dem
   - category: radiometrically-corrected-measurements
     requirements:
-      - cloud-optimized-formats
       - measurements/backscatter-nrb
-      - metadata/scaling-conversion
+      - measurements/scaling-conversion
       - metadata/noise-removal
-      - corrections/radiometric-terrain-algo
+      - corrections/radiometric-terrain-algorithm-applied
       - metadata/radiometric-accuracy-sar
       - measurements/flattened-phase
   - category: geometric-corrections
@@ -109,22 +116,26 @@ authors:
   - Bruce Chapman, Jet Propulsion Laboratory, USA
   - Howard Zebker, Stanford University, USA
   - Zheng-Shu Zhou, CSIRO, Australia
+  - Kimberlee Baldry, Geoscience Australia, Australia
   - David Bekaert, Jet Propulsion Laboratory, USA
   - Virginia Brancato, Jet Propulsion Laboratory, USA
   - Danilo Dadamia, CONAE, Argentina
   - Benjamin Deschamps, Environment and Climate Change, Canada
   - Matt Garthwaite, CSIRO, Australia
   - Guillaume Hajduch, Collecte Localisation Satellites, France
-  - P.V. Jayasri, ISRO, India
+  - Jayasri Poludasu, ISRO, India
   - Josef Kellndorfer, Earth Big Data, USA
+  - Joseph Kennedy, Alaska Satellite Facility, USA
   - Marco Lavalle, Jet Propulsion Laboratory, USA
   - Thomas Logan, Alaska Satellite Facility, USA
   - Franz Meyer, Alaska Satellite Facility, USA
   - Nuno Miranda, European Space Agency (ESA), Italy
+  - Matthias Mohr, moreGeo GmbH, Germany
   - Muriel Pinheiro, European Space Agency (ESA), Italy
   - Marko Repse, Sinergise, Slovenia
   - HariPriya Sakethapuram, ISRO, India
   - Gustavo H. X. Shiroma, Jet Propulsion Laboratory, USA
+  - Usha Sundari, ISRO, India
   - Andreia Siqueira, Geoscience Australia, Australia
   - Scott Staniewicz, Jet Propulsion Laboratory, USA
   - Takeo Tadono, Japan Aerospace Exploration Agency, Japan

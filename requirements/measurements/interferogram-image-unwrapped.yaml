@@ -1,0 +1,26 @@
+id: unwinterfi
+title: Unwrapped Interferogram Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Unwrapped interferogram image for each InSAR pair defined in [@insarPair].
+
+      File format specifications/contents provided in metadata:
+
+      - Measurement Type (Unwrapped Interferogram)
+      - insarID number
+      - Component (Line of Sight, Vertical, East, North)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+    optional: true
+dependencies:
+  insarPair: metadata/insar-pair
+glossary:
+  - insar
+references:
+changes:
+history:
+  - SAR 3.10

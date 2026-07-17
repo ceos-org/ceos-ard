@@ -3,10 +3,8 @@ title: Noise Removal
 description: 
 requirements:
   threshold:
-    # todo: The "(Y/N)" is implementation (and metadata language) specific, should not be listed here.
-    # See also ionosphere-indicator.yaml
     description: |-
-      Flag if noise removal has been applied (Y/N).
+      Flag if noise removal (see notes) has been applied (Y/N).
       Metadata should include the noise removal algorithm and reference to the algorithm as URL or DOI.
     notes:
       - Thermal noise removal and image border noise removal to remove overall scene noise and scene edge artefacts, respectively.
@@ -18,3 +16,5 @@ references:
 changes:
 history:
   - SAR 3.3
+remarks: |-
+  The "(Y/N)" is implementation (and metadata language) specific, should not be listed here. See also ionosphere-indicator.yaml.

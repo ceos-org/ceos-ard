@@ -1,0 +1,13 @@
+title: Compatibility and Interoperability of CEOS-ARD SAR Products
+description: |-
+  As can be seen from the individual PFS descriptions, only a few minor details in terms of generated parameters and/or the addition of supplemental data distinguish these CEOS-ARD products.
+  In part, they are to a large extent all backward-compatible.
+  For example, POL products implicitly include NRB products, while a coastal NRB or POL product can simply be made compatible with other ORB products by applying gamma-to-sigma conversion.
+  Just as GSLC can be converted to NRB (given that terrain-flattening was applied, a goal-requirement for GSLC, the inverse conversion can be made true by including the optional topographically flattened phase.
+  In this way a NRB or POL product can be used like a GSLC for InSAR applications.
+  Consequently, it becomes obvious that they all can follow a common approach, in terms of content and structure, in order to optimize their interoperability.
+glossary:
+references:
+changes:
+
+

@@ -1,1 +1,1 @@
-ceos-ard-cli~=0.5.4
+ceos-ard-cli~=0.5.6

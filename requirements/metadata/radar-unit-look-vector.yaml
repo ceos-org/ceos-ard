@@ -7,9 +7,11 @@ requirements:
       3-D components radar unit look vector, specified at centre of scene, in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating - ECR) is provided.
       It consists of unit vectors from antenna to surface pixel (i.e., positive Z component).
       
-      Only required if a Radar Unit Look Vector Grid Image (see [@radar-unit-look-vector-grid]) is **not** provided.
+      Only required if the corresponding per-pixel metadata [@image] is **not** provided.
 dependencies:
-  radar-unit-look-vector-grid: per-pixel/radar-unit-look-vector-grid
+  image:
+    - per-pixel/radar-unit-look-vector-grid-gslc
+    - per-pixel/radar-unit-look-vector-grid-insar
 glossary:
   - ecef
   - ecr

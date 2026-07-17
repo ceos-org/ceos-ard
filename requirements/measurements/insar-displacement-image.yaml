@@ -1,0 +1,31 @@
+id: indispi
+title: InSAR Displacement Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Displacement map image(s) could be expressed as a single cumulative displacement map or a temporal series of incremental displacement maps. 
+
+      File format specifications/contents provided in metadata:
+
+      - Measurement Type (InSAR Cumulative Displacement or InSAR Incremental Displacement)
+      - Measurement projection (Line of Sight, Vertical, Horizontal, East, North)
+      - Interval start time
+      - Interval end time
+      - Reference Polarization (HH, HV, VV, VH, RH, RL, …)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+
+      In case of polarimetric data, indicate the reference polarization.
+    optional: true
+dependencies:
+glossary:
+  - insar
+references:
+changes:
+history:
+  - SAR 3.11
+remarks: |-
+  todo: Should the last paragraph only be included in POL?

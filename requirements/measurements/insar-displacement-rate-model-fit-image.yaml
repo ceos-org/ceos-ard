@@ -1,0 +1,33 @@
+id: indisramfi
+title: InSAR Displacement Rate Model Fit Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Goodness of fit for model defined in [@rate].
+
+      File format specifications/contents provided in metadata:
+
+      - Measurement Type (Model standard deviation, R-squared, RMSE …)
+      - Measurement projection (Line of Sight, Vertical, Horizontal, East, North)
+      - Interval start time
+      - Interval end time
+      - Reference Polarization (HH, HV, VV, VH, RH, RL, …)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+
+      In case of polarimetric data, indicate the reference polarization.
+    optional: true
+dependencies:
+  rate: measurements/insar-displacement-rate-image
+glossary:
+  - insar
+  - rmse
+references:
+changes:
+history:
+  - SAR 3.14
+remarks: |-
+  todo: Should the last paragraph only be included in POL?

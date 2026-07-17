@@ -5,14 +5,16 @@ requirements:
   threshold:
     description: |-
       Image attributes related to the source data:
-  
-      - Source Data geometry (slant range/ground range)
-      - Azimuth pixel spacing \[m] (alternatively, Azimuth pixel spacing can be provided in second \[s], equivalent to the azimuth time sample interval) 
-      - Range pixel spacing 
-      - Azimuth resolution 
+
+      - Source data geometry (slant range/ground range/geocoded)
+      - Azimuth pixel spacing \[m] (alternatively, azimuth pixel spacing can be provided in second \[s], equivalent to the azimuth time sample interval)
+      - Range pixel spacing
+      - Azimuth resolution
       - Range resolution 
-      - Near range incident angle 
-      - Far range incident angle 
+      - Near range incident angle
+      - Far range incident angle
+    notes:
+      - For geocoded sources such as GSLC and InSAR, Azimuth and Range pixel spacing are replaced by line (row) and pixel (column) spacing information. Spatial resolution information is not required for geocoded sources.
   goal:
     description: |-
       Geometry of the image footprint expressed in WGS84 in a standardised format (e.g., WKT). 
