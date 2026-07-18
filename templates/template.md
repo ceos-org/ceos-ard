@@ -25,10 +25,7 @@ figPrefix:
 lstPrefix:
   - Listing
   - Listings
-secPrefix:
-  - Section
-  - Sections
-secPrefixTemplate: $$p$$&nbsp;"$$i$$"
+secPrefixTemplate: $$i$$
 # we want to include all citations regardless of usage, see https://pandoc.org/MANUAL.html#including-uncited-items-in-the-bibliography
 nocite: |
   @*

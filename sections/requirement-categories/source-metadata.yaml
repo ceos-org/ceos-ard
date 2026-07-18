@@ -1,7 +1,11 @@
 id: src
 title: Source Metadata
 description: |-
-  These are metadata records describing (detailing) **each** acquisition used to generate the ARD product.
+  Metadata describing (detailing) **each** acquisition used to generate the ARD product.
+
+  Source data attribute information can refer to other products for higher level ARD derived from those, under the condition of their availability (@daccess-src).
+dependencies:
+  daccess-src: metadata/data-access-source
 glossary:
 references:
 changes:

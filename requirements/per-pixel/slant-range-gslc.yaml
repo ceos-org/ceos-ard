@@ -10,7 +10,7 @@ requirements:
   
       - Sample Type (Length)
       - Data Format (GeoTIFF, HDF5, NetCDF, …)
-      - Data Type (Int, Float, …)
+      - Data Type (Float, …)
       - Bits per Sample
       - Byte Order
     notes:

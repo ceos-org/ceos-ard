@@ -35,11 +35,11 @@ description: |-
 
   $$\text{Flattended Phase:} \quad \varphi_{\text{Flattended}} = \arg (GSLC) $$
 
-  For POL product, the Flattened phase needs also to be subtracted from the complex number phase of the off-diagonal elements of the covariance matrix.
+  For the POL product, the Flattened Phase is defined for a specific polarisation. Since off-diagonal elements of the covariance matrix contain the relative phase between two polarizations, other polarization(s) Flattened Phase can be estimated by subtracting the complex number phase of the off-diagonal elements from reference polarization Flattened phase. As for example, if the reference Flattened Phase is for HH polarization ($\phi_{HH}$), then the Flattened Phase for VV polarization is $\phi_{VV} = \phi_{HH} - \arg\!\left(HH \, VV^{*}\right)$. Nonetheless, since the elements of the covariance matrix have been averaged, providing individual polarization Flattened Phase images under 3.7 is more accurate.
 
-  Demonstration:
+  InSAR from [GSLC] Demonstration:
 
-  From CEOS-ARD flattened SAR products, InSAR processing can be easily performed without dealing with topographic features and orbital sensor position, as for example with two GSLC products
+  From CEOS-ARD flattened SAR products, InSAR processing can be easily performed without dealing with topographic features and orbital sensor position, as for example with two [GSLC] products 
 
   $$
   \varphi_{\text{Flattened}\_\text{GSLC}\_1} = \varphi_{\text{SLC}\_1} - \Delta\varphi_{\text{Topo}\_\text{OrbRef}-1} = \varphi_{\text{SLC}\_1} - \varphi_{\text{DEM}\_\text{OrbRef}} - \varphi_{\text{DEM}\_\text{SLC}\_1}
@@ -69,7 +69,7 @@ description: |-
   \Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = \Delta\varphi_{\text{SLC}\_1-\text{SLC}\_2} - \Delta\varphi_{\text{Topo}\_1-2}
   $$ {#eq:sar-topographic-phase-removal-eq9}
 
-  Where $\Delta\varphi_{\text{SLC}\_1-\text{SLC}\_2}$ can be express as [@eq:sar-topographic-phase-removal-eq1], which gives
+  Where $\Delta\varphi_{\text{SLC}\_1-\text{SLC}\_2}$ can be expressed as [@eq:sar-topographic-phase-removal-eq1], which gives
 
   $$
   \Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = (\Delta \varphi_{\text{Topo}\_1-2} + \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2}) - \Delta\varphi_{\text{Topo}\_1-2}

@@ -1,7 +1,7 @@
 id: flapha
 title: Flattened Phase
 description: |-
-  **Usage: Alternative to GSLC product for NRB and POL products**
+  **Usage:** Alternative to GSLC product for NRB and POL products
 requirements:
   goal:
     description: |-

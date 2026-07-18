@@ -6,9 +6,8 @@ requirements:
     description: |-
       Information related to the platform orbit used for data processing:
   
-      - Pass direction (asc/desc)
+      - Pass direction (asc/desc), see note
       - Orbit data source (e.g., predicted, definite, precise, downlinked, etc.)
-  
     notes:
       - For source data crossing the North or South Pole, it is recommended to produce two distinct CEOS-ARD products and to use the appropriate “Pass direction” in each.
   goal:

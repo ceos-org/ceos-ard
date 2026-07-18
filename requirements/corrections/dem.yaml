@@ -1,7 +1,7 @@
 id: cdem
 title: Digital Elevation Model
 description: |-
-    **Usage: For products including land areas.**
+    **Usage:** For products including land areas.
 requirements:
   threshold:
     description: |-

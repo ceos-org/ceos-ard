@@ -10,7 +10,7 @@ requirements:
       - Minimal and maximal perpendicular baselines (not required when type = "All")
       - Minimal and maximal temporal baselines (not required when type = "All")
 
-      When InSAR product contains image data derived from InSAR pairs, as defined under items 3.8, 3.9, and 3.10, provide list of source acquisition ID (e.g. as per @acqid) for the InSAR pair (primary and secondary acquisitions).
+      When InSAR product contains image data derived from InSAR pairs, as defined in @coherence, @interferogram, and @unwrappedInterferogram, provide list of source acquisition ID (e.g. as per @acqid) for the InSAR pair (primary and secondary acquisitions).
       Repeat for multiple InSAR pair products and assign/specify InSAR pair ID number (e.g., insarID = 1, 2, 3 …).
       For multi-polarisation source acquisition, specify the polarisation used for the InSAR pair.
             
@@ -31,6 +31,9 @@ dependencies:
   acqid: metadata/acquisition-id
   perpendicular: per-pixel/insar-perpendicular-baseline
   parallel: per-pixel/insar-parallel-baseline
+  coherence: measurements/coherence-image
+  interferogram: measurements/interferogram-image
+  unwrappedInterferogram: measurements/interferogram-image-unwrapped
 sections:
   src: requirement-categories/source-metadata
 glossary:

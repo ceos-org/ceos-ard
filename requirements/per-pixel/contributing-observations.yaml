@@ -11,14 +11,14 @@ requirements:
       File format specifications/contents provided in metadata:
 
       -	Quality Descriptor Type
-      -	dB-scaling Expression Convention (linear amplitude or linear power \[see notes])
+      -	dB-scaling Expression Convention (linear amplitude or linear power \[see note])
       -	Polarization (HH, HV, VV, VH, RR, …)
       -	Data Format (GeoTIFF, HDF5, NetCDF, …)
       -	Data Type (Int, Float, ...)
       -	Bits per Sample
       -	Byte Order
     notes:
-      - Transformation to the logarithm decibel scale is not required or desired as this step can be easily completed by the user if necessary.
+      - Transformation to the logarithmic decibel scale is not required or desired as this step can be completed by the user if necessary.
     optional: true
 dependencies:
 glossary:

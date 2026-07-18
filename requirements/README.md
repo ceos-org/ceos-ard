@@ -7,7 +7,7 @@ The requirements are structured into folders and are described through YAML file
 
 The YAML files consist of the following components:
 
-- `id` (required): A unique identifier for the requirement. Must be unique across all requirements.
+- `id` (required): A unique identifier for the requirement. Must be unique across all requirements. Recommendation is to keep it between 6 and 10 characters and make it "pronouncable" so that it's easier to communicate them. If unsure about uniqueness, conflicts will be flagged by the validator.
 - `title` (required): A short title for the requirement
 - `description`: An introduction for the requirement that sets the context.
   Due to historical reasons, most requirements don't provide such an introduction yet.

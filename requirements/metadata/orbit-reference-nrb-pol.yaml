@@ -1,7 +1,7 @@
 id: reorbit-nrb-pol
 title: Reference Orbit
 description: |-
-  **Usage: Only when Flattened phase per-pixel metadata (see [@flattened-phase]) is provided.**
+  **Usage:** Only when Flattened phase per-pixel metadata (see [@flattened-phase]) is provided.
 requirements:
   goal:
     description: |-

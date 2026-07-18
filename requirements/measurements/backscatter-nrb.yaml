@@ -9,14 +9,14 @@ requirements:
       File format specifications/contents provided in metadata:
   
       - Measurement Type (Gamma-Nought)
-      - Backscatter Expression Convention (linear amplitude, or linear power \[see notes])
+      - Backscatter Expression Convention (linear amplitude, or linear power \[see note])
       - Polarization (HH, HV, VV, VH)
       - Data Format (GeoTIFF, HDF5, NetCDF, …)
       - Data Type (Int, Float, …)
       - Bits per Sample
       - Byte Order
     notes:
-      - Transformation to the logarithm decibel scale is not required or desired as this step can be easily completed by the user if necessary.
+      - Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
 dependencies:
 glossary:
   - nrb

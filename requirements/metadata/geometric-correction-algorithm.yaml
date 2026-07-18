@@ -11,7 +11,7 @@ requirements:
       - The sources of auxiliary data used to make corrections
       - Resampling method used for geometric processing of the source data
     notes:
-      - Examples of technical documentation can include e.g., an Algorithm Theoretical Basis Document (ATBD) or a product user guide.
+      - Examples of technical documentation can include e.g., an Algorithm Theoretical Basis Document (ATBD), or a product user guide.
     optional: true
 dependencies:
 glossary:

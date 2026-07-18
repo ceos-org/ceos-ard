@@ -10,8 +10,9 @@ requirements:
       File format specifications/contents provided in metadata:
   
       - Sample Type (3D unit vector)
+      - Source acquisition ID (e.g. acqID)
       - Data Format (GeoTIFF, HDF5, NetCDF, …)
-      - Data Type (Int, Float, …)
+      - Data Type (Double Float, …)
       - Bits per Sample
       - Byte Order
     notes:

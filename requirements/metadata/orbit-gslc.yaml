@@ -6,10 +6,9 @@ requirements:
     description: |-
       Information related to the platform orbit used for data processing:
   
-      - Pass direction (asc/desc)
+      - Pass direction (asc/desc), see note
       - Orbit data source (e.g., predicted, definite, precise, downlinked, etc.)
       - Relative orbit number, if defined
-  
     notes:
       - For source data crossing the North or South Pole, it is recommended to produce two distinct CEOS-ARD products and to use the appropriate “Pass direction” in each.
   goal:
@@ -20,7 +19,6 @@ requirements:
       - Orbit data file containing state vectors (minimum of 5 state vectors, from 10% of scene length *before* start time to 10% of scene length *after* stop time) 
       - Platform (mean) altitude
       - Absolute orbit number
-      - Relative orbit number
       - Perpendicular baseline to virtual orbit or reference orbit used for phase correction
     optional: true
 dependencies:

@@ -1,7 +1,7 @@
 id: piscata
 title: Scattering Area Image
 description: |-
-  **Usage: Recommended for scenes that include land areas.**
+  **Usage:** Recommended for scenes that include land areas.
 requirements:
   goal:
     description: |-

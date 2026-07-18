@@ -11,7 +11,7 @@ requirements:
   
       - Sample Type (3D unit vector)
       - Data Format (GeoTIFF, HDF5, NetCDF, …)
-      - Data Type (Int, Float, …)
+      - Data Type (Double Float, …)
       - Bits per Sample
       - Byte Order
     notes:

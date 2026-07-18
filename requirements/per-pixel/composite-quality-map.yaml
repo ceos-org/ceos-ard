@@ -4,23 +4,25 @@ description:
 requirements:
   goal:
     description: |-
-      From the methodology defined in [@small2022], the quality layer describing the composite's achieved local resolution is provided  [@sec:annex-sar-cb-example].
+      From the methodology defined in [@small2022], the quality layer describing the composite's achieved local resolution is provided (see @cb-example).
       A separate Composite Quality Map Image is generated for each polarisation, as, in the general case, each may have a different number of inputs.
 
       File format specifications/contents provided in metadata:
 
-      -	Quality Descriptor Type 
-      -	dB-scaling Expression Convention (linear amplitude or linear power \[see notes])
+      -	Quality Descriptor Type
+      -	dB-scaling Expression Convention (linear amplitude or linear power \[see note])
       -	Polarization (HH, HV, VV, VH, RR, …)
       -	Data Format (GeoTIFF, HDF5, NetCDF, …)
       -	Data Type (Int, Float, ...)
       -	Bits per Sample
       -	Byte Order
     notes:
-      - Transformation to the logarithm decibel scale is not required or desired as this step can be easily completed by the user if necessary.
+      - Transformation to the logarithmic decibel scale is not required or desired as this step can be completed by the user if necessary.
     metadata:
     optional: true
 dependencies:
+sections:
+  cb-example: annexes/sar-cb-example
 glossary:
 references:
 changes:

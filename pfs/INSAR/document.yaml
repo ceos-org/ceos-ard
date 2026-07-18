@@ -76,7 +76,12 @@ requirements:
   - category: per-pixel-metadata
     requirements:
       - metadata/machine-readability-sar
-      - per-pixel/data-mask
+      - ref: per-pixel/data-mask
+        append:
+          requirements:
+            goal:
+              description: |-
+                - Unwrapped interferogram phase quality flag/score
       - per-pixel/scattering-area
       - ref: per-pixel/ellipsoidal-incident-angle
         append:
@@ -96,8 +101,6 @@ requirements:
           requirements:
             goal:
               description: |-
-                For InSAR additionally provided in metadata:
-
                 -	insarID number (see [@insarID])
                 -	Corresponding interferogram
           dependencies:
@@ -107,8 +110,6 @@ requirements:
           requirements:
             goal:
               description: |-
-                For InSAR additionally provided in metadata:
-
                 -	insarID number (see [@insarID])
           dependencies:
             insarID: metadata/insar-pair
@@ -117,8 +118,6 @@ requirements:
           requirements:
             goal:
               description: |-
-                For InSAR additionally provided in metadata:
-
                 -	insarID number (see [@insarID])
           dependencies:
             insarID: metadata/insar-pair
