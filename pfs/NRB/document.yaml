@@ -1,5 +1,5 @@
 title: Normalised Radar Backscatter
-version: 1.3.0
+version: 6.0.0
 type: Synthetic Aperture Radar
 applies_to: Data collected by Synthetic Aperture Radar sensors
 background: |-
@@ -14,7 +14,6 @@ background: |-
 
   The NRB specification accommodates basic mosaic products generated from more than one input data source, where each pixel value in the NRB product uniquely corresponds to the pixel value of one of its input data sources, indicated in the Acquisition ID per-pixel metadata.
   For products where the pixel value is dependent on multiple input sources, see the Composite Backscatter (CB) PFS.
-# Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
   - metadata
   - nrb
@@ -146,19 +145,20 @@ authors:
   - Francesco De Zan, Delta-Phi Remote Sensing GmbH, Germany
 
 changes:
-  - date: 2026-03-26
+  - date: 2026-07-20
     author: Matthias Mohr
-    level: patch
+    level: minor
     change: |-
       - The Combined SAR PFS has been split into separate PFS per product type
       - Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
-      - Document history has been reset. Check the previous versions for details
       - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
-      - Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”.
+      - Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
+      - Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
+      - Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
+      - Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
       - The subcategories for Source and Product metadata have been flattened into top-level categories
-      - Requirement "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
-      - Requirement "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
       - Annex has been reformatted and updated as required by the split
+      - Document history has been reset. Check the previous versions for details
 
-      **Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3](https://ceos.org/ard/files/PFS/SAR/v1.3/CEOS-ARD_PFS_Synthetic_Aperture_Radar_v1.3.pdf) for product type "NRB".
+      **Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Normalised Radar Backscatter (NRB)**.
     reason: Migration to building blocks.

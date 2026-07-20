@@ -4,7 +4,6 @@ type: Optical
 applies_to: Data collected with multispectral optical sensors operating in the VIS/NIR/SWIR wavelengths at all ground sample distances and resolutions.
 background:
 
-# Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
   - sr
   - vis
