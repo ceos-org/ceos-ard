@@ -46,14 +46,14 @@ requirements:
       - metadata/data-quality-st
   - category: per-pixel-metadata
     requirements:
-      - per-pixel/machine-readability
-      - per-pixel/nodata
-      - per-pixel/incomplete-testing
-      - per-pixel/saturation
-      - per-pixel/cloud
-      - per-pixel/cloud-shadow
-      - per-pixel/snow-ice-sr
-      - per-pixel/view-angles-solar
+      - per-pixel/nodata-st
+      - per-pixel/incomplete-testing-st
+      - per-pixel/saturation-st
+      - per-pixel/cloud-st
+      - per-pixel/cloud-shadow-st
+      - per-pixel/surface-st
+      - per-pixel/view-angles-solar-ar
+      - per-pixel/terrain-occlusion-st
   - category: radiometric-atmospheric-corrections
     requirements:
       - measurements/measurand-st

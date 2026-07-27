@@ -5,10 +5,6 @@ requirements:
   threshold:
     description: |-
       Retrieval methods for estimating surface temperature are provided.
-  goal:
-    description: |-
-      As threshold.
-    optional: true
 dependencies:
 glossary:
 references:

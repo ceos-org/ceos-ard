@@ -1,0 +1,21 @@
+id: picloudsh-st
+title: Cloud Shadow
+description: 
+requirements:
+  goal:
+    description: |-
+      Specification of whether a pixel is cloud shadow-affected.
+    optional: true
+dependencies:
+glossary:
+  - doi
+references:
+changes:
+  - date: 2026-07-24
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Cloud shadow no longer a threshold requirement. Cloud shadow and cloud shadow-affected merged into 'cloud shadow-affected'.
+    reason: Limited suitability of cloud shadow for non-reflectance remote sensing methods.
+history:
+  - ST 6.0

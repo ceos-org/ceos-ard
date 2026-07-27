@@ -1,0 +1,13 @@
+id: pinodat-st
+title: No Data
+description: 
+requirements:
+  threshold:
+    description: |-
+      Pixels that do not correspond to an observation (‘empty pixels’) are flagged and meaning of the flag values declared.
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - ST 6.0

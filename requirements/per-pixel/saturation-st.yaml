@@ -1,0 +1,19 @@
+id: pisatur-st
+title: Saturation
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether there is pixel radiometric saturation at Level 1 in a given spectral band.
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-07-27
+    author: Harvey Jones
+    level: major
+    change: |-
+      Adopted the convention used by the AR PFS and changed Threshold description from 'one or more spectral bands' to 'a given spectral band' and removed the Goal requirement. 
+    reason: Approach from the AR PFS was adopted and modified. The ST PFS v6.0 team proposed that 'per band' and 'band independent' requirements are classified within the per-pixel metadata section. Saturation would be a per band requirement.
+history:
+  - AR 2.0

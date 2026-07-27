@@ -6,12 +6,13 @@ requirements:
     description: |-
       Pixel values are a measurement of the Surface Temperature expressed in kelvin.
     notes:
-      - See 1.10
+      - See [@bands]
   goal:
     description: |-
       Surface temperature measurements are SI traceable (see also [@traceability]).
     optional: true
-dependencies:
+dependencies:  
+  bands: metadata/spectral-bands
   traceability: metadata/traceability-st
 glossary:
   - si
