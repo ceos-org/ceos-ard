@@ -5,7 +5,7 @@ requirements:
   threshold:
     description: |-
       Coordinate referring to the centre, the upper left corner, or the lower left corner of a pixel.
-      Values are [pixel centre, pixel ULC or pixel LLC].
+      Values are pixel centre, pixel ULC or pixel LLC.
 dependencies:
 glossary:
 references:

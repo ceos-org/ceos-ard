@@ -4,7 +4,7 @@ description:
 requirements:
   goal:
     description: |-
-      Data file(s) identifying pixels used for InSAR displacement modeling (items 3.11 to 3.14).
+      Data file(s) identifying pixels used for InSAR displacement modeling (requirements [@displacement; @displacement-residue; @displacement-rate; @displacement-rate-model-fit]).
       As a suggestion, this information can be provided as a single multi-layer file, where each 1-bit layer, containing 0 (not used) and 1 (used) flags, refers to an insarID pair (for SBAS type InSAR) or Source ID (when insarIDs are not listed).
       Instead, a list of Dates identifying layers can be provided under this item.  
   
@@ -19,11 +19,14 @@ requirements:
     optional: true
 dependencies:
   insarID: metadata/insar-pair
+  displacement: measurements/insar-displacement-image
+  displacement-residue: measurements/insar-displacement-residue-image
+  displacement-rate: measurements/insar-displacement-rate-image
+  displacement-rate-model-fit: measurements/insar-displacement-rate-model-fit-image
 glossary:
 references:
 changes:
 history:
   - SAR 2.19
 remarks: |-
-  - todo: fix references for 3.11 - 3.14
   - todo: add glossary entry for SBAS

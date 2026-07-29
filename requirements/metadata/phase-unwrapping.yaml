@@ -4,7 +4,7 @@ description:
 requirements:
   threshold:
     description: |-
-      If 3.10-Unwrapped Interferogram Image is provided, technique used for InSAR phase unwrapping
+      If an @title:requirements/measurements/interferogram-image-unwrapped (see [@unwrapped-interferogram]) is provided, technique used for InSAR phase unwrapping
 
       - Methodology name
       - Reference to methodology (text or DOI)
@@ -14,6 +14,7 @@ requirements:
           2. Number of iterations
           3. Stable reference point coordinates or multi-point approach information
 dependencies:
+  unwrapped-interferogram: measurements/interferogram-image-unwrapped
 glossary:
   - doi
   - insar
@@ -21,5 +22,3 @@ references:
 changes:
 history:
   - SAR 1.7.20
-remarks: |-
-  todo: Resolve references.

@@ -15,7 +15,7 @@ requirements:
     description: |-
       As threshold, including also:
   
-      - Platform heading angle expressed in degrees (0-360) from North 
+      - Platform heading angle expressed in degrees (0-360) from North
       - Orbit data file containing state vectors (minimum of 5 state vectors, from 10% of scene length *before* start time to 10% of scene length *after* stop time) 
       - Platform (mean) altitude
       - Absolute orbit number

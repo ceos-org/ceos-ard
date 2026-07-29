@@ -19,7 +19,7 @@ description: |-
   1. The use of a virtual circular orbit above a nonrotating planet [@zebker2010]
   2. The use of a specific orbit cycle or a simulated orbit of the SAR mission
 
-  In both cases, the InSAR topographic phase $\Delta \varphi_{\text{Topo}\_\text{OrbRef}-2}$ is simulated against the position of a virtual sensor $\Delta \varphi_{\text{Topo}\_\text{OrbRef}}$ lying on a reference orbit, instead of being simulated relatively to an existing reference SAR acquisition ($\varphi_{\text{DEM}\_\text{SLC}\_1}$). The use of a virtual circular orbit is a more robust approach since the reference orbit is defined at a fixed height above scene nadir and assuming the reference orbital height constant for all CEOS-ARD products. While with the second approach, the CEOS-ARD data producer must select a specific archived orbit cycle of the SAR mission or define a simulated one, from which the relative orbit, matching the one of the SAR acquisitions to be processed (to be converted to CEOS-ARD), is defined as the reference orbit. With this second approach, it is important to always use the same orbit cycle (or simulated orbit) for all the CEOS-ARD produced for a mission, in order to preserve the relevant compensated phase in between them. Providing absolute reference orbit number information in the metadata (item 1.7.15) allows users to validate the InSAR feasibility in between CEOS-ARD products.
+  In both cases, the InSAR topographic phase $\Delta \varphi_{\text{Topo}\_\text{OrbRef}-2}$ is simulated against the position of a virtual sensor $\Delta \varphi_{\text{Topo}\_\text{OrbRef}}$ lying on a reference orbit, instead of being simulated relatively to an existing reference SAR acquisition ($\varphi_{\text{DEM}\_\text{SLC}\_1}$). The use of a virtual circular orbit is a more robust approach since the reference orbit is defined at a fixed height above scene nadir and assuming the reference orbital height constant for all CEOS-ARD products. While with the second approach, the CEOS-ARD data producer must select a specific archived orbit cycle of the SAR mission or define a simulated one, from which the relative orbit, matching the one of the SAR acquisitions to be processed (to be converted to CEOS-ARD), is defined as the reference orbit. With this second approach, it is important to always use the same orbit cycle (or simulated orbit) for all the CEOS-ARD produced for a mission, in order to preserve the relevant compensated phase in between them. Providing absolute reference orbit number information in the metadata (see requirement "@title:requirements/metadata/orbit-reference-gslc" in the applicable PFS) allows users to validate the InSAR feasibility in between CEOS-ARD products.
 
   $$
   \varphi_{\text{Flattended}\_\text{SLC}\_2} = \varphi_{\text{SLC}\_2} - \Delta\varphi_{\text{Topo}\_\text{OrbRef}-2}
@@ -35,7 +35,7 @@ description: |-
 
   $$\text{Flattended Phase:} \quad \varphi_{\text{Flattended}} = \arg (GSLC) $$
 
-  For the POL product, the Flattened Phase is defined for a specific polarisation. Since off-diagonal elements of the covariance matrix contain the relative phase between two polarizations, other polarization(s) Flattened Phase can be estimated by subtracting the complex number phase of the off-diagonal elements from reference polarization Flattened phase. As for example, if the reference Flattened Phase is for HH polarization ($\phi_{HH}$), then the Flattened Phase for VV polarization is $\phi_{VV} = \phi_{HH} - \arg\!\left(HH \, VV^{*}\right)$. Nonetheless, since the elements of the covariance matrix have been averaged, providing individual polarization Flattened Phase images under 3.7 is more accurate.
+  For the POL product, the Flattened Phase is defined for a specific polarisation. Since off-diagonal elements of the covariance matrix contain the relative phase between two polarizations, other polarization(s) Flattened Phase can be estimated by subtracting the complex number phase of the off-diagonal elements from reference polarization Flattened phase. As for example, if the reference Flattened Phase is for HH polarization ($\phi_{HH}$), then the Flattened Phase for VV polarization is $\phi_{VV} = \phi_{HH} - \arg\!\left(HH \, VV^{*}\right)$. Nonetheless, since the elements of the covariance matrix have been averaged, providing individual polarization Flattened Phase images under requirement "@title:requirements/measurements/flattened-phase" in the applicable PFS is more accurate.
 
   InSAR from [GSLC] Demonstration:
 
@@ -75,11 +75,14 @@ description: |-
   \Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = (\Delta \varphi_{\text{Topo}\_1-2} + \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2}) - \Delta\varphi_{\text{Topo}\_1-2}
   $$ {#eq:sar-topographic-phase-removal-eq10}
 
-  Consequently, the differential phase of two CEOS-ARD products doesn’t contain a topographic phase and is already unwrapped (at least over stable areas). It is only function of the surface displacement and of the noise term. Depending on the reference DEM and the satellite orbital state vector accuracies, some residual topographic phase could be present. Atmospheric (item 2.15) and ionospheric (item 2.16) phase corrections could be performed during the production of CEOS-ARD products, which reduces the differential phase noise in an InSAR analysis.
+  Consequently, the differential phase of two CEOS-ARD products doesn’t contain a topographic phase and is already unwrapped (at least over stable areas). It is only function of the surface displacement and of the noise term. Depending on the reference DEM and the satellite orbital state vector accuracies, some residual topographic phase could be present. Atmospheric (see [@atmospheric-correction]) and ionospheric (see [@ionospheric-correction]) phase corrections could be performed during the production of CEOS-ARD products, which reduces the differential phase noise in an InSAR analysis.
 
   $$
   \Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2})
   $$ {#eq:sar-topographic-phase-removal-eq11}
+dependencies:
+  atmospheric-correction: per-pixel/atmospheric-phase-correction
+  ionospheric-correction: per-pixel/ionospheric-phase-correction
 glossary:
 references:
   - zebker2010
