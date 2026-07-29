@@ -1,0 +1,19 @@
+id: pincot-st
+title: Incomplete Testing
+description: 
+requirements:
+  threshold:
+    description: |-
+      Identifies pixels for which the per-pixel tests (2.3, 2.4, 2.6) have not all been successfully completed.
+    notes:
+      - This may be the result of missing ancillary data for a subset of the pixels.
+  goal:
+    description: |-
+      Identifies which tests (2.3, 2.4, 2.5, 2.6, 2.8) have and have not been successfully completed for each pixel.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - ST 6.0

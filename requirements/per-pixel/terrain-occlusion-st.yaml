@@ -1,0 +1,20 @@
+id: terocc-st
+title: Terrain Occlusion
+description: 
+requirements:
+  goal:
+    description: |-
+      Identifies pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-07-24
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Introduced as Goal requirement
+    reason: Responds to GitHub issue attached from AR PFS V2.0 endorsement
+history:
+  - SR 2.10, ST 6.0

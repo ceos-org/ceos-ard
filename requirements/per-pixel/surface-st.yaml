@@ -1,0 +1,26 @@
+id: pisurf
+title: Surface
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether a pixel is assessed as being land or water, including the information source and other relevant surface characteristic classification.
+    notes:
+      - External data sources are listed in [@auxiliary].
+  goal:
+    description: |-
+      As threshold, but the metadata specifies whether a pixel is assessed as being snow or ice.
+    optional: true
+dependencies:
+  auxiliary: metadata/auxiliary-data-optical
+glossary:
+references:
+changes:
+  - date: 2026-07-24
+    author: Harvey Jones
+    level: major
+    change: |-
+      Replaced snow/ice mask with a surface classification requirement 
+    reason: Providing useful information at the Threshold level for the type of Surface Temperature measured while retaining the Goal requirement for snow/ice classification.
+history:
+  - ST 6.0

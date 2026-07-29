@@ -1,0 +1,24 @@
+id: emiani
+title: Adjustments for Emissivity and Anisotropy
+description: 
+requirements:
+  threshold:
+    description: |-
+      Retrieval methods for estimating surface emissivity per channel are provided.
+  goal:
+    description: |-
+      As threshold, but the retrieval method for estimating the total directional emissivity is provided.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-07-15
+    author: Harvey Jones
+    level: major
+    change: |-
+      Created new requirement, introducing new Goal requirement for Anistropy. Per-pixel emissivity now required explicitly at Threshold.
+    reason: responds to https://github.com/ceos-org/ceos-ard/issues/88. Per-pixel emissivity was deemed critical for ARD, with directional emissivity as a desirable (Goal) addition. 
+history:
+  - ST 6.0
+

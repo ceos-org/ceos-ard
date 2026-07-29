@@ -2,16 +2,25 @@ id: muncer-st
 title: Measurement Uncertainty
 description:
 requirements:
+  threshold:
+    description:
+      A self-assessed declaration of per-pixel measurement uncertainty, following Section 3.2.4 (Uncertainty Characterization) of the Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines is provided, meeting the Basic or Good criteria.
   goal:
     description: |-
-      Uncertainty, in Kelvin, of the surface temperature measurement for each pixel is provided.
+      A self-assessed declaration of per-pixel measurement uncertainty, following Section 3.2.4 (Uncertainty Characterization) of the Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines is provided, meeting the Excellent or Ideal criteria. 
     notes:
       - |-
-        Some of the intent of the initial wording (below), which refers to atmospheric windows, may have been lost: Uncertainty, in units Kelvin, of the surface temperature for each pixel is also accompanied by distance from cloud (above) and atmospheric transmission (intervals, i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).
+        https://science.nasa.gov/wp-content/uploads/2026/05/joint-optical-guidelines-jul2025-signed.pdf
     optional: true
 dependencies:
 glossary:
 references:
 changes:
+  - date: 2026-07-15
+    author: Harvey Jones
+    level: major
+    change: |-
+      self-reported uncertainty characterisation required at the Threshold level, against the ESA-NASA-USGS optical quality assessment framework. Different self-assessed grades are required for the Threshold and Goal level. 
+    reason: Responds to feedback from WGCV (WGCV-56 Meeting) and ST PFS team that some level of uncertainty information must be mandatory for CEOS-ARD.
 history:
   - ST 3.3
