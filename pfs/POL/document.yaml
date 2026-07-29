@@ -1,5 +1,5 @@
 title: Polarimetric Radar
-version: 4.0.0
+version: 3.6.0
 type: Synthetic Aperture Radar
 applies_to: Data collected by Synthetic Aperture Radar sensors
 background: |-
