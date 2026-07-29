@@ -129,7 +129,6 @@ requirements:
 
 annexes:
   - sar-general-processing-roadmap
-  - sar-topographic-phase-removal
   - sar-pol-covmat
   - sar-pol-prd
   - sar-pol-examples
