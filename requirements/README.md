@@ -47,7 +47,7 @@ Each entry in the list consists of the following components (all required):
 
 The flavor of Markdown that is implemented here has some additional features.
 
-See [References / Citation](#references-and-citation) and [Dependencies](#dependencies) for more details.
+See [References / Citation](#references-and-citation), [Dependencies](#dependencies), and [Embedding titles](#embedding-titles) for more details.
 
 <!-- todo: add more details -->
 
@@ -103,6 +103,18 @@ Due to the fact that requirements don't include the category ID and could be amb
 2. Otherwise, the link will refer to the requirement with the given path in any other category.
 
 This means if a requirement is used both in the same requirement category and in another category, you can't refer to the requirement that is used in the other requirement category.
+
+## Embedding titles
+
+To mention another building block by name without linking to it (e.g. a block in a different PFS that is not part of the compiled document), embed its title with `@title:path` in any Markdown field:
+
+```md
+see annex "@title:sections/annexes/sar-topographic-phase-removal" in the applicable PFS
+```
+
+The path is relative to the repository root, without the `.yaml` extension. During generation, the placeholder is replaced with the `title` (or `term` for glossary terms) read from the referenced file, so the text stays consistent when the title changes.
+
+This is a soft reference: unlike [Dependencies](#dependencies), the referenced building block does not need to be included in the compiled document and no link is generated. However, the file must exist on disk, otherwise generation and validation fail.
 
 ## Append / Replace
 
