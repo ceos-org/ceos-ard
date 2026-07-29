@@ -11,7 +11,7 @@ on:
       - 'requirements/**'
       - 'sections/**'
       - 'templates/**'
-  pull_request_target:
+  pull_request:
     types:
       - opened
       - synchronize
@@ -23,15 +23,13 @@ on:
       - 'requirements/**'
       - 'sections/**'
       - 'templates/**'
+permissions:
+  contents: read
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
@@ -44,12 +42,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: validate
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
       - name: Install dependencies
@@ -75,13 +69,13 @@ jobs:
         with:
           name: documents
           path: build
-      - name: PR number
-        run: echo ${{ github.event.number }}
   deploy-latest:
     if: >
       github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     needs: generate
+    permissions:
+      contents: write
     steps:
       - name: Download PFS artifacts
         uses: actions/download-artifact@v4
@@ -97,52 +91,3 @@ jobs:
           destination_dir: latest
           commit_message: Deploy latest version of PFS documents
           exclude_assets: '{assets/**,*.{md,bib}}'
-  deploy-pr:
-    if: github.event.number
-    runs-on: ubuntu-latest
-    needs: generate
-    steps:
-      - name: Download PFS artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: documents
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          path: documents/
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ftp.previews.ceos-ard.moregeo.it
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: documents/
-          server-dir: pr-${{ github.event.number }}/
-          exclude: '{assets/**,*.{md,bib}}'
-          dangerous-clean-slate: true
-      - name: Add comment to pull request
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const pullRequestNumber = ${{ github.event.number }};
-            const start = '⚠️';
-            const author = 'github-actions[bot]';
-
-            const comments = await github.rest.issues.listComments({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: pullRequestNumber
-            });
-
-            const commentExists = comments.data.some(
-              comment => comment.user.login === author && comment.body.startsWith(start)
-            );
-
-            if (!commentExists) {
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: pullRequestNumber,
-                body: `${start} A preview for all PFS has been generated and can be accessed here: <https://previews.ceos-ard.moregeo.it/pr-${pullRequestNumber}/>`
-              });
-            } else {
-              console.log(`Preview URL comment already added to PR #${pullRequestNumber}`);
-            }
