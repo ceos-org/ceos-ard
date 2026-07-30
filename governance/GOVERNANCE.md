@@ -1,64 +1,6 @@
+# 1: Framework
 
-
-Table of Contents
-
-[**1: Framework	3**](#1:-framework)
-
-[**1.1: Purpose and Overview	3**](#1.1:-purpose-and-overview)
-
-[1.2: Definition	3](#1.2:-definition)
-
-[1.3: Oversight	3](#1.3:-oversight)
-
-[**2: Product Family Specifications (PFS)	4**](#2:-product-family-specifications-\(pfs\))
-
-[2.1: Purpose	4](#2.1:-purpose)
-
-[2.2: Development	4](#2.2:-development)
-
-[2.2.1: Resources and Consultation	4](#2.2.1:-resources-and-consultation)
-
-[2.2.2: Consistency	5](#2.2.2:-consistency)
-
-[2.2.3: Semantic Versioning Convention for PFS	5](#2.2.3:-semantic-versioning-convention-for-pfs)
-
-[2.3: CEOS-ARD Building Blocks	6](#2.3:-ceos-ard-building-blocks)
-
-[2.3.1: Updating building blocks	7](#heading=h.7xnq0pk1zoal)
-
-[2.3.2: Updating PFS	8](#2.3.2:-updating-pfs)
-
-[2.3.2: New PFS	10](#2.3.2:-new-pfs)
-
-[**3\. CEOS-ARD Assessment	12**](#3.-ceos-ard-assessment)
-
-[**4\. CEOS-ARD Tools	15**](#4.-ceos-ard-tools)
-
-[4.1: GitHub Repository	15](#4.1:-github-repository)
-
-[4.2: Editor tool	15](#4.2:-editor-tool)
-
-[4.3: Assessor tool	15](#4.3:-assessor-tool)
-
-[4.4: CEOS-ARD CLI	16](#4.4:-ceos-ard-cli)
-
-[**5: Classification and Promotion	16**](#5:-classification-and-promotion)
-
-[5.1: Product Family Specifications (PFS)	16](#5.1:-product-family-specifications-\(pfs\))
-
-[5.2: CEOS-ARD Certified Products	16](#5.2:-ceos-ard-certified-products)
-
-[5.3: Promotion	16](#5.3:-promotion)
-
-[5.4: CEOS-ARD Logo	16](#5.4:-ceos-ard-logo)
-
-[5.5: Processing Levels	17](#5.5:-processing-levels)
-
-[**7: Advisory Notes	19**](#6:-advisory-notes)
-
-# 1: Framework {#1:-framework}
-
-## 1.1: Purpose and Overview {#1.1:-purpose-and-overview}
+## 1.1: Purpose and Overview
 
 The purpose of this document is to present all aspects of the governance of CEOS Analysis Ready Data (CEOS-ARD), including the high-level definition, oversight arrangements, processes for defining certain types of CEOS-ARD (via Product Family Specifications, PFS), and the process by which datasets are assessed and classified as CEOS-ARD.
 
@@ -80,19 +22,19 @@ The CEOS-ARD Framework covers:
 
 * The role of Advisory Notes in providing guidance on aspects like file formats, etc. which are not part of the core Framework.
 
-## 1.2: Definition {#1.2:-definition}
+## 1.2: Definition
 
 *“CEOS Analysis Ready Data are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.”*
 
-## 1.3: Oversight {#1.3:-oversight}
+## 1.3: Oversight
 
 The CEOS-ARD Oversight Group coordinates development and implementation of the CEOS-ARD initiative, and maintains the CEOS-ARD Strategy and Governance Framework. The Oversight Group is led by a nominated CEOS Agency representative and participated by nominated representatives from CEOS Virtual Constellations, Working Groups, and leadership teams.
 
 CEOS-ARD Oversight Group meetings including the above participants and others as appropriate are held alongside other CEOS meetings and via teleconference to consider cross-cutting matters, and other leadership matters related to CEOS-ARD. Refer to the [CEOS-ARD Oversight Group Terms of Reference](https://ceos.org/document_management/Meetings/SIT/SIT-37/Documents/CEOS%20ARD%20Oversight%20Group%20Terms%20of%20Reference%20v1.0%2015%20March%202022.pdf) for more information.
 
-# 2: Product Family Specifications (PFS) {#2:-product-family-specifications-(pfs)}
+# 2: Product Family Specifications (PFS)
 
-## 2.1: Purpose {#2.1:-purpose}
+## 2.1: Purpose
 
 Product Family Specifications (PFS) are the core component of the CEOS-ARD concept and describe Analysis Ready Data specifications for specific measurement types. PFS are a flexible and extensible framework to detail specific requirements that a dataset must satisfy in order to be classified as CEOS-ARD.
 
@@ -104,11 +46,11 @@ The PFS detail two levels of requirements – 'Threshold' and 'Goal'. The Thresh
 
 The SAR PFSs metadata specification…
 
-## 2.2: Development {#2.2:-development}
+## 2.2: Development
 
 CEOS Virtual Constellations (VC) traditionally serve as the fora in which new PFS are proposed and developed, however specifications can be proposed to the CEOS-ARD Oversight Group by any individual or group of people. CEOS-ARD Oversight Group approval is required before a specification will be adopted into the CEOS-ARD framework, and as such, consultation prior to embarking on any effort to define a new specification is highly recommended.
 
-### 2.2.1: Resources and Consultation {#2.2.1:-resources-and-consultation}
+### 2.2.1: Resources and Consultation
 
 * **Resources**: The development of a PFS requires significant and sustained effort, including convening of meetings with interest groups to develop shared understanding, gather input, and agree on and communicate the specification.
 
@@ -120,13 +62,13 @@ CEOS Virtual Constellations (VC) traditionally serve as the fora in which new PF
 
 * **Reporting**: New PFS must be approved by the CEOS-ARD Oversight Group *(see 2.4: Endorsement)*. To facilitate the development of a new PFS, information and experience will be freely shared within CEOS through the POC.
 
-### 2.2.2: Consistency {#2.2.2:-consistency}
+### 2.2.2: Consistency
 
 Where applicable, metadata requirements are shared between PFS, increasing interoperability between different CEOS-ARD and easing compliance and assessment burden for data providers. The CEOS-ARD Oversight Group is tasked with maintaining and improving CEOS-ARD metadata consistency and should receive inputs from PFS developers.
 
 While there is high-level commonality between PFS facilitated by the CEOS-ARD building blocks (detailed in 2.3 below), many requirements will vary for different types of measurand. The PFS are intended to be flexible in this regard (e.g., a radar PFS may include requirements that are not applicable to an optical sensor PFS, and vice versa).
 
-### 2.2.3: Semantic Versioning Convention for PFS {#2.2.3:-semantic-versioning-convention-for-pfs}
+### 2.2.3: Semantic Versioning Convention for PFS
 
 With each update to PFS, a new version number is issued. Version numbers will be advanced in accordance with [semantic versioning](https://semver.org/), which increments version numbers by ‘major’, ‘minor’, and ‘patch’ updates in the order major.minor.patch. Data providers compliant with a legacy PFS version will not lose their CEOS-ARD compliance for this version, but are encouraged to self-assess their products against the newest version.
 
@@ -152,7 +94,7 @@ With each update to PFS, a new version number is issued. Version numbers will be
 
 When a Major version is incremented, Minor and Patch numbers are reset to zero. When a Minor version is incremented, only the Patch numbers are reset to zero.
 
-## 2.3: CEOS-ARD Building Blocks {#2.3:-ceos-ard-building-blocks}
+## 2.3: CEOS-ARD Building Blocks
 
 ### 2.3.1: Overview
 
@@ -192,7 +134,7 @@ The development of CEOS-ARD building blocks is guided by the following best prac
 
 * …
 
-### 2.3.2: Updating PFS {#2.3.2:-updating-pfs}
+### 2.3.2: Updating PFS
 
 The following steps outline the process for proposing a new release of an existing CEOS-ARD PFS.
 
@@ -220,7 +162,7 @@ The following steps outline the process for proposing a new release of an existi
 
 *Flowchart for updating CEOS-ARD Product Family Specifications*
 
-### 2.3.2: New PFS {#2.3.2:-new-pfs}
+### 2.3.2: New PFS
 
 The following steps outline the process for proposing a new release of an existing CEOS-ARD PFS.
 
@@ -238,7 +180,7 @@ The following steps outline the process for proposing a new release of an existi
 
 *Flowchart for developing new CEOS-ARD Product Family Specifications*
 
-# 3\. CEOS-ARD Assessment {#3.-ceos-ard-assessment}
+# 3\. CEOS-ARD Assessment
 
 Self-assessment is the process in which data providers review each item in a PFS and assess whether their product satisfies either the ‘Threshold’, ‘Goal’, or both of the requirements. PFS are written as a form that can be completed by data providers in the self-assessment phase – keeping the process and guidance self-contained for ease of use.
 
@@ -296,9 +238,9 @@ Communication
 
 *Flowchart for CEOS-ARD Product Assessments*
 
-# 4\. CEOS-ARD Tools {#4.-ceos-ard-tools}
+# 4\. CEOS-ARD Tools
 
-## 4.1: GitHub Repository {#4.1:-github-repository}
+## 4.1: GitHub Repository
 
 CEOS-ARD PFS development and contribution is managed through the CEOS-ARD GitHub repository, [github.com/ceos-org/ceos-ard](http://github.com/ceos-org/ceos-ard), which supports open community collaboration. The repository is used to host draft PFS, maintain building blocks, track issues, and manage proposals for new or updated building blocks or PFS.
 
@@ -308,41 +250,36 @@ Contribution to CEOS-ARD is welcomed through GitHub issues or pull requests. The
 
 Issues related to CEOS-ARD may be opened at [https://github.com/ceos-org/ceos-ard/issues](https://github.com/ceos-org/ceos-ard/issues). This includes issues related to PFS, metadata requirements, self-assessment, or products. Issues are discussed and addressed by the CEOS-ARD Oversight Group, PFS Leads, Issue Contributor, and Secretariat. Where appropriate, the Oversight Group may provide consultation to contributors to support resolution.
 
-## 4.2: Editor tool {#4.2:-editor-tool}
+## 4.2: Editor tool
 
 The CEOS-ARD Editor tool is a visual interface that enables Contributors to propose modifications to the PFS and building blocks. The tool abstracts the complexities of GitHub while delivering pull requests for the Contributor to the repository. The tool can be used by anyone with a GitHub account, with contributions reviewed and accepted according to Section 2.3.
 
-## 4.3: Assessor tool   {#4.3:-assessor-tool}
+## 4.3: Assessor tool
 
 CEOS-ARD product self-assessments can be submitted and reviewed through the CEOS-ARD Assessor tool. The dedicated interfaces aim to streamline and reduce duplication in the self-assessment and review process. Data providers can select one or more PFS to assess their product against and upload supporting documents and metadata. 
 
 Reviewers will be able to evaluate submitted self-assessments by leaving comments and approving or rejecting submissions. The tool will enable the provider and reviewer to improve the product submission together through multiple iterations, toward CEOS-ARD compliance.
 
-## 4.4: CEOS-ARD CLI {#4.4:-ceos-ard-cli}
+# 5: Classification and Promotion
 
-\<...\>
-
-# 5: Classification and Promotion {#5:-classification-and-promotion}
-
-## 5.1: Product Family Specifications (PFS) {#5.1:-product-family-specifications-(pfs)}
+## 5.1: Product Family Specifications (PFS)
 
 Endorsed Product Family Specifications will be openly available on [ceos.org/ard](https://ceos.org/ard/), and PFS working drafts are available on [http://github.com/ceos-org/ceos-ard](http://github.com/ceos-org/ceos-ard). 
 
-## 5.2: CEOS-ARD Certified Products {#5.2:-ceos-ard-certified-products}
+## 5.2: CEOS-ARD Certified Products
 
 Once confirmed as meeting the requirements of CEOS-ARD, satellite EO datasets are added to the [CEOS-ARD Website table](https://ceos.org/ard/index.html#datasets). Data may be accessed through the data provider’s DOI link, along with links to further information (e.g., the data provider’s website, CEOS MIM Database records), sample products, and the completed CEOS-ARD self-assessment and peer review outcome documents.
 
 CEOS-ARD Datasets are also promoted via the [CEOS MIM Database](http://database.eohandbook.com/).
 
-## 5.3: Promotion {#5.3:-promotion}
-
+## 5.3: Promotion
 CEOS-ARD developments are shared with the community frequently to encourage open collaboration, feedback, and awareness. The CEOS-ARD Oversight Group maintains the CEOS-ARD Newsletter, which it aims to publish every quarter. The newsletter includes information on recent CEOS-ARD endorsements, PFS updates, and recent and upcoming meetings. It is shared to the CEOS-ARD Newsletter mailing list and published at [ceos.org/ceos-ard-newsletter/](https://ceos.org/ceos-ard-newsletter/). 
 
 CEOS-ARD developments are also shared via the CEOS Blog, available at [ceos.org/news](http://ceos.org/news). CEOS-ARD PFS development teams are encouraged to work with the CEOS-ARD Secretariat and CEOS Communication Team to develop and publish blog posts.
 
 The CEOS Communication Team also maintains social media accounts (LinkedIn, Facebook, X) that may be used to promote CEOS-ARD news and updates.
 
-## 5.4: CEOS-ARD Logo {#5.4:-ceos-ard-logo}
+## 5.4: CEOS-ARD Logo
 
 The CEOS-ARD Logo (shown on the right) is the property of the CEOS organization and has been created to allow:
 
@@ -356,7 +293,7 @@ The CEOS-ARD Logo may only be used in accordance with these conditions. Complyin
 
 * Data Providers, including CEOS Agencies and external organizations (e.g., commercial data providers or cloud data distributors), may use the logo to highlight specific datasets that have been assessed against and found to comply with the CEOS-ARD Product Family Specifications (PFS).
 
-## 5.5: Processing Levels {#5.5:-processing-levels}
+## 5.5: Processing Levels
 
 CEOS-ARD adopts the following product level classification / taxonomy ([Strobl, 2023](https://www.researchgate.net/profile/Peter_Strobl/publication/375422400_A_REVISED_PROCESSING_LEVEL_SCHEME_FOR_EARTH_OBSERVATION_DATA/links/6549fab53fa26f66f4e1373f/A-REVISED-PROCESSING-LEVEL-SCHEME-FOR-EARTH-OBSERVATION-DATA.pdf?origin=publicationDetail&_sg%5B0%5D=a97Yu3KoeN0bBAH2lUFMsfSJLymGUd6zHMLTA1xw1pfxxNimwdytx-4t7O3AwgfcCFNzy0ytsFDkP_E1NngABw.7w94wsEYhKy2H8HUfAh5e3SLXkxh7JP9ZKgj-dDoXKJpHTC7tMc8iLh7EVgGbN0WpQ-b4nN9dtJq5k1u_WLpkQ&_sg%5B1%5D=_Han8VUTrByieOf8AnV2GOxtVE2afYh-YaBwIjAQBdaoDHeZCEOnOElF1wjqSd1KXEtV6wh1AhCEXUdjRY3N8zidwcXkzpcECPsi-Agdjlxw.7w94wsEYhKy2H8HUfAh5e3SLXkxh7JP9ZKgj-dDoXKJpHTC7tMc8iLh7EVgGbN0WpQ-b4nN9dtJq5k1u_WLpkQ&_iepl=&_rtd=eyJjb250ZW50SW50ZW50IjoibWFpbkl0ZW0ifQ%3D%3D&_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6ImhvbWUiLCJwYWdlIjoicHVibGljYXRpb24iLCJwcmV2aW91c1BhZ2UiOiJwcm9maWxlIiwicG9zaXRpb24iOiJwYWdlSGVhZGVyIn19)) to classify CEOS-ARD compliant datasets in a consistent manner. 
 
@@ -397,7 +334,7 @@ Where the stated measurand and geometric refinement steps refer to:
 
 *Table 3: CEOS-ARD Geometry Refinement Steps*
 
-# 6: Advisory Notes {#6:-advisory-notes}
+# 6: Advisory Notes
 
 CEOS-ARD Advisory Notes are intended to provide guidance on aspects such as file formats, etc. which are not part of the core Framework. Advisory Notes will be found on the [CEOS-ARD website](https://ceos.org/ard/) and will be developed by CEOS entities as needed in response to an identified need.
 
