@@ -1,0 +1,24 @@
+id: catmos
+title: Corrections for Atmosphere
+description: 
+requirements:
+  threshold:
+    description: |-
+      Retrieval methods for estimating surface temperature are provided.
+  goal:
+    description: |-
+      As threshold.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-07-31
+    author: Harvey Jones
+    level: patch
+    change: |-
+      Edited building block name to remove 'emissivity'
+    reason: Emissivity is now covered in a separate requirement.
+history:
+  - ST 6.0
+

@@ -1,12 +1,9 @@
 title: Surface Temperature
 version: 5.0.1
 type: Optical
-applies_to: Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths.
-  These typically operate with ground sample distance and resolution in the order of 10-100m;
-  however, the Specification is not inherently limited to this resolution.
+applies_to: Data collected with satellite sensors operating in the thermal infrared (TIR and MWIR) and microwave wavelengths. These typically operate with ground sample distance and resolution in the order 1 dm - 50 km however the specification is not inherently limited to these resolutions.
 background: |-
-  At present, surface temperature measurements tend to be provided as either surface brightness temperature (SBT) or as land surface temperatures (LST) requiring the SBT to be modified according to the emissivity of the target.
-  This specification identifies the Surface Temperature (ST) as being the minimum or Threshold requirement for analysis ready land surface data. Nevertheless, both SBT and LST are land measurements, requiring atmospheric corrections.
+  Remotely sensed surface temperature measurements tend to be provided as surface brightness temperature (SBT), land surface temperature (LST), water surface temperature (WST), or ice surface temperature (IST), where LST, WST, and IST are derived from SBT accounting for the emissivity of the target.
 
 glossary:
   - st
@@ -26,37 +23,40 @@ introduction:
 requirements:
   - category: general-metadata
     requirements:
+      - metadata/ceos-ard-pfs-version
       - metadata/traceability-st
       - metadata/machine-readability-optical
-      - metadata/time-st
-      - metadata/geo-area-st
+      - metadata/time-ar
+      - metadata/geo-area-optical
       - metadata/crs-optical
-      - metadata/map-projection-st
-      - metadata/geometric-correction-methods-st
-      - metadata/geometric-accuracy-st
-      - metadata/instrument-optical
-      - metadata/spectral-bands
-      - metadata/sensor-calibration-optical
-      - metadata/radiometric-accuracy-st
+      - metadata/map-projection-ar
+      - metadata/geometric-correction-methods-ar
+      - metadata/geometric-uncertainty
+      - metadata/instrument-ar
+      - metadata/spectral-bands-ar
+      - metadata/sensor-calibration-ar
+      - metadata/radiometric-uncertainty
+      - metadata/radiometric-encoding
       - metadata/algorithms-st
-      - metadata/auxiliary-data-optical
+      - metadata/auxiliary-data-ar
       - metadata/processing-chain-prov-st
       - metadata/data-access
-      - metadata/data-quality-st
+      - metadata/valid-pixels
   - category: per-pixel-metadata
     requirements:
-      - per-pixel/machine-readability
-      - per-pixel/nodata
-      - per-pixel/incomplete-testing
-      - per-pixel/saturation
-      - per-pixel/cloud
-      - per-pixel/cloud-shadow
-      - per-pixel/snow-ice-sr
-      - per-pixel/view-angles-solar
+      - per-pixel/nodata-st
+      - per-pixel/incomplete-testing-st
+      - per-pixel/saturation-ar
+      - per-pixel/cloud-st
+      - per-pixel/cloud-shadow-st
+      - per-pixel/surface-st
+      - per-pixel/view-angles-solar-ar
+      - per-pixel/terrain-occlusion-st
   - category: radiometric-atmospheric-corrections
     requirements:
-      - measurements/measurement-st
-      - corrections/atmosphere-emissivity
+      - measurements/measurand-st
+      - corrections/atmosphere
+      - corrections/emissivity-st
       - measurements/uncertainty-st
   - category: geometric-corrections
     requirements:
@@ -75,6 +75,26 @@ authors:
 
 
 changes:
+  - date: 2026-08-14
+    author: Harvey Jones
+    level: major
+    change: |- 
+      - Created separate requirements for 'Corrections for Atmosphere' and 'Adjustments for Emissivity and Anisotropy'. Per-pixel emissivity information is now required at Threshold. 
+      - Introduced a Threshold requirement for 'Measurement Uncertainty'.
+      - Renamed 'Measurement' to 'Measurand'
+      - Removed threshold requirement for 'Algorithms'.
+      - Introduced Per-pixel Goal requirement for 'Terrain Occlusion'.
+      - Replaced 'Snow/Ice' mask with 'Surface', covering Land/Water at Threshold and Snow/Ice at Goal.
+      - Updated 'Cloud' and 'Cloud Shadow' requirements to align more closely with the AR PFS v2.0 and the suitability of cloud shadow for non-reflectance methods.
+      - Updated 'No Data' requirement to address https://github.com/ceos-org/ceos-ard/issues/4.
+      - Updated 'Incomplete Testing' requirement to aid machine readability / automated assessment.
+      - Removed redundant 'Metadata Machine Readability' requirement from Per-pixel Metadata.
+      - Replaced General Metadata Percentage of Valid Observations requirement with Valid Pixels
+      - Introduced a new Processing Chain Provenance requirement, where Threshold = Reconstrucibility, Goal = Reproducibility. 
+      - Removed 'Radiometric Accuracy' requirement.
+      - Adopted AR PFS v2.0 requirements for 'Auxiliary Data', 'Measurand Uncertainty', 'Encoding', 'Sensor Calibration', 'Spectral Bands', 'Instrument', 'Geometric Uncertainty of the Data', 'Geometric Correction Methods', 'Map Projection', and 'Data Collection Time'.
+      - Aligned with other optical PFS where the ST PFS had minor editorial differences.
+    reason: Update to address evolving landscape of thermal missions, including capabilities of the commercial sector and user needs. Closer alignment with more recently updated PFS. Changes also reflect recent CEOS-ARD Oversight Group discussions, swapping strict threshold requirements for algorithms in favour of uncertainty information. 
   - date: 2026-03-26
     author: Matthias Mohr
     level: patch

@@ -1,0 +1,28 @@
+id: measur-st
+title: Measurand
+description: 
+requirements:
+  threshold:
+    description: |-
+      Pixel values are a measurement of the Surface Temperature expressed in kelvin.
+    notes:
+      - See [@bands]
+  goal:
+    description: |-
+      Surface temperature measurements are SI traceable (see also [@traceability]).
+    optional: true
+dependencies:
+  traceability: metadata/traceability-st
+  bands: metadata/spectral-bands-ar           
+glossary:
+  - si
+references:
+changes:
+  - date: 2026-08-14
+    author: Harvey
+    level: minor
+    change: |-
+      Removed 'of the land' qualifier for 'surface temperature,' renamed requirement to 'measurand' and added a link to Spectral Bands requirement
+    reason: expanded scope of requirement for other surface temperature types, link to spectral bands used to derive SST layer height.
+history:
+  - ST 6.0

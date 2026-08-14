@@ -1,24 +1,26 @@
 id: trace-st
-title: Traceability
+title: Metrological Traceability of the Measurand to SI
 description:
 requirements:
   goal:
     description: |-
       Data must be traceable to SI reference standard.
       Information on traceability should be available in the metadata as a single DOI landing page.
-  
-      - [Policy on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6536)
-      - [Guidance on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6532)
     notes:
-      - SI Traceability requires an estimate of measurement uncertainty.
+      - SI Traceability requires an estimate of measurement uncertainty (see [@uncertainty]).
     optional: true
+dependencies: 
+  uncertainty: measurements/uncertainty-st
 glossary:
   - doi
   - si
 references:
 changes:
+  - date: 2026-07-31
+    author: Harvey Jones
+    level: patch
+    change: |-
+      Renamed requirement to 'Metrological Traceability of the Measurand' and removed linked documents which are inaccessible
+    reason: Align with other PFS while adopted decisions agreed at LSI-VC-19 Meeting.
 history:
   - ST 1.1
-remarks: |-
-  - todo: The two links in the threshold description are additions only in ST - can we align this with tracability.yaml?
-  - todo: Both documents lead to an error message only: "You do not have permission to view this document." which makes them useless.

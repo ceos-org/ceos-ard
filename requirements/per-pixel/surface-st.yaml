@@ -1,0 +1,27 @@
+id: surf-st
+title: Surface
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether a pixel is assessed as being land or water, including the information source and other relevant surface characteristic information.
+    notes:
+      - External data sources are listed in [@auxiliary].
+  goal:
+    description: |-
+      As threshold, but pixels are identified as being snow or ice.
+    optional: true
+dependencies: 
+  auxiliary: metadata/auxiliary-data-ar
+glossary:
+  - doi
+references:
+changes:
+  - date: 2026-07-31
+    author: Harvey Jones
+    level: major
+    change: |-
+      Replaced Snow/Ice requirement with a Surface requirement, which features a threshold requirement for pixels identified as land or water to be flagged. 
+    reason: Requirement was deemed necessary for the distinction between different surface temperature types in the PFS.
+history:
+  - ST 6.0

@@ -2,14 +2,22 @@ id: proprov-st
 title: Processing Chain Provenance
 description: 
 requirements:
+  threshold:
+    description: |-
+     The provider attaches to each delivered dataset (delivery unit) a code which allows them to reconstruct the exact processing environment (software versions, calibration files, parameter settings) in which this particular output was produced.
   goal:
     description: |-
-      Information on processing chain provenance should be available in the metadata as a single DOI landing page containing description of the processing chain used to generate the product, including the versions of the software used and information on the data collection baseline, giving full transparency to the users.
+      As threshold, but the provider is also in grade to reproduce the exact same output.
     optional: true
 dependencies:
 glossary:
-  - doi
 references:
 changes:
+  - date: 2026-08-13
+    author: Harvey Jones
+    level: major
+    change: |-
+      introduced a threshold requirement requiring reconstrucibility at Threshold and reworded the Goal requirement for reproducibility.
+    reason: Addresses GitHub issue 58, calling for processing chain provenance to become a threshold requirement
 history:
-  - ST 1.15
+  - ST 6.0
