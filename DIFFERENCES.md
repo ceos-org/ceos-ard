@@ -24,7 +24,7 @@ This document lists **only the differences** between building blocks that exist 
   - [Radiometric Accuracy](#radiometric-accuracy)
   - [Sensor Calibration](#sensor-calibration)
   - [`metadata/time-*`](#metadatatime-)
-  - [Traceability](#traceability)
+  - [`metadata/traceability-*`](#metadatatraceability-)
 - [Optical building blocks](#optical-building-blocks)
   - [`corrections/atmosphere-*`](#correctionsatmosphere-)
   - [Directional Atmospheric Scattering](#directional-atmospheric-scattering)
@@ -34,8 +34,6 @@ This document lists **only the differences** between building blocks that exist 
   - [Measurement Normalisation](#measurement-normalisation)
   - [Measurement Uncertainty](#measurement-uncertainty)
   - [Algorithms](#algorithms)
-  - [Overall Data Quality](#overall-data-quality)
-  - [Geometric Accuracy of the Data](#geometric-accuracy-of-the-data)
   - [Geometric Correction Methods](#geometric-correction-methods)
   - [Map Projection](#map-projection)
   - [Processing Chain Provenance](#processing-chain-provenance)
@@ -59,8 +57,8 @@ Variants used by both SAR and Optical PFS — differences here affect alignment 
 
 ### Auxiliary Data
 
-- [`requirements/metadata/auxiliary-data-ar.yaml`](requirements/metadata/auxiliary-data-ar.yaml) — used by AR
-- [`requirements/metadata/auxiliary-data-optical.yaml`](requirements/metadata/auxiliary-data-optical.yaml) — used by NLSR, SR, ST
+- [`requirements/metadata/auxiliary-data-ar.yaml`](requirements/metadata/auxiliary-data-ar.yaml) — used by AR, ST
+- [`requirements/metadata/auxiliary-data-optical.yaml`](requirements/metadata/auxiliary-data-optical.yaml) — used by NLSR, SR
 - [`requirements/metadata/auxiliary-data-sar.yaml`](requirements/metadata/auxiliary-data-sar.yaml) — used by CB, GSLC, INSAR, NRB, ORB, POL
 
 #### Threshold — description
@@ -113,6 +111,8 @@ Auxiliary data includes DEMs, etc., and any additional data sources used in the 
 
 **[`auxiliary-data-ar.yaml`](requirements/metadata/auxiliary-data-ar.yaml), [`auxiliary-data-optical.yaml`](requirements/metadata/auxiliary-data-optical.yaml)**: *(no notes)*
 
+<!-- state: 2bb19267dd1d -->
+
 #### Proposal
 
 ```
@@ -121,6 +121,8 @@ Auxiliary data includes DEMs, etc., and any additional data sources used in the 
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### `metadata/crs-*`
 
@@ -166,6 +168,8 @@ Indicate EPSG code, if defined for the CRS.</pre>
 #### Internal notes
 
 *none yet*
+
+---
 
 ### `metadata/data-access-*`
 
@@ -236,6 +240,8 @@ The metadata identifies an online location from where the data can be consistent
 
 **[`data-access-product.yaml`](requirements/metadata/data-access-product.yaml), [`data-access-source.yaml`](requirements/metadata/data-access-source.yaml)**: `true`
 
+<!-- state: b426b2cdee89 -->
+
 #### Proposal
 
 ```
@@ -245,15 +251,16 @@ The metadata identifies an online location from where the data can be consistent
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
+---
+
 ### `metadata/geo-area-*`
 
-- [`requirements/metadata/geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml) — used by AR, NLSR, SR
+- [`requirements/metadata/geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml) — used by AR, NLSR, SR, ST
 - [`requirements/metadata/geo-area-sar.yaml`](requirements/metadata/geo-area-sar.yaml) — used by CB, GSLC, INSAR, NRB, ORB, POL
-- [`requirements/metadata/geo-area-st.yaml`](requirements/metadata/geo-area-st.yaml) — used by ST
 
 #### Title
 
-**[`geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml), [`geo-area-st.yaml`](requirements/metadata/geo-area-st.yaml)**:
+**[`geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml)**:
 
 ```
 Geographical Area
@@ -275,10 +282,6 @@ The surface location to which the data relates is identified, typically as a ser
 
 <pre>The geometry of the SAR image footprint<mark style="background:#ddf4ff;color:#0a3069"> expressed in </mark>longitude/latitude based on WGS84 (EPSG 4326), in a standardised format (e.g., WKT Polygon).</pre>
 
-**[`geo-area-st.yaml`](requirements/metadata/geo-area-st.yaml)** (differences to [`geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml)):
-
-<pre>The surface location to which the data relates is identified, typically as a series of four corner points, expressed in an accepted coordinate reference system (e.g., WGS84<ins style="background:#ccffd8;color:#055d20;text-decoration:none"> coordinates</ins>).</pre>
-
 #### Goal — description
 
 **[`geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml)**:
@@ -289,13 +292,9 @@ The geographic area covered by the observations is identified specifically, such
 
 **[`geo-area-sar.yaml`](requirements/metadata/geo-area-sar.yaml)**: *(not set)*
 
-**[`geo-area-st.yaml`](requirements/metadata/geo-area-st.yaml)** (differences to [`geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml)):
-
-<pre>The geographic area covered by the observations is identified specifically, such as through a set of coordinates of a closely bounding polygon. The location to which each pixel refers is identified (or can be reliably determined) <del style="background:#ffd7d5;color:#82071e">with the</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">expressed in</ins> projection <del style="background:#ffd7d5;color:#82071e">system (if any) and</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">coordinates with</ins> reference datum<del style="background:#ffd7d5;color:#82071e"> provided.</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">. </ins></pre>
-
 #### Goal — optional
 
-**[`geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml), [`geo-area-st.yaml`](requirements/metadata/geo-area-st.yaml)**: `true`
+**[`geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml)**: `true`
 
 **[`geo-area-sar.yaml`](requirements/metadata/geo-area-sar.yaml)**: `false`
 
@@ -308,10 +307,12 @@ The geographic area covered by the observations is identified specifically, such
 
 *none yet*
 
+---
+
 ### Instrument
 
-- [`requirements/metadata/instrument-ar.yaml`](requirements/metadata/instrument-ar.yaml) — used by AR
-- [`requirements/metadata/instrument-optical.yaml`](requirements/metadata/instrument-optical.yaml) — used by NLSR, SR, ST
+- [`requirements/metadata/instrument-ar.yaml`](requirements/metadata/instrument-ar.yaml) — used by AR, ST
+- [`requirements/metadata/instrument-optical.yaml`](requirements/metadata/instrument-optical.yaml) — used by NLSR, SR
 - [`requirements/metadata/instrument-sar.yaml`](requirements/metadata/instrument-sar.yaml) — used by CB, GSLC, INSAR, NRB, ORB, POL
 
 #### Threshold — description
@@ -349,6 +350,8 @@ As threshold, with references to the relevant “CEOS Missions, Instruments, and
 
 <pre><mark style="background:#ddf4ff;color:#0a3069">As threshold, </mark>but using [<mark style="background:#ddf4ff;color:#0a3069">CEOS Mission</mark>-<mark style="background:#ddf4ff;color:#0a3069">Instruments</mark>-<mark style="background:#ddf4ff;color:#0a3069">Measurements </mark>(MIM) database<mark style="background:#ddf4ff;color:#0a3069">](https://</mark>ceos.org/mim-database) as reference.</pre>
 
+<!-- state: 29a6d44518a3 -->
+
 #### Proposal
 
 ```
@@ -357,6 +360,8 @@ As threshold, with references to the relevant “CEOS Missions, Instruments, and
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Metadata Machine Readability
 
@@ -405,11 +410,12 @@ As threshold, but metadata should be provided in a community endorsed standard t
 
 *none yet*
 
+---
+
 ### Radiometric Accuracy
 
 - [`requirements/metadata/radiometric-accuracy-sar.yaml`](requirements/metadata/radiometric-accuracy-sar.yaml) — used by CB, GSLC, INSAR, NRB, ORB, POL
 - [`requirements/metadata/radiometric-accuracy-sr.yaml`](requirements/metadata/radiometric-accuracy-sr.yaml) — used by NLSR, SR
-- [`requirements/metadata/radiometric-accuracy-st.yaml`](requirements/metadata/radiometric-accuracy-st.yaml) — used by ST
 
 #### Goal — description
 
@@ -422,10 +428,6 @@ SI traceability is achieved. </pre>
 
 <pre>The metadata includes metrics describing the assessed absolute radiometric u<mark style="background:#ddf4ff;color:#0a3069">ncertainty </mark>of the version of the data or product, expressed as absolute radiometric uncertainty relative to appropriate, known<mark style="background:#ddf4ff;color:#0a3069"> reference</mark> sites and standards (for example, pseudo-invariant calibration sites, rigorously collected field spectra, Rayleigh, DCC, etc.)</pre>
 
-**[`radiometric-accuracy-st.yaml`](requirements/metadata/radiometric-accuracy-st.yaml)** (similarities to [`radiometric-accuracy-sar.yaml`](requirements/metadata/radiometric-accuracy-sar.yaml) highlighted):
-
-<pre>Information on radiometric accuracy should be available in the metadata as a single DOI landing page providing<mark style="background:#ddf4ff;color:#0a3069"> information </mark>on metrics describing the assessed absolute radiometric accuracy of the data, expressed as absolute radiometric uncertainty relative to a known<mark style="background:#ddf4ff;color:#0a3069"> reference</mark> standard.</pre>
-
 #### Goal — notes
 
 **[`radiometric-accuracy-sr.yaml`](requirements/metadata/radiometric-accuracy-sr.yaml)** (1 note):
@@ -436,9 +438,7 @@ Information on radiometric accuracy should be available in the metadata as a sin
 
 **[`radiometric-accuracy-sar.yaml`](requirements/metadata/radiometric-accuracy-sar.yaml)**: *(no notes)*
 
-**[`radiometric-accuracy-st.yaml`](requirements/metadata/radiometric-accuracy-st.yaml)** (1 note, similarities to [`radiometric-accuracy-sr.yaml`](requirements/metadata/radiometric-accuracy-sr.yaml) highlighted):
-
-<pre>For example, this may come from comparison with routine and rigorously collected in situ measurements.</pre>
+<!-- state: 625e1af7ea43 -->
 
 #### Proposal
 
@@ -447,12 +447,16 @@ Information on radiometric accuracy should be available in the metadata as a sin
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Sensor Calibration
 
-- [`requirements/metadata/sensor-calibration-ar.yaml`](requirements/metadata/sensor-calibration-ar.yaml) — used by AR
-- [`requirements/metadata/sensor-calibration-optical.yaml`](requirements/metadata/sensor-calibration-optical.yaml) — used by NLSR, SR, ST
+- [`requirements/metadata/sensor-calibration-ar.yaml`](requirements/metadata/sensor-calibration-ar.yaml) — used by AR, ST
+- [`requirements/metadata/sensor-calibration-optical.yaml`](requirements/metadata/sensor-calibration-optical.yaml) — used by NLSR, SR
 - [`requirements/metadata/sensor-calibration-sar.yaml`](requirements/metadata/sensor-calibration-sar.yaml) — used by GSLC, INSAR, NRB, ORB, POL
 
 #### Threshold — description
@@ -493,6 +497,8 @@ Information on sensory calibration should be available in the metadata as a sing
 
 **[`sensor-calibration-ar.yaml`](requirements/metadata/sensor-calibration-ar.yaml), [`sensor-calibration-sar.yaml`](requirements/metadata/sensor-calibration-sar.yaml)**: *(no notes)*
 
+<!-- state: 8cb77ed0d305 -->
+
 #### Proposal
 
 ```
@@ -502,17 +508,18 @@ Information on sensory calibration should be available in the metadata as a sing
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
+---
+
 ### `metadata/time-*`
 
-- [`requirements/metadata/time-ar.yaml`](requirements/metadata/time-ar.yaml) — used by AR
+- [`requirements/metadata/time-ar.yaml`](requirements/metadata/time-ar.yaml) — used by AR, ST
 - [`requirements/metadata/time-sar.yaml`](requirements/metadata/time-sar.yaml) — used by CB, GSLC, INSAR, NRB, ORB, POL
 - [`requirements/metadata/time-source.yaml`](requirements/metadata/time-source.yaml) — used by CB, GSLC, INSAR, NRB, ORB, POL
 - [`requirements/metadata/time-sr.yaml`](requirements/metadata/time-sr.yaml) — used by NLSR, SR
-- [`requirements/metadata/time-st.yaml`](requirements/metadata/time-st.yaml) — used by ST
 
 #### Title
 
-**[`time-ar.yaml`](requirements/metadata/time-ar.yaml), [`time-sar.yaml`](requirements/metadata/time-sar.yaml), [`time-sr.yaml`](requirements/metadata/time-sr.yaml), [`time-st.yaml`](requirements/metadata/time-st.yaml)**:
+**[`time-ar.yaml`](requirements/metadata/time-ar.yaml), [`time-sar.yaml`](requirements/metadata/time-sar.yaml), [`time-sr.yaml`](requirements/metadata/time-sr.yaml)**:
 
 ```
 Data Collection Time
@@ -544,31 +551,27 @@ In the case of composite or mosaic products, the dates/times of the first and la
 
 <pre>T<del style="background:#ffd7d5;color:#82071e">he beginning and end of t</del>he data collection time is <del style="background:#ffd7d5;color:#82071e">expressed in date/time and </del>identified in the metadata<del style="background:#ffd7d5;color:#82071e"> consistent with ISO 8601. The time is</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">,</ins> expressed<ins style="background:#ccffd8;color:#055d20;text-decoration:none"> in date/time, to the second,</ins> with the time offset from UTC unambiguously identified.</pre>
 
-**[`time-st.yaml`](requirements/metadata/time-st.yaml)** (differences to [`time-ar.yaml`](requirements/metadata/time-ar.yaml)):
-
-<pre>The <del style="background:#ffd7d5;color:#82071e">beginning and end of the</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">start and stop time of</ins> data collection <del style="background:#ffd7d5;color:#82071e">time is expressed in date/time and</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">is</ins> identified in the metadata<del style="background:#ffd7d5;color:#82071e"> consistent with ISO 8601. The time is</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">,</ins> expressed<ins style="background:#ccffd8;color:#055d20;text-decoration:none"> in date/time, to the second,</ins> with the time offset from UTC unambiguously identified.</pre>
-
 #### Goal — description
 
-**[`time-sr.yaml`](requirements/metadata/time-sr.yaml), [`time-st.yaml`](requirements/metadata/time-st.yaml)**:
+**[`time-ar.yaml`](requirements/metadata/time-ar.yaml)**:
 
 ```
-Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
+As threshold, but information required to determine, within a stated uncertainty, when the individual observations were taken is available.
 ```
 
-**[`time-ar.yaml`](requirements/metadata/time-ar.yaml)** (similarities to [`time-sr.yaml`](requirements/metadata/time-sr.yaml) highlighted):
+**[`time-sar.yaml`](requirements/metadata/time-sar.yaml)** (similarities to [`time-ar.yaml`](requirements/metadata/time-ar.yaml) highlighted):
 
-<pre>As threshold, but information required to<mark style="background:#ddf4ff;color:#0a3069"> determine</mark>, within a stated uncertainty, when the individual observations were taken is available.</pre>
-
-**[`time-sar.yaml`](requirements/metadata/time-sar.yaml)** (similarities to [`time-sr.yaml`](requirements/metadata/time-sr.yaml) highlighted):
-
-<pre>As threshold, but using ISO 8601 time format.</pre>
+<pre><mark style="background:#ddf4ff;color:#0a3069">As threshold, but </mark>using ISO 8601 time format.</pre>
 
 **[`time-source.yaml`](requirements/metadata/time-source.yaml)**: *(not set)*
 
+**[`time-sr.yaml`](requirements/metadata/time-sr.yaml)** (similarities to [`time-ar.yaml`](requirements/metadata/time-ar.yaml) highlighted):
+
+<pre>Acquisition time for each pixel is identified (or can be reliably<mark style="background:#ddf4ff;color:#0a3069"> determine</mark>d) in the metadata, expressed in date/time at UTC, to the second.</pre>
+
 #### Goal — optional
 
-**[`time-ar.yaml`](requirements/metadata/time-ar.yaml), [`time-sar.yaml`](requirements/metadata/time-sar.yaml), [`time-sr.yaml`](requirements/metadata/time-sr.yaml), [`time-st.yaml`](requirements/metadata/time-st.yaml)**: `true`
+**[`time-ar.yaml`](requirements/metadata/time-ar.yaml), [`time-sar.yaml`](requirements/metadata/time-sar.yaml), [`time-sr.yaml`](requirements/metadata/time-sr.yaml)**: `true`
 
 **[`time-source.yaml`](requirements/metadata/time-source.yaml)**: `false`
 
@@ -581,12 +584,26 @@ Acquisition time for each pixel is identified (or can be reliably determined) in
 
 *none yet*
 
-### Traceability
+---
+
+### `metadata/traceability-*`
 
 - [`requirements/metadata/traceability-ar.yaml`](requirements/metadata/traceability-ar.yaml) — used by AR
 - [`requirements/metadata/traceability-sar.yaml`](requirements/metadata/traceability-sar.yaml) — used by CB, GSLC, INSAR, NRB, ORB, POL
 - [`requirements/metadata/traceability-sr.yaml`](requirements/metadata/traceability-sr.yaml) — used by NLSR, SR
 - [`requirements/metadata/traceability-st.yaml`](requirements/metadata/traceability-st.yaml) — used by ST
+
+#### Title
+
+**[`traceability-ar.yaml`](requirements/metadata/traceability-ar.yaml), [`traceability-sar.yaml`](requirements/metadata/traceability-sar.yaml), [`traceability-sr.yaml`](requirements/metadata/traceability-sr.yaml)**:
+
+```
+Traceability
+```
+
+**[`traceability-st.yaml`](requirements/metadata/traceability-st.yaml)** (differences to [`traceability-ar.yaml`](requirements/metadata/traceability-ar.yaml)):
+
+<pre><ins style="background:#ccffd8;color:#055d20;text-decoration:none">Metrological </ins>Traceability<ins style="background:#ccffd8;color:#055d20;text-decoration:none"> of the Measurand to SI</ins></pre>
 
 #### Threshold — description
 
@@ -609,10 +626,7 @@ Data must be traceable to SI reference standard.
 **[`traceability-st.yaml`](requirements/metadata/traceability-st.yaml)** (differences to [`traceability-ar.yaml`](requirements/metadata/traceability-ar.yaml)):
 
 <pre>Data must be traceable to SI reference standard.<ins style="background:#ccffd8;color:#055d20;text-decoration:none">
-Information on traceability should be available in the metadata as a single DOI landing page.
-
-- [Policy on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6536)
-- [Guidance on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6532)</ins></pre>
+Information on traceability should be available in the metadata as a single DOI landing page.</ins></pre>
 
 #### Goal — notes
 
@@ -634,9 +648,11 @@ Information on traceability should be available in the metadata as a single DOI 
 
 **[`traceability-st.yaml`](requirements/metadata/traceability-st.yaml)** (1 note, differences to [`traceability-sar.yaml`](requirements/metadata/traceability-sar.yaml)):
 
-<pre><del style="background:#ffd7d5;color:#82071e">Relationship to [@relationship].</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">SI</ins> Traceability requires an estimate of measurement uncertainty.<del style="background:#ffd7d5;color:#82071e">
+<pre><del style="background:#ffd7d5;color:#82071e">Relationship to [@relationship].</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">SI</ins> Traceability requires an estimate of measurement uncertainty<del style="background:#ffd7d5;color:#82071e">.
 
-Information on traceability should be available in the metadata as a single DOI landing page.</del></pre>
+Information on traceability should be available in the metadata as a single DOI landing page</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none"> (see [@uncertainty])</ins>.</pre>
+
+<!-- state: 02277e848b74 -->
 
 #### Proposal
 
@@ -644,6 +660,8 @@ Information on traceability should be available in the metadata as a single DOI 
 ```
 
 #### Internal notes
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
@@ -696,6 +714,24 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 **[`atmosphere.yaml`](requirements/corrections/atmosphere.yaml)**: *(no notes)*
 
+#### Goal — description
+
+**[`atmosphere.yaml`](requirements/corrections/atmosphere.yaml)**:
+
+```
+As threshold.
+```
+
+**[`atmospheric.yaml`](requirements/corrections/atmospheric.yaml)**: *(not set)*
+
+#### Goal — optional
+
+**[`atmosphere.yaml`](requirements/corrections/atmosphere.yaml)**: `true`
+
+**[`atmospheric.yaml`](requirements/corrections/atmospheric.yaml)**: `false`
+
+<!-- state: 29b3147c0695 -->
+
 #### Proposal
 
 ```
@@ -703,7 +739,11 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Directional Atmospheric Scattering
 
@@ -740,6 +780,8 @@ See @mobley2016.
 
 <pre>Examples of technical documentation include an Algorithm Theoretical Basis Document, product user guide, etc.</pre>
 
+<!-- state: b92e63af943d -->
+
 #### Proposal
 
 **Threshold — description** (AR requirement wording):
@@ -753,6 +795,8 @@ Specification of corrections applied for molecular (Rayleigh) scattering and for
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Geometric Correction
 
@@ -801,7 +845,7 @@ Sub-pixel <del style="background:#ffd7d5;color:#82071e">uncertaint</del><ins sty
 
 A consistent gridding/sampling frame is <del style="background:#ffd7d5;color:#82071e">used, including common cell size, origin, and nominal sample point location within the cell (centre, ll, ur)</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">necessary to meet this requirement</ins>.
 
-Relevant metadata must be provided under [@geometric-<del style="background:#ffd7d5;color:#82071e">uncertaint</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">accurac</ins>y] and [@instrument].</pre>
+Relevant metadata must be provided under [@geometric-uncertainty] and [@instrument].</pre>
 
 #### Threshold — notes
 
@@ -819,21 +863,27 @@ It is useful to note if the sensor is used at its native resolution before geome
 
 #### Goal — description
 
-**[`geometric-sr.yaml`](requirements/corrections/geometric-sr.yaml), [`geometric-st.yaml`](requirements/corrections/geometric-st.yaml)**:
+**[`geometric-ar.yaml`](requirements/corrections/geometric-ar.yaml)**:
 
-<pre>Sub-pixel accuracy is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).
+<pre>Sub-pixel uncertainty is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).
 
-A consistent gridding/sampling frame is necessary to meet this requirement.
+Relevant metadata must be provided under [@geometric-uncertainty] and [@instrument].</pre>
 
-Relevant metadata must be provided under [@geometric-accuracy] and [@instrument].</pre>
+**[`geometric-sr.yaml`](requirements/corrections/geometric-sr.yaml)** (differences to [`geometric-ar.yaml`](requirements/corrections/geometric-ar.yaml)):
 
-**[`geometric-ar.yaml`](requirements/corrections/geometric-ar.yaml)** (differences to [`geometric-sr.yaml`](requirements/corrections/geometric-sr.yaml)):
+<pre>Sub-pixel <del style="background:#ffd7d5;color:#82071e">uncertaint</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">accurac</ins>y is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).
 
-<pre>Sub-pixel <del style="background:#ffd7d5;color:#82071e">accurac</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">uncertaint</ins>y is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).
+<ins style="background:#ccffd8;color:#055d20;text-decoration:none">A consistent gridding/sampling frame is necessary to meet this requirement.
 
-<del style="background:#ffd7d5;color:#82071e">A consistent gridding/sampling frame is necessary to meet this requirement.
+</ins>Relevant metadata must be provided under [@geometric-<del style="background:#ffd7d5;color:#82071e">uncertaint</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">accurac</ins>y] and [@instrument].</pre>
 
-</del>Relevant metadata must be provided under [@geometric-<del style="background:#ffd7d5;color:#82071e">accurac</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">uncertaint</ins>y] and [@instrument].</pre>
+**[`geometric-st.yaml`](requirements/corrections/geometric-st.yaml)** (differences to [`geometric-ar.yaml`](requirements/corrections/geometric-ar.yaml)):
+
+<pre>Sub-pixel <del style="background:#ffd7d5;color:#82071e">uncertaint</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">accurac</ins>y is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).
+
+<ins style="background:#ccffd8;color:#055d20;text-decoration:none">A consistent gridding/sampling frame is necessary to meet this requirement.
+
+</ins>Relevant metadata must be provided under [@geometric-uncertainty] and [@instrument].</pre>
 
 #### Goal — notes
 
@@ -847,7 +897,11 @@ This requirement is intended to enable interoperability between imagery from dif
 
 <pre>This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction<del style="background:#ffd7d5;color:#82071e">,</del> and with non-image spatial data such as GIS layers and terrain models.</pre>
 
+<!-- state: 6d55c105afa0 -->
+
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Description**: Keep as is.
 
@@ -881,6 +935,8 @@ This requirement is intended to enable interoperability between imagery from dif
 #### Internal notes
 
 *none yet*
+
+---
 
 ### Ozone Corrections
 
@@ -932,6 +988,8 @@ Metadata contains a single DOI landing page with references to:
 
 **[`ozone-sr.yaml`](requirements/corrections/ozone-sr.yaml)**: `true`
 
+<!-- state: ce4fc4ffa992 -->
+
 #### Proposal
 
 **Threshold — description (SR)**: No Change
@@ -945,6 +1003,8 @@ Metadata contains a single DOI landing page with references to:
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Water Vapour Corrections
 
@@ -976,6 +1036,8 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 **[`water-vapour-ar.yaml`](requirements/corrections/water-vapour-ar.yaml)**: *(no notes)*
 
+<!-- state: 5878b84e8ed4 -->
+
 #### Proposal
 
 **Threshold — description** (AR requirement wording):
@@ -989,6 +1051,8 @@ Corrections are applied for water vapour if spectral bands are affected.
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Measurement Normalisation
 
@@ -1023,6 +1087,8 @@ Information on measurement normalisation should be available in the metadata as 
 
 **[`normalisation-ar.yaml`](requirements/measurements/normalisation-ar.yaml)**: *(no notes)*
 
+<!-- state: 15d1cbb6bb1e -->
+
 #### Proposal
 
 **Goal — description** (AR requirement wording):
@@ -1036,6 +1102,8 @@ Measurements are normalised (to nadir) to remove the effect of bidirectional dep
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Measurement Uncertainty
 
@@ -1119,7 +1187,11 @@ Information on measurement uncertainty should be available in the metadata as a 
 
 <pre>https://science.nasa.gov/wp-content/uploads/2026/05/joint-optical-guidelines-jul2025-signed.pdf</pre>
 
+<!-- state: fef2cfa305c0 -->
+
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Description**: Remove for SR and NLSR
 
@@ -1129,7 +1201,11 @@ Information on measurement uncertainty should be available in the metadata as a 
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Algorithms
 
@@ -1150,11 +1226,7 @@ Algorithms must be published and validated, and a description of the validation 
 <pre><mark style="background:#ddf4ff;color:#0a3069">All algorithms</mark>,<mark style="background:#ddf4ff;color:#0a3069"> and the sequence in which they were applied in the generation process</mark>,<mark style="background:#ddf4ff;color:#0a3069"> are identified</mark> in the metadata.
 For example, these may be available through Algorithm Theoretical Basis documents.</pre>
 
-**[`algorithms-st.yaml`](requirements/metadata/algorithms-st.yaml)** (differences to [`algorithms-ar.yaml`](requirements/metadata/algorithms-ar.yaml)):
-
-<pre>All algorithms<ins style="background:#ccffd8;color:#055d20;text-decoration:none"> and versions,</ins> and the sequence in which they were applied in the generation process<ins style="background:#ccffd8;color:#055d20;text-decoration:none">,</ins> are identified<del style="background:#ffd7d5;color:#82071e">.
-
-Algorithms must be published and validated, and a description of the validation process is included</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none"> in the metadata</ins>.</pre>
+**[`algorithms-st.yaml`](requirements/metadata/algorithms-st.yaml)**: *(not set)*
 
 #### Threshold — notes
 
@@ -1172,13 +1244,17 @@ It is possible that corrections are applied through non-disclosed processes. CEO
 
 #### Goal — description
 
-**[`algorithms-sr.yaml`](requirements/metadata/algorithms-sr.yaml), [`algorithms-st.yaml`](requirements/metadata/algorithms-st.yaml)**:
+**[`algorithms-sr.yaml`](requirements/metadata/algorithms-sr.yaml)**:
 
 ```
 As threshold, but only algorithms that have been published in a peer-reviewed journal.
 ```
 
 **[`algorithms-ar.yaml`](requirements/metadata/algorithms-ar.yaml)**: *(not set)*
+
+**[`algorithms-st.yaml`](requirements/metadata/algorithms-st.yaml)** (differences to [`algorithms-sr.yaml`](requirements/metadata/algorithms-sr.yaml)):
+
+<pre>A<del style="background:#ffd7d5;color:#82071e">s threshold, but only</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">ll</ins> algorithms <del style="background:#ffd7d5;color:#82071e">that have been</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">and versions, and the sequence in which they were applied in the generation process, are identified and</ins> published in a peer-reviewed journal.</pre>
 
 #### Goal — optional
 
@@ -1188,7 +1264,7 @@ As threshold, but only algorithms that have been published in a peer-reviewed jo
 
 #### Goal — notes
 
-**[`algorithms-sr.yaml`](requirements/metadata/algorithms-sr.yaml), [`algorithms-st.yaml`](requirements/metadata/algorithms-st.yaml)** (2 notes):
+**[`algorithms-sr.yaml`](requirements/metadata/algorithms-sr.yaml)** (2 notes):
 
 ```
 It is possible that high-quality corrections are applied through non-disclosed processes. CEOS-ARD does not per-se require full and open data and methods.
@@ -1198,73 +1274,28 @@ It is possible that high-quality corrections are applied through non-disclosed p
 Information on algorithms should be available in the metadata as a single DOI landing page.
 ```
 
-**[`algorithms-ar.yaml`](requirements/metadata/algorithms-ar.yaml)**: *(no notes)*
+**[`algorithms-ar.yaml`](requirements/metadata/algorithms-ar.yaml), [`algorithms-st.yaml`](requirements/metadata/algorithms-st.yaml)**: *(no notes)*
+
+<!-- state: 9fa03ad44c5b -->
 
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Threshold — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
-### Overall Data Quality
-
-- [`requirements/metadata/data-quality-sr.yaml`](requirements/metadata/data-quality-sr.yaml) — used by NLSR, SR
-- [`requirements/metadata/data-quality-st.yaml`](requirements/metadata/data-quality-st.yaml) — used by ST
-
-#### Goal — description
-
-**[`data-quality-sr.yaml`](requirements/metadata/data-quality-sr.yaml)**:
-
-<pre>Machine-readable metrics describing the overall quality of the data are included in the metadata, at minimum the cloud cover extent, i.e.:
-
-- Proportion of observations over land (c.f. ocean) affected by non-target phenomena, e.g., cloud and cloud shadows</pre>
-
-**[`data-quality-st.yaml`](requirements/metadata/data-quality-st.yaml)** (similarities to [`data-quality-sr.yaml`](requirements/metadata/data-quality-sr.yaml) highlighted):
-
-<pre>The metadata includes details of the<mark style="background:#ddf4ff;color:#0a3069"> quality of the </mark>product based on quantitative assessment of the product with respect to high quality reference data with full traceability of the uncertainties. Validation and intercomparison statistics can provide the necessary quantification.</pre>
-
-#### Proposal
-
-**Goal — description**: ST match NLSR and SR
-
-#### Internal notes
-
-*none yet*
-
-### Geometric Accuracy of the Data
-
-- [`requirements/metadata/geometric-accuracy-sr.yaml`](requirements/metadata/geometric-accuracy-sr.yaml) — used by NLSR, SR
-- [`requirements/metadata/geometric-accuracy-st.yaml`](requirements/metadata/geometric-accuracy-st.yaml) — used by ST
-
-#### Goal — description
-
-**[`geometric-accuracy-sr.yaml`](requirements/metadata/geometric-accuracy-sr.yaml)**:
-
-<pre>The metadata includes metrics describing the assessed geodetic accuracy of the data, expressed units of the coordinate system of the data.
-Accuracy is assessed by independent verification (as well as internal model-fit where applicable).
-Uncertainties are expressed quantitatively, for example, as root mean square error (RMSE) or Circular Error Probability (CEP90, CEP95), etc.</pre>
-
-**[`geometric-accuracy-st.yaml`](requirements/metadata/geometric-accuracy-st.yaml)** (differences to [`geometric-accuracy-sr.yaml`](requirements/metadata/geometric-accuracy-sr.yaml)):
-
-<pre>The metadata includes metrics describing the assessed geodetic accuracy of the data, expressed units of the coordinate system of the data.
-Accuracy is assessed by independent verification (as well as internal model-fit where applicable).
-Uncertainties are expressed <del style="background:#ffd7d5;color:#82071e">quantitatively, for example, </del>as root mean square error (RMSE) or Circular Error <ins style="background:#ccffd8;color:#055d20;text-decoration:none">90% </ins>Probability (CEP90<del style="background:#ffd7d5;color:#82071e">, CEP95), etc</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">)</ins>.</pre>
-
-#### Proposal
-
-**Goal — description**: ST match NLSR and SR
-
-#### Internal notes
-
-*none yet*
+---
 
 ### Geometric Correction Methods
 
-- [`requirements/metadata/geometric-correction-methods-ar.yaml`](requirements/metadata/geometric-correction-methods-ar.yaml) — used by AR
+- [`requirements/metadata/geometric-correction-methods-ar.yaml`](requirements/metadata/geometric-correction-methods-ar.yaml) — used by AR, ST
 - [`requirements/metadata/geometric-correction-methods-sr.yaml`](requirements/metadata/geometric-correction-methods-sr.yaml) — used by NLSR, SR
-- [`requirements/metadata/geometric-correction-methods-st.yaml`](requirements/metadata/geometric-correction-methods-st.yaml) — used by ST
 
 #### Goal — description
 
@@ -1278,24 +1309,27 @@ Information on geometric correction source and methods are provided, including r
 
 <pre>Information on geometric correction <del style="background:#ffd7d5;color:#82071e">source and methods are provided</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">methods should be available in the metadata as a single DOI landing page</ins>, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.<ins style="background:#ccffd8;color:#055d20;text-decoration:none">  </ins></pre>
 
-**[`geometric-correction-methods-st.yaml`](requirements/metadata/geometric-correction-methods-st.yaml)** (differences to [`geometric-correction-methods-ar.yaml`](requirements/metadata/geometric-correction-methods-ar.yaml)):
-
-<pre>Information on geometric correction <del style="background:#ffd7d5;color:#82071e">source and methods are provid</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">methods should be available in the metadata as a single DOI landing page containing information on geodetic correction methods us</ins>ed, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.<ins style="background:#ccffd8;color:#055d20;text-decoration:none">  </ins></pre>
+<!-- state: fc6960746974 -->
 
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Goal — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Map Projection
 
-- [`requirements/metadata/map-projection-ar.yaml`](requirements/metadata/map-projection-ar.yaml) — used by AR
+- [`requirements/metadata/map-projection-ar.yaml`](requirements/metadata/map-projection-ar.yaml) — used by AR, ST
 - [`requirements/metadata/map-projection-nlsr.yaml`](requirements/metadata/map-projection-nlsr.yaml) — used by NLSR
 - [`requirements/metadata/map-projection-sr.yaml`](requirements/metadata/map-projection-sr.yaml) — used by SR
-- [`requirements/metadata/map-projection-st.yaml`](requirements/metadata/map-projection-st.yaml) — used by ST
 
 #### Threshold — description
 
@@ -1313,25 +1347,11 @@ The map projection that has been used and any relevant parameters required in re
 
 <pre>T<ins style="background:#ccffd8;color:#055d20;text-decoration:none">he metadata lists t</ins>he map projection that has been used<ins style="background:#ccffd8;color:#055d20;text-decoration:none"> (or geographical coordinates, if applicable)</ins> and any relevant parameters required in relation to use of data in that map projection<del style="background:#ffd7d5;color:#82071e"> is detailed</del>.</pre>
 
-**[`map-projection-st.yaml`](requirements/metadata/map-projection-st.yaml)**: *(not set)*
-
-#### Goal — description
-
-**[`map-projection-st.yaml`](requirements/metadata/map-projection-st.yaml)**:
-
-```
-The metadata lists the map projection that has been used, if any, and any relevant parameters required in relation to use of data in that map projection.
-```
-
-**[`map-projection-ar.yaml`](requirements/metadata/map-projection-ar.yaml), [`map-projection-nlsr.yaml`](requirements/metadata/map-projection-nlsr.yaml), [`map-projection-sr.yaml`](requirements/metadata/map-projection-sr.yaml)**: *(not set)*
-
-#### Goal — optional
-
-**[`map-projection-ar.yaml`](requirements/metadata/map-projection-ar.yaml), [`map-projection-nlsr.yaml`](requirements/metadata/map-projection-nlsr.yaml), [`map-projection-sr.yaml`](requirements/metadata/map-projection-sr.yaml)**: `false`
-
-**[`map-projection-st.yaml`](requirements/metadata/map-projection-st.yaml)**: `true`
+<!-- state: 3bea7f622788 -->
 
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Threshold — description**: SR and NLSR match AR
 
@@ -1339,7 +1359,11 @@ The metadata lists the map projection that has been used, if any, and any releva
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Observation: curious if anyone knows why this is "Not Required" for ST at Threshold?
+
+---
 
 ### Processing Chain Provenance
 
@@ -1347,6 +1371,16 @@ Observation: curious if anyone knows why this is "Not Required" for ST at Thresh
 - [`requirements/metadata/processing-chain-prov-nlsr.yaml`](requirements/metadata/processing-chain-prov-nlsr.yaml) — used by NLSR
 - [`requirements/metadata/processing-chain-prov-sr.yaml`](requirements/metadata/processing-chain-prov-sr.yaml) — used by SR
 - [`requirements/metadata/processing-chain-prov-st.yaml`](requirements/metadata/processing-chain-prov-st.yaml) — used by ST
+
+#### Threshold — description
+
+**[`processing-chain-prov-st.yaml`](requirements/metadata/processing-chain-prov-st.yaml)**:
+
+```
+The provider attaches to each delivered dataset (delivery unit) a code which allows them to reconstruct the exact processing environment (software versions, calibration files, parameter settings) in which this particular output was produced.
+```
+
+**[`processing-chain-prov-ar.yaml`](requirements/metadata/processing-chain-prov-ar.yaml), [`processing-chain-prov-nlsr.yaml`](requirements/metadata/processing-chain-prov-nlsr.yaml), [`processing-chain-prov-sr.yaml`](requirements/metadata/processing-chain-prov-sr.yaml)**: *(not set)*
 
 #### Goal — description
 
@@ -1364,22 +1398,30 @@ Information on processing chain provenance should be available with a detailed d
 
 <pre>Information on processing chain provenance should be available <del style="background:#ffd7d5;color:#82071e">with a</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">in the metadata as a single DOI landing page containing</ins> detailed description of the processing steps used to generate the product, including the versions of software used, giving full transparency to the users.</pre>
 
-**[`processing-chain-prov-st.yaml`](requirements/metadata/processing-chain-prov-st.yaml)** (differences to [`processing-chain-prov-ar.yaml`](requirements/metadata/processing-chain-prov-ar.yaml)):
+**[`processing-chain-prov-st.yaml`](requirements/metadata/processing-chain-prov-st.yaml)** (similarities to [`processing-chain-prov-ar.yaml`](requirements/metadata/processing-chain-prov-ar.yaml) highlighted):
 
-<pre>Information on processing chain provenance should be available <del style="background:#ffd7d5;color:#82071e">with a detailed</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">in the metadata as a single DOI landing page containing</ins> description of the processing <del style="background:#ffd7d5;color:#82071e">steps</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">chain</ins> used to generate the product, including the versions of <ins style="background:#ccffd8;color:#055d20;text-decoration:none">the </ins>software used<ins style="background:#ccffd8;color:#055d20;text-decoration:none"> and information on the data collection baseline</ins>, giving full transparency to the users.</pre>
+<pre>As threshold, but the provider is also in grade to reproduce the exact same output.</pre>
+
+<!-- state: 3c83ed3db8cd -->
 
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Goal — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Spectral Bands
 
-- [`requirements/metadata/spectral-bands-ar.yaml`](requirements/metadata/spectral-bands-ar.yaml) — used by AR
-- [`requirements/metadata/spectral-bands.yaml`](requirements/metadata/spectral-bands.yaml) — used by NLSR, SR, ST
+- [`requirements/metadata/spectral-bands-ar.yaml`](requirements/metadata/spectral-bands-ar.yaml) — used by AR, ST
+- [`requirements/metadata/spectral-bands.yaml`](requirements/metadata/spectral-bands.yaml) — used by NLSR, SR
 
 #### Threshold — description
 
@@ -1418,6 +1460,8 @@ Information on spectral bands should be available in the metadata as a single DO
 
 **[`spectral-bands-ar.yaml`](requirements/metadata/spectral-bands-ar.yaml)**: *(no notes)*
 
+<!-- state: b3bdb1fcf11e -->
+
 #### Proposal
 
 **Threshold — description**: NLSR-SR-ST match AR
@@ -1427,6 +1471,8 @@ Information on spectral bands should be available in the metadata as a single DO
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Cloud
 
@@ -1476,7 +1522,11 @@ See @foga2017, @skakun2022, @zhu2012, and @zhu2015.
 
 **[`cloud-st.yaml`](requirements/per-pixel/cloud-st.yaml), [`cloud.yaml`](requirements/per-pixel/cloud.yaml)**: *(no notes)*
 
+<!-- state: 4da85c3b2215 -->
+
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Threshold — description**: NLSR-SR-ST match AR
 
@@ -1484,7 +1534,11 @@ See @foga2017, @skakun2022, @zhu2012, and @zhu2015.
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### Cloud Shadow
 
@@ -1532,7 +1586,11 @@ I</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">As thr
 
 **[`cloud-shadow-nlsr.yaml`](requirements/per-pixel/cloud-shadow-nlsr.yaml), [`cloud-shadow-st.yaml`](requirements/per-pixel/cloud-shadow-st.yaml), [`cloud-shadow.yaml`](requirements/per-pixel/cloud-shadow.yaml)**: `true`
 
+<!-- state: f1c3cee19bbc -->
+
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Threshold — description**: SR and ST match AR
 
@@ -1540,7 +1598,11 @@ I</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">As thr
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+---
 
 ### `per-pixel/incomplete-testing-*`
 
@@ -1592,7 +1654,11 @@ Identifies which tests have and have not been successfully completed for each pi
 
 <pre><del style="background:#ffd7d5;color:#82071e">I</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">The metadata i</ins>dentifies which tests have<ins style="background:#ccffd8;color:#055d20;text-decoration:none">,</ins> and have not<ins style="background:#ccffd8;color:#055d20;text-decoration:none">,</ins> been successfully completed for each pixel.</pre>
 
+<!-- state: 99f0e3c3137f -->
+
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Threshold — description**: NLSR-SR-ST match AR
 
@@ -1600,7 +1666,11 @@ Identifies which tests have and have not been successfully completed for each pi
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 I suggest "Per-Pixel Assessment" is adopted for NLSR-SR-ST
+
+---
 
 ### `per-pixel/land-water-*`
 
@@ -1664,6 +1734,8 @@ As threshold, information on land/water mask should be available in the metadata
 
 **[`land-water-nlsr.yaml`](requirements/per-pixel/land-water-nlsr.yaml), [`land-water-sr.yaml`](requirements/per-pixel/land-water-sr.yaml)**: `true`
 
+<!-- state: 13a247cc4114 -->
+
 #### Proposal
 
 **Threshold — description (AR)**: No change
@@ -1682,6 +1754,8 @@ As threshold, information on land/water mask should be available in the metadata
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
+---
+
 ### No Data
 
 - [`requirements/per-pixel/nodata-ar.yaml`](requirements/per-pixel/nodata-ar.yaml) — used by AR
@@ -1696,15 +1770,19 @@ Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadat
 Pixels that do not correspond to an observation (e.g., empty pixels / invalid observations / below noise floor) are masked.
 ```
 
-**[`nodata-st.yaml`](requirements/per-pixel/nodata-st.yaml)** (differences to [`nodata-ar.yaml`](requirements/per-pixel/nodata-ar.yaml)):
+**[`nodata-st.yaml`](requirements/per-pixel/nodata-st.yaml)** (similarities to [`nodata-ar.yaml`](requirements/per-pixel/nodata-ar.yaml) highlighted):
 
-<pre>Pixels that do not correspond to an observation (<del style="background:#ffd7d5;color:#82071e">e.g., </del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">‘</ins>empty pixels<del style="background:#ffd7d5;color:#82071e"> / invalid observations / below noise floor) are mask</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">’) are flagged and meaning of the flag values declar</ins>ed.</pre>
+<pre><mark style="background:#ddf4ff;color:#0a3069">Pixels that do not correspond to an observation (</mark>‘No Data / Invalid / Falsified / Valid / Modelled’) are flagged.</pre>
 
 **[`nodata.yaml`](requirements/per-pixel/nodata.yaml)** (differences to [`nodata-ar.yaml`](requirements/per-pixel/nodata-ar.yaml)):
 
 <pre>Pixels that do not correspond to an observation (<del style="background:#ffd7d5;color:#82071e">e.g., </del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">‘</ins>empty pixels<del style="background:#ffd7d5;color:#82071e"> / invalid observations / below noise floor) are mask</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">’) are flagg</ins>ed.</pre>
 
+<!-- state: b4194a194f37 -->
+
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Threshold — description**: NLSR-SR-ST match AR
 
@@ -1712,10 +1790,11 @@ Pixels that do not correspond to an observation (e.g., empty pixels / invalid ob
 
 *none yet*
 
+---
+
 ### Saturation
 
-- [`requirements/per-pixel/saturation-ar.yaml`](requirements/per-pixel/saturation-ar.yaml) — used by AR
-- [`requirements/per-pixel/saturation-st.yaml`](requirements/per-pixel/saturation-st.yaml) — used by ST
+- [`requirements/per-pixel/saturation-ar.yaml`](requirements/per-pixel/saturation-ar.yaml) — used by AR, ST
 - [`requirements/per-pixel/saturation.yaml`](requirements/per-pixel/saturation.yaml) — used by NLSR, SR
 
 #### Threshold — description
@@ -1725,10 +1804,6 @@ Pixels that do not correspond to an observation (e.g., empty pixels / invalid ob
 ```
 Specification of whether there is pixel radiometric saturation at Level 1 in one or more spectral bands.
 ```
-
-**[`saturation-st.yaml`](requirements/per-pixel/saturation-st.yaml)** (differences to [`saturation-ar.yaml`](requirements/per-pixel/saturation-ar.yaml)):
-
-<pre>Specification of whether there is pixel radiometric saturation at Level 1 in <del style="background:#ffd7d5;color:#82071e">one or more</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">a given</ins> spectral band<del style="background:#ffd7d5;color:#82071e">s</del>.</pre>
 
 **[`saturation.yaml`](requirements/per-pixel/saturation.yaml)** (similarities to [`saturation-ar.yaml`](requirements/per-pixel/saturation-ar.yaml) highlighted):
 
@@ -1742,17 +1817,11 @@ Specification of whether there is pixel radiometric saturation at Level 1 in one
 As threshold, with specification of which pixels are radiometrically saturated for each spectral band.
 ```
 
-**[`saturation-st.yaml`](requirements/per-pixel/saturation-st.yaml)**: *(not set)*
-
 **[`saturation.yaml`](requirements/per-pixel/saturation.yaml)** (differences to [`saturation-ar.yaml`](requirements/per-pixel/saturation-ar.yaml)):
 
 <pre><del style="background:#ffd7d5;color:#82071e">As threshold, with specification of</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">Metadata indicates</ins> which pixels are<del style="background:#ffd7d5;color:#82071e"> radiometrically</del> saturated for each spectral band.</pre>
 
-#### Goal — optional
-
-**[`saturation-ar.yaml`](requirements/per-pixel/saturation-ar.yaml), [`saturation.yaml`](requirements/per-pixel/saturation.yaml)**: `true`
-
-**[`saturation-st.yaml`](requirements/per-pixel/saturation-st.yaml)**: `false`
+<!-- state: a8f544415810 -->
 
 #### Proposal
 
@@ -1763,6 +1832,8 @@ As threshold, with specification of which pixels are radiometrically saturated f
 #### Internal notes
 
 *none yet*
+
+---
 
 ### Snow/Ice Mask
 
@@ -1791,6 +1862,8 @@ As threshold, information on snow/ice mask should be available in the metadata a
 
 <pre><del style="background:#ffd7d5;color:#82071e">As threshold, i</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">The metadata indicates whether a pixel is assessed as being snow/ice or not. I</ins>nformation on snow/ice mask should be available in the metadata as a single DOI landing page.</pre>
 
+<!-- state: ebd56d588871 -->
+
 #### Proposal
 
 **Threshold — description (NLSR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether a pixel is snow/ice"
@@ -1805,10 +1878,22 @@ As threshold, information on snow/ice mask should be available in the metadata a
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
+---
+
 ### Terrain Occlusion
 
 - [`requirements/per-pixel/terrain-occlusion-st.yaml`](requirements/per-pixel/terrain-occlusion-st.yaml) — used by ST
 - [`requirements/per-pixel/terrain-occlusion.yaml`](requirements/per-pixel/terrain-occlusion.yaml) — used by NLSR, SR
+
+#### Threshold — description
+
+**[`terrain-occlusion-st.yaml`](requirements/per-pixel/terrain-occlusion-st.yaml)**:
+
+```
+Not required.
+```
+
+**[`terrain-occlusion.yaml`](requirements/per-pixel/terrain-occlusion.yaml)**: *(not set)*
 
 #### Goal — description
 
@@ -1822,13 +1907,21 @@ Identifies pixels that are not visible to the sensor due to terrain occlusion du
 
 <pre><del style="background:#ffd7d5;color:#82071e">Identifi</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">The metadata indicat</ins>es pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing.</pre>
 
+<!-- state: db5f759b18ae -->
+
 #### Proposal
+
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
 
 **Goal — description (SR, NLSR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing."
 
 #### Internal notes
 
+> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+
 Note: there is no terrain occlusion in ST. The html file states there is.
+
+---
 
 ### Solar and Viewing Geometry
 
@@ -1863,6 +1956,8 @@ Provide per-pixel solar and sensor viewing azimuth and zenith angles.
 
 **[`view-angles-solar.yaml`](requirements/per-pixel/view-angles-solar.yaml)**: `true`
 
+<!-- state: a44356a085f4 -->
+
 #### Proposal
 
 **Threshold — description**: ST-SR match AR
@@ -1884,6 +1979,8 @@ Information should be available in the metadata as a single DOI landing page, wh
 ```
 
 **AR** also modifies: glossary.
+
+---
 
 ### [`sections/requirement-categories/per-pixel-metadata.yaml`](sections/requirement-categories/per-pixel-metadata.yaml) (AR)
 

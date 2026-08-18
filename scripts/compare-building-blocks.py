@@ -2,8 +2,13 @@
 building blocks (e.g. time-ar/-sar/-sr/-st), including PFS-specific overrides.
 
 Usage:
-    python scripts/compare-building-blocks.py            # generate + verify
-    python scripts/compare-building-blocks.py --verify   # verify existing DIFFERENCES.md only
+    python scripts/compare-building-blocks.py                  # generate + verify
+    python scripts/compare-building-blocks.py --verify         # verify existing DIFFERENCES.md only
+    python scripts/compare-building-blocks.py --baseline REF   # generate; additionally mark manual
+        # content as potentially outdated when the group's compared content changed between the
+        # git ref REF (the state the manual content was written against) and the working tree.
+        # Only needed for manual content that has no stored state fingerprint yet; afterwards the
+        # fingerprints handle this automatically.
 
 HTML version: convert DIFFERENCES.md with https://www.netsmarter.com/md-to-html/
 and add the following to the header:
@@ -44,6 +49,7 @@ import difflib
 import hashlib
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -147,13 +153,13 @@ def base_name(stem):
     return stem
 
 
-def collect_groups():
+def build_groups(paths):
     auto = {}
-    for path in sorted((ROOT / "requirements").rglob("*.yaml")):
-        rel = path.relative_to(ROOT).as_posix()
+    for rel in paths:
         if rel in EXCLUDE or "_template" in rel:
             continue
-        key = MERGE_INTO.get(rel, (path.parent.relative_to(ROOT).as_posix(), base_name(path.stem)))
+        folder, name = rel.rsplit("/", 1)
+        key = MERGE_INTO.get(rel, (folder, base_name(name[:-len(".yaml")])))
         auto.setdefault(key, []).append(rel)
     groups = {}
     for (folder, base), files in auto.items():
@@ -161,6 +167,11 @@ def collect_groups():
             groups[f"{folder.split('/', 1)[1]}/{base}-*"] = sorted(files)
     groups.update(EXTRA_GROUPS)
     return dict(sorted(groups.items(), key=lambda kv: kv[1][0]))
+
+
+def collect_groups():
+    return build_groups(sorted(p.relative_to(ROOT).as_posix()
+                               for p in (ROOT / "requirements").rglob("*.yaml")))
 
 
 def extract_fields(doc, levels):
@@ -464,6 +475,27 @@ def group_state(files, fields):
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:12]
 
 
+def baseline_groups(ref):
+    """Group membership computed from the file list at the given git ref."""
+    r = subprocess.run(["git", "-C", str(ROOT), "ls-tree", "-r", "--name-only", ref, "requirements"],
+                       capture_output=True, text=True, encoding="utf-8")
+    return build_groups(sorted(p for p in r.stdout.split("\n") if p.endswith(".yaml")))
+
+
+def baseline_state(ref, files):
+    """Group fingerprint computed from the YAML contents at the given git ref."""
+    docs = {}
+    for f in files:
+        r = subprocess.run(["git", "-C", str(ROOT), "show", f"{ref}:{f}"],
+                           capture_output=True, text=True, encoding="utf-8")
+        doc = yaml.safe_load(r.stdout) if r.returncode == 0 else None
+        if not isinstance(doc, dict):
+            return None  # file missing or empty at the ref -> treat as changed
+        docs[f] = doc
+    levels = group_levels(docs)
+    return group_state(files, {f: extract_fields(d, levels) for f, d in docs.items()})
+
+
 def extract_manual(text):
     manual = {}  # heading -> {manual field -> content}
     states = {}  # heading -> fingerprint at the time the content was written
@@ -471,6 +503,8 @@ def extract_manual(text):
 
     def flush():
         content = "\n".join(buf).strip()
+        # the separator between groups follows the last manual section; not content
+        content = re.sub(r"\n*---$", "", content).strip()
         if h3 and field and content and content not in PLACEHOLDERS.values():
             manual.setdefault(h3, {})[field] = content
         buf.clear()
@@ -493,11 +527,12 @@ def extract_manual(text):
     return manual, states
 
 
-def generate():
+def generate(baseline=None):
     groups = collect_groups()
     usage, overrides, cat_overrides, types = collect_pfs()
     groups, overrides = drop_sar_only(groups, overrides, usage, types)
     manual, states = extract_manual(OUTPUT.read_text(encoding="utf-8")) if OUTPUT.exists() else ({}, {})
+    old_groups = baseline_groups(baseline) if baseline else {}
     used_headings = set()
     stale_groups = []
     out = []
@@ -540,13 +575,19 @@ def generate():
         if members:
             ordered.append((sec, None))
             ordered.extend(members)
+    first_in_section = True
     for label, files in ordered:
         if files is None:
             out.append("")
             out.append(f"## {label}")
             out.append("")
             out.append(GROUP_SECTIONS[label])
+            first_in_section = True
             continue
+        if not first_in_section:
+            out.append("")
+            out.append("---")
+        first_in_section = False
         docs = {f: load(f) for f in files}
         levels = group_levels(docs)
         fields = {f: extract_fields(doc, levels) for f, doc in docs.items()}
@@ -579,20 +620,20 @@ def generate():
                     variants.append([[f], value])
             diffable = [v for v in variants
                         if (isinstance(v[1], str) or isinstance(v[1], list)) and v[1]]
-            baseline = max(diffable, key=lambda v: len(v[0])) if diffable else None
-            if baseline is not None:
-                variants.remove(baseline)
-                variants.insert(0, baseline)
+            base_variant = max(diffable, key=lambda v: len(v[0])) if diffable else None
+            if base_variant is not None:
+                variants.remove(base_variant)
+                variants.insert(0, base_variant)
             for variant in variants:
                 as_text = (lambda v: join_notes(v) if isinstance(v, list) else v)
-                if variant is baseline or variant not in diffable:
+                if variant is base_variant or variant not in diffable:
                     out.append(render_verbatim(variant[0], variant[1], shorts))
-                elif similarity(as_text(baseline[1]), as_text(variant[1])) < DIFF_THRESHOLD:
+                elif similarity(as_text(base_variant[1]), as_text(variant[1])) < DIFF_THRESHOLD:
                     out.append(render_similarity(variant[0], variant[1],
-                                                 baseline[0][0], baseline[1], shorts))
+                                                 base_variant[0][0], base_variant[1], shorts))
                 else:
                     out.append(render_diff(variant[0], variant[1],
-                                           baseline[0][0], baseline[1], shorts))
+                                           base_variant[0][0], base_variant[1], shorts))
                 out.append("")
             while out[-1] == "":
                 out.pop()
@@ -600,6 +641,9 @@ def generate():
         entries = manual.get(heading, {})
         state = group_state(files, fields)
         stale = bool(entries) and heading in states and states[heading] != state
+        if not stale and baseline and entries and heading not in states:
+            stale = (old_groups.get(label) != files
+                     or baseline_state(baseline, files) != state)
         if stale:
             stale_groups.append(heading)
         if entries:
@@ -623,7 +667,10 @@ def generate():
         out.append("")
         out.append("The PFS documents (`pfs/*/document.yaml`) can append to or replace parts of the "
                    "building blocks they reference, so the same file can render differently per PFS.")
-    for target in sorted(by_target):
+    for n, target in enumerate(sorted(by_target)):
+        if n:
+            out.append("")
+            out.append("---")
         out.append("")
         out.append(f"### [`{target}`]({target})")
         out.append("")
@@ -640,8 +687,11 @@ def generate():
     if cat_overrides:
         out.append("")
         out.append("## PFS-specific overrides of requirement categories")
-        for pfs, ref, mode, data in cat_overrides:
+        for n, (pfs, ref, mode, data) in enumerate(cat_overrides):
             target = f"sections/requirement-categories/{ref}.yaml"
+            if n:
+                out.append("")
+                out.append("---")
             out.append("")
             out.append(f"### [`{target}`]({target}) ({pfs})")
             compared, other = flatten_override(data)
@@ -678,7 +728,8 @@ def generate():
     out[idx:idx + 1] = build_toc(out[idx + 1:])
     OUTPUT.write_text("\n".join(out), encoding="utf-8", newline="\n")
     preserved = sum(len(v) for h, v in manual.items() if h in used_headings)
-    print(f"Wrote {OUTPUT.relative_to(ROOT)} ({len(groups)} groups, "
+    out_name = OUTPUT.relative_to(ROOT) if OUTPUT.is_relative_to(ROOT) else OUTPUT.name
+    print(f"Wrote {out_name} ({len(groups)} groups, "
           f"{len(overrides)} requirement overrides, {len(cat_overrides)} category overrides, "
           f"{preserved} manual entr{'ies' if preserved != 1 else 'y'} preserved)")
 
@@ -857,6 +908,10 @@ def verify():
         if kind == "group":
             group_claims.setdefault(ident, []).append((fkey, names, value))
     for heading, files in doc_groups.items():
+        missing = [f for f in files if not (ROOT / f).exists()]
+        if missing:
+            errors.append(f"{heading}: file(s) referenced in document no longer exist: {', '.join(missing)}")
+            continue
         docs = {f: load(f) for f in files}
         levels = group_levels(docs)
         fields = {f: extract_fields(doc, levels) for f, doc in docs.items()}
@@ -923,5 +978,8 @@ def verify():
 
 if __name__ == "__main__":
     if "--verify" not in sys.argv:
-        generate()
+        baseline = None
+        if "--baseline" in sys.argv:
+            baseline = sys.argv[sys.argv.index("--baseline") + 1]
+        generate(baseline)
     verify()
