@@ -552,7 +552,8 @@ def generate(baseline=None):
                "intentional, as the SAR PFS were a combined document before being split.")
     out.append("- Compared fields: title, description, and per requirement level (threshold/goal/image) "
                "the description, the `optional` flag, and the notes.")
-    out.append("- Ignored fields: id, dependencies, glossary, references, changes, history, remarks, and YAML comments.")
+    out.append("- Ignored fields: id, dependencies, glossary, references, changes, history, and YAML comments. "
+               "The remarks fields are not compared, but shown per group.")
     out.append("- Not compared: `measurements/measurement-*`, `measurements/measurand-st`, and "
                "`measurements/backscatter-*` (intentionally different per product).")
     out.append(f"- Per field, one variant is quoted verbatim as the baseline; similar variants only "
@@ -640,6 +641,19 @@ def generate(baseline=None):
             while out[-1] == "":
                 out.pop()
 
+        remark_lines = []
+        for f in files:
+            remark = (docs[f].get("remarks") or "").rstrip()
+            if remark:
+                parts = remark.split("\n")
+                remark_lines.append(f"- `{shorts[f]}`: {parts[0]}")
+                remark_lines += ["  " + p for p in parts[1:]]
+        if remark_lines:
+            out.append("")
+            out.append("#### Remarks from the building blocks")
+            out.append("")
+            out.extend(remark_lines)
+
         entries = manual.get(heading, {})
         state = group_state(files, fields)
         stale = bool(entries) and heading in states and states[heading] != state
@@ -703,6 +717,13 @@ def generate(baseline=None):
             if other:
                 out.append("")
                 out.append(f"**{pfs}** also modifies: {', '.join(sorted(other))}.")
+            heading = f"[`{target}`]({target}) ({pfs})"
+            used_headings.add(heading)
+            for name in MANUAL_FIELDS:
+                out.append("")
+                out.append(f"#### {name}")
+                out.append("")
+                out.append(manual.get(heading, {}).get(name, PLACEHOLDERS[name]))
 
     orphans = {h: m for h, m in manual.items() if h not in used_headings}
     if orphans:

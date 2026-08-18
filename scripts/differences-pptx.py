@@ -34,6 +34,7 @@ RED = RGBColor(0xB0, 0x00, 0x00)
 BLUE = RGBColor(0x15, 0x65, 0xC0)
 BLACK = RGBColor(0x00, 0x00, 0x00)
 WHITE = RGBColor(0xFF, 0xFF, 0xFF)
+STRIPE = RGBColor(0xF2, 0xF2, 0xF2)
 
 SLIDE_W, SLIDE_H = Inches(13.333), Inches(7.5)
 MARGIN = Inches(0.5)
@@ -103,7 +104,7 @@ def resolve_directive(directive, key, row_pfs, row_value, files, fields, usage):
     for s in sentences:
         low = s.lower()
         mm = re.search(rf"(?:^|\b)(.*?)match(?:es)? ({PFS_RE})"
-                       rf"( wording at threshold| threshold)?\b(.*)$", s, re.I)
+                       rf"( wording at threshold| threshold| goal)?\b(.*)$", s, re.I)
         codes_before = set(re.findall(PFS_RE, mm.group(1))) if mm else set()
         if mm:
             scope = codes_before or None
@@ -112,15 +113,20 @@ def resolve_directive(directive, key, row_pfs, row_value, files, fields, usage):
                 if src in row_pfs:
                     return clean(row_value), "same"
                 continue
-            src_key = "threshold.description" if mm.group(3) else key
+            if mm.group(3):
+                src_key = ("goal.description" if "goal" in mm.group(3).lower()
+                           else "threshold.description")
+            else:
+                src_key = key
             tail = mm.group(4) or ""
             quoted = re.search(r'"([^"]+)"', tail)
             if quoted and ("phrasing" in low or tail.strip().startswith('"')):
                 value = quoted.group(1)
             else:
                 value = source_value(src, src_key, files, fields, usage)
-                if key.endswith(".notes") and (value is None or value == []):
-                    return "DELETE NOTE", "delete"
+                if value is None or value == []:
+                    # the alignment source has no such field: propose removal
+                    return ("DELETE NOTE" if key.endswith(".notes") else "DELETE"), "delete"
                 value = clean(value)
                 extra = re.search(r"\b(BUT .+)$", tail)
                 if extra:
@@ -194,12 +200,18 @@ def cell_len(spans):
     return sum(len(t) for t, s in spans if s != "del")
 
 
+EST_CHARS = [13, 78, 78]  # wrap widths per column
+
+
 def est_height(rows):
     h = 0.32  # header
     for cells in rows:
-        lines = max(sum(len(part) // 78 + 1
-                        for part in "".join(t for t, _ in c).split("\n")) for c in cells)
-        h += 0.11 + lines * 0.165
+        lines = 1
+        for c, spans in enumerate(cells):
+            text = "".join(t for t, _ in spans)
+            n = sum(len(part) // EST_CHARS[min(c, 2)] + 1 for part in text.split("\n"))
+            lines = max(lines, n)
+        h += 0.12 + lines * 0.17
     return h
 
 
@@ -213,9 +225,9 @@ def add_title(slide, text):
     return box
 
 
-def write_cell(cell, spans, bold_default=False):
+def write_cell(cell, spans, bold_default=False, bg=None):
     cell.fill.solid()
-    cell.fill.fore_color.rgb = WHITE
+    cell.fill.fore_color.rgb = bg or WHITE
     tf = cell.text_frame
     para = tf.paragraphs[0]
     for text, style in spans:
@@ -264,8 +276,9 @@ def add_table(slide, y, headers, rows):
         run.font.size = Pt(11)
         run.font.color.rgb = WHITE
     for r, cells in enumerate(rows, start=1):
+        bg = STRIPE if r % 2 == 0 else WHITE  # alternating rows for readability
         for c, spans in enumerate(cells):
-            write_cell(table.cell(r, c), spans, bold_default=(c == 0))
+            write_cell(table.cell(r, c), spans, bold_default=(c == 0), bg=bg)
     return shape
 
 
@@ -296,7 +309,7 @@ def joint_yaml_lines(files, fields, usage, entries, levels):
     lines = []
 
     def scalar(indent, key, value, todo):
-        suffix = "  # TODO: differs per PFS" if todo else ""
+        suffix = "  # TODO: not aligned yet, see comparison" if todo else ""
         if "\n" in value:
             lines.append(f"{indent}{key}: |-{suffix}")
             for l in value.split("\n"):
@@ -321,7 +334,7 @@ def joint_yaml_lines(files, fields, usage, entries, levels):
         if desc:
             scalar("    ", "description", desc, d_todo)
         if notes:
-            lines.append("    notes:" + ("  # TODO: differs per PFS" if n_todo else ""))
+            lines.append("    notes:" + ("  # TODO: not aligned yet, see comparison" if n_todo else ""))
             for note in notes.split("\n\n"):
                 if "\n" in note:
                     lines.append("      - |-")
@@ -330,7 +343,7 @@ def joint_yaml_lines(files, fields, usage, entries, levels):
                 else:
                     lines.append(f"      - {note}")
         if opt is True:
-            lines.append("    optional: true" + ("  # TODO: differs per PFS" if o_todo else ""))
+            lines.append("    optional: true" + ("  # TODO: not aligned yet, see comparison" if o_todo else ""))
     return lines
 
 
@@ -444,19 +457,22 @@ def main():
         [("", None)],
         [("Proposed column — proposed changes relative to the row's current text:", None)],
         [("    ", None), ("red struck-through", "del"), (" text is removed, ", None),
-         ("green", "ins"), (" text is added by the proposal; plain text = unchanged", None)],
+         ("green", "ins"), (" text is added by the proposal", None)],
+        [("    ", None), ("(keep as is)", "note"),
+         (" = unchanged (explicitly kept or nothing proposed)", None)],
         [("    ", None), ("DELETE NOTE", "delete"), (" = proposed removal", None)],
         [("    ", None), ("gray italic", "raw"),
-         (" = proposal that could not be interpreted automatically, shown verbatim", None)],
+         (" text = proposal that could not be interpreted automatically, shown verbatim", None)],
         [("", None)],
-        [("⚠ in the slide title: the files changed after the feedback was written — "
-          "review whether the proposal still applies.", None)],
         [("Internal notes are shown below the tables; the raw proposal text is in the "
           "slide's speaker notes.", None)],
         [("Each group is followed by a Proposal slide showing the proposed building blocks "
           "in YAML form (only the fields that change; proposed values in ", None),
          ("green", "ins"), (") for editing and capturing the agreement during the review.", None)],
     ]
+    if any(cbb.STALE_WARNING in v for m in manual.values() for v in m.values()):
+        legend.insert(-2, [("⚠ in the slide title: the files changed after the feedback was "
+                            "written — review whether the proposal still applies.", None)])
     first = True
     for spans in legend:
         p = tf.paragraphs[0] if first else tf.add_paragraph()
@@ -538,6 +554,9 @@ def main():
                         pfs_spans.append(("\n(baseline)", "note"))
                 elif base_variant and (isinstance(v, (str, list)) and v):
                     cur_spans = diff_spans(base_disp, clean(v))
+                    strip = lambda t: re.sub(r"[\W_]+", "", t)
+                    if strip(base_disp) == strip(clean(v)):
+                        cur_spans = cur_spans + [("\n(differs only in punctuation/whitespace)", "note")]
                 else:
                     cur_spans = [(clean(v), None)]
                 if level in opt_levels and key == f"{level}.description":
@@ -545,16 +564,17 @@ def main():
                     cur_spans = cur_spans + [(f"\n({'optional' if flag else 'required'})", "note")]
                 prop = proposed_cell(entries, key, row_pfs, fields[f][key],
                                      files, fields, usage)
-                if prop is None:
-                    prop_spans = [("", None)]
-                elif prop[1] == "changed":
+                empty = not (isinstance(v, (str, list)) and v)
+                if prop is not None and prop[1] == "changed":
                     # highlight the proposed changes relative to this row's current text
-                    if isinstance(v, (str, list)) and v:
-                        prop_spans = diff_spans(clean(v), prop[0])
-                    else:
-                        prop_spans = [(prop[0], "ins")]
-                else:
+                    prop_spans = [(prop[0], "ins")] if empty else diff_spans(clean(v), prop[0])
+                elif prop is not None and prop[1] == "delete" and not empty:
                     prop_spans = [prop]
+                elif prop is not None and prop[1] == "raw":
+                    prop_spans = [prop]
+                else:
+                    # unchanged, carried over, or nothing there to delete
+                    prop_spans = [("(keep as is)", "note")]
                 rows.append([pfs_spans, cur_spans, prop_spans])
             tables.append((field_title(key), rows))
 
@@ -581,22 +601,36 @@ def main():
         # internal notes, without the stale warning (already conveyed by the title icon)
         notes_clean = "\n".join(l for l in internal_notes.split("\n")
                                 if not l.startswith("> ")).strip()
-        if notes_clean:
-            h = 0.2 + sum(len(l) // 110 + 1 for l in notes_clean.split("\n")) * 0.24
-            if y + h > 7.3 and y > 1.1:
+        remarks_lines = []
+        for f in files:
+            remark = (docs[f].get("remarks") or "").strip()
+            if remark:
+                parts = remark.split("\n")
+                remarks_lines.append(f"{f.rsplit('/', 1)[1]}: {parts[0]}")
+                remarks_lines += parts[1:]
+        for label_text, block_lines in (("Internal notes: ", notes_clean.split("\n") if notes_clean else []),
+                                        ("Remarks from the building blocks: ", remarks_lines)):
+            if not block_lines:
+                continue
+            h = 0.2 + sum(len(l) // 100 + 1 for l in block_lines) * 0.21
+            # table height estimates run ~6% high; correct for it when placing small
+            # text blocks, which may also run to the slide's bottom edge
+            y = 1.1 + (y - 1.1) * 0.94
+            if y + h > 7.52 and y > 1.1:
                 slide = prs.slides.add_slide(blank)
                 add_title(slide, title + " (cont.)")
                 y = 1.1
             box = slide.shapes.add_textbox(MARGIN, Inches(y), SLIDE_W - 2 * MARGIN, Inches(h))
             tf = box.text_frame
             tf.word_wrap = True
+            tf.margin_left = tf.margin_right = tf.margin_top = tf.margin_bottom = 0
             p = tf.paragraphs[0]
             run = p.add_run()
-            run.text = "Internal notes: "
+            run.text = label_text
             run.font.size = Pt(12)
             run.font.bold = True
             first = True
-            for line in notes_clean.split("\n"):
+            for line in block_lines:
                 if not first:
                     p = tf.add_paragraph()
                 first = False
@@ -604,7 +638,7 @@ def main():
                 run.text = line
                 run.font.size = Pt(12)
                 run.font.italic = True
-            y += h
+            y += h + 0.1
         notes = []
         if proposal_text:
             notes.append("PROPOSAL:\n" + proposal_text)
@@ -627,16 +661,31 @@ def main():
                              [(f"{ref} — {verb} {cbb.field_label(key).lower()}", None)],
                              [(clean(value), None)]])
         add_table(slide, Inches(1.1), ["PFS", "Category", "Text"], rows)
-        box = slide.shapes.add_textbox(MARGIN, Inches(1.3 + est_height(rows)),
-                                       SLIDE_W - 2 * MARGIN, Inches(1.0))
-        box.text_frame.word_wrap = True
-        box.text_frame.text = ('Proposal (from feedback): Append "DOI-landing page" verbiage to the '
-                               'General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.')
-        for p in box.text_frame.paragraphs:
-            for r in p.runs:
-                r.font.size = Pt(12)
-                r.font.bold = True
-                r.font.color.rgb = GREEN
+        cat_notes = []
+        for pfs, ref, mode, data in cat_overrides:
+            target = f"sections/requirement-categories/{ref}.yaml"
+            heading = f"[`{target}`]({target}) ({pfs})"
+            note = manual.get(heading, {}).get("Internal notes", "")
+            note = "\n".join(l for l in note.split("\n") if not l.startswith("> ")).strip()
+            if note:
+                cat_notes.append(note)
+        if cat_notes:
+            box = slide.shapes.add_textbox(MARGIN, Inches(1.3 + est_height(rows)),
+                                           SLIDE_W - 2 * MARGIN, Inches(2.5))
+            tf = box.text_frame
+            tf.word_wrap = True
+            p = tf.paragraphs[0]
+            run = p.add_run()
+            run.text = "Internal notes: "
+            run.font.size = Pt(12)
+            run.font.bold = True
+            for note in cat_notes:
+                for line in note.split("\n"):
+                    p = tf.add_paragraph()
+                    run = p.add_run()
+                    run.text = line
+                    run.font.size = Pt(12)
+                    run.font.italic = True
 
     prs.save(OUT)
     out_name = OUT.relative_to(cbb.ROOT) if OUT.is_relative_to(cbb.ROOT) else OUT.name

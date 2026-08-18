@@ -6,7 +6,7 @@ This document lists **only the differences** between building blocks that exist 
 
 - The groups are split into sections by the type of the PFS that use them: only Optical, or both SAR and Optical. Building blocks used only by SAR PFS are omitted (as are PFS overrides that only affect them): their differences are intentional, as the SAR PFS were a combined document before being split.
 - Compared fields: title, description, and per requirement level (threshold/goal/image) the description, the `optional` flag, and the notes.
-- Ignored fields: id, dependencies, glossary, references, changes, history, remarks, and YAML comments.
+- Ignored fields: id, dependencies, glossary, references, changes, history, and YAML comments. The remarks fields are not compared, but shown per group.
 - Not compared: `measurements/measurement-*`, `measurements/measurand-st`, and `measurements/backscatter-*` (intentionally different per product).
 - Per field, one variant is quoted verbatim as the baseline; similar variants only highlight the differences to it: <del style="background:#ffd7d5;color:#82071e">red/struck-through</del> text only appears in the baseline file, <ins style="background:#ccffd8;color:#055d20;text-decoration:none">green/underlined</ins> text only in the compared file (the colors are shown e.g. in the VS Code markdown preview; GitHub only shows strikethrough/underline). For variants that are substantially different a diff would be too noisy; they are quoted in full with the passages they share with the baseline <mark style="background:#ddf4ff;color:#0a3069">highlighted in blue</mark> instead.
 - *(not set)* means the field (or the whole requirement level) is absent or empty in that file.
@@ -131,7 +131,7 @@ Auxiliary data includes DEMs, etc., and any additional data sources used in the 
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 The SAR variant only defines a goal; consider adding the aligned threshold requirement there as well.
 
@@ -172,6 +172,10 @@ The coordinate reference system that has been used is detailed.
 <pre>The metadata lists the map projection (or geographical<mark style="background:#ddf4ff;color:#0a3069"> coordinate</mark>s, if applicable) that was used and any relevant parameters required to geolocate data in that map projection, expressed in a standardised format (e.g., WKT).
 
 Indicate EPSG code, if defined for the CRS.</pre>
+
+#### Remarks from the building blocks
+
+- `crs-sar.yaml`: Remove "product" mentions to be reusable for source and product.
 
 <!-- state: 4b21e05e8292 -->
 
@@ -256,9 +260,16 @@ The metadata identifies an online location from where the data can be consistent
 
 **[`data-access-product.yaml`](requirements/metadata/data-access-product.yaml), [`data-access-source.yaml`](requirements/metadata/data-access-source.yaml)**: `true`
 
+#### Remarks from the building blocks
+
+- `data-access-product.yaml`: Make generic for source and product.
+- `data-access-source.yaml`: Make generic for source and product.
+
 <!-- state: b426b2cdee89 -->
 
 #### Proposal
+
+**Title**: Align on "Data Access"
 
 **Threshold — description (AR, NLSR, SR, ST)**: Replace with:
 
@@ -274,7 +285,7 @@ The metadata identifies an online location from where the data can be consistent
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 The current optical threshold only contains the DOI landing page sentence, which moves to category level — the proposal gives Data Access a concrete requirement, aligned with the SAR product variant. The split into Product/Source Data Access remains specific to the SAR family.
 
@@ -324,6 +335,12 @@ The geographic area covered by the observations is identified specifically, such
 **[`geo-area-optical.yaml`](requirements/metadata/geo-area-optical.yaml)**: `true`
 
 **[`geo-area-sar.yaml`](requirements/metadata/geo-area-sar.yaml)**: `false`
+
+#### Remarks from the building blocks
+
+- `geo-area-sar.yaml`: - Remove "product" mentions to be reusable for source and product.
+  - todo: Remove SAR mentions to be reusable in other products.
+  - todo: "Extent" is misleading and usually a synonym for the bbox, the requirement should probably be renamed to "Geographical Area" or similar.
 
 <!-- state: 1aeb37d797e8 -->
 
@@ -382,7 +399,14 @@ As threshold, with references to the relevant “CEOS Missions, Instruments, and
 
 #### Proposal
 
-**Threshold — description (AR)**: Match NLSR "The instrument used to collect the data is identified in the metadata."
+**Threshold — description**: Adopt the SAR wording for all:
+
+```
+The instrument used to collect the data is identified in the metadata:
+
+- Satellite name
+- Instrument name
+```
 
 **Goal — description**: Align on:
 
@@ -392,9 +416,9 @@ As threshold, with references to the relevant CEOS Missions, Instruments, and Me
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
-The MIM database URL (ceos.org/mim-database) supersedes the old database.eohandbook.com link used by AR. The SAR threshold additionally enumerates satellite and instrument name — consider adopting that enumeration for the optical PFS as well.
+The MIM database URL (ceos.org/mim-database) supersedes the old database.eohandbook.com link used by AR.
 
 ---
 
@@ -484,6 +508,10 @@ Information on radiometric accuracy should be available in the metadata as a sin
 
 **[`radiometric-accuracy-sar.yaml`](requirements/metadata/radiometric-accuracy-sar.yaml)**: *(no notes)*
 
+#### Remarks from the building blocks
+
+- `radiometric-accuracy-sr.yaml`: todo: What does DCC stand for? Add to glossary.
+
 <!-- state: 625e1af7ea43 -->
 
 #### Proposal
@@ -494,7 +522,7 @@ Information on radiometric accuracy should be available in the metadata as a sin
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 ST dropped its radiometric accuracy requirement in ST 6.0 (the file was removed).
 
@@ -544,6 +572,10 @@ Information on sensory calibration should be available in the metadata as a sing
 
 **[`sensor-calibration-ar.yaml`](requirements/metadata/sensor-calibration-ar.yaml), [`sensor-calibration-sar.yaml`](requirements/metadata/sensor-calibration-sar.yaml)**: *(no notes)*
 
+#### Remarks from the building blocks
+
+- `sensor-calibration-optical.yaml`: todo: This is exactly the same as sensor-calibration-sar.yaml except for the added note. Can we align?
+
 <!-- state: 8cb77ed0d305 -->
 
 #### Proposal
@@ -554,7 +586,7 @@ Information on sensory calibration should be available in the metadata as a sing
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 Only AR defines a threshold ("Binary description of calibrated/not calibrated only.") — consider adopting it for the other PFS (cheap and useful) or removing it from AR.
 
@@ -625,6 +657,13 @@ As threshold, but information required to determine, within a stated uncertainty
 
 **[`time-source.yaml`](requirements/metadata/time-source.yaml)**: `false`
 
+#### Remarks from the building blocks
+
+- `time-sar.yaml`: todo: The number of source data acquisitions has nothing to do with the time requirements, should be separate.
+- `time-source.yaml`: - todo: This seems to be a duplicate of time.yaml?!
+  - todo: time-sar.yaml has a ISO 8601 goal requirement, but this one does not. Should it?
+- `time-sr.yaml`: todo: This is per-pixel metadata, but in metadata. We should make this consistent. Do we want per-pixel metadata or not?
+
 <!-- state: ec27e53a14fb -->
 
 #### Proposal
@@ -638,6 +677,8 @@ As threshold, but information required to determine, within a stated uncertainty
 time-sar and time-source remain SAR-specific (number of acquisitions, composites/mosaics, source acquisition time); consider requiring ISO 8601 there already at threshold — it currently only appears at goal.
 
 The current SR goal (per-pixel acquisition time) is more specific than the AR goal; if per-pixel time is essential for NLSR/SR, keep the current SR wording instead.
+
+Some PFS appear twice in this group because two separate requirements are compared together: the product acquisition time (time-sar) and the source data acquisition time (time-source). time-source was included in this comparison because it parallels the product/source split of Data Access.
 
 ---
 
@@ -715,19 +756,11 @@ Information on traceability should be available in the metadata as a single DOI 
 
 **Goal — description (ST)**: Match AR "Data must be traceable to SI reference standard." (the DOI landing page sentence moves to category level)
 
-**Goal — notes**: Align on the AR note:
-
-```
-Relationship to [@uncertainty]. Traceability requires an estimate of measurement uncertainty.
-```
+**Goal — notes**: Keep as is, except the DOI landing page note (covered by the category-level discussion).
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
-
-The [@relationship] reference in the SAR and NLSR/SR variants looks like a broken cross-reference — it should probably be [@uncertainty], as in AR.
-
-The AR threshold text (an Aquatic Reflectance definition) appears misplaced under Traceability — check the AR PFS.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 ## Optical building blocks
 
@@ -796,7 +829,7 @@ Corrections are applied for atmospheric scattering.
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 The two requirements intentionally differ in content (ST: surface temperature retrieval methods; NLSR: atmospheric scattering) and stay separate; only the title and the boilerplate are aligned.
 
@@ -851,7 +884,7 @@ Specification of corrections applied for molecular (Rayleigh) scattering and for
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 ---
 
@@ -954,6 +987,11 @@ This requirement is intended to enable interoperability between imagery from dif
 
 <pre>This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction<del style="background:#ffd7d5;color:#82071e">,</del> and with non-image spatial data such as GIS layers and terrain models.</pre>
 
+#### Remarks from the building blocks
+
+- `geometric-sr.yaml`: The only difference to geometric-st.yaml is the third paragraph of the threshold description.
+- `geometric-st.yaml`: The only difference to geometric-sr.yaml is the third paragraph of the threshold description.
+
 <!-- state: 6d55c105afa0 -->
 
 #### Proposal
@@ -990,6 +1028,8 @@ This requirement is intended to enable interoperability between imagery from dif
 #### Internal notes
 
 ST 6.0 already aligned the metadata references ([@geometric-uncertainty]); remaining differences to the proposal: "accuracy" vs "uncertainty", "0.5 pixel" vs "0.5-pixel", and the gridding/sampling sentence.
+
+ST: requirement not yet touched; will accept any proposal for consistency (action: Ferran and Peter). In the same approach as AR, ST decided to replace "Accuracy" with "Uncertainty" across the document.
 
 ---
 
@@ -1057,7 +1097,7 @@ Metadata contains a single DOI landing page with references to:
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 ---
 
@@ -1105,7 +1145,7 @@ Corrections are applied for water vapour if spectral bands are affected.
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 ---
 
@@ -1156,7 +1196,7 @@ Measurements are normalised (to nadir) to remove the effect of bidirectional dep
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
 ---
 
@@ -1248,15 +1288,23 @@ Information on measurement uncertainty should be available in the metadata as a 
 
 **Description**: Remove for SR and NLSR
 
-**Threshold — description**: No changes
+**Threshold — description (AR, NLSR, SR)**: Adopt the ST 6.0 wording for all optical PFS:
 
-**Goal — description (NLSR, SR)**: Match AR Threshold BUT not "Note 2"
+```
+A self-assessed declaration of per-pixel measurement uncertainty, following Section 3.2.4 (Uncertainty Characterization) of the Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines is provided, meeting the Basic or Good criteria.
+```
+
+**Goal — description (AR, NLSR, SR)**:
+
+```
+A self-assessed declaration of per-pixel measurement uncertainty, following Section 3.2.4 (Uncertainty Characterization) of the Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines is provided, meeting the Excellent or Ideal criteria.
+```
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
-ST 6.0 redefined both levels via the Joint EO Mission Quality Assessment Framework self-assessment (threshold: Basic/Good, goal: Excellent/Ideal) — keep ST as is; the AR alignment now only applies to NLSR/SR.
+ST updated this requirement following WGCV's recommendation to include uncertainty information at the threshold level, including the ESA-NASA-USGS quality guidelines, and proposes adopting it for all optical PFS; it also helps address the algorithms discussion (issue #84). This would constitute a major update for SR and NLSR and potentially a minor update for AR.
 
 ---
 
@@ -1333,13 +1381,17 @@ Information on algorithms should be available in the metadata as a single DOI la
 
 #### Proposal
 
-**Threshold — description (NLSR, SR)**: Match AR
+**Threshold — description (NLSR, SR, ST)**: Match AR Goal (swap: the AR Goal text becomes the Threshold)
+
+**Goal — description (NLSR, SR, ST)**: Match AR Threshold (swap: the AR Threshold text becomes the Goal)
+
+**Threshold — notes**: Remove the note
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
-ST 6.0 intentionally removed the threshold requirement (issue #55: uncertainty information at threshold level makes full algorithm details unnecessary) — ST is therefore excluded from the threshold alignment.
+ST agrees to adopt the AR requirement with swapped levels and without the note: with an uncertainty requirement at threshold, full provision of algorithm information is not required at threshold too, aiding commercial sector compliance (issue #55).
 
 ---
 
@@ -1368,9 +1420,9 @@ Information on geometric correction source and methods are provided, including r
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
-Resolved for ST: it now uses the AR requirement directly (geometric-correction-methods-st was removed).
+Resolved for ST: it now uses the AR requirement directly (geometric-correction-methods-st was removed). ST team: agree to adopt the AR approach.
 
 ---
 
@@ -1404,7 +1456,7 @@ The map projection that has been used and any relevant parameters required in re
 
 #### Internal notes
 
-Resolved: ST now uses the AR requirement directly (map-projection-st was removed), which also settles the earlier question why the threshold was "Not Required" for ST.
+Resolved: ST now uses the AR requirement directly (map-projection-st was removed). ST: it is unclear why the threshold became "Not Required" (introduced somewhere between v3.0 and v4.0); the ST team intends to adopt the AR PFS approach.
 
 ---
 
@@ -1453,9 +1505,9 @@ Information on processing chain provenance should be available with a detailed d
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
-ST 6.0 upgraded provenance to a threshold requirement (reconstructable processing environment) with a reproducibility goal (issue #58) — keep ST as is and consider adopting this approach for the other optical PFS.
+ST 6.0 upgraded provenance to a threshold requirement (reconstructable processing environment) with a reproducibility goal (issue #58). Still under discussion in the ST team; current thinking remains to introduce the threshold requirement — consider adopting this approach for the other optical PFS.
 
 ---
 
@@ -1511,7 +1563,9 @@ Information on spectral bands should be available in the metadata as a single DO
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
+
+ST has proposed to adopt the AR PFS requirement.
 
 ---
 
@@ -1567,15 +1621,23 @@ See @foga2017, @skakun2022, @zhu2012, and @zhu2015.
 
 #### Proposal
 
-**Threshold — description (NLSR, SR)**: Match AR
+**Threshold — description**: Adopt for all optical PFS, with simplified wording (issue #112):
 
-**Goal — description (NLSR, SR)**: Match AR
+```
+Specification of whether a pixel is cloud-affected.
+```
+
+**Goal — description**:
+
+```
+As threshold, but information on cloud type or confidence is included.
+```
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
-ST 6.0 already adopted the AR approach with deliberate adjustments (only "cloud-affected" pixels; cloud type/confidence instead of cirrus differentiation at goal) — keep ST as is; consider adopting the ST simplifications for AR/NLSR/SR in a later revision.
+Agreed to adopt the requirement with this simplified wording (matches the ST 6.0 texts; GitHub issue #112).
 
 ---
 
@@ -1629,15 +1691,19 @@ I</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">As thr
 
 #### Proposal
 
-**Threshold — description (SR)**: Match AR
+**Threshold — description (SR)**: Use the AR wording with "cloud shadow or cloud shadow-affected" merged:
 
-**Goal — description (NLSR)**: Match AR Threshold
+```
+Specification of whether a pixel is cloud shadow-affected.
+```
+
+**Goal — description (NLSR)**: Change wording - "Specification of whether a pixel is cloud shadow-affected."
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
 
-ST 6.0 removed the threshold requirement (cloud shadow has limited utility for non-reflectance methods) and adopted the "cloud shadow-affected" wording at goal — keep ST as is.
+Agreed to use the AR PFS wording with "cloud shadow or cloud shadow-affected" merged to simply "cloud shadow-affected". ST keeps it as a goal-only requirement (limited suitability for non-reflectance methods) — likely a requirement that stays unique for the ST PFS.
 
 ---
 
@@ -1695,15 +1761,17 @@ Identifies which tests have and have not been successfully completed for each pi
 
 #### Proposal
 
+**Title**: Match AR "Per-pixel Assessment"
+
 **Threshold — description (NLSR, SR)**: Match AR
 
 **Goal — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-I suggest "Per-Pixel Assessment" is adopted for NLSR-SR-ST
+ST added the explicit per-pixel test numbers deliberately (specifying them aids metadata machine readability and automated assessment), recognising that this diverges from the other PFS.
 
-ST 6.0 enumerates the concrete per-pixel tests (2.3, 2.4, 2.6 / 2.3, 2.4, 2.5, 2.6, 2.8) — hard-coded section numbers are fragile; prefer AR's reference to "the tests below".
+For ST: the hard-coded test numbers (2.3, 2.4, …) in the descriptions do not work in the building blocks — the requirement numbering is generated per PFS — and need to be changed (e.g. to cross-references).
 
 ---
 
@@ -1787,7 +1855,9 @@ As threshold, information on land/water mask should be available in the metadata
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
+
+ST replaced its Snow/Ice requirement with a combined "Surface" requirement (threshold: land or water, including the information source and other relevant surface characteristic classification; goal: as threshold, plus snow or ice; external data sources listed under Auxiliary Data) — could be considered for the other optical PFS.
 
 ---
 
@@ -1817,11 +1887,21 @@ Pixels that do not correspond to an observation (e.g., empty pixels / invalid ob
 
 #### Proposal
 
-**Threshold — description (NLSR, SR)**: Match AR
+**Threshold — description (AR, NLSR, SR)**: Adopt the ST wording for all optical PFS:
+
+```
+Pixels that do not correspond to an observation (‘No Data / Invalid / Falsified / Valid / Modelled’) are flagged.
+```
+
+**Goal — description (AR, NLSR, SR)**:
+
+```
+As threshold.
+```
 
 #### Internal notes
 
-ST 6.0 introduced its own No Data wording with an explicit flag list ("No Data / Invalid / Falsified / Valid / Modelled") — decide whether to keep it or to align it with AR's example-based wording.
+ST proposes all other optical PFS adopt the five-class flag wording, addressing Peter's comment in issue #4.
 
 ---
 
@@ -1909,7 +1989,9 @@ As threshold, information on snow/ice mask should be available in the metadata a
 
 #### Internal notes
 
-Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+For DOI related discussions see "PFS-specific overrides of requirement categories".
+
+ST replaced its Snow/Ice requirement with a combined "Surface" requirement (threshold: land or water, including the information source and other relevant surface characteristic classification; goal: as threshold, plus snow or ice) — could be considered for the other optical PFS.
 
 ---
 
@@ -1917,16 +1999,6 @@ Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadat
 
 - [`requirements/per-pixel/terrain-occlusion-st.yaml`](requirements/per-pixel/terrain-occlusion-st.yaml) — used by ST
 - [`requirements/per-pixel/terrain-occlusion.yaml`](requirements/per-pixel/terrain-occlusion.yaml) — used by NLSR, SR
-
-#### Threshold — description
-
-**[`terrain-occlusion-st.yaml`](requirements/per-pixel/terrain-occlusion-st.yaml)**:
-
-```
-Not required.
-```
-
-**[`terrain-occlusion.yaml`](requirements/per-pixel/terrain-occlusion.yaml)**: *(not set)*
 
 #### Goal — description
 
@@ -1940,15 +2012,17 @@ Identifies pixels that are not visible to the sensor due to terrain occlusion du
 
 <pre><del style="background:#ffd7d5;color:#82071e">Identifi</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">The metadata indicat</ins>es pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing.</pre>
 
-<!-- state: db5f759b18ae -->
+<!-- state: 958257d6fa91 -->
 
 #### Proposal
 
-**Goal — description (SR, NLSR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing."
+**Goal — description (SR, NLSR, ST)**: Change wording to maintain consistent PFS phrasing - "Specification of whether pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing."
 
 #### Internal notes
 
-Resolved: ST 6.0 defines Terrain Occlusion for ST (goal only, threshold "Not required.") — the earlier observation that ST lacks terrain occlusion no longer applies. ST's goal wording ("Identifies pixels that are not visible…") differs slightly from the SR/NLSR proposal — align during consolidation.
+ST removed the threshold ("Not required.") — the requirement is now goal-only like the SR/NLSR variant.
+
+Confirmed: Terrain Occlusion was introduced to the ST PFS with the initial pull request (hence visible in the draft but not in the released version). ST proposes to adopt the consistent wording proposed here.
 
 ---
 
@@ -1985,6 +2059,10 @@ Provide per-pixel solar and sensor viewing azimuth and zenith angles.
 
 **[`view-angles-solar.yaml`](requirements/per-pixel/view-angles-solar.yaml)**: `true`
 
+#### Remarks from the building blocks
+
+- `view-angles-solar.yaml`: The threshold requirement is a metadata requirement, the goal requirement is a per-pixel requirement - should this be split?
+
 <!-- state: a44356a085f4 -->
 
 #### Proposal
@@ -1995,7 +2073,9 @@ Provide per-pixel solar and sensor viewing azimuth and zenith angles.
 
 #### Internal notes
 
-*none yet*
+Proposal accepted by the ST team.
+
+Providing the angles instead of average angles would be a breaking change — the averages may be intentional, since the per-pixel requirement may already contain all angles specifically per pixel. It is unclear what the difference between non-average and per-pixel angles would be.
 
 ## PFS-specific overrides of requirement categories
 
@@ -2009,6 +2089,17 @@ Information should be available in the metadata as a single DOI landing page, wh
 
 **AR** also modifies: glossary.
 
+#### Proposal
+
+```
+```
+
+#### Internal notes
+
+Feedback: Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR — this affects all requirements whose only differences are the DOI landing page additions.
+
+To be raised at the Oversight Group meeting: include this as a standalone General Metadata requirement for all PFS — moved into the requirement category description it would not be an assessable requirement.
+
 ---
 
 ### [`sections/requirement-categories/per-pixel-metadata.yaml`](sections/requirement-categories/per-pixel-metadata.yaml) (AR)
@@ -2020,3 +2111,12 @@ Information should be available in the metadata as a single DOI landing page, wh
 ```
 
 **AR** also modifies: glossary.
+
+#### Proposal
+
+```
+```
+
+#### Internal notes
+
+*none yet*
