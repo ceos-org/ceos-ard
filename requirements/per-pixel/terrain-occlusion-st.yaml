@@ -2,9 +2,6 @@ id: terrain-st
 title: Terrain Occlusion
 description: 
 requirements:
-  threshold:
-    description: |-
-      Not required.
   goal:
     description: |-
       Identifies pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing.
