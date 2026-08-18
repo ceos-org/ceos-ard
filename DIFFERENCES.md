@@ -115,12 +115,25 @@ Auxiliary data includes DEMs, etc., and any additional data sources used in the 
 
 #### Proposal
 
+**Threshold — description (AR, NLSR, SR)**: Align on:
+
 ```
+The metadata identifies the sources of auxiliary data used in the generation process.
+```
+
+**Goal — description (NLSR, SR)**: Match AR
+
+**Threshold — notes (NLSR, SR)**: Align the note wording with the note of the SAR goal:
+
+```
+Auxiliary data includes DEMs, etc., and any additional data sources used in the generation of the product.
 ```
 
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+The SAR variant only defines a goal; consider adding the aligned threshold requirement there as well.
 
 ---
 
@@ -160,14 +173,17 @@ The coordinate reference system that has been used is detailed.
 
 Indicate EPSG code, if defined for the CRS.</pre>
 
+<!-- state: 4b21e05e8292 -->
+
 #### Proposal
 
-```
-```
+**Title**: Align on "Coordinate Reference System" (drop the "Product" prefix)
+
+**Threshold — description (AR)**: Match NLSR "The metadata lists the coordinate reference system that has been used."
 
 #### Internal notes
 
-*none yet*
+The SAR variant additionally requires a standardised format (e.g., WKT) and the EPSG code — consider adopting this for the optical PFS in a future revision.
 
 ---
 
@@ -244,12 +260,23 @@ The metadata identifies an online location from where the data can be consistent
 
 #### Proposal
 
+**Threshold — description (AR, NLSR, SR, ST)**: Replace with:
+
 ```
+The metadata identifies the location from where the product can be retrieved, expressed as a URL or DOI.
+```
+
+**Goal — description (AR, NLSR, SR, ST)**: Add as optional goal, matching the SAR variants:
+
+```
+The metadata identifies an online location from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required.
 ```
 
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+The current optical threshold only contains the DOI landing page sentence, which moves to category level — the proposal gives Data Access a concrete requirement, aligned with the SAR product variant. The split into Product/Source Data Access remains specific to the SAR family.
 
 ---
 
@@ -298,14 +325,15 @@ The geographic area covered by the observations is identified specifically, such
 
 **[`geo-area-sar.yaml`](requirements/metadata/geo-area-sar.yaml)**: `false`
 
+<!-- state: 1aeb37d797e8 -->
+
 #### Proposal
 
-```
-```
+**Title**: Align on "Geographical Area"
 
 #### Internal notes
 
-*none yet*
+The footprint conventions differ intentionally (optical: corner points; SAR: WKT polygon of the image footprint in EPSG 4326). Consider aligning on the more precise polygon/standardised-format wording across both families in a future revision.
 
 ---
 
@@ -354,19 +382,26 @@ As threshold, with references to the relevant “CEOS Missions, Instruments, and
 
 #### Proposal
 
+**Threshold — description (AR)**: Match NLSR "The instrument used to collect the data is identified in the metadata."
+
+**Goal — description**: Align on:
+
 ```
+As threshold, with references to the relevant CEOS Missions, Instruments, and Measurements (MIM) database record (https://ceos.org/mim-database).
 ```
 
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
+The MIM database URL (ceos.org/mim-database) supersedes the old database.eohandbook.com link used by AR. The SAR threshold additionally enumerates satellite and instrument name — consider adopting that enumeration for the optical PFS as well.
+
 ---
 
 ### Metadata Machine Readability
 
 - [`requirements/metadata/machine-readability-optical.yaml`](requirements/metadata/machine-readability-optical.yaml) — used by AR, NLSR, SR, ST
-- [`requirements/metadata/machine-readability-sar.yaml`](requirements/metadata/machine-readability-sar.yaml) — used by CB, CB, GSLC, GSLC, INSAR, INSAR, NRB, NRB, ORB, ORB, POL, POL
+- [`requirements/metadata/machine-readability-sar.yaml`](requirements/metadata/machine-readability-sar.yaml) — used by CB, GSLC, INSAR, NRB, ORB, POL
 - [`requirements/per-pixel/machine-readability.yaml`](requirements/per-pixel/machine-readability.yaml) — used by AR, NLSR, SR
 
 #### Threshold — description
@@ -401,14 +436,25 @@ As threshold, but metadata should be provided in a community endorsed standard t
 
 **[`machine-readability.yaml`](requirements/per-pixel/machine-readability.yaml)**: `false`
 
+<!-- state: 0c5c6b68bc4e -->
+
 #### Proposal
 
+**Threshold — description**: Align on the SAR wording ("component/variable" instead of "component part"):
+
 ```
+Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable for further use.
+```
+
+**Goal — description (AR, NLSR, SR, ST)**: Extend the list of example standards:
+
+```
+As threshold, but metadata should be provided in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, the Climate and Forecast (CF) convention, or the Attribute Convention for Data Discovery (ACDD).
 ```
 
 #### Internal notes
 
-*none yet*
+The reference to the CEOS-ARD SAR Metadata Specifications remains specific to the SAR variant. The per-pixel variant has no goal — consider adding the same goal (optional) there for consistency.
 
 ---
 
@@ -442,14 +488,15 @@ Information on radiometric accuracy should be available in the metadata as a sin
 
 #### Proposal
 
-```
-```
+**Goal — description**: Keep per family (radiometric accuracy is assessed differently for SAR backscatter and for optical reflectance).
+
+**Goal — notes (NLSR, SR)**: Remove — covered by the category-level DOI landing page verbiage.
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+ST dropped its radiometric accuracy requirement in ST 6.0 (the file was removed).
 
 ---
 
@@ -501,12 +548,15 @@ Information on sensory calibration should be available in the metadata as a sing
 
 #### Proposal
 
-```
-```
+**Goal — description (AR)**: Match NLSR
+
+**Goal — notes (NLSR, SR)**: Remove — covered by the category-level DOI landing page verbiage (the note also contains a typo: "sensory").
 
 #### Internal notes
 
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+Only AR defines a threshold ("Binary description of calibrated/not calibrated only.") — consider adopting it for the other PFS (cheap and useful) or removing it from AR.
 
 ---
 
@@ -575,14 +625,19 @@ As threshold, but information required to determine, within a stated uncertainty
 
 **[`time-source.yaml`](requirements/metadata/time-source.yaml)**: `false`
 
+<!-- state: ec27e53a14fb -->
+
 #### Proposal
 
-```
-```
+**Threshold — description (NLSR, SR)**: Match AR
+
+**Goal — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-*none yet*
+time-sar and time-source remain SAR-specific (number of acquisitions, composites/mosaics, source acquisition time); consider requiring ISO 8601 there already at threshold — it currently only appears at goal.
+
+The current SR goal (per-pixel acquisition time) is more specific than the AR goal; if per-pixel time is essential for NLSR/SR, keep the current SR wording instead.
 
 ---
 
@@ -656,14 +711,23 @@ Information on traceability should be available in the metadata as a single DOI 
 
 #### Proposal
 
+**Title**: Align on "Traceability"; alternatively adopt the more precise ST title "Metrological Traceability of the Measurand to SI" for all PFS.
+
+**Goal — description (ST)**: Match AR "Data must be traceable to SI reference standard." (the DOI landing page sentence moves to category level)
+
+**Goal — notes**: Align on the AR note:
+
 ```
+Relationship to [@uncertainty]. Traceability requires an estimate of measurement uncertainty.
 ```
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+The [@relationship] reference in the SAR and NLSR/SR variants looks like a broken cross-reference — it should probably be [@uncertainty], as in AR.
+
+The AR threshold text (an Aquatic Reflectance definition) appears misplaced under Traceability — check the AR PFS.
 
 ## Optical building blocks
 
@@ -718,14 +782,23 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 #### Proposal
 
+**Title (ST)**: Match NLSR "Atmospheric Corrections"
+
+**Threshold — description (ST)**: No change
+
+**Threshold — description (NLSR)**: Remove the DOI landing page paragraphs — covered by the category-level verbiage; keep:
+
 ```
+Corrections are applied for atmospheric scattering.
 ```
+
+**Threshold — notes (NLSR)**: Remove — belongs to the DOI landing page verbiage.
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+The two requirements intentionally differ in content (ST: surface temperature retrieval methods; NLSR: atmospheric scattering) and stay separate; only the title and the boilerplate are aligned.
 
 ---
 
@@ -885,8 +958,6 @@ This requirement is intended to enable interoperability between imagery from dif
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 **Description**: Keep as is.
 
 **Threshold — description** (AR requirement wording):
@@ -918,7 +989,7 @@ This requirement is intended to enable interoperability between imagery from dif
 
 #### Internal notes
 
-*none yet*
+ST 6.0 already aligned the metadata references ([@geometric-uncertainty]); remaining differences to the proposal: "accuracy" vs "uncertainty", "0.5 pixel" vs "0.5-pixel", and the gridding/sampling sentence.
 
 ---
 
@@ -1175,19 +1246,17 @@ Information on measurement uncertainty should be available in the metadata as a 
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 **Description**: Remove for SR and NLSR
 
 **Threshold — description**: No changes
 
-**Goal — description (NLSR, SR, ST)**: Match AR Threshold BUT not "Note 2"
+**Goal — description (NLSR, SR)**: Match AR Threshold BUT not "Note 2"
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+ST 6.0 redefined both levels via the Joint EO Mission Quality Assessment Framework self-assessment (threshold: Basic/Good, goal: Excellent/Ideal) — keep ST as is; the AR alignment now only applies to NLSR/SR.
 
 ---
 
@@ -1264,15 +1333,13 @@ Information on algorithms should be available in the metadata as a single DOI la
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
-**Threshold — description**: NLSR-SR-ST match AR
+**Threshold — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+ST 6.0 intentionally removed the threshold requirement (issue #55: uncertainty information at threshold level makes full algorithm details unnecessary) — ST is therefore excluded from the threshold alignment.
 
 ---
 
@@ -1297,15 +1364,13 @@ Information on geometric correction source and methods are provided, including r
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
-**Goal — description**: NLSR-SR-ST match AR
+**Goal — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+Resolved for ST: it now uses the AR requirement directly (geometric-correction-methods-st was removed).
 
 ---
 
@@ -1335,17 +1400,11 @@ The map projection that has been used and any relevant parameters required in re
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
-**Threshold — description**: SR and NLSR match AR
-
-**Goal — description**: ST match AR wording at Threshold
+**Threshold — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
-Observation: curious if anyone knows why this is "Not Required" for ST at Threshold?
+Resolved: ST now uses the AR requirement directly (map-projection-st was removed), which also settles the earlier question why the threshold was "Not Required" for ST.
 
 ---
 
@@ -1390,15 +1449,13 @@ Information on processing chain provenance should be available with a detailed d
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
-**Goal — description**: NLSR-SR-ST match AR
+**Goal — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+ST 6.0 upgraded provenance to a threshold requirement (reconstructable processing environment) with a reproducibility goal (issue #58) — keep ST as is and consider adopting this approach for the other optical PFS.
 
 ---
 
@@ -1510,17 +1567,15 @@ See @foga2017, @skakun2022, @zhu2012, and @zhu2015.
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+**Threshold — description (NLSR, SR)**: Match AR
 
-**Threshold — description**: NLSR-SR-ST match AR
-
-**Goal — description**: NLSR-SR-ST match AR
+**Goal — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+ST 6.0 already adopted the AR approach with deliberate adjustments (only "cloud-affected" pixels; cloud type/confidence instead of cirrus differentiation at goal) — keep ST as is; consider adopting the ST simplifications for AR/NLSR/SR in a later revision.
 
 ---
 
@@ -1574,17 +1629,15 @@ I</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">As thr
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+**Threshold — description (SR)**: Match AR
 
-**Threshold — description**: SR and ST match AR
-
-**Goal — description**: NLSR match AR Threshold
+**Goal — description (NLSR)**: Match AR Threshold
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
+
+ST 6.0 removed the threshold requirement (cloud shadow has limited utility for non-reflectance methods) and adopted the "cloud shadow-affected" wording at goal — keep ST as is.
 
 ---
 
@@ -1642,17 +1695,15 @@ Identifies which tests have and have not been successfully completed for each pi
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
+**Threshold — description (NLSR, SR)**: Match AR
 
-**Threshold — description**: NLSR-SR-ST match AR
-
-**Goal — description**: NLSR-SR-ST match AR
+**Goal — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 I suggest "Per-Pixel Assessment" is adopted for NLSR-SR-ST
+
+ST 6.0 enumerates the concrete per-pixel tests (2.3, 2.4, 2.6 / 2.3, 2.4, 2.5, 2.6, 2.8) — hard-coded section numbers are fragile; prefer AR's reference to "the tests below".
 
 ---
 
@@ -1766,13 +1817,11 @@ Pixels that do not correspond to an observation (e.g., empty pixels / invalid ob
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
-**Threshold — description**: NLSR-SR-ST match AR
+**Threshold — description (NLSR, SR)**: Match AR
 
 #### Internal notes
 
-*none yet*
+ST 6.0 introduced its own No Data wording with an explicit flag list ("No Data / Invalid / Falsified / Valid / Modelled") — decide whether to keep it or to align it with AR's example-based wording.
 
 ---
 
@@ -1895,15 +1944,11 @@ Identifies pixels that are not visible to the sensor due to terrain occlusion du
 
 #### Proposal
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
 **Goal — description (SR, NLSR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing."
 
 #### Internal notes
 
-> ⚠️ The compared files have changed since this was written. Review whether it still applies, then delete this line.
-
-Note: there is no terrain occlusion in ST. The html file states there is.
+Resolved: ST 6.0 defines Terrain Occlusion for ST (goal only, threshold "Not required.") — the earlier observation that ST lacks terrain occlusion no longer applies. ST's goal wording ("Identifies pixels that are not visible…") differs slightly from the SR/NLSR proposal — align during consolidation.
 
 ---
 

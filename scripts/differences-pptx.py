@@ -38,7 +38,7 @@ WHITE = RGBColor(0xFF, 0xFF, 0xFF)
 SLIDE_W, SLIDE_H = Inches(13.333), Inches(7.5)
 MARGIN = Inches(0.5)
 COL_W = [Inches(1.0), Inches(5.66), Inches(5.66)]
-PFS_RE = r"AR|SR|ST|NLSR|CB|GSLC|INSAR|NRB|ORB|POL"
+PFS_RE = r"\b(?:NLSR|AR|SR|ST|CB|GSLC|INSAR|NRB|ORB|POL)\b"
 
 
 def clean(text):
@@ -269,6 +269,99 @@ def add_table(slide, y, headers, rows):
     return shape
 
 
+def joint_value(files, fields, usage, entries, key):
+    """Proposed end state of one field across the group; True if it still differs."""
+    vals = []
+    for f in files:
+        cur = fields[f].get(key)
+        prop = proposed_cell(entries, key, set(usage.get(f, [])), cur, files, fields, usage)
+        if prop is None or prop[1] == "raw":
+            v = cur if isinstance(cur, bool) else clean(cur)
+        elif prop[1] == "delete":
+            v = ""
+        else:
+            v = prop[0]
+        if v in ("(not set)", "(no notes)"):
+            v = ""
+        vals.append(v)
+    counts = {}
+    for v in vals:
+        counts[v] = counts.get(v, 0) + 1
+    value = max(counts, key=counts.get)
+    return value, len(counts) > 1
+
+
+def joint_yaml_lines(files, fields, usage, entries, levels):
+    """The proposed joint building block as plain YAML lines."""
+    lines = []
+
+    def scalar(indent, key, value, todo):
+        suffix = "  # TODO: differs per PFS" if todo else ""
+        if "\n" in value:
+            lines.append(f"{indent}{key}: |-{suffix}")
+            for l in value.split("\n"):
+                lines.append(f"{indent}  {l}")
+        else:
+            lines.append(f"{indent}{key}: {value}{suffix}")
+
+    for key in ("title", "description"):
+        value, todo = joint_value(files, fields, usage, entries, key)
+        if value:
+            scalar("", key, value, todo)
+    lines.append("requirements:")
+    for lvl in cbb.LEVEL_ORDER:
+        if lvl not in levels:
+            continue
+        desc, d_todo = joint_value(files, fields, usage, entries, f"{lvl}.description")
+        notes, n_todo = joint_value(files, fields, usage, entries, f"{lvl}.notes")
+        opt, o_todo = joint_value(files, fields, usage, entries, f"{lvl}.optional")
+        if not (desc or notes or opt):
+            continue
+        lines.append(f"  {lvl}:")
+        if desc:
+            scalar("    ", "description", desc, d_todo)
+        if notes:
+            lines.append("    notes:" + ("  # TODO: differs per PFS" if n_todo else ""))
+            for note in notes.split("\n\n"):
+                if "\n" in note:
+                    lines.append("      - |-")
+                    for l in note.split("\n"):
+                        lines.append(f"        {l}")
+                else:
+                    lines.append(f"      - {note}")
+        if opt is True:
+            lines.append("    optional: true" + ("  # TODO: differs per PFS" if o_todo else ""))
+    return lines
+
+
+def add_proposal_slides(prs, blank, title, lines):
+    """Slides with the proposed joint building block as editable plain YAML."""
+    per_slide = []
+    current, height = [], 0
+    for line in lines:
+        h = max(1, len(line) // 115 + 1)
+        if current and height + h > 28:
+            per_slide.append(current)
+            current, height = [], 0
+        current.append(line)
+        height += h
+    per_slide.append(current)
+    for n, slide_lines in enumerate(per_slide):
+        slide = prs.slides.add_slide(blank)
+        add_title(slide, title + " — Proposal" + (" (cont.)" if n else ""))
+        box = slide.shapes.add_textbox(MARGIN, Inches(1.1), SLIDE_W - 2 * MARGIN, Inches(6.2))
+        tf = box.text_frame
+        tf.word_wrap = True
+        first = True
+        for line in slide_lines:
+            p = tf.paragraphs[0] if first else tf.add_paragraph()
+            first = False
+            run = p.add_run()
+            run.text = line
+            run.font.size = Pt(11)
+            run.font.name = "Consolas"
+
+
 def main():
     groups = cbb.collect_groups()
     usage, overrides, cat_overrides, types = cbb.collect_pfs()
@@ -360,6 +453,9 @@ def main():
           "review whether the proposal still applies.", None)],
         [("Internal notes are shown below the tables; the raw proposal text is in the "
           "slide's speaker notes.", None)],
+        [("Each group is followed by a Proposal slide showing the proposed building blocks "
+          "in YAML form (only the fields that change; proposed values in ", None),
+         ("green", "ins"), (") for editing and capturing the agreement during the review.", None)],
     ]
     first = True
     for spans in legend:
@@ -516,6 +612,9 @@ def main():
             notes.append("INTERNAL NOTES:\n" + internal_notes)
         if notes:
             slide.notes_slide.notes_text_frame.text = "\n\n".join(notes)
+        if proposal_text:
+            add_proposal_slides(prs, blank, title.replace(" ⚠", ""),
+                                joint_yaml_lines(files, fields, usage, entries, levels))
 
     if cat_overrides:
         slide = prs.slides.add_slide(blank)

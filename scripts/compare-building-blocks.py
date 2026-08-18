@@ -339,7 +339,9 @@ def collect_pfs():
                         cat_overrides.append((pfs, category["ref"], mode, category[mode]))
             for entry in cat.get("requirements") or []:
                 ref = entry if isinstance(entry, str) else entry["ref"]
-                usage.setdefault(f"requirements/{ref}.yaml", []).append(pfs)
+                used = usage.setdefault(f"requirements/{ref}.yaml", [])
+                if pfs not in used:
+                    used.append(pfs)
                 if isinstance(entry, dict):
                     for mode in ("append", "replace"):
                         if entry.get(mode):
