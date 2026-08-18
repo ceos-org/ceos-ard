@@ -25,10 +25,7 @@ figPrefix:
 lstPrefix:
   - Listing
   - Listings
-secPrefix:
-  - Section
-  - Sections
-secPrefixTemplate: $$p$$&nbsp;"$$i$$"
+secPrefixTemplate: $$i$$
 # we want to include all citations regardless of usage, see https://pandoc.org/MANUAL.html#including-uncited-items-in-the-bibliography
 nocite: |
   @*
@@ -536,7 +533,7 @@ The metadata includes details of the quality of the product based on quantitativ
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml-->`2.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
 The following minimum metadata specifications apply to each pixel.
-Whether the metadata is provided in a single record relevant to all pixels, or separately for each pixel, is at the discretion of the data provider.
+Whether the metadata is provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
 Per-pixel metadata should allow users to **discriminate between** (choose) observations on the basis of their individual suitability for application.
 
 
@@ -757,7 +754,7 @@ Note:
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`4.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
 
-The geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared.
+Geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared.
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
@@ -848,8 +845,7 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 
 &#12;
 
-## Annexes
-
+## Annex
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/st-metadata-examples.yaml-->CEOS-ARD Requirement Examples (Surface Temperature) {#sec:annex-st-metadata-examples label="|CEOS-ARD Requirement Examples (Surface Temperature)"}
 

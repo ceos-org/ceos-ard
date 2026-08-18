@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Synthetic Aperture Radar - Ocean Radar Backscatter - Version 1.1.0-draft
+  CEOS-ARD - Synthetic Aperture Radar - Composite Backscatter - Version 1.1.0-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -33,7 +33,7 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Synthetic Aperture Radar - Ocean Radar Backscatter
+# CEOS-ARD - Synthetic Aperture Radar - Composite Backscatter
 
 &nbsp;
 
@@ -44,11 +44,21 @@ Please visit the [CEOS-ARD website](https://ceos.org/ard) for the latest endorse
 
 ## Document Status
 
-Product Family Specification, Synthetic Aperture Radar, Ocean Radar Backscatter
+Product Family Specification, Synthetic Aperture Radar, Composite Backscatter
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
 ## Document History
+
+### 2026-07-19 (PATCH)
+
+- Fixed the file format specifications/contents for the requirement "Contributing Observations Image"
+- Annex (CB Example): Introductory paragraph added.
+
+**Justification:**
+Text incorrectly copied from other requirements; clarifications to the Annex.
+
+**Editor:** Ake Rosenqvist
 
 ### 2026-07-20 (MINOR)
 
@@ -57,13 +67,15 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
 - Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
 - Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
+- Requirement "Contributing Observations Image": 
+- Requirements "Geometric Accuracy" and "Geometric Refined Accuracy": Replaced "For [CB] products" with "For composite products"
 - Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
 - Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
 - The subcategories for Source and Product metadata have been flattened into top-level categories
 - Annex has been reformatted and updated as required by the split
 - Document history has been reset. Check the previous versions for details
 
-**Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Ocean Radar Backscatter (ORB)**.
+**Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Composite Backscatter (CB)**.
 
 **Justification:**
 Migration to building blocks.
@@ -119,7 +131,7 @@ Migration to building blocks.
 ## Description
 
 **Product Family Specification:**
-Synthetic Aperture Radar, Ocean Radar Backscatter (ORB)
+Synthetic Aperture Radar, Composite Backscatter (CB)
 
 **Version:**
 1.1.0-draft
@@ -132,10 +144,13 @@ Data collected by Synthetic Aperture Radar sensors
 
 This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
-The CEOS-ARD Ocean Radar Backscatter (ORB) product specification describes products that have been projected on a geoid and are provided in the Sigma-Nought ($\sigma^0$) backscatter convention, which is recommended for most ocean applications.
-Backscatter may be calibrated to the ellipsoid ($\sigma^0_E$) or radiometrically terrain corrected ($\sigma^0_T$) prior to geometric terrain correction.
-As the basic ORB product contains backscatter values only, it _cannot_ be directly used for SAR polarimetry or interferometric applications that require local phase estimates.
-Nonetheless, an advanced ORB product could include the upper diagonal of the polarimetric $\sigma^0$ covariance matrix for enabling advanced polarimetric analysis (similar to the POL product).
+The CEOS-ARD Composite Backscatter (CB) product is a composite backscatter product generated from a set of SAR images acquired over a time-window, and where each pixel value is derived from two or more of the input data sources (e.g. by local resolution weighting [@small2022]).
+Note the difference with respect to the basic mosaic products accommodated by NRB. CB datasets can be derived from a set of NRB or POL or GSLC inputs, making further use of those products’ backscatter estimates and scattering area per-pixel metadata that were used to normalise them.
+The CB source image layers are arranged in a set of input products acquired within a defined time-window, and a single composite backscatter product is the output.
+It may contain multiple channels (wavelengths, polarisations).
+It is generally assumed that a single composite backscatter image layer will be generated from a set of inputs sharing a common polarisation and wavelength.
+The set of input products can be either from a single satellite or mission, or even from multiple missions, given a high standard of geometric and radiometric calibration in all contributing missions.
+Further quality per-pixel metadata may also be provided, such as (a) the [@sec:pxl-conobi] or (b) [@sec:pxl-coquama].
 
 &#12;
 
@@ -197,6 +212,10 @@ ENL
 EPSG Code
 :   An EPSG code is a unique identifier assigned to e.g. a specific coordinate reference system (CRS) by the European Petroleum Survey Group (EPSG).
 
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/grd.yaml -->
+GRD
+:   Ground Range Detected, a SAR product type
+
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/gslc.yaml -->
 GSLC
 :   Geocoded Single-Look Complex
@@ -232,6 +251,10 @@ POL
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/pslr.yaml -->
 PSLR
 :   Polarimetric Signal-to-Noise Level Ratio
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/rgb.yaml -->
+RGB
+:   RGB is a color model in which red, green, and blue light are added together in various ways to reproduce a broad array of colors.
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/rrmse.yaml -->
 rRMSE
@@ -591,27 +614,7 @@ Geometry of the image footprint expressed in WGS84 in a standardised format (e.g
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-sar.yaml-->`2.9.` Sensor Calibration {#sec:src-sencal-sar label="|Source Metadata: Sensor Calibration"}
-
-Identifier: `src-sencal-sar`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata.
-Ideally this would support machine-to-machine access.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/performance-indicators.yaml-->`2.10.` Performance Indicators {#sec:src-perfind label="|Source Metadata: Performance Indicators"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/performance-indicators.yaml-->`2.9.` Performance Indicators {#sec:src-perfind label="|Source Metadata: Performance Indicators"}
 
 Identifier: `src-perfind`
 
@@ -633,7 +636,7 @@ Provide additional relevant performance indicators (e.g., ENL, PSLR, ISLR, and p
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/polarimetric-calibration-matrices.yaml-->`2.11.` Polarimetric Calibration Matrices {#sec:src-polcalm label="|Source Metadata: Polarimetric Calibration Matrices"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/polarimetric-calibration-matrices.yaml-->`2.10.` Polarimetric Calibration Matrices {#sec:src-polcalm label="|Source Metadata: Polarimetric Calibration Matrices"}
 
 Identifier: `src-polcalm`
 
@@ -652,26 +655,7 @@ The complex-valued polarimetric distortion matrices with the channel imbalance a
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/mean-faraday-rotation-angle.yaml-->`2.12.` Mean Faraday Rotation Angle {#sec:src-farotan label="|Source Metadata: Mean Faraday Rotation Angle"}
-
-Identifier: `src-farotan`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-The mean Faraday rotation angle estimated from the polarimetric data and/or from models with reference to the method or paper used to derive the estimate.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/ionosphere-indicator.yaml-->`2.13.` Ionosphere Indicator {#sec:src-ionind label="|Source Metadata: Ionosphere Indicator"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/ionosphere-indicator.yaml-->`2.11.` Ionosphere Indicator {#sec:src-ionind label="|Source Metadata: Ionosphere Indicator"}
 
 Identifier: `src-ionind`
 
@@ -935,31 +919,19 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/look-direction-polynomials.yaml-->`3.12.` Look Direction Polynomials {#sec:prd-lookdip label="|Product Metadata: Look Direction Polynomials"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-cb.yaml-->`3.12.` CB Processing {#sec:prd-procb label="|Product Metadata: CB Processing"}
 
-Identifier: `prd-lookdip`
+Identifier: `prd-procb`
 
 
 
 ##### Threshold requirements:
 
-In case the Look Direction Image (see [@sec:pxl-lookdiri]) is **not** provided, then a list of the polynomial coefficients are necessary to reconstruct the look direction angle[^look-direction-angle], together with an estimate of the added error from use of polynomial vs. per-pixel more accurate values, shall be provided.
+Reference to composite backscatter generation method used
 
-Example polynomial:
-
-$$
-\text{LookDir} = a_{1}\text{Lat}^2 + a_{2}\text{Lon}^2 + a_{3}\text{LatLon} + a_{4}\text{Lat} + a_{5}\text{Lon} + a_6
-$$
-
-where:
-
-- $a_i$ = polynomial coefficients 
-- $\text{Lat}$ = latitude  
-- $\text{Lon}$ = longitude
-
-Lat and Lon are the related coordinates in the product map units (m, deg, arcsec).
-
-[^look-direction-angle]: The look direction angle represents the planar angle between north and each range direction. It is not constant in range, especially close to the poles.
+- Methodology name
+- Reference to methodology (DOI)
+- Specific input parameters used
 
 
 ##### Goal requirements:
@@ -1034,108 +1006,7 @@ As threshold, including additional bit value representations, e.g.:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml-->`4.3.` Scattering Area Image {#sec:pxl-piscata label="|Per-Pixel Metadata: Scattering Area Image"}
-
-Identifier: `pxl-piscata`
-
-
-
-**Usage:** Recommended for scenes that include land areas.
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-DEM-based scattering area image used for Gamma-Nought terrain normalisation is provided.
-This quantifies the local scattering area used to normalise for radiometric distortions induced by terrain to the measured $\beta^0$ backscatter.
-The terrain-flattened $\gamma^0_T$ is best understood as $\beta^0$ divided by the local scattering area.
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (Scattering Area)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
-Notes:
-
-1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file could be provided as a URL address of that unique metadata file.
-2. Required for products such as NRB and POL if they are to be used as an input to production of composite backscatter (CB) when weighted averages based on the areas are used to generate composite backscatter.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml-->`4.4.` Local Incident Angle Image {#sec:pxl-ploinca label="|Per-Pixel Metadata: Local Incident Angle Image"}
-
-Identifier: `pxl-ploinca`
-
-
-
-##### Threshold requirements:
-
-DEM-based Local Incident angle image is provided.
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (Angle)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
-Notes:
-
-1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
-2. For maritime ORB scenes when no land areas are covered, a geoid model could be used for the calculation of the local incident angle
-
-
-##### Goal requirements:
-
-
-As threshold.
-<!-- *None* -->
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml-->`4.5.` Ellipsoidal Incident Angle Image {#sec:pxl-pelinca label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image"}
-
-Identifier: `pxl-pelinca`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Ellipsoidal incident angle is provided.
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (Angle)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-- Reference Ellipsoid Name
-
-Notes:
-
-1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
-2. For maritime ORB scenes when no land areas are covered, the ellipsoidal incident angle is nearly identical to the geod based local incident angle
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml-->`4.6.` Noise Power Image {#sec:pxl-pinopow label="|Per-Pixel Metadata: Noise Power Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml-->`4.3.` Noise Power Image {#sec:pxl-pinopow label="|Per-Pixel Metadata: Noise Power Image"}
 
 Identifier: `pxl-pinopow`
 
@@ -1162,46 +1033,42 @@ File format specifications/contents provided in metadata:
 - Bits per Sample
 - Byte Order
 
+Note:
+
+1. The same compositing algorithm as for backscatter shall be used.
+
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id-mosaic.yaml-->`4.7.` Acquisition ID Image {#sec:pxl-pacqidm label="|Per-Pixel Metadata: Acquisition ID Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id-composite.yaml-->`4.4.` Acquisition ID Image {#sec:pxl-pacqidc label="|Per-Pixel Metadata: Acquisition ID Image"}
 
-Identifier: `pxl-pacqidm`
+Identifier: `pxl-pacqidc`
 
 
-
-**Usage:** Required for mosaic products only.
 
 ##### Threshold requirements:
 
-Acquisition ID, or acquisition date, for each pixel is identified.
 
-In case of multi-temporal image stacks, use source acquisition ID (i.e., [@sec:src-macqid]) to list contributing images.
+Not required.
+<!-- *None* -->
 
-In case of date, data represent (integer or fractional) day offset to reference observation date (in UTC). Date used as reference (“Day 0”) is provided in the metadata.
 
-Pixels not representing a unique date or ID (e.g., pixels averaged in image overlap zones) are flagged with a pixel value referencing a date range that is provided in the metadata.
+##### Goal requirements:
 
-File format specifications/contents provided in metadata:
+The source IDs for each pixel are identified.
 
-- Sample type (Day, Time, ID)
+File format specifications/ contents provided in metadata:
+
+- Sample type (ID)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
 - Data Type (Int, Float, …)
 - Bits per sample
 - Byte Order
 
-
-##### Goal requirements:
-
-
-As threshold.
-<!-- *None* -->
-
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/geoid.yaml-->`4.8.` Per-Pixel Geoid {#sec:pxl-pigeoid label="|Per-Pixel Metadata: Per-Pixel Geoid"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml-->`4.5.` Per-Pixel DEM {#sec:pxl-pidem label="|Per-Pixel Metadata: Per-Pixel DEM"}
 
-Identifier: `pxl-pigeoid`
+Identifier: `pxl-pidem`
 
 
 
@@ -1214,40 +1081,11 @@ Not required.
 
 ##### Goal requirements:
 
-Provide Geoid as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the CEOS-ARD image product.
+Provide DEM or DSM as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the CEOS-ARD SAR image product.
 
 File format specifications/contents provided in metadata:
 
 - Sample Type (Height)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-- Ground Sampling Distance
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/look-direction.yaml-->`4.9.` Look Direction Image {#sec:pxl-lookdiri label="|Per-Pixel Metadata: Look Direction Image"}
-
-Identifier: `pxl-lookdiri`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Look Direction Image is provided.
-It represents the planar angle between north and each range direction. 
-
-File format specifications/contents provided in metadata:
-
-- Sample Type (Angle)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
 - Data Type (Int, Float, …)
 - Bits per Sample
@@ -1257,6 +1095,70 @@ Note:
 
 1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
 
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/contributing-observations.yaml-->`4.6.` Contributing Observations Image {#sec:pxl-conobi label="|Per-Pixel Metadata: Contributing Observations Image"}
+
+Identifier: `pxl-conobi`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+The number of input products providing non-zero weights to the Local-Resolution-Weighting from a set of "Terrain-flattened" Radiometrically Terrain Corrected (RTC) Gamma-Nought backscatter coefficient ($\gamma^0_T$) image inputs (NRB, POL, or compliant (i.e. terrain-flattened) GSLC) is provided for each polarization.
+
+A separate "Contributing Observations image" is generated for each polarisation, as, in the general case, each may have a different number of inputs. 
+
+File format specifications/contents provided in metadata:
+
+-	Number of observations (Int)
+-	Polarization (HH, HV, VV, VH, RR, …)
+-	Data Format (GeoTIFF, HDF5, NetCDF, …)
+-	Data Type (Int, Float, ...)
+-	Bits per Sample
+-	Byte Order
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/composite-quality-map.yaml-->`4.7.` Composite Quality Map Image {#sec:pxl-coquama label="|Per-Pixel Metadata: Composite Quality Map Image"}
+
+Identifier: `pxl-coquama`
+
+
+
+##### Threshold requirements:
+
+
+Not required.
+<!-- *None* -->
+
+
+##### Goal requirements:
+
+From the methodology defined in [@small2022], the quality layer describing the composite's achieved local resolution is provided (see @sec:annex-sar-cb-example).
+A separate Composite Quality Map Image is generated for each polarisation, as, in the general case, each may have a different number of inputs.
+
+File format specifications/contents provided in metadata:
+
+-	Quality Descriptor Type
+-	dB-scaling Expression Convention (linear amplitude or linear power \[see note])
+-	Polarization (HH, HV, VV, VH, RR, …)
+-	Data Format (GeoTIFF, HDF5, NetCDF, …)
+-	Data Type (Int, Float, ...)
+-	Bits per Sample
+-	Byte Order
+
+Note:
+
+1. Transformation to the logarithmic decibel scale is not required or desired as this step can be completed by the user if necessary.
+
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometrically-corrected-measurements.yaml-->`5.` Radiometrically Corrected Measurements {#sec:rcm label="|Radiometrically Corrected Measurements"}
 
 The requirements indicate the necessary outcomes and, to some degree, the minimum steps necessary to be deemed to have achieved those outcomes.
@@ -1265,21 +1167,21 @@ As for the per-pixel metadata, information regarding data format specification n
 The requirements below must be met for all pixels/samples/observations in a collection.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-orb.yaml-->`5.1.` Backscatter Measurements (ORB) {#sec:rcm-backsca-orb label="|Radiometrically Corrected Measurements: Backscatter Measurements (ORB)"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-cb.yaml-->`5.1.` Backscatter Measurements (CB) {#sec:rcm-backsca-cb label="|Radiometrically Corrected Measurements: Backscatter Measurements (CB)"}
 
-Identifier: `rcm-backsca-orb`
+Identifier: `rcm-backsca-cb`
 
 
 
 ##### Threshold requirements:
 
-Geoid-corrected Sigma-Nought backscatter coefficient ($\sigma^0$) is provided for each polarization. 
+Composite Backscatter $\gamma^0_C$ calculated, e.g. via Local-Resolution-Weighting [@small2022], from a set of Terrain-flattened Radiometrically Terrain Corrected (RTC) Gamma-Nought backscatter coefficient $\gamma^0_T$ image inputs (NRB, POL, or compliant \[i.e. terrain-flattened] GSLC) is provided for each polarization.
 
 File format specifications/contents provided in metadata:
 
-- Measurement Type (Sigma-Nought)
-- Backscatter Expression Convention (linear amplitude, or linear power \[see note])
-- Polarization (HH, HV, VV, VH)
+- Measurement Type (Gamma-Nought)
+- Backscatter Expression Convention (linear amplitude, linear power \[see note])
+- Polarization (HH, HV, VV, VH, …)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
 - Data Type (Int, Float, …)
 - Bits per Sample
@@ -1287,12 +1189,14 @@ File format specifications/contents provided in metadata:
 
 Note:
 
-1. Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
+1. Transformation to the logarithmic decibel scale is not required or desired as this step can be completed by the user if necessary.
 
 
 ##### Goal requirements:
 
-Radiometrically Terrain-corrected Sigma-Nought backscatter coefficient ($\sigma^0_T$) is provided for each polarization.
+
+As threshold.
+<!-- *None* -->
 
 ---
 
@@ -1337,7 +1241,36 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml-->`5.4.` Radiometric Accuracy {#sec:rcm-radacc-sar label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algorithm-applied.yaml-->`5.4.` Radiometric Terrain Correction Algorithm {#sec:rcm-radtalg-appl label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
+
+Identifier: `rcm-radtalg-appl`
+
+
+
+##### Threshold requirements:
+
+Adjustments were made for terrain by modelling the local contributing scattering area using the preferred choice of a published peer-reviewed algorithm to produce radiometrically terrain corrected (RTC) $\gamma^0_T$ backscatter estimates.  
+
+Metadata references, e.g.
+
+- a citable peer-reviewed algorithm
+- technical documentation regarding the algorithm used to generate the backscatter estimates is expressed as URLs or DOIs 
+- the sources of auxiliary data used to make corrections
+
+Note:
+
+1. Examples of technical documentation include an Algorithm, Theoretical Basis Document, product user guide, etc.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml-->`5.5.` Radiometric Accuracy {#sec:rcm-radacc-sar label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
 
 Identifier: `rcm-radacc-sar`
 
@@ -1354,42 +1287,6 @@ Not required.
 
 Uncertainty (e.g., bounds on $\gamma^0$ or $\sigma^0$) information is provided as document referenced as URL or DOI.
 SI traceability is achieved.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/mean-wind-normalised-backscatter.yaml-->`5.5.` Mean Wind-Normalised Backscatter Measurements {#sec:rcm-backsmwn label="|Radiometrically Corrected Measurements: Mean Wind-Normalised Backscatter Measurements"}
-
-Identifier: `rcm-backsmwn`
-
-
-
-**Usage:** Only for Maritime scenes.
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-Mean wind-normalised (over ocean) backscatter coefficient is provided for each available polarization.
-It is calculated as the ratio between the backscatter intensity and a simulated backscatter intensity image generated using an ocean surface wind model such as, e.g., [@quilfen1998] or [@vachon2000] for VV and HH polarization respectively.
-
-File format specifications/contents provided in metadata:
-
-- Measurement Type (Wind-Normalised Backscatter)
-- Backscatter Expression Convention (intensity ratio)
-- Polarization (HH, HV, VV, VH)
-- Data Format (GeoTIFF, HDF5, NetCDF, …)
-- Data Type (Int, Float, …)
-- Bits per Sample
-- Byte Order
-
-Note:
-
-1. Reference wind model, wind speed and direction used for reference backscattering coefficient should be provided.
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`6.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
 
@@ -1626,26 +1523,38 @@ The radiometric interoperability of CEOS-ARD SAR products is ensured by a common
 : SAR ARD processing roadmap and software options. RADARSAT-2 Example {#tbl:sar-general-processing-roadmap-tbl1}
 
 
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-orb-example.yaml-->Ocean Radar Backscatter example {#sec:annex-sar-orb-example label="|Ocean Radar Backscatter example"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-cb-example.yaml-->Composite Backscatter example {#sec:annex-sar-cb-example label="|Composite Backscatter example"}
 
-In contrast to NRB and POL, CEOS-ARD Ocean Radar Backscatter ORB products are geoid corrected and are provided in the Sigma-Nought ($\sigma^0_E$) backscatter convention ([@fig:sar-orb-example-fig1a]), which is recommended for most ocean applications. In addition, availability of the “Local (or Ellipsoidal) Incidence Angle Image” ([@fig:sar-orb-example-fig1d]) and “Look Direction Image” per-pixel metadata are highly recommended (otherwise the general metadata “Look Direction Polynomials”) since they required for operational applications like ocean wind field estimates.
+The algorithm for generating a Composite Backscatter (CB) product using local resolution weighting is described below.
 
-The following figures show Sentinel-1 ORB products of the Tropical Cyclone Harold passing Vanuatu on April 6, 2020:
+A CB product is generated from a set of Normalised Radar Backscatter (NRB) datasets. If not already available, the NRB products need to be generated as an intermediate step. Notably, each NRB product needs to include Scattering Area Image per-pixel metadata (see the corresponding requirement in the NRB PFS) from which the local contributing area $_{i}$ are obtained.
 
-![VV intensity; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-VV.png){#fig:sar-orb-example-fig1a}
+A temporal window is defined encapsulating all NRB products to be used to generate the CB product. For each pixel $i$ in the region to be covered by the CB, all input products are assembled, particularly both the RTC terrain-flattened gamma $\gamma^0_i$ (see the Backscatter Measurements (NRB) requirement in the NRB PFS) and the local contributing area $A_i$ (see the requirement "Scattering Area Image" in the PFS applicable to your source data). That area is the one locally used for terrain flattening during the generation of the RTC product, i.e. the sum of the area expressed in the plane perpendicular to slant range (gamma nought convention) of all terrain facets within the bounds of that pixel [@small2022; @shiroma2022]. The terrain-flattened gamma nought RTC backscatter may or may not have had noise removal applied before proceeding to the composite generation stage.  No noise removal step is currently foreseen during the composite generation itself. Given N potential contributing input products, a subset of M is chosen whereby only products with pixel i not in shadow are included.  Then one proceeds to calculating the composite backscatter for pixel $i$.
 
-![VH intensity; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-VH.png){#fig:sar-orb-example-fig1b}
+First, the sum of the reciprocals $S_r$ of all local contributing areas is calculated:
 
-![Data mask image; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-data-mask.png){#fig:sar-orb-example-fig1c}
+$$
+S_r = \sum_{i=1}^{M} \frac{1}{A_i}
+$$ {#eq:sar-cb-example-eq1}
 
-![Local incident angle; Processing: A. Rosenqvist (soloEO)](assets/sar-orb-examples/S1-ORB-local-indicident-angle.png){#fig:sar-orb-example-fig1d}
+Next, the individual weight $W_i$ for each of the M contributing input images is calculated:
 
-Another useful file is the “Mean Wind-Normalised Backscatter Measurements” ([@fig:sar-orb-example-fig2b]) which efficiently attenuates intensity variation along range and visually enhances oceanic features. This file is calculated as the ratio between the backscatter intensity and a simulated backscatter intensity image generated using an ocean surface wind model, like CMOD\_IRF2 [@quilfen1998] for VV polarization or CMOD\_IRF2K [@vachon2000] for HH polarization, and the SAR local incidence angle and the look direction information.
+$$
+W_i = \frac{1}{A_i \cdot S_r}
+$$ {#eq:sar-cb-example-eq2}
 
-The following figures show Sentinel-1 EW ORB products:
+Now that the weight of each input image 1…M is ready, calculating the composite backscatter value is a simple matter of applying the weights to the terrain-flattened backscatter values in each input RTC image:
 
-![ORB intensity (Sigma-Nought); Processing: G. Hajduch (CLS)](assets/sar-orb-examples/S1-ORB-sigma-nought.png){#fig:sar-orb-example-fig2a}
+$$
+\gamma_c = \sum_{i=1}^{M} W_i \cdot \gamma_i^{0}
+$$ {#eq:sar-cb-example-eq3}
 
-![Intensity compensated with the “Mean Wind-Normalised Backscatter Measurement” (i.e., not Sigma-Nought) and geocoded; Processing: G. Hajduch (CLS)](assets/sar-orb-examples/S1-ORB-intesity-compensated.png){#fig:sar-orb-example-fig2b}
+Input images that imaged a mountain slope as a “backslope” (say an ascending image) will have local contributing area values that are relatively small in comparison to descending images covering the same region, as they will locally have been subject to foreshortening or possibly even layover. Low areas in the ascending images will correspond to relatively high weights (higher local resolution), while high areas (e.g. foreshortened) will generally result in relatively low weights.  In this way, foreshortening and even layover are not “masked out” in a boolean sense, but their effects are reduced as far with the “fuzzy” weighting pattern. Applying an on or off mask would be an overreaction in some cases to foreshortening/layover, which can each exhibit a large variety of effects on the local backscatter.
+
+One can cycle the set of pixels included e.g. in a standard tile definition to produce a tile-wide composite backscatter image. Multiple tiles can then be concatenated to cover ever larger regions. One can then generate composites representative of different seasons (e.g. all acquisitions from the first half of January, April, and June). One cycle through multiple CB images to see a “movie” of backscatter over the defined region, or alternatively overlay three CB products as a multi-temporal RGB visualisation. An example of this latter possibility is shown in Fig. A5.1, where the full extent of the European Alps are shown with the red channel from late Feb'25, green from early Apr'25, and blue from early May'25.
+
+Multitemporal backscatter analysis can then be directly applied over large regions (e.g. tracking wet snow at low vs. high elevations through springtime), where that would not be possible for most users given only L1 SLC or L1 GRD products. Such CB products are even more “analysis-ready” than is the set of NRB (RTC) products used to generate them, as no direct analysis over wide regions would be possible on such a heterogeneous dataset. Although not all analytical frameworks will benefit from using CB products, they will be useful for a large subset of backscatter time-series applications, and hopefully ease the initial learning curve for new users of backscatter data.
+
+![Multitemporal RGB Composite Backscatter (CB) image of the European Alps calculated via Local Resolution Weighting (red: late Feb 2025, green: early April 2025, blue: early May 2025), geographic coordinates.](assets/sar-cb-example/multitemporal-rgb-cb.png){#fig:sar-cb-example}
 
 

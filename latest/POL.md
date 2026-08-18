@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Synthetic Aperture Radar - Polarimetric Radar - Version 1.1.0-draft
+  CEOS-ARD - Synthetic Aperture Radar - Polarimetric Radar - Version 3.6.0-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -25,10 +25,7 @@ figPrefix:
 lstPrefix:
   - Listing
   - Listings
-secPrefix:
-  - Section
-  - Sections
-secPrefixTemplate: $$p$$&nbsp;"$$i$$"
+secPrefixTemplate: $$i$$
 # we want to include all citations regardless of usage, see https://pandoc.org/MANUAL.html#including-uncited-items-in-the-bibliography
 nocite: |
   @*
@@ -53,18 +50,21 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ## Document History
 
-### 2026-03-26 (PATCH)
+### 2026-07-20 (MINOR)
 
 - The Combined SAR PFS has been split into separate PFS per product type
 - Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
-- Document history has been reset. Check the previous versions for details
 - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
-- The requirement "Cloud optimized file formats are recommended." has been moved from the category description to a separate requirement.
-- Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”.
+- Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
+- Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
+- Requirement "Backscatter Measurement": Replaced "and/or" with "one of the following types or both"
+- Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
+- Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
 - The subcategories for Source and Product metadata have been flattened into top-level categories
-- Requirement "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
-- Requirement "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
 - Annex has been reformatted and updated as required by the split
+- Document history has been reset. Check the previous versions for details
+
+**Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Polarimetric Radar (POL)**.
 
 **Justification:**
 Migration to building blocks.
@@ -82,22 +82,26 @@ Migration to building blocks.
 - Bruce Chapman, Jet Propulsion Laboratory, USA
 - Howard Zebker, Stanford University, USA
 - Zheng-Shu Zhou, CSIRO, Australia
+- Kimberlee Baldry, Geoscience Australia, Australia
 - David Bekaert, Jet Propulsion Laboratory, USA
 - Virginia Brancato, Jet Propulsion Laboratory, USA
 - Danilo Dadamia, CONAE, Argentina
 - Benjamin Deschamps, Environment and Climate Change, Canada
 - Matt Garthwaite, CSIRO, Australia
 - Guillaume Hajduch, Collecte Localisation Satellites, France
-- P.V. Jayasri, ISRO, India
+- Jayasri Poludasu, ISRO, India
 - Josef Kellndorfer, Earth Big Data, USA
+- Joseph Kennedy, Alaska Satellite Facility, USA
 - Marco Lavalle, Jet Propulsion Laboratory, USA
 - Thomas Logan, Alaska Satellite Facility, USA
 - Franz Meyer, Alaska Satellite Facility, USA
 - Nuno Miranda, European Space Agency (ESA), Italy
+- Matthias Mohr, moreGeo GmbH, Germany
 - Muriel Pinheiro, European Space Agency (ESA), Italy
 - Marko Repse, Sinergise, Slovenia
 - HariPriya Sakethapuram, ISRO, India
 - Gustavo H. X. Shiroma, Jet Propulsion Laboratory, USA
+- Usha Sundari, ISRO, India
 - Andreia Siqueira, Geoscience Australia, Australia
 - Scott Staniewicz, Jet Propulsion Laboratory, USA
 - Takeo Tadono, Japan Aerospace Exploration Agency, Japan
@@ -119,7 +123,7 @@ Migration to building blocks.
 Synthetic Aperture Radar, Polarimetric Radar (POL)
 
 **Version:**
-1.1.0-draft
+3.6.0-draft
 
 **Applies to:**
 Data collected by Synthetic Aperture Radar sensors
@@ -142,8 +146,8 @@ They are derived from coherent or incoherent polarimetric decomposition techniqu
 ***Notice and Limitations:***
 
 For Polarimetric Radar (POL) products, optimal incoherent Polarimetric Radar Decomposition (PRD) should be performed under the slant range projection [@gens2013; @toutin2013].
-In order to minimise bias in the CEOS-ARD SAR Level-2A covariance matrix product, speckle filtering and averaging of the covariance matrix should be applied in the slant range projection, and geocoding should be performed using nearest-neighbour resampling.
-Specifically, nearest-neighbour resampling ensures that the averaged covariance matrix elements in slant range and in geocoded ground projection are exactly the same.
+In order to minimise bias in the CEOS-ARD SAR Level-2A covariance matrix product, speckle filtering and averaging of the covariance matrix should be applied in the slant range projection, and nearest neighbour method is recommended for resampling the data to the geocoded format.
+Specifically, nearest-neighbour resampling ensures that the averaged covariance matrix elements in slant range and in geocoded ground projection are exactly the same. 
 Consequently, the polarimetrically derived parameters are exactly equal in both approaches (assuming that no further averaging is performed on the ARD product for decomposing the polarimetric information).
 Bilinear and average resampling methods are also suitable for resampling the covariance matrix, but some differences with polarimetric parameters generated in slant range and then resampled (bilinear) might be observed on sloped terrains.
 Even if Sinc interpolation may be more robust for spatial resampling, it does not preserve covariance matrix integrity, and should consequently not be used for this ARD product.
@@ -166,6 +170,10 @@ PRD products are organized “layer by layer”, i.e., with bands corresponding 
 
 ## Definitions and Abbreviations
 
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/acdd.yaml -->
+ACDD
+:   Attribute Convention for Data Discovery as defined by Earth Science Information Partners (ESIP)
+
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ale.yaml -->
 ALE
 :   Absolute Geolocation Error
@@ -178,9 +186,17 @@ ATBD
 Auxiliary Data
 :   The data required for instrument processing, which does not originate in the instrument itself or from the satellite. Some auxiliary data will be generated in the ground segment, whilst other data will be provided from external sources, e.g., DEM, aerosols.
 
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/cb.yaml -->
+CB
+:   Composite Backscatter
+
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ceos-ard.yaml -->
 CEOS-ARD
 :   Committee on Earth Observation Satellites - Analysis Ready Data
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/composite-product.yaml -->
+Composite Product
+:   Product where samples (or pixels) are generated from more than one input data source, e.g. by local resolution weighting or by backscatter averaging.
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/covmat.yaml -->
 CovMat
@@ -229,6 +245,10 @@ LUT
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/metadata.yaml -->
 Metadata
 :   Structured information that describes other information or information services. With well-defined metadata, users should be able to get basic information about data, without the need to have knowledge about its entire content.
+
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/mosaic-product.yaml -->
+Mosaic Product
+:   Product generated from more than one input data source and where a pixel value in the product uniquely corresponds to the pixel value of one of its input data sources.
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/nrb.yaml -->
 NRB
@@ -352,12 +372,12 @@ Identifier: `meta-memare-sar`
 
 ##### Threshold requirements:
 
-Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable/layer for further use.
+Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable for further use.
 
 
 ##### Goal requirements:
 
-As threshold, but metadata is formatted in accordance with CEOS-ARD SAR Metadata Specifications, v.1.1, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention, the Attribute Convention for Data Discovery (ACDD), etc.
+As threshold, but metadata is formatted in accordance with the latest corresponding CEOS-ARD SAR Metadata Specifications, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention and the Attribute Convention for Data Discovery (ACDD), etc.
 
 ---
 
@@ -409,19 +429,18 @@ Identifier: `meta-time-sar`
 
 Number of source data acquisitions of the data collection is identified.
 The start and stop UTC time of data collection is identified in the metadata, expressed in date/time.
-In case of composite products, the dates/times of the first and last data takes and the per-pixel metadata [@sec:pxl-pacqid] is provided with the product.
+In the case of composite or mosaic products, the dates/times of the first and last data takes is provided with the product.
 
 
 ##### Goal requirements:
 
-
-As threshold.
-<!-- *None* -->
+As threshold, but using ISO 8601 time format.
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/source-metadata.yaml-->`2.` Source Metadata {#sec:src label="|Source Metadata"}
 
-These are metadata records describing (detailing) **each** acquisition (source data) used to generate the ARD product.
-This may be one or mutliple acquisitions.
+Metadata describing (detailing) **each** acquisition used to generate the ARD product.
+
+Source data attribute information can refer to other products for higher level ARD derived from those, under the condition of their availability (@sec:src-daccess-src).
 
 
 #### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/acquisition-id.yaml-->`2.1.` Acquisition ID {#sec:src-macqid label="|Source Metadata: Acquisition ID"}
@@ -432,7 +451,7 @@ Identifier: `src-macqid`
 
 ##### Threshold requirements:
 
-Each acquisition is identified through a sequential identifier in the metadata, e.g. acqID = 1, 2, 3.
+Source data attribute information are described for each acquisition and sequentially identified e.g. as acqID = 1, 2, 3, …
 
 
 ##### Goal requirements:
@@ -476,7 +495,7 @@ The instrument used to collect the data is identified in the metadata:
 
 ##### Goal requirements:
 
-As threshold, but including a reference to the relevant [CEOS Missions, Instruments and Measurements Database](https://ceos.org/mim-database/) record.
+As threshold, but using [CEOS Mission-Instruments-Measurements (MIM) database](https://ceos.org/mim-database) as reference.
 
 ---
 
@@ -535,10 +554,12 @@ Identifier: `src-orbit`
 
 Information related to the platform orbit used for data processing:
 
-- Pass direction (asc/desc)[^orbit-pass-direction]
+- Pass direction (asc/desc), see note
 - Orbit data source (e.g., predicted, definite, precise, downlinked, etc.)
 
-[^orbit-pass-direction]: For data crossing the North or South Pole, it is recommended to produce two distinct products and to use the appropriate “Pass direction” in each.
+Note:
+
+1. For source data crossing the North or South Pole, it is recommended to produce two distinct CEOS-ARD products and to use the appropriate “Pass direction” in each.
 
 
 ##### Goal requirements:
@@ -546,8 +567,10 @@ Information related to the platform orbit used for data processing:
 As threshold, including also:
 
 - Platform heading angle expressed in degrees (0-360) from North 
-- Orbit data file containing state vectors (minimum of 5 state vectors, from 10% of scene length before start time to 10% of scene length after stop time) 
+- Orbit data file containing state vectors (minimum of 5 state vectors, from 10% of scene length *before* start time to 10% of scene length *after* stop time) 
 - Platform (mean) altitude
+- Absolute orbit number
+- Relative orbit number
 
 ---
 
@@ -569,6 +592,10 @@ Processing parameters details of the source data:
 - Azimuth number of looks
 - Range number of looks (separate values for each beam, as necessary)
 
+Note:
+
+1. Azimuth and Range number of looks are not required when sources are CEOS-ARD or any other geocoded products
+
 
 ##### Goal requirements:
 
@@ -586,13 +613,17 @@ Identifier: `src-imgatt-sar`
 
 Image attributes related to the source data:
 
-- Source Data geometry (slant range/ground range)
-- Azimuth pixel spacing \[m] (alternatively, Azimuth pixel spacing can be provided in second \[s], equivalent to the azimuth time sample interval) 
-- Range pixel spacing 
-- Azimuth resolution 
+- Source data geometry (slant range/ground range/geocoded)
+- Azimuth pixel spacing \[m] (alternatively, azimuth pixel spacing can be provided in second \[s], equivalent to the azimuth time sample interval)
+- Range pixel spacing
+- Azimuth resolution
 - Range resolution 
-- Near range incident angle 
+- Near range incident angle
 - Far range incident angle
+
+Note:
+
+1. For geocoded sources such as GSLC and InSAR, Azimuth and Range pixel spacing are replaced by line (row) and pixel (column) spacing information. Spatial resolution information is not required for geocoded sources.
 
 
 ##### Goal requirements:
@@ -812,7 +843,7 @@ Average spatial resolution of the CEOS-ARD product along:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/speckle-filtering-pol.yaml-->`3.6.` Product Filtering {#sec:prd-spekfil-pol label="|Product Metadata: Product Filtering"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/filtering-speckle-pol.yaml-->`3.6.` Product Filtering {#sec:prd-spekfil-pol label="|Product Metadata: Product Filtering"}
 
 Identifier: `prd-spekfil-pol`
 
@@ -820,7 +851,7 @@ Identifier: `prd-spekfil-pol`
 
 ##### Threshold requirements:
 
-Flag if speckle filter has been applied (True/False).
+Flag if speckle filter has been applied (true/false).
 
 Metadata should include:
 
@@ -830,7 +861,7 @@ Metadata should include:
   - Window size in pixel units
   - Any other parameters defining the speckle filter used
 
-Advanced polarimetric filter preserving covariance matrix properties should be applied.
+Advanced polarimetric filter preserving covariance matrix properties shall be applied.
 
 
 ##### Goal requirements:
@@ -852,9 +883,7 @@ Identifier: `prd-geobbox`
 Two opposite corners of the product file (bounding box, including any zero-fill values) are identified,
 expressed in the coordinate reference system defined in [@sec:prd-crs-sar].
 
-Note:
-
-1. Four corners of the product file are recommended for scenes crossing the Antemeridian, or the North or the South Pole.
+Four corners of the product file are recommended for scenes crossing the Antemeridian, or the North or the South Pole.
 
 
 ##### Goal requirements:
@@ -873,7 +902,7 @@ Identifier: `prd-geoarea-sar`
 
 ##### Threshold requirements:
 
-The geometry of the SAR image footprint expressed in WGS84, in a standardised format (e.g., WKT Polygon).
+The geometry of the SAR image footprint expressed in longitude/latitude based on WGS84 (EPSG 4326), in a standardised format (e.g., WKT Polygon).
 
 
 ##### Goal requirements:
@@ -917,7 +946,7 @@ Identifier: `prd-pixcoco`
 ##### Threshold requirements:
 
 Coordinate referring to the centre, the upper left corner, or the lower left corner of a pixel.
-Values are [pixel centre, pixel ULC or pixel LLC].
+Values are pixel centre, pixel ULC or pixel LLC.
 
 
 ##### Goal requirements:
@@ -936,7 +965,8 @@ Identifier: `prd-crs-sar`
 
 ##### Threshold requirements:
 
-The metadata lists the map projection (or geographical coordinates, if applicable) that was used and any relevant parameters required to geolocate data in that map projection, expressed in a standardised format (e.g., WKT).  
+The metadata lists the map projection (or geographical coordinates, if applicable) that was used and any relevant parameters required to geolocate data in that map projection, expressed in a standardised format (e.g., WKT).
+
 Indicate EPSG code, if defined for the CRS.
 
 
@@ -954,7 +984,7 @@ Identifier: `prd-reorbit-nrb-pol`
 
 
 
-**Usage: Only when Flattened phase per-pixel metadata (see [@sec:rcm-flapha]) is provided.**
+**Usage:** Only when Flattened phase per-pixel metadata (see [@sec:rcm-flapha]) is provided.
 
 ##### Threshold requirements:
 
@@ -968,35 +998,14 @@ Not required.
 Provide the absolute orbit number used as reference for topographic phase flattening.
 In case a virtual orbit has been used, provide orbit parameters or orbit state vectors as DOI or URL.
 
-Provide scene-centred perpendicular baseline for the for the source data relative to the reference orbit used (for approximate use only).
-
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml-->`4.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
 The following minimum metadata specifications apply to each pixel.
-Whether the metadata is provided in a single record relevant to all pixels, or separately for each pixel, is at the discretion of the data provider.
+Whether the metadata is provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
 Per-pixel metadata should allow users to **discriminate between** (choose) observations on the basis of their individual suitability for application.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml-->`4.1.` Cloud Optimized Formats {#sec:pxl-cngform label="|Per-Pixel Metadata: Cloud Optimized Formats"}
-
-Identifier: `pxl-cngform`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-All files are provided using cloud-optimized file formats.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml-->`4.2.` Metadata Machine Readability {#sec:pxl-memare-sar label="|Per-Pixel Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml-->`4.1.` Metadata Machine Readability {#sec:pxl-memare-sar label="|Per-Pixel Metadata: Metadata Machine Readability"}
 
 Identifier: `pxl-memare-sar`
 
@@ -1004,16 +1013,16 @@ Identifier: `pxl-memare-sar`
 
 ##### Threshold requirements:
 
-Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable/layer for further use.
+Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable for further use.
 
 
 ##### Goal requirements:
 
-As threshold, but metadata is formatted in accordance with CEOS-ARD SAR Metadata Specifications, v.1.1, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention, the Attribute Convention for Data Discovery (ACDD), etc.
+As threshold, but metadata is formatted in accordance with the latest corresponding CEOS-ARD SAR Metadata Specifications, or in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, Climate and Forecast (CF) convention and the Attribute Convention for Data Discovery (ACDD), etc.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/data-mask.yaml-->`4.3.` Data Mask Image {#sec:pxl-damaski label="|Per-Pixel Metadata: Data Mask Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/data-mask.yaml-->`4.2.` Data Mask Image {#sec:pxl-damaski label="|Per-Pixel Metadata: Data Mask Image"}
 
 Identifier: `pxl-damaski`
 
@@ -1036,6 +1045,11 @@ File format specifications/contents provided in metadata:
 - Byte Order
 - Bit Value Representation
 
+Notes:
+
+1. All bit value representations included in the Data Mask Image should be indicated in the metadata.
+2. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
+
 
 ##### Goal requirements:
 
@@ -1050,13 +1064,13 @@ As threshold, including additional bit value representations, e.g.:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml-->`4.4.` Scattering Area Image {#sec:pxl-piscata label="|Per-Pixel Metadata: Scattering Area Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml-->`4.3.` Scattering Area Image {#sec:pxl-piscata label="|Per-Pixel Metadata: Scattering Area Image"}
 
 Identifier: `pxl-piscata`
 
 
 
-**Usage: Recommended for scenes that include land areas.**
+**Usage:** Recommended for scenes that include land areas.
 
 ##### Threshold requirements:
 
@@ -1079,9 +1093,14 @@ File format specifications/contents provided in metadata:
 - Bits per Sample
 - Byte Order
 
+Notes:
+
+1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file could be provided as a URL address of that unique metadata file.
+2. Required for products such as NRB and POL if they are to be used as an input to production of composite backscatter (CB) when weighted averages based on the areas are used to generate composite backscatter.
+
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml-->`4.5.` Local Incident Angle Image {#sec:pxl-ploinca label="|Per-Pixel Metadata: Local Incident Angle Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml-->`4.4.` Local Incident Angle Image {#sec:pxl-ploinca label="|Per-Pixel Metadata: Local Incident Angle Image"}
 
 Identifier: `pxl-ploinca`
 
@@ -1101,7 +1120,7 @@ File format specifications/contents provided in metadata:
 
 Note:
 
-1. For maritime ORB scenes when no land areas are covered, a geoid model could be used for the calculation of the local incident angle.
+1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
 
 
 ##### Goal requirements:
@@ -1112,7 +1131,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml-->`4.6.` Ellipsoidal Incident Angle Image {#sec:pxl-pelinca label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml-->`4.5.` Ellipsoidal Incident Angle Image {#sec:pxl-pelinca label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image"}
 
 Identifier: `pxl-pelinca`
 
@@ -1140,11 +1159,11 @@ File format specifications/contents provided in metadata:
 
 Note:
 
-1. For maritime ORB scenes when no land areas are covered, the ellipsoidal incident angle is nearly identical to the geoid based local incident angle.
+1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml-->`4.7.` Noise Power Image {#sec:pxl-pinopow label="|Per-Pixel Metadata: Noise Power Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml-->`4.6.` Noise Power Image {#sec:pxl-pinopow label="|Per-Pixel Metadata: Noise Power Image"}
 
 Identifier: `pxl-pinopow`
 
@@ -1160,11 +1179,12 @@ Not required.
 ##### Goal requirements:
 
 Estimated Noise Equivalent $\sigma^0$ (or $\beta^0$ or $\gamma^0$, as applicable) used for noise removal, if applied, for each channel.
-$\text{NE}\sigma^0$ and $\text{NE}\gamma^0$ are both based on a simplified ellipsoid Earth model.
+$\text{NE}\sigma^0$ and $\text{NE}\gamma^0$ are both based on either an ellipsoid Earth model or the local topography.
 
 File format specifications/contents provided in metadata:
 
 - Sample Type (Gamma-Nought, Sigma-Nought, Beta-Nought)
+- Correction model type (Ellipsoid, Topography)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
 - Data Type (Int, Float, …)
 - Bits per Sample
@@ -1172,7 +1192,7 @@ File format specifications/contents provided in metadata:
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml-->`4.8.` Gamma-to-Sigma Ratio Image {#sec:pxl-gasiri label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml-->`4.7.` Gamma-to-Sigma Ratio Image {#sec:pxl-gasiri label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image"}
 
 Identifier: `pxl-gasiri`
 
@@ -1199,25 +1219,29 @@ File format specifications/contents provided in metadata:
 - Bits per Sample
 - Byte Order
 
+Note:
+
+1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
+
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id.yaml-->`4.9.` Acquisition ID Image {#sec:pxl-pacqid label="|Per-Pixel Metadata: Acquisition ID Image"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id-mosaic.yaml-->`4.8.` Acquisition ID Image {#sec:pxl-pacqidm label="|Per-Pixel Metadata: Acquisition ID Image"}
 
-Identifier: `pxl-pacqid`
+Identifier: `pxl-pacqidm`
 
 
+
+**Usage:** Required for mosaic products only.
 
 ##### Threshold requirements:
 
-**Required for multi-source product only.**
-
 Acquisition ID, or acquisition date, for each pixel is identified.
 
-In case of multi-temporal image stacks, use a source acquisition ID (i.e., [@sec:src-macqid]) to list contributing images.
+In case of multi-temporal image stacks, use source acquisition ID (i.e., [@sec:src-macqid]) to list contributing images.
 
 In case of date, data represent (integer or fractional) day offset to reference observation date (in UTC). Date used as reference (“Day 0”) is provided in the metadata.
 
-Pixels not representing a unique date (e.g., pixels averaged in image overlap zones) are flagged with a pre-set pixel value that is provided in the metadata.
+Pixels not representing a unique date or ID (e.g., pixels averaged in image overlap zones) are flagged with a pixel value referencing a date range that is provided in the metadata.
 
 File format specifications/contents provided in metadata:
 
@@ -1230,11 +1254,13 @@ File format specifications/contents provided in metadata:
 
 ##### Goal requirements:
 
-In case of image composites, the sources for each pixel are uniquely identified.
+
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml-->`4.10.` Per-Pixel DEM {#sec:pxl-pidem label="|Per-Pixel Metadata: Per-Pixel DEM"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml-->`4.9.` Per-Pixel DEM {#sec:pxl-pidem label="|Per-Pixel Metadata: Per-Pixel DEM"}
 
 Identifier: `pxl-pidem`
 
@@ -1251,8 +1277,6 @@ Not required.
 
 Provide DEM or DSM as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the CEOS-ARD SAR image product.
 
-Can also be provided with ORB products containing land areas.
-
 File format specifications/contents provided in metadata:
 
 - Sample Type (Height)
@@ -1260,6 +1284,10 @@ File format specifications/contents provided in metadata:
 - Data Type (Int, Float, …)
 - Bits per Sample
 - Byte Order
+
+Note:
+
+1. For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometrically-corrected-measurements.yaml-->`5.` Radiometrically Corrected Measurements {#sec:rcm label="|Radiometrically Corrected Measurements"}
 
@@ -1269,26 +1297,7 @@ As for the per-pixel metadata, information regarding data format specification n
 The requirements below must be met for all pixels/samples/observations in a collection.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml-->`5.1.` Cloud Optimized Formats {#sec:rcm-cngform label="|Radiometrically Corrected Measurements: Cloud Optimized Formats"}
-
-Identifier: `rcm-cngform`
-
-
-
-##### Threshold requirements:
-
-
-Not required.
-<!-- *None* -->
-
-
-##### Goal requirements:
-
-All files are provided using cloud-optimized file formats.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-pol.yaml-->`5.2.` Backscatter Measurements (POL) {#sec:rcm-backsca-pol label="|Radiometrically Corrected Measurements: Backscatter Measurements (POL)"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-pol.yaml-->`5.1.` Backscatter Measurements (POL) {#sec:rcm-backsca-pol label="|Radiometrically Corrected Measurements: Backscatter Measurements (POL)"}
 
 Identifier: `rcm-backsca-pol`
 
@@ -1306,16 +1315,17 @@ Measurements can be one of the following types or both:
 File format specifications/contents provided in metadata:
 
 - Measurement Type (CovMat, PRD)
-- Measurement convention unit (linear amplitude, linear power, angle)
-- Individual covariance matrix element or/and Individual component of the decomposition (C3m11, C3m12, … or H, A, alpha, or …)
+- Measurement convention unit (linear amplitude, or linear power [see notes], or phase angle)
+- Individual covariance matrix element or/and Individual component of the decomposition (C3m11, C3m12, …, or H, A, alpha, or …)
 - Data Format (GeoTIFF, HDF5, NetCDF, …)
 - Data Type (Int, Float, Complex, …)
 - Bits per Sample
 - Byte Order
-# todo: add glossary entries for BIP, BIL, BSQ?
-- |-
-  It is recommended to keep CovMat or PRD measurement files separated.
-  Otherwise, specify the multi-channel format order (BIP, BIL, BSQ).
+
+Notes:
+
+1. Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
+2. It is recommended to keep CovMat or PRD measurement files separated. Else, specify the multi-channel format order [BIP, BIL, BSQ].
 
 
 ##### Goal requirements:
@@ -1326,7 +1336,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/scaling-conversion.yaml-->`5.3.` Scaling Conversion {#sec:rcm-scaconv label="|Radiometrically Corrected Measurements: Scaling Conversion"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/scaling-conversion.yaml-->`5.2.` Scaling Conversion {#sec:rcm-scaconv label="|Radiometrically Corrected Measurements: Scaling Conversion"}
 
 Identifier: `rcm-scaconv`
 
@@ -1343,7 +1353,7 @@ As threshold, but use of float32.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/noise-removal.yaml-->`5.4.` Noise Removal {#sec:rcm-noiser label="|Radiometrically Corrected Measurements: Noise Removal"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/noise-removal.yaml-->`5.3.` Noise Removal {#sec:rcm-noiser label="|Radiometrically Corrected Measurements: Noise Removal"}
 
 Identifier: `rcm-noiser`
 
@@ -1351,7 +1361,7 @@ Identifier: `rcm-noiser`
 
 ##### Threshold requirements:
 
-Flag if noise removal has been applied (Y/N).
+Flag if noise removal (see note) has been applied (Y/N).
 Metadata should include the noise removal algorithm and reference to the algorithm as URL or DOI.
 
 Note:
@@ -1367,9 +1377,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo.yaml-->`5.5.` Radiometric Terrain Correction Algorithm {#sec:rcm-radtalg label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algorithm-applied.yaml-->`5.4.` Radiometric Terrain Correction Algorithm {#sec:rcm-radtalg-appl label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm"}
 
-Identifier: `rcm-radtalg`
+Identifier: `rcm-radtalg-appl`
 
 
 
@@ -1396,7 +1406,7 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml-->`5.6.` Radiometric Accuracy {#sec:rcm-radacc-sar label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml-->`5.5.` Radiometric Accuracy {#sec:rcm-radacc-sar label="|Radiometrically Corrected Measurements: Radiometric Accuracy"}
 
 Identifier: `rcm-radacc-sar`
 
@@ -1416,13 +1426,13 @@ SI traceability is achieved.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/flattened-phase.yaml-->`5.7.` Flattened Phase {#sec:rcm-flapha label="|Radiometrically Corrected Measurements: Flattened Phase"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/flattened-phase.yaml-->`5.6.` Flattened Phase {#sec:rcm-flapha label="|Radiometrically Corrected Measurements: Flattened Phase"}
 
 Identifier: `rcm-flapha`
 
 
 
-**Usage: Alternative to GSLC product for NRB and POL products**
+**Usage:** Alternative to GSLC product for NRB and POL products
 
 ##### Threshold requirements:
 
@@ -1434,7 +1444,7 @@ Not required.
 ##### Goal requirements:
 
 The Flattened Phase is the interferometric phase for which the topographic phase contribution is removed.
-It is derived from the range-Doppler SLC product using a DEM and the orbital state vectors with respect to a reference orbit (see [@sec:annex-sar-topographic-phase-removal]).
+It is derived from the range-Doppler SLC product using a DEM and the orbital state vectors with respect to a reference orbit (see annex "Topographic phase removal" in the applicable PFS).
 The use of the Flattened Phase with the NRB or POL intensity ([@sec:rcm]) provides the GSLC equivalent, as follows:  
 
 $$
@@ -1454,7 +1464,7 @@ In case of polarimetric data, indicate the reference polarization.
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`6.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
 
-The geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared.
+Geometric corrections are steps that are taken to place the measurement accurately on the surface of the Earth (that is, to geolocate the measurement) allowing measurements taken through time to be compared.
 This section specifies any geometric correction requirements that must be met in order for the data to be analysis ready.
 
 
@@ -1482,7 +1492,7 @@ Metadata references, e.g.:
 
 Note:
 
-1. Examples of technical documentation can include e.g., an Algorithm Theoretical Basis Document (ATBD) or a product user guide.
+1. Examples of technical documentation can include e.g., an Algorithm Theoretical Basis Document (ATBD), or a product user guide.
 
 ---
 
@@ -1492,21 +1502,20 @@ Identifier: `gcor-cdem`
 
 
 
-**Usage: For products including land areas.**
+**Usage:** For products including land areas.
 
 ##### Threshold requirements:
 
-- During ortho-rectification, the data provider shall use the same DEM that was used for the radiometric terrain flattening to ensure consistency of the data stack.
-- Provide reference to Digital Elevation Model used for geometric terrain correction.
-- Provide reference to Earth Gravitational Model (EGM) used for geometric correction.
+a. During ortho-rectification, the data provider shall use the same DEM that was used for the radiometric terrain flattening to ensure consistency of the data stack.
+b. Provide reference to the Digital Elevation Model used for geometric terrain correction. For mosaic or composite products, specify the DEM used for each input data source, if different.
+c. Provide reference to Earth Gravitational Model (EGM) if used for geometric correction. For mosaic or composite products, specify the EGM used for each input data source, if different.
 
 
 ##### Goal requirements:
 
-- A DEM with comparable or better resolution to the resolution of the output CEOS-ARD product shall be used if available.
-  Else, the upsampled DEM is identified.
-- Resampling method used for preparation of the DEM.
-- Method used for resampling the EGM.
+a. A DEM with comparable or better resolution to the resolution of the output CEOS-ARD product shall be used if available. Else, the upsampled DEM is identified.
+b. Resampling method used for preparation of the DEM.
+c. Method used for resampling the EGM.
 
 ---
 
@@ -1521,17 +1530,18 @@ Identifier: `gcor-geomacc-sar`
 Accurate geolocation is a prerequisite to radar processing to correct for terrain and to enable interoperability between radar sensors.
 
 The absolute geolocation error (ALE) for a sensor is typically assessed through analysis of Single Look Complex (SLC) imagery and measured along the slant range and azimuth directions (case A: SLC ALE).
-
 The end-to-end “ARD” ALE of the final CEOS-ARD product could be measured directly in the final image product in the chosen map projection, i.e., in the map coordinate directions: e.g., Northing and Easting (case B: ARD ALE).
-
 Providing accuracy estimates based on measurements following at least one scheme (A or B or both) meets the threshold requirement.
 
 Estimates of the ALE is provided as a bias and a standard deviation, with (Case A) SLC ALE expressed in slant range and azimuth, and (Case B) ARD ALE expressed in map projection dimensions.
 
+For composite products, when sources come from different SAR platforms or different beam modes, provide averaged ALE or averaged ARD ALE.
+
 Notes:
 
 1. This assessment is often made through comparison of measured corner reflector positions with their projected location in the imagery. In some cases, other mission calibration/validation results may be used.
-2. The ALE is not typically assessed for every processed image, but through an ALE assessment by the data processing team characterizing all or (usually a subset) of the generated products.
+2. The ALE is not typically assessed for every processed image, but through an ALE assessment by the data processing team characterizing all or (usually a suitably representative subset) of the generated products.
+3. For new SAR missions, as long as calibration/validation reports are not available, values can be set to NaN and provide a DOI or URL link to pre-launch mission specification document.
 
 
 ##### Goal requirements:
@@ -1562,6 +1572,8 @@ Values provided under [@sec:gcor-geomacc-sar] are provided by the SAR mission Ca
 CEOS-ARD processing steps could include method refining the geometric accuracy, such as cross-correlation of the SAR data in slant range with a SAR scene simulated from a DSM or DEM.
 
 Methodology used (name and reference), quality flag, geometric standard deviation values should be provided.
+
+For composite products, provide averaged ALE or averaged ARD ALE estimated from all sources.
 
 ---
 
@@ -1636,6 +1648,15 @@ For example, the products may enhance interoperability or provide increased accu
 Goal requirements anticipate continuous improvement of methods and evolution of community expectations, which are both normal and inevitable in a developing field.
 Over time, _goal_ specifications may (and subject to due process) become accepted as _threshold_ requirements.
 
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/introduction/sar-differences.yaml-->Compatibility and Interoperability of CEOS-ARD SAR Products {#sec:intro-sar-differences label="|Compatibility and Interoperability of CEOS-ARD SAR Products"}
+
+As can be seen from the individual PFS descriptions, only a few minor details in terms of generated parameters and/or the addition of supplemental data distinguish these CEOS-ARD products.
+In part, they are to a large extent all backward-compatible.
+For example, POL products implicitly include NRB products, while a coastal NRB or POL product can simply be made compatible with other ORB products by applying gamma-to-sigma conversion.
+Just as GSLC can be converted to NRB (given that terrain-flattening was applied, a goal-requirement for GSLC, the inverse conversion can be made true by including the optional topographically flattened phase.
+In this way a NRB or POL product can be used like a GSLC for InSAR applications.
+Consequently, it becomes obvious that they all can follow a common approach, in terms of content and structure, in order to optimize their interoperability.
+
 &#12;
 
 ## References
@@ -1647,17 +1668,16 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 
 ## Annexes
 
-
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-general-processing-roadmap.yaml-->General Processing Map {#sec:annex-sar-general-processing-roadmap label="|General Processing Map"}
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-general-processing-roadmap.yaml-->General Processing Roadmap {#sec:annex-sar-general-processing-roadmap label="|General Processing Roadmap"}
 
 The radiometric interoperability of CEOS-ARD SAR products is ensured by a common processing chain during production. The recommended processing roadmap involves the following steps:
 
 - Apply the best possible orbit parameters to give the most accurate product possible. These will have been projected to an ellipsoidal model such as WGS84. To achieve the level of geometric accuracy required for the DEM-based correction, precise orbit determination will be required.
 - Apply instrument calibration to produce Beta-Nought values with high fidelity.
-- Convert Single-Look-Complex (SLC) radiometric channel(s) to intensity NRB, ORB and POL and in addition for POL, the cross-product element(s) of the covariance as shown in [@sec:annex-sar-pol-covmat].
+- Convert Single-Look-Complex (SLC) radiometric channel(s) to intensity NRB, ORB and POL and in addition for POL, the cross-product element(s) of the covariance as shown in annex "Normalised Covariance Matrices (CovMat)" of the applicable PFS.
 - Perform radiometric terrain correction (gamma backscatter convention terrain-flattening) on the covariance matrix by applying the local surface normalisation factor to each backscatter measurement element [@small2011; @shiroma2022].
 - Perform polarimetric speckle filtering (optional for NRB and ORB), before geocoding, to optimally preserve the polarimetric information. Most popular polarimetric decomposition methodologies are incoherent in nature, which requires averaging the covariance matrix for stationarity. Depending on the application, a polarimetric filter that preserves local point targets and locally average extended targets may be used, e.g., Sigma Lee filter with 7x7 window and 3-point target [@lee2009]. Multi-looking could be performed to meet optimal output sample spacing before the geometric correction step. No speckle filtering or multi-looking is performed for GSLC products.
-- For GSLC products, the topographic phase is estimated relative to a reference orbit and removed from the SLC data [@zebker2010; @zebker2017] (see [@sec:annex-sar-topographic-phase-removal])
+- For GSLC products, the topographic phase is estimated relative to a reference orbit and removed from the SLC data [@zebker2010; @zebker2017] (see annex "Topographic phase removal" in the applicable PFS)
 - Geometric terrain correction (relative to geoid for ORB) is applied to the normalized backscatter measurement data. For POL, the resampling methodology should be nearest-neighbour, bilinear or average in order to preserve integrity of the covariance matrix as other resampling functions can introduce artefacts due to the mix of intensity and complex number elements in the matrix. Geocoding to a common grid structure with specified pixel spacings for true data cube format.
 - Generate CEOS format metadata to accompany product layers.
 - Optionally, a SpatioTemporal Asset Catalog (STAC) file is added to the product.
@@ -1675,90 +1695,6 @@ The radiometric interoperability of CEOS-ARD SAR products is ensured by a common
 | 7. Create metadata                                           | Custom scripting                                             |
 
 : SAR ARD processing roadmap and software options. RADARSAT-2 Example {#tbl:sar-general-processing-roadmap-tbl1}
-
-
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-topographic-phase-removal.yaml-->Topographic phase removal {#sec:annex-sar-topographic-phase-removal label="|Topographic phase removal"}
-
-InSAR analysis capabilities from CEOS-ARD SAR products are enabled with GSLC products, which is also the case when the Flattened Phase per-pixel data are included in the NRB or POL products. This is made possible since the simulated topographic phase relative to a given reference orbit has been subtracted.
-
-From classical approach with SLC data, interferometric phase $\Delta \varphi_{1-2}$ between two SAR acquisitions is composed of a topographic phase $\Delta \varphi_{\text{Topo}\_1-2}$, a surface displacement phase $\Delta \varphi_{\text{Disp}\_1-2}$ and other noise terms $\Delta \varphi_{\text{Noise}\_1-2}$ ([@eq:sar-topographic-phase-removal-eq1]). The topographic phase consists to the difference in geometrical path length from each of the two antenna positions to the point on the SAR image ($\varphi_{\text{DEM}\_\text{SLC}}$) and is a function of their orbital baseline distance ([@eq:sar-topographic-phase-removal-eq2]). The surface displacement phase is related to the displacement of the surface that occurred in between the two acquisitions. The noise term is the function of the radar signal interaction with the atmosphere and the ionosphere during each acquisition and function of the system noise.
-
-$$
-\Delta \varphi_{1-2} = \Delta \varphi_{\text{Topo}\_1-2} + \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2}
-$$ {#eq:sar-topographic-phase-removal-eq1}
-
-Where
-
-$$
-\Delta \varphi_{\text{Topo}\_1-2} = \varphi_{\text{DEM}\_\text{SLC}\_1} = \varphi_{\text{DEM}\_\text{SLC}\_2}
-$$ {#eq:sar-topographic-phase-removal-eq2}
-
-Since CEOS-ARD products are already geocoded, it is important to remove the wrapped simulated topographic phase $\varphi_{\text{SimDEM}\_\text{SLC}}$ from the data in slant range ([@eq:sar-topographic-phase-removal-eq3]) during their production, before the geocoding step. The key here is to simulate the topographic phase relatively to a constant reference orbit, as done in a regular InSAR processing. There are two different ways to simulate the topographic phase:
-
-1. The use of a virtual circular orbit above a nonrotating planet [@zebker2010]
-2. The use of a specific orbit cycle or a simulated orbit of the SAR mission
-
-In both cases, the InSAR topographic phase $\Delta \varphi_{\text{Topo}\_\text{OrbRef}-2}$ is simulated against the position of a virtual sensor $\Delta \varphi_{\text{Topo}\_\text{OrbRef}}$ lying on a reference orbit, instead of being simulated relatively to an existing reference SAR acquisition ($\varphi_{\text{DEM}\_\text{SLC}\_1}$). The use of a virtual circular orbit is a more robust approach since the reference orbit is defined at a fixed height above scene nadir and assuming the reference orbital height constant for all CEOS-ARD products. While with the second approach, the CEOS-ARD data producer must select a specific archived orbit cycle of the SAR mission or define a simulated one, from which the relative orbit, matching the one of the SAR acquisitions to be processed (to be converted to CEOS-ARD), is defined as the reference orbit. With this second approach, it is important to always use the same orbit cycle (or simulated orbit) for all the CEOS-ARD produced for a mission, in order to preserve the relevant compensated phase in between them. Providing absolute reference orbit number information in the metadata (item 1.7.15) allows users to validate the InSAR feasibility in between CEOS-ARD products.
-
-$$
-\varphi_{\text{Flattended}\_\text{SLC}\_2} = \varphi_{\text{SLC}\_2} - \Delta\varphi_{\text{Topo}\_\text{OrbRef}-2}
-$$ {#eq:sar-topographic-phase-removal-eq3}
-
-This procedure is equivalent to bring the position of the sensor platform of all the SAR acquisitions at the same orbital position (i.e., zeros baseline distance in between), which results in a Flattened phase  $\varphi_{\text{Flattended}\_\text{SLC}}$, independent of the local topography.
-
-The phase subtraction could be performed by using a motion compensation approach [@zebker2010] or directly on the SLC data. Then the geometrical correction is performed on the Flattened SLC, which results in a GSLC product.
-
-GSLC can also be saved as a NRB product by including the Flattened Phase per-pixel data as follows:
-
-$$\text{NRB:} \quad \gamma_T^0 = |GSLC|^2 $$
-
-$$\text{Flattended Phase:} \quad \varphi_{\text{Flattended}} = \arg (GSLC) $$
-
-For POL product, the Flattened phase needs also to be subtracted from the complex number phase of the off-diagonal elements of the covariance matrix.
-
-Demonstration:
-
-From CEOS-ARD flattened SAR products, InSAR processing can be easily performed without dealing with topographic features and orbital sensor position, as for example with two GSLC products
-
-$$
-\varphi_{\text{Flattened}\_\text{GSLC}\_1} = \varphi_{\text{SLC}\_1} - \Delta\varphi_{\text{Topo}\_\text{OrbRef}-1} = \varphi_{\text{SLC}\_1} - \varphi_{\text{DEM}\_\text{OrbRef}} - \varphi_{\text{DEM}\_\text{SLC}\_1}
-$$ {#eq:sar-topographic-phase-removal-eq4}
-
-$$
-\varphi_{\text{Flattened}\_\text{GSLC}\_2} = \varphi_{\text{SLC}\_2} - \Delta\varphi_{\text{Topo}\_\text{OrbRef}-2} = \varphi_{\text{SLC}\_2} - \varphi_{\text{DEM}\_\text{OrbRef}} - \varphi_{\text{DEM}\_\text{SLC}\_2}
-$$ {#eq:sar-topographic-phase-removal-eq5}
-
-The differential phase is
-
-$$
-\Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} =  \varphi_{\text{Flattened}\_\text{GSLC}\_1} - \varphi_{\text{Flattened}\_\text{GSLC}\_2}
-$$ {#eq:sar-topographic-phase-removal-eq6}
-
-Which can be expanded using ([@eq:sar-topographic-phase-removal-eq3])
-
-$$
-\Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = (\varphi_{\text{SLC}\_1} - \varphi_{\text{DEM}\_\text{OrbRef}} - \varphi_{\text{DEM}\_\text{SLC}\_1}) - (\varphi_{\text{SLC}\_2} - \varphi_{\text{DEM}\_\text{OrbRef}} - \varphi_{\text{DEM}\_\text{SLC}\_2})
-$$ {#eq:sar-topographic-phase-removal-eq7}
-
-$$
-\Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = (\varphi_{\text{SLC}\_1} - \varphi_{\text{SLC}\_2}) - (\varphi_{\text{DEM}\_\text{SLC}\_1}) - \varphi_{\text{DEM}\_\text{SLC}\_2})
-$$ {#eq:sar-topographic-phase-removal-eq8}
-
-$$
-\Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = \Delta\varphi_{\text{SLC}\_1-\text{SLC}\_2} - \Delta\varphi_{\text{Topo}\_1-2}
-$$ {#eq:sar-topographic-phase-removal-eq9}
-
-Where $\Delta\varphi_{\text{SLC}\_1-\text{SLC}\_2}$ can be express as [@eq:sar-topographic-phase-removal-eq1], which gives
-
-$$
-\Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = (\Delta \varphi_{\text{Topo}\_1-2} + \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2}) - \Delta\varphi_{\text{Topo}\_1-2}
-$$ {#eq:sar-topographic-phase-removal-eq10}
-
-Consequently, the differential phase of two CEOS-ARD products doesn’t contain a topographic phase and is already unwrapped (at least over stable areas). It is only function of the surface displacement and of the noise term. Depending on the reference DEM and the satellite orbital state vector accuracies, some residual topographic phase could be present. Atmospheric (item 2.15) and ionospheric (item 2.16) phase corrections could be performed during the production of CEOS-ARD products, which reduces the differential phase noise in an InSAR analysis.
-
-$$
-\Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2})
-$$ {#eq:sar-topographic-phase-removal-eq11}
 
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-pol-covmat.yaml-->Normalised Covariance Matrices (CovMat) {#sec:annex-sar-pol-covmat label="|Normalised Covariance Matrices (CovMat)"}
@@ -1804,7 +1740,7 @@ Where CH and CV refer to dual polarization transmitting a circular polarized sig
 
 Polarimetric decomposition methods like [@yamaguchi2011] for fully polarimetric, or m-chi [@raney2012] for compact polarimetric data, can be applied directly on averaged (speckle filtered) C3 and C2 matrices respectively. These decompositions enhance scattering information, bring it to a more comprehensible level to end-users, and raise the performance of thematic classification methodologies. For SAR products that were acquired with single polarization the use of the covariance matrix does not result in superfluous storage requirements, since only the matrix elements that are populated are retained and the diagonal matrix elements are the backscatter intensities. Thus, a single channel intensity product would yield only one matrix element and the storage needs would not change.
 
-In order to ease the data structure and the metadata in between C3 and C2, [@eq:sar-pol-covmat-eq1] should be redefined as [@eq:sar-pol-covmat-eq5]. Users will have to take care of this non-standard representation when applying their polarimetric analytic tools. “\< \>” means that ARD matrix elements are speckle filtered. [@eq:sar-pol-covmat-eq5] is valid both for dual-linear and quad polarization.
+In order to ease the data structure and the metadata in between C3 and C2, [@eq:sar-pol-covmat-eq1] should be redefined as [@eq:sar-pol-covmat-eq5]. Users will have to take care of this non-standard representation when applying their polarimetric analytic tools. “\< \>” means that ARD matrix elements are speckle filtered. [@eq:sar-pol-covmat-eq5] is valid both for dual-linear and fully polarimetric dataquad polarization.
 
 $$
 \text{C3 modified:} \quad C3_m = \begin{bmatrix}

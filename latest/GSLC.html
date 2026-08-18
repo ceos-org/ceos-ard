@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex - Version 1.1.0-draft</title>
+  <title>CEOS-ARD - Synthetic Aperture Radar - Geocoded Single-Look Complex - Version 2.0.0-draft</title>
   <style>
 body {
 margin: 0;
@@ -252,31 +252,35 @@ version of this document.</p>
 Single-Look Complex</p>
 <p>Proposed revisions may be provided to: <a href="mailto:ard-contact@lists.ceos.org">ard-contact@lists.ceos.org</a></p>
 <h2 id="document-history">Document History</h2>
-<h3 id="patch">2026-03-26 (PATCH)</h3>
+<h3 id="minor">2026-07-20 (MINOR)</h3>
 <ul>
 <li>The Combined SAR PFS has been split into separate PFS per product
 type</li>
 <li>Restructured the document; various minor editorial changes; removed
 empty, irrelevant, or unused parts - many of the changes resulted from
 the split</li>
-<li>Document history has been reset. Check the previous versions for
-details</li>
 <li>Numerical identifiers were rotated and are deprecated; new textual
 identifiers have been added</li>
-<li>The requirement “Cloud optimized file formats are recommended.” has
-been moved from the category description to a separate requirement.</li>
+<li>Moved the Background paragraph about the commonalities and
+differences in the SAR PFSes to the Introduction</li>
 <li>Requirement “Document identifier”: Removed the trailing “for
-Synthetic Aperture Radar”.</li>
+Synthetic Aperture Radar”</li>
+<li>Requirement category “CEOS-ARD Product Data Attributes” renamed to
+“Product Metadata”; Requirement “Source Data Attributes” renamed to
+“Source Metadata”. Adapted descriptions accordingly.</li>
+<li>Requirement category “Source Data Attributes”: Moved the information
+about sequential acquisition identifiers to a new threshold requirement
+“Acquisition ID”. Adapted category description accordingly.</li>
 <li>The subcategories for Source and Product metadata have been
 flattened into top-level categories</li>
-<li>Requirement “CEOS-ARD Product Data Attributes” renamed to “Product
-Metadata”; Requirement “Source Data Attributes” renamed to “Source
-Metadata”. Adapted descriptions accordingly.</li>
-<li>Requirement “Source Data Attributes”: Moved the information about
-sequential acquisition identifiers to a new threshold requirement
-“Acquisition ID”. Adapted category description accordingly.</li>
 <li>Annex has been reformatted and updated as required by the split</li>
+<li>Document history has been reset. Check the previous versions for
+details</li>
 </ul>
+<p><strong>Note:</strong> This document is the successor of the former
+<a href="https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf">CEOS-ARD
+for SAR PFS v1.3.1</a> for product type <strong>Geocoded Single-Look
+Complex (GSLC)</strong>.</p>
 <p><strong>Justification:</strong> Migration to building blocks.</p>
 <p><strong>Editor:</strong> Matthias Mohr</p>
 <h2 id="contributing-authors">Contributing Authors</h2>
@@ -290,22 +294,26 @@ Japan</li>
 <li>Bruce Chapman, Jet Propulsion Laboratory, USA</li>
 <li>Howard Zebker, Stanford University, USA</li>
 <li>Zheng-Shu Zhou, CSIRO, Australia</li>
+<li>Kimberlee Baldry, Geoscience Australia, Australia</li>
 <li>David Bekaert, Jet Propulsion Laboratory, USA</li>
 <li>Virginia Brancato, Jet Propulsion Laboratory, USA</li>
 <li>Danilo Dadamia, CONAE, Argentina</li>
 <li>Benjamin Deschamps, Environment and Climate Change, Canada</li>
 <li>Matt Garthwaite, CSIRO, Australia</li>
 <li>Guillaume Hajduch, Collecte Localisation Satellites, France</li>
-<li>P.V. Jayasri, ISRO, India</li>
+<li>Jayasri Poludasu, ISRO, India</li>
 <li>Josef Kellndorfer, Earth Big Data, USA</li>
+<li>Joseph Kennedy, Alaska Satellite Facility, USA</li>
 <li>Marco Lavalle, Jet Propulsion Laboratory, USA</li>
 <li>Thomas Logan, Alaska Satellite Facility, USA</li>
 <li>Franz Meyer, Alaska Satellite Facility, USA</li>
 <li>Nuno Miranda, European Space Agency (ESA), Italy</li>
+<li>Matthias Mohr, moreGeo GmbH, Germany</li>
 <li>Muriel Pinheiro, European Space Agency (ESA), Italy</li>
 <li>Marko Repse, Sinergise, Slovenia</li>
 <li>HariPriya Sakethapuram, ISRO, India</li>
 <li>Gustavo H. X. Shiroma, Jet Propulsion Laboratory, USA</li>
+<li>Usha Sundari, ISRO, India</li>
 <li>Andreia Siqueira, Geoscience Australia, Australia</li>
 <li>Scott Staniewicz, Jet Propulsion Laboratory, USA</li>
 <li>Takeo Tadono, Japan Aerospace Exploration Agency, Japan</li>
@@ -328,7 +336,7 @@ and interoperability both through time and with other datasets.</p>
 <h2 id="description">Description</h2>
 <p><strong>Product Family Specification:</strong> Synthetic Aperture
 Radar, Geocoded Single-Look Complex (GSLC)</p>
-<p><strong>Version:</strong> 1.1.0-draft</p>
+<p><strong>Version:</strong> 2.0.0-draft</p>
 <p><strong>Applies to:</strong> Data collected by Synthetic Aperture
 Radar sensors</p>
 <h2 id="background">Background</h2>
@@ -355,6 +363,14 @@ corrected such that the squared amplitude yields
 <div style="page-break-after: always;"></div>
 <h2 id="definitions-and-abbreviations">Definitions and
 Abbreviations</h2>
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/acdd.yaml -->
+<dl>
+<dt>ACDD</dt>
+<dd>
+Attribute Convention for Data Discovery as defined by Earth Science
+Information Partners (ESIP)
+</dd>
+</dl>
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ale.yaml -->
 <dl>
 <dt>ALE</dt>
@@ -379,6 +395,13 @@ generated in the ground segment, whilst other data will be provided from
 external sources, e.g., DEM, aerosols.
 </dd>
 </dl>
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/cb.yaml -->
+<dl>
+<dt>CB</dt>
+<dd>
+Composite Backscatter
+</dd>
+</dl>
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ceos-ard.yaml -->
 <dl>
 <dt>CEOS-ARD</dt>
@@ -386,11 +409,13 @@ external sources, e.g., DEM, aerosols.
 Committee on Earth Observation Satellites - Analysis Ready Data
 </dd>
 </dl>
-<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/covmat.yaml -->
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/composite-product.yaml -->
 <dl>
-<dt>CovMat</dt>
+<dt>Composite Product</dt>
 <dd>
-Normalised Radar Covariance Matrix
+Product where samples (or pixels) are generated from more than one input
+data source, e.g. by local resolution weighting or by backscatter
+averaging.
 </dd>
 </dl>
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/crs.yaml -->
@@ -484,6 +509,15 @@ Intensity Signal-to-Noise Level Ratio
 <dt>LUT</dt>
 <dd>
 Look-Up Table
+</dd>
+</dl>
+<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/mosaic-product.yaml -->
+<dl>
+<dt>Mosaic Product</dt>
+<dd>
+Product generated from more than one input data source and where a pixel
+value in the product uniquely corresponds to the pixel value of one of
+its input data sources.
 </dd>
 </dl>
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/nrb.yaml -->
@@ -636,9 +670,9 @@ Traceability</h4>
 <p>Data must be traceable to SI reference standard.</p>
 <p>Notes:</p>
 <ol type="1">
-<li>Relationship to Section “<a href="#sec:rcm-radacc-sar">Radiometrically Corrected Measurements:
-Radiometric Accuracy</a>”. Traceability requires an estimate of
-measurement uncertainty.</li>
+<li>Relationship to <a href="#sec:rcm-radacc-sar">Radiometrically
+Corrected Measurements: Radiometric Accuracy</a>. Traceability requires
+an estimate of measurement uncertainty.</li>
 <li>Information on traceability should be available in the metadata as a
 single DOI landing page.</li>
 </ol>
@@ -649,13 +683,13 @@ Metadata Machine Readability</h4>
 <h5 id="threshold-requirements-1">Threshold requirements:</h5>
 <p>Metadata is provided in a structure that enables a computer algorithm
 to be used to consistently and automatically identify and extract each
-component/variable/layer for further use.</p>
+component/variable for further use.</p>
 <h5 id="goal-requirements-1">Goal requirements:</h5>
-<p>As threshold, but metadata is formatted in accordance with CEOS-ARD
-SAR Metadata Specifications, v.1.1, or in a community endorsed standard
-that facilitates machine-readability, such as ISO 19115-2, Climate and
-Forecast (CF) convention, the Attribute Convention for Data Discovery
-(ACDD), etc.</p>
+<p>As threshold, but metadata is formatted in accordance with the latest
+corresponding CEOS-ARD SAR Metadata Specifications, or in a community
+endorsed standard that facilitates machine-readability, such as ISO
+19115-2, Climate and Forecast (CF) convention and the Attribute
+Convention for Data Discovery (ACDD), etc.</p>
 <hr />
 <h4 data-label="|General Metadata: Product Type" id="sec:meta-protype"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/product-type.yaml--><code>1.3.</code>
 Product Type</h4>
@@ -681,23 +715,25 @@ Data Collection Time</h4>
 <h5 id="threshold-requirements-4">Threshold requirements:</h5>
 <p>Number of source data acquisitions of the data collection is
 identified. The start and stop UTC time of data collection is identified
-in the metadata, expressed in date/time. In case of composite products,
-the dates/times of the first and last data takes and the per-pixel
-metadata Section “<a href="#sec:pxl-pacqid">Per-Pixel Metadata:
-Acquisition ID Image</a>” is provided with the product.</p>
+in the metadata, expressed in date/time. In the case of composite or
+mosaic products, the dates/times of the first and last data takes is
+provided with the product.</p>
 <h5 id="goal-requirements-4">Goal requirements:</h5>
-<p>As threshold. <!-- *None* --></p>
+<p>As threshold, but using ISO 8601 time format.</p>
 <h3 data-label="|Source Metadata" id="sec:src"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/source-metadata.yaml--><code>2.</code>
 Source Metadata</h3>
-<p>These are metadata records describing (detailing)
-<strong>each</strong> acquisition (source data) used to generate the ARD
-product. This may be one or mutliple acquisitions.</p>
+<p>Metadata describing (detailing) <strong>each</strong> acquisition
+used to generate the ARD product.</p>
+<p>Source data attribute information can refer to other products for
+higher level ARD derived from those, under the condition of their
+availability (<a href="#sec:src-daccess-src">Source Metadata: Source
+Data Access</a>).</p>
 <h4 data-label="|Source Metadata: Acquisition ID" id="sec:src-macqid"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/acquisition-id.yaml--><code>2.1.</code>
 Acquisition ID</h4>
 <p>Identifier: <code>src-macqid</code></p>
 <h5 id="threshold-requirements-5">Threshold requirements:</h5>
-<p>Each acquisition is identified through a sequential identifier in the
-metadata, e.g. acqID = 1, 2, 3.</p>
+<p>Source data attribute information are described for each acquisition
+and sequentially identified e.g. as acqID = 1, 2, 3, …</p>
 <h5 id="goal-requirements-5">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
@@ -723,8 +759,8 @@ metadata:</p>
 <li>Instrument name</li>
 </ul>
 <h5 id="goal-requirements-7">Goal requirements:</h5>
-<p>As threshold, but including a reference to the relevant <a href="https://ceos.org/mim-database/">CEOS Missions, Instruments and
-Measurements Database</a> record.</p>
+<p>As threshold, but using <a href="https://ceos.org/mim-database">CEOS
+Mission-Instruments-Measurements (MIM) database</a> as reference.</p>
 <hr />
 <h4 data-label="|Source Metadata: Source Data Acquisition Time" id="sec:src-time-src"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-source.yaml--><code>2.4.</code>
 Source Data Acquisition Time</h4>
@@ -751,25 +787,35 @@ Source Data Acquisition Parameters</h4>
 <h5 id="goal-requirements-9">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|Source Metadata: Source Data Orbit Information" id="sec:src-orbit"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit.yaml--><code>2.6.</code>
+<h4 data-label="|Source Metadata: Source Data Orbit Information" id="sec:src-orbit-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit-gslc.yaml--><code>2.6.</code>
 Source Data Orbit Information</h4>
-<p>Identifier: <code>src-orbit</code></p>
+<p>Identifier: <code>src-orbit-gslc</code></p>
 <h5 id="threshold-requirements-10">Threshold requirements:</h5>
 <p>Information related to the platform orbit used for data
 processing:</p>
 <ul>
-<li>Pass direction (asc/desc)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></li>
+<li>Pass direction (asc/desc), see note</li>
 <li>Orbit data source (e.g., predicted, definite, precise, downlinked,
 etc.)</li>
+<li>Relative orbit number, if defined</li>
 </ul>
+<p>Note:</p>
+<ol type="1">
+<li>For source data crossing the North or South Pole, it is recommended
+to produce two distinct CEOS-ARD products and to use the appropriate
+“Pass direction” in each.</li>
+</ol>
 <h5 id="goal-requirements-10">Goal requirements:</h5>
 <p>As threshold, including also:</p>
 <ul>
 <li>Platform heading angle expressed in degrees (0-360) from North</li>
 <li>Orbit data file containing state vectors (minimum of 5 state
-vectors, from 10% of scene length before start time to 10% of scene
-length after stop time)</li>
+vectors, from 10% of scene length <em>before</em> start time to 10% of
+scene length <em>after</em> stop time)</li>
 <li>Platform (mean) altitude</li>
+<li>Absolute orbit number</li>
+<li>Perpendicular baseline to virtual orbit or reference orbit used for
+phase correction</li>
 </ul>
 <hr />
 <h4 data-label="|Source Metadata: Source Data Processing Parameters" id="sec:src-propar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-parameters.yaml--><code>2.7.</code>
@@ -787,6 +833,11 @@ Source Data Processing Parameters</h4>
 <li>Range number of looks (separate values for each beam, as
 necessary)</li>
 </ul>
+<p>Note:</p>
+<ol type="1">
+<li>Azimuth and Range number of looks are not required when sources are
+CEOS-ARD or any other geocoded products</li>
+</ol>
 <h5 id="goal-requirements-11">Goal requirements:</h5>
 <p>As threshold, plus additional relevant processing parameters, e.g.,
 range- and azimuth look bandwidth and LUT applied.</p>
@@ -797,8 +848,8 @@ Source Data Image Attributes</h4>
 <h5 id="threshold-requirements-12">Threshold requirements:</h5>
 <p>Image attributes related to the source data:</p>
 <ul>
-<li>Source Data geometry (slant range/ground range)</li>
-<li>Azimuth pixel spacing [m] (alternatively, Azimuth pixel spacing can
+<li>Source data geometry (slant range/ground range/geocoded)</li>
+<li>Azimuth pixel spacing [m] (alternatively, azimuth pixel spacing can
 be provided in second [s], equivalent to the azimuth time sample
 interval)</li>
 <li>Range pixel spacing</li>
@@ -807,6 +858,13 @@ interval)</li>
 <li>Near range incident angle</li>
 <li>Far range incident angle</li>
 </ul>
+<p>Note:</p>
+<ol type="1">
+<li>For geocoded sources such as GSLC and InSAR, Azimuth and Range pixel
+spacing are replaced by line (row) and pixel (column) spacing
+information. Spatial resolution information is not required for geocoded
+sources.</li>
+</ol>
 <h5 id="goal-requirements-12">Goal requirements:</h5>
 <p>Geometry of the image footprint expressed in WGS84 in a standardised
 format (e.g., WKT).</p>
@@ -937,13 +995,10 @@ Product Bounding Box</h4>
 <h5 id="threshold-requirements-22">Threshold requirements:</h5>
 <p>Two opposite corners of the product file (bounding box, including any
 zero-fill values) are identified, expressed in the coordinate reference
-system defined in Section “<a href="#sec:prd-crs-sar">Product Metadata:
-Product Coordinate Reference System</a>”.</p>
-<p>Note:</p>
-<ol type="1">
-<li>Four corners of the product file are recommended for scenes crossing
-the Antemeridian, or the North or the South Pole.</li>
-</ol>
+system defined in <a href="#sec:prd-crs-sar">Product Metadata: Product
+Coordinate Reference System</a>.</p>
+<p>Four corners of the product file are recommended for scenes crossing
+the Antemeridian, or the North or the South Pole.</p>
 <h5 id="goal-requirements-22">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
@@ -951,8 +1006,9 @@ the Antemeridian, or the North or the South Pole.</li>
 Product Geographical Extent</h4>
 <p>Identifier: <code>prd-geoarea-sar</code></p>
 <h5 id="threshold-requirements-23">Threshold requirements:</h5>
-<p>The geometry of the SAR image footprint expressed in WGS84, in a
-standardised format (e.g., WKT Polygon).</p>
+<p>The geometry of the SAR image footprint expressed in
+longitude/latitude based on WGS84 (EPSG 4326), in a standardised format
+(e.g., WKT Polygon).</p>
 <h5 id="goal-requirements-23">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
@@ -975,8 +1031,8 @@ Product Pixel Coordinate Convention</h4>
 <p>Identifier: <code>prd-pixcoco</code></p>
 <h5 id="threshold-requirements-25">Threshold requirements:</h5>
 <p>Coordinate referring to the centre, the upper left corner, or the
-lower left corner of a pixel. Values are [pixel centre, pixel ULC or
-pixel LLC].</p>
+lower left corner of a pixel. Values are pixel centre, pixel ULC or
+pixel LLC.</p>
 <h5 id="goal-requirements-25">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
@@ -987,8 +1043,8 @@ Product Coordinate Reference System</h4>
 <p>The metadata lists the map projection (or geographical coordinates,
 if applicable) that was used and any relevant parameters required to
 geolocate data in that map projection, expressed in a standardised
-format (e.g., WKT).<br />
-Indicate EPSG code, if defined for the CRS.</p>
+format (e.g., WKT).</p>
+<p>Indicate EPSG code, if defined for the CRS.</p>
 <h5 id="goal-requirements-26">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
@@ -1000,8 +1056,8 @@ Radar Unit Look Vector</h4>
 in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called
 Earth Centred Rotating - ECR) is provided. It consists of unit vectors
 from antenna to surface pixel (i.e., positive Z component).</p>
-<p>Only required if a Radar Unit Look Vector Grid Image (see Section “<a href="#sec:pxl-radulov">Per-Pixel Metadata: Radar Unit Look Vector Grid
-Image</a>”) is <strong>not</strong> provided.</p>
+<p>Only required if the corresponding per-pixel metadata <a href="#sec:pxl-radulov-gslc">Per-Pixel Metadata: Radar Unit Look Vector
+Grid Image</a> is <strong>not</strong> provided.</p>
 <h5 id="goal-requirements-27">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
@@ -1011,61 +1067,75 @@ Slant Range Sensor to Surface</h4>
 <h5 id="threshold-requirements-28">Threshold requirements:</h5>
 <p>Slant range distance from the sensor to the surface, specified at
 centre of scene.</p>
-<p>Only required if a Slant Range Sensor to Surface Image (see
-Section “<a href="#sec:pxl-slarassi">Per-Pixel Metadata: Slant Range
-Sensor to Surface Image</a>”) is <strong>not</strong> provided.</p>
+<p>Only required if the corresponding per-pixel metadata (see <a href="#sec:pxl-slarassi-gslc">Per-Pixel Metadata: Slant Range Sensor to
+Surface Image</a>) is <strong>not</strong> provided.</p>
 <h5 id="goal-requirements-28">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
 <h4 data-label="|Product Metadata: Reference Orbit" id="sec:prd-reorbit-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/orbit-reference-gslc.yaml--><code>3.12.</code>
 Reference Orbit</h4>
 <p>Identifier: <code>prd-reorbit-gslc</code></p>
-<p><strong>Usage: When a reference orbit is used instead of a virtual
-orbit (see Section “<a href="#sec:annex-sar-topographic-phase-removal">Topographic phase
-removal</a>”).</strong></p>
+<p><strong>Usage:</strong> When a reference orbit is used instead of a
+virtual orbit (see <a href="#sec:annex-sar-topographic-phase-removal">Topographic phase
+removal</a>).</p>
 <h5 id="threshold-requirements-29">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
 <h5 id="goal-requirements-29">Goal requirements:</h5>
 <p>Provide the absolute orbit number used as reference for topographic
 phase flattening. In case a virtual orbit has been used, provide orbit
 parameters or orbit state vectors as DOI or URL.</p>
-<p>Provide scene-centred perpendicular baseline for the for the source
-data relative to the reference orbit used (for approximate use
-only).</p>
+<hr />
+<h4 data-label="|Product Metadata: Atmospheric Phase Correction" id="sec:prd-catpha"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/atmospheric-phase.yaml--><code>3.13.</code>
+Atmospheric Phase Correction</h4>
+<p>Identifier: <code>prd-catpha</code></p>
+<h5 id="threshold-requirements-30">Threshold requirements:</h5>
+<p>If applied, reference to atmospheric phase correction technique and
+parameters used.</p>
+<ul>
+<li>Methodology name</li>
+<li>Reference to methodology (text or DOI)</li>
+</ul>
+<h5 id="goal-requirements-30">Goal requirements:</h5>
+<p>As threshold. <!-- *None* --></p>
+<hr />
+<h4 data-label="|Product Metadata: Ionospheric Phase Correction" id="sec:prd-ionpha"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/ionospheric-phase.yaml--><code>3.14.</code>
+Ionospheric Phase Correction</h4>
+<p>Identifier: <code>prd-ionpha</code></p>
+<h5 id="threshold-requirements-31">Threshold requirements:</h5>
+<p>If applied, reference to ionospheric phase correction technique and
+parameters used.</p>
+<ul>
+<li>Methodology name</li>
+<li>Reference to methodology (text or DOI)</li>
+</ul>
+<h5 id="goal-requirements-31">Goal requirements:</h5>
+<p>As threshold. <!-- *None* --></p>
 <h3 data-label="|Per-Pixel Metadata" id="sec:pxl"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml--><code>4.</code>
 Per-Pixel Metadata</h3>
 <p>The following minimum metadata specifications apply to each pixel.
 Whether the metadata is provided in a single record relevant to all
-pixels, or separately for each pixel, is at the discretion of the data
+pixels or separately for each pixel is at the discretion of the data
 provider. Per-pixel metadata should allow users to <strong>discriminate
 between</strong> (choose) observations on the basis of their individual
 suitability for application.</p>
-<h4 data-label="|Per-Pixel Metadata: Cloud Optimized Formats" id="sec:pxl-cngform"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml--><code>4.1.</code>
-Cloud Optimized Formats</h4>
-<p>Identifier: <code>pxl-cngform</code></p>
-<h5 id="threshold-requirements-30">Threshold requirements:</h5>
-<p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-30">Goal requirements:</h5>
-<p>All files are provided using cloud-optimized file formats.</p>
-<hr />
-<h4 data-label="|Per-Pixel Metadata: Metadata Machine Readability" id="sec:pxl-memare-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml--><code>4.2.</code>
+<h4 data-label="|Per-Pixel Metadata: Metadata Machine Readability" id="sec:pxl-memare-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-sar.yaml--><code>4.1.</code>
 Metadata Machine Readability</h4>
 <p>Identifier: <code>pxl-memare-sar</code></p>
-<h5 id="threshold-requirements-31">Threshold requirements:</h5>
+<h5 id="threshold-requirements-32">Threshold requirements:</h5>
 <p>Metadata is provided in a structure that enables a computer algorithm
 to be used to consistently and automatically identify and extract each
-component/variable/layer for further use.</p>
-<h5 id="goal-requirements-31">Goal requirements:</h5>
-<p>As threshold, but metadata is formatted in accordance with CEOS-ARD
-SAR Metadata Specifications, v.1.1, or in a community endorsed standard
-that facilitates machine-readability, such as ISO 19115-2, Climate and
-Forecast (CF) convention, the Attribute Convention for Data Discovery
-(ACDD), etc.</p>
+component/variable for further use.</p>
+<h5 id="goal-requirements-32">Goal requirements:</h5>
+<p>As threshold, but metadata is formatted in accordance with the latest
+corresponding CEOS-ARD SAR Metadata Specifications, or in a community
+endorsed standard that facilitates machine-readability, such as ISO
+19115-2, Climate and Forecast (CF) convention and the Attribute
+Convention for Data Discovery (ACDD), etc.</p>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Data Mask Image" id="sec:pxl-damaski"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/data-mask.yaml--><code>4.3.</code>
+<h4 data-label="|Per-Pixel Metadata: Data Mask Image" id="sec:pxl-damaski"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/data-mask.yaml--><code>4.2.</code>
 Data Mask Image</h4>
 <p>Identifier: <code>pxl-damaski</code></p>
-<h5 id="threshold-requirements-32">Threshold requirements:</h5>
+<h5 id="threshold-requirements-33">Threshold requirements:</h5>
 <p>Mask image indicating:</p>
 <ul>
 <li>Valid data</li>
@@ -1081,7 +1151,15 @@ Data Mask Image</h4>
 <li>Byte Order</li>
 <li>Bit Value Representation</li>
 </ul>
-<h5 id="goal-requirements-32">Goal requirements:</h5>
+<p>Notes:</p>
+<ol type="1">
+<li>All bit value representations included in the Data Mask Image should
+be indicated in the metadata.</li>
+<li>For CEOS-ARD products created from repeat-pass acquisitions, with
+narrow orbital tube radius, a single static per pixel metadata file can
+be provided as a URL address of that unique metadata file.</li>
+</ol>
+<h5 id="goal-requirements-33">Goal requirements:</h5>
 <p>As threshold, including additional bit value representations,
 e.g.:</p>
 <ul>
@@ -1094,14 +1172,14 @@ RTC has been applied)</li>
 <li>DEM gap filling (i.e., interpolated DEM over gaps)</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Scattering Area Image" id="sec:pxl-piscata"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml--><code>4.4.</code>
+<h4 data-label="|Per-Pixel Metadata: Scattering Area Image" id="sec:pxl-piscata"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/scattering-area.yaml--><code>4.3.</code>
 Scattering Area Image</h4>
 <p>Identifier: <code>pxl-piscata</code></p>
-<p><strong>Usage: Recommended for scenes that include land
-areas.</strong></p>
-<h5 id="threshold-requirements-33">Threshold requirements:</h5>
+<p><strong>Usage:</strong> Recommended for scenes that include land
+areas.</p>
+<h5 id="threshold-requirements-34">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-33">Goal requirements:</h5>
+<h5 id="goal-requirements-34">Goal requirements:</h5>
 <p>DEM-based scattering area image used for Gamma-Nought terrain
 normalisation is provided. This quantifies the local scattering area
 used to normalise for radiometric distortions induced by terrain to the
@@ -1120,11 +1198,23 @@ divided by the local scattering area.</p>
 <li>Bits per Sample</li>
 <li>Byte Order</li>
 </ul>
+<p>Notes:</p>
+<ol type="1">
+<li>For CEOS-ARD products created from repeat-pass acquisitions, with
+narrow orbital tube radius, a single static per pixel metadata file
+could be provided as a URL address of that unique metadata file.</li>
+<li>Required for products such as NRB and POL if they are to be used as
+an input to production of composite backscatter (CB) when weighted
+averages based on the areas are used to generate composite
+backscatter.</li>
+</ol>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Local Incident Angle Image" id="sec:pxl-ploinca"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml--><code>4.5.</code>
+<h4 data-label="|Per-Pixel Metadata: Local Incident Angle Image" id="sec:pxl-ploinca"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/local-incident-angle.yaml--><code>4.4.</code>
 Local Incident Angle Image</h4>
 <p>Identifier: <code>pxl-ploinca</code></p>
-<h5 id="threshold-requirements-34">Threshold requirements:</h5>
+<h5 id="threshold-requirements-35">Threshold requirements:</h5>
+<p>Not required. <!-- *None* --></p>
+<h5 id="goal-requirements-35">Goal requirements:</h5>
 <p>DEM-based Local Incident angle image is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
@@ -1136,19 +1226,15 @@ Local Incident Angle Image</h4>
 </ul>
 <p>Note:</p>
 <ol type="1">
-<li>For maritime ORB scenes when no land areas are covered, a geoid
-model could be used for the calculation of the local incident
-angle.</li>
+<li>For CEOS-ARD products created from repeat-pass acquisitions, with
+narrow orbital tube radius, a single static per pixel metadata file can
+be provided as a URL address of that unique metadata file.</li>
 </ol>
-<h5 id="goal-requirements-34">Goal requirements:</h5>
-<p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image" id="sec:pxl-pelinca"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml--><code>4.6.</code>
+<h4 data-label="|Per-Pixel Metadata: Ellipsoidal Incident Angle Image" id="sec:pxl-pelinca"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ellipsoidal-incident-angle.yaml--><code>4.5.</code>
 Ellipsoidal Incident Angle Image</h4>
 <p>Identifier: <code>pxl-pelinca</code></p>
-<h5 id="threshold-requirements-35">Threshold requirements:</h5>
-<p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-35">Goal requirements:</h5>
+<h5 id="threshold-requirements-36">Threshold requirements:</h5>
 <p>Ellipsoidal incident angle is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
@@ -1159,19 +1245,23 @@ Ellipsoidal Incident Angle Image</h4>
 <li>Byte Order</li>
 <li>Reference Ellipsoid Name</li>
 </ul>
+<p>Required when a Radar Unit Look Vector Grid Image (see <a href="#sec:pxl-radulov-gslc">Per-Pixel Metadata: Radar Unit Look Vector
+Grid Image</a>) is not provided.</p>
 <p>Note:</p>
 <ol type="1">
-<li>For maritime ORB scenes when no land areas are covered, the
-ellipsoidal incident angle is nearly identical to the geoid based local
-incident angle.</li>
+<li>For CEOS-ARD products created from repeat-pass acquisitions, with
+narrow orbital tube radius, a single static per pixel metadata file can
+be provided as a URL address of that unique metadata file.</li>
 </ol>
+<h5 id="goal-requirements-36">Goal requirements:</h5>
+<p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Noise Power Image" id="sec:pxl-pinopow"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml--><code>4.7.</code>
+<h4 data-label="|Per-Pixel Metadata: Noise Power Image" id="sec:pxl-pinopow"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/noise-power.yaml--><code>4.6.</code>
 Noise Power Image</h4>
 <p>Identifier: <code>pxl-pinopow</code></p>
-<h5 id="threshold-requirements-36">Threshold requirements:</h5>
+<h5 id="threshold-requirements-37">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-36">Goal requirements:</h5>
+<h5 id="goal-requirements-37">Goal requirements:</h5>
 <p>Estimated Noise Equivalent
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>σ</mi><mn>0</mn></msup><annotation encoding="application/x-tex">\sigma^0</annotation></semantics></math>
 (or
@@ -1182,22 +1272,24 @@ as applicable) used for noise removal, if applied, for each channel.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">NE</mtext><msup><mi>σ</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">\text{NE}\sigma^0</annotation></semantics></math>
 and
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">NE</mtext><msup><mi>γ</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">\text{NE}\gamma^0</annotation></semantics></math>
-are both based on a simplified ellipsoid Earth model.</p>
+are both based on either an ellipsoid Earth model or the local
+topography.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
 <li>Sample Type (Gamma-Nought, Sigma-Nought, Beta-Nought)</li>
+<li>Correction model type (Ellipsoid, Topography)</li>
 <li>Data Format (GeoTIFF, HDF5, NetCDF, …)</li>
 <li>Data Type (Int, Float, …)</li>
 <li>Bits per Sample</li>
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image" id="sec:pxl-gasiri"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml--><code>4.8.</code>
+<h4 data-label="|Per-Pixel Metadata: Gamma-to-Sigma Ratio Image" id="sec:pxl-gasiri"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/gamma-sigma-ratio.yaml--><code>4.7.</code>
 Gamma-to-Sigma Ratio Image</h4>
 <p>Identifier: <code>pxl-gasiri</code></p>
-<h5 id="threshold-requirements-37">Threshold requirements:</h5>
+<h5 id="threshold-requirements-38">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-37">Goal requirements:</h5>
+<h5 id="goal-requirements-38">Goal requirements:</h5>
 <p>Ratio of the integrated area in the Gamma projection over the
 integrated area in the Sigma projection (ground). Multiplying RTC
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><annotation encoding="application/x-tex">\gamma^0_T</annotation></semantics></math>
@@ -1211,23 +1303,29 @@ by this ratio results in an estimate of RTC
 <li>Bits per Sample</li>
 <li>Byte Order</li>
 </ul>
+<p>Note:</p>
+<ol type="1">
+<li>For CEOS-ARD products created from repeat-pass acquisitions, with
+narrow orbital tube radius, a single static per pixel metadata file can
+be provided as a URL address of that unique metadata file.</li>
+</ol>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Acquisition ID Image" id="sec:pxl-pacqid"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id.yaml--><code>4.9.</code>
+<h4 data-label="|Per-Pixel Metadata: Acquisition ID Image" id="sec:pxl-pacqidm"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/acquisition-id-mosaic.yaml--><code>4.8.</code>
 Acquisition ID Image</h4>
-<p>Identifier: <code>pxl-pacqid</code></p>
-<h5 id="threshold-requirements-38">Threshold requirements:</h5>
-<p><strong>Required for multi-source product only.</strong></p>
+<p>Identifier: <code>pxl-pacqidm</code></p>
+<p><strong>Usage:</strong> Required for mosaic products only.</p>
+<h5 id="threshold-requirements-39">Threshold requirements:</h5>
 <p>Acquisition ID, or acquisition date, for each pixel is
 identified.</p>
-<p>In case of multi-temporal image stacks, use a source acquisition ID
-(i.e., Section “<a href="#sec:src-macqid">Source Metadata: Acquisition
-ID</a>”) to list contributing images.</p>
+<p>In case of multi-temporal image stacks, use source acquisition ID
+(i.e., <a href="#sec:src-macqid">Source Metadata: Acquisition ID</a>) to
+list contributing images.</p>
 <p>In case of date, data represent (integer or fractional) day offset to
 reference observation date (in UTC). Date used as reference (“Day 0”) is
 provided in the metadata.</p>
-<p>Pixels not representing a unique date (e.g., pixels averaged in image
-overlap zones) are flagged with a pre-set pixel value that is provided
-in the metadata.</p>
+<p>Pixels not representing a unique date or ID (e.g., pixels averaged in
+image overlap zones) are flagged with a pixel value referencing a date
+range that is provided in the metadata.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
 <li>Sample type (Day, Time, ID)</li>
@@ -1236,20 +1334,18 @@ in the metadata.</p>
 <li>Bits per sample</li>
 <li>Byte Order</li>
 </ul>
-<h5 id="goal-requirements-38">Goal requirements:</h5>
-<p>In case of image composites, the sources for each pixel are uniquely
-identified.</p>
+<h5 id="goal-requirements-39">Goal requirements:</h5>
+<p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Per-Pixel DEM" id="sec:pxl-pidem"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml--><code>4.10.</code>
+<h4 data-label="|Per-Pixel Metadata: Per-Pixel DEM" id="sec:pxl-pidem"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/dem.yaml--><code>4.9.</code>
 Per-Pixel DEM</h4>
 <p>Identifier: <code>pxl-pidem</code></p>
-<h5 id="threshold-requirements-39">Threshold requirements:</h5>
+<h5 id="threshold-requirements-40">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-39">Goal requirements:</h5>
+<h5 id="goal-requirements-40">Goal requirements:</h5>
 <p>Provide DEM or DSM as used during the geometric and radiometric
 processing of the SAR data, resampled to an exact geometric match in
 extent and resolution with the CEOS-ARD SAR image product.</p>
-<p>Can also be provided with ORB products containing land areas.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
 <li>Sample Type (Height)</li>
@@ -1258,72 +1354,75 @@ extent and resolution with the CEOS-ARD SAR image product.</p>
 <li>Bits per Sample</li>
 <li>Byte Order</li>
 </ul>
+<p>Note:</p>
+<ol type="1">
+<li>For CEOS-ARD products created from repeat-pass acquisitions, with
+narrow orbital tube radius, a single static per pixel metadata file can
+be provided as a URL address of that unique metadata file.</li>
+</ol>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image" id="sec:pxl-radulov"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/radar-unit-look-vector-grid.yaml--><code>4.11.</code>
+<h4 data-label="|Per-Pixel Metadata: Radar Unit Look Vector Grid Image" id="sec:pxl-radulov-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/radar-unit-look-vector-grid-gslc.yaml--><code>4.10.</code>
 Radar Unit Look Vector Grid Image</h4>
-<p>Identifier: <code>pxl-radulov</code></p>
-<h5 id="threshold-requirements-40">Threshold requirements:</h5>
+<p>Identifier: <code>pxl-radulov-gslc</code></p>
+<h5 id="threshold-requirements-41">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-40">Goal requirements:</h5>
+<h5 id="goal-requirements-41">Goal requirements:</h5>
 <p>3-D components radar unit look vector, specified at each pixel in an
 Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth
-Centred Rotating – ECR) is provided. It consists of unit vectors from
+Centred Rotating – ECR), is provided. It consists of unit vectors from
 the antenna to the surface pixel (i.e., positive Z component).</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
 <li>Sample Type (3D unit vector)</li>
 <li>Data Format (GeoTIFF, HDF5, NetCDF, …)</li>
-<li>Data Type (Int, Float, …)</li>
+<li>Data Type (Double Float, …)</li>
 <li>Bits per Sample</li>
 <li>Byte Order</li>
 </ul>
+<p>Note:</p>
+<ol type="1">
+<li>For CEOS-ARD products created from repeat-pass acquisitions, with
+narrow orbital tube radius, a single static per pixel metadata file can
+be provided as a URL address of that unique metadata file.</li>
+</ol>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Slant Range Sensor to Surface Image" id="sec:pxl-slarassi"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/slant-range.yaml--><code>4.12.</code>
+<h4 data-label="|Per-Pixel Metadata: Slant Range Sensor to Surface Image" id="sec:pxl-slarassi-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/slant-range-gslc.yaml--><code>4.11.</code>
 Slant Range Sensor to Surface Image</h4>
-<p>Identifier: <code>pxl-slarassi</code></p>
-<h5 id="threshold-requirements-41">Threshold requirements:</h5>
+<p>Identifier: <code>pxl-slarassi-gslc</code></p>
+<h5 id="threshold-requirements-42">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-41">Goal requirements:</h5>
+<h5 id="goal-requirements-42">Goal requirements:</h5>
 <p>Slant range distance from the sensor to the surface, specified at
 each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system
 (also called Earth Centred Rotating – ECR) is provided.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
-<li>Sample Type (Distance)</li>
+<li>Sample Type (Length)</li>
 <li>Data Format (GeoTIFF, HDF5, NetCDF, …)</li>
-<li>Data Type (Int, Float, …)</li>
+<li>Data Type (Float, …)</li>
 <li>Bits per Sample</li>
 <li>Byte Order</li>
 </ul>
+<p>Note:</p>
+<ol type="1">
+<li>For CEOS-ARD products created from repeat-pass acquisitions, with
+narrow orbital tube radius, a single static per pixel metadata file can
+be provided as a URL address of that unique metadata file.</li>
+</ol>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image" id="sec:pxl-pinphun"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/insar-phase-uncertainty.yaml--><code>4.13.</code>
+<h4 data-label="|Per-Pixel Metadata: InSAR Phase Uncertainty Image" id="sec:pxl-pinphun"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/insar-phase-uncertainty.yaml--><code>4.12.</code>
 InSAR Phase Uncertainty Image</h4>
 <p>Identifier: <code>pxl-pinphun</code></p>
-<h5 id="threshold-requirements-42">Threshold requirements:</h5>
-<p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-42">Goal requirements:</h5>
-<p>Estimate of uncertainty in InSAR phase is provided, such as finite
-signal to noise ratio, quantization noise, or DEM error. Identification
-of which error sources are included will be provided as DOI/URL
-reference or brief description. It represents statistical variation from
-known noise sources only.</p>
-<p>File format specifications/contents provided in metadata:</p>
-<ul>
-<li>Sample Type (Angle)</li>
-<li>Data Format (GeoTIFF, HDF5, NetCDF, …)</li>
-<li>Data Type (Int, Float, …)</li>
-<li>Bits per Sample</li>
-<li>Byte Order</li>
-</ul>
-<hr />
-<h4 data-label="|Per-Pixel Metadata: Atmospheric Phase Correction Image" id="sec:pxl-atphaci"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/atmospheric-phase-correction.yaml--><code>4.14.</code>
-Atmospheric Phase Correction Image</h4>
-<p>Identifier: <code>pxl-atphaci</code></p>
 <h5 id="threshold-requirements-43">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
 <h5 id="goal-requirements-43">Goal requirements:</h5>
-<p>Phase correction value at each pixel, if applied. DOI/URL reference
-to algorithm or brief description is provided.</p>
+<p>Estimates of uncertainty in InSAR phase is provided, such as finite
+signal to noise ratio, quantization noise, platform state vector
+accuracy, or DEM error. Identification of which error sources are
+included will be provided as DOI/URL reference or brief description. It
+represents statistical variation from known noise sources only. In case
+both the wrapped and unwrapped interferograms are supplied, specify
+which interferogram the uncertainty image corresponds to.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
 <li>Sample Type (Angle)</li>
@@ -1333,19 +1432,34 @@ to algorithm or brief description is provided.</p>
 <li>Byte Order</li>
 </ul>
 <hr />
-<h4 data-label="|Per-Pixel Metadata: Ionospheric Phase Correction Image" id="sec:pxl-piopha"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ionospheric-phase-correction.yaml--><code>4.15.</code>
-Ionospheric Phase Correction Image</h4>
-<p>Identifier: <code>pxl-piopha</code></p>
+<h4 data-label="|Per-Pixel Metadata: Atmospheric Phase Correction Image" id="sec:pxl-atphaci"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/atmospheric-phase-correction.yaml--><code>4.13.</code>
+Atmospheric Phase Correction Image</h4>
+<p>Identifier: <code>pxl-atphaci</code></p>
 <h5 id="threshold-requirements-44">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
 <h5 id="goal-requirements-44">Goal requirements:</h5>
-<p>Phase correction value at each pixel, if applied. DOI/URL reference
-to algorithm or brief description is provided.</p>
+<p>Phase correction value at each pixel, if applied.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
 <li>Sample Type (Angle)</li>
 <li>Data Format (GeoTIFF, HDF5, NetCDF, …)</li>
-<li>Data Type (Int, Float, …)</li>
+<li>Data Type (Float, …)</li>
+<li>Bits per Sample</li>
+<li>Byte Order</li>
+</ul>
+<hr />
+<h4 data-label="|Per-Pixel Metadata: Ionospheric Phase Correction Image" id="sec:pxl-piopha"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/ionospheric-phase-correction.yaml--><code>4.14.</code>
+Ionospheric Phase Correction Image</h4>
+<p>Identifier: <code>pxl-piopha</code></p>
+<h5 id="threshold-requirements-45">Threshold requirements:</h5>
+<p>Not required. <!-- *None* --></p>
+<h5 id="goal-requirements-45">Goal requirements:</h5>
+<p>Phase correction value at each pixel, if applied.</p>
+<p>File format specifications/contents provided in metadata:</p>
+<ul>
+<li>Sample Type (Angle)</li>
+<li>Data Format (GeoTIFF, HDF5, NetCDF, …)</li>
+<li>Data Type (Float, …)</li>
 <li>Bits per Sample</li>
 <li>Byte Order</li>
 </ul>
@@ -1359,28 +1473,19 @@ for the per-pixel metadata, information regarding data format
 specification needs to be provided for each record. The requirements
 below must be met for all pixels/samples/observations in a
 collection.</p>
-<h4 data-label="|Radiometrically Corrected Measurements: Cloud Optimized Formats" id="sec:rcm-cngform"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/cloud-optimized-formats.yaml--><code>5.1.</code>
-Cloud Optimized Formats</h4>
-<p>Identifier: <code>rcm-cngform</code></p>
-<h5 id="threshold-requirements-45">Threshold requirements:</h5>
-<p>Not required. <!-- *None* --></p>
-<h5 id="goal-requirements-45">Goal requirements:</h5>
-<p>All files are provided using cloud-optimized file formats.</p>
-<hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)" id="sec:rcm-backsca-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-gslc.yaml--><code>5.2.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Backscatter Measurements (GSLC)" id="sec:rcm-backsca-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/backscatter-gslc.yaml--><code>5.1.</code>
 Backscatter Measurements (GSLC)</h4>
 <p>Identifier: <code>rcm-backsca-gslc</code></p>
 <h5 id="threshold-requirements-46">Threshold requirements:</h5>
-<p>Radiometric and Phase Terrain-flattened Gamma-Nought backscatter
-coefficient
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><annotation encoding="application/x-tex">\gamma^0_T</annotation></semantics></math>),
-in complex number format, is provided for each polarization (e.g., HH,
-HV, VV, VH).</p>
+<p>Backscatter coefficient, in complex number format, is provided for
+each polarization (e.g., HH, HV, VV, VH). GSLC phase is
+terrain-flattened using Earth ellipsoid and digital elevation or surface
+models.</p>
 <p>File format specifications/contents provided in metadata:</p>
 <ul>
-<li>Measurement Type (Gamma-Nought)</li>
-<li>Backscatter Expression Convention (linear amplitude, linear
-power*)</li>
+<li>Measurement Type (Gamma-Nought, Sigma-Nought, or Beta-Nought)</li>
+<li>Backscatter Expression Convention (linear amplitude, or linear power
+[see note])</li>
 <li>Polarization (HH, HV, VV, VH)</li>
 <li>Data Format (GeoTIFF, HDF5, NetCDF, …)</li>
 <li>Data Type (Int, Float, …)</li>
@@ -1390,13 +1495,16 @@ power*)</li>
 <p>Note:</p>
 <ol type="1">
 <li>Transformation to the logarithm decibel scale is not required or
-desired as this step can be easily completed by the user if
-necessary.</li>
+desired as this step can be completed by the user if necessary.</li>
 </ol>
 <h5 id="goal-requirements-46">Goal requirements:</h5>
-<p>As threshold. <!-- *None* --></p>
+<p><strong>Radiometric and Phase Terrain-flattened</strong> Gamma-Nought
+backscatter coefficient
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><annotation encoding="application/x-tex">\gamma^0_T</annotation></semantics></math>),
+in complex number format, is provided for each polarization (e.g., HH,
+HV, VV, VH).</p>
 <hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Scaling Conversion" id="sec:rcm-scaconv"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/scaling-conversion.yaml--><code>5.3.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Scaling Conversion" id="sec:rcm-scaconv"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/scaling-conversion.yaml--><code>5.2.</code>
 Scaling Conversion</h4>
 <p>Identifier: <code>rcm-scaconv</code></p>
 <h5 id="threshold-requirements-47">Threshold requirements:</h5>
@@ -1407,13 +1515,13 @@ to convert compressed data (int8/int16/float16) to float32.</p>
 <h5 id="goal-requirements-47">Goal requirements:</h5>
 <p>As threshold, but use of float32.</p>
 <hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Noise Removal" id="sec:rcm-noiser"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/noise-removal.yaml--><code>5.4.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Noise Removal" id="sec:rcm-noiser"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/noise-removal.yaml--><code>5.3.</code>
 Noise Removal</h4>
 <p>Identifier: <code>rcm-noiser</code></p>
 <h5 id="threshold-requirements-48">Threshold requirements:</h5>
-<p>Flag if noise removal has been applied (Y/N). Metadata should include
-the noise removal algorithm and reference to the algorithm as URL or
-DOI.</p>
+<p>Flag if noise removal (see note) has been applied (Y/N). Metadata
+should include the noise removal algorithm and reference to the
+algorithm as URL or DOI.</p>
 <p>Note:</p>
 <ol type="1">
 <li>Thermal noise removal and image border noise removal to remove
@@ -1422,33 +1530,16 @@ overall scene noise and scene edge artefacts, respectively.</li>
 <h5 id="goal-requirements-48">Goal requirements:</h5>
 <p>As threshold. <!-- *None* --></p>
 <hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm" id="sec:rcm-radtalg-gslc"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algo-gslc.yaml--><code>5.5.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Radiometric Terrain Correction Algorithm" id="sec:rcm-radtalg-min"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/radiometric-terrain-algorithm-minimal.yaml--><code>5.4.</code>
 Radiometric Terrain Correction Algorithm</h4>
-<p>Identifier: <code>rcm-radtalg-gslc</code></p>
+<p>Identifier: <code>rcm-radtalg-min</code></p>
 <h5 id="threshold-requirements-49">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
 <h5 id="goal-requirements-49">Goal requirements:</h5>
-<p>Adjustments were made for terrain by modelling the local contributing
-scattering area using the preferred choice of a published peer-reviewed
-algorithm to produce radiometrically terrain corrected (RTC)
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><annotation encoding="application/x-tex">\gamma^0_T</annotation></semantics></math>
-backscatter estimates.</p>
-<p>Metadata references, e.g.</p>
-<ul>
-<li>a citable peer-reviewed algorithm</li>
-<li>technical documentation regarding the algorithm used to generate the
-backscatter estimates is expressed as URLs or DOIs</li>
-<li>the sources of auxiliary data used to make corrections</li>
-</ul>
 <p>Require resolution of DEM better than the output product resolution
 when applying terrain corrections.</p>
-<p>Note:</p>
-<ol type="1">
-<li>Examples of technical documentation include an Algorithm,
-Theoretical Basis Document, product user guide, etc.</li>
-</ol>
 <hr />
-<h4 data-label="|Radiometrically Corrected Measurements: Radiometric Accuracy" id="sec:rcm-radacc-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml--><code>5.6.</code>
+<h4 data-label="|Radiometrically Corrected Measurements: Radiometric Accuracy" id="sec:rcm-radacc-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-sar.yaml--><code>5.5.</code>
 Radiometric Accuracy</h4>
 <p>Identifier: <code>rcm-radacc-sar</code></p>
 <h5 id="threshold-requirements-50">Threshold requirements:</h5>
@@ -1462,7 +1553,7 @@ information is provided as document referenced as URL or DOI. SI
 traceability is achieved.</p>
 <h3 data-label="|Geometric Corrections" id="sec:gcor"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml--><code>6.</code>
 Geometric Corrections</h3>
-<p>The geometric corrections are steps that are taken to place the
+<p>Geometric corrections are steps that are taken to place the
 measurement accurately on the surface of the Earth (that is, to
 geolocate the measurement) allowing measurements taken through time to
 be compared. This section specifies any geometric correction
@@ -1486,31 +1577,33 @@ data</li>
 <p>Note:</p>
 <ol type="1">
 <li>Examples of technical documentation can include e.g., an Algorithm
-Theoretical Basis Document (ATBD) or a product user guide.</li>
+Theoretical Basis Document (ATBD), or a product user guide.</li>
 </ol>
 <hr />
 <h4 data-label="|Geometric Corrections: Digital Elevation Model" id="sec:gcor-cdem"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/dem.yaml--><code>6.2.</code>
 Digital Elevation Model</h4>
 <p>Identifier: <code>gcor-cdem</code></p>
-<p><strong>Usage: For products including land areas.</strong></p>
+<p><strong>Usage:</strong> For products including land areas.</p>
 <h5 id="threshold-requirements-52">Threshold requirements:</h5>
-<ul>
+<ol type="a">
 <li>During ortho-rectification, the data provider shall use the same DEM
 that was used for the radiometric terrain flattening to ensure
 consistency of the data stack.</li>
-<li>Provide reference to Digital Elevation Model used for geometric
-terrain correction.</li>
-<li>Provide reference to Earth Gravitational Model (EGM) used for
-geometric correction.</li>
-</ul>
+<li>Provide reference to the Digital Elevation Model used for geometric
+terrain correction. For mosaic or composite products, specify the DEM
+used for each input data source, if different.</li>
+<li>Provide reference to Earth Gravitational Model (EGM) if used for
+geometric correction. For mosaic or composite products, specify the EGM
+used for each input data source, if different.</li>
+</ol>
 <h5 id="goal-requirements-52">Goal requirements:</h5>
-<ul>
+<ol type="a">
 <li>A DEM with comparable or better resolution to the resolution of the
 output CEOS-ARD product shall be used if available. Else, the upsampled
 DEM is identified.</li>
 <li>Resampling method used for preparation of the DEM.</li>
 <li>Method used for resampling the EGM.</li>
-</ul>
+</ol>
 <hr />
 <h4 data-label="|Geometric Corrections: Geometric Accuracy" id="sec:gcor-geomacc-sar"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/geometric-accuracy-sar.yaml--><code>6.3.</code>
 Geometric Accuracy</h4>
@@ -1520,17 +1613,19 @@ Geometric Accuracy</h4>
 for terrain and to enable interoperability between radar sensors.</p>
 <p>The absolute geolocation error (ALE) for a sensor is typically
 assessed through analysis of Single Look Complex (SLC) imagery and
-measured along the slant range and azimuth directions (case A: SLC
-ALE).</p>
-<p>The end-to-end “ARD” ALE of the final CEOS-ARD product could be
-measured directly in the final image product in the chosen map
-projection, i.e., in the map coordinate directions: e.g., Northing and
-Easting (case B: ARD ALE).</p>
-<p>Providing accuracy estimates based on measurements following at least
-one scheme (A or B or both) meets the threshold requirement.</p>
+measured along the slant range and azimuth directions (case A: SLC ALE).
+The end-to-end “ARD” ALE of the final CEOS-ARD product could be measured
+directly in the final image product in the chosen map projection, i.e.,
+in the map coordinate directions: e.g., Northing and Easting (case B:
+ARD ALE). Providing accuracy estimates based on measurements following
+at least one scheme (A or B or both) meets the threshold
+requirement.</p>
 <p>Estimates of the ALE is provided as a bias and a standard deviation,
 with (Case A) SLC ALE expressed in slant range and azimuth, and (Case B)
 ARD ALE expressed in map projection dimensions.</p>
+<p>For composite products, when sources come from different SAR
+platforms or different beam modes, provide averaged ALE or averaged ARD
+ALE.</p>
 <p>Notes:</p>
 <ol type="1">
 <li>This assessment is often made through comparison of measured corner
@@ -1539,7 +1634,11 @@ some cases, other mission calibration/validation results may be
 used.</li>
 <li>The ALE is not typically assessed for every processed image, but
 through an ALE assessment by the data processing team characterizing all
-or (usually a subset) of the generated products.</li>
+or (usually a suitably representative subset) of the generated
+products.</li>
+<li>For new SAR missions, as long as calibration/validation reports are
+not available, values can be set to NaN and provide a DOI or URL link to
+pre-launch mission specification document.</li>
 </ol>
 <h5 id="goal-requirements-53">Goal requirements:</h5>
 <p>Output product sub-sample accuracy should be less than or equal to
@@ -1552,13 +1651,16 @@ Geometric Refined Accuracy</h4>
 <h5 id="threshold-requirements-54">Threshold requirements:</h5>
 <p>Not required. <!-- *None* --></p>
 <h5 id="goal-requirements-54">Goal requirements:</h5>
-<p>Values provided under Section “<a href="#sec:gcor-geomacc-sar">Geometric Corrections: Geometric
-Accuracy</a>” are provided by the SAR mission Cal/Val team.</p>
+<p>Values provided under <a href="#sec:gcor-geomacc-sar">Geometric
+Corrections: Geometric Accuracy</a> are provided by the SAR mission
+Cal/Val team.</p>
 <p>CEOS-ARD processing steps could include method refining the geometric
 accuracy, such as cross-correlation of the SAR data in slant range with
 a SAR scene simulated from a DSM or DEM.</p>
 <p>Methodology used (name and reference), quality flag, geometric
 standard deviation values should be provided.</p>
+<p>For composite products, provide averaged ALE or averaged ARD ALE
+estimated from all sources.</p>
 <hr />
 <h4 data-label="|Geometric Corrections: Gridding Convention" id="sec:gcor-gridconv"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/gridding-convention.yaml--><code>6.5.</code>
 Gridding Convention</h4>
@@ -1645,12 +1747,37 @@ evolution of community expectations, which are both normal and
 inevitable in a developing field. Over time, <em>goal</em>
 specifications may (and subject to due process) become accepted as
 <em>threshold</em> requirements.</p>
+<h3 data-label="|Compatibility and Interoperability of CEOS-ARD SAR Products" id="sec:intro-sar-differences"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/introduction/sar-differences.yaml-->Compatibility
+and Interoperability of CEOS-ARD SAR Products</h3>
+<p>As can be seen from the individual PFS descriptions, only a few minor
+details in terms of generated parameters and/or the addition of
+supplemental data distinguish these CEOS-ARD products. In part, they are
+to a large extent all backward-compatible. For example, POL products
+implicitly include NRB products, while a coastal NRB or POL product can
+simply be made compatible with other ORB products by applying
+gamma-to-sigma conversion. Just as GSLC can be converted to NRB (given
+that terrain-flattening was applied, a goal-requirement for GSLC, the
+inverse conversion can be made true by including the optional
+topographically flattened phase. In this way a NRB or POL product can be
+used like a GSLC for InSAR applications. Consequently, it becomes
+obvious that they all can follow a common approach, in terms of content
+and structure, in order to optimize their interoperability.</p>
 <div style="page-break-after: always;"></div>
 <h2 id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cf_conventions_2025" class="csl-entry" role="listitem">
+Eaton, Brian, Jonathan Gregory, Bob Drach, et al. 2025. <em>NetCDF
+Climate and Forecast (CF) Metadata Conventions</em>. Version 1.13. CF
+Community. <a href="https://doi.org/10.5281/zenodo.17801666">https://doi.org/10.5281/zenodo.17801666</a>.
+</div>
 <div id="ref-iso19115_2_2009" class="csl-entry" role="listitem">
 International Organization for Standardization. 2009. <em><span class="nocase">Geographic information — Metadata — Part 2: Extensions
 for imagery and gridded data</span></em>. Standard. International
+Organization for Standardization.
+</div>
+<div id="ref-iso8601_1_2019" class="csl-entry" role="listitem">
+International Organization for Standardization. 2019. <em><span class="nocase">Date and time — Representations for information
+interchange — Part 1: Basic rules</span></em>. Standard. International
 Organization for Standardization.
 </div>
 <div id="ref-lee2009" class="csl-entry" role="listitem">
@@ -1658,12 +1785,6 @@ Lee, Jong-Sen, Jen-Hung Wen, T. L. Ainsworth, Kun-Shan Chen, and A. J.
 Chen. 2009. <span>“Improved Sigma Filter for Speckle Filtering of SAR
 Imagery.”</span> <em>IEEE Transactions on Geoscience and Remote
 Sensing</em> 47 (1): 202–13. <a href="https://doi.org/10.1109/TGRS.2008.2002881">https://doi.org/10.1109/TGRS.2008.2002881</a>.
-</div>
-<div id="ref-raney2012" class="csl-entry" role="listitem">
-Raney, Russell, Joshua Cahill, G. Patterson, and D. Bussey. 2012.
-<span>“The m-Chi Decomposition of Hybrid Dual-Polarimetric Radar Data
-with Application to Lunar Craters.”</span> <em>Journal of Geophysical
-Research (Planets)</em> 117 (May). <a href="https://doi.org/10.1029/2011JE003986">https://doi.org/10.1029/2011JE003986</a>.
 </div>
 <div id="ref-shiroma2022" class="csl-entry" role="listitem">
 Shiroma, Gustavo H. X., Marco Lavalle, and Sean M. Buckley. 2022.
@@ -1675,12 +1796,6 @@ and Remote Sensing</em> 60: 1–23. <a href="https://doi.org/10.1109/TGRS.2022.3
 Small, David. 2011. <span>“Flattening Gamma: Radiometric Terrain
 Correction for SAR Imagery.”</span> <em>IEEE Transactions on Geoscience
 and Remote Sensing</em> 49 (8): 3081–93. <a href="https://doi.org/10.1109/TGRS.2011.2120616">https://doi.org/10.1109/TGRS.2011.2120616</a>.
-</div>
-<div id="ref-yamaguchi2011" class="csl-entry" role="listitem">
-Yamaguchi, Yoshio, Akinobu Sato, Wolfgang-Martin Boerner, Ryoichi Sato,
-and Hiroyoshi Yamada. 2011. <span>“Four-Component Scattering Power
-Decomposition with Rotation of Coherency Matrix.”</span> <em>Geoscience
-and Remote Sensing, IEEE Transactions on</em> 49 (July): 2251–58. <a href="https://doi.org/10.1109/TGRS.2010.2099124">https://doi.org/10.1109/TGRS.2010.2099124</a>.
 </div>
 <div id="ref-zebker2017" class="csl-entry" role="listitem">
 Zebker, Howard. 2017. <span>“User-Friendly InSAR Data Products: Fast and
@@ -1702,8 +1817,8 @@ Applied Earth Observations and Remote Sensing</em> PP (May): 1–8. <a href="htt
 </div>
 <div style="page-break-after: always;"></div>
 <h2 id="annexes">Annexes</h2>
-<h3 data-label="|General Processing Map" id="sec:annex-sar-general-processing-roadmap"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-general-processing-roadmap.yaml-->General
-Processing Map</h3>
+<h3 data-label="|General Processing Roadmap" id="sec:annex-sar-general-processing-roadmap"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-general-processing-roadmap.yaml-->General
+Processing Roadmap</h3>
 <p>The radiometric interoperability of CEOS-ARD SAR products is ensured
 by a common processing chain during production. The recommended
 processing roadmap involves the following steps:</p>
@@ -1717,8 +1832,8 @@ required.</li>
 fidelity.</li>
 <li>Convert Single-Look-Complex (SLC) radiometric channel(s) to
 intensity NRB, ORB and POL and in addition for POL, the cross-product
-element(s) of the covariance as shown in Section “<a href="#sec:annex-sar-pol-covmat">Normalised Covariance Matrices
-(CovMat)</a>”.</li>
+element(s) of the covariance as shown in annex “Normalised Covariance
+Matrices (CovMat)” of the applicable PFS.</li>
 <li>Perform radiometric terrain correction (gamma backscatter convention
 terrain-flattening) on the covariance matrix by applying the local
 surface normalisation factor to each backscatter measurement element
@@ -1735,8 +1850,8 @@ performed to meet optimal output sample spacing before the geometric
 correction step. No speckle filtering or multi-looking is performed for
 GSLC products.</li>
 <li>For GSLC products, the topographic phase is estimated relative to a
-reference orbit and removed from the SLC data <span class="citation" data-cites="zebker2010 zebker2017">(<a href="#ref-zebker2010" role="doc-biblioref">Zebker et al. 2010</a>; <a href="#ref-zebker2017" role="doc-biblioref">Zebker 2017</a>)</span> (see Section “<a href="#sec:annex-sar-topographic-phase-removal">Topographic phase
-removal</a>”)</li>
+reference orbit and removed from the SLC data <span class="citation" data-cites="zebker2010 zebker2017">(<a href="#ref-zebker2010" role="doc-biblioref">Zebker et al. 2010</a>; <a href="#ref-zebker2017" role="doc-biblioref">Zebker 2017</a>)</span> (see annex “Topographic
+phase removal” in the applicable PFS)</li>
 <li>Geometric terrain correction (relative to geoid for ORB) is applied
 to the normalized backscatter measurement data. For POL, the resampling
 methodology should be nearest-neighbour, bilinear or average in order to
@@ -1865,8 +1980,9 @@ defined as the reference orbit. With this second approach, it is
 important to always use the same orbit cycle (or simulated orbit) for
 all the CEOS-ARD produced for a mission, in order to preserve the
 relevant compensated phase in between them. Providing absolute reference
-orbit number information in the metadata (item 1.7.15) allows users to
-validate the InSAR feasibility in between CEOS-ARD products.</p>
+orbit number information in the metadata (see requirement “Reference
+Orbit” in the applicable PFS) allows users to validate the InSAR
+feasibility in between CEOS-ARD products.</p>
 <p><span id="eq:sar-topographic-phase-removal-eq3"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Flattended</mtext><mi>_</mi><mtext mathvariant="normal">SLC</mtext><mi>_</mi><mn>2</mn></mrow></msub><mo>=</mo><msub><mi>φ</mi><mrow><mtext mathvariant="normal">SLC</mtext><mi>_</mi><mn>2</mn></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Topo</mtext><mi>_</mi><mtext mathvariant="normal">OrbRef</mtext><mo>−</mo><mn>2</mn></mrow></msub><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>3</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \varphi_{\text{Flattended}\_\text{SLC}\_2} = \varphi_{\text{SLC}\_2} - \Delta\varphi_{\text{Topo}\_\text{OrbRef}-2}
 \qquad{(3)}</annotation></semantics></math></span></p>
@@ -1884,13 +2000,24 @@ product.</p>
 Phase per-pixel data as follows:</p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">NRB:</mtext><mspace width="1.0em"></mspace><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><mo>=</mo><mo stretchy="false" form="prefix">|</mo><mi>G</mi><mi>S</mi><mi>L</mi><mi>C</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\text{NRB:} \quad \gamma_T^0 = |GSLC|^2 </annotation></semantics></math></p>
 <p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Flattended Phase:</mtext><mspace width="1.0em"></mspace><msub><mi>φ</mi><mtext mathvariant="normal">Flattended</mtext></msub><mo>=</mo><mrow><mi mathvariant="normal">arg</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>G</mi><mi>S</mi><mi>L</mi><mi>C</mi><mo stretchy="false" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">\text{Flattended Phase:} \quad \varphi_{\text{Flattended}} = \arg (GSLC) </annotation></semantics></math></p>
-<p>For POL product, the Flattened phase needs also to be subtracted from
-the complex number phase of the off-diagonal elements of the covariance
-matrix.</p>
-<p>Demonstration:</p>
+<p>For the POL product, the Flattened Phase is defined for a specific
+polarisation. Since off-diagonal elements of the covariance matrix
+contain the relative phase between two polarizations, other
+polarization(s) Flattened Phase can be estimated by subtracting the
+complex number phase of the off-diagonal elements from reference
+polarization Flattened phase. As for example, if the reference Flattened
+Phase is for HH polarization
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ϕ</mi><mrow><mi>H</mi><mi>H</mi></mrow></msub><annotation encoding="application/x-tex">\phi_{HH}</annotation></semantics></math>),
+then the Flattened Phase for VV polarization is
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>ϕ</mi><mrow><mi>V</mi><mi>V</mi></mrow></msub><mo>=</mo><msub><mi>ϕ</mi><mrow><mi>H</mi><mi>H</mi></mrow></msub><mo>−</mo><mrow><mi mathvariant="normal">arg</mi><mo>⁡</mo></mrow><mspace width="-0.167em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>H</mi><mi>H</mi><mspace width="0.167em"></mspace><mi>V</mi><msup><mi>V</mi><mo>*</mo></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\phi_{VV} = \phi_{HH} - \arg\!\left(HH \, VV^{*}\right)</annotation></semantics></math>.
+Nonetheless, since the elements of the covariance matrix have been
+averaged, providing individual polarization Flattened Phase images under
+requirement “Flattened Phase” in the applicable PFS is more
+accurate.</p>
+<p>InSAR from [GSLC] Demonstration:</p>
 <p>From CEOS-ARD flattened SAR products, InSAR processing can be easily
 performed without dealing with topographic features and orbital sensor
-position, as for example with two GSLC products</p>
+position, as for example with two [GSLC] products</p>
 <p><span id="eq:sar-topographic-phase-removal-eq4"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Flattened</mtext><mi>_</mi><mtext mathvariant="normal">GSLC</mtext><mi>_</mi><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>φ</mi><mrow><mtext mathvariant="normal">SLC</mtext><mi>_</mi><mn>1</mn></mrow></msub><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Topo</mtext><mi>_</mi><mtext mathvariant="normal">OrbRef</mtext><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>φ</mi><mrow><mtext mathvariant="normal">SLC</mtext><mi>_</mi><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>φ</mi><mrow><mtext mathvariant="normal">DEM</mtext><mi>_</mi><mtext mathvariant="normal">OrbRef</mtext></mrow></msub><mo>−</mo><msub><mi>φ</mi><mrow><mtext mathvariant="normal">DEM</mtext><mi>_</mi><mtext mathvariant="normal">SLC</mtext><mi>_</mi><mn>1</mn></mrow></msub><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>4</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \varphi_{\text{Flattened}\_\text{GSLC}\_1} = \varphi_{\text{SLC}\_1} - \Delta\varphi_{\text{Topo}\_\text{OrbRef}-1} = \varphi_{\text{SLC}\_1} - \varphi_{\text{DEM}\_\text{OrbRef}} - \varphi_{\text{DEM}\_\text{SLC}\_1}
 \qquad{(4)}</annotation></semantics></math></span></p>
@@ -1913,7 +2040,7 @@ position, as for example with two GSLC products</p>
 \qquad{(9)}</annotation></semantics></math></span></p>
 <p>Where
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">SLC</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mtext mathvariant="normal">SLC</mtext><mi>_</mi><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\Delta\varphi_{\text{SLC}\_1-\text{SLC}\_2}</annotation></semantics></math>
-can be express as Eq. <a href="#eq:sar-topographic-phase-removal-eq1">1</a>, which gives</p>
+can be expressed as Eq. <a href="#eq:sar-topographic-phase-removal-eq1">1</a>, which gives</p>
 <p><span id="eq:sar-topographic-phase-removal-eq10"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">CARD</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mtext mathvariant="normal">CARD</mtext><mi>_</mi><mn>2</mn></mrow></msub><mo>=</mo><mo stretchy="false" form="prefix">(</mo><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Topo</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Disp</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Noise</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mn>2</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mo>−</mo><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Topo</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mn>2</mn></mrow></msub><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>10</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = (\Delta \varphi_{\text{Topo}\_1-2} + \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2}) - \Delta\varphi_{\text{Topo}\_1-2}
 \qquad{(10)}</annotation></semantics></math></span></p>
@@ -1922,96 +2049,14 @@ contain a topographic phase and is already unwrapped (at least over
 stable areas). It is only function of the surface displacement and of
 the noise term. Depending on the reference DEM and the satellite orbital
 state vector accuracies, some residual topographic phase could be
-present. Atmospheric (item 2.15) and ionospheric (item 2.16) phase
-corrections could be performed during the production of CEOS-ARD
-products, which reduces the differential phase noise in an InSAR
-analysis.</p>
+present. Atmospheric (see <a href="#sec:pxl-atphaci">Per-Pixel Metadata:
+Atmospheric Phase Correction Image</a>) and ionospheric (see <a href="#sec:pxl-piopha">Per-Pixel Metadata: Ionospheric Phase Correction
+Image</a>) phase corrections could be performed during the production of
+CEOS-ARD products, which reduces the differential phase noise in an
+InSAR analysis.</p>
 <p><span id="eq:sar-topographic-phase-removal-eq11"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">CARD</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mtext mathvariant="normal">CARD</mtext><mi>_</mi><mn>2</mn></mrow></msub><mo>=</mo><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Disp</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mn>2</mn></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>φ</mi><mrow><mtext mathvariant="normal">Noise</mtext><mi>_</mi><mn>1</mn><mo>−</mo><mn>2</mn></mrow></msub><mo stretchy="false" form="postfix">)</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>11</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2})
 \qquad{(11)}</annotation></semantics></math></span></p>
-<h3 data-label="|Normalised Covariance Matrices (CovMat)" id="sec:annex-sar-pol-covmat"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-pol-covmat.yaml-->Normalised
-Covariance Matrices (CovMat)</h3>
-<p>In order to preserve the inter-channel polarimetric phase and thus
-the full information content of coherent dual-pol and fully polarimetric
-data, the covariance matrix is proposed as the data storage format.
-Covariance matrices are generated from the complex cross product of
-polarimetric channels, as shown in Eq. <a href="#eq:sar-pol-covmat-eq1">12</a> for fully polarimetric data (C3)
-and in Eq. <a href="#eq:sar-pol-covmat-eq3">14</a> for dual polarization
-data (C2). Since these matrices are complex symmetrical, only the upper
-diagonal elements (bold elements) need to be stored in the ARD
-database.</p>
-<p><strong>Fully polarimetric</strong></p>
-<p><span id="eq:sar-pol-covmat-eq1"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi><mn>3</mn><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mi>𝐇</mi><mi>𝐇</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd><mtd columnalign="center" style="text-align: center"><msqrt><mn>2</mn></msqrt><mo>⋅</mo><mi>𝐇</mi><mi>𝐇</mi><mo>⋅</mo><mi>𝐇</mi><msup><mi>𝐕</mi><mo>*</mo></msup></mtd><mtd columnalign="center" style="text-align: center"><mi>𝐇</mi><mi>𝐇</mi><mo>⋅</mo><mi>𝐕</mi><msup><mi>𝐕</mi><mo>*</mo></msup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><msqrt><mn>2</mn></msqrt><mo>⋅</mo><mi>H</mi><mi>V</mi><mo>⋅</mo><mi>H</mi><msup><mi>H</mi><mo>*</mo></msup></mtd><mtd columnalign="center" style="text-align: center"><mn>2</mn><mo>⋅</mo><mo stretchy="false" form="prefix">|</mo><mi>𝐇</mi><mi>𝐕</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd><mtd columnalign="center" style="text-align: center"><msqrt><mn>2</mn></msqrt><mo>⋅</mo><mi>𝐇</mi><mi>𝐕</mi><mo>⋅</mo><mi>𝐇</mi><msup><mi>𝐕</mi><mo>*</mo></msup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>V</mi><mi>V</mi><mo>⋅</mo><mi>H</mi><msup><mi>H</mi><mo>*</mo></msup></mtd><mtd columnalign="center" style="text-align: center"><msqrt><mn>2</mn></msqrt><mo>⋅</mo><mi>V</mi><mi>V</mi><mo>⋅</mo><mi>H</mi><msup><mi>V</mi><mo>*</mo></msup></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mi>𝐕</mi><mi>𝐕</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>12</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-C3 = \begin{bmatrix}
-| \mathbf{H} \mathbf{H} |^2 &amp; \sqrt{2} \cdot \mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* &amp; \mathbf{H}\mathbf{H} \cdot \mathbf{V}\mathbf{V}^* \\
-\sqrt{2} \cdot HV \cdot HH^* &amp; 2 \cdot |\mathbf{H}\mathbf{V}|^2 &amp; \sqrt{2} \cdot \mathbf{H}\mathbf{V} \cdot \mathbf{H}\mathbf{V}^* \\
-VV \cdot HH^* &amp; \sqrt{2} \cdot VV \cdot HV^* &amp; |\mathbf{V}\mathbf{V}|^2
-\end{bmatrix}
-\qquad{(12)}</annotation></semantics></math></span></p>
-<p>Where HV = VH, under the reciprocity assumption. | | and * mean
-respectively complex modulus and the complex conjugate.</p>
-<p><strong>Dual polarization</strong></p>
-<p><span id="eq:sar-pol-covmat-eq2"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">HH-HV:</mtext><mspace width="1.0em"></mspace><mi>C</mi><mn>2</mn><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mi>𝐇</mi><mi>𝐇</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd><mtd columnalign="center" style="text-align: center"><mi>𝐇</mi><mi>𝐇</mi><mo>⋅</mo><mi>𝐇</mi><msup><mi>𝐕</mi><mo>*</mo></msup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>H</mi><mi>V</mi><mo>⋅</mo><mi>H</mi><msup><mi>H</mi><mo>*</mo></msup></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mi>𝐇</mi><mi>𝐕</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>13</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-\text{HH-HV:} \quad C2 = \begin{bmatrix}
-| \mathbf{H} \mathbf{H} |^2 &amp; \mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* \\
-HV \cdot HH^* &amp;  |\mathbf{H}\mathbf{V}|^2
-\end{bmatrix}
-\qquad{(13)}</annotation></semantics></math></span></p>
-<p><span id="eq:sar-pol-covmat-eq3"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">VV-VH:</mtext><mspace width="1.0em"></mspace><mi>C</mi><mn>2</mn><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mi>𝐕</mi><mi>𝐇</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd><mtd columnalign="center" style="text-align: center"><mi>𝐕</mi><mi>𝐇</mi><mo>⋅</mo><mi>𝐕</mi><msup><mi>𝐇</mi><mo>*</mo></msup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>V</mi><mi>H</mi><mo>⋅</mo><mi>V</mi><msup><mi>H</mi><mo>*</mo></msup></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mi>𝐕</mi><mi>𝐕</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>14</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-\text{VV-VH:} \quad C2 = \begin{bmatrix}
-| \mathbf{V} \mathbf{H} |^2 &amp; \mathbf{V}\mathbf{H} \cdot \mathbf{V}\mathbf{H}^* \\
-VH \cdot VH^* &amp;  |\mathbf{V}\mathbf{V}|^2
-\end{bmatrix}
-\qquad{(14)}</annotation></semantics></math></span></p>
-<p><span id="eq:eq:sar-pol-covmat-eq4"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">CH-CV:</mtext><mspace width="1.0em"></mspace><mi>C</mi><mn>2</mn><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mi>𝐂</mi><mi>𝐇</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd><mtd columnalign="center" style="text-align: center"><mi>𝐂</mi><mi>𝐇</mi><mo>⋅</mo><mi>𝐂</mi><msup><mi>𝐕</mi><mo>*</mo></msup></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mi>C</mi><mi>V</mi><mo>⋅</mo><mi>C</mi><msup><mi>H</mi><mo>*</mo></msup></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mi>𝐂</mi><mi>𝐕</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>15</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-\text{CH-CV:} \quad C2 = \begin{bmatrix}
-| \mathbf{C} \mathbf{H} |^2 &amp; \mathbf{C}\mathbf{H} \cdot \mathbf{C}\mathbf{V}^* \\
-CV \cdot CH^* &amp;  |\mathbf{C}\mathbf{V}|^2
-\end{bmatrix}
-\qquad{(15)}</annotation></semantics></math></span></p>
-<p>Where CH and CV refer to dual polarization transmitting a circular
-polarized signal. [CH, CV] can be replaced by [LH, LV] or [RH, RV] for
-left (L) or right (R) hand circular transmission respectively, although
-RCM will offer only right-hand circular transmission. The coherent HH-VV
-configuration available on TerraSAR-X could also be represented as C2
-format.</p>
-<p>Polarimetric decomposition methods like <span class="citation" data-cites="yamaguchi2011">(<a href="#ref-yamaguchi2011" role="doc-biblioref">Yamaguchi et al. 2011</a>)</span> for fully
-polarimetric, or m-chi <span class="citation" data-cites="raney2012">(<a href="#ref-raney2012" role="doc-biblioref">Raney et al. 2012</a>)</span>
-for compact polarimetric data, can be applied directly on averaged
-(speckle filtered) C3 and C2 matrices respectively. These decompositions
-enhance scattering information, bring it to a more comprehensible level
-to end-users, and raise the performance of thematic classification
-methodologies. For SAR products that were acquired with single
-polarization the use of the covariance matrix does not result in
-superfluous storage requirements, since only the matrix elements that
-are populated are retained and the diagonal matrix elements are the
-backscatter intensities. Thus, a single channel intensity product would
-yield only one matrix element and the storage needs would not
-change.</p>
-<p>In order to ease the data structure and the metadata in between C3
-and C2, Eq. <a href="#eq:sar-pol-covmat-eq1">12</a> should be redefined
-as Eq. <a href="#eq:sar-pol-covmat-eq5">16</a>. Users will have to take
-care of this non-standard representation when applying their
-polarimetric analytic tools. “&lt; &gt;” means that ARD matrix elements
-are speckle filtered. Eq. <a href="#eq:sar-pol-covmat-eq5">16</a> is
-valid both for dual-linear and quad polarization.</p>
-<p><span id="eq:sar-pol-covmat-eq5"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">C3 modified:</mtext><mspace width="1.0em"></mspace><mi>C</mi><msub><mn>3</mn><mi>m</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">|</mo><mo stretchy="false" form="prefix">⟨</mo><mi>𝐇</mi><mi>𝐇</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">⟩</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mi>𝐇</mi><mi>𝐇</mi><mo>⋅</mo><mi>𝐇</mi><msup><mi>𝐕</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">⟩</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mi>𝐇</mi><mi>𝐇</mi><mo>⋅</mo><mi>𝐕</mi><msup><mi>𝐕</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">⟩</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mi>H</mi><mi>V</mi><mo>⋅</mo><mi>H</mi><msup><mi>H</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">⟩</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mo stretchy="false" form="prefix">|</mo><mi>𝐇</mi><mi>𝐕</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">⟩</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mi>𝐇</mi><mi>𝐕</mi><mo>⋅</mo><mi>𝐕</mi><msup><mi>𝐕</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">⟩</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mi>V</mi><mi>V</mi><mo>⋅</mo><mi>H</mi><msup><mi>H</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">⟩</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mi>V</mi><mi>V</mi><mo>⋅</mo><mi>H</mi><msup><mi>V</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">⟩</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mo stretchy="false" form="prefix">|</mo><mi>𝐕</mi><mi>𝐕</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">⟩</mo></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>16</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-\text{C3 modified:} \quad C3_m = \begin{bmatrix}
-| \langle \mathbf{H} \mathbf{H} |^2 \rangle &amp; \langle\mathbf{H}\mathbf{H} \cdot \mathbf{H}\mathbf{V}^* \rangle &amp; \langle\mathbf{H}\mathbf{H} \cdot \mathbf{V}\mathbf{V}^* \rangle\\
-\langle HV \cdot HH^* \rangle &amp; \langle|\mathbf{H}\mathbf{V}|^2 \rangle &amp; \langle\mathbf{H}\mathbf{V} \cdot \mathbf{V}\mathbf{V}^* \rangle \\
-\langle VV \cdot HH^* \rangle&amp; \langle VV \cdot HV^* \rangle &amp; \langle|\mathbf{V}\mathbf{V}|^2 \rangle
-\end{bmatrix}
-\qquad{(16)}</annotation></semantics></math></span></p>
-<p>Furthermore, for compact polarimetric data, it is recommended to
-store them, by simple transformation, under the circular-circular basis,
-since RR and RL polarizations (Eq. <a href="#eq:sar-pol-covmat-eq6">17</a>) permit faster and more intuitive
-RGB visualizations (R=RR, G=RR/(RR+RL), B= RL).</p>
-<p><span id="eq:sar-pol-covmat-eq6"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">CH-CV (C2 circular):</mtext><mspace width="1.0em"></mspace><mi>C</mi><msub><mn>2</mn><mi>c</mi></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">[</mo><mtable><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mo stretchy="false" form="prefix">|</mo><mi>𝐑</mi><mi>𝐑</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">⟩</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mi>𝐑</mi><mi>𝐑</mi><mo>⋅</mo><mi>𝐑</mi><msup><mi mathvariant="bold">¬</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">⟩</mo></mtd></mtr><mtr><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mi>R</mi><mi>L</mi><mo>⋅</mo><mi>R</mi><msup><mi>R</mi><mo>*</mo></msup><mo stretchy="false" form="postfix">⟩</mo></mtd><mtd columnalign="center" style="text-align: center"><mo stretchy="false" form="prefix">⟨</mo><mo stretchy="false" form="prefix">|</mo><mi>𝐑</mi><mi>𝐋</mi><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo stretchy="false" form="postfix">⟩</mo></mtd></mtr></mtable><mo stretchy="true" form="postfix">]</mo></mrow><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>17</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
-\text{CH-CV (C2 circular):} \quad C2_c = \begin{bmatrix}
-\langle | \mathbf{R} \mathbf{R} |^2 \rangle &amp; \langle\mathbf{R}\mathbf{R} \cdot \mathbf{R}\mathbf{¬}^* \rangle \\
-\langle RL \cdot RR^* \rangle &amp;  \langle|\mathbf{R}\mathbf{L}|^2\rangle
-\end{bmatrix}
-\qquad{(17)}</annotation></semantics></math></span></p>
 <h3 data-label="|Geocoded Single-Look Complex example" id="sec:annex-sar-gslc-example"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-gslc-example.yaml-->Geocoded
 Single-Look Complex example</h3>
 <p>In contrast to basic NRB and <strong>POL products</strong>, CEOS-ARD
@@ -2020,21 +2065,21 @@ complex data format for which local topographic InSAR phases, relative
 to a reference orbit <span class="citation" data-cites="zebker2010 zebker2017">(<a href="#ref-zebker2010" role="doc-biblioref">Zebker et al. 2010</a>; <a href="#ref-zebker2017" role="doc-biblioref">Zebker 2017</a>)</span>, have been removed. Having
 a volume of GSLC products acquired over repeat cycles, already
 radiometric and phase terrain corrected and geocoded (Figures <a href="#fig:sar-gslc-example-fig1a">1</a>, <a href="#fig:sar-gslc-example-fig1b">2</a>), allows user-friendly
-production of a first iteration of the InSAR coherence (Eq. <a href="#eq:sar-gslc-example-eq1">18</a>, Figure <a href="#fig:sar-gslc-example-fig1c">3</a>) and differential phases
-(Eq. <a href="#eq:sar-gslc-example-eq2">19</a>, Figure <a href="#fig:sar-gslc-example-fig1d">4</a>) in between GSLC pairs, simply
+production of a first iteration of the InSAR coherence (Eq. <a href="#eq:sar-gslc-example-eq1">12</a>, Figure <a href="#fig:sar-gslc-example-fig1c">3</a>) and differential phases
+(Eq. <a href="#eq:sar-gslc-example-eq2">13</a>, Figure <a href="#fig:sar-gslc-example-fig1d">4</a>) in between GSLC pairs, simply
 by applying local averaging window over the product of a GSLC product
 (GSLC1) with the complex conjugate of a second GSLC (GSLC2) divided by
 their local averaged intensities. These intermediate files could be used
 for coherent change detection analysis and surface displacement
 monitoring.</p>
-<p><span id="eq:sar-gslc-example-eq1"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Complex coherence:</mtext><mspace width="1.0em"></mspace><mi>ρ</mi><mo>=</mo><mfrac><mrow><mo>∑</mo><mo stretchy="false" form="prefix">[</mo><mi>G</mi><mi>S</mi><mi>L</mi><msub><mi>C</mi><mn>1</mn></msub><mo>*</mo><mi>c</mi><mi>o</mi><mi>n</mi><mi>j</mi><mo stretchy="false" form="prefix">(</mo><mi>G</mi><mi>S</mi><mi>L</mi><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mrow><msqrt><mrow><mo>∑</mo><mo stretchy="false" form="prefix">|</mo><mi>G</mi><mi>S</mi><mi>L</mi><msub><mi>C</mi><mn>1</mn></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo>*</mo><mo>∑</mo><mo stretchy="false" form="prefix">|</mo><mi>G</mi><mi>S</mi><mi>L</mi><msub><mi>C</mi><mn>2</mn></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow></msqrt></mfrac><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>18</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+<p><span id="eq:sar-gslc-example-eq1"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Complex coherence:</mtext><mspace width="1.0em"></mspace><mi>ρ</mi><mo>=</mo><mfrac><mrow><mo>∑</mo><mo stretchy="false" form="prefix">[</mo><mi>G</mi><mi>S</mi><mi>L</mi><msub><mi>C</mi><mn>1</mn></msub><mo>*</mo><mi>c</mi><mi>o</mi><mi>n</mi><mi>j</mi><mo stretchy="false" form="prefix">(</mo><mi>G</mi><mi>S</mi><mi>L</mi><msub><mi>C</mi><mn>2</mn></msub><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mrow><msqrt><mrow><mo>∑</mo><mo stretchy="false" form="prefix">|</mo><mi>G</mi><mi>S</mi><mi>L</mi><msub><mi>C</mi><mn>1</mn></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup><mo>*</mo><mo>∑</mo><mo stretchy="false" form="prefix">|</mo><mi>G</mi><mi>S</mi><mi>L</mi><msub><mi>C</mi><mn>2</mn></msub><msup><mo stretchy="false" form="prefix">|</mo><mn>2</mn></msup></mrow></msqrt></mfrac><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>12</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \text{Complex coherence:} \quad \rho = \frac{\sum [ GSLC_1 * conj (GSLC_2)]}{ \sqrt{ \sum |GSLC_1|^2 * \sum |GSLC_2|^2}}
-\qquad{(18)}</annotation></semantics></math></span></p>
-<p>The InSAR differential phase (Eq. <a href="#eq:sar-gslc-example-eq2">19</a>) is the argument of the complex
-coherence estimated with Eq. <a href="#eq:sar-gslc-example-eq1">18</a>.</p>
-<p><span id="eq:sar-gslc-example-eq2"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">InSAR differential phase:</mtext><mspace width="1.0em"></mspace><mi>φ</mi><mo>=</mo><mrow><mi mathvariant="normal">arg</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>ρ</mi><mo stretchy="false" form="postfix">)</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>19</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+\qquad{(12)}</annotation></semantics></math></span></p>
+<p>The InSAR differential phase (Eq. <a href="#eq:sar-gslc-example-eq2">13</a>) is the argument of the complex
+coherence estimated with Eq. <a href="#eq:sar-gslc-example-eq1">12</a>.</p>
+<p><span id="eq:sar-gslc-example-eq2"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">InSAR differential phase:</mtext><mspace width="1.0em"></mspace><mi>φ</mi><mo>=</mo><mrow><mi mathvariant="normal">arg</mi><mo>⁡</mo></mrow><mo stretchy="false" form="prefix">(</mo><mi>ρ</mi><mo stretchy="false" form="postfix">)</mo><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>13</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \text{InSAR differential phase:} \quad \varphi =\arg(\rho)
-\qquad{(19)}</annotation></semantics></math></span></p>
+\qquad{(13)}</annotation></semantics></math></span></p>
 <p>Some advanced NRB or POL products could include per-pixel “Flattened
 Phase” data. This “Flattened Phase” enables the possibility to perform
 InSAR analysis as with two GSLC products. As for example, from two
@@ -2042,12 +2087,12 @@ different NRB products (NRB1) and (NRB2), acquired over repeat cycles
 (i.e., on the same relative orbit), containing
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>γ</mi><mi>T</mi><mn>0</mn></msubsup><annotation encoding="application/x-tex">\gamma_T^0</annotation></semantics></math>
 and their corresponding “Flattened Phase” (FPh1) and (FPh2) per-pixel
-data, the complex InSAR coherence (Eq. <a href="#eq:sar-gslc-example-eq3">20</a>) can be estimated in the similar
-manner as Eq. <a href="#eq:sar-gslc-example-eq1">18</a> for GSLC
+data, the complex InSAR coherence (Eq. <a href="#eq:sar-gslc-example-eq3">14</a>) can be estimated in the similar
+manner as Eq. <a href="#eq:sar-gslc-example-eq1">12</a> for GSLC
 products.</p>
-<p><span id="eq:sar-gslc-example-eq3"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Complex coherence:</mtext><mspace width="1.0em"></mspace><msub><mi>ρ</mi><mrow><mi>N</mi><mi>R</mi><mi>B</mi></mrow></msub><mo>=</mo><mfrac><mrow><mo>∑</mo><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><msqrt><mrow><mi>N</mi><mi>R</mi><msub><mi>B</mi><mn>1</mn></msub></mrow></msqrt><mo>⋅</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⋅</mo><mi>F</mi><mi>P</mi><mi>h</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>c</mi><mi>o</mi><mi>n</mi><mi>j</mi><mo stretchy="false" form="prefix">(</mo><msqrt><mrow><mi>N</mi><mi>R</mi><msub><mi>B</mi><mn>2</mn></msub></mrow></msqrt><mo>⋅</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⋅</mo><mi>F</mi><mi>P</mi><mi>h</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mrow><msqrt><mrow><mo>∑</mo><mi>N</mi><mi>R</mi><msub><mi>B</mi><mn>1</mn></msub><mo>*</mo><mo>∑</mo><mi>N</mi><mi>R</mi><msub><mi>B</mi><mn>2</mn></msub></mrow></msqrt></mfrac><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>20</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+<p><span id="eq:sar-gslc-example-eq3"><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mtext mathvariant="normal">Complex coherence:</mtext><mspace width="1.0em"></mspace><msub><mi>ρ</mi><mrow><mi>N</mi><mi>R</mi><mi>B</mi></mrow></msub><mo>=</mo><mfrac><mrow><mo>∑</mo><mo stretchy="false" form="prefix">[</mo><mo stretchy="false" form="prefix">(</mo><msqrt><mrow><mi>N</mi><mi>R</mi><msub><mi>B</mi><mn>1</mn></msub></mrow></msqrt><mo>⋅</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⋅</mo><mi>F</mi><mi>P</mi><mi>h</mi><mn>1</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo>⋅</mo><mi>c</mi><mi>o</mi><mi>n</mi><mi>j</mi><mo stretchy="false" form="prefix">(</mo><msqrt><mrow><mi>N</mi><mi>R</mi><msub><mi>B</mi><mn>2</mn></msub></mrow></msqrt><mo>⋅</mo><msup><mi>e</mi><mrow><mi>i</mi><mo>⋅</mo><mi>F</mi><mi>P</mi><mi>h</mi><mn>2</mn></mrow></msup><mo stretchy="false" form="postfix">)</mo><mo stretchy="false" form="postfix">]</mo></mrow><msqrt><mrow><mo>∑</mo><mi>N</mi><mi>R</mi><msub><mi>B</mi><mn>1</mn></msub><mo>*</mo><mo>∑</mo><mi>N</mi><mi>R</mi><msub><mi>B</mi><mn>2</mn></msub></mrow></msqrt></mfrac><mspace width="2.0em"></mspace><mrow><mo stretchy="false" form="prefix">(</mo><mn>14</mn><mo stretchy="false" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \text{Complex coherence:} \quad \rho_{NRB} = \frac{\sum [ (\sqrt{NRB_1} \cdot e^{i\cdot FPh1}) \cdot conj (\sqrt{NRB_2} \cdot e^{i\cdot FPh2})]}{ \sqrt{ \sum NRB_1 * \sum NRB_2}}
-\qquad{(20)}</annotation></semantics></math></span></p>
+\qquad{(14)}</annotation></semantics></math></span></p>
 <p>The following figures show Sentinel-1 GSLC product examples over
 Death Valley National Park, California, US:</p>
 <figure id="fig:sar-gslc-example-fig1a">
@@ -2090,13 +2135,5 @@ the GSLC product:</p>
 <img role="img" aria-label="Figure 7: z unit component" src="data:image/png;base64,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" alt="Figure 7: z unit component" />
 <figcaption aria-hidden="true">Figure 7: z unit component</figcaption>
 </figure>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>For data crossing the North or South Pole, it is
-recommended to produce two distinct products and to use the appropriate
-“Pass direction” in each.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 </body>
 </html>

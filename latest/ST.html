@@ -745,7 +745,7 @@ quantification.</p>
 Per-Pixel Metadata</h3>
 <p>The following minimum metadata specifications apply to each pixel.
 Whether the metadata is provided in a single record relevant to all
-pixels, or separately for each pixel, is at the discretion of the data
+pixels or separately for each pixel is at the discretion of the data
 provider. Per-pixel metadata should allow users to <strong>discriminate
 between</strong> (choose) observations on the basis of their individual
 suitability for application.</p>
@@ -849,9 +849,7 @@ Temperature of the land, expressed as Kelvin</p>
 temperature.</li>
 </ol>
 <h5 id="goal-requirements-25">Goal requirements:</h5>
-<p>Surface temperature measurements are SI traceable (see also
-Section “<a href="#sec:meta-trace-st">General Metadata:
-Traceability</a>”).</p>
+<p>Surface temperature measurements are SI traceable (see also <a href="#sec:meta-trace-st">General Metadata: Traceability</a>).</p>
 <hr />
 <h4 data-label="|Radiometric and Atmospheric Corrections: Corrections for Atmosphere and Emissivity" id="sec:rac-catems"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/atmosphere-emissivity.yaml--><code>3.2.</code>
 Corrections for Atmosphere and Emissivity</h4>
@@ -885,7 +883,7 @@ i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).</li>
 </ol>
 <h3 data-label="|Geometric Corrections" id="sec:gcor"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml--><code>4.</code>
 Geometric Corrections</h3>
-<p>The geometric corrections are steps that are taken to place the
+<p>Geometric corrections are steps that are taken to place the
 measurement accurately on the surface of the Earth (that is, to
 geolocate the measurement) allowing measurements taken through time to
 be compared. This section specifies any geometric correction
@@ -903,9 +901,9 @@ radial root mean square error (rRMSE) or equivalent in Circular Error
 Probability (CEP) relative to a defined reference image.</p>
 <p>A consistent gridding/sampling frame is necessary to meet this
 requirement.</p>
-<p>Relevant metadata must be provided under Section “<a href="#sec:meta-geoacc-st">General Metadata: Geometric Accuracy of the
-Data</a>” and Section “<a href="#sec:meta-instru-optical">General
-Metadata: Instrument</a>”.</p>
+<p>Relevant metadata must be provided under <a href="#sec:meta-geoacc-st">General Metadata: Geometric Accuracy of the
+Data</a> and <a href="#sec:meta-instru-optical">General Metadata:
+Instrument</a>.</p>
 <p>Note:</p>
 <ol type="1">
 <li>The threshold level will not necessarily enable interoperability
@@ -918,9 +916,9 @@ independent terrestrial referencing system (such as a national map
 grid).</p>
 <p>A consistent gridding/sampling frame is necessary to meet this
 requirement.</p>
-<p>Relevant metadata must be provided under Section “<a href="#sec:meta-geoacc-st">General Metadata: Geometric Accuracy of the
-Data</a>” and Section “<a href="#sec:meta-instru-optical">General
-Metadata: Instrument</a>”.</p>
+<p>Relevant metadata must be provided under <a href="#sec:meta-geoacc-st">General Metadata: Geometric Accuracy of the
+Data</a> and <a href="#sec:meta-instru-optical">General Metadata:
+Instrument</a>.</p>
 <p>Note:</p>
 <ol type="1">
 <li>This requirement is intended to enable interoperability between
@@ -1008,13 +1006,13 @@ https://doi.org/<a href="https://doi.org/10.1016/j.rse.2012.12.008">https://doi.
 </div>
 </div>
 <div style="page-break-after: always;"></div>
-<h2 id="annexes">Annexes</h2>
+<h2 id="annex">Annex</h2>
 <h3 data-label="|CEOS-ARD Requirement Examples (Surface Temperature)" id="sec:annex-st-metadata-examples"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/st-metadata-examples.yaml-->CEOS-ARD
 Requirement Examples (Surface Temperature)</h3>
 <h3 id="general-metadata">General Metadata</h3>
 <h4 id="traceability">Traceability</h4>
-<p>Refers to Section “<a href="#sec:meta-trace-st">General Metadata:
-Traceability</a>”</p>
+<p>Refers to <a href="#sec:meta-trace-st">General Metadata:
+Traceability</a></p>
 <p>Example of measurement traceability in metadata:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">band</span> <span class="ot">add_offset=</span><span class="st">&quot;0.000000&quot;</span> <span class="ot">category=</span><span class="st">&quot;image&quot;</span> <span class="ot">data_type=</span><span class="st">&quot;INT16&quot;</span> <span class="ot">fill_value=</span><span class="st">&quot;-9999&quot;</span> <span class="ot">name=</span><span class="st">&quot;ST&quot;</span> <span class="ot">nlines=</span><span class="st">&quot;5000&quot;</span> <span class="ot">nsamps=</span><span class="st">&quot;5000&quot;</span> <span class="ot">product=</span><span class="st">&quot;st&quot;</span> <span class="ot">scale_factor=</span><span class="st">&quot;0.100000&quot;</span>&gt;</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">short_name</span>&gt;LC08ST&lt;/<span class="kw">short_name</span>&gt;</span>
@@ -1040,8 +1038,8 @@ Traceability</a>”</p>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">production_date</span>&gt;2018-11-30T04:47:38Z&lt;/<span class="kw">production_date</span>&gt;</span>
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">band</span>&gt;</span></code></pre></div>
 <h4 id="data-collection-time">Data Collection Time</h4>
-<p>Refers to Section “<a href="#sec:meta-time-st">General Metadata: Data
-Collection Time</a>”</p>
+<p>Refers to <a href="#sec:meta-time-st">General Metadata: Data
+Collection Time</a></p>
 <p>Example of scene center time (UTC):</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">scene_center_time</span>&gt;17:23:57.201686Z&lt;/<span class="kw">scene_center_time</span>&gt;</span></code></pre></div>
 <p>The granule start and end times are contained in the XML
@@ -1059,8 +1057,8 @@ metadata:</p>
 <p>Per pixel times are derived using information from the “time_in.nc”
 and “indices_in.nc” datafiles following a prescribed recipe.</p>
 <h4 id="geographical-area">Geographical Area</h4>
-<p>Refers to Section “<a href="#sec:meta-geoarea-st">General Metadata:
-Geographical Area</a>”</p>
+<p>Refers to <a href="#sec:meta-geoarea-st">General Metadata:
+Geographical Area</a></p>
 <p>Example of the bounding coordinates in decimal degrees (WGS84):</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">bounding_coordinates</span>&gt;</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">west</span>&gt;-99.9109607425&lt;/<span class="kw">west</span>&gt;</span>
@@ -1073,8 +1071,8 @@ Geographical Area</a>”</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">corner_point</span> <span class="ot">location=</span><span class="st">&quot;UL&quot;</span> <span class="ot">x=</span><span class="st">&quot;-315585.000000&quot;</span> <span class="ot">y=</span><span class="st">&quot;2264805.000000&quot;</span>/&gt;</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">corner_point</span> <span class="ot">location=</span><span class="st">&quot;LR&quot;</span> <span class="ot">x=</span><span class="st">&quot;-165585.000000&quot;</span> <span class="ot">y=</span><span class="st">&quot;2114805.000000&quot;</span>/&gt;</span></code></pre></div>
 <h4 id="map-projection">Map Projection</h4>
-<p>Refers to Section “<a href="#sec:meta-mapproj-st">General Metadata:
-Map Projection</a>”</p>
+<p>Refers to <a href="#sec:meta-mapproj-st">General Metadata: Map
+Projection</a></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">projection_information</span> <span class="ot">datum=</span><span class="st">&quot;WGS84&quot;</span> <span class="ot">projection=</span><span class="st">&quot;AEA&quot;</span> <span class="ot">units=</span><span class="st">&quot;meters&quot;</span>&gt;</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">corner_point</span> <span class="ot">location=</span><span class="st">&quot;UL&quot;</span> <span class="ot">x=</span><span class="st">&quot;-315585.000000&quot;</span> <span class="ot">y=</span><span class="st">&quot;2264805.000000&quot;</span>/&gt;</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">corner_point</span> <span class="ot">location=</span><span class="st">&quot;LR&quot;</span> <span class="ot">x=</span><span class="st">&quot;-165585.000000&quot;</span> <span class="ot">y=</span><span class="st">&quot;2114805.000000&quot;</span>/&gt;</span>
@@ -1089,8 +1087,8 @@ Map Projection</a>”</p>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">albers_proj_params</span>&gt;</span>
 <span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">projection_information</span>&gt;</span></code></pre></div>
 <h4 id="geometric-correction-source">Geometric Correction Source</h4>
-<p>Refers to Section “<a href="#sec:meta-geocorm-st">General Metadata:
-Geometric Correction Methods</a>”</p>
+<p>Refers to <a href="#sec:meta-geocorm-st">General Metadata: Geometric
+Correction Methods</a></p>
 <p>Example of elevation source:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">elevation_source</span>&gt;GLS2000&lt;/<span class="kw">elevation_source</span>&gt;</span></code></pre></div>
 <p>The XML wrapper provides the source of the geometric calibration:</p>
@@ -1104,14 +1102,14 @@ Geometric Correction Methods</a>”</p>
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">sentinel-safe:resource</span>&gt;</span></code></pre></div>
 <h4 id="geometric-accuracy-of-the-data">Geometric Accuracy of the
 Data</h4>
-<p>Refers to Section “<a href="#sec:meta-geoacc-st">General Metadata:
-Geometric Accuracy of the Data</a>”</p>
+<p>Refers to <a href="#sec:meta-geoacc-st">General Metadata: Geometric
+Accuracy of the Data</a></p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">geometric_rmse_model</span>&gt;9.021&lt;/<span class="kw">geometric_rmse_model</span>&gt;</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">geometric_rmse_model_x</span>&gt;6.864&lt;/<span class="kw">geometric_rmse_model_x</span>&gt;</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">geometric_rmse_model_y</span>&gt;5.854&lt;/<span class="kw">geometric_rmse_model_y</span>&gt;</span></code></pre></div>
 <h4 id="instrument">Instrument</h4>
-<p>Refers to Section “<a href="#sec:meta-instru-optical">General
-Metadata: Instrument</a>”</p>
+<p>Refers to <a href="#sec:meta-instru-optical">General Metadata:
+Instrument</a></p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">satellite</span>&gt;LANDSAT_8&lt;/<span class="kw">satellite</span>&gt;</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">instrument</span>&gt;OLI/TIRS_Combined&lt;/<span class="kw">instrument</span>&gt;</span></code></pre></div>
 <p>The XML wrapper provides the instrument details:</p>
@@ -1131,37 +1129,37 @@ Metadata: Instrument</a>”</p>
 <span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">metadataWrap</span>&gt;</span>
 <span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">metadataObject</span>&gt;</span></code></pre></div>
 <h4 id="sensor-calibration">Sensor Calibration</h4>
-<p>Refers to Section “<a href="#sec:meta-sencal-optical">General
-Metadata: Sensor Calibration</a>”</p>
+<p>Refers to <a href="#sec:meta-sencal-optical">General Metadata: Sensor
+Calibration</a></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">cpf_name</span>&gt;LC08CPF_20180101_20180331_01.02&lt;/<span class="kw">cpf_name</span>&gt;</span></code></pre></div>
 <h4 id="algorithms">Algorithms</h4>
-<p>Refers to Section “<a href="#sec:meta-malgos-st">General Metadata:
-Algorithms</a>”</p>
+<p>Refers to <a href="#sec:meta-malgos-st">General Metadata:
+Algorithms</a></p>
 <p>Example for Surface Temperature algorithm version:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">app_version</span>&gt;st_1.3.0&lt;/<span class="kw">app_version</span>&gt;</span></code></pre></div>
 <h4 id="auxiliary-data">Auxiliary Data</h4>
-<p>Refers to Section “<a href="#sec:meta-auxdat-optical">General
-Metadata: Auxiliary Data</a>”</p>
+<p>Refers to <a href="#sec:meta-auxdat-optical">General Metadata:
+Auxiliary Data</a></p>
 <p>All Auxiliary Datafiles (ADFs) are listed in the XML wrapper:</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentinel-safe:resource</span> <span class="ot">name=</span><span class="st">&quot;S3__SL_2_LSTBAX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3&quot;</span> <span class="ot">role=</span><span class="st">&quot;SLSTR LST biome data file&quot;</span> <span class="ot">version=</span><span class="st">&quot;06.16&quot;</span>&gt;</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentinel-safe:resource</span> <span class="ot">name=</span><span class="st">&quot;S3__SL_2_LSTVAX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3&quot;</span> <span class="ot">role=</span><span class="st">&quot;SLSTR LST vegetation fraction data file&quot;</span> <span class="ot">version=</span><span class="st">&quot;06.16&quot;</span>&gt;</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">sentinel-safe:resource</span> <span class="ot">name=</span><span class="st">&quot;S3__SL_2_LSTWAX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3&quot;</span> <span class="ot">role=</span><span class="st">&quot;SLSTR LST water vapour data file&quot;</span> <span class="ot">version=</span><span class="st">&quot;06.16&quot;</span>&gt;</span></code></pre></div>
 <h4 id="processing-chain-provenance">Processing Chain Provenance</h4>
-<p>Refers to Section “<a href="#sec:meta-proprov-st">General Metadata:
-Processing Chain Provenance</a>”</p>
+<p>Refers to <a href="#sec:meta-proprov-st">General Metadata: Processing
+Chain Provenance</a></p>
 <p>Processing chain provenance information is stored in the XML wrapper
 under the following tag:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">metadataObject</span> <span class="ot">ID=</span><span class="st">&quot;processing&quot;</span> <span class="ot">classification=</span><span class="st">&quot;PROVENANCE&quot;</span> <span class="ot">category=</span><span class="st">&quot;PDI&quot;</span>&gt;</span></code></pre></div>
 <h4 id="overall-data-quality">Overall Data Quality</h4>
-<p>Refers to Section “<a href="#sec:meta-odqual-st">General Metadata:
-Overall Data Quality</a>”</p>
+<p>Refers to <a href="#sec:meta-odqual-st">General Metadata: Overall
+Data Quality</a></p>
 <p>Overall data quality information is stored in the XML wrapper under
 the following tag:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">metadataObject</span> <span class="ot">ID=</span><span class="st">&quot;measurementQualityInformation&quot;</span> <span class="ot">classification=</span><span class="st">&quot;DESCRIPTION&quot;</span> <span class="ot">category=</span><span class="st">&quot;DMD&quot;</span>&gt;</span></code></pre></div>
 <h3 id="per-pixel-metadata">Per-Pixel Metadata</h3>
 <h4 id="no-data">No Data</h4>
-<p>Refers to Section “<a href="#sec:pxl-pinodat">Per-Pixel Metadata: No
-Data</a>”</p>
+<p>Refers to <a href="#sec:pxl-pinodat">Per-Pixel Metadata: No
+Data</a></p>
 <p>Example of the fill_value specified for each band in metadata:</p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">band</span> <span class="ot">add_offset=</span><span class="st">&quot;0.000000&quot;</span> <span class="ot">category=</span><span class="st">&quot;image&quot;</span> <span class="ot">data_type=</span><span class="st">&quot;INT16&quot;</span> <span class="ot">fill_value=</span><span class="st">&quot;-9999&quot;</span> <span class="ot">name=</span><span class="st">&quot;ST&quot;</span> <span class="ot">nlines=</span><span class="st">&quot;5000&quot;</span> <span class="ot">nsamps=</span><span class="st">&quot;5000&quot;</span> <span class="ot">product=</span><span class="st">&quot;st&quot;</span> <span class="ot">scale_factor=</span><span class="st">&quot;0.100000&quot;</span>&gt;</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">short_name</span>&gt;LC08ST&lt;/<span class="kw">short_name</span>&gt;</span>
@@ -1181,8 +1179,8 @@ field has an “unfilled” flag:</p>
   confidence_in:flag_masks = 1US, 2US, 4US, 8US, 16US, 32US, 64US, 128US, 256US, 512US, 1024US, 2048US, 4096US, 8192US, 16384US, 32768US ;
   confidence_in:flag_meanings = &quot;coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing&quot; ;</code></pre>
 <h4 id="incomplete-testing">Incomplete Testing</h4>
-<p>Refers to Section “<a href="#sec:pxl-pincot">Per-Pixel Metadata:
-Incomplete Testing</a>”</p>
+<p>Refers to <a href="#sec:pxl-pincot">Per-Pixel Metadata: Incomplete
+Testing</a></p>
 <p>The “flags_in.nc” datafile contains per-pixel information on “no /
 bad data through saturation / incomplete testing etc”. The following
 field has an “unfilled” flag:</p>
@@ -1190,8 +1188,8 @@ field has an “unfilled” flag:</p>
   confidence_in:flag_masks = 1US, 2US, 4US, 8US, 16US, 32US, 64US, 128US, 256US, 512US, 1024US, 2048US, 4096US, 8192US, 16384US, 32768US ;
   confidence_in:flag_meanings = &quot;coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing”;</code></pre>
 <h4 id="saturation">Saturation</h4>
-<p>Refers to Section “<a href="#sec:pxl-pisatur">Per-Pixel Metadata:
-Saturation</a>”</p>
+<p>Refers to <a href="#sec:pxl-pisatur">Per-Pixel Metadata:
+Saturation</a></p>
 <p>Example of RADSATQA band showing the saturation information for the
 thermal bands used for Surface Temperature calculation:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">band</span> <span class="ot">category=</span><span class="st">&quot;qa&quot;</span> <span class="ot">data_type=</span><span class="st">&quot;UINT16&quot;</span> <span class="ot">fill_value=</span><span class="st">&quot;1&quot;</span> <span class="ot">name=</span><span class="st">&quot;RADSATQA&quot;</span> <span class="ot">nlines=</span><span class="st">&quot;5000&quot;</span> <span class="ot">nsamps=</span><span class="st">&quot;5000&quot;</span> <span class="ot">product=</span><span class="st">&quot;toa_refl&quot;</span> <span class="ot">source=</span><span class="st">&quot;level1&quot;</span>&gt;</span>
@@ -1225,8 +1223,8 @@ field has an “unfilled” flag:</p>
   confidence_in:flag_masks = 1US, 2US, 4US, 8US, 16US, 32US, 64US, 128US, 256US, 512US, 1024US, 2048US, 4096US, 8192US, 16384US, 32768US ;
   confidence_in:flag_meanings = &quot;coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing&quot; ;</code></pre>
 <h4 id="cloud">Cloud</h4>
-<p>Refers to Section “<a href="#sec:pxl-picloud">Per-Pixel Metadata:
-Cloud</a>”</p>
+<p>Refers to <a href="#sec:pxl-picloud">Per-Pixel Metadata:
+Cloud</a></p>
 <p>Example of PIXELQA showing the bit value for cloud pixels (as well as
 cloud and cirrus confidence):</p>
 <div class="sourceCode" id="cb23"><pre class="sourceCode xml"><code class="sourceCode xml"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">band</span> <span class="ot">category=</span><span class="st">&quot;qa&quot;</span> <span class="ot">data_type=</span><span class="st">&quot;UINT16&quot;</span> <span class="ot">fill_value=</span><span class="st">&quot;1&quot;</span> <span class="ot">name=</span><span class="st">&quot;PIXELQA&quot;</span> <span class="ot">nlines=</span><span class="st">&quot;5000&quot;</span> <span class="ot">nsamps=</span><span class="st">&quot;5000&quot;</span> <span class="ot">product=</span><span class="st">&quot;level2_qa&quot;</span> <span class="ot">source=</span><span class="st">&quot;level1&quot;</span>&gt;</span>
@@ -1273,13 +1271,13 @@ most appropriate cloud_in flags; the value of the bit is 16384US. The
 “bayes_in” field contains the “single_moderate” probabilistic cloud
 flag; the value of the bit is 2UB.</p>
 <h4 id="cloud-shadow">Cloud Shadow</h4>
-<p>Refers to Section “<a href="#sec:pxl-picloudsh">Per-Pixel Metadata:
-Cloud Shadow</a>”</p>
+<p>Refers to <a href="#sec:pxl-picloudsh">Per-Pixel Metadata: Cloud
+Shadow</a></p>
 <p>Please see the cloud shadow part in the example provided in
 requirement 2.5</p>
 <h4 id="snowice-mask">Snow/Ice Mask</h4>
-<p>Refers to Section “<a href="#sec:pxl-snowice-sr">Per-Pixel Metadata:
-Snow/Ice Mask</a>”</p>
+<p>Refers to <a href="#sec:pxl-snowice-sr">Per-Pixel Metadata: Snow/Ice
+Mask</a></p>
 <p>Please see the snow part in the example provided in requirement
 2.5</p>
 <h3 id="radiometric-and-atmospheric-corrections">Radiometric and

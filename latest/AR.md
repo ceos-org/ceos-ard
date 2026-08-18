@@ -25,10 +25,7 @@ figPrefix:
 lstPrefix:
   - Listing
   - Listings
-secPrefix:
-  - Section
-  - Sections
-secPrefixTemplate: $$p$$&nbsp;"$$i$$"
+secPrefixTemplate: $$i$$
 # we want to include all citations regardless of usage, see https://pandoc.org/MANUAL.html#including-uncited-items-in-the-bibliography
 nocite: |
   @*
@@ -587,7 +584,7 @@ As threshold.
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml-->`2.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
 The following minimum metadata specifications apply to each pixel.
-Whether the metadata is provided in a single record relevant to all pixels, or separately for each pixel, is at the discretion of the data provider.
+Whether the metadata is provided in a single record relevant to all pixels or separately for each pixel is at the discretion of the data provider.
 Per-pixel metadata should allow users to **discriminate between** (choose) observations on the basis of their individual suitability for application.
 
 Information should be available in the metadata as a single DOI landing page, which may include links to further detailed documents and references to citable peer-reviewed algorithms or technical documentation.
