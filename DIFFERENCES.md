@@ -120,7 +120,7 @@ Auxiliary data includes DEMs, etc., and any additional data sources used in the 
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### `metadata/crs-*`
 
@@ -243,7 +243,7 @@ The metadata identifies an online location from where the data can be consistent
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### `metadata/geo-area-*`
 
@@ -356,7 +356,7 @@ As threshold, with references to the relevant “CEOS Missions, Instruments, and
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Metadata Machine Readability
 
@@ -447,7 +447,7 @@ Information on radiometric accuracy should be available in the metadata as a sin
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Sensor Calibration
 
@@ -500,7 +500,7 @@ Information on sensory calibration should be available in the metadata as a sing
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### `metadata/time-*`
 
@@ -645,7 +645,7 @@ Information on traceability should be available in the metadata as a single DOI 
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ## Optical building blocks
 
@@ -703,7 +703,7 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Directional Atmospheric Scattering
 
@@ -742,12 +742,17 @@ See @mobley2016.
 
 #### Proposal
 
+**Threshold — description** (AR requirement wording):
+
 ```
+Specification of corrections applied for molecular (Rayleigh) scattering and for aerosol scattering and absorption.
 ```
+
+**Threshold — notes**: Keep Note as is for AR. Remove Note for SR.
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Geometric Correction
 
@@ -844,7 +849,33 @@ This requirement is intended to enable interoperability between imagery from dif
 
 #### Proposal
 
+**Description**: Keep as is.
+
+**Threshold — description** (AR requirement wording):
+
 ```
+Sub-pixel uncertainty is achieved in **relative** geolocation, that is, the pixels from the same instrument and platform are consistently located, and are thus comparable, through time. Sub-pixel uncertainty is taken to be less than or equal to 0.5-pixel radial root mean square error (rRMSE) or equivalent in Circular Error Probability (CEP) relative to a defined reference image. A consistent gridding/sampling frame is used, including common cell size, origin, and nominal sample point location within the cell (centre, ll, ur).
+
+Relevant metadata must be provided under [@geometric-uncertainty] and [@instrument].
+```
+
+**Threshold — notes** (AR notes wording):
+
+```
+1. The threshold level will not necessarily enable interoperability between data from different sources as the geometric corrections for each of the sources may differ.
+2. It is useful to note if the sensor is used at its native resolution before geometric correction or that some resampling must be done.
+```
+
+**Goal — description** (AR notes wording):
+
+```
+Sub-pixel uncertainty is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid). Relevant metadata must be provided under Section “General Metadata: Geometric Uncertainty of the Data” and Section “General Metadata: Instrument”.
+```
+
+**Goal — notes** (AR notes wording):
+
+```
+This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction and with non-image spatial data such as GIS layers and terrain models.
 ```
 
 #### Internal notes
@@ -903,12 +934,17 @@ Metadata contains a single DOI landing page with references to:
 
 #### Proposal
 
-```
-```
+**Threshold — description (SR)**: No Change
+
+**Threshold — description (AR)**: No change
+
+**Goal — description (SR)**: Match AR "Data is corrected for ozone if spectral bands are affected." Remove "Metadata contains a single DOI landing page with references to: a citable peer-reviewed algorithm technical documentation regarding the implementation of that algorithm"
+
+**Goal — description (AR)**: No change
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Water Vapour Corrections
 
@@ -942,12 +978,17 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 #### Proposal
 
+**Threshold — description** (AR requirement wording):
+
 ```
+Corrections are applied for water vapour if spectral bands are affected.
 ```
+
+**Threshold — notes**: SR match AR
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Measurement Normalisation
 
@@ -984,12 +1025,17 @@ Information on measurement normalisation should be available in the metadata as 
 
 #### Proposal
 
+**Goal — description** (AR requirement wording):
+
 ```
+Measurements are normalised (to nadir) to remove the effect of bidirectional dependence of the upwelling radiance on observation and solar-illumination geometries.
 ```
+
+**Goal — notes**: Remove for NLSR and SR
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Measurement Uncertainty
 
@@ -1075,12 +1121,15 @@ Information on measurement uncertainty should be available in the metadata as a 
 
 #### Proposal
 
-```
-```
+**Description**: Remove for SR and NLSR
+
+**Threshold — description**: No changes
+
+**Goal — description (NLSR, SR, ST)**: Match AR Threshold BUT not "Note 2"
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Algorithms
 
@@ -1153,12 +1202,11 @@ Information on algorithms should be available in the metadata as a single DOI la
 
 #### Proposal
 
-```
-```
+**Threshold — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Overall Data Quality
 
@@ -1179,8 +1227,7 @@ Information on algorithms should be available in the metadata as a single DOI la
 
 #### Proposal
 
-```
-```
+**Goal — description**: ST match NLSR and SR
 
 #### Internal notes
 
@@ -1207,8 +1254,7 @@ Uncertainties are expressed <del style="background:#ffd7d5;color:#82071e">quanti
 
 #### Proposal
 
-```
-```
+**Goal — description**: ST match NLSR and SR
 
 #### Internal notes
 
@@ -1238,12 +1284,11 @@ Information on geometric correction source and methods are provided, including r
 
 #### Proposal
 
-```
-```
+**Goal — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Map Projection
 
@@ -1288,12 +1333,13 @@ The metadata lists the map projection that has been used, if any, and any releva
 
 #### Proposal
 
-```
-```
+**Threshold — description**: SR and NLSR match AR
+
+**Goal — description**: ST match AR wording at Threshold
 
 #### Internal notes
 
-*none yet*
+Observation: curious if anyone knows why this is "Not Required" for ST at Threshold?
 
 ### Processing Chain Provenance
 
@@ -1324,12 +1370,11 @@ Information on processing chain provenance should be available with a detailed d
 
 #### Proposal
 
-```
-```
+**Goal — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Spectral Bands
 
@@ -1375,12 +1420,13 @@ Information on spectral bands should be available in the metadata as a single DO
 
 #### Proposal
 
-```
-```
+**Threshold — description**: NLSR-SR-ST match AR
+
+**Goal — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Cloud
 
@@ -1432,12 +1478,13 @@ See @foga2017, @skakun2022, @zhu2012, and @zhu2015.
 
 #### Proposal
 
-```
-```
+**Threshold — description**: NLSR-SR-ST match AR
+
+**Goal — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Cloud Shadow
 
@@ -1487,12 +1534,13 @@ I</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">As thr
 
 #### Proposal
 
-```
-```
+**Threshold — description**: SR and ST match AR
+
+**Goal — description**: NLSR match AR Threshold
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### `per-pixel/incomplete-testing-*`
 
@@ -1546,12 +1594,13 @@ Identifies which tests have and have not been successfully completed for each pi
 
 #### Proposal
 
-```
-```
+**Threshold — description**: NLSR-SR-ST match AR
+
+**Goal — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
-*none yet*
+I suggest "Per-Pixel Assessment" is adopted for NLSR-SR-ST
 
 ### `per-pixel/land-water-*`
 
@@ -1617,12 +1666,21 @@ As threshold, information on land/water mask should be available in the metadata
 
 #### Proposal
 
-```
-```
+**Threshold — description (AR)**: No change
+
+**Threshold — description (NLSR)**: Change wording to match AR phrasing - "Specification of whether a pixel is land or water"
+
+**Threshold — description (SR)**: No change
+
+**Goal — description (AR)**: No change
+
+**Goal — description (NLSR)**: Change wording to match AR phrasing - "As threshold"
+
+**Goal — description (SR)**: Change wording to match AR phrasing - "Specification of whether a pixel is land or water"
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### No Data
 
@@ -1648,8 +1706,7 @@ Pixels that do not correspond to an observation (e.g., empty pixels / invalid ob
 
 #### Proposal
 
-```
-```
+**Threshold — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
@@ -1699,8 +1756,9 @@ As threshold, with specification of which pixels are radiometrically saturated f
 
 #### Proposal
 
-```
-```
+**Threshold — description**: NLSR-SR-ST match AR
+
+**Goal — description**: NLSR-SR-ST match AR
 
 #### Internal notes
 
@@ -1735,12 +1793,17 @@ As threshold, information on snow/ice mask should be available in the metadata a
 
 #### Proposal
 
-```
-```
+**Threshold — description (NLSR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether a pixel is snow/ice"
+
+**Goal — description (NLSR)**: As threshold
+
+**Threshold — description (SR)**: No change
+
+**Goal — description (SR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether a pixel is snow/ice"
 
 #### Internal notes
 
-*none yet*
+Append "DOI-landing page" verbiage to the General Metadata and Per-Pixel Metadata sections for SR, ST and NLSR.
 
 ### Terrain Occlusion
 
@@ -1761,12 +1824,11 @@ Identifies pixels that are not visible to the sensor due to terrain occlusion du
 
 #### Proposal
 
-```
-```
+**Goal — description (SR, NLSR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing."
 
 #### Internal notes
 
-*none yet*
+Note: there is no terrain occlusion in ST. The html file states there is.
 
 ### Solar and Viewing Geometry
 
@@ -1803,8 +1865,9 @@ Provide per-pixel solar and sensor viewing azimuth and zenith angles.
 
 #### Proposal
 
-```
-```
+**Threshold — description**: ST-SR match AR
+
+**Goal — description (ST, SR)**: Change wording to maintain consistent PFS phrasing "Specification of the per-pixel solar and sensor viewing azimuth and zenith angles."
 
 #### Internal notes
 
