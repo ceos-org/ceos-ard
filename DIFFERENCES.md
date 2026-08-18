@@ -714,23 +714,7 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 **[`atmosphere.yaml`](requirements/corrections/atmosphere.yaml)**: *(no notes)*
 
-#### Goal — description
-
-**[`atmosphere.yaml`](requirements/corrections/atmosphere.yaml)**:
-
-```
-As threshold.
-```
-
-**[`atmospheric.yaml`](requirements/corrections/atmospheric.yaml)**: *(not set)*
-
-#### Goal — optional
-
-**[`atmosphere.yaml`](requirements/corrections/atmosphere.yaml)**: `true`
-
-**[`atmospheric.yaml`](requirements/corrections/atmospheric.yaml)**: `false`
-
-<!-- state: 29b3147c0695 -->
+<!-- state: fc4cd1f83f69 -->
 
 #### Proposal
 
