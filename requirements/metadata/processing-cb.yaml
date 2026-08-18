@@ -1,0 +1,18 @@
+id: procb
+title: CB Processing
+description: 
+requirements:
+  threshold:
+    description: |-
+      Reference to composite backscatter generation method used
+
+      - Methodology name
+      - Reference to methodology (DOI)
+      - Specific input parameters used
+dependencies:
+glossary:
+  - doi
+references:
+changes:
+history:
+  - SAR 1.7.24

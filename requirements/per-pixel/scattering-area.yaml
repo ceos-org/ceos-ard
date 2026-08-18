@@ -1,7 +1,7 @@
 id: piscata
 title: Scattering Area Image
 description: |-
-  **Usage: Recommended for scenes that include land areas.**
+  **Usage:** Recommended for scenes that include land areas.
 requirements:
   goal:
     description: |-
@@ -16,10 +16,20 @@ requirements:
       - Data Type (Int, Float, …)
       - Bits per Sample
       - Byte Order
+    notes:
+      - For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file could be provided as a URL address of that unique metadata file.
+      - Required for products such as NRB and POL if they are to be used as an input to production of composite backscatter (CB) when weighted averages based on the areas are used to generate composite backscatter.
     optional: true
 dependencies:
 glossary:
+  - ceos-ard
+  - url
+  - nrb
+  - pol
+  - cb
 references:
 changes:
 history:
   - SAR 2.3
+remarks: |-
+  todo: Make the second note generic for all kinds of composites? Is this actually possible to know upfront what the user will do with the product? Should this be a note in the CB PFS only?

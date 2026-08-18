@@ -25,10 +25,7 @@ figPrefix:
 lstPrefix:
   - Listing
   - Listings
-secPrefix:
-  - Section
-  - Sections
-secPrefixTemplate: $$p$$&nbsp;"$$i$$"
+secPrefixTemplate: $$i$$
 # we want to include all citations regardless of usage, see https://pandoc.org/MANUAL.html#including-uncited-items-in-the-bibliography
 nocite: |
   @*
@@ -244,7 +241,7 @@ This Guidance material does not replace or override the specifications.
 ~( if annexes )~
 &#12;
 
-## Annexes
+## Annex~( if annexes | length > 1)~es~( endif )~
 
 ~(   for annex in annexes )~
 

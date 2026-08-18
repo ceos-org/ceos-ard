@@ -1,0 +1,32 @@
+id: indisrai
+title: InSAR Displacement Rate Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Mean linear displacement rate (velocity) estimate. 
+
+      File format specifications/contents provided in metadata:
+
+      - Measurement Type (Displacement rate)
+      - Measurement projection (Line of Sight, Vertical, Horizontal, East, North)
+      - Interval start time
+      - Interval end time
+      - Rate (velocity) units (mm/year, cm/year, mm/month, …)
+      - Reference Polarization (HH, HV, VV, VH, RH, RL, …)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+
+      In case of polarimetric data, indicate the reference polarization.
+    optional: true
+dependencies:
+glossary:
+  - insar
+references:
+changes:
+history:
+  - SAR 3.13
+remarks: |-
+  todo: Should the last paragraph only be included in POL?

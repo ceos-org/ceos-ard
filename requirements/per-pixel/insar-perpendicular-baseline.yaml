@@ -1,0 +1,24 @@
+id: iperba
+title: InSAR Perpendicular Baseline Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Perpendicular orbital baseline between primary and secondary source acquisitions.
+  
+      File format specifications/contents provided in metadata:
+  
+      - Sample Type (Length)
+      - insarID number (see [@insarID])
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Float, …)
+      - Bits per Sample
+      - Byte Order
+    optional: true
+dependencies:
+  insarID: metadata/insar-pair
+glossary:
+references:
+changes:
+history:
+  - SAR 2.18

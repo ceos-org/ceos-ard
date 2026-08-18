@@ -1,4 +1,3 @@
-# todo: remove source data mentions to be resuable in other products
 id: propar
 title: Source Data Processing Parameters
 description: 
@@ -14,14 +13,19 @@ requirements:
       - Product ID (file name)
       - Azimuth number of looks
       - Range number of looks (separate values for each beam, as necessary)
+    notes:
+      - Azimuth and Range number of looks are not required when sources are CEOS-ARD or any other geocoded products 
   goal:
     description: |-
-      As threshold, plus additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied. 
+      As threshold, plus additional relevant processing parameters, e.g., range- and azimuth look bandwidth and LUT applied.
     optional: true
 dependencies:
 glossary:
+  - ceos-ard
   - lut
 references:
 changes:
 history:
   - SAR 1.6.6
+remarks: |-
+  Remove "source" mentions to be reusable for source and product.

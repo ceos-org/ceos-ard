@@ -3,7 +3,6 @@ title: Performance Indicators
 description: 
 requirements:
   threshold:
-    # todo: remove source data mentions to be resuable in other products
     description: |-
       Provide performance indicators on data intensity noise level ($\text{NE}\sigma^0$ and/or $\text{NE}\beta^0$ and/or $\text{NE}\gamma^0$, i.e., noise equivalent Sigma- and/or Beta- and/or Gamma-Nought).
       Provided for each polarization channel when available.
@@ -26,3 +25,5 @@ references:
 changes:
 history:
   - SAR 1.6.9
+remarks: |-
+  Remove "source" mentions to be reusable for source and product.

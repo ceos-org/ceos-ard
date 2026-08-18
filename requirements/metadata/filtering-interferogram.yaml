@@ -1,0 +1,18 @@
+id: intfil
+title: Interferogram Filtering
+description: 
+requirements:
+  threshold:
+    description: |-
+      If applied, interferogram filtering information
+
+      -	Methodology name
+      -	Reference to methodology (text or DOI)
+      -	Filtering parameters used
+dependencies:
+glossary:
+  - doi
+references:
+changes:
+history:
+  - SAR 1.7.19

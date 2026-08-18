@@ -1,0 +1,18 @@
+id: inspacr
+title: InSAR Pair Co-registration
+description: 
+requirements:
+  threshold:
+    description: |-
+      Co-registration information of source acquisitions with a reference source.
+      Provide reference source ID (or filename if different from source list) and for each co-registered source, report the azimuth and range standard deviation error in metre or sample fraction.
+
+      **Not required when the InSAR product is generated from GSLC products (see product level in @processing).**
+dependencies:
+  processing: metadata/processing-parameters
+glossary:
+  - insar
+references:
+changes:
+history:
+  - SAR 1.7.17

@@ -1,0 +1,15 @@
+id: radtalg-min
+title: Radiometric Terrain Correction Algorithm 
+description:
+requirements:
+  goal:
+    description: |-
+      Require resolution of DEM better than the output product resolution when applying terrain corrections.
+    optional: true
+dependencies:
+glossary:
+  - dem
+references:
+changes:
+history:
+  - SAR 3.4

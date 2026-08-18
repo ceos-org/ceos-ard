@@ -1,0 +1,215 @@
+title: Interferometric SAR
+version: 2.0.0
+type: Synthetic Aperture Radar
+applies_to: Data collected by Synthetic Aperture Radar sensors
+background: |-
+  This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
+
+  The CEOS-ARD Interferometric SAR (InSAR) product format specification describes products resulting from InSAR processing steps.
+  Two levels of product categories are supported:
+  1) The first level includes InSAR coherence and wrapped interferogram images derived from a pair (or several pairs) of SLC or GSLC source data listed in the product metadata file. The product metadata file reports the processing information (parameters and methods) used to produce them. The PFS also supports unwrapped interferograms, but their inclusion is not a threshold requirement for this product level. An InSAR pair identification label allows support of InSAR time series products derived from several repeated pass SAR source combinations. A Boolean flag is used to indicate whether the interferometric phases due to Earth curvature and to the surface topography are removed from interferograms. This InSAR product level can then serve as input in temporal coherence analysis techniques or as input in production of time series displacement products by distributed target approaches like Small BAseline Subset (SBAS) technique [@lanari2004].
+  2) InSAR displacement belongs to the second level of InSAR products. Displacement products can be expressed as InSAR displacement from a pair of SAR acquisitions and/or from a time series of SAR acquisitions, as a displacement and/or as displacement rate products over a time period. Since several different InSAR displacement approaches exist in the literature for which, each have their own criteria and parameters, it is not possible to prescribe specific metadata details. Nonetheless, it is required that main processing steps (with reference to methodologies), with their chosen parameters (criteria like statistical thresholds and estimation window sizes) are well defined in the displacement product metadata, in order to preserve traceability for the end users. For InSAR displacement products generated from first level CEOS-ARD InSAR, listed “source” products in the metadata can refer to those first level CEOS-ARD InSAR described above. In accordance with other CEOS-ARD products, per-pixel metadata and data are terrain geocoded products.
+
+glossary:
+  - metadata
+  - sar
+  - insar
+  - slc
+  - gslc
+  - pfs
+  - ceos-ard
+
+references:
+  - lanari2004
+
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+  - sar-differences
+
+requirements:
+  - category: general-metadata
+    requirements:
+      - metadata/traceability-sar
+      - metadata/machine-readability-sar
+      - metadata/product-type
+      - metadata/pfs-url
+      - metadata/time-sar
+  - category: source-metadata
+    requirements:
+      - metadata/acquisition-id
+      - metadata/data-access-source
+      - metadata/instrument-sar
+      - metadata/time-source
+      - metadata/acquisition-parameters-sar
+      - metadata/orbit-insar
+      - metadata/processing-parameters
+      - metadata/image-attributes-sar
+      - metadata/sensor-calibration-sar
+      - metadata/performance-indicators
+      - metadata/polarimetric-calibration-matrices
+      - metadata/mean-faraday-rotation-angle
+      - metadata/ionosphere-indicator
+  - category: product-metadata
+    requirements:
+      - metadata/data-access-product
+      - metadata/auxiliary-data-sar
+      - metadata/sample-spacing
+      - metadata/enl
+      - metadata/resolution
+      - metadata/geo-bbox
+      - metadata/geo-area-sar
+      - metadata/image-size
+      - metadata/pixel-coordinate-convention
+      - metadata/crs-sar
+      - metadata/radar-unit-look-vector
+      - metadata/insar-pair
+      - metadata/insar-pair-coregistration
+      - metadata/insar-phase-quality
+      - metadata/filtering-interferogram
+      - metadata/phase-unwrapping
+      - corrections/atmospheric-phase
+      - corrections/ionospheric-phase
+      - metadata/displacement-modelling
+  - category: per-pixel-metadata
+    requirements:
+      - metadata/machine-readability-sar
+      - ref: per-pixel/data-mask
+        append:
+          requirements:
+            goal:
+              description: |-
+                - Unwrapped interferogram phase quality flag/score
+      - per-pixel/scattering-area
+      - ref: per-pixel/ellipsoidal-incident-angle
+        append:
+          requirements:
+            image:
+              description: |-
+                Required when a Radar Unit Look Vector Grid Image (see @radar-unit-look-vector-grid) is not provided.
+          dependencies:
+            radar-unit-look-vector-grid: per-pixel/radar-unit-look-vector-grid-insar
+      - per-pixel/noise-power
+      - per-pixel/gamma-sigma-ratio
+      - per-pixel/dem
+      - per-pixel/radar-unit-look-vector-grid-insar
+      - per-pixel/slant-range-insar
+      - ref: per-pixel/insar-phase-uncertainty
+        append:
+          requirements:
+            goal:
+              description: |-
+                -	insarID number (see [@insarID])
+                -	Corresponding interferogram
+          dependencies:
+            insarID: metadata/insar-pair
+      - ref: per-pixel/atmospheric-phase-correction
+        append:
+          requirements:
+            goal:
+              description: |-
+                -	insarID number (see [@insarID])
+          dependencies:
+            insarID: metadata/insar-pair
+      - ref: per-pixel/ionospheric-phase-correction
+        append:
+          requirements:
+            goal:
+              description: |-
+                -	insarID number (see [@insarID])
+          dependencies:
+            insarID: metadata/insar-pair
+      - per-pixel/simulated-topographic-phase
+      - per-pixel/insar-perpendicular-baseline
+      - per-pixel/insar-parallel-baseline
+      - per-pixel/insar-displacement-model-point
+  - category: radiometrically-corrected-measurements
+    requirements:
+      - measurements/backscatter-insar
+      - measurements/scaling-conversion
+      - metadata/noise-removal
+      - corrections/radiometric-terrain-algorithm-minimal
+      - metadata/radiometric-accuracy-sar
+      - measurements/coherence-image
+      - measurements/interferogram-image
+      - measurements/interferogram-image-unwrapped
+      - measurements/insar-displacement-image
+      - measurements/insar-displacement-residue-image
+      - measurements/insar-displacement-rate-image
+      - measurements/insar-displacement-rate-model-fit-image
+  - category: geometric-corrections
+    requirements:
+      - metadata/geometric-correction-algorithm
+      - corrections/dem
+      - ref: corrections/geometric-accuracy-sar
+        append:
+          requirements:
+            goal:
+              description: |-
+                Specify the SAR acquisition used for geocoding. SAR acquisition could be different from the two source acquisitions of the product when a stack of acquisitions is processed simultaneously.
+      - corrections/geometric-refined-accuracy
+      - corrections/gridding-convention
+
+annexes:
+  - sar-general-processing-roadmap
+  - sar-topographic-phase-removal
+
+authors:
+  - François Charbonneau, Natural Resources Canada, Canada
+  - Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency, Japan
+  - John Truckenbrodt, German Aerospace Centre (DLR), Germany
+  - Clément Albinet, European Space Agency (ESA), Italy
+  - David Small, University of Zurich, Switzerland
+  - Bruce Chapman, Jet Propulsion Laboratory, USA
+  - Howard Zebker, Stanford University, USA
+  - Zheng-Shu Zhou, CSIRO, Australia
+  - Kimberlee Baldry, Geoscience Australia, Australia
+  - David Bekaert, Jet Propulsion Laboratory, USA
+  - Virginia Brancato, Jet Propulsion Laboratory, USA
+  - Danilo Dadamia, CONAE, Argentina
+  - Benjamin Deschamps, Environment and Climate Change, Canada
+  - Matt Garthwaite, CSIRO, Australia
+  - Guillaume Hajduch, Collecte Localisation Satellites, France
+  - Jayasri Poludasu, ISRO, India
+  - Josef Kellndorfer, Earth Big Data, USA
+  - Joseph Kennedy, Alaska Satellite Facility, USA
+  - Marco Lavalle, Jet Propulsion Laboratory, USA
+  - Thomas Logan, Alaska Satellite Facility, USA
+  - Franz Meyer, Alaska Satellite Facility, USA
+  - Nuno Miranda, European Space Agency (ESA), Italy
+  - Matthias Mohr, moreGeo GmbH, Germany
+  - Muriel Pinheiro, European Space Agency (ESA), Italy
+  - Marko Repse, Sinergise, Slovenia
+  - HariPriya Sakethapuram, ISRO, India
+  - Gustavo H. X. Shiroma, Jet Propulsion Laboratory, USA
+  - Usha Sundari, ISRO, India
+  - Andreia Siqueira, Geoscience Australia, Australia
+  - Scott Staniewicz, Jet Propulsion Laboratory, USA
+  - Takeo Tadono, Japan Aerospace Exploration Agency, Japan
+  - Medhavy Thankappan, Geoscience Australia, Australia
+  - Antonio Valentino, Starion for European Space Agency (ESA), Italy
+  - Anna Wendleder, German Aerospace Centre (DLR), Germany
+  - Fang Yuan, Digital Earth Africa, Australia
+  - Francesco De Zan, Delta-Phi Remote Sensing GmbH, Germany
+
+changes:
+  - date: 2026-07-20
+    author: Matthias Mohr
+    level: minor
+    change: |-
+      - The Combined SAR PFS has been split into separate PFS per product type
+      - Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
+      - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+      - Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
+      - Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
+      - Requirement "Radar Unit Look Vector Grid Image" and "Slant Range Sensor to Surface Image": Integrated the conditional "In the case of \[InSAR] product, \[...] of the reference acquisition." directly into the first paragraph with the addition of "of the reference acquisition".
+      - Requirement "InSAR Phase Uncertainty Image" and following: The order of the "File format specifications/contents" has changed in some cases; Removed “(for [InSAR] product only)” from "insarID number" entry; Added a reference back to “InSAR Pair” requirement.
+      - Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
+      - Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
+      - The subcategories for Source and Product metadata have been flattened into top-level categories
+      - Annex has been reformatted and updated as required by the split
+      - Document history has been reset. Check the previous versions for details
+
+      **Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Interferometric SAR (InSAR)**.
+    reason: Migration to building blocks.

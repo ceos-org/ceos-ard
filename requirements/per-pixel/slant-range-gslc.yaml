@@ -1,4 +1,4 @@
-id: slarassi
+id: slarassi-gslc
 title: Slant Range Sensor to Surface Image
 description: 
 requirements:
@@ -8,16 +8,19 @@ requirements:
   
       File format specifications/contents provided in metadata:
   
-      - Sample Type (Distance)
+      - Sample Type (Length)
       - Data Format (GeoTIFF, HDF5, NetCDF, …)
-      - Data Type (Int, Float, …)
+      - Data Type (Float, …)
       - Bits per Sample
       - Byte Order
+    notes:
+      - For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
     optional: true
 dependencies:
 glossary:
   - ecef
   - ecr
+  - url
 references:
 changes:
 history:

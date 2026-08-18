@@ -1,0 +1,32 @@
+id: idimopo
+title: InSAR Displacement Model Point Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Data file(s) identifying pixels used for InSAR displacement modeling (requirements [@displacement; @displacement-residue; @displacement-rate; @displacement-rate-model-fit]).
+      As a suggestion, this information can be provided as a single multi-layer file, where each 1-bit layer, containing 0 (not used) and 1 (used) flags, refers to an insarID pair (for SBAS type InSAR) or Source ID (when insarIDs are not listed).
+      Instead, a list of Dates identifying layers can be provided under this item.  
+  
+      File format specifications/contents provided in metadata:
+  
+      - Sample Type (Model Points)
+      -	Source ID or insarID number or Dates
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (1bit, 8bit, …)
+      - Bits per Sample
+      - Byte Order
+    optional: true
+dependencies:
+  insarID: metadata/insar-pair
+  displacement: measurements/insar-displacement-image
+  displacement-residue: measurements/insar-displacement-residue-image
+  displacement-rate: measurements/insar-displacement-rate-image
+  displacement-rate-model-fit: measurements/insar-displacement-rate-model-fit-image
+glossary:
+references:
+changes:
+history:
+  - SAR 2.19
+remarks: |-
+  - todo: add glossary entry for SBAS

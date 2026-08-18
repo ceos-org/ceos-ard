@@ -1,11 +1,10 @@
-# todo: this seems to be a duplicate of time?!
 id: time-src
 title: Source Data Acquisition Time
 description: 
 requirements:
   threshold:
     description: |-
-      The start date and time of source data is identified in the metadata, expressed in UTC in date and time, at least to the second. 
+      The start date and time of source data is identified in the metadata, expressed in UTC in date and time, at least to the second.
 dependencies:
 glossary:
   - utc
@@ -13,3 +12,6 @@ references:
 changes:
 history:
   - SAR 1.6.3
+remarks: |-
+  - todo: This seems to be a duplicate of time.yaml?!
+  - todo: time-sar.yaml has a ISO 8601 goal requirement, but this one does not. Should it?

@@ -6,7 +6,6 @@ requirements:
     description: |-
       The data collection time is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
   goal:
-    # todo: this is per-pixel metadata, but in metadata. We should make this consistent. Do we want per-pixel metadata or not?
     description: |-
       Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
     optional: true
@@ -16,3 +15,5 @@ references:
 changes:
 history:
   - SR 1.3
+remarks: |-
+  todo: This is per-pixel metadata, but in metadata. We should make this consistent. Do we want per-pixel metadata or not?

@@ -1,0 +1,34 @@
+id: pacqidm
+title: Acquisition ID Image
+description: |-
+  **Usage:** Required for mosaic products only.
+requirements:
+  threshold:
+    description: |-  
+      Acquisition ID, or acquisition date, for each pixel is identified.
+  
+      In case of multi-temporal image stacks, use source acquisition ID (i.e., [@acquisition-id]) to list contributing images.
+  
+      In case of date, data represent (integer or fractional) day offset to reference observation date (in UTC). Date used as reference (“Day 0”) is provided in the metadata.
+  
+      Pixels not representing a unique date or ID (e.g., pixels averaged in image overlap zones) are flagged with a pixel value referencing a date range that is provided in the metadata.
+      
+      File format specifications/contents provided in metadata:
+  
+      - Sample type (Day, Time, ID)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per sample
+      - Byte Order
+dependencies:
+  acquisition-id: metadata/acquisition-id
+glossary:
+  - utc
+  - mosaic-product
+references:
+changes:
+history:
+  - SAR 2.8
+remarks: |-
+  - The threshold description mixes per-pixel metadata with general metadata (see last paragraphs).
+  - This applies to mosaic products only, for composite products, see pacqidc.

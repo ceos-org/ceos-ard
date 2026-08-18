@@ -1,0 +1,24 @@
+id: pacqidc
+title: Acquisition ID Image
+requirements:
+  goal:
+    description: |-
+      The source IDs for each pixel are identified.
+
+      File format specifications/ contents provided in metadata:
+
+      - Sample type (ID)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per sample
+      - Byte Order
+    optional: true
+dependencies:
+glossary:
+  - composite-product
+references:
+changes:
+history:
+  - SAR 2.8
+remarks: |-
+  This applies to composite products only, for mosaic products, see pacqidm.

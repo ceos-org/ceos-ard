@@ -1,9 +1,8 @@
 id: lookdiri
-title: Look Direction Image 
+title: Look Direction Image
 description: 
 requirements:
   goal:
-    # todo: the list of file format specifications below comes up more often and should be a separate building block
     description: |-
       Look Direction Image is provided.
       It represents the planar angle between north and each range direction. 
@@ -15,9 +14,12 @@ requirements:
       - Data Type (Int, Float, …)
       - Bits per Sample
       - Byte Order
+    notes:
+      - For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
     optional: true
 dependencies:
 glossary:
+  - url
 references:
 changes:
 history:

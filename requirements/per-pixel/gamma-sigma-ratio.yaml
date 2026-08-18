@@ -15,10 +15,13 @@ requirements:
       - Data Type (Int, Float, …)
       - Bits per Sample
       - Byte Order
+    notes:
+      - For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
     optional: true
 dependencies:
 glossary:
   - rtc
+  - url
 references:
 changes:
 history:

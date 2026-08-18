@@ -1,14 +1,12 @@
 id: reorbit-nrb-pol
 title: Reference Orbit
 description: |-
-  **Usage: Only when Flattened phase per-pixel metadata (see [@flattened-phase]) is provided.**
+  **Usage:** Only when Flattened phase per-pixel metadata (see [@flattened-phase]) is provided.
 requirements:
   goal:
     description: |-
       Provide the absolute orbit number used as reference for topographic phase flattening.
       In case a virtual orbit has been used, provide orbit parameters or orbit state vectors as DOI or URL.
-  
-      Provide scene-centred perpendicular baseline for the for the source data relative to the reference orbit used (for approximate use only).
     optional: true
 dependencies:
   flattened-phase: measurements/flattened-phase

@@ -3,7 +3,6 @@ title: Backscatter Measurements (POL)
 description: 
 requirements:
   threshold: 
-    # todo: the list of file format specifications below comes up more often and should be a separate building block
     description: |-
       Measurements can be one of the following types or both: 
         
@@ -15,18 +14,18 @@ requirements:
       File format specifications/contents provided in metadata:
   
       - Measurement Type (CovMat, PRD)
-      - Measurement convention unit (linear amplitude, linear power, angle)
-      - Individual covariance matrix element or/and Individual component of the decomposition (C3m11, C3m12, … or H, A, alpha, or …)
+      - Measurement convention unit (linear amplitude, or linear power [see notes], or phase angle)
+      - Individual covariance matrix element or/and Individual component of the decomposition (C3m11, C3m12, …, or H, A, alpha, or …)
       - Data Format (GeoTIFF, HDF5, NetCDF, …)
       - Data Type (Int, Float, Complex, …)
       - Bits per Sample
       - Byte Order
-      # todo: add glossary entries for BIP, BIL, BSQ?
-      - |-
-        It is recommended to keep CovMat or PRD measurement files separated.
-        Otherwise, specify the multi-channel format order (BIP, BIL, BSQ).
+    notes:
+      - Transformation to the logarithm decibel scale is not required or desired as this step can be completed by the user if necessary.
+      - It is recommended to keep CovMat or PRD measurement files separated. Else, specify the multi-channel format order [BIP, BIL, BSQ].
 dependencies:
 glossary:
+  - pol
   - covmat
   - nrb
   - prd
@@ -34,3 +33,5 @@ references:
 changes:
 history:
   - SAR 3.1
+remarks: |-
+  Add glossary entries for BIP, BIL, BSQ?

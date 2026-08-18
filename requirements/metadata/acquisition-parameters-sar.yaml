@@ -5,7 +5,7 @@ requirements:
   threshold:
     description: |-
       Acquisition parameters related to the SAR antenna:
-  
+
       - Radar band
       - Centre frequency
       - Observation mode (i.e., beam mode name)

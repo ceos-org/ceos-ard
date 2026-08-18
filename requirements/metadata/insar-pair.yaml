@@ -1,0 +1,49 @@
+id: inspair
+title: InSAR Pair
+description: 
+requirements:
+  threshold:
+    description: |-
+      InSAR baseline criteria information
+
+      - Baseline type: Single Reference, Multi-baseline or All
+      - Minimal and maximal perpendicular baselines (not required when type = "All")
+      - Minimal and maximal temporal baselines (not required when type = "All")
+
+      When InSAR product contains image data derived from InSAR pairs, as defined in @coherence, @interferogram, and @unwrappedInterferogram, provide list of source acquisition ID (e.g. as per @acqid) for the InSAR pair (primary and secondary acquisitions).
+      Repeat for multiple InSAR pair products and assign/specify InSAR pair ID number (e.g., insarID = 1, 2, 3 …).
+      For multi-polarisation source acquisition, specify the polarisation used for the InSAR pair.
+            
+      Provide Perpendicular and Parallel orbit baseline information estimated at scene centre.
+      In addition, orbital baseline information can be provided as per pixel metadata via @perpendicular and @parallel.
+
+      Flag if orbital baseline refinement has been applied (true/false).
+      If true, specify refinement method (e.g., GCPs, FFT, …).
+
+      Azimuth common band filtering and range spectral shift filtering flags.
+  goal:
+    description: |-
+      Source type format with value "GSLC" should be provided when InSAR analysis is performed from GSLC products generated from SLC source acquisitions listed in @src.
+      If GSLC data aren't provided with the InSAR product, provide the GSLC URL link(s) if it is available.
+      If source acquisitions listed in @src are GSLC, discard this note.
+    optional: true
+dependencies:
+  acqid: metadata/acquisition-id
+  perpendicular: per-pixel/insar-perpendicular-baseline
+  parallel: per-pixel/insar-parallel-baseline
+  coherence: measurements/coherence-image
+  interferogram: measurements/interferogram-image
+  unwrappedInterferogram: measurements/interferogram-image-unwrapped
+sections:
+  src: requirement-categories/source-metadata
+glossary:
+  - insar
+  - gslc
+  - slc
+  - url
+  - gcp
+  - fft
+references:
+changes:
+history:
+  - SAR 1.7.16

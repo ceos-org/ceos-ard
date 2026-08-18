@@ -3,7 +3,6 @@ title: Geometric Correction
 description: 
 requirements:
   threshold:
-    # The only difference to ST is the third paragraph below.
     description: |-
       Sub-pixel accuracy is achieved in **relative** geolocation, that is, the pixels from the same instrument and platform are consistently located, and are thus comparable, through time.
   
@@ -35,3 +34,5 @@ references:
 changes:
 history:
   - SR/NLSR 4.1
+remarks: |-
+  The only difference to geometric-st.yaml is the third paragraph of the threshold description.

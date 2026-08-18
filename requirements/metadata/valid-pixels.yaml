@@ -4,10 +4,10 @@ description:
 requirements:
   threshold:
     description: |-
-      Percentage of valid pixels in a specified area based on the applied flags from [@sec:pxl].
+      Percentage of valid pixels in a specified area based on the applied flags from [@per-pixel].
 dependencies:
-# todo: implement dependencies on other sections
-# - sec:pxl
+sections:
+  per-pixel: requirement-categories/per-pixel-metadata
 glossary:
 references:
 changes:

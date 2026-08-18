@@ -4,9 +4,10 @@ description:
 requirements:
   goal:
     description: |-
-      Estimate of uncertainty in InSAR phase is provided, such as finite signal to noise ratio, quantization noise, or DEM error.
+      Estimates of uncertainty in InSAR phase is provided, such as finite signal to noise ratio, quantization noise, platform state vector accuracy, or DEM error.
       Identification of which error sources are included will be provided as DOI/URL reference or brief description.
       It represents statistical variation from known noise sources only.
+      In case both the wrapped and unwrapped interferograms are supplied, specify which interferogram the uncertainty image corresponds to. 
   
       File format specifications/contents provided in metadata:
   

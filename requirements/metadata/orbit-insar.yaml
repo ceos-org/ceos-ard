@@ -1,0 +1,17 @@
+id: orbit-insar
+title: Source Data Orbit Information
+description: 
+requirements:
+  threshold:
+    description: |-
+      Information related to the platform orbit used for data processing:
+      
+      - Relative orbit number, if defined
+dependencies:
+glossary:
+references:
+changes:
+history:
+  - SAR 1.6.5
+remarks: |-
+  Remove "source" mentions to be reusable for source and product.

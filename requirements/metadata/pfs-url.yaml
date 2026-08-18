@@ -1,4 +1,3 @@
-# todo: The title is a bit misleading
 id: pfsurl
 title: Document Identifier
 description:
@@ -14,3 +13,5 @@ references:
 changes:
 history:
   - SAR 1.4
+remarks: |-
+  todo: The title is a bit misleading.

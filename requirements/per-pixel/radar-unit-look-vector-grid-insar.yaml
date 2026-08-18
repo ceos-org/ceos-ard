@@ -1,0 +1,31 @@
+id: radulov-insar
+title: Radar Unit Look Vector Grid Image
+description:
+requirements:
+  goal:
+    description: |-
+      3-D components radar unit look vector of the reference acquisition, specified at each pixel in an Earth-Centred Earth-Fixed (ECEF) coordinate system (also called Earth Centred Rotating – ECR), is provided.
+      It consists of unit vectors from the antenna to the surface pixel (i.e., positive Z component).
+  
+      File format specifications/contents provided in metadata:
+  
+      - Sample Type (3D unit vector)
+      - Source acquisition ID (e.g. acqID)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Double Float, …)
+      - Bits per Sample
+      - Byte Order
+    notes:
+      - For CEOS-ARD products created from repeat-pass acquisitions, with narrow orbital tube radius, a single static per pixel metadata file can be provided as a URL address of that unique metadata file.
+    optional: true
+dependencies:
+glossary:
+  - ecef
+  - ecr
+  - url
+references:
+changes:
+history:
+  - SAR 2.12
+remarks: |-
+  The difference to the GSLC variant is the additional "of the reference acquisition".

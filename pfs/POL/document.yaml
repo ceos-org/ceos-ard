@@ -1,5 +1,5 @@
 title: Polarimetric Radar
-version: 1.1.0
+version: 3.6.0
 type: Synthetic Aperture Radar
 applies_to: Data collected by Synthetic Aperture Radar sensors
 background: |-
@@ -18,8 +18,8 @@ background: |-
   ***Notice and Limitations:***
   
   For Polarimetric Radar (POL) products, optimal incoherent Polarimetric Radar Decomposition (PRD) should be performed under the slant range projection [@gens2013; @toutin2013].
-  In order to minimise bias in the CEOS-ARD SAR Level-2A covariance matrix product, speckle filtering and averaging of the covariance matrix should be applied in the slant range projection, and geocoding should be performed using nearest-neighbour resampling.
-  Specifically, nearest-neighbour resampling ensures that the averaged covariance matrix elements in slant range and in geocoded ground projection are exactly the same.
+  In order to minimise bias in the CEOS-ARD SAR Level-2A covariance matrix product, speckle filtering and averaging of the covariance matrix should be applied in the slant range projection, and nearest neighbour method is recommended for resampling the data to the geocoded format.
+  Specifically, nearest-neighbour resampling ensures that the averaged covariance matrix elements in slant range and in geocoded ground projection are exactly the same. 
   Consequently, the polarimetrically derived parameters are exactly equal in both approaches (assuming that no further averaging is performed on the ARD product for decomposing the polarimetric information).
   Bilinear and average resampling methods are also suitable for resampling the covariance matrix, but some differences with polarimetric parameters generated in slant range and then resampled (bilinear) might be observed on sloped terrains.
   Even if Sinc interpolation may be more robust for spatial resampling, it does not preserve covariance matrix integrity, and should consequently not be used for this ARD product.
@@ -38,7 +38,6 @@ background: |-
   Alternatively, samples belonging to the same covariance matrix might be stored next to each other and organized “matrix by matrix”.
   PRD products are organized “layer by layer”, i.e., with bands corresponding to the output of the polarimetric decomposition stored next to each other.
 
-# Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
   - pol
   - nrb
@@ -51,17 +50,16 @@ glossary:
 references:
   - gens2013
   - toutin2013
-  - iso19115_2_2009
 
 introduction:
   - what-are-ceos-ard-products
   - when-is-a-product-ceos-ard
   - difference-threshold-goal
+  - sar-differences
 
 requirements:
   - category: general-metadata
     requirements:
-      # todo: most of the general metadata is product metadata - this should potentially be merged.
       - metadata/traceability-sar
       - metadata/machine-readability-sar
       - metadata/product-type
@@ -69,7 +67,7 @@ requirements:
       - metadata/time-sar
   - category: source-metadata
     requirements:
-      - metadata/acquisition-id # todo: this is new from the category description
+      - metadata/acquisition-id
       - metadata/data-access-source
       - metadata/instrument-sar
       - metadata/time-source
@@ -89,9 +87,9 @@ requirements:
       - metadata/sample-spacing
       - metadata/enl
       - metadata/resolution
-      # todo: speckle-filtering-pol should be just be speckle-filtering and instead add pol-filtering
-      - metadata/speckle-filtering-pol
-      # - metadata/pol-filtering
+      # todo: filtering-speckle-pol should be just be filtering-speckle and instead add filtering-pol
+      - metadata/filtering-speckle-pol
+      # - metadata/filtering-pol
       - metadata/geo-bbox
       - metadata/geo-area-sar
       - metadata/image-size
@@ -100,23 +98,25 @@ requirements:
       - metadata/orbit-reference-nrb-pol
   - category: per-pixel-metadata
     requirements:
-      - cloud-optimized-formats
       - metadata/machine-readability-sar
       - per-pixel/data-mask
       - per-pixel/scattering-area
       - per-pixel/local-incident-angle
-      - per-pixel/ellipsoidal-incident-angle
+      - ref: per-pixel/ellipsoidal-incident-angle
+        append:
+          requirements:
+            image:
+              optional: true
       - per-pixel/noise-power
       - per-pixel/gamma-sigma-ratio
-      - per-pixel/acquisition-id
+      - per-pixel/acquisition-id-mosaic
       - per-pixel/dem
   - category: radiometrically-corrected-measurements
     requirements:
-      - cloud-optimized-formats
       - measurements/backscatter-pol
-      - metadata/scaling-conversion
+      - measurements/scaling-conversion
       - metadata/noise-removal
-      - corrections/radiometric-terrain-algo
+      - corrections/radiometric-terrain-algorithm-applied
       - metadata/radiometric-accuracy-sar
       - measurements/flattened-phase
   - category: geometric-corrections
@@ -129,7 +129,6 @@ requirements:
 
 annexes:
   - sar-general-processing-roadmap
-  - sar-topographic-phase-removal
   - sar-pol-covmat
   - sar-pol-prd
   - sar-pol-examples
@@ -143,22 +142,26 @@ authors:
   - Bruce Chapman, Jet Propulsion Laboratory, USA
   - Howard Zebker, Stanford University, USA
   - Zheng-Shu Zhou, CSIRO, Australia
+  - Kimberlee Baldry, Geoscience Australia, Australia
   - David Bekaert, Jet Propulsion Laboratory, USA
   - Virginia Brancato, Jet Propulsion Laboratory, USA
   - Danilo Dadamia, CONAE, Argentina
   - Benjamin Deschamps, Environment and Climate Change, Canada
   - Matt Garthwaite, CSIRO, Australia
   - Guillaume Hajduch, Collecte Localisation Satellites, France
-  - P.V. Jayasri, ISRO, India
+  - Jayasri Poludasu, ISRO, India
   - Josef Kellndorfer, Earth Big Data, USA
+  - Joseph Kennedy, Alaska Satellite Facility, USA
   - Marco Lavalle, Jet Propulsion Laboratory, USA
   - Thomas Logan, Alaska Satellite Facility, USA
   - Franz Meyer, Alaska Satellite Facility, USA
   - Nuno Miranda, European Space Agency (ESA), Italy
+  - Matthias Mohr, moreGeo GmbH, Germany
   - Muriel Pinheiro, European Space Agency (ESA), Italy
   - Marko Repse, Sinergise, Slovenia
   - HariPriya Sakethapuram, ISRO, India
   - Gustavo H. X. Shiroma, Jet Propulsion Laboratory, USA
+  - Usha Sundari, ISRO, India
   - Andreia Siqueira, Geoscience Australia, Australia
   - Scott Staniewicz, Jet Propulsion Laboratory, USA
   - Takeo Tadono, Japan Aerospace Exploration Agency, Japan
@@ -169,18 +172,21 @@ authors:
   - Francesco De Zan, Delta-Phi Remote Sensing GmbH, Germany
 
 changes:
-  - date: 2026-03-26
+  - date: 2026-07-20
     author: Matthias Mohr
-    level: patch
+    level: minor
     change: |-
       - The Combined SAR PFS has been split into separate PFS per product type
       - Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
-      - Document history has been reset. Check the previous versions for details
       - Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
-      - The requirement "Cloud optimized file formats are recommended." has been moved from the category description to a separate requirement.
-      - Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”.
+      - Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
+      - Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
+      - Requirement "Backscatter Measurement": Replaced "and/or" with "one of the following types or both"
+      - Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
+      - Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
       - The subcategories for Source and Product metadata have been flattened into top-level categories
-      - Requirement "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
-      - Requirement "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
       - Annex has been reformatted and updated as required by the split
+      - Document history has been reset. Check the previous versions for details
+
+      **Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Polarimetric Radar (POL)**.
     reason: Migration to building blocks.

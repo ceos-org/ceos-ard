@@ -1,4 +1,3 @@
-# todo: make generic for source and product
 id: daccess-prod
 title: Product Data Access
 description: 
@@ -24,3 +23,5 @@ references:
 changes:
 history:
   - SAR 1.7.1
+remarks: |-
+  Make generic for source and product.

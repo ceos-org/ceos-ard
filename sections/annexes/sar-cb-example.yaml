@@ -1,0 +1,46 @@
+title: Composite Backscatter example
+description: |-
+  The algorithm for generating a Composite Backscatter (CB) product using local resolution weighting is described below.
+
+  A CB product is generated from a set of Normalised Radar Backscatter (NRB) datasets. If not already available, the NRB products need to be generated as an intermediate step. Notably, each NRB product needs to include @title:requirements/per-pixel/scattering-area per-pixel metadata (see the corresponding requirement in the NRB PFS) from which the local contributing area $_{i}$ are obtained.
+
+  A temporal window is defined encapsulating all NRB products to be used to generate the CB product. For each pixel $i$ in the region to be covered by the CB, all input products are assembled, particularly both the RTC terrain-flattened gamma $\gamma^0_i$ (see the @title:requirements/measurements/backscatter-nrb requirement in the NRB PFS) and the local contributing area $A_i$ (see the requirement "@title:requirements/per-pixel/scattering-area" in the PFS applicable to your source data). That area is the one locally used for terrain flattening during the generation of the RTC product, i.e. the sum of the area expressed in the plane perpendicular to slant range (gamma nought convention) of all terrain facets within the bounds of that pixel [@small2022; @shiroma2022]. The terrain-flattened gamma nought RTC backscatter may or may not have had noise removal applied before proceeding to the composite generation stage.  No noise removal step is currently foreseen during the composite generation itself. Given N potential contributing input products, a subset of M is chosen whereby only products with pixel i not in shadow are included.  Then one proceeds to calculating the composite backscatter for pixel $i$.
+
+  First, the sum of the reciprocals $S_r$ of all local contributing areas is calculated:
+
+  $$
+  S_r = \sum_{i=1}^{M} \frac{1}{A_i}
+  $$ {#eq:sar-cb-example-eq1}
+
+  Next, the individual weight $W_i$ for each of the M contributing input images is calculated:
+
+  $$
+  W_i = \frac{1}{A_i \cdot S_r}
+  $$ {#eq:sar-cb-example-eq2}
+
+  Now that the weight of each input image 1…M is ready, calculating the composite backscatter value is a simple matter of applying the weights to the terrain-flattened backscatter values in each input RTC image:
+
+  $$
+  \gamma_c = \sum_{i=1}^{M} W_i \cdot \gamma_i^{0}
+  $$ {#eq:sar-cb-example-eq3}
+
+  Input images that imaged a mountain slope as a “backslope” (say an ascending image) will have local contributing area values that are relatively small in comparison to descending images covering the same region, as they will locally have been subject to foreshortening or possibly even layover. Low areas in the ascending images will correspond to relatively high weights (higher local resolution), while high areas (e.g. foreshortened) will generally result in relatively low weights.  In this way, foreshortening and even layover are not “masked out” in a boolean sense, but their effects are reduced as far with the “fuzzy” weighting pattern. Applying an on or off mask would be an overreaction in some cases to foreshortening/layover, which can each exhibit a large variety of effects on the local backscatter.
+
+  One can cycle the set of pixels included e.g. in a standard tile definition to produce a tile-wide composite backscatter image. Multiple tiles can then be concatenated to cover ever larger regions. One can then generate composites representative of different seasons (e.g. all acquisitions from the first half of January, April, and June). One cycle through multiple CB images to see a “movie” of backscatter over the defined region, or alternatively overlay three CB products as a multi-temporal RGB visualisation. An example of this latter possibility is shown in Fig. A5.1, where the full extent of the European Alps are shown with the red channel from late Feb'25, green from early Apr'25, and blue from early May'25.
+
+  Multitemporal backscatter analysis can then be directly applied over large regions (e.g. tracking wet snow at low vs. high elevations through springtime), where that would not be possible for most users given only L1 SLC or L1 GRD products. Such CB products are even more “analysis-ready” than is the set of NRB (RTC) products used to generate them, as no direct analysis over wide regions would be possible on such a heterogeneous dataset. Although not all analytical frameworks will benefit from using CB products, they will be useful for a large subset of backscatter time-series applications, and hopefully ease the initial learning curve for new users of backscatter data.
+
+  ![Multitemporal RGB Composite Backscatter (CB) image of the European Alps calculated via Local Resolution Weighting (red: late Feb 2025, green: early April 2025, blue: early May 2025), geographic coordinates.](assets/sar-cb-example/multitemporal-rgb-cb.png){#fig:sar-cb-example}
+dependencies:
+  backscatter-cb: measurements/backscatter-cb
+glossary:
+  - cb
+  - nrb
+  - rtc
+  - slc
+  - grd
+  - rgb
+references:
+  - small2022
+  - shiroma2022
+changes:

@@ -1,0 +1,28 @@
+id: spekfil-pol
+title: Product Filtering
+description: 
+requirements:
+  threshold:
+    description: |-
+      Flag if speckle filter has been applied (true/false).
+      
+      Metadata should include:
+  
+      - Reference to algorithm as DOI or URL
+      - Input filtering parameters
+        - Type
+        - Window size in pixel units
+        - Any other parameters defining the speckle filter used
+  
+      Advanced polarimetric filter preserving covariance matrix properties shall be applied.
+dependencies:
+glossary:
+  - doi
+  - url
+references:
+changes:
+history:
+  - SAR 1.7.6 (POL)
+remarks: |-
+  - Should be named "Speckle Filtering" not "Product Filtering" to allow for other filtering types in the future.
+  - The "(true/false)" in the threshold description is implementation (and metadata language) specific, should not be listed here. See also ionosphere-indicator.yaml.

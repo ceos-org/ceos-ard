@@ -5,20 +5,17 @@ requirements:
   goal:
     description: |-
       Phase correction value at each pixel, if applied.
-      DOI/URL reference to algorithm or brief description is provided.
   
       File format specifications/contents provided in metadata:
   
       - Sample Type (Angle)
       - Data Format (GeoTIFF, HDF5, NetCDF, …)
-      - Data Type (Int, Float, …)
+      - Data Type (Float, …)
       - Bits per Sample
       - Byte Order
     optional: true
 dependencies:
 glossary:
-  - doi
-  - url
 references:
 changes:
 history:

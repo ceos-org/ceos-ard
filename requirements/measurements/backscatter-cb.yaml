@@ -1,0 +1,31 @@
+id: backsca-cb
+title: Backscatter Measurements (CB)
+description: 
+requirements:
+  threshold: 
+    description: |-
+      Composite Backscatter $\gamma^0_C$ calculated, e.g. via Local-Resolution-Weighting [@small2022], from a set of Terrain-flattened Radiometrically Terrain Corrected (RTC) Gamma-Nought backscatter coefficient $\gamma^0_T$ image inputs (NRB, POL, or compliant \[i.e. terrain-flattened] GSLC) is provided for each polarization.
+  
+      File format specifications/contents provided in metadata:
+  
+      - Measurement Type (Gamma-Nought)
+      - Backscatter Expression Convention (linear amplitude, linear power \[see note])
+      - Polarization (HH, HV, VV, VH, …)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+    notes:
+      - Transformation to the logarithmic decibel scale is not required or desired as this step can be completed by the user if necessary.
+dependencies:
+glossary:
+  - cb
+  - rtc
+  - nrb
+  - pol
+  - gslc
+references:
+  - small2022
+changes:
+history:
+  - SAR 3.1

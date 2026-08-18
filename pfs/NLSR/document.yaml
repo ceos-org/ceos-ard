@@ -7,7 +7,6 @@ background: |-
   These typically operate with ground sample distance and resolution in the order of 10-1000m;
   however, the Specification is not inherently limited to this resolution.
 
-# Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
   - nlsr
   - vis
@@ -66,7 +65,7 @@ requirements:
       - measurements/measurement-nlsr
       - measurements/uncertainty-sr
       - measurements/normalisation-nlsr
-      - corrections/atmospheric-corrections
+      - corrections/atmospheric
       - corrections/lunar-radiance
       - corrections/stray-light
   - category: geometric-corrections

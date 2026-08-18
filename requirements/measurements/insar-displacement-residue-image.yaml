@@ -1,0 +1,30 @@
+id: indisrei
+title: InSAR Displacement Residue Image
+description: 
+requirements:
+  goal:
+    description: |-
+      Displacement residue map images for each source acquisition generated from displacement model.
+
+      File format specifications/contents provided in metadata:
+
+      - Measurement Type (Displacement residues)
+      - Measurement projection (Line of Sight, Vertical, Horizontal, East, North)
+      - Source ID
+      - Reference Polarization (HH, HV, VV, VH, RH, RL, …)
+      - Data Format (GeoTIFF, HDF5, NetCDF, …)
+      - Data Type (Int, Float, …)
+      - Bits per Sample
+      - Byte Order
+
+      In case of polarimetric data, indicate the reference polarization.
+    optional: true
+dependencies:
+glossary:
+  - insar
+references:
+changes:
+history:
+  - SAR 3.12
+remarks: |-
+  todo: Should the last paragraph only be included in POL?

@@ -8,7 +8,6 @@ background: |-
   At present, surface temperature measurements tend to be provided as either surface brightness temperature (SBT) or as land surface temperatures (LST) requiring the SBT to be modified according to the emissivity of the target.
   This specification identifies the Surface Temperature (ST) as being the minimum or Threshold requirement for analysis ready land surface data. Nevertheless, both SBT and LST are land measurements, requiring atmospheric corrections.
 
-# Only glossary entries that are not specific to certain requirements or sections are listed here.
 glossary:
   - st
   - tir

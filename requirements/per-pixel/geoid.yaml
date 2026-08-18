@@ -1,11 +1,10 @@
-# Remove "Per-Pixel" from the title, it's inconsistent with other requirements.
 id: pigeoid
 title: Per-Pixel Geoid
 description: 
 requirements:
   goal:
     description: |-
-      Provide Geoid as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the image product.
+      Provide Geoid as used during the geometric and radiometric processing of the SAR data, resampled to an exact geometric match in extent and resolution with the CEOS-ARD image product.
   
       File format specifications/contents provided in metadata:
   
@@ -18,7 +17,10 @@ requirements:
     optional: true
 dependencies:
 glossary:
+  - ceos-ard
 references:
 changes:
 history:
   - SAR 2.10
+remarks: |-
+  Remove "Per-Pixel" from the title, it's inconsistent with other requirements.

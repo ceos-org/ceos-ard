@@ -1,0 +1,17 @@
+id: ionpha
+title: Ionospheric Phase Correction
+description:
+requirements:
+  threshold:
+    description: |-
+      If applied, reference to ionospheric phase correction technique and parameters used.
+
+      - Methodology name
+      - Reference to methodology (text or DOI)
+dependencies:
+glossary:
+  - doi
+references:
+changes:
+history:
+  - SAR 1.7.22

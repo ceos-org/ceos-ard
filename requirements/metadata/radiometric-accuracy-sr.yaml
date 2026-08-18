@@ -10,9 +10,10 @@ requirements:
     optional: true
 dependencies:
 glossary:
-  # todo: what does DCC stand for? Add to glossary
   - doi
 references:
 changes:
 history:
   - NLSR 1.12 / SR 1.12
+remarks: |-
+  todo: What does DCC stand for? Add to glossary.
