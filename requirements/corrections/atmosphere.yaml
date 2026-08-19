@@ -16,5 +16,5 @@ changes:
       Edited building block name to remove 'emissivity'
     reason: Emissivity is now covered in a separate requirement.
 history:
-  - ST 6.0
+  - ST 3.2
 
