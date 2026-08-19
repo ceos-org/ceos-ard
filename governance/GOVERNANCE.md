@@ -307,6 +307,8 @@ Endorsed Product Family Specifications are openly available on [ceos.org/ard](ht
 
 Once confirmed as meeting the requirements of CEOS-ARD, satellite EO datasets are added to the [CEOS-ARD Website table](https://ceos.org/ard/index.html#datasets). Data may be accessed through the data provider’s DOI link, along with links to further information (e.g., the data provider’s website, CEOS MIM Database records), sample products, and the completed CEOS-ARD self-assessment and peer review outcome documents.
 
+CEOS-ARD Datasets are interconnected with the [WGISS Connected Data Assets](https://ceos.org/ourwork/workinggroups/wgiss/access/connected-data-assets/cda-datasets/) database, improving the discoverability and accessibility of datasets between CEOS-ARD, ESA’s [FedEO](https://fedeo-client.ceos.org/) (Federated Earth Observation missions access) and NASA’s [IDN](https://search.earthdata.nasa.gov/search?portal=idn) (International Directory Network). CEOS-ARD follows the [Guidance to Enable Discoverability of Specialised Datasets](https://ceos-org.github.io/guidance-to-enable-discoverability-of-specialised-datasets/preface.html) for metadata encoding, to facilitate discovery of CEOS-ARD Datasets through the WGISS Connected Data Assets.
+
 CEOS-ARD Datasets are also promoted via the [CEOS MIM Database](http://database.eohandbook.com/).
 
 ## 5.3: Promotion
