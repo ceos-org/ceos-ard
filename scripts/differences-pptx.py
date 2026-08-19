@@ -19,6 +19,8 @@ from pathlib import Path
 from pptx import Presentation
 from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
+from pptx.opc.constants import RELATIONSHIP_TYPE as RT
+from pptx.oxml.ns import qn
 from pptx.util import Emu, Inches, Pt
 
 HERE = Path(__file__).resolve().parent
@@ -282,99 +284,6 @@ def add_table(slide, y, headers, rows):
     return shape
 
 
-def joint_value(files, fields, usage, entries, key):
-    """Proposed end state of one field across the group; True if it still differs."""
-    vals = []
-    for f in files:
-        cur = fields[f].get(key)
-        prop = proposed_cell(entries, key, set(usage.get(f, [])), cur, files, fields, usage)
-        if prop is None or prop[1] == "raw":
-            v = cur if isinstance(cur, bool) else clean(cur)
-        elif prop[1] == "delete":
-            v = ""
-        else:
-            v = prop[0]
-        if v in ("(not set)", "(no notes)"):
-            v = ""
-        vals.append(v)
-    counts = {}
-    for v in vals:
-        counts[v] = counts.get(v, 0) + 1
-    value = max(counts, key=counts.get)
-    return value, len(counts) > 1
-
-
-def joint_yaml_lines(files, fields, usage, entries, levels):
-    """The proposed joint building block as plain YAML lines."""
-    lines = []
-
-    def scalar(indent, key, value, todo):
-        suffix = "  # TODO: not aligned yet, see comparison" if todo else ""
-        if "\n" in value:
-            lines.append(f"{indent}{key}: |-{suffix}")
-            for l in value.split("\n"):
-                lines.append(f"{indent}  {l}")
-        else:
-            lines.append(f"{indent}{key}: {value}{suffix}")
-
-    for key in ("title", "description"):
-        value, todo = joint_value(files, fields, usage, entries, key)
-        if value:
-            scalar("", key, value, todo)
-    lines.append("requirements:")
-    for lvl in cbb.LEVEL_ORDER:
-        if lvl not in levels:
-            continue
-        desc, d_todo = joint_value(files, fields, usage, entries, f"{lvl}.description")
-        notes, n_todo = joint_value(files, fields, usage, entries, f"{lvl}.notes")
-        opt, o_todo = joint_value(files, fields, usage, entries, f"{lvl}.optional")
-        if not (desc or notes or opt):
-            continue
-        lines.append(f"  {lvl}:")
-        if desc:
-            scalar("    ", "description", desc, d_todo)
-        if notes:
-            lines.append("    notes:" + ("  # TODO: not aligned yet, see comparison" if n_todo else ""))
-            for note in notes.split("\n\n"):
-                if "\n" in note:
-                    lines.append("      - |-")
-                    for l in note.split("\n"):
-                        lines.append(f"        {l}")
-                else:
-                    lines.append(f"      - {note}")
-        if opt is True:
-            lines.append("    optional: true" + ("  # TODO: not aligned yet, see comparison" if o_todo else ""))
-    return lines
-
-
-def add_proposal_slides(prs, blank, title, lines):
-    """Slides with the proposed joint building block as editable plain YAML."""
-    per_slide = []
-    current, height = [], 0
-    for line in lines:
-        h = max(1, len(line) // 115 + 1)
-        if current and height + h > 28:
-            per_slide.append(current)
-            current, height = [], 0
-        current.append(line)
-        height += h
-    per_slide.append(current)
-    for n, slide_lines in enumerate(per_slide):
-        slide = prs.slides.add_slide(blank)
-        add_title(slide, title + " — Proposal" + (" (cont.)" if n else ""))
-        box = slide.shapes.add_textbox(MARGIN, Inches(1.1), SLIDE_W - 2 * MARGIN, Inches(6.2))
-        tf = box.text_frame
-        tf.word_wrap = True
-        first = True
-        for line in slide_lines:
-            p = tf.paragraphs[0] if first else tf.add_paragraph()
-            first = False
-            run = p.add_run()
-            run.text = line
-            run.font.size = Pt(11)
-            run.font.name = "Consolas"
-
-
 def main():
     groups = cbb.collect_groups()
     usage, overrides, cat_overrides, types = cbb.collect_pfs()
@@ -466,9 +375,6 @@ def main():
         [("", None)],
         [("Internal notes are shown below the tables; the raw proposal text is in the "
           "slide's speaker notes.", None)],
-        [("Each group is followed by a Proposal slide showing the proposed building blocks "
-          "in YAML form (only the fields that change; proposed values in ", None),
-         ("green", "ins"), (") for editing and capturing the agreement during the review.", None)],
     ]
     if any(cbb.STALE_WARNING in v for m in manual.values() for v in m.values()):
         legend.insert(-2, [("⚠ in the slide title: the files changed after the feedback was "
@@ -497,6 +403,8 @@ def main():
                 font.color.rgb = GRAY
                 font.italic = True
 
+    toc_targets = []
+    pfs_order = ["AR", "NLSR", "SR", "ST", "CB", "GSLC", "INSAR", "NRB", "ORB", "POL"]
     for label, files in groups.items():
         docs = {f: cbb.load(f) for f in files}
         levels = cbb.group_levels(docs)
@@ -508,7 +416,9 @@ def main():
         internal_notes = entries_raw.get("Internal notes", "")
         entries = parse_proposal(proposal_text) if proposal_text else []
         stale = cbb.STALE_WARNING in proposal_text or cbb.STALE_WARNING in internal_notes
-        title = heading.replace("`", "") + (" ⚠" if stale else "")
+        group_pfs = sorted({c for f in files for c in usage.get(f, [])}, key=pfs_order.index)
+        title = (f"{heading.replace('`', '')} ({', '.join(group_pfs)})"
+                 + (" ⚠" if stale else ""))
 
         diff_keys = [k for k in cbb.field_keys(levels)
                      if not all(fields[f][k] == fields[files[0]][k] for f in files)]
@@ -580,6 +490,7 @@ def main():
 
         slide = prs.slides.add_slide(blank)
         add_title(slide, title)
+        toc_targets.append((heading.replace("`", ""), group_pfs, slide))
         y = 1.1
         for tlabel, rows in tables:
             h = est_height(rows)
@@ -646,13 +557,11 @@ def main():
             notes.append("INTERNAL NOTES:\n" + internal_notes)
         if notes:
             slide.notes_slide.notes_text_frame.text = "\n\n".join(notes)
-        if proposal_text:
-            add_proposal_slides(prs, blank, title.replace(" ⚠", ""),
-                                joint_yaml_lines(files, fields, usage, entries, levels))
 
     if cat_overrides:
         slide = prs.slides.add_slide(blank)
         add_title(slide, "PFS-specific overrides of requirement categories")
+        toc_targets.append(("PFS-specific overrides of requirement categories", ["AR"], slide))
         rows = []
         for pfs, ref, mode, data in cat_overrides:
             for key, value in cbb.flatten_override(data)[0]:
@@ -686,6 +595,63 @@ def main():
                     run.text = line
                     run.font.size = Pt(12)
                     run.font.italic = True
+
+    # contents: requirement x PFS matrix with jump links, split over two slides
+    half = (len(toc_targets) + 1) // 2
+    toc_slides = []
+    for part, chunk in enumerate((toc_targets[:half], toc_targets[half:]), start=1):
+        toc = prs.slides.add_slide(blank)
+        add_title(toc, f"Contents ({part}/2)")
+        shape = toc.shapes.add_table(len(chunk) + 1, 11, MARGIN, Inches(1.0),
+                                     SLIDE_W - 2 * MARGIN, Inches(0.3))
+        table = shape.table
+        table.first_row = False
+        table.horz_banding = False
+        table.columns[0].width = Inches(4.63)
+        for c in range(1, 11):
+            table.columns[c].width = Inches(0.767)
+        table.rows[0].height = Inches(0.3)
+        for c, text in enumerate(["Requirement"] + pfs_order):
+            cell = table.cell(0, c)
+            cell.fill.solid()
+            cell.fill.fore_color.rgb = BLACK
+            cell.margin_left = cell.margin_right = cell.margin_top = cell.margin_bottom = Inches(0.03)
+            p = cell.text_frame.paragraphs[0]
+            if c:
+                p.alignment = PP_ALIGN.CENTER
+            run = p.add_run()
+            run.text = text
+            run.font.size = Pt(11)
+            run.font.bold = True
+            run.font.color.rgb = WHITE
+        for r, (name, codes, target) in enumerate(chunk, start=1):
+            table.rows[r].height = Inches(0.28)
+            bg = STRIPE if r % 2 == 0 else WHITE
+            for c in range(11):
+                cell = table.cell(r, c)
+                cell.fill.solid()
+                cell.fill.fore_color.rgb = bg
+                cell.margin_left = cell.margin_right = cell.margin_top = cell.margin_bottom = Inches(0.03)
+                p = cell.text_frame.paragraphs[0]
+                run = p.add_run()
+                run.font.size = Pt(11)
+                if c == 0:
+                    run.text = name
+                    rid = toc.part.relate_to(target.part, RT.SLIDE)
+                    link = run._r.get_or_add_rPr().makeelement(
+                        qn("a:hlinkClick"), {qn("r:id"): rid, "action": "ppaction://hlinksldjump"})
+                    run._r.get_or_add_rPr().append(link)
+                else:
+                    p.alignment = PP_ALIGN.CENTER
+                    run.text = "✓" if pfs_order[c - 1] in codes else ""
+        toc_slides.append(toc)
+    slide_ids = prs.slides._sldIdLst
+    # move the two contents slides directly after the title slide, keeping their order
+    elements = list(slide_ids)
+    for el in elements[-2:]:
+        slide_ids.remove(el)
+    for offset, el in enumerate(elements[-2:]):
+        slide_ids.insert(1 + offset, el)
 
     prs.save(OUT)
     out_name = OUT.relative_to(cbb.ROOT) if OUT.is_relative_to(cbb.ROOT) else OUT.name

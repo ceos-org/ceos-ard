@@ -115,18 +115,22 @@ Auxiliary data includes DEMs, etc., and any additional data sources used in the 
 
 #### Proposal
 
-**Threshold — description (AR, NLSR, SR)**: Align on:
+**Threshold — description (NLSR, SR)**:
 
 ```
-The metadata identifies the sources of auxiliary data used in the generation process.
+Lists the sources of auxiliary data used in the generation process.
 ```
 
-**Goal — description (NLSR, SR)**: Match AR
-
-**Threshold — notes (NLSR, SR)**: Align the note wording with the note of the SAR goal:
+**Threshold — notes (NLSR, SR)**:
 
 ```
 Auxiliary data includes DEMs, etc., and any additional data sources used in the generation of the product.
+```
+
+**Goal — description (NLSR, SR)**:
+
+```
+As threshold, but information on auxiliary data should be available for free online download, contemporaneously with the product or through a link to the source.
 ```
 
 #### Internal notes
@@ -181,9 +185,17 @@ Indicate EPSG code, if defined for the CRS.</pre>
 
 #### Proposal
 
-**Title**: Align on "Coordinate Reference System" (drop the "Product" prefix)
+**Title (CB, GSLC, INSAR, NRB, ORB, POL)**:
 
-**Threshold — description (AR)**: Match NLSR "The metadata lists the coordinate reference system that has been used."
+```
+Coordinate Reference System
+```
+
+**Threshold — description (NLSR, SR, ST)**:
+
+```
+The coordinate reference system that has been used is detailed.
+```
 
 #### Internal notes
 
@@ -269,18 +281,22 @@ The metadata identifies an online location from where the data can be consistent
 
 #### Proposal
 
-**Title**: Align on "Data Access"
-
-**Threshold — description (AR, NLSR, SR, ST)**: Replace with:
+**Title (CB, GSLC, INSAR, NRB, ORB, POL)**:
 
 ```
-The metadata identifies the location from where the product can be retrieved, expressed as a URL or DOI.
+Data Access
 ```
 
-**Goal — description (AR, NLSR, SR, ST)**: Add as optional goal, matching the SAR variants:
+**Threshold — description (AR, NLSR, SR, ST)**:
 
 ```
-The metadata identifies an online location from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required.
+The location from where the product can be retrieved is identified, expressed as a URL or DOI.
+```
+
+**Goal — description (AR, NLSR, SR, ST)**:
+
+```
+An online location is identified from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required.
 ```
 
 #### Internal notes
@@ -346,7 +362,11 @@ The geographic area covered by the observations is identified specifically, such
 
 #### Proposal
 
-**Title**: Align on "Geographical Area"
+**Title (CB, GSLC, INSAR, NRB, ORB, POL)**:
+
+```
+Geographical Area
+```
 
 #### Internal notes
 
@@ -399,16 +419,16 @@ As threshold, with references to the relevant “CEOS Missions, Instruments, and
 
 #### Proposal
 
-**Threshold — description**: Adopt the SAR wording for all:
+**Threshold — description**:
 
 ```
-The instrument used to collect the data is identified in the metadata:
+The instrument used to collect the data is identified:
 
 - Satellite name
 - Instrument name
 ```
 
-**Goal — description**: Align on:
+**Goal — description**:
 
 ```
 As threshold, with references to the relevant CEOS Missions, Instruments, and Measurements (MIM) database record (https://ceos.org/mim-database).
@@ -464,13 +484,13 @@ As threshold, but metadata should be provided in a community endorsed standard t
 
 #### Proposal
 
-**Threshold — description**: Align on the SAR wording ("component/variable" instead of "component part"):
+**Threshold — description (AR, NLSR, SR, ST)**:
 
 ```
 Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable for further use.
 ```
 
-**Goal — description (AR, NLSR, SR, ST)**: Extend the list of example standards:
+**Goal — description (AR, NLSR, SR, ST)**:
 
 ```
 As threshold, but metadata should be provided in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2, the Climate and Forecast (CF) convention, or the Attribute Convention for Data Discovery (ACDD).
@@ -516,9 +536,7 @@ Information on radiometric accuracy should be available in the metadata as a sin
 
 #### Proposal
 
-**Goal — description**: Keep per family (radiometric accuracy is assessed differently for SAR backscatter and for optical reflectance).
-
-**Goal — notes (NLSR, SR)**: Remove — covered by the category-level DOI landing page verbiage.
+**Goal — notes (NLSR, SR)**: Remove
 
 #### Internal notes
 
@@ -580,9 +598,14 @@ Information on sensory calibration should be available in the metadata as a sing
 
 #### Proposal
 
-**Goal — description (AR)**: Match NLSR
+**Goal — description**:
 
-**Goal — notes (NLSR, SR)**: Remove — covered by the category-level DOI landing page verbiage (the note also contains a typo: "sensory").
+```
+Sensor calibration parameters are identified or can be accessed using details included in the metadata.
+Ideally this would support machine-to-machine access.
+```
+
+**Goal — notes (NLSR, SR)**: Remove
 
 #### Internal notes
 
@@ -668,9 +691,17 @@ As threshold, but information required to determine, within a stated uncertainty
 
 #### Proposal
 
-**Threshold — description (NLSR, SR)**: Match AR
+**Threshold — description (AR, NLSR, SR)**:
 
-**Goal — description (NLSR, SR)**: Match AR
+```
+The beginning and end of the data collection time is expressed in date/time and identified consistent with ISO 8601. The time is expressed with the time offset from UTC unambiguously identified.
+```
+
+**Goal — description (NLSR, SR)**:
+
+```
+As threshold, but information required to determine, within a stated uncertainty, when the individual observations were taken is available.
+```
 
 #### Internal notes
 
@@ -752,11 +783,19 @@ Information on traceability should be available in the metadata as a single DOI 
 
 #### Proposal
 
-**Title**: Align on "Traceability"; alternatively adopt the more precise ST title "Metrological Traceability of the Measurand to SI" for all PFS.
+**Title (ST)**:
 
-**Goal — description (ST)**: Match AR "Data must be traceable to SI reference standard." (the DOI landing page sentence moves to category level)
+```
+Traceability
+```
 
-**Goal — notes**: Keep as is, except the DOI landing page note (covered by the category-level discussion).
+**Goal — description (ST)**:
+
+```
+Data must be traceable to SI reference standard.
+```
+
+**Goal — notes (CB, GSLC, INSAR, NRB, ORB, POL, NLSR, SR)**: Remove the DOI landing page note
 
 #### Internal notes
 
@@ -815,17 +854,19 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 #### Proposal
 
-**Title (ST)**: Match NLSR "Atmospheric Corrections"
+**Title (ST)**:
 
-**Threshold — description (ST)**: No change
+```
+Atmospheric Corrections
+```
 
-**Threshold — description (NLSR)**: Remove the DOI landing page paragraphs — covered by the category-level verbiage; keep:
+**Threshold — description (NLSR)**:
 
 ```
 Corrections are applied for atmospheric scattering.
 ```
 
-**Threshold — notes (NLSR)**: Remove — belongs to the DOI landing page verbiage.
+**Threshold — notes (NLSR)**: Remove
 
 #### Internal notes
 
@@ -874,13 +915,13 @@ See @mobley2016.
 
 #### Proposal
 
-**Threshold — description** (AR requirement wording):
+**Threshold — description (AR, SR)**:
 
 ```
 Specification of corrections applied for molecular (Rayleigh) scattering and for aerosol scattering and absorption.
 ```
 
-**Threshold — notes**: Keep Note as is for AR. Remove Note for SR.
+**Threshold — notes (SR)**: Remove
 
 #### Internal notes
 
@@ -996,9 +1037,7 @@ This requirement is intended to enable interoperability between imagery from dif
 
 #### Proposal
 
-**Description**: Keep as is.
-
-**Threshold — description** (AR requirement wording):
+**Threshold — description**:
 
 ```
 Sub-pixel uncertainty is achieved in **relative** geolocation, that is, the pixels from the same instrument and platform are consistently located, and are thus comparable, through time. Sub-pixel uncertainty is taken to be less than or equal to 0.5-pixel radial root mean square error (rRMSE) or equivalent in Circular Error Probability (CEP) relative to a defined reference image. A consistent gridding/sampling frame is used, including common cell size, origin, and nominal sample point location within the cell (centre, ll, ur).
@@ -1006,20 +1045,20 @@ Sub-pixel uncertainty is achieved in **relative** geolocation, that is, the pixe
 Relevant metadata must be provided under [@geometric-uncertainty] and [@instrument].
 ```
 
-**Threshold — notes** (AR notes wording):
+**Threshold — notes**:
 
 ```
 1. The threshold level will not necessarily enable interoperability between data from different sources as the geometric corrections for each of the sources may differ.
 2. It is useful to note if the sensor is used at its native resolution before geometric correction or that some resampling must be done.
 ```
 
-**Goal — description** (AR notes wording):
+**Goal — description**:
 
 ```
 Sub-pixel uncertainty is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid). Relevant metadata must be provided under Section “General Metadata: Geometric Uncertainty of the Data” and Section “General Metadata: Instrument”.
 ```
 
-**Goal — notes** (AR notes wording):
+**Goal — notes (NLSR, SR, ST)**:
 
 ```
 This requirement is intended to enable interoperability between imagery from different platforms that meet this level of correction and with non-image spatial data such as GIS layers and terrain models.
@@ -1087,13 +1126,11 @@ Metadata contains a single DOI landing page with references to:
 
 #### Proposal
 
-**Threshold — description (SR)**: No Change
+**Goal — description (SR)**:
 
-**Threshold — description (AR)**: No change
-
-**Goal — description (SR)**: Match AR "Data is corrected for ozone if spectral bands are affected." Remove "Metadata contains a single DOI landing page with references to: a citable peer-reviewed algorithm technical documentation regarding the implementation of that algorithm"
-
-**Goal — description (AR)**: No change
+```
+Data is corrected for ozone if spectral bands are affected.
+```
 
 #### Internal notes
 
@@ -1135,13 +1172,13 @@ Examples of technical documentation include an Algorithm Theoretical Basis Docum
 
 #### Proposal
 
-**Threshold — description** (AR requirement wording):
+**Threshold — description (SR)**:
 
 ```
 Corrections are applied for water vapour if spectral bands are affected.
 ```
 
-**Threshold — notes**: SR match AR
+**Threshold — notes (SR)**: Remove
 
 #### Internal notes
 
@@ -1186,13 +1223,13 @@ Information on measurement normalisation should be available in the metadata as 
 
 #### Proposal
 
-**Goal — description** (AR requirement wording):
+**Goal — description (NLSR, SR)**:
 
 ```
 Measurements are normalised (to nadir) to remove the effect of bidirectional dependence of the upwelling radiance on observation and solar-illumination geometries.
 ```
 
-**Goal — notes**: Remove for NLSR and SR
+**Goal — notes (NLSR, SR)**: Remove
 
 #### Internal notes
 
@@ -1286,9 +1323,9 @@ Information on measurement uncertainty should be available in the metadata as a 
 
 #### Proposal
 
-**Description**: Remove for SR and NLSR
+**Description (NLSR, SR)**: Remove
 
-**Threshold — description (AR, NLSR, SR)**: Adopt the ST 6.0 wording for all optical PFS:
+**Threshold — description (AR, NLSR, SR)**:
 
 ```
 A self-assessed declaration of per-pixel measurement uncertainty, following Section 3.2.4 (Uncertainty Characterization) of the Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines is provided, meeting the Basic or Good criteria.
@@ -1381,11 +1418,17 @@ Information on algorithms should be available in the metadata as a single DOI la
 
 #### Proposal
 
-**Threshold — description (NLSR, SR, ST)**: Match AR Goal (swap: the AR Goal text becomes the Threshold)
+**Threshold — description (NLSR, SR, ST)**: Remove
 
-**Goal — description (NLSR, SR, ST)**: Match AR Threshold (swap: the AR Threshold text becomes the Goal)
+**Threshold — notes (AR)**: Remove
 
-**Threshold — notes**: Remove the note
+**Goal — description (NLSR, SR, ST)**:
+
+```
+All algorithms and the sequence in which they were applied in the generation process are identified.
+
+Algorithms must be published and validated, and a description of the validation process is included.
+```
 
 #### Internal notes
 
@@ -1416,7 +1459,11 @@ Information on geometric correction source and methods are provided, including r
 
 #### Proposal
 
-**Goal — description (NLSR, SR)**: Match AR
+**Goal — description (NLSR, SR)**:
+
+```
+Information on geometric correction source and methods are provided, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.
+```
 
 #### Internal notes
 
@@ -1452,7 +1499,11 @@ The map projection that has been used and any relevant parameters required in re
 
 #### Proposal
 
-**Threshold — description (NLSR, SR)**: Match AR
+**Threshold — description (NLSR, SR)**:
+
+```
+The map projection that has been used and any relevant parameters required in relation to use of data in that map projection is detailed.
+```
 
 #### Internal notes
 
@@ -1501,7 +1552,11 @@ Information on processing chain provenance should be available with a detailed d
 
 #### Proposal
 
-**Goal — description (NLSR, SR)**: Match AR
+**Goal — description (NLSR, SR)**:
+
+```
+Information on processing chain provenance should be available with a detailed description of the processing steps used to generate the product, including the versions of software used, giving full transparency to the users.
+```
 
 #### Internal notes
 
@@ -1557,9 +1612,13 @@ Information on spectral bands should be available in the metadata as a single DO
 
 #### Proposal
 
-**Threshold — description**: NLSR-SR-ST match AR
+**Threshold — description**:
 
-**Goal — description**: NLSR-SR-ST match AR
+```
+Spectral response function and method of assessment is provided.
+```
+
+**Goal — description (NLSR, SR)**: Remove
 
 #### Internal notes
 
@@ -1621,13 +1680,13 @@ See @foga2017, @skakun2022, @zhu2012, and @zhu2015.
 
 #### Proposal
 
-**Threshold — description**: Adopt for all optical PFS, with simplified wording (issue #112):
+**Threshold — description (AR, NLSR, SR)**:
 
 ```
 Specification of whether a pixel is cloud-affected.
 ```
 
-**Goal — description**:
+**Goal — description (AR, NLSR, SR)**:
 
 ```
 As threshold, but information on cloud type or confidence is included.
@@ -1691,13 +1750,17 @@ I</del><ins style="background:#ccffd8;color:#055d20;text-decoration:none">As thr
 
 #### Proposal
 
-**Threshold — description (SR)**: Use the AR wording with "cloud shadow or cloud shadow-affected" merged:
+**Threshold — description (SR)**:
 
 ```
 Specification of whether a pixel is cloud shadow-affected.
 ```
 
-**Goal — description (NLSR)**: Change wording - "Specification of whether a pixel is cloud shadow-affected."
+**Goal — description (NLSR)**:
+
+```
+Specification of whether a pixel is cloud shadow-affected.
+```
 
 #### Internal notes
 
@@ -1761,11 +1824,27 @@ Identifies which tests have and have not been successfully completed for each pi
 
 #### Proposal
 
-**Title**: Match AR "Per-pixel Assessment"
+**Title (NLSR, SR, ST)**:
 
-**Threshold — description (NLSR, SR)**: Match AR
+```
+Per-pixel Assessment
+```
 
-**Goal — description (NLSR, SR)**: Match AR
+**Threshold — description (NLSR, SR)**:
+
+```
+Identifies pixels for which the per-pixel tests (below) have not all been successfully completed.
+```
+
+**Threshold — description (ST)**: Replace the hard-coded test numbers with cross-references to the respective requirements
+
+**Goal — description (NLSR, SR)**:
+
+```
+Identifies which tests have and have not been successfully completed for each pixel.
+```
+
+**Goal — description (ST)**: Replace the hard-coded test numbers with cross-references to the respective requirements
 
 #### Internal notes
 
@@ -1841,17 +1920,23 @@ As threshold, information on land/water mask should be available in the metadata
 
 #### Proposal
 
-**Threshold — description (AR)**: No change
+**Threshold — description (NLSR)**:
 
-**Threshold — description (NLSR)**: Change wording to match AR phrasing - "Specification of whether a pixel is land or water"
+```
+Specification of whether a pixel is land or water
+```
 
-**Threshold — description (SR)**: No change
+**Goal — description (NLSR)**:
 
-**Goal — description (AR)**: No change
+```
+As threshold
+```
 
-**Goal — description (NLSR)**: Change wording to match AR phrasing - "As threshold"
+**Goal — description (SR)**:
 
-**Goal — description (SR)**: Change wording to match AR phrasing - "Specification of whether a pixel is land or water"
+```
+Specification of whether a pixel is land or water
+```
 
 #### Internal notes
 
@@ -1887,13 +1972,13 @@ Pixels that do not correspond to an observation (e.g., empty pixels / invalid ob
 
 #### Proposal
 
-**Threshold — description (AR, NLSR, SR)**: Adopt the ST wording for all optical PFS:
+**Threshold — description (AR, NLSR, SR)**:
 
 ```
 Pixels that do not correspond to an observation (‘No Data / Invalid / Falsified / Valid / Modelled’) are flagged.
 ```
 
-**Goal — description (AR, NLSR, SR)**:
+**Goal — description (AR, NLSR, SR, ST)**:
 
 ```
 As threshold.
@@ -1938,9 +2023,17 @@ As threshold, with specification of which pixels are radiometrically saturated f
 
 #### Proposal
 
-**Threshold — description**: NLSR-SR-ST match AR
+**Threshold — description (NLSR, SR)**:
 
-**Goal — description**: NLSR-SR-ST match AR
+```
+Specification of whether there is pixel radiometric saturation at Level 1 in one or more spectral bands.
+```
+
+**Goal — description (NLSR, SR)**:
+
+```
+As threshold, with specification of which pixels are radiometrically saturated for each spectral band.
+```
 
 #### Internal notes
 
@@ -1979,13 +2072,23 @@ As threshold, information on snow/ice mask should be available in the metadata a
 
 #### Proposal
 
-**Threshold — description (NLSR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether a pixel is snow/ice"
+**Threshold — description (NLSR)**:
 
-**Goal — description (NLSR)**: As threshold
+```
+Specification of whether a pixel is snow/ice
+```
 
-**Threshold — description (SR)**: No change
+**Goal — description (NLSR)**:
 
-**Goal — description (SR)**: Change wording to maintain consistent PFS phrasing - "Specification of whether a pixel is snow/ice"
+```
+As threshold
+```
+
+**Goal — description (SR)**:
+
+```
+Specification of whether a pixel is snow/ice
+```
 
 #### Internal notes
 
@@ -2016,7 +2119,11 @@ Identifies pixels that are not visible to the sensor due to terrain occlusion du
 
 #### Proposal
 
-**Goal — description (SR, NLSR, ST)**: Change wording to maintain consistent PFS phrasing - "Specification of whether pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing."
+**Goal — description (NLSR, SR, ST)**:
+
+```
+Specification of whether pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing.
+```
 
 #### Internal notes
 
@@ -2067,9 +2174,17 @@ Provide per-pixel solar and sensor viewing azimuth and zenith angles.
 
 #### Proposal
 
-**Threshold — description**: ST-SR match AR
+**Threshold — description (SR, ST)**:
 
-**Goal — description (ST, SR)**: Change wording to maintain consistent PFS phrasing "Specification of the per-pixel solar and sensor viewing azimuth and zenith angles."
+```
+Specification of the solar and sensor viewing azimuth and zenith angles.
+```
+
+**Goal — description (SR, ST)**:
+
+```
+Specification of the per-pixel solar and sensor viewing azimuth and zenith angles.
+```
 
 #### Internal notes
 

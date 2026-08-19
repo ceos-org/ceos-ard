@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CEOS-ARD diff tool</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 1.5rem; max-width: 75rem; }
+  h1 { font-size: 1.3rem; }
+  .cols { display: flex; gap: 1rem; }
+  .cols > div { flex: 1; }
+  textarea { width: 100%; height: 10rem; font: 13px/1.4 Consolas, monospace; box-sizing: border-box; }
+  #mode { color: #666; font-size: 0.85rem; margin: 0.5rem 0; }
+  #preview pre, #snippet { white-space: pre-wrap; overflow-wrap: break-word; }
+  #preview pre { border: 1px solid #ccc; padding: 0.6rem; background: #fafafa; }
+  #snippet { width: 100%; height: 6rem; }
+  button { margin: 0.3rem 0; }
+  label { font-weight: 600; font-size: 0.9rem; }
+</style>
+</head>
+<body>
+<h1>CEOS-ARD diff tool</h1>
+<p><del style="color:#B00000">Struck-through</del> text is removed,
+<ins style="color:#2E7D32;font-weight:bold;text-decoration:none">bold green</ins> text is added; shared passages stay plain.</p>
+<div class="cols">
+  <div><label>Before</label><textarea id="before" spellcheck="false"></textarea></div>
+  <div><label>After</label><textarea id="after" spellcheck="false"></textarea></div>
+</div>
+<div id="mode"></div>
+<div id="preview"></div>
+<label>HTML snippet (paste into the markdown)</label><br>
+<textarea id="snippet" readonly spellcheck="false"></textarea><br>
+<button id="copy">Copy — formatted for PowerPoint/Word, HTML source for text editors</button>
+<span id="copied" style="color:#2E7D32; display:none;">copied</span>
+<script>
+// keep in sync with scripts/compare-building-blocks.py
+const MIN_EQUAL = 10;       // equal runs shorter than this between changes are folded
+const DIFF_THRESHOLD = 0.5; // min share of the shorter text covered by equal runs
+const DEL = '<del style="color:#B00000">';
+const INS = '<ins style="color:#2E7D32;font-weight:bold;text-decoration:none">';
+const PRE = '<pre style="font-family:Calibri, sans-serif;font-size:10pt;white-space:pre-wrap;overflow-wrap:break-word;">';
+
+function esc(t) {
+  return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+// character-level matching blocks (port of difflib.SequenceMatcher, autojunk off)
+function matchingBlocks(a, b) {
+  const b2j = new Map();
+  for (let i = 0; i < b.length; i++) {
+    if (!b2j.has(b[i])) b2j.set(b[i], []);
+    b2j.get(b[i]).push(i);
+  }
+  function findLongest(alo, ahi, blo, bhi) {
+    let besti = alo, bestj = blo, bestsize = 0;
+    let j2len = new Map();
+    for (let i = alo; i < ahi; i++) {
+      const newj2len = new Map();
+      for (const j of (b2j.get(a[i]) || [])) {
+        if (j < blo) continue;
+        if (j >= bhi) break;
+        const k = (j2len.get(j - 1) || 0) + 1;
+        newj2len.set(j, k);
+        if (k > bestsize) { besti = i - k + 1; bestj = j - k + 1; bestsize = k; }
+      }
+      j2len = newj2len;
+    }
+    return [besti, bestj, bestsize];
+  }
+  const queue = [[0, a.length, 0, b.length]];
+  const blocks = [];
+  while (queue.length) {
+    const [alo, ahi, blo, bhi] = queue.pop();
+    const [i, j, k] = findLongest(alo, ahi, blo, bhi);
+    if (k) {
+      blocks.push([i, j, k]);
+      queue.push([alo, i, blo, j]);
+      queue.push([i + k, ahi, j + k, bhi]);
+    }
+  }
+  blocks.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
+  const merged = [];
+  let i1 = 0, j1 = 0, k1 = 0;
+  for (const [i2, j2, k2] of blocks) {
+    if (i1 + k1 === i2 && j1 + k1 === j2) { k1 += k2; }
+    else { if (k1) merged.push([i1, j1, k1]); i1 = i2; j1 = j2; k1 = k2; }
+  }
+  if (k1) merged.push([i1, j1, k1]);
+  merged.push([a.length, b.length, 0]);
+  return merged;
+}
+
+// segments: ["equal", text] or ["change", oldText, newText], with short equal
+// runs between two changes folded into the change
+function diffSegments(a, b) {
+  const segments = [];
+  let ai = 0, bj = 0;
+  for (const [i, j, k] of matchingBlocks(a, b)) {
+    const oldT = a.slice(ai, i), newT = b.slice(bj, j);
+    if (oldT || newT) segments.push(["change", oldT, newT]);
+    if (k) segments.push(["equal", a.slice(i, i + k)]);
+    ai = i + k; bj = j + k;
+  }
+  const merged = [];
+  let n = 0;
+  while (n < segments.length) {
+    const seg = segments[n];
+    if (seg[0] === "equal" && seg[1].length < MIN_EQUAL && merged.length &&
+        merged[merged.length - 1][0] === "change" &&
+        n + 1 < segments.length && segments[n + 1][0] === "change") {
+      const prev = merged[merged.length - 1], next = segments[n + 1];
+      merged[merged.length - 1] = ["change", prev[1] + seg[1] + next[1], prev[2] + seg[1] + next[2]];
+      n += 2;
+    } else {
+      merged.push(seg);
+      n += 1;
+    }
+  }
+  return merged;
+}
+
+function render() {
+  const a = document.getElementById("before").value.trim();
+  const b = document.getElementById("after").value.trim();
+  const modeEl = document.getElementById("mode");
+  if (!a || !b) {
+    modeEl.textContent = "";
+    document.getElementById("preview").innerHTML = "";
+    document.getElementById("snippet").value = "";
+    return;
+  }
+  const segs = diffSegments(a, b);
+  let body, mode;
+  if (a === b) {
+    mode = "identical";
+    body = esc(b);
+  } else {
+    mode = "removed = red strikethrough, added = bold green";
+    body = segs.map(s => s[0] === "equal" ? esc(s[1])
+      : (s[1] ? DEL + esc(s[1]) + "</del>" : "") + (s[2] ? INS + esc(s[2]) + "</ins>" : "")).join("");
+  }
+  modeEl.textContent = mode;
+  const snippet = PRE + body + "</pre>";
+  document.getElementById("preview").innerHTML = snippet;
+  document.getElementById("snippet").value = snippet;
+}
+
+document.getElementById("before").addEventListener("input", render);
+document.getElementById("after").addEventListener("input", render);
+function officeHtml() {
+  // span-based markup with inline styles pastes reliably into PowerPoint/Word
+  const body = document.getElementById("snippet").value
+    .replace(/^<pre[^>]*>/, "").replace(/<\/pre>$/, "")
+    .replaceAll(INS, '<span style="color:#2E7D32;font-weight:bold">')
+    .replaceAll("</ins>", "</span>")
+    .replaceAll(DEL, '<span style="color:#B00000;text-decoration:line-through">')
+    .replaceAll("</del>", "</span>")
+    .replaceAll("\n", "<br>");
+  return '<div style="font-family:Calibri, sans-serif;font-size:10pt">' + body + "</div>";
+}
+
+document.getElementById("copy").addEventListener("click", async () => {
+  const plain = document.getElementById("snippet").value;
+  try {
+    await navigator.clipboard.write([new ClipboardItem({
+      "text/html": new Blob([officeHtml()], { type: "text/html" }),
+      "text/plain": new Blob([plain], { type: "text/plain" }),
+    })]);
+  } catch (e) {
+    await navigator.clipboard.writeText(plain);
+  }
+  const hint = document.getElementById("copied");
+  hint.style.display = "inline";
+  setTimeout(() => { hint.style.display = "none"; }, 1500);
+});
+</script>
+</body>
+</html>
