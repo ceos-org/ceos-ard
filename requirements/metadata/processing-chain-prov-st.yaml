@@ -20,4 +20,4 @@ changes:
       introduced a threshold requirement requiring reconstrucibility at Threshold and reworded the Goal requirement for reproducibility.
     reason: Addresses GitHub issue 58, calling for processing chain provenance to become a threshold requirement
 history:
-  - ST 6.0
+  - ST 1.15
