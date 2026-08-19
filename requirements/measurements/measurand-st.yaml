@@ -24,5 +24,3 @@ changes:
     change: |-
       Removed 'of the land' qualifier for 'surface temperature,' renamed requirement to 'measurand' and added a link to Spectral Bands requirement
     reason: expanded scope of requirement for other surface temperature types, link to spectral bands used to derive SST layer height.
-history:
-  - ST 6.0
