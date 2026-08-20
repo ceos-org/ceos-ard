@@ -14,7 +14,6 @@ changes:
     author: Harvey Jones
     level: minor
     change: |-
-      Added SR terrain occlusion requirment with minor grammar change
+      Added SR terrain occlusion requirement with minor grammar change
     reason: Addresses post-endorsement feedback of AR PFS v2.0 to include this requirement.
 history:
-  - ST 6.0
