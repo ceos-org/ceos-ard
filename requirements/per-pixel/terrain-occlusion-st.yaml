@@ -1,0 +1,19 @@
+id: terrain-st
+title: Terrain Occlusion
+description: 
+requirements:
+  goal:
+    description: |-
+      Identifies pixels that are not visible to the sensor due to terrain occlusion during off-nadir viewing.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-07-31
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Added SR terrain occlusion requirement with minor grammar change
+    reason: Addresses post-endorsement feedback of AR PFS v2.0 to include this requirement.
+history:

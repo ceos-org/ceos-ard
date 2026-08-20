@@ -1,0 +1,22 @@
+id: picloud-st
+title: Cloud
+description: 
+requirements:
+  threshold:
+    description: |-
+      Specification of whether a pixel is cloud-affected.
+  goal:
+    description: |-
+      As threshold, but information on cloud type or confidence is included.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-07-31
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Adopted AR PFS approach with an adjustment to the Goal requirement (broad cloud type/confidence over cirrus cloud identification) and requiring only 'cloud-affected' pixels to be identified.
+    reason: Aids machine readability
+history:

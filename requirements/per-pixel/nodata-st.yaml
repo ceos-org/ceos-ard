@@ -1,0 +1,18 @@
+id: pinodat-st
+title: No Data
+description: 
+requirements:
+  threshold:
+    description: |-
+      Pixels that do not correspond to an observation (No Data / Invalid / Falsified / Valid / Modelled) are flagged.
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-07-31
+    author: Harvey Jones
+    level: major
+    change: |-
+      Added different no data classes
+    reason:  as suggested in https://github.com/ceos-org/ceos-ard/issues/4
+history:

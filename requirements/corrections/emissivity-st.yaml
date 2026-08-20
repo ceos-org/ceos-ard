@@ -1,0 +1,17 @@
+id: emiani
+title: Adjustments for Emissivity and Anisotropy
+description: 
+requirements:
+  threshold:
+    description: |-
+      Retrieval methods for estimating surface emissivity per channel are provided.
+  goal:
+    description: |-
+      As threshold, but the retrieval method for estimating the total directional emissivity is provided.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+history:
+
