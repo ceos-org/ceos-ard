@@ -4,7 +4,7 @@ description:
 requirements:
   threshold:
     description: |-
-      Pixels that do not correspond to an observation (‘No Data / Invalid / Falsified / Valid / Modelled’) are flagged.
+      Pixels that do not correspond to an observation (No Data / Invalid / Falsified / Valid / Modelled) are flagged.
 dependencies:
 glossary:
 references:
