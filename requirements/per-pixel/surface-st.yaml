@@ -24,4 +24,3 @@ changes:
       Replaced Snow/Ice requirement with a Surface requirement, which features a threshold requirement for pixels identified as land or water to be flagged. 
     reason: Requirement was deemed necessary for the distinction between different surface temperature types in the PFS.
 history:
-  - ST 6.0
