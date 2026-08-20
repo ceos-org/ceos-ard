@@ -17,4 +17,3 @@ changes:
       Adopted AR PFS approach but removed Threshold requirment and specified only 'cloud-affected' pixels
     reason: cloud shadow has limited utility for non-reflectance methods.
 history:
-  - ST V6.0
