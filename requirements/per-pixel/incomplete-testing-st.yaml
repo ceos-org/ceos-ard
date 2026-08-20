@@ -24,6 +24,6 @@ changes:
     author: Harvey Jones
     level: minor
     change: |-
-      Specified the per-pixel tests that must be completed for threshold and goal assessment with cross-links to other building blocks. 
+      Specified the per-pixel tests that must be completed for threshold. 
     reason: Aids machine readability
 history:
