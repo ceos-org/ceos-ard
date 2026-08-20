@@ -20,4 +20,3 @@ changes:
       Adopted AR PFS approach with an adjustment to the Goal requirement (broad cloud type/confidence over cirrus cloud identification) and requiring only 'cloud-affected' pixels to be identified.
     reason: Aids machine readability
 history:
-  - ST 6.0
