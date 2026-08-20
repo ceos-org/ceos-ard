@@ -3,7 +3,7 @@ version: 5.0.1
 type: Optical
 applies_to: Data collected with satellite sensors operating in the thermal infrared (TIR and MWIR) and microwave wavelengths. These typically operate with ground sample distance and resolution in the order 1 dm - 50 km however the specification is not inherently limited to these resolutions.
 background: |-
-  Remotely sensed surface temperature measurements tend to be provided as surface brightness temperature (SBT), land surface temperature (LST), water surface temperature (WST), or ice surface temperature (IST), where LST, WST, and IST are derived from SBT accounting for the emissivity of the target.
+  Remotely sensed surface temperature measurements tend to be provided as surface brightness temperature (SBT), land surface temperature (LST), water surface temperature (WST), or ice surface temperature (IST), where LST, WST, and IST are derived from SBT accounting for the emissivity of the target. This specification identifies Surface Temperature (ST), including but not limited to LST, WST, and IST, as the minimum or threshold requirement for analysis ready surface data.
 
 glossary:
   - st
