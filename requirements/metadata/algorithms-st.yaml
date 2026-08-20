@@ -17,4 +17,4 @@ changes:
       Removed threshold requirement 
     reason: In response to https://github.com/ceos-org/ceos-ard/issues/55, the inclusion of uncertainty information at the threshold level negates the need for full algorithm and processing details.
 history:
-  - ST 6.0
+  - ST 1.13
