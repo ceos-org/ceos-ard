@@ -1,0 +1,96 @@
+title: Surface Brightness Temperature
+version: 1.0.0
+type: Optical
+applies_to: Data collected with satellite sensors operating in the thermal infrared (TIR and MWIR) and microwave wavelengths. These typically operate with ground sample distance and resolution in the order 1 dm - 50 km however the specification is not inherently limited to these resolutions.
+background: |-
+  Remotely sensed surface temperature measurements tend to be provided as surface brightness temperature (SBT), land surface temperature (LST), water surface temperature (WST), or ice surface temperature (IST), where LST, WST, and IST are derived from SBT accounting for the emissivity of the target. This specification identifies SBT as being the minimum or Threshold requirement for analysis ready surface data.
+
+glossary:
+  - st
+  - tir
+  - sbt
+  - lst
+
+references:
+  - cook2014
+  - li2013
+
+introduction:
+  - what-are-ceos-ard-products
+  - when-is-a-product-ceos-ard
+  - difference-threshold-goal
+
+requirements:
+  - category: general-metadata
+    requirements:
+      - metadata/ceos-ard-pfs-version
+      - metadata/traceability-st
+      - metadata/machine-readability-st
+      - metadata/time-st
+      - metadata/geo-area-optical
+      - metadata/crs-ar
+      - metadata/map-projection-ar
+      - metadata/geometric-correction-methods-st
+      - metadata/geometric-uncertainty-st
+      - metadata/instrument-st
+      - metadata/spectral-bands-st
+      - metadata/sensor-calibration-st
+      - metadata/measurand-uncertainty
+      - metadata/measurand-encoding
+      - metadata/algorithms-st
+      - metadata/auxiliary-data-st
+      - metadata/processing-chain-prov-st
+      - metadata/data-access-st
+      - metadata/valid-pixels
+  - category: per-pixel-metadata
+    requirements:
+      - per-pixel/nodata-st
+      - per-pixel/incomplete-testing-st
+      - per-pixel/saturation-ar
+      - per-pixel/cloud-st
+      - per-pixel/cloud-shadow-st
+      - per-pixel/surface-st
+      - per-pixel/view-angles-solar-ar
+      - per-pixel/terrain-occlusion-st
+  - category: radiometric-atmospheric-corrections
+    requirements:
+      - measurements/measurand-st
+      - corrections/atmosphere
+      - measurements/uncertainty-st
+  - category: geometric-corrections
+    requirements:
+      - corrections/geometric-st
+
+annexes:
+
+authors:
+  - Mathias Gergely (Aistech Space)
+  - Harvey Jones (CEOS-ARD Secretariat)
+  - Emilie Delogu (CNES)
+  - Andreas Brunn (Constellr)
+  - Andreas Dietz (DLR)
+  - Philipp Reiners (DLR)
+  - Fraser Parlane (EarthDaily)
+  - Peter Strobl (EC)
+  - Silvia Scifoni (ESA/Serco)
+  - Adam Lewis (Geoscience Australia)
+  - Jonathon Ross (Geoscience Australia)
+  - Andreia Siqueira (Geoscience Australia)
+  - Siri Jodha Khalsa (IEEE)
+  - Jean-Francois Piolle (IFREMER)
+  - Misako Kachi (JAXA)
+  - Matthias Mohr (MoreGeo)
+  - Edward M. Armstrong (NASA/JPL/CalTech) 
+  - Mark de Jong (NRCan)
+  - Anastasia Sarelli (OroraTech)
+  - Josephine Wong (OroraTech)
+  - Daniel Evans (SatVu)
+  - Jamie McMillan (SatVu)
+  - Darren Ghent (University of Leicester)
+  - Chase Mueller (USGS)
+  - Chris Barnes (USGS)
+  - Darcie Bontje (USGS)
+  - Mary Metzger (USGS)
+  - Steve Labahn (USGS)
+
+changes:  
