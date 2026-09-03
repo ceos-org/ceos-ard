@@ -44,9 +44,6 @@ Below you can find all Product Family Specifications (PFS) that are currently de
 
 ### Synthetic Aperture Radar (SAR)
 
-> [!WARNING]
-> The SAR PFS documents here are outdated, we'll update them soon.
-
 - **Normalised Radar Backscatter (NRB)**
 
   *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/NRB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/NRB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/NRB.docx)*
@@ -59,6 +56,12 @@ Below you can find all Product Family Specifications (PFS) that are currently de
 - **Geocoded Single-Look Complex (GSLC)**
 
   *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/GSLC.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/GSLC.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/GSLC.docx)*
+- **InSAR (INSAR)**
+
+  *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/INSAR.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/INSAR.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/INSAR.docx)*
+- **Composite Backscatter (CB)**
+
+  *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/CB.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/CB.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/CB.docx)*
 
 ## In this repository
 
