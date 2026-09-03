@@ -20,6 +20,8 @@ All pull requests additionally require a review of a CEOS-ARD team members.
 3. Generate the documents for a specific PFS (e.g. `SR`): `ceos-ard generate SR`
 4. Generate all documents: `ceos-ard generate-all`
 
+Visit the [CEOS-ARD Editor](https://editor.ceos-ard.moregeo.it/) to draft and propose edits to Product Family Specifications (PFS) and their constituent building blocks in the CEOS-ARD GitHub repository. A short video tutorial is available [here](https://www.youtube.com/watch?v=jKMhHR6M5DU).
+
 ## Release Process
 
 To release a specific PFS document, create a GitHub Release with a tag following the pattern `<PFS>-v<major>.<minor>.<patch>`, e.g. `SR-v5.0.1`.
