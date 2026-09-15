@@ -1,0 +1,25 @@
+id: sencal-st
+title: Sensor Calibration
+description:
+requirements:
+  threshold:
+    description: |- 
+      Binary description of calibrated/not calibrated only.
+  goal:
+    description: |-
+      Sensor calibration parameters are identified or can be accessed using details included in the metadata, documented by URL or DOI. 
+
+      Ideally this would support machine-to-machine access.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      updated goal description to reference DOI/URL access and support for machine-to-machine access
+    reason: Aligned with other PFS requirements for sensor calibration
+history:
+  - AR 1.11

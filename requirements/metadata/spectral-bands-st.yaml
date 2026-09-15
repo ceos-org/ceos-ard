@@ -1,0 +1,23 @@
+id: specband-st
+title: Spectral Bands
+description: 
+requirements:
+  threshold:
+    description: |- 
+      Spectral response function and method of assessment is provided.
+  goal:
+    description: |- 
+      As threshold, but information on spectral bands is documented by URL or DOI.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Added method of assessment and removed full from full spectral response function. Added reference to URL/DOI at Goal.
+    reason: Aligned with AR PFS with modifications proposed by ST PFS team.
+history:
+  - AR 1.10

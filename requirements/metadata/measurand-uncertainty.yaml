@@ -1,0 +1,23 @@
+id: measurunc
+title: Measurand Uncertainty
+description:
+requirements:
+  threshold:
+    description: |-
+      Methods of determining the assessed measurand uncertainty of the version of the data are specified, documented by URL or DOI.
+  goal:
+    description: |-
+      As threshold, but the absolute measurand uncertainty of the data is provided.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Replaced requirement title and description from radiometric to measurand uncertainty
+    reason: Broaden requirement suitability to non-optical PFS
+history:
+  - AR 1.12

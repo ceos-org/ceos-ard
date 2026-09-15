@@ -1,0 +1,26 @@
+id: instru-st
+title: Instrument
+description:
+requirements:
+  threshold:
+    description: |-
+      The instrument used to collect the data is identified.
+
+      - Satellite name
+      - Instrument name
+  goal:
+    description: |-
+      As threshold, with references to the relevant "CEOS Missions, Instruments and Measurements" (MIM) database record ([database.eohandbook.com](https://database.eohandbook.com)).
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: major
+    change: |-
+      Added requirement to include the satellite and instrument names in the metadata
+    reason: Aligned with other PFS requirements for instrument
+history:
+  - AR 1.9

@@ -1,0 +1,26 @@
+id: auxdat-st
+title: Auxiliary Data
+description: 
+requirements:
+  threshold:
+    description: |- 
+      Lists the sources of auxiliary data used in the generation process, documented by URL or DOI.
+    notes:
+      - Auxiliary data includes DEMs, aerosols, water vapor, Climate Modeling Grids, and any other data sources used in product generation.
+  goal:
+    description: |-
+      As threshold, but information on auxiliary data should be available for free online download, contemporaneously with the product or through a link to the source.
+    optional: true
+dependencies:
+glossary:
+  - auxiliary-data
+references:
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Added URL/DOI reference and note of examples auxiliary data
+    reason: Aligned with other PFS requirements for data collection time
+history:
+  - AR 1.14

@@ -1,0 +1,26 @@
+id: daccess-st
+title: Data Access
+description: 
+requirements:
+  threshold:
+    description: |-
+      The location from where the data can be retrieved is identified, expressed as a URL or DOI.
+    notes:
+      - Manual and offline interaction action (e.g., login) may be required.
+  goal:
+    description: |-
+      An online location is identified from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required.
+    optional: true
+dependencies:
+glossary:
+  - doi
+references:
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Added goal requirement to identify online data access location, and minor wording update to threshold description.
+    reason: Aligned with other PFS requirements for data access
+history:
+  - SR/NLSR/ST/AR 1.16

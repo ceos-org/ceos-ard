@@ -4,14 +4,22 @@ description:
 requirements:
   threshold:
     description: |-
-      The start and stop time of data collection is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
+      The beginning and end of the data collection time is expressed in date/time and identified in the metadata consistent with ISO 8601. The time is expressed with the time offset from UTC unambiguously identified.
+      
+      In the case of composite or mosaic products, the dates/times of the first and last data takes are provided with the product.
   goal:
     description: |-
-      Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
+      As threshold, but information required to determine, within a stated uncertainty, when the individual observations were taken is available.
     optional: true
 glossary:
   - utc
 references:
 changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Added clarification for mosaic products.
+    reason: Aligned with other PFS requirements for data collection time
 history:
   - ST 1.3

@@ -37,7 +37,7 @@ requirements:
       - metadata/auxiliary-data-optical
       - metadata/processing-chain-prov-sr
       - metadata/data-access
-      - metadata/data-quality-sr
+      - metadata/data-quality
   - category: per-pixel-metadata
     requirements:
       - per-pixel/machine-readability

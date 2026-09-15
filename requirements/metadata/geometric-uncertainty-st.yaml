@@ -1,0 +1,20 @@
+id: geounc-st
+title: Geometric Uncertainty of the Data
+description:
+requirements:
+  goal:
+    description: |-
+      Inclusion of metrics describing the assessed geodetic uncertainty of the data, expressed in units of the coordinate system of the data. Uncertainty is assessed by independent verification (as well as internal model-fit where applicable). Uncertainties are expressed quantitatively and documented by URL or DOI.
+    optional: true
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Added reference to URL / DOI to Goal description
+    reason: Clarify need for documentation in each requirement.
+history:
+  - AR 1.8

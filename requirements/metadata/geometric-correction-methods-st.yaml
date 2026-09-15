@@ -4,7 +4,7 @@ description:
 requirements:
   goal:
     description: |-
-      Information on geometric correction methods should be available in the metadata as a single DOI landing page containing information on geodetic correction methods used, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.  
+      Information on geometric correction source and methods are provided, including reference database and auxiliary data such as elevation model(s) and reference chip-sets, documented by URL or DOI.  
     optional: true
 dependencies:
 glossary:

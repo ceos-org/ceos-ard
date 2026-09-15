@@ -1,0 +1,29 @@
+id: pincot-st
+title: Incomplete Testing
+description: 
+requirements:
+  threshold:
+    description: |-
+      Identifies pixels for which the per-pixel tests ([@saturation], [@cloud], [@shadow], [@surface], [@terrain]) have not all been successfully completed.
+    notes:
+      - This may be the result of missing ancillary data for a subset of the pixels.
+  goal:
+    description: |-
+      Identifies which tests ([@saturation], [@cloud], [@shadow], [@surface], [@terrain]) have and have not been successfully completed for each pixel.
+    optional: true
+dependencies:
+  saturation: per-pixel/saturation-ar
+  cloud: per-pixel/cloud-st
+  shadow: per-pixel/cloud-shadow-st
+  surface: per-pixel/surface-st
+  terrain: per-pixel/terrain-occlusion-st
+glossary:
+references:
+changes:
+  - date: 2026-08-20
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Specified the per-pixel tests that must be completed for threshold. 
+    reason: Aids machine readability
+history:

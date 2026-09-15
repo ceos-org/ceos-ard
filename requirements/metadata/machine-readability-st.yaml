@@ -1,0 +1,24 @@
+id: memare-st
+title: Metadata Machine Readability
+description:
+requirements:
+  threshold:
+    description: |-
+      Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable for further use.
+  goal:
+    description: |-
+      As threshold, but metadata is provided in a community endorsed standard that facilitates machine-readability, such as CEOS-ARD Metadata Specifications, ISO 19115-2, STAC, the Climate and Forecast (CF) convention, or the Attribute Convention for Data Discovery (ACDD).
+    optional: true
+dependencies:
+glossary:
+references:
+  - iso19115_2_2009
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Added more format examples to Goal description and replaced part for variable in the threshold description
+    reason: Aligned with other PFS requirements for metadata machine readability
+history:
+  - SR/NLSR/ST/AR 1.1

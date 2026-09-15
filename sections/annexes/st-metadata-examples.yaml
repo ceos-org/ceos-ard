@@ -4,7 +4,7 @@ description: |-
 
   #### Traceability
 
-  Refers to [@trace-st]
+  Refers to [@trace]
 
   Example of measurement traceability in metadata:
 
@@ -40,7 +40,7 @@ description: |-
 
   #### Data Collection Time
 
-  Refers to [@time-st]
+  Refers to [@time]
 
   Example of scene center time (UTC):
 
@@ -67,7 +67,7 @@ description: |-
 
   #### Geographical Area
 
-  Refers to [@geoarea-st]
+  Refers to [@geoarea]
 
   Example of the bounding coordinates in decimal degrees (WGS84):
 
@@ -89,7 +89,7 @@ description: |-
 
   #### Map Projection
 
-  Refers to [@mapproj-st]
+  Refers to [@mapproj]
 
   ```xml
   <projection_information datum="WGS84" projection="AEA" units="meters">
@@ -107,32 +107,9 @@ description: |-
   </projection_information>
   ```
 
-  #### Geometric Correction Source
+  #### Geometric Uncertainty
 
-  Refers to [@geocorm-st]
-
-  Example of elevation source:
-
-  ```xml
-  <elevation_source>GLS2000</elevation_source>
-  ```
-
-  The XML wrapper provides the source of the geometric calibration:
-
-  ```xml
-  <sentinel-safe:resource name="S3A_SL_1_GEC_AX_20160216T000000_20991231T235959_20180202T120000___________________MPC_O_AL_007.SEN3" role="SLSTR Geometric Calibration Data File">
-    <sentinel-safe:processing name="AdfProcessing">
-      <sentinel-safe:facility name="ESA Mission Performance Coordinating Centre (MPC)" organisation="ESA Mission Performance Coordinating Centre" site="Sophia Antipolis" country="France">
-        <sentinel-safe:hardware name="OPE"/>
-          <sentinel-safe:software name="ADC" version="1.0"/>
-        </sentinel-safe:facility>
-    </sentinel-safe:processing>
-  </sentinel-safe:resource>
-  ```
-
-  #### Geometric Accuracy of the Data
-
-  Refers to [@geoacc-st]
+  Refers to [@uncertainty]
 
   ```xml
   <geometric_rmse_model>9.021</geometric_rmse_model>
@@ -142,7 +119,7 @@ description: |-
 
   #### Instrument
 
-  Refers to [@instru-optical]
+  Refers to [@instrument]
 
   ```xml
   <satellite>LANDSAT_8</satellite>
@@ -171,7 +148,7 @@ description: |-
 
   #### Sensor Calibration
 
-  Refers to [@sencal-optical]
+  Refers to [@sencal]
 
   ```xml
   <cpf_name>LC08CPF_20180101_20180331_01.02</cpf_name>
@@ -179,7 +156,7 @@ description: |-
 
   #### Algorithms
 
-  Refers to [@malgos-st]
+  Refers to [@malgos]
 
   Example for Surface Temperature algorithm version:
 
@@ -189,7 +166,7 @@ description: |-
 
   #### Auxiliary Data
 
-  Refers to [@auxdat-optical]
+  Refers to [@auxdat]
 
   All Auxiliary Datafiles (ADFs) are listed in the XML wrapper:
 
@@ -201,22 +178,12 @@ description: |-
 
   #### Processing Chain Provenance
 
-  Refers to [@proprov-st]
+  Refers to [@proprov]
 
   Processing chain provenance information is stored in the XML wrapper under the following tag:
 
   ```xml
   <metadataObject ID="processing" classification="PROVENANCE" category="PDI">
-  ```
-
-  #### Overall Data Quality
-
-  Refers to [@odqual-st]
-
-  Overall data quality information is stored in the XML wrapper under the following tag:
-
-  ```xml
-  <metadataObject ID="measurementQualityInformation" classification="DESCRIPTION" category="DMD">
   ```
 
   ### Per-Pixel Metadata
@@ -359,13 +326,13 @@ description: |-
 
   Refers to [@picloudsh]
 
-  Please see the cloud shadow part in the example provided in requirement 2.5
+  Please see the cloud shadow part in the example provided for "Cloud" above.
 
-  #### Snow/Ice Mask
+  #### Surface
 
-  Refers to [@snowice-sr]
+  Refers to [@surface]
 
-  Please see the snow part in the example provided in requirement 2.5
+  Please see the snow part in the example provided for "Cloud" above.
 
   ### Radiometric and Atmospheric Corrections
 
@@ -375,24 +342,28 @@ description: |-
 
   No examples provided
 dependencies:
-  auxdat-optical: metadata/auxiliary-data-optical
-  geoacc-st: metadata/geometric-accuracy-st
-  geoarea-st: metadata/geo-area-st
-  geocorm-st: metadata/geometric-correction-methods-st
-  instru-optical: metadata/instrument-optical
-  malgos-st: metadata/algorithms-st
-  mapproj-st: metadata/map-projection-st
-  odqual-st: metadata/data-quality-st
-  picloud: per-pixel/cloud
-  picloudsh: per-pixel/cloud-shadow
-  pincot: per-pixel/incomplete-testing
-  pinodat: per-pixel/nodata
-  pisatur: per-pixel/saturation
-  proprov-st: metadata/processing-chain-prov-st
-  sencal-optical: metadata/sensor-calibration-optical
-  snowice-sr: per-pixel/snow-ice-sr
-  time-st: metadata/time-st
-  trace-st: metadata/traceability-st
+  auxdat: metadata/auxiliary-data-ar
+  geoarea: metadata/geo-area-optical
+  uncertainty: metadata/geometric-uncertainty
+  instrument: metadata/instrument-ar
+  malgos: metadata/algorithms-st
+  mapproj: metadata/map-projection-ar
+  picloud: per-pixel/cloud-st
+  picloudsh: per-pixel/cloud-shadow-st
+  pincot: per-pixel/incomplete-testing-st
+  pinodat: per-pixel/nodata-st
+  pisatur: per-pixel/saturation-ar
+  proprov: metadata/processing-chain-prov-st
+  sencal: metadata/sensor-calibration-ar
+  surface: per-pixel/surface-st
+  time: metadata/time-ar
+  trace: metadata/traceability-st
 glossary:
 references:
 changes:
+  - date: 2026-08-14
+    author: Harvey Jones
+    level: patch
+    change: |-
+      Updated metadata examples based on updates to ST PFS v6.0
+    reason: Fixed or removed broken links to outdated requirements.

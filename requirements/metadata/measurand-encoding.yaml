@@ -1,0 +1,18 @@
+id: measurenc
+title: Measurand Encoding
+description:
+requirements:
+  threshold:
+    description: Range and bit depth are provided.
+dependencies:
+glossary:
+references:
+changes:
+  - date: 2026-08-27
+    author: Harvey Jones
+    level: minor
+    change: |-
+      Renamed Radiometric Encoding to Measurand Encoding
+    reason: Broaden requirement suitability to non-optical PFS
+history:
+  - AR 1.12a
