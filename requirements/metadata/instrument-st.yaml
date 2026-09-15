@@ -10,7 +10,7 @@ requirements:
       - Instrument name
   goal:
     description: |-
-      As threshold, with references to the relevant “CEOS Missions, Instruments and Measurements (MIM) database record ([database.eohandbook.com](https://database.eohandbook.com)).
+      As threshold, with references to the relevant "CEOS Missions, Instruments and Measurements" (MIM) database record ([database.eohandbook.com](https://database.eohandbook.com)).
     optional: true
 dependencies:
 glossary:

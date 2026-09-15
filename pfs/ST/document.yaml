@@ -111,7 +111,7 @@ changes:
       - Updated 'Incomplete Testing' requirement to aid machine readability / automated assessment.
       - Removed redundant 'Metadata Machine Readability' requirement from Per-pixel Metadata.
       - Replaced General Metadata Percentage of Valid Observations requirement with Valid Pixels
-      - Introduced a new Processing Chain Provenance requirement, where Threshold = Reconstrucibility, Goal = Reproducibility. 
+      - Introduced a new Processing Chain Provenance requirement, where Threshold = Reconstructibility, Goal = Reproducibility. 
       - Removed 'Radiometric Accuracy' requirement.
       - Adopted AR PFS v2.0 requirements for 'Auxiliary Data', 'Measurand Uncertainty', 'Encoding', 'Sensor Calibration', 'Spectral Bands', 'Instrument', 'Geometric Uncertainty of the Data', 'Geometric Correction Methods', 'Map Projection', and 'Data Collection Time'.
       - Aligned with other optical PFS where the ST PFS had minor editorial differences.

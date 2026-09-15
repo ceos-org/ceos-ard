@@ -17,7 +17,7 @@ changes:
     author: Harvey Jones
     level: major
     change: |-
-      introduced a threshold requirement requiring reconstrucibility at Threshold and reworded the Goal requirement for reproducibility.
+      introduced a threshold requirement requiring reconstructibility at Threshold and reworded the Goal requirement for reproducibility.
     reason: Addresses GitHub issue 58, calling for processing chain provenance to become a threshold requirement
 history:
   - ST 1.15

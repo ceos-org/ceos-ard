@@ -14,6 +14,6 @@ changes:
     author: Harvey Jones
     level: minor
     change: |-
-      Adopted AR PFS approach but removed Threshold requirment and specified only 'cloud-affected' pixels
+      Adopted AR PFS approach but removed Threshold requirement and specified only 'cloud-affected' pixels
     reason: cloud shadow has limited utility for non-reflectance methods.
 history:
