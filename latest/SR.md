@@ -516,9 +516,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-quality-sr.yaml-->`1.17.` Overall Data Quality {#sec:meta-odqual-sr label="|General Metadata: Overall Data Quality"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-quality.yaml-->`1.17.` Overall Data Quality {#sec:meta-odqual label="|General Metadata: Overall Data Quality"}
 
-Identifier: `meta-odqual-sr`
+Identifier: `meta-odqual`
 
 
 

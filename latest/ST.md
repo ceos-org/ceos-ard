@@ -1,6 +1,6 @@
 ---
 title: >-
-  CEOS-ARD - Optical - Surface Temperature - Version 5.0.1-draft
+  CEOS-ARD - Optical - Surface Temperature - Version 6.0.0-draft
 lang: en
 format:
   - markdown # markdown_mmd doesn't support citations, so we use pandoc's markdown and add extentions
@@ -50,6 +50,31 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ## Document History
 
+### 2026-08-14 (MAJOR)
+
+**This is a breaking change!**
+
+- Created separate requirements for 'Corrections for Atmosphere' and 'Adjustments for Emissivity and Anisotropy'. Per-pixel emissivity information is now required at Threshold. 
+- Introduced a Threshold requirement for 'Measurement Uncertainty'.
+- Renamed 'Measurement' to 'Measurand'
+- Removed threshold requirement for 'Algorithms'.
+- Introduced Per-pixel Goal requirement for 'Terrain Occlusion'.
+- Replaced 'Snow/Ice' mask with 'Surface', covering Land/Water at Threshold and Snow/Ice at Goal.
+- Updated 'Cloud' and 'Cloud Shadow' requirements to align more closely with the AR PFS v2.0 and the suitability of cloud shadow for non-reflectance methods.
+- Updated 'No Data' requirement to address https://github.com/ceos-org/ceos-ard/issues/4.
+- Updated 'Incomplete Testing' requirement to aid machine readability / automated assessment.
+- Removed redundant 'Metadata Machine Readability' requirement from Per-pixel Metadata.
+- Replaced General Metadata Percentage of Valid Observations requirement with Valid Pixels
+- Introduced a new Processing Chain Provenance requirement, where Threshold = Reconstructibility, Goal = Reproducibility. 
+- Removed 'Radiometric Accuracy' requirement.
+- Adopted AR PFS v2.0 requirements for 'Auxiliary Data', 'Measurand Uncertainty', 'Encoding', 'Sensor Calibration', 'Spectral Bands', 'Instrument', 'Geometric Uncertainty of the Data', 'Geometric Correction Methods', 'Map Projection', and 'Data Collection Time'.
+- Aligned with other optical PFS where the ST PFS had minor editorial differences.
+
+**Justification:**
+Update to address evolving landscape of thermal missions, including capabilities of the commercial sector and user needs. Closer alignment with more recently updated PFS. Changes also reflect recent CEOS-ARD Oversight Group discussions, swapping strict threshold requirements for algorithms in favour of uncertainty information.
+
+**Editor:** Harvey Jones
+
 ### 2026-03-26 (PATCH)
 
 - Renamed CARD4L to CEOS-ARD
@@ -71,12 +96,34 @@ Migration to building blocks.
 
 ## Contributing Authors
 
-- Adam Lewis, Geoscience Australia, Australia
-- Jonathon Ross, Geoscience Australia, Australia
-- Andreia Siqueira, Geoscience Australia, Australia
-- Darcie Bontje, USGS, USA
-- Steve Labahn, USGS, USA
-- Mary Metzger, USGS, USA
+- Mathias Gergely (Aistech Space)
+- Harvey Jones (CEOS-ARD Secretariat)
+- Emilie Delogu (CNES)
+- Andreas Brunn (Constellr)
+- Andreas Dietz (DLR)
+- Philipp Reiners (DLR)
+- Fraser Parlane (EarthDaily)
+- Peter Strobl (EC)
+- Silvia Scifoni (ESA/Serco)
+- Adam Lewis (Geoscience Australia)
+- Jonathon Ross (Geoscience Australia)
+- Andreia Siqueira (Geoscience Australia)
+- Siri Jodha Khalsa (IEEE)
+- Jean-Francois Piolle (IFREMER)
+- Misako Kachi (JAXA)
+- Matthias Mohr (MoreGeo)
+- Edward M. Armstrong (NASA/JPL/CalTech)
+- Mark de Jong (NRCan)
+- Anastasia Sarelli (OroraTech)
+- Josephine Wong (OroraTech)
+- Daniel Evans (SatVu)
+- Jamie McMillan (SatVu)
+- Darren Ghent (University of Leicester)
+- Chase Mueller (USGS)
+- Chris Barnes (USGS)
+- Darcie Bontje (USGS)
+- Mary Metzger (USGS)
+- Steve Labahn (USGS)
 
 &#12;
 
@@ -90,16 +137,15 @@ Migration to building blocks.
 Optical, Surface Temperature (ST)
 
 **Version:**
-5.0.1-draft
+6.0.0-draft
 
 **Applies to:**
-Data collected with multispectral sensors operating in the thermal infrared (TIR) wavelengths. These typically operate with ground sample distance and resolution in the order of 10-100m; however, the Specification is not inherently limited to this resolution.
+Data collected with satellite sensors operating in the thermal infrared (TIR and MWIR) and microwave wavelengths. These typically operate with ground sample distance and resolution in the order 1 dm - 50 km however the specification is not inherently limited to these resolutions.
 
 
 ## Background
 
-At present, surface temperature measurements tend to be provided as either surface brightness temperature (SBT) or as land surface temperatures (LST) requiring the SBT to be modified according to the emissivity of the target.
-This specification identifies the Surface Temperature (ST) as being the minimum or Threshold requirement for analysis ready land surface data. Nevertheless, both SBT and LST are land measurements, requiring atmospheric corrections.
+Remotely sensed surface temperature measurements tend to be provided as surface brightness temperature (SBT), land surface temperature (LST), water surface temperature (WST), or ice surface temperature (IST), where LST, WST, and IST are derived from SBT accounting for the emissivity of the target. This specification identifies Surface Temperature (ST), including but not limited to LST, WST, and IST, as the minimum or threshold requirement for analysis ready surface data.
 
 &#12;
 
@@ -117,10 +163,6 @@ CEOS-ARD
 CEP
 :   Circular Error Probability, often provided with an additional percentage (e.g. CEP90 for 90% probability)
 
-<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/dem.yaml -->
-DEM
-:   Digital Elevation Model
-
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/doi.yaml -->
 DOI
 :   Digital Object Identifier
@@ -132,10 +174,6 @@ GIS
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/lst.yaml -->
 LST
 :   Land Surface Temperature
-
-<!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/rmse.yaml -->
-RMSE
-:   Root Mean Square Error
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/rrmse.yaml -->
 rRMSE
@@ -182,7 +220,26 @@ The collection of pixels referred to must be contiguous in space and time.
 General metadata should allow the user to assess the _overall_ suitability of the dataset, and must meet the requirements listed below.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/traceability-st.yaml-->`1.1.` Traceability {#sec:meta-trace-st label="|General Metadata: Traceability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/ceos-ard-pfs-version.yaml-->`1.1.` CEOS-ARD PFS Compliance Version {#sec:meta-ardver label="|General Metadata: CEOS-ARD PFS Compliance Version"}
+
+Identifier: `meta-ardver`
+
+
+
+##### Threshold requirements:
+
+Version of the CEOS-ARD PFS with which the product is complying is identified.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/traceability-st.yaml-->`1.2.` Metrological Traceability of the Measurand to SI {#sec:meta-trace-st label="|General Metadata: Metrological Traceability of the Measurand to SI"}
 
 Identifier: `meta-trace-st`
 
@@ -197,36 +254,32 @@ Not required.
 
 ##### Goal requirements:
 
-Data must be traceable to SI reference standard.
-Information on traceability should be available in the metadata as a single DOI landing page.
-
-- [Policy on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6536)
-- [Guidance on measurement traceability](https://anab.qualtraxcloud.com/ShowDocument.aspx?ID=6532)
+Data must be traceable to SI reference standard, documented by URL or DOI.
 
 Note:
 
-1. SI Traceability requires an estimate of measurement uncertainty.
+1. SI Traceability requires an estimate of measurement uncertainty (see [@sec:rac-muncer-st]).
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-optical.yaml-->`1.2.` Metadata Machine Readability {#sec:meta-memare-optical label="|General Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/machine-readability-st.yaml-->`1.3.` Metadata Machine Readability {#sec:meta-memare-st label="|General Metadata: Metadata Machine Readability"}
 
-Identifier: `meta-memare-optical`
+Identifier: `meta-memare-st`
 
 
 
 ##### Threshold requirements:
 
-Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component part for further use.
+Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component/variable for further use.
 
 
 ##### Goal requirements:
 
-As threshold, but metadata should be provided in a community endorsed standard that facilitates machine-readability, such as ISO 19115-2.
+As threshold, but metadata is provided in a community endorsed standard that facilitates machine-readability, such as CEOS-ARD Metadata Specifications, ISO 19115-2, STAC, the Climate and Forecast (CF) convention, or the Attribute Convention for Data Discovery (ACDD).
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-st.yaml-->`1.3.` Data Collection Time {#sec:meta-time-st label="|General Metadata: Data Collection Time"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/time-st.yaml-->`1.4.` Data Collection Time {#sec:meta-time-st label="|General Metadata: Data Collection Time"}
 
 Identifier: `meta-time-st`
 
@@ -234,41 +287,43 @@ Identifier: `meta-time-st`
 
 ##### Threshold requirements:
 
-The start and stop time of data collection is identified in the metadata, expressed in date/time, to the second, with the time offset from UTC unambiguously identified.
+The beginning and end of the data collection time is expressed in date/time and identified in the metadata consistent with ISO 8601. The time is expressed with the time offset from UTC unambiguously identified.
+
+In the case of composite or mosaic products, the dates/times of the first and last data takes are provided with the product.
 
 
 ##### Goal requirements:
 
-Acquisition time for each pixel is identified (or can be reliably determined) in the metadata, expressed in date/time at UTC, to the second.
+As threshold, but information required to determine, within a stated uncertainty, when the individual observations were taken is available.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area-st.yaml-->`1.4.` Geographical Area {#sec:meta-geoarea-st label="|General Metadata: Geographical Area"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geo-area-optical.yaml-->`1.5.` Geographical Area {#sec:meta-geoarea-optical label="|General Metadata: Geographical Area"}
 
-Identifier: `meta-geoarea-st`
+Identifier: `meta-geoarea-optical`
 
 
 
 ##### Threshold requirements:
 
-The surface location to which the data relates is identified, typically as a series of four corner points, expressed in an accepted coordinate reference system (e.g., WGS84 coordinates).
+The surface location to which the data relates is identified, typically as a series of four corner points, expressed in an accepted coordinate reference system (e.g., WGS84).
 
 
 ##### Goal requirements:
 
-The geographic area covered by the observations is identified specifically, such as through a set of coordinates of a closely bounding polygon. The location to which each pixel refers is identified (or can be reliably determined) expressed in projection coordinates with reference datum.
+The geographic area covered by the observations is identified specifically, such as through a set of coordinates of a closely bounding polygon. The location to which each pixel refers is identified (or can be reliably determined) with the projection system (if any) and reference datum provided.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs-optical.yaml-->`1.5.` Coordinate Reference System {#sec:meta-crs-optical label="|General Metadata: Coordinate Reference System"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/crs-ar.yaml-->`1.6.` Coordinate Reference System {#sec:meta-crs-ar label="|General Metadata: Coordinate Reference System"}
 
-Identifier: `meta-crs-optical`
+Identifier: `meta-crs-ar`
 
 
 
 ##### Threshold requirements:
 
-The metadata lists the coordinate reference system that has been used.
+The coordinate reference system that has been used is detailed.
 
 
 ##### Goal requirements:
@@ -279,26 +334,26 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/map-projection-st.yaml-->`1.6.` Map Projection {#sec:meta-mapproj-st label="|General Metadata: Map Projection"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/map-projection-ar.yaml-->`1.7.` Map Projection {#sec:meta-mapproj-ar label="|General Metadata: Map Projection"}
 
-Identifier: `meta-mapproj-st`
+Identifier: `meta-mapproj-ar`
 
 
 
 ##### Threshold requirements:
 
-
-Not required.
-<!-- *None* -->
+The map projection that has been used and any relevant parameters required in relation to use of data in that map projection is detailed.
 
 
 ##### Goal requirements:
 
-The metadata lists the map projection that has been used, if any, and any relevant parameters required in relation to use of data in that map projection.
+
+As threshold.
+<!-- *None* -->
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-methods-st.yaml-->`1.7.` Geometric Correction Methods {#sec:meta-geocorm-st label="|General Metadata: Geometric Correction Methods"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-correction-methods-st.yaml-->`1.8.` Geometric Correction Methods {#sec:meta-geocorm-st label="|General Metadata: Geometric Correction Methods"}
 
 Identifier: `meta-geocorm-st`
 
@@ -313,13 +368,13 @@ Not required.
 
 ##### Goal requirements:
 
-Information on geometric correction methods should be available in the metadata as a single DOI landing page containing information on geodetic correction methods used, including reference database and auxiliary data such as elevation model(s) and reference chip-sets.
+Information on geometric correction source and methods are provided, including reference database and auxiliary data such as elevation model(s) and reference chip-sets, documented by URL or DOI.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-accuracy-st.yaml-->`1.8.` Geometric Accuracy of the Data {#sec:meta-geoacc-st label="|General Metadata: Geometric Accuracy of the Data"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/geometric-uncertainty-st.yaml-->`1.9.` Geometric Uncertainty of the Data {#sec:meta-geounc-st label="|General Metadata: Geometric Uncertainty of the Data"}
 
-Identifier: `meta-geoacc-st`
+Identifier: `meta-geounc-st`
 
 
 
@@ -332,103 +387,103 @@ Not required.
 
 ##### Goal requirements:
 
-The metadata includes metrics describing the assessed geodetic accuracy of the data, expressed units of the coordinate system of the data.
-Accuracy is assessed by independent verification (as well as internal model-fit where applicable).
-Uncertainties are expressed as root mean square error (RMSE) or Circular Error 90% Probability (CEP90).
-
-Note:
-
-1. Information on geometric accuracy of the data should be available in the metadata as a single DOI landing page.
+Inclusion of metrics describing the assessed geodetic uncertainty of the data, expressed in units of the coordinate system of the data. Uncertainty is assessed by independent verification (as well as internal model-fit where applicable). Uncertainties are expressed quantitatively and documented by URL or DOI.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-optical.yaml-->`1.9.` Instrument {#sec:meta-instru-optical label="|General Metadata: Instrument"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/instrument-st.yaml-->`1.10.` Instrument {#sec:meta-instru-st label="|General Metadata: Instrument"}
 
-Identifier: `meta-instru-optical`
+Identifier: `meta-instru-st`
 
 
 
 ##### Threshold requirements:
 
-The instrument used to collect the data is identified in the metadata.
+The instrument used to collect the data is identified.
+
+- Satellite name
+- Instrument name
 
 
 ##### Goal requirements:
 
-As threshold, but information should be available in the metadata as a single DOI landing page with references to the relevant CEOS Missions, Instruments, and Measurements Database record.
+As threshold, with references to the relevant "CEOS Missions, Instruments and Measurements" (MIM) database record ([database.eohandbook.com](https://database.eohandbook.com)).
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/spectral-bands.yaml-->`1.10.` Spectral Bands {#sec:meta-specband label="|General Metadata: Spectral Bands"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/spectral-bands-st.yaml-->`1.11.` Spectral Bands {#sec:meta-specband-st label="|General Metadata: Spectral Bands"}
 
-Identifier: `meta-specband`
+Identifier: `meta-specband-st`
 
 
 
 ##### Threshold requirements:
 
-The central wavelength for each band for which data is included is identified in the metadata, expressed in SI units.
+Spectral response function and method of assessment is provided.
 
 
 ##### Goal requirements:
 
-As threshold, with instrument spectral response details (e.g., full spectral response function) also included or directly accessible using details in the metadata. 
-Central wavelength and bandwidth at full-width half maximum value of the relative spectral response function are provided at least.
-
-Note:
-
-1. Information on spectral bands should be available in the metadata as a single DOI landing page.
+As threshold, but information on spectral bands is documented by URL or DOI.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-optical.yaml-->`1.11.` Sensor Calibration {#sec:meta-sencal-optical label="|General Metadata: Sensor Calibration"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/sensor-calibration-st.yaml-->`1.12.` Sensor Calibration {#sec:meta-sencal-st label="|General Metadata: Sensor Calibration"}
 
-Identifier: `meta-sencal-optical`
+Identifier: `meta-sencal-st`
 
 
 
 ##### Threshold requirements:
 
-
-Not required.
-<!-- *None* -->
+Binary description of calibrated/not calibrated only.
 
 
 ##### Goal requirements:
 
-Sensor calibration parameters are identified in the metadata or can be accessed using details included in the metadata.
+Sensor calibration parameters are identified or can be accessed using details included in the metadata, documented by URL or DOI. 
+
 Ideally this would support machine-to-machine access.
 
-Note:
-
-1. Information on sensory calibration should be available in the metadata as a single DOI landing page.
-
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/radiometric-accuracy-st.yaml-->`1.12.` Radiometric Accuracy {#sec:meta-radacc-st label="|General Metadata: Radiometric Accuracy"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/measurand-uncertainty.yaml-->`1.13.` Measurand Uncertainty {#sec:meta-measurunc label="|General Metadata: Measurand Uncertainty"}
 
-Identifier: `meta-radacc-st`
+Identifier: `meta-measurunc`
 
 
 
 ##### Threshold requirements:
 
-
-Not required.
-<!-- *None* -->
+Methods of determining the assessed measurand uncertainty of the version of the data are specified, documented by URL or DOI.
 
 
 ##### Goal requirements:
 
-Information on radiometric accuracy should be available in the metadata as a single DOI landing page providing information on metrics describing the assessed absolute radiometric accuracy of the data, expressed as absolute radiometric uncertainty relative to a known reference standard.
-
-Note:
-
-1. For example, this may come from comparison with routine and rigorously collected in situ measurements.
+As threshold, but the absolute measurand uncertainty of the data is provided.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/algorithms-st.yaml-->`1.13.` Algorithms {#sec:meta-malgos-st label="|General Metadata: Algorithms"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/measurand-encoding.yaml-->`1.14.` Measurand Encoding {#sec:meta-measurenc label="|General Metadata: Measurand Encoding"}
+
+Identifier: `meta-measurenc`
+
+
+
+##### Threshold requirements:
+
+Range and bit depth are provided.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/algorithms-st.yaml-->`1.15.` Algorithms {#sec:meta-malgos-st label="|General Metadata: Algorithms"}
 
 Identifier: `meta-malgos-st`
 
@@ -436,49 +491,6 @@ Identifier: `meta-malgos-st`
 
 ##### Threshold requirements:
 
-All algorithms and versions, and the sequence in which they were applied in the generation process, are identified in the metadata.
-
-
-##### Goal requirements:
-
-As threshold, but only algorithms that have been published in a peer-reviewed journal.
-
-Notes:
-
-1. It is possible that high-quality corrections are applied through non-disclosed processes. CEOS-ARD does not per-se require full and open data and methods.
-2. Information on algorithms should be available in the metadata as a single DOI landing page.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data-optical.yaml-->`1.14.` Auxiliary Data {#sec:meta-auxdat-optical label="|General Metadata: Auxiliary Data"}
-
-Identifier: `meta-auxdat-optical`
-
-
-
-##### Threshold requirements:
-
-The metadata identifies the sources of auxiliary data used in the generation process, ideally expressed as a single DOI landing page.
-
-Note:
-
-1. Auxiliary data includes DEMs, aerosols, etc. data sources.
-
-
-##### Goal requirements:
-
-As threshold, but information on auxiliary data should be available in the metadata as a single DOI landing page and is also available for free online download, contemporaneously with the product or through a link to the source.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-chain-prov-st.yaml-->`1.15.` Processing Chain Provenance {#sec:meta-proprov-st label="|General Metadata: Processing Chain Provenance"}
-
-Identifier: `meta-proprov-st`
-
-
-
-##### Threshold requirements:
-
 
 Not required.
 <!-- *None* -->
@@ -486,19 +498,59 @@ Not required.
 
 ##### Goal requirements:
 
-Information on processing chain provenance should be available in the metadata as a single DOI landing page containing description of the processing chain used to generate the product, including the versions of the software used and information on the data collection baseline, giving full transparency to the users.
+All algorithms and the sequence in which they were applied in the generation process are identified and documented by URL or DOI.
+
+Algorithms must be published and validated, and a description of the validation process is included.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access.yaml-->`1.16.` Data Access {#sec:meta-daccess label="|General Metadata: Data Access"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/auxiliary-data-st.yaml-->`1.16.` Auxiliary Data {#sec:meta-auxdat-st label="|General Metadata: Auxiliary Data"}
 
-Identifier: `meta-daccess`
+Identifier: `meta-auxdat-st`
 
 
 
 ##### Threshold requirements:
 
-Information on data access should be available in the metadata as a single DOI landing page.
+Lists the sources of auxiliary data used in the generation process, documented by URL or DOI.
+
+Note:
+
+1. Auxiliary data includes DEMs, aerosols, water vapor, Climate Modeling Grids, and any other data sources used in product generation.
+
+
+##### Goal requirements:
+
+As threshold, but information on auxiliary data should be available for free online download, contemporaneously with the product or through a link to the source.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/processing-chain-prov-st.yaml-->`1.17.` Processing Chain Provenance {#sec:meta-proprov-st label="|General Metadata: Processing Chain Provenance"}
+
+Identifier: `meta-proprov-st`
+
+
+
+##### Threshold requirements:
+
+The provider attaches to each delivered dataset (delivery unit) information which allows the provider to reconstruct the exact processing environment (software versions, calibration files, parameter settings) in which this particular output was produced.
+
+
+##### Goal requirements:
+
+As threshold, but the provider is required to reproduce the exact same output.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-access-st.yaml-->`1.18.` Data Access {#sec:meta-daccess-st label="|General Metadata: Data Access"}
+
+Identifier: `meta-daccess-st`
+
+
+
+##### Threshold requirements:
+
+The location from where the data can be retrieved is identified, expressed as a URL or DOI.
 
 Note:
 
@@ -507,28 +559,26 @@ Note:
 
 ##### Goal requirements:
 
-
-As threshold.
-<!-- *None* -->
+An online location is identified from where the data can be consistently and reliably retrieved by a computer algorithm without any manual intervention being required.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/data-quality-st.yaml-->`1.17.` Overall Data Quality {#sec:meta-odqual-st label="|General Metadata: Overall Data Quality"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/metadata/valid-pixels.yaml-->`1.19.` Valid Pixels {#sec:meta-valpix label="|General Metadata: Valid Pixels"}
 
-Identifier: `meta-odqual-st`
+Identifier: `meta-valpix`
 
 
 
 ##### Threshold requirements:
 
-
-Not required.
-<!-- *None* -->
+Percentage of valid pixels in a specified area based on the applied flags from [@sec:pxl].
 
 
 ##### Goal requirements:
 
-The metadata includes details of the quality of the product based on quantitative assessment of the product with respect to high quality reference data with full traceability of the uncertainties. Validation and intercomparison statistics can provide the necessary quantification.
+
+As threshold.
+<!-- *None* -->
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/per-pixel-metadata.yaml-->`2.` Per-Pixel Metadata {#sec:pxl label="|Per-Pixel Metadata"}
 
@@ -537,15 +587,15 @@ Whether the metadata is provided in a single record relevant to all pixels or se
 Per-pixel metadata should allow users to **discriminate between** (choose) observations on the basis of their individual suitability for application.
 
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/machine-readability.yaml-->`2.1.` Metadata Machine Readability {#sec:pxl-pimemare label="|Per-Pixel Metadata: Metadata Machine Readability"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/nodata-st.yaml-->`2.1.` No Data {#sec:pxl-pinodat-st label="|Per-Pixel Metadata: No Data"}
 
-Identifier: `pxl-pimemare`
+Identifier: `pxl-pinodat-st`
 
 
 
 ##### Threshold requirements:
 
-Metadata is provided in a structure that enables a computer algorithm to be used to consistently and automatically identify and extract each component part for further use.
+Pixels that do not correspond to an observation (No Data / Invalid / Falsified / Valid / Modelled) are flagged.
 
 
 ##### Goal requirements:
@@ -556,34 +606,15 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/nodata.yaml-->`2.2.` No Data {#sec:pxl-pinodat label="|Per-Pixel Metadata: No Data"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/incomplete-testing-st.yaml-->`2.2.` Incomplete Testing {#sec:pxl-pincot-st label="|Per-Pixel Metadata: Incomplete Testing"}
 
-Identifier: `pxl-pinodat`
-
-
-
-##### Threshold requirements:
-
-Pixels that do not correspond to an observation (‘empty pixels’) are flagged.
-
-
-##### Goal requirements:
-
-
-As threshold.
-<!-- *None* -->
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/incomplete-testing.yaml-->`2.3.` Incomplete Testing {#sec:pxl-pincot label="|Per-Pixel Metadata: Incomplete Testing"}
-
-Identifier: `pxl-pincot`
+Identifier: `pxl-pincot-st`
 
 
 
 ##### Threshold requirements:
 
-The metadata identifies pixels for which the per-pixel tests (below) have not all been successfully completed.
+Identifies pixels for which the per-pixel tests ([@sec:pxl-pisatur-ar], [@sec:pxl-picloud-st], [@sec:pxl-picloudsh-st], [@sec:pxl-surf-st], [@sec:pxl-terrain-st]) have not all been successfully completed.
 
 Note:
 
@@ -592,64 +623,47 @@ Note:
 
 ##### Goal requirements:
 
-The metadata identifies which tests have, and have not, been successfully completed for each pixel.
+Identifies which tests ([@sec:pxl-pisatur-ar], [@sec:pxl-picloud-st], [@sec:pxl-picloudsh-st], [@sec:pxl-surf-st], [@sec:pxl-terrain-st]) have and have not been successfully completed for each pixel.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/saturation.yaml-->`2.4.` Saturation {#sec:pxl-pisatur label="|Per-Pixel Metadata: Saturation"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/saturation-ar.yaml-->`2.3.` Saturation {#sec:pxl-pisatur-ar label="|Per-Pixel Metadata: Saturation"}
 
-Identifier: `pxl-pisatur`
+Identifier: `pxl-pisatur-ar`
 
 
 
 ##### Threshold requirements:
 
-Metadata indicates where one or more pixel in the input spectral bands are saturated.
+Specification of whether there is pixel radiometric saturation at Level 1 in one or more spectral bands.
 
 
 ##### Goal requirements:
 
-Metadata indicates which pixels are saturated for each spectral band.
+As threshold, with specification of which pixels are radiometrically saturated for each spectral band.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud.yaml-->`2.5.` Cloud {#sec:pxl-picloud label="|Per-Pixel Metadata: Cloud"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud-st.yaml-->`2.4.` Cloud {#sec:pxl-picloud-st label="|Per-Pixel Metadata: Cloud"}
 
-Identifier: `pxl-picloud`
+Identifier: `pxl-picloud-st`
 
 
 
 ##### Threshold requirements:
 
-Metadata indicates whether a pixel is assessed as being cloud.
+Specification of whether a pixel is cloud-affected.
 
 
 ##### Goal requirements:
 
-As threshold, but information on cloud detection should be available in the metadata as a single DOI landing page.
+As threshold, but information on cloud type or confidence is included, documented by URL or DOI.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud-shadow.yaml-->`2.6.` Cloud Shadow {#sec:pxl-picloudsh label="|Per-Pixel Metadata: Cloud Shadow"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/cloud-shadow-st.yaml-->`2.5.` Cloud Shadow {#sec:pxl-picloudsh-st label="|Per-Pixel Metadata: Cloud Shadow"}
 
-Identifier: `pxl-picloudsh`
-
-
-
-##### Threshold requirements:
-
-Metadata indicates whether a pixel is assessed as being cloud shadow.
-
-
-##### Goal requirements:
-
-As threshold, but information on cloud shadow detection should be available in the metadata as a single DOI landing page.
-
----
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/snow-ice-sr.yaml-->`2.7.` Snow/Ice Mask {#sec:pxl-snowice-sr label="|Per-Pixel Metadata: Snow/Ice Mask"}
-
-Identifier: `pxl-snowice-sr`
+Identifier: `pxl-picloudsh-st`
 
 
 
@@ -662,65 +676,40 @@ Not required.
 
 ##### Goal requirements:
 
-The metadata indicates whether a pixel is assessed as being snow/ice or not. Information on snow/ice mask should be available in the metadata as a single DOI landing page.
+Specification of whether a pixel is cloud shadow-affected. Information on cloud shadow detection is documented by URL or DOI.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/view-angles-solar.yaml-->`2.8.` Solar and Viewing Geometry {#sec:pxl-vigeso label="|Per-Pixel Metadata: Solar and Viewing Geometry"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/surface-st.yaml-->`2.6.` Surface {#sec:pxl-surf-st label="|Per-Pixel Metadata: Surface"}
 
-Identifier: `pxl-vigeso`
+Identifier: `pxl-surf-st`
 
 
 
 ##### Threshold requirements:
 
-Provide average solar and sensor viewing azimuth and zenith angles.
+Specification of whether a pixel is assessed as being land or water, including the information source and other relevant surface characteristic information.
+
+Note:
+
+1. External data sources are listed in [@sec:meta-auxdat-st].
 
 
 ##### Goal requirements:
 
-Provide per-pixel solar and sensor viewing azimuth and zenith angles.
-
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->`3.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
-
-The following requirements must be met for all pixels in a collection.
-The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes.
-
-
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/measurement-st.yaml-->`3.1.` Measurement {#sec:rac-measur-st label="|Radiometric and Atmospheric Corrections: Measurement"}
-
-Identifier: `rac-measur-st`
-
-
-
-##### Threshold requirements:
-
-Pixel values are expressed as a measurement of the Surface Temperature of the land, expressed as Kelvin
-
-Note:
-
-1. Radiometric corrections must lead to a valid measurement of surface temperature.
-
-
-##### Goal requirements:
-
-Surface temperature measurements are SI traceable (see also [@sec:meta-trace-st]).
+As threshold, but pixels are identified as being snow or ice.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/atmosphere-emissivity.yaml-->`3.2.` Corrections for Atmosphere and Emissivity {#sec:rac-catems label="|Radiometric and Atmospheric Corrections: Corrections for Atmosphere and Emissivity"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/view-angles-solar-ar.yaml-->`2.7.` Solar and Viewing Geometry {#sec:pxl-vigeso-ar label="|Per-Pixel Metadata: Solar and Viewing Geometry"}
 
-Identifier: `rac-catems`
+Identifier: `pxl-vigeso-ar`
 
 
 
 ##### Threshold requirements:
 
-Retrieval methods for estimating surface temperature are provided.
-
-Note:
-
-1. The metadata references (may be through a single DOI landing page) a citable peer-reviewed algorithm.
+Specification of the solar and sensor viewing azimuth and zenith angles.
 
 
 ##### Goal requirements:
@@ -731,9 +720,9 @@ As threshold.
 
 ---
 
-#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/uncertainty-st.yaml-->`3.3.` Measurement Uncertainty {#sec:rac-muncer-st label="|Radiometric and Atmospheric Corrections: Measurement Uncertainty"}
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/per-pixel/terrain-occlusion-st.yaml-->`2.8.` Terrain Occlusion {#sec:pxl-terrain-st label="|Per-Pixel Metadata: Terrain Occlusion"}
 
-Identifier: `rac-muncer-st`
+Identifier: `pxl-terrain-st`
 
 
 
@@ -746,11 +735,89 @@ Not required.
 
 ##### Goal requirements:
 
-Uncertainty, in Kelvin, of the surface temperature measurement for each pixel is provided.
+Specification of whether pixels are not visible to the sensor due to terrain occlusion during off-nadir viewing.
+
+### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/radiometric-atmospheric-corrections.yaml-->`3.` Radiometric and Atmospheric Corrections {#sec:rac label="|Radiometric and Atmospheric Corrections"}
+
+The following requirements must be met for all pixels in a collection.
+The requirements indicate both the necessary outcomes and the minimum steps necessary to be deemed to have achieved those outcomes.
+
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/measurand-st.yaml-->`3.1.` Measurand {#sec:rac-measur-st label="|Radiometric and Atmospheric Corrections: Measurand"}
+
+Identifier: `rac-measur-st`
+
+
+
+##### Threshold requirements:
+
+Pixel values are a measurement of the Surface Temperature expressed in kelvin.
 
 Note:
 
-1. Some of the intent of the initial wording (below), which refers to atmospheric windows, may have been lost: Uncertainty, in units Kelvin, of the surface temperature for each pixel is also accompanied by distance from cloud (above) and atmospheric transmission (intervals, i.e., 0.4 - 0.55, 0.55 - 0.7, etc.).
+1. See [@sec:meta-specband-st]
+
+
+##### Goal requirements:
+
+Surface temperature measurements are SI traceable (see also [@sec:meta-trace-st]).
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/atmosphere.yaml-->`3.2.` Corrections for Atmosphere {#sec:rac-catmos label="|Radiometric and Atmospheric Corrections: Corrections for Atmosphere"}
+
+Identifier: `rac-catmos`
+
+
+
+##### Threshold requirements:
+
+Retrieval methods for estimating surface temperature are provided.
+
+
+##### Goal requirements:
+
+
+As threshold.
+<!-- *None* -->
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/corrections/emissivity-st.yaml-->`3.3.` Adjustments for Emissivity and Anisotropy {#sec:rac-emiani label="|Radiometric and Atmospheric Corrections: Adjustments for Emissivity and Anisotropy"}
+
+Identifier: `rac-emiani`
+
+
+
+##### Threshold requirements:
+
+Retrieval methods for estimating surface emissivity per channel are provided.
+
+
+##### Goal requirements:
+
+As threshold, but the retrieval method for estimating the total directional emissivity is provided.
+
+---
+
+#### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/requirements/measurements/uncertainty-st.yaml-->`3.4.` Measurand Uncertainty {#sec:rac-muncer-st label="|Radiometric and Atmospheric Corrections: Measurand Uncertainty"}
+
+Identifier: `rac-muncer-st`
+
+
+
+##### Threshold requirements:
+
+A self-assessed declaration of per-pixel measurement uncertainty, following Section 3.2.4 (Uncertainty Characterization) of the Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines is provided, meeting the Basic or Good criteria.
+
+
+##### Goal requirements:
+
+A self-assessed declaration of per-pixel measurement uncertainty, following Section 3.2.4 (Uncertainty Characterization) of the Joint Earth Observation Mission Quality Assessment Framework - Optical Guidelines is provided, meeting the Excellent or Ideal criteria.
+
+Note:
+
+1. https://science.nasa.gov/wp-content/uploads/2026/05/joint-optical-guidelines-jul2025-signed.pdf
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/requirement-categories/geometric-corrections.yaml-->`4.` Geometric Corrections {#sec:gcor label="|Geometric Corrections"}
 
@@ -766,26 +833,25 @@ Identifier: `gcor-geocorr-st`
 
 ##### Threshold requirements:
 
-Sub-pixel accuracy is achieved in **relative** geolocation, that is, the pixels from the same instrument and platform are consistently located, and are thus comparable, through time.
+Sub-pixel uncertainty is achieved in relative geolocation, that is, the pixels from the same instrument and platform are consistently located, and in thus comparable, through time.
 
-Sub-pixel accuracy is taken to be less than or equal to 0.5 pixel radial root mean square error (rRMSE) or equivalent in Circular Error Probability (CEP) relative to a defined reference image.
+Sub-pixel uncertainty is taken to be less than or equal to 0.5 pixel radial root mean square error (rRMSE) or equivalent in Circular Error Probability (CEP) relative to a defined reference image.
 
-A consistent gridding/sampling frame is necessary to meet this requirement.
+A consistent gridding/sampling frame is used, including common cell size, origin, and nominal sample point location within the cell (centre, ll, ur).
 
-Relevant metadata must be provided under [@sec:meta-geoacc-st] and [@sec:meta-instru-optical].
+Relevant metadata must be provided under [@sec:meta-geounc-st] and [@sec:meta-instru-st].
 
-Note:
+Notes:
 
-1. The threshold level will not necessarily enable interoperability between data from **different** sources as the geometric corrections for each of the sources may differ.
+1. The threshold level will not necessarily enable interoperability between data from different sources as the geometric corrections for each of the sources may differ.
+2. It is useful to note if the sensor is used at its native resolution before geometric correction or that some resampling must be done.
 
 
 ##### Goal requirements:
 
-Sub-pixel accuracy is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).
+Sub-pixel uncertainty is achieved relative to an identified absolute independent terrestrial referencing system (such as a national map grid).
 
-A consistent gridding/sampling frame is necessary to meet this requirement.
-
-Relevant metadata must be provided under [@sec:meta-geoacc-st] and [@sec:meta-instru-optical].
+Relevant metadata must be provided under [@sec:meta-geounc-st] and [@sec:meta-instru-st].
 
 Note:
 
@@ -842,386 +908,4 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 
 ::: {#refs}
 :::
-
-&#12;
-
-## Annex
-
-### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/st-metadata-examples.yaml-->CEOS-ARD Requirement Examples (Surface Temperature) {#sec:annex-st-metadata-examples label="|CEOS-ARD Requirement Examples (Surface Temperature)"}
-
-### General Metadata
-
-#### Traceability
-
-Refers to [@sec:meta-trace-st]
-
-Example of measurement traceability in metadata:
-
-```xml
-<band add_offset="0.000000" category="image" data_type="INT16" fill_value="-9999" name="ST" nlines="5000" nsamps="5000" product="st" scale_factor="0.100000">
-    <short_name>LC08ST</short_name>
-    <long_name>Surface Temperature</long_name>
-    <file_name>ST</file_name>
-    <pixel_size units="meters" x="30" y="30"/>
-    <resample_method>none</resample_method>
-    <data_units>temperature (kelvin)</data_units>
-    <valid_range max="3730.000000" min="1500.000000"/>
-    <app_version>st_1.3.0</app_version>
-    <production_date>2018-11-30T04:47:38Z</production_date>
-</band>
-```
-
-Example of measurement uncertainty in metadata:
-
-```xml
-<band category="qa" data_type="INT16" fill_value="-9999" name="STQA" nlines="5000" nsamps="5000" product="st_qa" scale_factor="0.010000" source="toa_refl">
-    <short_name>LC08STQA</short_name>
-    <long_name>Surface temperature quality band</long_name>
-    <file_name>STQA</file_name>
-    <pixel_size units="meters" x="30" y="30"/>
-    <resample_method>none</resample_method>
-    <data_units>temperature (kelvin)</data_units>
-    <valid_range max="32767.000000" min="0.000000"/>
-    <app_version>st_1.3.0</app_version>
-    <production_date>2018-11-30T04:47:38Z</production_date>
-</band>
-```
-
-#### Data Collection Time
-
-Refers to [@sec:meta-time-st]
-
-Example of scene center time (UTC):
-
-```xml
-<scene_center_time>17:23:57.201686Z</scene_center_time>
-```
-
-The granule start and end times are contained in the XML metadata:
-
-```xml
-<metadataObject ID="acquisitionPeriod" classification="DESCRIPTION" category="DMD">
-    <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Acquisition Period">
-    <xmlData>
-        <sentinel-safe:acquisitionPeriod>
-            <sentinel-safe:startTime>2018-10-07T05:04:50.425838Z</sentinel-safe:startTime>
-            <sentinel-safe:stopTime>2018-10-07T05:07:50.425838Z</sentinel-safe:stopTime>
-        </sentinel-safe:acquisitionPeriod>
-    </xmlData>
-    </metadataWrap>
-</metadataObject>
-```
-
-Per pixel times are derived using information from the "time_in.nc" and “indices_in.nc” datafiles following a prescribed recipe.
-
-#### Geographical Area
-
-Refers to [@sec:meta-geoarea-st]
-
-Example of the bounding coordinates in decimal degrees (WGS84):
-
-```xml
-<bounding_coordinates>
-    <west>-99.9109607425</west>
-    <east>-98.0134952569</east>
-    <north>43.3609828699</north>
-    <south>41.9778528562</south>
-</bounding_coordinates>
-```
-
-Example of the corner points in the map projection system (Albers):
-
-```xml
-<corner_point location="UL" x="-315585.000000" y="2264805.000000"/>
-<corner_point location="LR" x="-165585.000000" y="2114805.000000"/>
-```
-
-#### Map Projection
-
-Refers to [@sec:meta-mapproj-st]
-
-```xml
-<projection_information datum="WGS84" projection="AEA" units="meters">
-    <corner_point location="UL" x="-315585.000000" y="2264805.000000"/>
-    <corner_point location="LR" x="-165585.000000" y="2114805.000000"/>
-    <grid_origin>UL</grid_origin>
-    <albers_proj_params>
-        <standard_parallel1>29.500000</standard_parallel1>
-        <standard_parallel2>45.500000</standard_parallel2>
-        <central_meridian>-96.000000</central_meridian>
-        <origin_latitude>23.000000</origin_latitude>
-        <false_easting>0.000000</false_easting>
-        <false_northing>0.000000</false_northing>
-    </albers_proj_params>
-</projection_information>
-```
-
-#### Geometric Correction Source
-
-Refers to [@sec:meta-geocorm-st]
-
-Example of elevation source:
-
-```xml
-<elevation_source>GLS2000</elevation_source>
-```
-
-The XML wrapper provides the source of the geometric calibration:
-
-```xml
-<sentinel-safe:resource name="S3A_SL_1_GEC_AX_20160216T000000_20991231T235959_20180202T120000___________________MPC_O_AL_007.SEN3" role="SLSTR Geometric Calibration Data File">
-  <sentinel-safe:processing name="AdfProcessing">
-    <sentinel-safe:facility name="ESA Mission Performance Coordinating Centre (MPC)" organisation="ESA Mission Performance Coordinating Centre" site="Sophia Antipolis" country="France">
-      <sentinel-safe:hardware name="OPE"/>
-        <sentinel-safe:software name="ADC" version="1.0"/>
-      </sentinel-safe:facility>
-  </sentinel-safe:processing>
-</sentinel-safe:resource>
-```
-
-#### Geometric Accuracy of the Data
-
-Refers to [@sec:meta-geoacc-st]
-
-```xml
-<geometric_rmse_model>9.021</geometric_rmse_model>
-<geometric_rmse_model_x>6.864</geometric_rmse_model_x>
-<geometric_rmse_model_y>5.854</geometric_rmse_model_y>
-```
-
-#### Instrument
-
-Refers to [@sec:meta-instru-optical]
-
-```xml
-<satellite>LANDSAT_8</satellite>
-<instrument>OLI/TIRS_Combined</instrument>
-```
-
-The XML wrapper provides the instrument details:
-
-```xml
-<metadataObject ID="platform" classification="DESCRIPTION" category="DMD">
-    <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Platform Description">
-      <xmlData>
-          <sentinel-safe:platform>
-            <sentinel-safe:nssdcIdentifier>2016-011A</sentinel-safe:nssdcIdentifier>
-            <sentinel-safe:familyName>Sentinel-3</sentinel-safe:familyName>
-            <sentinel-safe:number>A</sentinel-safe:number>
-            <sentinel-safe:instrument>
-                <sentinel-safe:familyName abbreviation="SLSTR">Sea and Land Surface Temperature Radiometer</sentinel-safe:familyName>
-                <sentinel-safe:mode identifier="EO">Earth Observation</sentinel-safe:mode>
-            </sentinel-safe:instrument>
-          </sentinel-safe:platform>
-      </xmlData>
-    </metadataWrap>
-</metadataObject>
-```
-
-#### Sensor Calibration
-
-Refers to [@sec:meta-sencal-optical]
-
-```xml
-<cpf_name>LC08CPF_20180101_20180331_01.02</cpf_name>
-```
-
-#### Algorithms
-
-Refers to [@sec:meta-malgos-st]
-
-Example for Surface Temperature algorithm version:
-
-```xml
-<app_version>st_1.3.0</app_version>
-```
-
-#### Auxiliary Data
-
-Refers to [@sec:meta-auxdat-optical]
-
-All Auxiliary Datafiles (ADFs) are listed in the XML wrapper:
-
-```xml
-<sentinel-safe:resource name="S3__SL_2_LSTBAX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3" role="SLSTR LST biome data file" version="06.16">
-<sentinel-safe:resource name="S3__SL_2_LSTVAX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3" role="SLSTR LST vegetation fraction data file" version="06.16">
-<sentinel-safe:resource name="S3__SL_2_LSTWAX_20000101T000000_20991231T235959_20151214T120000___________________MPC_O_AL_001.SEN3" role="SLSTR LST water vapour data file" version="06.16">
-```
-
-#### Processing Chain Provenance
-
-Refers to [@sec:meta-proprov-st]
-
-Processing chain provenance information is stored in the XML wrapper under the following tag:
-
-```xml
-<metadataObject ID="processing" classification="PROVENANCE" category="PDI">
-```
-
-#### Overall Data Quality
-
-Refers to [@sec:meta-odqual-st]
-
-Overall data quality information is stored in the XML wrapper under the following tag:
-
-```xml
-<metadataObject ID="measurementQualityInformation" classification="DESCRIPTION" category="DMD">
-```
-
-### Per-Pixel Metadata
-
-#### No Data
-
-Refers to [@sec:pxl-pinodat]
-
-Example of the fill_value specified for each band in metadata:
-
-```xml
-<band add_offset="0.000000" category="image" data_type="INT16" fill_value="-9999" name="ST" nlines="5000" nsamps="5000" product="st" scale_factor="0.100000">
-    <short_name>LC08ST</short_name>
-    <long_name>Surface Temperature</long_name>
-    <file_name>ST</file_name>
-    <pixel_size units="meters" x="30" y="30"/>
-    <resample_method>none</resample_method>
-    <data_units>temperature (kelvin)</data_units>
-    <valid_range max="3730.000000" min="1500.000000"/>
-    <app_version>st_1.3.0</app_version>
-    <production_date>2018-11-30T04:47:38Z</production_date>
-</band>
-```
-
-The "flags_in.nc" datafile contains per-pixel information on "no / bad data through saturation / incomplete testing etc". The following field has an "unfilled" flag:
-
-```netcdf
-ushort confidence_in(rows, columns) ;
-  confidence_in:flag_masks = 1US, 2US, 4US, 8US, 16US, 32US, 64US, 128US, 256US, 512US, 1024US, 2048US, 4096US, 8192US, 16384US, 32768US ;
-  confidence_in:flag_meanings = "coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing" ;
-```
-
-#### Incomplete Testing
-
-Refers to [@sec:pxl-pincot]
-
-The "flags_in.nc" datafile contains per-pixel information on "no / bad data through saturation / incomplete testing etc". The following field has an "unfilled" flag:
-
-```netcdf
-ushort confidence_in(rows, columns) ;
-  confidence_in:flag_masks = 1US, 2US, 4US, 8US, 16US, 32US, 64US, 128US, 256US, 512US, 1024US, 2048US, 4096US, 8192US, 16384US, 32768US ;
-  confidence_in:flag_meanings = "coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing”;
-```
-
-#### Saturation
-
-Refers to [@sec:pxl-pisatur]
-
-Example of RADSATQA band showing the saturation information for the thermal bands used for Surface Temperature calculation:
-
-```xml
-<band category="qa" data_type="UINT16" fill_value="1" name="RADSATQA" nlines="5000" nsamps="5000" product="toa_refl" source="level1">
-    <short_name>LC08RADSAT</short_name>
-    <long_name>saturation mask</long_name>
-    <file_name>RADSATQA</file_name>
-    <pixel_size units="meters" x="30" y="30"/>
-    <resample_method>none</resample_method>
-    <data_units>bitmap</data_units>
-    <bitmap_description>
-        <bit num="0">Data Fill Flag (0 = valid data, 1 = invalid data)</bit>
-        <bit num="1">Band 1 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="2">Band 2 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="3">Band 3 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="4">Band 4 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="5">Band 5 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="6">Band 6 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="7">Band 7 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="8">N/A</bit>
-        <bit num="9">Band 9 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="10">Band 10 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-        <bit num="11">Band 11 Data Saturation Flag (0 = valid data, 1 = saturated data)</bit>
-    </bitmap_description>
-    <app_version>LaSRC_1.3.0</app_version>
-    <production_date>2018-11-30T04:47:38Z</production_date>
-</band>
-```
-
-The "flags_in.nc" datafile contains per-pixel information on "no / bad data through saturation / incomplete testing etc". The following field has an "unfilled" flag:
-
-```netcdf
-ushort confidence_in(rows, columns) ;
-  confidence_in:flag_masks = 1US, 2US, 4US, 8US, 16US, 32US, 64US, 128US, 256US, 512US, 1024US, 2048US, 4096US, 8192US, 16384US, 32768US ;
-  confidence_in:flag_meanings = "coastline ocean tidal land inland_water unfilled spare spare cosmetic duplicate day twilight sun_glint snow summary_cloud summary_pointing" ;
-```
-
-#### Cloud
-
-Refers to [@sec:pxl-picloud]
-
-Example of PIXELQA showing the bit value for cloud pixels (as well as cloud and cirrus confidence):
-
-```xml
-<band category="qa" data_type="UINT16" fill_value="1" name="PIXELQA" nlines="5000" nsamps="5000" product="level2_qa" source="level1">
-    <short_name>LC08PQA</short_name>
-    <long_name>level-2 pixel quality band</long_name>
-    <file_name>PIXELQA</file_name>
-    <pixel_size units="meters" x="30" y="30"/>
-    <resample_method>none</resample_method>
-    <data_units>quality/feature classification</data_units>
-    <bitmap_description>
-        <bit num="0">fill</bit>
-        <bit num="1">clear</bit>
-        <bit num="2">water</bit>
-        <bit num="3">cloud shadow</bit>
-        <bit num="4">snow</bit>
-        <bit num="5">cloud</bit>
-        <bit num="6">cloud confidence</bit>
-        <bit num="7">cloud confidence</bit>
-        <bit num="8">cirrus confidence</bit>
-        <bit num="9">cirrus confidence</bit>
-        <bit num="10">terrain occlusion</bit>
-        <bit num="11">unused</bit>
-        <bit num="12">unused</bit>
-        <bit num="13">unused</bit>
-        <bit num="14">unused</bit>
-        <bit num="15">unused</bit>
-    </bitmap_description>
-    <app_version>generate_pixel_qa_1.6.0</app_version>
-    <production_date>2018-11-30T04:47:38Z</production_date>
-</band>
-```
-
-The "flags_in.nc" datafile contains all the cloud masking flags. Three fields are relevant:
-
-1. cloud_in
-2. confidence_in
-3. bayes_in
-
-The "cloud_in" field contains all the individual threshold-based mask:
-
-```xml
-flag_masks = 1US, 2US, 4US, 8US, 16US, 32US, 64US, 128US, 256US, 512US, 1024US, 2048US, 4096US, 8192US, 16384US, 32768US ;
-cloud_in:flag_meanings = "visible 1.37_threshold 1.6_small_histogram 1.6_large_histogram 2.25_small_histogram 2.25_large_histogram 11_spatial_coherence gross_cloud thin_cirrus medium_high fog_low_stratus 11_12_view_difference 3.7_11_view_difference thermal_histogram spare spare"
-```
-
-The "confidence_in" field contains the "summary_cloud_mask" from the most appropriate cloud_in flags; the value of the bit is 16384US.
-The "bayes_in" field contains the "single_moderate" probabilistic cloud flag; the value of the bit is 2UB.
-
-#### Cloud Shadow
-
-Refers to [@sec:pxl-picloudsh]
-
-Please see the cloud shadow part in the example provided in requirement 2.5
-
-#### Snow/Ice Mask
-
-Refers to [@sec:pxl-snowice-sr]
-
-Please see the snow part in the example provided in requirement 2.5
-
-### Radiometric and Atmospheric Corrections
-
-No examples provided
-
-### Geometric Corrections
-
-No examples provided
-
 
