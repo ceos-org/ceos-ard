@@ -50,6 +50,15 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ## Document History
 
+### 2026-08-31 (PATCH)
+
+- Updated 'Applies to' statement
+
+**Justification:**
+Minor editorial update
+
+**Editor:** Harvey Jones
+
 ### 2026-03-26 (PATCH)
 
 - Renamed CARD4L to CEOS-ARD
@@ -88,14 +97,8 @@ Optical, Nighttime Lights Surface Radiance (NLSR)
 1.0.1-draft
 
 **Applies to:**
-Data collected by Synthetic Aperture Radar sensors
+Data collected with nighttime light sensors operating in the VIS/NIR wavelengths. These typically operate with ground sample distance and resolution in the order of 10-1000m; however, the Specification is not inherently limited to this resolution.
 
-
-## Background
-
-Data collected with nighttime light sensors operating in the VIS/NIR wavelengths.
-These typically operate with ground sample distance and resolution in the order of 10-1000m;
-however, the Specification is not inherently limited to this resolution.
 
 &#12;
 
