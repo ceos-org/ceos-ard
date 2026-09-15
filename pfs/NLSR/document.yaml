@@ -1,11 +1,11 @@
 title: Nighttime Lights Surface Radiance
 version: 1.0.1
 type: Optical
-applies_to: Data collected by Synthetic Aperture Radar sensors
-background: |-
-  Data collected with nighttime light sensors operating in the VIS/NIR wavelengths.
+applies_to: Data collected with nighttime light sensors operating in the VIS/NIR wavelengths.
   These typically operate with ground sample distance and resolution in the order of 10-1000m;
   however, the Specification is not inherently limited to this resolution.
+background:
+  
 
 glossary:
   - nlsr
@@ -81,6 +81,12 @@ authors:
   - Zhuosen Wang, University of Maryland/GSFC, USA
 
 changes:
+  - date: 2026-08-31
+    author: Harvey Jones
+    level: patch
+    change: |-
+      - Updated 'Applies to' statement
+    reason: Minor editorial update
   - date: 2026-03-26
     author: Matthias Mohr
     level: patch
