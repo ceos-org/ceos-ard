@@ -43,6 +43,10 @@ Each entry in the list consists of the following components (all required):
 - `reason`: A short justification for the change.
 - `level`: The severity of the change, one of `major` (breaking change), `minor`, or `patch`.
 
+The changes of all building blocks that are used by a PFS are compiled into the document history of the released PFS documents.
+The `date` decides in which version a change is listed: a change is attributed to the first release of the PFS that was published on or after that date, and newer changes are listed for the upcoming version.
+Every pull request is checked automatically (`ceos-ard check-changes`) so that each changed building block has a new entry in its `changes`.
+
 ## Markdown
 
 The flavor of Markdown that is implemented here has some additional features.

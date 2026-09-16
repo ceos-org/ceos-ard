@@ -54,24 +54,57 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ~( if combined )~
 See the document history in the separate PFS documents.
-~( elif not changes )~
-Not available, see previous versions of the document for its history.
+~( elif changelog is none )~
+The document history is not included in this build of the document.
+It is compiled for released versions only, see the released documents on the [CEOS-ARD website](https://ceos.org/ard/index.html#specs) or in the [GitHub releases](https://github.com/ceos-org/ceos-ard/releases).
+~( elif not changelog.versions )~
+~(   if changelog.first_release )~
+This is the first release of this document.
+~(   else )~
+The history of previous versions is available in the legacy PFS documents on the [CEOS-ARD website](https://ceos.org/ard/index.html#specs).
+~(   endif )~
 ~( else )~
-~(   for entry in changes )~
-### ~{ entry.date }~ (~{ entry.level | upper }~)
-~(     if entry.level == "major" )~
+~(   for v in changelog.versions )~
+### Version ~{ v.version }~ (~( if v.released )~~{ v.date }~~( else )~unreleased draft~( endif )~)
 
-**This is a breaking change!**
+~(     if not v.released )~
+~(       if v.proposed_version )~
+This version has not been released yet.
+Based on the recorded changes (highest level: ~{ v.proposed_level }~), the proposed next version number is **~{ v.proposed_version }~**.
+
+~(       else )~
+This version has not been released yet.
+No changes have been recorded since version ~{ changelog.latest_release }~.
+
+~(       endif )~
 ~(     endif )~
+~(     if v.breaking )~
+**This version contains breaking changes!**
 
-~{     entry.change }~
+~(     endif )~
+~(     for e in v.entries )~
+~(       if e.block.kind == "Document" )~
+~(         set label = "Document" )~
+~(       elif e.block.anchor )~
+~(         set label = e.block.kind ~ ' "[' ~ e.block.title ~ '](' ~ e.block.anchor ~ ')"' )~
+~(       else )~
+~(         set label = e.block.kind ~ ' "' ~ e.block.title ~ '"' )~
+~(       endif )~
+#### ~{ e.date }~ (~{ e.level | upper }~): ~{ label }~
+
+~{ e.change }~
 
 **Justification:**
-~{     entry.reason }~
+~{ e.reason }~
 
-**Editor:** ~{ entry.author }~
+**Editor:** ~{ e.author }~
 
+~(     endfor )~
 ~(   endfor )~
+~(   if changelog.truncated )~
+The history of the versions before ~{ changelog.oldest_version }~ is available in the older versions of this document, see the [CEOS-ARD website](https://ceos.org/ard/index.html#specs) or the [GitHub releases](https://github.com/ceos-org/ceos-ard/releases).
+
+~(   endif )~
 ~( endif )~
 
 ## ~( if combined )~<!-- edit:pfs/~{ id }~/document.yaml -->~( endif )~Contributing Authors

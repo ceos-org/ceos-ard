@@ -54,11 +54,15 @@ jobs:
         run: python -m playwright install chromium --with-deps
 
       - name: Generate PFS documents
+        env:
+          # used to retrieve the releases for the document history
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
           ceos-ard generate ${{ steps.parse.outputs.pfs }}
           -o ${{ steps.parse.outputs.output_prefix }}
           --self-contained
           --stable
+          --history
 
       - name: Upload release assets
         env:

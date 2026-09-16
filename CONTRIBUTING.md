@@ -30,7 +30,13 @@ See [VERSIONING.md](VERSIONING.md) for how to determine whether a release is a m
 The release workflow will automatically:
 
 1. Generate the release documents (PDF, HTML, DOCX) using the CEOS-ARD CLI.
+   This includes the document history, which is compiled from the `changes` of the PFS document and of all building blocks that are used by the PFS.
+   The changes are grouped by the previous GitHub releases of the PFS based on their dates, so make sure that all changes have been recorded before creating the release.
 2. Attach the generated files to the GitHub Release.
+
+Every pull request is checked automatically for missing changelog entries:
+each changed building block (and PFS document) must have a new entry in its `changes` list.
+You can run the check locally with `ceos-ard check-changes --base main`.
 
 After the release is published, get the newly generated PFS documents from the
 [Releases page on the ceos-ard GitHub repository](https://github.com/ceos-org/ceos-ard/releases).

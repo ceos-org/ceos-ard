@@ -37,6 +37,22 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run validation
         run: ceos-ard validate
+  check-changes:
+    # Ensure that all changed building blocks have a new changelog entry
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          # full history is required to compare against the base branch
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Check changelog entries
+        run: ceos-ard check-changes --base origin/${{ github.base_ref }}
   generate:
     # run once, see https://github.com/orgs/community/discussions/57827
     runs-on: ubuntu-latest
@@ -63,7 +79,10 @@ jobs:
       - name: Install browser for PDF generation
         run: python -m playwright install chromium --with-deps
       - name: Generate all PFS
-        run: ceos-ard generate-all -o build --self-contained
+        env:
+          # used to retrieve the releases for the document history
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ceos-ard generate-all -o build --self-contained --history
       - name: Archive generated PFS artifacts
         uses: actions/upload-artifact@v4
         with:
