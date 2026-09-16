@@ -54,24 +54,71 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 ~( if combined )~
 See the document history in the separate PFS documents.
-~( elif not changes )~
-Not available, see previous versions of the document for its history.
+~( elif changelog is none )~
+The document history is not included in the draft versions of the document.
+~( elif not changelog.versions )~
+~(   if changelog.first_release )~
+This is the first version of this document.
+~(   else )~
+The history of previous versions is available in the legacy PFS documents on the [CEOS-ARD website](https://ceos.org/ard/index.html#specs).
+~(   endif )~
 ~( else )~
-~(   for entry in changes )~
-### ~{ entry.date }~ (~{ entry.level | upper }~)
-~(     if entry.level == "major" )~
+~(   for v in changelog.versions )~
+### Version ~{ v.version }~ (~( if v.released )~~{ v.date }~~( else )~unreleased draft~( endif )~)
 
-**This is a breaking change!**
+~(     if not v.released )~
+~(       if v.proposed_version )~
+This version has not been released yet.
+Based on the recorded changes (highest level: ~{ v.proposed_level }~), the proposed next version number is **~{ v.proposed_version }~**.
+
+~(       else )~
+This version has not been released yet.
+No changes have been recorded since version ~{ changelog.latest_release }~.
+
+~(       endif )~
 ~(     endif )~
+~(     if v.breaking )~
+**This version contains breaking changes!**
 
-~{     entry.change }~
+~(     endif )~
+~(     if v.entries )~
+**Editors:** ~{ v.editors | map(attribute="name") | join(", ") }~
 
-**Justification:**
-~{     entry.reason }~
+::::: {.changelog columns="Building Block|Change|Level" widths="0.25|0.65|0.10"}
+~(       for row in v.rows )~
+:::: {.entry}
+::: {.cell}
+~(         if row.block.kind == "Document" )~
+Document
+~(         elif row.block.anchor )~
+~{ row.block.kind }~: [~{ row.block.title }~](~{ row.block.anchor }~)
+~(         else )~
+~{ row.block.kind }~: ~{ row.block.title }~
+~(         endif )~
+:::
+::: {.cell}
+~(         for e in row.changes )~
+~{ e.change }~
 
-**Editor:** ~{ entry.author }~
+~(         endfor )~
+:::
+::: {.cell}
+~(         if row.level == "major" )~
+**~{ row.level }~**
+~(         else )~
+~{ row.level }~
+~(         endif )~
+:::
+::::
+~(       endfor )~
+:::::
 
+~(     endif )~
 ~(   endfor )~
+~(   if changelog.truncated )~
+The history of the versions before ~{ changelog.oldest_version }~ is available in the older versions of this document, see the [CEOS-ARD website](https://ceos.org/ard/index.html#specs) or the [GitHub releases](https://github.com/ceos-org/ceos-ard/releases).
+
+~(   endif )~
 ~( endif )~
 
 ## ~( if combined )~<!-- edit:pfs/~{ id }~/document.yaml -->~( endif )~Contributing Authors
