@@ -29,6 +29,9 @@ jobs:
           echo "location=build/CEOS-ARD-PFS-$PFS-$VERSION" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v6
+        with:
+          # the full history is required to assign the changes to the releases
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
         with:

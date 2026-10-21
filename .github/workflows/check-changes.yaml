@@ -1,0 +1,33 @@
+name: Check changes
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - labeled
+      - unlabeled
+    paths:
+      - 'glossary/**'
+      - 'pfs/**'
+      - 'requirements/**'
+      - 'sections/**'
+permissions:
+  contents: read
+jobs:
+  check-changes:
+    # Ensure that all changed building blocks have a new changelog entry, can be skipped with the label "no changelog"
+    if: ${{ !contains(github.event.pull_request.labels.*.name, 'no changelog') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          # full history is required to compare against the base branch
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Check changelog entries
+        run: ceos-ard check-changes --base origin/${{ github.base_ref }}

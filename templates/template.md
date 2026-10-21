@@ -77,7 +77,7 @@ No changes have been recorded since version ~{ changelog.latest_release }~.
 
 ~(       endif )~
 ~(     endif )~
-~(     if v.breaking )~
+~(     if v.level == "major" )~
 **This version contains breaking changes!**
 
 ~(     endif )~
