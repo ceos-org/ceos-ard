@@ -44,7 +44,8 @@ Each entry in the list consists of the following components (all required):
 - `level`: The severity of the change, one of `major` (breaking change), `minor`, or `patch`.
 
 The changes of all building blocks that are used by a PFS are compiled into the document history of the released PFS documents.
-The `date` decides in which version a change is listed: a change is attributed to the first release of the PFS that was published on or after that date, and newer changes are listed for the upcoming version.
+A change is listed for the first release of the PFS that includes it, i.e. that was created after the change was merged into `main`. Changes that are not released yet are listed for the upcoming version.
+Changes with the level `patch` (editorial changes) are not listed.
 Every pull request is checked automatically (`ceos-ard check-changes`) so that each changed building block has a new entry in its `changes`.
 
 ## Markdown

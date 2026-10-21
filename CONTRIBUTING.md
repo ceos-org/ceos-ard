@@ -37,7 +37,7 @@ The release workflow will automatically:
 Every pull request is checked automatically for missing changelog entries:
 each changed building block (and PFS document) must have a new entry in its `changes` list.
 You can run the check locally with `ceos-ard check-changes --base main`.
-For changes that don't need to be listed in the document history (e.g. typo fixes), maintainers can skip the check by adding the label `no changelog` to the pull request.
+For changes that don't need a changelog entry at all, maintainers can skip the check by adding the label `no changelog` to the pull request.
 
 After the release is published, get the newly generated PFS documents from the
 [Releases page on the ceos-ard GitHub repository](https://github.com/ceos-org/ceos-ard/releases).
