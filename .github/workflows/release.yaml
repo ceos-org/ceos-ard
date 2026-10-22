@@ -29,6 +29,9 @@ jobs:
           echo "location=build/CEOS-ARD-PFS-$PFS-$VERSION" >> "$GITHUB_OUTPUT"
 
       - uses: actions/checkout@v6
+        with:
+          # the full history is required to assign the changes to the releases
+          fetch-depth: 0
 
       - uses: actions/setup-python@v6
         with:
@@ -54,11 +57,15 @@ jobs:
         run: python -m playwright install chromium --with-deps
 
       - name: Generate PFS documents
+        env:
+          # used to retrieve the releases for the document history
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: >
           ceos-ard generate ${{ steps.parse.outputs.pfs }}
           -o ${{ steps.parse.outputs.output_prefix }}
           --self-contained
           --stable
+          --history
 
       - name: Upload release assets
         env:

@@ -136,7 +136,7 @@ authors: |-
 changes:
   - date: 2026-04-13
     author: Matthias Mohr
-    level: patch
+    level: minor
     change: |-
       - Restructured the document; removed empty or unused parts
       - Document history has been reset. Check the previous versions for details
