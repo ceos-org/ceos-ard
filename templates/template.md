@@ -251,14 +251,21 @@ Editorial changes are not listed.
 ~(   for v in changelog.versions )~
 ### Version ~{ v.version }~ (~( if v.released )~~{ v.date }~~( else )~unreleased draft~( endif )~)
 
+~(     if v.initial )~
+This is the first version of this document.
+
+~(     endif )~
 ~(     if not v.released )~
 ~(       if v.proposed_version )~
 This version has not been released yet.
 Based on the recorded changes (highest level: ~{ v.proposed_level }~), the proposed next version number is **~{ v.proposed_version }~**.
 
-~(       else )~
+~(       elif changelog.latest_release )~
 This version has not been released yet.
 No changes have been recorded since version ~{ changelog.latest_release }~.
+
+~(       else )~
+This version has not been released yet.
 
 ~(       endif )~
 ~(     endif )~
