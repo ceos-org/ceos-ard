@@ -43,6 +43,9 @@ jobs:
     needs: validate
     steps:
       - uses: actions/checkout@v6
+        with:
+          # the full history is required to assign the changes to the releases
+          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
@@ -63,7 +66,10 @@ jobs:
       - name: Install browser for PDF generation
         run: python -m playwright install chromium --with-deps
       - name: Generate all PFS
-        run: ceos-ard generate-all -o build --self-contained
+        env:
+          # used to retrieve the releases for the document history
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ceos-ard generate-all -o build --self-contained --history
       - name: Archive generated PFS artifacts
         uses: actions/upload-artifact@v4
         with:

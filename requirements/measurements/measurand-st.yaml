@@ -19,7 +19,7 @@ glossary:
 references:
 changes:
   - date: 2026-08-14
-    author: Harvey
+    author: Harvey Jones
     level: minor
     change: |-
       Removed 'of the land' qualifier for 'surface temperature,' renamed requirement to 'measurand' and added a link to Spectral Bands requirement

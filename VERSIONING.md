@@ -200,3 +200,6 @@ Guidelines:
 
 - Classify each entry individually; do not pre-aggregate. The release process derives the version bump from the highest `level` among all pending changes.
 - In the change description, state the normative effect explicitly so the classification can be verified.
+- The `date` must be the date of the change. The release a change is listed under in the document history is determined by when the change was merged into `main`: changes merged after the latest release of a PFS are listed for the upcoming version, for which the CLI also proposes the next version number based on the highest `level`.
+- Changes with the level `patch` are not listed in the document history, but they are still considered for the proposed version number.
+- A pull request can only be merged if every changed building block has a new `changes` entry (checked by CI with `ceos-ard check-changes`).

@@ -118,7 +118,7 @@ changes:
     reason: Update to address evolving landscape of thermal missions, including capabilities of the commercial sector and user needs. Closer alignment with more recently updated PFS. Changes also reflect recent CEOS-ARD Oversight Group discussions, swapping strict threshold requirements for algorithms in favour of uncertainty information. 
   - date: 2026-03-26
     author: Matthias Mohr
-    level: patch
+    level: minor
     change: |-
       - Renamed CARD4L to CEOS-ARD
       - Restructured the document; removed empty or unused parts
