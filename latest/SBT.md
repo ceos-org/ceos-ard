@@ -79,6 +79,9 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 - Mary Metzger (USGS)
 - Steve Labahn (USGS)
 
+::: {#toc}
+:::
+
 &#12;
 
 ## CEOS Analysis Ready Data Definition

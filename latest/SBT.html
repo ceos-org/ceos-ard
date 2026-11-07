@@ -153,6 +153,16 @@ padding: 0.25em 0.5em 0.25em 0.5em;
 td {
 padding: 0.125em 0.5em 0.25em 0.5em;
 }
+.toc ul {
+list-style: none;
+padding-left: 1.5em;
+}
+.toc > ul {
+padding-left: 0;
+}
+.toc a {
+text-decoration: none;
+}
 table.changelog th,
 table.changelog td {
 vertical-align: top;
@@ -287,6 +297,84 @@ Temperature</p>
 <li>Mary Metzger (USGS)</li>
 <li>Steve Labahn (USGS)</li>
 </ul>
+<div id="toc" class="toc">
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#draft-version">Draft Version</a></li>
+<li><a href="#document-status">Document Status</a></li>
+<li><a href="#contributing-authors">Contributing Authors</a></li>
+<li><a href="#ceos-analysis-ready-data-definition">CEOS Analysis Ready
+Data Definition</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#background">Background</a></li>
+<li><a href="#definitions-and-abbreviations">Definitions and
+Abbreviations</a></li>
+<li><a href="#requirements">Requirements</a>
+<ul>
+<li><a href="#sec:meta">1. General Metadata</a>
+<ul>
+<li><a href="#sec:meta-ardver">1.1. CEOS-ARD PFS Compliance
+Version</a></li>
+<li><a href="#sec:meta-trace-st">1.2. Metrological Traceability of the
+Measurand to SI</a></li>
+<li><a href="#sec:meta-memare-st">1.3. Metadata Machine
+Readability</a></li>
+<li><a href="#sec:meta-time-st">1.4. Data Collection Time</a></li>
+<li><a href="#sec:meta-geoarea-optical">1.5. Geographical Area</a></li>
+<li><a href="#sec:meta-crs-ar">1.6. Coordinate Reference System</a></li>
+<li><a href="#sec:meta-mapproj-ar">1.7. Map Projection</a></li>
+<li><a href="#sec:meta-geocorm-st">1.8. Geometric Correction
+Methods</a></li>
+<li><a href="#sec:meta-geounc-st">1.9. Geometric Uncertainty of the
+Data</a></li>
+<li><a href="#sec:meta-instru-st">1.10. Instrument</a></li>
+<li><a href="#sec:meta-specband-st">1.11. Spectral Bands</a></li>
+<li><a href="#sec:meta-sencal-st">1.12. Sensor Calibration</a></li>
+<li><a href="#sec:meta-measurunc">1.13. Measurand Uncertainty</a></li>
+<li><a href="#sec:meta-measurenc">1.14. Measurand Encoding</a></li>
+<li><a href="#sec:meta-malgos-st">1.15. Algorithms</a></li>
+<li><a href="#sec:meta-auxdat-st">1.16. Auxiliary Data</a></li>
+<li><a href="#sec:meta-proprov-st">1.17. Processing Chain
+Provenance</a></li>
+<li><a href="#sec:meta-daccess-st">1.18. Data Access</a></li>
+<li><a href="#sec:meta-valpix">1.19. Valid Pixels</a></li>
+</ul></li>
+<li><a href="#sec:pxl">2. Per-Pixel Metadata</a>
+<ul>
+<li><a href="#sec:pxl-pinodat-st">2.1. No Data</a></li>
+<li><a href="#sec:pxl-pincot-st">2.2. Incomplete Testing</a></li>
+<li><a href="#sec:pxl-pisatur-ar">2.3. Saturation</a></li>
+<li><a href="#sec:pxl-picloud-st">2.4. Cloud</a></li>
+<li><a href="#sec:pxl-picloudsh-st">2.5. Cloud Shadow</a></li>
+<li><a href="#sec:pxl-surf-st">2.6. Surface</a></li>
+<li><a href="#sec:pxl-vigeso-ar">2.7. Solar and Viewing
+Geometry</a></li>
+<li><a href="#sec:pxl-terrain-st">2.8. Terrain Occlusion</a></li>
+</ul></li>
+<li><a href="#sec:rac">3. Radiometric and Atmospheric Corrections</a>
+<ul>
+<li><a href="#sec:rac-measur-st">3.1. Measurand</a></li>
+<li><a href="#sec:rac-catmos">3.2. Corrections for Atmosphere</a></li>
+<li><a href="#sec:rac-muncer-st">3.3. Measurand Uncertainty</a></li>
+</ul></li>
+<li><a href="#sec:gcor">4. Geometric Corrections</a>
+<ul>
+<li><a href="#sec:gcor-geocorr-st">4.1. Geometric Correction</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#sec:intro-what-are-ceos-ard-products">What is CEOS
+Analysis Ready Data?</a></li>
+<li><a href="#sec:intro-when-is-a-product-ceos-ard">When can a product
+be called CEOS-ARD?</a></li>
+<li><a href="#sec:intro-difference-threshold-goal">What is the
+difference between Threshold and Goal?</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+<li><a href="#document-history">Document History</a></li>
+</ul>
+</div>
 <div style="page-break-after: always;"></div>
 <h2 id="ceos-analysis-ready-data-definition">CEOS Analysis Ready Data
 Definition</h2>

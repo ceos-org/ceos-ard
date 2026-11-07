@@ -153,6 +153,16 @@ padding: 0.25em 0.5em 0.25em 0.5em;
 td {
 padding: 0.125em 0.5em 0.25em 0.5em;
 }
+.toc ul {
+list-style: none;
+padding-left: 1.5em;
+}
+.toc > ul {
+padding-left: 0;
+}
+.toc a {
+text-decoration: none;
+}
 table.changelog th,
 table.changelog td {
 vertical-align: top;
@@ -297,6 +307,147 @@ Italy</li>
 <li>Fang Yuan, Digital Earth Africa, Australia</li>
 <li>Francesco De Zan, Delta-Phi Remote Sensing GmbH, Germany</li>
 </ul>
+<div id="toc" class="toc">
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#draft-version">Draft Version</a></li>
+<li><a href="#document-status">Document Status</a></li>
+<li><a href="#contributing-authors">Contributing Authors</a></li>
+<li><a href="#ceos-analysis-ready-data-definition">CEOS Analysis Ready
+Data Definition</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#background">Background</a></li>
+<li><a href="#definitions-and-abbreviations">Definitions and
+Abbreviations</a></li>
+<li><a href="#requirements">Requirements</a>
+<ul>
+<li><a href="#sec:meta">1. General Metadata</a>
+<ul>
+<li><a href="#sec:meta-trace-sar">1.1. Traceability</a></li>
+<li><a href="#sec:meta-memare-sar">1.2. Metadata Machine
+Readability</a></li>
+<li><a href="#sec:meta-protype">1.3. Product Type</a></li>
+<li><a href="#sec:meta-pfsurl">1.4. Document Identifier</a></li>
+<li><a href="#sec:meta-time-sar">1.5. Data Collection Time</a></li>
+</ul></li>
+<li><a href="#sec:src">2. Source Metadata</a>
+<ul>
+<li><a href="#sec:src-macqid">2.1. Acquisition ID</a></li>
+<li><a href="#sec:src-daccess-src">2.2. Source Data Access</a></li>
+<li><a href="#sec:src-instru-sar">2.3. Instrument</a></li>
+<li><a href="#sec:src-time-src">2.4. Source Data Acquisition
+Time</a></li>
+<li><a href="#sec:src-acqpar">2.5. Source Data Acquisition
+Parameters</a></li>
+<li><a href="#sec:src-orbit-gslc">2.6. Source Data Orbit
+Information</a></li>
+<li><a href="#sec:src-propar">2.7. Source Data Processing
+Parameters</a></li>
+<li><a href="#sec:src-imgatt-sar">2.8. Source Data Image
+Attributes</a></li>
+<li><a href="#sec:src-sencal-sar">2.9. Sensor Calibration</a></li>
+<li><a href="#sec:src-perfind">2.10. Performance Indicators</a></li>
+<li><a href="#sec:src-polcalm">2.11. Polarimetric Calibration
+Matrices</a></li>
+<li><a href="#sec:src-farotan">2.12. Mean Faraday Rotation
+Angle</a></li>
+<li><a href="#sec:src-ionind">2.13. Ionosphere Indicator</a></li>
+</ul></li>
+<li><a href="#sec:prd">3. Product Metadata</a>
+<ul>
+<li><a href="#sec:prd-daccess-prod">3.1. Product Data Access</a></li>
+<li><a href="#sec:prd-auxdat-sar">3.2. Auxiliary Data</a></li>
+<li><a href="#sec:prd-samspa">3.3. Product Sample Spacing</a></li>
+<li><a href="#sec:prd-resol">3.4. Product Resolution</a></li>
+<li><a href="#sec:prd-geobbox">3.5. Product Bounding Box</a></li>
+<li><a href="#sec:prd-geoarea-sar">3.6. Product Geographical
+Extent</a></li>
+<li><a href="#sec:prd-imgsize">3.7. Product Image Size</a></li>
+<li><a href="#sec:prd-pixcoco">3.8. Product Pixel Coordinate
+Convention</a></li>
+<li><a href="#sec:prd-crs-sar">3.9. Product Coordinate Reference
+System</a></li>
+<li><a href="#sec:prd-rulvec">3.10. Radar Unit Look Vector</a></li>
+<li><a href="#sec:prd-slarass">3.11. Slant Range Sensor to
+Surface</a></li>
+<li><a href="#sec:prd-reorbit-gslc">3.12. Reference Orbit</a></li>
+<li><a href="#sec:prd-catpha">3.13. Atmospheric Phase
+Correction</a></li>
+<li><a href="#sec:prd-ionpha">3.14. Ionospheric Phase
+Correction</a></li>
+</ul></li>
+<li><a href="#sec:pxl">4. Per-Pixel Metadata</a>
+<ul>
+<li><a href="#sec:pxl-memare-sar">4.1. Metadata Machine
+Readability</a></li>
+<li><a href="#sec:pxl-damaski">4.2. Data Mask Image</a></li>
+<li><a href="#sec:pxl-piscata">4.3. Scattering Area Image</a></li>
+<li><a href="#sec:pxl-ploinca">4.4. Local Incident Angle Image</a></li>
+<li><a href="#sec:pxl-pelinca">4.5. Ellipsoidal Incident Angle
+Image</a></li>
+<li><a href="#sec:pxl-pinopow">4.6. Noise Power Image</a></li>
+<li><a href="#sec:pxl-gasiri">4.7. Gamma-to-Sigma Ratio Image</a></li>
+<li><a href="#sec:pxl-pacqidm">4.8. Acquisition ID Image</a></li>
+<li><a href="#sec:pxl-pidem">4.9. Per-Pixel DEM</a></li>
+<li><a href="#sec:pxl-radulov-gslc">4.10. Radar Unit Look Vector Grid
+Image</a></li>
+<li><a href="#sec:pxl-slarassi-gslc">4.11. Slant Range Sensor to Surface
+Image</a></li>
+<li><a href="#sec:pxl-pinphun">4.12. InSAR Phase Uncertainty
+Image</a></li>
+<li><a href="#sec:pxl-atphaci">4.13. Atmospheric Phase Correction
+Image</a></li>
+<li><a href="#sec:pxl-piopha">4.14. Ionospheric Phase Correction
+Image</a></li>
+</ul></li>
+<li><a href="#sec:rcm">5. Radiometrically Corrected Measurements</a>
+<ul>
+<li><a href="#sec:rcm-backsca-gslc">5.1. Backscatter Measurements
+(GSLC)</a></li>
+<li><a href="#sec:rcm-scaconv">5.2. Scaling Conversion</a></li>
+<li><a href="#sec:rcm-noiser">5.3. Noise Removal</a></li>
+<li><a href="#sec:rcm-radtalg-min">5.4. Radiometric Terrain Correction
+Algorithm</a></li>
+<li><a href="#sec:rcm-radacc-sar">5.5. Radiometric Accuracy</a></li>
+</ul></li>
+<li><a href="#sec:gcor">6. Geometric Corrections</a>
+<ul>
+<li><a href="#sec:gcor-geocalg">6.1. Geometric Correction
+Algorithm</a></li>
+<li><a href="#sec:gcor-cdem">6.2. Digital Elevation Model</a></li>
+<li><a href="#sec:gcor-geomacc-sar">6.3. Geometric Accuracy</a></li>
+<li><a href="#sec:gcor-georacc">6.4. Geometric Refined Accuracy</a></li>
+<li><a href="#sec:gcor-gridconv">6.5. Gridding Convention</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#sec:intro-what-are-ceos-ard-products">What is CEOS
+Analysis Ready Data?</a></li>
+<li><a href="#sec:intro-when-is-a-product-ceos-ard">When can a product
+be called CEOS-ARD?</a></li>
+<li><a href="#sec:intro-difference-threshold-goal">What is the
+difference between Threshold and Goal?</a></li>
+<li><a href="#sec:intro-sar-differences">Compatibility and
+Interoperability of CEOS-ARD SAR Products</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+<li><a href="#annexes">Annexes</a>
+<ul>
+<li><a href="#sec:annex-sar-general-processing-roadmap">General
+Processing Roadmap</a></li>
+<li><a href="#sec:annex-sar-topographic-phase-removal">Topographic phase
+removal</a></li>
+<li><a href="#sec:annex-sar-gslc-example">Geocoded Single-Look Complex
+example</a></li>
+</ul></li>
+<li><a href="#document-history">Document History</a>
+<ul>
+<li><a href="#version-2.0.0-draft-unreleased-draft">Version 2.0.0-draft
+(unreleased draft)</a></li>
+</ul></li>
+</ul>
+</div>
 <div style="page-break-after: always;"></div>
 <h2 id="ceos-analysis-ready-data-definition">CEOS Analysis Ready Data
 Definition</h2>

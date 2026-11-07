@@ -153,6 +153,16 @@ padding: 0.25em 0.5em 0.25em 0.5em;
 td {
 padding: 0.125em 0.5em 0.25em 0.5em;
 }
+.toc ul {
+list-style: none;
+padding-left: 1.5em;
+}
+.toc > ul {
+padding-left: 0;
+}
+.toc a {
+text-decoration: none;
+}
 table.changelog th,
 table.changelog td {
 vertical-align: top;
@@ -294,6 +304,126 @@ version of this document.</p>
 <li>Chris Barnes (USGS)</li>
 <li>Liesbeth de Keukelare (VITO)</li>
 </ul>
+<div id="toc" class="toc">
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="#draft-version">Draft Version</a></li>
+<li><a href="#document-status">Document Status</a></li>
+<li><a href="#contributing-authors">Contributing Authors</a>
+<ul>
+<li><a href="#technical-leads">Technical Leads</a></li>
+<li><a href="#organisational-leads">Organisational Leads</a></li>
+<li><a href="#contributors">Contributors</a></li>
+</ul></li>
+<li><a href="#ceos-analysis-ready-data-definition">CEOS Analysis Ready
+Data Definition</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#definitions-and-abbreviations">Definitions and
+Abbreviations</a></li>
+<li><a href="#requirements">Requirements</a>
+<ul>
+<li><a href="#sec:meta">1. General Metadata</a>
+<ul>
+<li><a href="#sec:meta-ardver">1.1. CEOS-ARD PFS Compliance
+Version</a></li>
+<li><a href="#sec:meta-trace-ar">1.2. Traceability</a></li>
+<li><a href="#sec:meta-memare-optical">1.3. Metadata Machine
+Readability</a></li>
+<li><a href="#sec:meta-time-ar">1.4. Data Collection Time</a></li>
+<li><a href="#sec:meta-geoarea-optical">1.5. Geographical Area</a></li>
+<li><a href="#sec:meta-crs-ar">1.6. Coordinate Reference System</a></li>
+<li><a href="#sec:meta-mapproj-ar">1.7. Map Projection</a></li>
+<li><a href="#sec:meta-geocorm-ar">1.8. Geometric Correction
+Methods</a></li>
+<li><a href="#sec:meta-geounc">1.9. Geometric Uncertainty of the
+Data</a></li>
+<li><a href="#sec:meta-instru-ar">1.10. Instrument</a></li>
+<li><a href="#sec:meta-specband-ar">1.11. Spectral Bands</a></li>
+<li><a href="#sec:meta-sencal-ar">1.12. Sensor Calibration</a></li>
+<li><a href="#sec:meta-radunc">1.13. Measurand Radiometric
+Uncertainty</a></li>
+<li><a href="#sec:meta-radenc">1.14. Radiometric Encoding</a></li>
+<li><a href="#sec:meta-malgos-ar">1.15. Algorithms</a></li>
+<li><a href="#sec:meta-auxdat-ar">1.16. Auxiliary Data</a></li>
+<li><a href="#sec:meta-proprov-ar">1.17. Processing Chain
+Provenance</a></li>
+<li><a href="#sec:meta-daccess">1.18. Data Access</a></li>
+<li><a href="#sec:meta-valpix">1.19. Valid Pixels</a></li>
+</ul></li>
+<li><a href="#sec:pxl">2. Per-Pixel Metadata</a>
+<ul>
+<li><a href="#sec:pxl-pimemare">2.1. Metadata Machine
+Readability</a></li>
+<li><a href="#sec:pxl-pinodat-ar">2.2. No Data</a></li>
+<li><a href="#sec:pxl-pixass">2.3. Per-pixel Assessment</a></li>
+<li><a href="#sec:pxl-pisatur-ar">2.4. Saturation</a></li>
+<li><a href="#sec:pxl-picloud-ar">2.5. Cloud</a></li>
+<li><a href="#sec:pxl-picloudsh-ar">2.6. Cloud Shadow</a></li>
+<li><a href="#sec:pxl-lawama-ar">2.7. Land</a></li>
+<li><a href="#sec:pxl-pice">2.8. Ice</a></li>
+<li><a href="#sec:pxl-pisungli">2.9. Sun Glint</a></li>
+<li><a href="#sec:pxl-piskygli">2.10. Sky Glint</a></li>
+<li><a href="#sec:pxl-vigeso-ar">2.11. Solar and Viewing
+Geometry</a></li>
+<li><a href="#sec:pxl-piwhifo">2.12. Whitecap / Foam</a></li>
+<li><a href="#sec:pxl-paodpara">2.13. Aerosol Optical Depth
+Parameters</a></li>
+<li><a href="#sec:pxl-pajdeff">2.14. Adjacency Effects</a></li>
+<li><a href="#sec:pxl-floatveg">2.15. Floating Vegetation / Surface
+Scum</a></li>
+<li><a href="#sec:pxl-pibathy">2.16. Bathymetry</a></li>
+<li><a href="#sec:pxl-podosas">2.17. Optically Deep or Optically Shallow
+Assessment</a></li>
+<li><a href="#sec:pxl-powaty">2.18. Optical Water Type</a></li>
+<li><a href="#sec:pxl-pituwa">2.19. Turbid Water</a></li>
+<li><a href="#sec:pxl-piwaele">2.20. Elevation</a></li>
+</ul></li>
+<li><a href="#sec:pral">3. Products and Algorithms</a>
+<ul>
+<li><a href="#sec:pral-measur-ar">3.1. Measurement</a></li>
+<li><a href="#sec:pral-muncer-ar">3.2. Measurement Uncertainty</a></li>
+<li><a href="#sec:pral-mnormal-ar">3.3. Measurement
+Normalisation</a></li>
+<li><a href="#sec:pral-dirats-ar">3.4. Directional Atmospheric
+Scattering</a></li>
+<li><a href="#sec:pral-wavap-ar">3.5. Water Vapour Corrections</a></li>
+<li><a href="#sec:pral-cozone">3.6. Ozone Corrections</a></li>
+<li><a href="#sec:pral-ogasab">3.7. Other Gaseous Absorption
+Corrections</a></li>
+<li><a href="#sec:pral-cosungli">3.8. Sun Glint Correction</a></li>
+<li><a href="#sec:pral-coskygli">3.9. Sky Glint Correction</a></li>
+<li><a href="#sec:pral-cowhifo">3.10. Whitecap / Foam
+Correction</a></li>
+<li><a href="#sec:pral-cajdeff">3.11. Adjacency Effects
+Correction</a></li>
+<li><a href="#sec:pral-cotuwa">3.12. Turbid Water Reflectance
+Correction</a></li>
+</ul></li>
+<li><a href="#sec:gcom">4. Geometric Corrections Metadata
+(Co-Registration and Ortho-Rectification)</a>
+<ul>
+<li><a href="#sec:gcom-geocorr-ar">4.1. Geometric Correction</a></li>
+<li><a href="#sec:gcom-corore">4.2. Co-Registration and
+Ortho-Rectification</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#sec:intro-what-are-ceos-ard-products">What is CEOS
+Analysis Ready Data?</a></li>
+<li><a href="#sec:intro-when-is-a-product-ceos-ard">When can a product
+be called CEOS-ARD?</a></li>
+<li><a href="#sec:intro-difference-threshold-goal">What is the
+difference between Threshold and Goal?</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+<li><a href="#document-history">Document History</a>
+<ul>
+<li><a href="#version-2.0.1-2026-05-27">Version 2.0.1
+(2026-05-27)</a></li>
+</ul></li>
+</ul>
+</div>
 <div style="page-break-after: always;"></div>
 <h2 id="ceos-analysis-ready-data-definition">CEOS Analysis Ready Data
 Definition</h2>
