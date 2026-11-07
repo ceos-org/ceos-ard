@@ -1,9 +1,11 @@
 /.github/ @m-mohr
-/templates/ @m-mohr
+/pfs/CB/ @akerosenqvist
 /pfs/GSLC/ @akerosenqvist
+/pfs/INSAR/ @akerosenqvist
 /pfs/NLSR/ @barnes-usgs
 /pfs/NRB/ @akerosenqvist
 /pfs/ORB/ @akerosenqvist
 /pfs/POL/ @akerosenqvist
+/pfs/SBT/ @mattsymbios
 /pfs/SR/ @barnes-usgs @mattsymbios
 /pfs/ST/ @barnes-usgs @mattsymbios

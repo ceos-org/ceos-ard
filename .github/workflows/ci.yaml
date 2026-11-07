@@ -10,7 +10,6 @@ on:
       - 'references/**'
       - 'requirements/**'
       - 'sections/**'
-      - 'templates/**'
   pull_request:
     types:
       - opened
@@ -22,7 +21,6 @@ on:
       - 'references/**'
       - 'requirements/**'
       - 'sections/**'
-      - 'templates/**'
 permissions:
   contents: read
 jobs:

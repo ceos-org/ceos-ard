@@ -163,6 +163,7 @@ The `document.yaml` in each PFS folder ([`pfs/<PFS>`](./pfs/)) selects which bui
 ### Templates and Assets
 
 - Templates (layout, styles, HTML/PDF/DOCX rendering) are purely presentational and never require a version bump on their own. If a PFS is re-released for other reasons, template improvements ride along; if a re-release is needed *only* to fix broken rendering, it is a **patch**.
+- The shared texts in `sections/document` (e.g. the document status or the CEOS-ARD definition) are not building blocks: they have no `changes` list and are not part of the document history. Like templates, they never require a version bump on their own.
 - Replacing or improving an illustrative figure is a **patch**. If a figure carries normative content (e.g. a decision tree that a requirement tells providers to follow), classify changes to it like requirement changes.
 
 ## Quick Reference
