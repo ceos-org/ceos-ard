@@ -48,33 +48,6 @@ Product Family Specification, Optical, Nighttime Lights Surface Radiance
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## Document History
-
-### 2026-08-31 (PATCH)
-
-- Updated 'Applies to' statement
-
-**Justification:**
-Minor editorial update
-
-**Editor:** Harvey Jones
-
-### 2026-03-26 (PATCH)
-
-- Renamed CARD4L to CEOS-ARD
-- Restructured the document; removed empty or unused parts
-- Document history has been reset. Check the previous versions for details
-- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
-- The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
-- If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
-- Former req. 2.13 has been removed as it had neither a threshold nor a goal requirement.
-
-**Justification:**
-Migration to building blocks.
-
-**Editor:** Matthias Mohr
-
-
 ## Contributing Authors
 
 - Brian Killough, NASA Langley Research Center, CEOS Systems Engineering Office, USA
@@ -1064,4 +1037,47 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 
 ::: {#refs}
 :::
+
+
+&#12;
+
+## Document History
+
+Editorial changes are not listed.
+
+### Version 1.0.1-draft (unreleased draft)
+
+This version has not been released yet.
+Based on the recorded changes (highest level: patch), the proposed next version number is **1.0.2**.
+
+**Editors:** Harvey Jones
+
+This version only contains editorial changes.
+
+### Version 1.0.1 (2026-05-27)
+
+**Editors:** Matthias Mohr
+
+::::: {.changelog columns="Building Block|Change|Level" widths="0.25|0.65|0.10"}
+:::: {.entry}
+::: {.cell}
+Document
+:::
+::: {.cell}
+- Renamed CARD4L to CEOS-ARD
+- Restructured the document; removed empty or unused parts
+- Document history has been reset. Check the previous versions for details
+- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+- The requirement "Radiometric corrections must lead to a valid measurement [...]" has been moved from the category description to the measurement requirement.
+- If no threshold requirement applies, the wording has been made consistent (e.g. former req. 1.7 and 1.8).
+- Former req. 2.13 has been removed as it had neither a threshold nor a goal requirement.
+
+:::
+::: {.cell}
+minor
+:::
+::::
+:::::
+
+The history of the versions before 1.0.1 is available in the older versions of this document, see the [CEOS-ARD website](https://ceos.org/ard/index.html#specs) or the [GitHub releases](https://github.com/ceos-org/ceos-ard/releases).
 

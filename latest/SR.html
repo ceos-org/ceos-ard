@@ -153,6 +153,11 @@ padding: 0.25em 0.5em 0.25em 0.5em;
 td {
 padding: 0.125em 0.5em 0.25em 0.5em;
 }
+table.changelog th,
+table.changelog td {
+vertical-align: top;
+text-align: left;
+}
 figure {
 text-align: center;
 }
@@ -250,25 +255,6 @@ version of this document.</p>
 <h2 id="document-status">Document Status</h2>
 <p>Product Family Specification, Optical, Surface Reflectance</p>
 <p>Proposed revisions may be provided to: <a href="mailto:ard-contact@lists.ceos.org">ard-contact@lists.ceos.org</a></p>
-<h2 id="document-history">Document History</h2>
-<h3 id="patch">2026-03-26 (PATCH)</h3>
-<ul>
-<li>Renamed CARD4L to CEOS-ARD</li>
-<li>Restructured the document; removed empty or unused parts</li>
-<li>Document history has been reset. Check the previous versions for
-details</li>
-<li>Numerical identifiers were rotated and are deprecated; new textual
-identifiers have been added</li>
-<li>The requirement “Radiometric corrections must lead to a valid
-measurement […]” has been moved from the category description to the
-measurement requirement.</li>
-<li>If no threshold requirement applies, the wording has been made
-consistent (e.g. former req. 1.7 and 1.8).</li>
-<li>Former req. 2.13 has been removed as it had neither a threshold nor
-a goal requirement.</li>
-</ul>
-<p><strong>Justification:</strong> Migration to building blocks.</p>
-<p><strong>Editor:</strong> Matthias Mohr</p>
 <h2 id="contributing-authors">Contributing Authors</h2>
 <ul>
 <li>Adam Lewis, Geoscience Australia, Australia</li>
@@ -1032,5 +1018,49 @@ Mountainous Terrain.”</span> <em>Remote Sensing of Environment</em> 124:
 756–70. https://doi.org/<a href="https://doi.org/10.1016/j.rse.2012.06.018">https://doi.org/10.1016/j.rse.2012.06.018</a>.
 </div>
 </div>
+<div style="page-break-after: always;"></div>
+<h2 id="document-history">Document History</h2>
+<p>Editorial changes are not listed.</p>
+<h3 id="version-5.0.2-2026-05-27">Version 5.0.2 (2026-05-27)</h3>
+<p><strong>Editors:</strong> Matthias Mohr</p>
+<table class="changelog">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 65%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Building Block</th>
+<th>Change</th>
+<th>Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Document</p></td>
+<td><ul>
+<li>Renamed CARD4L to CEOS-ARD</li>
+<li>Restructured the document; removed empty or unused parts</li>
+<li>Document history has been reset. Check the previous versions for
+details</li>
+<li>Numerical identifiers were rotated and are deprecated; new textual
+identifiers have been added</li>
+<li>The requirement “Radiometric corrections must lead to a valid
+measurement […]” has been moved from the category description to the
+measurement requirement.</li>
+<li>If no threshold requirement applies, the wording has been made
+consistent (e.g. former req. 1.7 and 1.8).</li>
+<li>Former req. 2.13 has been removed as it had neither a threshold nor
+a goal requirement.</li>
+</ul></td>
+<td><p>minor</p></td>
+</tr>
+</tbody>
+</table>
+<p>The history of the versions before 5.0.2 is available in the older
+versions of this document, see the <a href="https://ceos.org/ard/index.html#specs">CEOS-ARD website</a> or the
+<a href="https://github.com/ceos-org/ceos-ard/releases">GitHub
+releases</a>.</p>
 </body>
 </html>

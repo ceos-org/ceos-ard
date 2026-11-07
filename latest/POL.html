@@ -153,6 +153,11 @@ padding: 0.25em 0.5em 0.25em 0.5em;
 td {
 padding: 0.125em 0.5em 0.25em 0.5em;
 }
+table.changelog th,
+table.changelog td {
+vertical-align: top;
+text-align: left;
+}
 figure {
 text-align: center;
 }
@@ -251,40 +256,6 @@ version of this document.</p>
 <p>Product Family Specification, Synthetic Aperture Radar, Polarimetric
 Radar</p>
 <p>Proposed revisions may be provided to: <a href="mailto:ard-contact@lists.ceos.org">ard-contact@lists.ceos.org</a></p>
-<h2 id="document-history">Document History</h2>
-<h3 id="minor">2026-07-20 (MINOR)</h3>
-<ul>
-<li>The Combined SAR PFS has been split into separate PFS per product
-type</li>
-<li>Restructured the document; various minor editorial changes; removed
-empty, irrelevant, or unused parts - many of the changes resulted from
-the split</li>
-<li>Numerical identifiers were rotated and are deprecated; new textual
-identifiers have been added</li>
-<li>Moved the Background paragraph about the commonalities and
-differences in the SAR PFSes to the Introduction</li>
-<li>Requirement “Document identifier”: Removed the trailing “for
-Synthetic Aperture Radar”</li>
-<li>Requirement “Backscatter Measurement”: Replaced “and/or” with “one
-of the following types or both”</li>
-<li>Requirement category “CEOS-ARD Product Data Attributes” renamed to
-“Product Metadata”; Requirement “Source Data Attributes” renamed to
-“Source Metadata”. Adapted descriptions accordingly.</li>
-<li>Requirement category “Source Data Attributes”: Moved the information
-about sequential acquisition identifiers to a new threshold requirement
-“Acquisition ID”. Adapted category description accordingly.</li>
-<li>The subcategories for Source and Product metadata have been
-flattened into top-level categories</li>
-<li>Annex has been reformatted and updated as required by the split</li>
-<li>Document history has been reset. Check the previous versions for
-details</li>
-</ul>
-<p><strong>Note:</strong> This document is the successor of the former
-<a href="https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf">CEOS-ARD
-for SAR PFS v1.3.1</a> for product type <strong>Polarimetric Radar
-(POL)</strong>.</p>
-<p><strong>Justification:</strong> Migration to building blocks.</p>
-<p><strong>Editor:</strong> Matthias Mohr</p>
 <h2 id="contributing-authors">Contributing Authors</h2>
 <ul>
 <li>François Charbonneau, Natural Resources Canada, Canada</li>
@@ -2219,5 +2190,66 @@ Blue: odd bounce. a) 3 May 2012; and b) 18 June 2012. Generated from
 Radarsat-2 FQ6W acquired over SMAPVEX12 campaign Manitoba, Canada on 3
 May and 20 June 2012 - ©MDA 2012</figcaption>
 </figure>
+<div style="page-break-after: always;"></div>
+<h2 id="document-history">Document History</h2>
+<p>Editorial changes are not listed.</p>
+<h3 id="version-3.6.0-draft-unreleased-draft">Version 3.6.0-draft
+(unreleased draft)</h3>
+<p>This version has not been released yet.</p>
+<p><strong>Editors:</strong> Matthias Mohr</p>
+<table class="changelog">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 65%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Building Block</th>
+<th>Change</th>
+<th>Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Document</p></td>
+<td><ul>
+<li>The Combined SAR PFS has been split into separate PFS per product
+type</li>
+<li>Restructured the document; various minor editorial changes; removed
+empty, irrelevant, or unused parts - many of the changes resulted from
+the split</li>
+<li>Numerical identifiers were rotated and are deprecated; new textual
+identifiers have been added</li>
+<li>Moved the Background paragraph about the commonalities and
+differences in the SAR PFSes to the Introduction</li>
+<li>Requirement “Document identifier”: Removed the trailing “for
+Synthetic Aperture Radar”</li>
+<li>Requirement “Backscatter Measurement”: Replaced “and/or” with “one
+of the following types or both”</li>
+<li>Requirement category “CEOS-ARD Product Data Attributes” renamed to
+“Product Metadata”; Requirement “Source Data Attributes” renamed to
+“Source Metadata”. Adapted descriptions accordingly.</li>
+<li>Requirement category “Source Data Attributes”: Moved the information
+about sequential acquisition identifiers to a new threshold requirement
+“Acquisition ID”. Adapted category description accordingly.</li>
+<li>The subcategories for Source and Product metadata have been
+flattened into top-level categories</li>
+<li>Annex has been reformatted and updated as required by the split</li>
+<li>Document history has been reset. Check the previous versions for
+details</li>
+</ul>
+<p><strong>Note:</strong> This document is the successor of the former
+<a href="https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf">CEOS-ARD
+for SAR PFS v1.3.1</a> for product type <strong>Polarimetric Radar
+(POL)</strong>.</p></td>
+<td><p>minor</p></td>
+</tr>
+</tbody>
+</table>
+<p>The history of the versions before 3.6.0 is available in the older
+versions of this document, see the <a href="https://ceos.org/ard/index.html#specs">CEOS-ARD website</a> or the
+<a href="https://github.com/ceos-org/ceos-ard/releases">GitHub
+releases</a>.</p>
 </body>
 </html>

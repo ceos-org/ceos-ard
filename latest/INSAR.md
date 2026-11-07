@@ -48,31 +48,6 @@ Product Family Specification, Synthetic Aperture Radar, Interferometric SAR
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## Document History
-
-### 2026-07-20 (MINOR)
-
-- The Combined SAR PFS has been split into separate PFS per product type
-- Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
-- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
-- Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
-- Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
-- Requirement "Radar Unit Look Vector Grid Image" and "Slant Range Sensor to Surface Image": Integrated the conditional "In the case of \[InSAR] product, \[...] of the reference acquisition." directly into the first paragraph with the addition of "of the reference acquisition".
-- Requirement "InSAR Phase Uncertainty Image" and following: The order of the "File format specifications/contents" has changed in some cases; Removed “(for [InSAR] product only)” from "insarID number" entry; Added a reference back to “InSAR Pair” requirement.
-- Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
-- Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
-- The subcategories for Source and Product metadata have been flattened into top-level categories
-- Annex has been reformatted and updated as required by the split
-- Document history has been reset. Check the previous versions for details
-
-**Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Interferometric SAR (InSAR)**.
-
-**Justification:**
-Migration to building blocks.
-
-**Editor:** Matthias Mohr
-
-
 ## Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
@@ -2335,4 +2310,47 @@ $$
 \Delta \varphi_{\text{CARD}\_1-\text{CARD}\_2} = \Delta \varphi_{\text{Disp}\_1-2} + \Delta \varphi_{\text{Noise}\_1-2})
 $$ {#eq:sar-topographic-phase-removal-eq11}
 
+
+
+&#12;
+
+## Document History
+
+Editorial changes are not listed.
+
+### Version 2.0.0-draft (unreleased draft)
+
+This version has not been released yet.
+
+**Editors:** Matthias Mohr
+
+::::: {.changelog columns="Building Block|Change|Level" widths="0.25|0.65|0.10"}
+:::: {.entry}
+::: {.cell}
+Document
+:::
+::: {.cell}
+- The Combined SAR PFS has been split into separate PFS per product type
+- Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
+- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+- Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
+- Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
+- Requirement "Radar Unit Look Vector Grid Image" and "Slant Range Sensor to Surface Image": Integrated the conditional "In the case of \[InSAR] product, \[...] of the reference acquisition." directly into the first paragraph with the addition of "of the reference acquisition".
+- Requirement "InSAR Phase Uncertainty Image" and following: The order of the "File format specifications/contents" has changed in some cases; Removed “(for [InSAR] product only)” from "insarID number" entry; Added a reference back to “InSAR Pair” requirement.
+- Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
+- Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
+- The subcategories for Source and Product metadata have been flattened into top-level categories
+- Annex has been reformatted and updated as required by the split
+- Document history has been reset. Check the previous versions for details
+
+**Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Interferometric SAR (InSAR)**.
+
+:::
+::: {.cell}
+minor
+:::
+::::
+:::::
+
+The history of the versions before 2.0.0 is available in the older versions of this document, see the [CEOS-ARD website](https://ceos.org/ard/index.html#specs) or the [GitHub releases](https://github.com/ceos-org/ceos-ard/releases).
 

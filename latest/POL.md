@@ -48,30 +48,6 @@ Product Family Specification, Synthetic Aperture Radar, Polarimetric Radar
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## Document History
-
-### 2026-07-20 (MINOR)
-
-- The Combined SAR PFS has been split into separate PFS per product type
-- Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
-- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
-- Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
-- Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
-- Requirement "Backscatter Measurement": Replaced "and/or" with "one of the following types or both"
-- Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
-- Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
-- The subcategories for Source and Product metadata have been flattened into top-level categories
-- Annex has been reformatted and updated as required by the split
-- Document history has been reset. Check the previous versions for details
-
-**Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Polarimetric Radar (POL)**.
-
-**Justification:**
-Migration to building blocks.
-
-**Editor:** Matthias Mohr
-
-
 ## Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
@@ -1827,4 +1803,46 @@ From fully polarimetric covariance matrix ARD format POL (Level-2a), it is possi
 
 ![m-chi decomposition colour composite of simulated compact polarimetry from Radarsat-2 over an agriculture area. RGB representation: Red: even bounce, Green: random, Blue: odd bounce. a) 3 May 2012; and b) 18 June 2012. Generated from Radarsat-2 FQ6W acquired over SMAPVEX12 campaign Manitoba, Canada on 3 May and 20 June 2012 - ©MDA 2012](assets/sar-pol-examples/m-chi-decomposition.jpeg){#fig:sar-pol-examples-fig2}
 
+
+
+&#12;
+
+## Document History
+
+Editorial changes are not listed.
+
+### Version 3.6.0-draft (unreleased draft)
+
+This version has not been released yet.
+
+**Editors:** Matthias Mohr
+
+::::: {.changelog columns="Building Block|Change|Level" widths="0.25|0.65|0.10"}
+:::: {.entry}
+::: {.cell}
+Document
+:::
+::: {.cell}
+- The Combined SAR PFS has been split into separate PFS per product type
+- Restructured the document; various minor editorial changes; removed empty, irrelevant, or unused parts - many of the changes resulted from the split
+- Numerical identifiers were rotated and are deprecated; new textual identifiers have been added
+- Moved the Background paragraph about the commonalities and differences in the SAR PFSes to the Introduction
+- Requirement "Document identifier": Removed the trailing “for Synthetic Aperture Radar”
+- Requirement "Backscatter Measurement": Replaced "and/or" with "one of the following types or both"
+- Requirement category "CEOS-ARD Product Data Attributes" renamed to “Product Metadata”; Requirement "Source Data Attributes" renamed to “Source Metadata”. Adapted descriptions accordingly.
+- Requirement category "Source Data Attributes": Moved the information about sequential acquisition identifiers to a new threshold requirement “Acquisition ID”. Adapted category description accordingly.
+- The subcategories for Source and Product metadata have been flattened into top-level categories
+- Annex has been reformatted and updated as required by the split
+- Document history has been reset. Check the previous versions for details
+
+**Note:** This document is the successor of the former [CEOS-ARD for SAR PFS v1.3.1](https://ceos.org/ard/files/PFS/SAR/v1.3.1/CEOS-ARD_PFS_SAR_v1.3.1.pdf) for product type **Polarimetric Radar (POL)**.
+
+:::
+::: {.cell}
+minor
+:::
+::::
+:::::
+
+The history of the versions before 3.6.0 is available in the older versions of this document, see the [CEOS-ARD website](https://ceos.org/ard/index.html#specs) or the [GitHub releases](https://github.com/ceos-org/ceos-ard/releases).
 

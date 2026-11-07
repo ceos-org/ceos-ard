@@ -48,10 +48,6 @@ Product Family Specification, Optical, Surface Brightness Temperature
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## Document History
-
-Not available, see previous versions of the document for its history.
-
 ## Contributing Authors
 
 - Mathias Gergely (Aistech Space)
@@ -850,3 +846,9 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 ::: {#refs}
 :::
 
+
+&#12;
+
+## Document History
+
+This is the first version of this document.

@@ -153,6 +153,11 @@ padding: 0.25em 0.5em 0.25em 0.5em;
 td {
 padding: 0.125em 0.5em 0.25em 0.5em;
 }
+table.changelog th,
+table.changelog td {
+vertical-align: top;
+text-align: left;
+}
 figure {
 text-align: center;
 }
@@ -250,72 +255,6 @@ version of this document.</p>
 <h2 id="document-status">Document Status</h2>
 <p>Product Family Specification, Optical, Surface Temperature</p>
 <p>Proposed revisions may be provided to: <a href="mailto:ard-contact@lists.ceos.org">ard-contact@lists.ceos.org</a></p>
-<h2 id="document-history">Document History</h2>
-<h3 id="major">2026-08-14 (MAJOR)</h3>
-<p><strong>This is a breaking change!</strong></p>
-<ul>
-<li>Created separate requirements for ‘Corrections for Atmosphere’ and
-‘Adjustments for Emissivity and Anisotropy’. Per-pixel emissivity
-information is now required at Threshold.</li>
-<li>Introduced a Threshold requirement for ‘Measurement
-Uncertainty’.</li>
-<li>Renamed ‘Measurement’ to ‘Measurand’</li>
-<li>Removed threshold requirement for ‘Algorithms’.</li>
-<li>Introduced Per-pixel Goal requirement for ‘Terrain Occlusion’.</li>
-<li>Replaced ‘Snow/Ice’ mask with ‘Surface’, covering Land/Water at
-Threshold and Snow/Ice at Goal.</li>
-<li>Updated ‘Cloud’ and ‘Cloud Shadow’ requirements to align more
-closely with the AR PFS v2.0 and the suitability of cloud shadow for
-non-reflectance methods.</li>
-<li>Updated ‘No Data’ requirement to address
-https://github.com/ceos-org/ceos-ard/issues/4.</li>
-<li>Updated ‘Incomplete Testing’ requirement to aid machine readability
-/ automated assessment.</li>
-<li>Removed redundant ‘Metadata Machine Readability’ requirement from
-Per-pixel Metadata.</li>
-<li>Replaced General Metadata Percentage of Valid Observations
-requirement with Valid Pixels</li>
-<li>Introduced a new Processing Chain Provenance requirement, where
-Threshold = Reconstructibility, Goal = Reproducibility.</li>
-<li>Removed ‘Radiometric Accuracy’ requirement.</li>
-<li>Adopted AR PFS v2.0 requirements for ‘Auxiliary Data’, ‘Measurand
-Uncertainty’, ‘Encoding’, ‘Sensor Calibration’, ‘Spectral Bands’,
-‘Instrument’, ‘Geometric Uncertainty of the Data’, ‘Geometric Correction
-Methods’, ‘Map Projection’, and ‘Data Collection Time’.</li>
-<li>Aligned with other optical PFS where the ST PFS had minor editorial
-differences.</li>
-</ul>
-<p><strong>Justification:</strong> Update to address evolving landscape
-of thermal missions, including capabilities of the commercial sector and
-user needs. Closer alignment with more recently updated PFS. Changes
-also reflect recent CEOS-ARD Oversight Group discussions, swapping
-strict threshold requirements for algorithms in favour of uncertainty
-information.</p>
-<p><strong>Editor:</strong> Harvey Jones</p>
-<h3 id="patch">2026-03-26 (PATCH)</h3>
-<ul>
-<li>Renamed CARD4L to CEOS-ARD</li>
-<li>Restructured the document; removed empty or unused parts</li>
-<li>Split “Applies to” section into “Applies to” and “Background”
-sections</li>
-<li>Document history has been reset. Check the previous versions for
-details</li>
-<li>Numerical identifiers were rotated and are deprecated; new textual
-identifiers have been added</li>
-<li>The requirement “Radiometric corrections must lead to a valid
-measurement […]” has been moved from the category description to the
-measurement requirement.</li>
-<li>If no threshold requirement applies, the wording has been made
-consistent (e.g. former req. 1.7 and 1.8).</li>
-<li>Former req. 1.9: Removed “on instrument” from “As threshold, but
-information on instrument should be available”.</li>
-<li>Former req. 2.3: Replaced the wording “e.g., due to missing
-ancillary data for some pixels.” with “This may be the result of missing
-ancillary data for a subset of the pixels.”</li>
-<li>Annex has been reformatted and updated</li>
-</ul>
-<p><strong>Justification:</strong> Migration to building blocks.</p>
-<p><strong>Editor:</strong> Matthias Mohr</p>
 <h2 id="contributing-authors">Contributing Authors</h2>
 <ul>
 <li>Mathias Gergely (Aistech Space)</li>
@@ -985,5 +924,243 @@ Perspectives.”</span> <em>Remote Sensing of Environment</em> 131: 14–37.
 https://doi.org/<a href="https://doi.org/10.1016/j.rse.2012.12.008">https://doi.org/10.1016/j.rse.2012.12.008</a>.
 </div>
 </div>
+<div style="page-break-after: always;"></div>
+<h2 id="document-history">Document History</h2>
+<p>Editorial changes are not listed.</p>
+<h3 id="version-6.0.0-draft-unreleased-draft">Version 6.0.0-draft
+(unreleased draft)</h3>
+<p>This version has not been released yet. Based on the recorded changes
+(highest level: major), the proposed next version number is
+<strong>6.0.0</strong>.</p>
+<p><strong>This version contains major changes. Products that comply
+with a previous version need to be reassessed to confirm their
+compliance with this version.</strong></p>
+<p><strong>Editors:</strong> Harvey Jones</p>
+<table class="changelog">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 65%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Building Block</th>
+<th>Change</th>
+<th>Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Document</p></td>
+<td><ul>
+<li>Created separate requirements for ‘Corrections for Atmosphere’ and
+‘Adjustments for Emissivity and Anisotropy’. Per-pixel emissivity
+information is now required at Threshold.</li>
+<li>Introduced a Threshold requirement for ‘Measurement
+Uncertainty’.</li>
+<li>Renamed ‘Measurement’ to ‘Measurand’</li>
+<li>Removed threshold requirement for ‘Algorithms’.</li>
+<li>Introduced Per-pixel Goal requirement for ‘Terrain Occlusion’.</li>
+<li>Replaced ‘Snow/Ice’ mask with ‘Surface’, covering Land/Water at
+Threshold and Snow/Ice at Goal.</li>
+<li>Updated ‘Cloud’ and ‘Cloud Shadow’ requirements to align more
+closely with the AR PFS v2.0 and the suitability of cloud shadow for
+non-reflectance methods.</li>
+<li>Updated ‘No Data’ requirement to address
+https://github.com/ceos-org/ceos-ard/issues/4.</li>
+<li>Updated ‘Incomplete Testing’ requirement to aid machine readability
+/ automated assessment.</li>
+<li>Removed redundant ‘Metadata Machine Readability’ requirement from
+Per-pixel Metadata.</li>
+<li>Replaced General Metadata Percentage of Valid Observations
+requirement with Valid Pixels</li>
+<li>Introduced a new Processing Chain Provenance requirement, where
+Threshold = Reconstructibility, Goal = Reproducibility.</li>
+<li>Removed ‘Radiometric Accuracy’ requirement.</li>
+<li>Adopted AR PFS v2.0 requirements for ‘Auxiliary Data’, ‘Measurand
+Uncertainty’, ‘Encoding’, ‘Sensor Calibration’, ‘Spectral Bands’,
+‘Instrument’, ‘Geometric Uncertainty of the Data’, ‘Geometric Correction
+Methods’, ‘Map Projection’, and ‘Data Collection Time’.</li>
+<li>Aligned with other optical PFS where the ST PFS had minor editorial
+differences.</li>
+</ul></td>
+<td><p><strong>major</strong></p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-memare-st">Metadata Machine
+Readability</a></p></td>
+<td><p>Added more format examples to Goal description and replaced part
+for variable in the threshold description</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-time-st">Data Collection
+Time</a></p></td>
+<td><p>Added clarification for mosaic products.</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-geounc-st">Geometric Uncertainty
+of the Data</a></p></td>
+<td><p>Added reference to URL / DOI to Goal description</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-instru-st">Instrument</a></p></td>
+<td><p>Added requirement to include the satellite and instrument names
+in the metadata</p></td>
+<td><p><strong>major</strong></p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-specband-st">Spectral
+Bands</a></p></td>
+<td><p>Added method of assessment and removed full from full spectral
+response function. Added reference to URL/DOI at Goal.</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-sencal-st">Sensor
+Calibration</a></p></td>
+<td><p>updated goal description to reference DOI/URL access and support
+for machine-to-machine access</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-measurunc">Measurand
+Uncertainty</a></p></td>
+<td><p>Replaced requirement title and description from radiometric to
+measurand uncertainty</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-measurenc">Measurand
+Encoding</a></p></td>
+<td><p>Renamed Radiometric Encoding to Measurand Encoding</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-malgos-st">Algorithms</a></p></td>
+<td><p>Removed threshold requirement, updated goal requirement</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-auxdat-st">Auxiliary
+Data</a></p></td>
+<td><p>Added URL/DOI reference and note of examples auxiliary
+data</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-proprov-st">Processing Chain
+Provenance</a></p></td>
+<td><p>introduced a threshold requirement requiring reconstructibility
+at Threshold and reworded the Goal requirement for
+reproducibility.</p></td>
+<td><p><strong>major</strong></p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:meta-daccess-st">Data
+Access</a></p></td>
+<td><p>Added goal requirement to identify online data access location,
+and minor wording update to threshold description.</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:pxl-pinodat-st">No Data</a></p></td>
+<td><p>Added different no data classes</p></td>
+<td><p><strong>major</strong></p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:pxl-pincot-st">Incomplete
+Testing</a></p></td>
+<td><p>Specified the per-pixel tests that must be completed for
+threshold.</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:pxl-picloud-st">Cloud</a></p></td>
+<td><p>Adopted AR PFS approach with an adjustment to the Goal
+requirement (broad cloud type/confidence over cirrus cloud
+identification) and requiring only ‘cloud-affected’ pixels to be
+identified.</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:pxl-picloudsh-st">Cloud
+Shadow</a></p></td>
+<td><p>Adopted AR PFS approach but removed Threshold requirement and
+specified only ‘cloud-affected’ pixels</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:pxl-surf-st">Surface</a></p></td>
+<td><p>Replaced Snow/Ice requirement with a Surface requirement, which
+features a threshold requirement for pixels identified as land or water
+to be flagged.</p></td>
+<td><p><strong>major</strong></p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:pxl-terrain-st">Terrain
+Occlusion</a></p></td>
+<td><p>Added SR terrain occlusion requirement with minor grammar
+change</p></td>
+<td><p>minor</p></td>
+</tr>
+<tr>
+<td><p>Requirement: <a href="#sec:rac-measur-st">Measurand</a></p></td>
+<td><p>Removed ‘of the land’ qualifier for ‘surface temperature,’
+renamed requirement to ‘measurand’ and added a link to Spectral Bands
+requirement</p></td>
+<td><p>minor</p></td>
+</tr>
+</tbody>
+</table>
+<h3 id="version-5.0.1-2026-05-27">Version 5.0.1 (2026-05-27)</h3>
+<p><strong>Editors:</strong> Matthias Mohr</p>
+<table class="changelog">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 65%" />
+<col style="width: 10%" />
+</colgroup>
+<thead>
+<tr>
+<th>Building Block</th>
+<th>Change</th>
+<th>Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><p>Document</p></td>
+<td><ul>
+<li>Renamed CARD4L to CEOS-ARD</li>
+<li>Restructured the document; removed empty or unused parts</li>
+<li>Split “Applies to” section into “Applies to” and “Background”
+sections</li>
+<li>Document history has been reset. Check the previous versions for
+details</li>
+<li>Numerical identifiers were rotated and are deprecated; new textual
+identifiers have been added</li>
+<li>The requirement “Radiometric corrections must lead to a valid
+measurement […]” has been moved from the category description to the
+measurement requirement.</li>
+<li>If no threshold requirement applies, the wording has been made
+consistent (e.g. former req. 1.7 and 1.8).</li>
+<li>Former req. 1.9: Removed “on instrument” from “As threshold, but
+information on instrument should be available”.</li>
+<li>Former req. 2.3: Replaced the wording “e.g., due to missing
+ancillary data for some pixels.” with “This may be the result of missing
+ancillary data for a subset of the pixels.”</li>
+<li>Annex has been reformatted and updated</li>
+</ul></td>
+<td><p>minor</p></td>
+</tr>
+</tbody>
+</table>
+<p>The history of the versions before 5.0.1 is available in the older
+versions of this document, see the <a href="https://ceos.org/ard/index.html#specs">CEOS-ARD website</a> or the
+<a href="https://github.com/ceos-org/ceos-ard/releases">GitHub
+releases</a>.</p>
 </body>
 </html>
