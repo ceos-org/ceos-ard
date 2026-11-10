@@ -52,9 +52,24 @@ Every pull request is checked automatically (`ceos-ard check-changes`) so that e
 
 The flavor of Markdown that is implemented here has some additional features.
 
-See [References / Citation](#references-and-citation), [Dependencies](#dependencies), and [Embedding titles](#embedding-titles) for more details.
+See [Images and links](#images-and-links), [References / Citation](#references-and-citation), [Dependencies](#dependencies), and [Embedding titles](#embedding-titles) for more details.
 
 <!-- todo: add more details -->
+
+## Images and links
+
+The building blocks must be self-contained: everything that the documents show must be part of this repository.
+This way the documents can be generated without network access and look the same in HTML, PDF and Word.
+
+- Images must be files in the [`assets`](../assets/) folder, referenced with their path relative to the root of the repository,
+  e.g. `![Caption](assets/my-figure.png)`.
+  Images from other websites (e.g. `https://...`) and absolute paths are not supported.
+  To use an image from elsewhere, download it (if its license allows it) and add it to the `assets` folder.
+  Use PNG or JPEG files; the [CEOS-ARD Editor](https://editor.ceos-ard.moregeo.it/) accepts files of up to 1 MB.
+- Links to websites are allowed, e.g. `[CEOS](https://ceos.org)`.
+  Links must use `http`, `https`, or `mailto`.
+- Raw HTML (e.g. `<img>`, `<br>`, or `<span style="...">`) and raw output blocks (e.g. ` ```{=html} `) are not supported.
+  HTML comments (`<!-- ... -->`) are allowed.
 
 ## References and Citation
 
