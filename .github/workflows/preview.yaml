@@ -22,11 +22,47 @@ jobs:
       github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
+      # A run for a label other than `document history` skips all jobs, so it succeeds without any documents
+      - name: Check that the run generated the newest documents
+        id: artifacts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const run = context.payload.workflow_run;
+            const hasDocuments = async id => {
+              const artifacts = await github.paginate(github.rest.actions.listWorkflowRunArtifacts, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                run_id: id,
+              });
+              return artifacts.some(artifact => artifact.name === 'documents');
+            };
+            let found = await hasDocuments(run.id);
+            if (found) {
+              // The concurrency queue doesn't guarantee the order, so a newer build of the same commit wins,
+              // e.g. the one with the document history over the one without
+              const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: run.workflow_id,
+                head_sha: run.head_sha,
+                status: 'success',
+              });
+              for (const other of runs) {
+                if (new Date(other.created_at) > new Date(run.created_at) && await hasDocuments(other.id)) {
+                  core.info(`Not deployed, the newer run ${other.id} generated the documents of this commit`);
+                  found = false;
+                  break;
+                }
+              }
+            }
+            core.setOutput('found', found);
       # Fork PRs are missing from workflow_run.pull_requests and are not
       # returned by listPullRequestsAssociatedWithCommit on the base repo, so
       # match the head commit against the open PRs instead. The number comes
       # from the GitHub API, never from PR-controlled data.
       - name: Find pull request for this run
+        if: steps.artifacts.outputs.found == 'true'
         id: pr
         uses: actions/github-script@v7
         with:
@@ -43,6 +79,7 @@ jobs:
             }
             core.setOutput('number', pr.number);
       - name: Download PFS artifacts
+        if: steps.artifacts.outputs.found == 'true'
         uses: actions/download-artifact@v4
         with:
           name: documents
@@ -50,6 +87,7 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           path: documents/
       - name: Deploy via FTP
+        if: steps.artifacts.outputs.found == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.previews.ceos-ard.moregeo.it
@@ -60,6 +98,7 @@ jobs:
           exclude: '{assets/**,*.{md,bib}}'
           dangerous-clean-slate: true
       - name: Add comment to pull request
+        if: steps.artifacts.outputs.found == 'true'
         uses: actions/github-script@v7
         with:
           script: |

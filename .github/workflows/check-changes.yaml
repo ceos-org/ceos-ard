@@ -25,6 +25,8 @@ jobs:
         with:
           # full history is required to compare against the base branch
           fetch-depth: 0
+          # the following steps run code of the pull request, which doesn't need the token
+          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: '3.x'

@@ -50,6 +50,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          # the following steps run code of the pull request, which doesn't need the token
+          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
@@ -66,6 +69,8 @@ jobs:
         with:
           # the full history is required to assign the changes to the releases
           fetch-depth: 0
+          # the following steps run code of the pull request, which doesn't need the token
+          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
