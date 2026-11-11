@@ -18,6 +18,7 @@ on:
     types:
       - opened
       - synchronize
+      - labeled
     paths:
       - 'assets/**'
       - 'glossary/**'
@@ -31,11 +32,27 @@ on:
       - 'requirements.txt'
 permissions:
   contents: read
+concurrency:
+  # A new build of a pull request or branch cancels the running one, so that a build without the document history
+  # can't finish last and replace the preview; other labels get a group of their own, as they don't build anything
+  group: >-
+    ${{ github.event.action == 'labeled' && github.event.label.name != 'document history'
+    && format('ci-{0}', github.run_id) || format('ci-{0}', github.event.pull_request.number || github.ref) }}
+  cancel-in-progress: true
+env:
+  # The document history needs the GitHub token, so pull requests only get it when a member adds this label,
+  # once for the commits at that time; new commits need the label to be added again
+  HISTORY: ${{ github.event_name == 'push' || github.event.label.name == 'document history' }}
 jobs:
   validate:
+    # other labels don't change the documents
+    if: github.event.action != 'labeled' || github.event.label.name == 'document history'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          # the following steps run code of the pull request, which doesn't need the token
+          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
@@ -52,6 +69,8 @@ jobs:
         with:
           # the full history is required to assign the changes to the releases
           fetch-depth: 0
+          # the following steps run code of the pull request, which doesn't need the token
+          persist-credentials: false
       - uses: actions/setup-python@v6
         with:
           python-version: '3.x'
@@ -72,6 +91,10 @@ jobs:
       - name: Install browser for PDF generation
         run: python -m playwright install chromium --with-deps
       - name: Generate all PFS
+        if: env.HISTORY != 'true'
+        run: ceos-ard generate-all -o build --self-contained
+      - name: Generate all PFS with the document history
+        if: env.HISTORY == 'true'
         env:
           # used to retrieve the releases for the document history
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
