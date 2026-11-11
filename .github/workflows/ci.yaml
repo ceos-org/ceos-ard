@@ -18,6 +18,7 @@ on:
     types:
       - opened
       - synchronize
+      - labeled
     paths:
       - 'assets/**'
       - 'glossary/**'
@@ -31,8 +32,14 @@ on:
       - 'requirements.txt'
 permissions:
   contents: read
+env:
+  # The document history needs the GitHub token, so pull requests only get it when a member adds this label,
+  # once for the commits at that time; new commits need the label to be added again
+  HISTORY: ${{ github.event_name == 'push' || github.event.label.name == 'document history' }}
 jobs:
   validate:
+    # other labels don't change the documents
+    if: github.event.action != 'labeled' || github.event.label.name == 'document history'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -72,6 +79,10 @@ jobs:
       - name: Install browser for PDF generation
         run: python -m playwright install chromium --with-deps
       - name: Generate all PFS
+        if: env.HISTORY != 'true'
+        run: ceos-ard generate-all -o build --self-contained
+      - name: Generate all PFS with the document history
+        if: env.HISTORY == 'true'
         env:
           # used to retrieve the releases for the document history
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
