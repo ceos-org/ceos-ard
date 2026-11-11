@@ -37,18 +37,18 @@ nocite: |
 
 &nbsp;
 
-## Draft Version
+## <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/draft.md -->Draft Version
 
 This is a draft version.
 Please visit the [CEOS-ARD website](https://ceos.org/ard) for the latest endorsed version of this document.
 
-## Document Status
+## <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/status.md -->Document Status
 
 Product Family Specification, Optical, Aquatic Reflectance
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## Contributing Authors
+## <!-- edit:pfs/AR/document.yaml -->Contributing Authors
 
 ### Technical Leads
 
@@ -88,18 +88,20 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 - Chris Barnes (USGS)
 - Liesbeth de Keukelare (VITO) 
 
+&#12;
+
 ::: {#toc}
 :::
 
 &#12;
 
-## CEOS Analysis Ready Data Definition
+## <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/definition.md -->CEOS Analysis Ready Data Definition
 
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
 ## Description
 
-**Product Family Specification:**
+<!-- edit:pfs/AR/document.yaml -->**Product Family Specification:**
 Optical, Aquatic Reflectance (AR)
 
 **Version:**
@@ -191,7 +193,7 @@ WGS84
 
 &#12;
 
-## Requirements
+## <!-- edit:pfs/AR/document.yaml -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -1373,7 +1375,7 @@ The specifications of the co-registration and ortho-rectification processing (in
 &#12;
 
 
-## Introduction
+## <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/introduction.md -->Introduction
 
 This section aims to provide background and specific information on the processing steps that can be
 used to achieve analysis ready data for a specific and well-developed Product Family Specification.

@@ -37,18 +37,18 @@ nocite: |
 
 &nbsp;
 
-## Draft Version
+## <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/draft.md -->Draft Version
 
 This is a draft version.
 Please visit the [CEOS-ARD website](https://ceos.org/ard) for the latest endorsed version of this document.
 
-## Document Status
+## <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/status.md -->Document Status
 
 Product Family Specification, Synthetic Aperture Radar, Normalised Radar Backscatter
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## Contributing Authors
+## <!-- edit:pfs/NRB/document.yaml -->Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
 - Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency, Japan
@@ -87,18 +87,20 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 - Fang Yuan, Digital Earth Africa, Australia
 - Francesco De Zan, Delta-Phi Remote Sensing GmbH, Germany
 
+&#12;
+
 ::: {#toc}
 :::
 
 &#12;
 
-## CEOS Analysis Ready Data Definition
+## <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/definition.md -->CEOS Analysis Ready Data Definition
 
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
 ## Description
 
-**Product Family Specification:**
+<!-- edit:pfs/NRB/document.yaml -->**Product Family Specification:**
 Synthetic Aperture Radar, Normalised Radar Backscatter (NRB)
 
 **Version:**
@@ -273,11 +275,11 @@ WGS84
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/wkt.yaml -->
 WKT
 :   Well-Known Text (WKT) is a text markup language for representing vector geometry objects on a map, spatial reference systems of spatial objects, and transformations between spatial reference systems.
-The formats were originally defined by the Open Geospatial Consortium (OGC) and described in their Simple Feature Access and Coordinate Transformation Service specifications.
+    The formats were originally defined by the Open Geospatial Consortium (OGC) and described in their Simple Feature Access and Coordinate Transformation Service specifications.
 
 &#12;
 
-## Requirements
+## <!-- edit:pfs/NRB/document.yaml -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -1550,7 +1552,7 @@ For products presented in geographic coordinates (latitude and longitude), the o
 &#12;
 
 
-## Introduction
+## <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/introduction.md -->Introduction
 
 This section aims to provide background and specific information on the processing steps that can be
 used to achieve analysis ready data for a specific and well-developed Product Family Specification.

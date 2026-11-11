@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="script-src &#39;none&#39;; object-src &#39;none&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>CEOS-ARD - Synthetic Aperture Radar - Normalised Radar Backscatter - Version 5.6.0-draft</title>
@@ -259,14 +260,17 @@ word-break: break-word;
 <h1 id="ceos-ard---synthetic-aperture-radar---normalised-radar-backscatter">CEOS-ARD
 - Synthetic Aperture Radar - Normalised Radar Backscatter</h1>
 <p> </p>
-<h2 id="draft-version">Draft Version</h2>
+<h2 id="draft-version"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/draft.md -->Draft
+Version</h2>
 <p>This is a draft version. Please visit the <a href="https://ceos.org/ard">CEOS-ARD website</a> for the latest endorsed
 version of this document.</p>
-<h2 id="document-status">Document Status</h2>
+<h2 id="document-status"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/status.md -->Document
+Status</h2>
 <p>Product Family Specification, Synthetic Aperture Radar, Normalised
 Radar Backscatter</p>
 <p>Proposed revisions may be provided to: <a href="mailto:ard-contact@lists.ceos.org">ard-contact@lists.ceos.org</a></p>
-<h2 id="contributing-authors">Contributing Authors</h2>
+<h2 id="contributing-authors"><!-- edit:pfs/NRB/document.yaml -->Contributing
+Authors</h2>
 <ul>
 <li>François Charbonneau, Natural Resources Canada, Canada</li>
 <li>Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency,
@@ -307,12 +311,10 @@ Italy</li>
 <li>Fang Yuan, Digital Earth Africa, Australia</li>
 <li>Francesco De Zan, Delta-Phi Remote Sensing GmbH, Germany</li>
 </ul>
+<div style="break-before: page;"></div>
 <div id="toc" class="toc">
 <h2>Table of Contents</h2>
 <ul>
-<li><a href="#draft-version">Draft Version</a></li>
-<li><a href="#document-status">Document Status</a></li>
-<li><a href="#contributing-authors">Contributing Authors</a></li>
 <li><a href="#ceos-analysis-ready-data-definition">CEOS Analysis Ready
 Data Definition</a></li>
 <li><a href="#description">Description</a></li>
@@ -430,9 +432,9 @@ Processing Roadmap</a></li>
 </ul></li>
 </ul>
 </div>
-<div style="page-break-after: always;"></div>
-<h2 id="ceos-analysis-ready-data-definition">CEOS Analysis Ready Data
-Definition</h2>
+<div style="break-before: page;"></div>
+<h2 id="ceos-analysis-ready-data-definition"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/definition.md -->CEOS
+Analysis Ready Data Definition</h2>
 <blockquote>
 <p>CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been
 processed to a minimum set of requirements and organized into a form
@@ -440,6 +442,7 @@ that allows immediate analysis with a minimum of additional user effort
 and interoperability both through time and with other datasets.</p>
 </blockquote>
 <h2 id="description">Description</h2>
+<!-- edit:pfs/NRB/document.yaml -->
 <p><strong>Product Family Specification:</strong> Synthetic Aperture
 Radar, Normalised Radar Backscatter (NRB)</p>
 <p><strong>Version:</strong> 5.6.0-draft</p>
@@ -476,7 +479,7 @@ product uniquely corresponds to the pixel value of one of its input data
 sources, indicated in the Acquisition ID per-pixel metadata. For
 products where the pixel value is dependent on multiple input sources,
 see the Composite Backscatter (CB) PFS.</p>
-<div style="page-break-after: always;"></div>
+<div style="break-before: page;"></div>
 <h2 id="definitions-and-abbreviations">Definitions and
 Abbreviations</h2>
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/acdd.yaml -->
@@ -758,8 +761,8 @@ in their Simple Feature Access and Coordinate Transformation Service
 specifications.
 </dd>
 </dl>
-<div style="page-break-after: always;"></div>
-<h2 id="requirements">Requirements</h2>
+<div style="break-before: page;"></div>
+<h2 id="requirements"><!-- edit:pfs/NRB/document.yaml -->Requirements</h2>
 <p><strong>WARNING:</strong> The section numbers in front of the title
 (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do <strong>not</strong> use the numbers to refer back to specific
@@ -1711,8 +1714,8 @@ coordinates (“snap to grid”).</p>
 <p>For products presented in geographic coordinates (latitude and
 longitude), the origin should be set to an integer multiple of samples
 in relation to the closest integer degree.</p>
-<div style="page-break-after: always;"></div>
-<h2 id="introduction">Introduction</h2>
+<div style="break-before: page;"></div>
+<h2 id="introduction"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/document/introduction.md -->Introduction</h2>
 <p>This section aims to provide background and specific information on
 the processing steps that can be used to achieve analysis ready data for
 a specific and well-developed Product Family Specification. This
@@ -1784,7 +1787,7 @@ topographically flattened phase. In this way a NRB or POL product can be
 used like a GSLC for InSAR applications. Consequently, it becomes
 obvious that they all can follow a common approach, in terms of content
 and structure, in order to optimize their interoperability.</p>
-<div style="page-break-after: always;"></div>
+<div style="break-before: page;"></div>
 <h2 id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-cf_conventions_2025" class="csl-entry" role="listitem">
@@ -1831,7 +1834,7 @@ Zebker, Howard A., Scott Hensley, Piyush Shanker, and Cody Wortham.
 4309–21. <a href="https://doi.org/10.1109/TGRS.2010.2051333">https://doi.org/10.1109/TGRS.2010.2051333</a>.
 </div>
 </div>
-<div style="page-break-after: always;"></div>
+<div style="break-before: page;"></div>
 <h2 id="annex">Annex</h2>
 <h3 data-label="|General Processing Roadmap" id="sec:annex-sar-general-processing-roadmap"><!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-general-processing-roadmap.yaml-->General
 Processing Roadmap</h3>
@@ -1934,7 +1937,7 @@ correction/Geocoding</td>
 </tr>
 </tbody>
 </table>
-<div style="page-break-after: always;"></div>
+<div style="break-before: page;"></div>
 <h2 id="document-history">Document History</h2>
 <p>Editorial changes are not listed.</p>
 <h3 id="version-5.6.0-draft-unreleased-draft">Version 5.6.0-draft
