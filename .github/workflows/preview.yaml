@@ -11,6 +11,10 @@ on:
 permissions:
   actions: read
   pull-requests: write
+concurrency:
+  # One deployment per pull request at a time, in the order in which the builds finished
+  group: preview-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: false
 jobs:
   deploy-pr:
     if: >

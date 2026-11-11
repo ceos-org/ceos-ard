@@ -32,6 +32,13 @@ on:
       - 'requirements.txt'
 permissions:
   contents: read
+concurrency:
+  # A new build of a pull request or branch cancels the running one, so that a build without the document history
+  # can't finish last and replace the preview; other labels get a group of their own, as they don't build anything
+  group: >-
+    ${{ github.event.action == 'labeled' && github.event.label.name != 'document history'
+    && format('ci-{0}', github.run_id) || format('ci-{0}', github.event.pull_request.number || github.ref) }}
+  cancel-in-progress: true
 env:
   # The document history needs the GitHub token, so pull requests only get it when a member adds this label,
   # once for the commits at that time; new commits need the label to be added again
