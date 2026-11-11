@@ -11,16 +11,15 @@ on:
 permissions:
   actions: read
   pull-requests: write
-concurrency:
-  # One deployment per pull request at a time, in the order in which the builds finished
-  group: preview-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
-  cancel-in-progress: false
 jobs:
-  deploy-pr:
+  # Without a concurrency group, so that runs without documents never take the place of a waiting deployment
+  check:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
+    outputs:
+      found: ${{ steps.artifacts.outputs.found }}
     steps:
       # A run for a label other than `document history` skips all jobs, so it succeeds without any documents
       - name: Check that the run generated the newest documents
@@ -57,12 +56,20 @@ jobs:
               }
             }
             core.setOutput('found', found);
+  deploy-pr:
+    needs: check
+    if: needs.check.outputs.found == 'true'
+    # One deployment per pull request at a time; GitHub keeps only the newest waiting one
+    concurrency:
+      group: preview-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
+      cancel-in-progress: false
+    runs-on: ubuntu-latest
+    steps:
       # Fork PRs are missing from workflow_run.pull_requests and are not
       # returned by listPullRequestsAssociatedWithCommit on the base repo, so
       # match the head commit against the open PRs instead. The number comes
       # from the GitHub API, never from PR-controlled data.
       - name: Find pull request for this run
-        if: steps.artifacts.outputs.found == 'true'
         id: pr
         uses: actions/github-script@v7
         with:
