@@ -16,8 +16,8 @@ jobs:
         # Output variables for later use: pfs, version, output_dir, location
         run: |
           TAG="${{ github.ref_name }}"
-          if [[ ! "$TAG" =~ ^([A-Z]{2,4})-(v[0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
-            echo "Tag '$TAG' does not match expected pattern [A-Z]{2,4}-v#.#.#"
+          if [[ ! "$TAG" =~ ^([A-Z]{2,6})-(v[0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
+            echo "Tag '$TAG' does not match expected pattern [A-Z]{2,6}-v#.#.#"
             exit 1
           fi
           PFS="${BASH_REMATCH[1]}"
