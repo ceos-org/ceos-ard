@@ -10,7 +10,10 @@ on:
       - 'references/**'
       - 'requirements/**'
       - 'sections/**'
+      # an override of the built-in templates
       - 'templates/**'
+      # the version of the CLI
+      - 'requirements.txt'
   pull_request:
     types:
       - opened
@@ -22,7 +25,10 @@ on:
       - 'references/**'
       - 'requirements/**'
       - 'sections/**'
+      # an override of the built-in templates
       - 'templates/**'
+      # the version of the CLI
+      - 'requirements.txt'
 permissions:
   contents: read
 jobs:

@@ -73,11 +73,10 @@ The repository is structured as follows:
 - `references`: bibtex files for the citations/references.
 - `requirements`: the individual requirements that PFSes can pick from. [Read more...](requirements/README.md)
 - `sections`: the editorial content of the PFSes, e.g. annexes, requirement categories, introductory chapters.
+  The Markdown files in `sections/document` hold the texts that all PFSes share, e.g. the document status and the CEOS-ARD definition.
 
-Most people won't need to look at the following two folders as they are primarily for technical purposes:
-
-- `.github`: contains issue templates and workflows for GitHub
-- `templates`: the layout and styles for Markdown, Word, HTML, etc.
+Most people won't need to look at the `.github` folder as it is primarily for technical purposes: it contains issue templates and workflows for GitHub.
+The layout and styles for Markdown, Word, HTML, etc. are part of the [CEOS-ARD CLI](https://github.com/ceos-org/ceos-ard-cli).
 
 Some high-level information (governance framework, strategy, guides, license, etc.) reside on the top-level of the repository.
 
