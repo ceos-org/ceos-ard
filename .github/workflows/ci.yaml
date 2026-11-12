@@ -49,11 +49,11 @@ jobs:
     if: github.event.action != 'labeled' || github.event.label.name == 'document history'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           # the following steps run code of the pull request, which doesn't need the token
           persist-credentials: false
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.x'
       - name: Install dependencies
@@ -65,13 +65,13 @@ jobs:
     runs-on: ubuntu-latest
     needs: validate
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           # the full history is required to assign the changes to the releases
           fetch-depth: 0
           # the following steps run code of the pull request, which doesn't need the token
           persist-credentials: false
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.x'
       - name: Install dependencies
@@ -100,7 +100,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: ceos-ard generate-all -o build --self-contained --history
       - name: Archive generated PFS artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: documents
           path: build
@@ -113,7 +113,7 @@ jobs:
       contents: write
     steps:
       - name: Download PFS artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: documents
           github-token: ${{ secrets.GITHUB_TOKEN }}
