@@ -1650,9 +1650,7 @@ The radiometric interoperability of CEOS-ARD SAR products is ensured by a common
 
 Editorial changes are not listed.
 
-### Version 5.6.0-draft (unreleased draft)
-
-This version has not been released yet.
+### Version 5.6.0 (2026-11-11)
 
 **Editors:** Matthias Mohr
 

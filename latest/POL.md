@@ -1816,9 +1816,7 @@ From fully polarimetric covariance matrix ARD format POL (Level-2a), it is possi
 
 Editorial changes are not listed.
 
-### Version 3.6.0-draft (unreleased draft)
-
-This version has not been released yet.
+### Version 3.6.0 (2026-11-11)
 
 **Editors:** Matthias Mohr
 

@@ -1919,9 +1919,7 @@ The following figures show 3-D components radar unit look vector of the GSLC pro
 
 Editorial changes are not listed.
 
-### Version 2.0.0-draft (unreleased draft)
-
-This version has not been released yet.
+### Version 2.0.0 (2026-11-11)
 
 **Editors:** Matthias Mohr
 

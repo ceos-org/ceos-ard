@@ -1535,9 +1535,7 @@ Multitemporal backscatter analysis can then be directly applied over large regio
 
 Editorial changes are not listed.
 
-### Version 1.1.0-draft (unreleased draft)
-
-This version has not been released yet.
+### Version 1.1.0 (2026-11-11)
 
 **Editors:** Ake Rosenqvist, Matthias Mohr
 

@@ -1638,9 +1638,7 @@ The following figures show Sentinel-1 EW ORB products:
 
 Editorial changes are not listed.
 
-### Version 1.1.0-draft (unreleased draft)
-
-This version has not been released yet.
+### Version 1.1.0 (2026-11-11)
 
 **Editors:** Matthias Mohr
 

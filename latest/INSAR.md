@@ -2323,9 +2323,7 @@ $$ {#eq:sar-topographic-phase-removal-eq11}
 
 Editorial changes are not listed.
 
-### Version 2.0.0-draft (unreleased draft)
-
-This version has not been released yet.
+### Version 2.0.0 (2026-11-11)
 
 **Editors:** Matthias Mohr
 

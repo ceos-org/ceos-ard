@@ -875,10 +875,7 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 
 Editorial changes are not listed.
 
-### Version 6.0.0-draft (unreleased draft)
-
-This version has not been released yet.
-Based on the recorded changes (highest level: major), the proposed next version number is **6.0.0**.
+### Version 6.0.0 (2026-11-11)
 
 **This version contains major changes.
 Products that comply with a previous version need to be reassessed to confirm their compliance with this version.**
