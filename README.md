@@ -35,6 +35,9 @@ Below you can find all Product Family Specifications (PFS) that are currently de
 - **Surface Temperature (ST)**
 
   *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/ST.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/ST.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/ST.docx)*
+- **Surface Brightness Temperature (SBT)**
+
+  *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/SBT.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/SBT.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/SBT.docx)*
 - **Aquatic Reflectance (AR)**
 
   *Latest draft version: [HTML](https://ceos-org.github.io/ceos-ard/latest/AR.html), [PDF](https://ceos-org.github.io/ceos-ard/latest/AR.pdf), [Word (docx)](https://ceos-org.github.io/ceos-ard/latest/AR.docx)*
