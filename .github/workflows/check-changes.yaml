@@ -21,13 +21,13 @@ jobs:
     if: ${{ !contains(github.event.pull_request.labels.*.name, 'no changelog') }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           # full history is required to compare against the base branch
           fetch-depth: 0
           # the following steps run code of the pull request, which doesn't need the token
           persist-credentials: false
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.x'
       - name: Install dependencies

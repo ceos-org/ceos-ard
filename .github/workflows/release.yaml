@@ -28,12 +28,12 @@ jobs:
           echo "output_prefix=build/CEOS-ARD-PFS-$PFS" >> "$GITHUB_OUTPUT"
           echo "location=build/CEOS-ARD-PFS-$PFS-$VERSION" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           # the full history is required to assign the changes to the releases
           fetch-depth: 0
 
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.x'
           
