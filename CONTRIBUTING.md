@@ -15,7 +15,7 @@ All pull requests additionally require a review of a CEOS-ARD team members.
 
 ## Development / Authoring
 
-1. [Install the CEOS-ARD CLI](https://github.com/ceos-org/ceos-ard-cli?tab=readme-ov-file#installation)
+1. [Install the CEOS-ARD CLI](https://github.com/ceos-org/ceos-ard-cli?tab=readme-ov-file#install)
 2. Validate building blocks: `ceos-ard validate`
 3. Generate the documents for a specific PFS (e.g. `SR`): `ceos-ard generate SR`
 4. Generate all documents: `ceos-ard generate-all`
