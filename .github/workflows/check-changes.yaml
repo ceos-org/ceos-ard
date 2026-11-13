@@ -27,10 +27,9 @@ jobs:
           fetch-depth: 0
           # the following steps run code of the pull request, which doesn't need the token
           persist-credentials: false
-      - uses: actions/setup-python@v7
+      - uses: ceos-org/ceos-ard-cli@v0.8.0
         with:
-          python-version: '3.x'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+          requirements-file: requirements.txt
+          browser: false
       - name: Check changelog entries
         run: ceos-ard check-changes --base origin/${{ github.base_ref }}
