@@ -13,6 +13,10 @@ on:
       - 'pfs/**'
       - 'requirements/**'
       - 'sections/**'
+      # the version of the CLI
+      - 'requirements.txt'
+      # the workflow itself
+      - '.github/workflows/check-changes.yaml'
 permissions:
   contents: read
 jobs:

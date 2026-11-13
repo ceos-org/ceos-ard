@@ -14,6 +14,8 @@ on:
       - 'templates/**'
       # the version of the CLI
       - 'requirements.txt'
+      # the workflow itself
+      - '.github/workflows/ci.yaml'
   pull_request:
     paths:
       - 'assets/**'
@@ -26,6 +28,8 @@ on:
       - 'templates/**'
       # the version of the CLI
       - 'requirements.txt'
+      # the workflow itself
+      - '.github/workflows/ci.yaml'
 permissions:
   contents: read
 concurrency:
