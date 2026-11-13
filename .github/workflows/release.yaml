@@ -4,18 +4,24 @@ on:
   release:
     types:
       - published
+  # A dry run that tests the workflow: generates a fixed PFS and uploads nothing
+  pull_request:
+    paths:
+      - 'requirements.txt'
+      - '.github/workflows/release.yaml'
 
 jobs:
   release:
     runs-on: ubuntu-latest
-    if: startsWith(github.ref_name, github.ref_name) && contains(github.ref_name, '-v')
+    if: github.event_name == 'pull_request' || contains(github.ref_name, '-v')
     steps:
       - name: Parse tag
         id: parse
         # Only run when the tag matches the pattern, e.g. SR-v5.0.1
         # Output variables for later use: pfs, version, output_dir, location
+        env:
+          TAG: ${{ github.event_name == 'release' && github.ref_name || 'SR-v0.0.0' }}
         run: |
-          TAG="${{ github.ref_name }}"
           if [[ ! "$TAG" =~ ^([A-Z]{2,6})-(v[0-9]+\.[0-9]+\.[0-9]+)$ ]]; then
             echo "Tag '$TAG' does not match expected pattern [A-Z]{2,6}-v#.#.#"
             exit 1
@@ -32,6 +38,8 @@ jobs:
         with:
           # the full history is required to assign the changes to the releases
           fetch-depth: 0
+          # the following steps run code of the pull request in the dry run, which doesn't need the token
+          persist-credentials: false
 
       - uses: ceos-org/ceos-ard-cli@v0.8.0
         with:
@@ -39,16 +47,19 @@ jobs:
 
       - name: Generate PFS documents
         env:
-          # used to retrieve the releases for the document history
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # used to retrieve the releases for the document history; the dry run reads them from the git tags instead
+          GITHUB_TOKEN: ${{ github.event_name == 'release' && secrets.GITHUB_TOKEN || '' }}
+          OFFLINE: ${{ github.event_name == 'pull_request' && '--offline' || '' }}
         run: >
           ceos-ard generate ${{ steps.parse.outputs.pfs }}
           -o ${{ steps.parse.outputs.output_prefix }}
           --self-contained
           --stable
           --history
+          $OFFLINE
 
       - name: Upload release assets
+        if: github.event_name == 'release'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
