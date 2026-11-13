@@ -39,10 +39,7 @@ each changed building block (and PFS document) must have a new entry in its `cha
 You can run the check locally with `ceos-ard check-changes --base main`.
 For changes that don't need a changelog entry at all, maintainers can skip the check by adding the label `no changelog` to the pull request.
 
-The documents that are generated for a pull request don't include the document history, as compiling it needs a GitHub token.
-To check the document history, maintainers can add the label `document history` to the pull request.
-The documents are then generated once with the document history, for the commits at that time.
-After new commits, remove the label and add it again.
+The documents that are generated for a pull request include the document history.
 
 After the release is published, get the newly generated PFS documents from the
 [Releases page on the ceos-ard GitHub repository](https://github.com/ceos-org/ceos-ard/releases).

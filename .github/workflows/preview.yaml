@@ -12,53 +12,10 @@ permissions:
   actions: read
   pull-requests: write
 jobs:
-  # Without a concurrency group, so that runs without documents never take the place of a waiting deployment
-  check:
+  deploy-pr:
     if: >
       github.event.workflow_run.event == 'pull_request' &&
       github.event.workflow_run.conclusion == 'success'
-    runs-on: ubuntu-latest
-    outputs:
-      found: ${{ steps.artifacts.outputs.found }}
-    steps:
-      # A run for a label other than `document history` skips all jobs, so it succeeds without any documents
-      - name: Check that the run generated the newest documents
-        id: artifacts
-        uses: actions/github-script@v9
-        with:
-          script: |
-            const run = context.payload.workflow_run;
-            const hasDocuments = async id => {
-              const artifacts = await github.paginate(github.rest.actions.listWorkflowRunArtifacts, {
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                run_id: id,
-              });
-              return artifacts.some(artifact => artifact.name === 'documents');
-            };
-            let found = await hasDocuments(run.id);
-            if (found) {
-              // The concurrency queue doesn't guarantee the order, so a newer build of the same commit wins,
-              // e.g. the one with the document history over the one without
-              const runs = await github.paginate(github.rest.actions.listWorkflowRuns, {
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                workflow_id: run.workflow_id,
-                head_sha: run.head_sha,
-                status: 'success',
-              });
-              for (const other of runs) {
-                if (new Date(other.created_at) > new Date(run.created_at) && await hasDocuments(other.id)) {
-                  core.info(`Not deployed, the newer run ${other.id} generated the documents of this commit`);
-                  found = false;
-                  break;
-                }
-              }
-            }
-            core.setOutput('found', found);
-  deploy-pr:
-    needs: check
-    if: needs.check.outputs.found == 'true'
     # One deployment per pull request at a time; GitHub keeps only the newest waiting one
     concurrency:
       group: preview-${{ github.event.workflow_run.head_repository.full_name }}-${{ github.event.workflow_run.head_branch }}
