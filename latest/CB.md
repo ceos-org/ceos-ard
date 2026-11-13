@@ -33,7 +33,7 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Synthetic Aperture Radar - Composite Backscatter
+# <!-- edit:pfs/CB/document.yaml -->CEOS-ARD - Synthetic Aperture Radar - Composite Backscatter
 
 &nbsp;
 
@@ -48,7 +48,7 @@ Product Family Specification, Synthetic Aperture Radar, Composite Backscatter
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## <!-- edit:pfs/CB/document.yaml -->Contributing Authors
+## <!-- edit:pfs/CB/document.yaml#/authors -->Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
 - Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency, Japan
@@ -98,9 +98,9 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-## Description
+## <!-- edit:pfs/CB/document.yaml -->Description
 
-<!-- edit:pfs/CB/document.yaml -->**Product Family Specification:**
+**Product Family Specification:**
 Synthetic Aperture Radar, Composite Backscatter (CB)
 
 **Version:**
@@ -110,7 +110,7 @@ Synthetic Aperture Radar, Composite Backscatter (CB)
 Data collected by Synthetic Aperture Radar sensors
 
 
-## Background
+## <!-- edit:pfs/CB/document.yaml#/background -->Background
 
 This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
@@ -124,7 +124,7 @@ Further quality per-pixel metadata may also be provided, such as (a) the [@sec:p
 
 &#12;
 
-## Definitions and Abbreviations
+## <!-- edit:pfs/CB/document.yaml#/glossary -->Definitions and Abbreviations
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/acdd.yaml -->
 ACDD
@@ -277,7 +277,7 @@ WKT
 
 &#12;
 
-## <!-- edit:pfs/CB/document.yaml -->Requirements
+## <!-- edit:pfs/CB/document.yaml#/requirements -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -1455,14 +1455,14 @@ Consequently, it becomes obvious that they all can follow a common approach, in 
 
 &#12;
 
-## References
+## <!-- edit:pfs/CB/document.yaml#/references -->References
 
 ::: {#refs}
 :::
 
 &#12;
 
-## Annexes
+## <!-- edit:pfs/CB/document.yaml#/annexes -->Annexes
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-general-processing-roadmap.yaml-->General Processing Roadmap {#sec:annex-sar-general-processing-roadmap label="|General Processing Roadmap"}
 

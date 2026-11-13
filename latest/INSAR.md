@@ -33,7 +33,7 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Synthetic Aperture Radar - Interferometric SAR
+# <!-- edit:pfs/INSAR/document.yaml -->CEOS-ARD - Synthetic Aperture Radar - Interferometric SAR
 
 &nbsp;
 
@@ -48,7 +48,7 @@ Product Family Specification, Synthetic Aperture Radar, Interferometric SAR
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## <!-- edit:pfs/INSAR/document.yaml -->Contributing Authors
+## <!-- edit:pfs/INSAR/document.yaml#/authors -->Contributing Authors
 
 - François Charbonneau, Natural Resources Canada, Canada
 - Ake Rosenqvist, soloEO / Japan Aerospace Exploration Agency, Japan
@@ -98,9 +98,9 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-## Description
+## <!-- edit:pfs/INSAR/document.yaml -->Description
 
-<!-- edit:pfs/INSAR/document.yaml -->**Product Family Specification:**
+**Product Family Specification:**
 Synthetic Aperture Radar, Interferometric SAR (INSAR)
 
 **Version:**
@@ -110,7 +110,7 @@ Synthetic Aperture Radar, Interferometric SAR (INSAR)
 Data collected by Synthetic Aperture Radar sensors
 
 
-## Background
+## <!-- edit:pfs/INSAR/document.yaml#/background -->Background
 
 This PFS is specifically aimed at users interested in exploring the potential of SAR but who may lack the expertise or facilities for SAR processing.
 
@@ -121,7 +121,7 @@ Two levels of product categories are supported:
 
 &#12;
 
-## Definitions and Abbreviations
+## <!-- edit:pfs/INSAR/document.yaml#/glossary -->Definitions and Abbreviations
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/acdd.yaml -->
 ACDD
@@ -294,7 +294,7 @@ WKT
 
 &#12;
 
-## <!-- edit:pfs/INSAR/document.yaml -->Requirements
+## <!-- edit:pfs/INSAR/document.yaml#/requirements -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -2194,14 +2194,14 @@ Consequently, it becomes obvious that they all can follow a common approach, in 
 
 &#12;
 
-## References
+## <!-- edit:pfs/INSAR/document.yaml#/references -->References
 
 ::: {#refs}
 :::
 
 &#12;
 
-## Annexes
+## <!-- edit:pfs/INSAR/document.yaml#/annexes -->Annexes
 
 ### <!-- edit:/home/runner/work/ceos-ard/ceos-ard/sections/annexes/sar-general-processing-roadmap.yaml-->General Processing Roadmap {#sec:annex-sar-general-processing-roadmap label="|General Processing Roadmap"}
 

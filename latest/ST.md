@@ -33,7 +33,7 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Optical - Surface Temperature
+# <!-- edit:pfs/ST/document.yaml -->CEOS-ARD - Optical - Surface Temperature
 
 &nbsp;
 
@@ -48,7 +48,7 @@ Product Family Specification, Optical, Surface Temperature
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## <!-- edit:pfs/ST/document.yaml -->Contributing Authors
+## <!-- edit:pfs/ST/document.yaml#/authors -->Contributing Authors
 
 - Mathias Gergely (Aistech Space)
 - Harvey Jones (CEOS-ARD Secretariat)
@@ -90,9 +90,9 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-## Description
+## <!-- edit:pfs/ST/document.yaml -->Description
 
-<!-- edit:pfs/ST/document.yaml -->**Product Family Specification:**
+**Product Family Specification:**
 Optical, Surface Temperature (ST)
 
 **Version:**
@@ -102,13 +102,13 @@ Optical, Surface Temperature (ST)
 Data collected with satellite sensors operating in the thermal infrared (TIR and MWIR) and microwave wavelengths. These typically operate with ground sample distance and resolution in the order 1 dm - 50 km however the specification is not inherently limited to these resolutions.
 
 
-## Background
+## <!-- edit:pfs/ST/document.yaml#/background -->Background
 
 Remotely sensed surface temperature measurements tend to be provided as surface brightness temperature (SBT), land surface temperature (LST), water surface temperature (WST), or ice surface temperature (IST), where LST, WST, and IST are derived from SBT accounting for the emissivity of the target. This specification identifies Surface Temperature (ST), including but not limited to LST, WST, and IST, as the minimum or threshold requirement for analysis ready surface data.
 
 &#12;
 
-## Definitions and Abbreviations
+## <!-- edit:pfs/ST/document.yaml#/glossary -->Definitions and Abbreviations
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/auxiliary-data.yaml -->
 Auxiliary Data
@@ -164,7 +164,7 @@ WGS84
 
 &#12;
 
-## <!-- edit:pfs/ST/document.yaml -->Requirements
+## <!-- edit:pfs/ST/document.yaml#/requirements -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -863,7 +863,7 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 
 &#12;
 
-## References
+## <!-- edit:pfs/ST/document.yaml#/references -->References
 
 ::: {#refs}
 :::

@@ -33,7 +33,7 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Optical - Nighttime Lights Surface Radiance
+# <!-- edit:pfs/NLSR/document.yaml -->CEOS-ARD - Optical - Nighttime Lights Surface Radiance
 
 &nbsp;
 
@@ -48,7 +48,7 @@ Product Family Specification, Optical, Nighttime Lights Surface Radiance
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## <!-- edit:pfs/NLSR/document.yaml -->Contributing Authors
+## <!-- edit:pfs/NLSR/document.yaml#/authors -->Contributing Authors
 
 - Brian Killough, NASA Langley Research Center, CEOS Systems Engineering Office, USA
 - Bhaskar Ramachandran, NASA Goddard Space Flight Center, USA
@@ -66,9 +66,9 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-## Description
+## <!-- edit:pfs/NLSR/document.yaml -->Description
 
-<!-- edit:pfs/NLSR/document.yaml -->**Product Family Specification:**
+**Product Family Specification:**
 Optical, Nighttime Lights Surface Radiance (NLSR)
 
 **Version:**
@@ -80,7 +80,7 @@ Data collected with nighttime light sensors operating in the VIS/NIR wavelengths
 
 &#12;
 
-## Definitions and Abbreviations
+## <!-- edit:pfs/NLSR/document.yaml#/glossary -->Definitions and Abbreviations
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/atbd.yaml -->
 ATBD
@@ -144,7 +144,7 @@ WGS84
 
 &#12;
 
-## <!-- edit:pfs/NLSR/document.yaml -->Requirements
+## <!-- edit:pfs/NLSR/document.yaml#/requirements -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -1038,7 +1038,7 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 
 &#12;
 
-## References
+## <!-- edit:pfs/NLSR/document.yaml#/references -->References
 
 ::: {#refs}
 :::

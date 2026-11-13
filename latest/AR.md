@@ -33,7 +33,7 @@ nocite: |
 
 ![](assets/CEOS_logo_colour_black_text_right.png)
 
-# CEOS-ARD - Optical - Aquatic Reflectance
+# <!-- edit:pfs/AR/document.yaml -->CEOS-ARD - Optical - Aquatic Reflectance
 
 &nbsp;
 
@@ -48,7 +48,7 @@ Product Family Specification, Optical, Aquatic Reflectance
 
 Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-contact@lists.ceos.org)
 
-## <!-- edit:pfs/AR/document.yaml -->Contributing Authors
+## <!-- edit:pfs/AR/document.yaml#/authors -->Contributing Authors
 
 ### Technical Leads
 
@@ -99,9 +99,9 @@ Proposed revisions may be provided to: [ard-contact@lists.ceos.org](mailto:ard-c
 
 > CEOS Analysis Ready Data (CEOS-ARD) are satellite data that have been processed to a minimum set of requirements and organized into a form that allows immediate analysis with a minimum of additional user effort and interoperability both through time and with other datasets.
 
-## Description
+## <!-- edit:pfs/AR/document.yaml -->Description
 
-<!-- edit:pfs/AR/document.yaml -->**Product Family Specification:**
+**Product Family Specification:**
 Optical, Aquatic Reflectance (AR)
 
 **Version:**
@@ -113,7 +113,7 @@ Data collected with multispectral and hyperspectral imaging sensors operating in
 
 &#12;
 
-## Definitions and Abbreviations
+## <!-- edit:pfs/AR/document.yaml#/glossary -->Definitions and Abbreviations
 
 <!-- edit:/home/runner/work/ceos-ard/ceos-ard/glossary/ancillary-data.yaml -->
 Ancillary Data
@@ -193,7 +193,7 @@ WGS84
 
 &#12;
 
-## <!-- edit:pfs/AR/document.yaml -->Requirements
+## <!-- edit:pfs/AR/document.yaml#/requirements -->Requirements
 
 **WARNING:** The section numbers in front of the title (e.g. 1.1) are not stable and may change or may be removed at any time.
 Do **not** use the numbers to refer back to specific requirements!
@@ -1419,7 +1419,7 @@ Over time, _goal_ specifications may (and subject to due process) become accepte
 
 &#12;
 
-## References
+## <!-- edit:pfs/AR/document.yaml#/references -->References
 
 ::: {#refs}
 :::
