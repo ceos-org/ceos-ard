@@ -14,7 +14,7 @@ requirements:
         - Window size in pixel units
         - Any other parameters defining the speckle filter used
   
-      Advanced polarimetric filter preserving covariance matrix properties shall be applied.
+      An advanced polarimetric filter that preserves covariance matrix properties is recommended.
 dependencies:
 glossary:
   - doi
