@@ -4,11 +4,12 @@ description:
 requirements:
   threshold:
     description: |-
-      An advanced polarimetric filter that preserves covariance matrix properties is recommended.
+      Advanced polarimetric filter preserving covariance matrix properties should be applied.
 dependencies:
 glossary:
 references:
 changes:
 history:
   - SAR 1.7.6
-remarks:
+remarks: |-
+  todo: The "should" in the last sentence of the threshold description is not a requirement, it is a recommendation, but it's listed as threshold requirement.
