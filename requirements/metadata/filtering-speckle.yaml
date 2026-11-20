@@ -4,9 +4,9 @@ description:
 requirements:
   threshold:
     description: |-
-      Flag if speckle filter has been applied (true/false).
+      Flag if speckle filter has been applied.
       
-      Metadata should include:
+      If applied, metadata should include:
   
       - Reference to algorithm as DOI or URL
       - Input filtering parameters
@@ -23,4 +23,3 @@ history:
   - SAR 1.7.6
 remarks: |-
   - Should be named "Speckle Filtering" not "Product Filtering" to allow for other filtering types in the future.
-  - The "(True/False)" in the threshold description is implementation (and metadata language) specific, should not be listed here. See also ionosphere-indicator.yaml.
