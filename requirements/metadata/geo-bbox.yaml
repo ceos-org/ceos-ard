@@ -4,7 +4,7 @@ description:
 requirements:
   threshold:
     description: |-
-      Two opposite corners of the product file (bounding box, including any zero-fill values) shall be provided,
+      Two opposite corners of the product file (bounding box, including any zero-fill values) are identified,
       expressed in the coordinate reference system defined in [@crs].
 
       The bounding box shall be provided in a clear and unambiguous format, which may include 
